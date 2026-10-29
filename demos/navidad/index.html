@@ -1,185 +1,203 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estrella Austral · Decoración navideña en Valdivia — Propuesta de diseño de ejemplo</title>
-<meta name="description" content="Diseño, instalación y retiro de decoración navideña para hogares, oficinas y locales comerciales en Valdivia y la Región de Los Ríos. Negocio ficticio, datos de ejemplo.">
-<meta name="theme-color" content="#0f2a22">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2a22'/%3E%3Cpath d='M32 10l5.5 15.5H54l-13.3 9.7 5 15.8L32 41.4 18.3 51l5-15.8L10 25.5h16.5z' fill='%23d8aa52'/%3E%3C/svg%3E">
+<!-- SEO: título y descripción únicos, pensados para búsquedas locales -->
+<title>Decoración navideña en Valdivia para hogares y empresas | Estrella Austral</title>
+<meta name="description" content="Diseño, instalación y retiro de decoración navideña para hogares, oficinas y locales comerciales en Valdivia y la Región de Los Ríos. Agenda tu visita sin costo.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://werex88-ops.github.io/demos/navidad/">
+<meta name="theme-color" content="#8e0f1e">
+<!-- Redes sociales (Open Graph) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Estrella Austral">
+<meta property="og:title" content="Decoración navideña en Valdivia | Estrella Austral">
+<meta property="og:description" content="Decoramos tu Navidad: diseño, instalación y retiro para hogares, oficinas y comercios.">
+<meta property="og:url" content="https://werex88-ops.github.io/demos/navidad/">
+<meta property="og:image" content="https://werex88-ops.github.io/demos/img/navidad.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Search Console: en el sitio real se agrega aquí la etiqueta de verificación, por ejemplo:
+<meta name="google-site-verification" content="CODIGO_DE_VERIFICACION"> -->
+<!-- Google Analytics 4: en el sitio real se activa con el ID de medición del cliente, por ejemplo:
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<!-- Datos estructurados de negocio local (ayudan a aparecer en Google y Maps). Negocio ficticio. -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Estrella Austral","description":"Decoración navideña para hogares, oficinas y locales comerciales (negocio ficticio, propuesta de diseño de ejemplo).","url":"https://werex88-ops.github.io/demos/navidad/","image":"https://werex88-ops.github.io/demos/img/navidad.jpg","areaServed":["Valdivia","Región de Los Ríos"],"address":{"@type":"PostalAddress","addressLocality":"Valdivia","addressRegion":"Los Ríos","addressCountry":"CL"},"priceRange":"$$"}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238e0f1e'/%3E%3Cpath d='M32 10l5.5 15.5H54l-13.3 9.7 5 15.8L32 41.4 18.3 51l5-15.8L10 25.5h16.5z' fill='%23e8bd52'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* Colores globales. En WordPress van a Astra → Personalizar → Global → Colores. */
 :root{
-  --pino:#0f2a22;
-  --pino-2:#16382e;
-  --vino:#9b1f32;
-  --oro:#d8aa52;
-  --crema:#f8f2e7;
-  --papel:#fffcf6;
-  --tinta:#1c1a17;
-  --gris:#6f6a60;
-  --linea:#e7dccb;
+  --rojo:#c8102e;        /* rojo navideño principal */
+  --rojo-oscuro:#8e0f1e; /* fondos de secciones */
+  --granate:#5a0812;     /* fondo más profundo */
+  --verde:#14532d;       /* acento pino */
+  --oro:#e8bd52;         /* acento dorado */
+  --nieve:#fff5f5;       /* fondo suave */
+  --blanco:#ffffff;
+  --tinta:#26100f;
+  --gris:#6b5658;
+  --linea:#f1d6d8;
   --r:18px;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--papel);color:var(--tinta);font-family:'DM Sans',system-ui,sans-serif;font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--blanco);color:var(--tinta);font-family:'DM Sans',system-ui,sans-serif;font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit}
-h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.1;margin:0;color:var(--pino)}
-h1 em,h2 em,h3 em{font-style:italic;color:var(--vino)}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.1;margin:0;color:var(--rojo-oscuro)}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--rojo)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--oro);outline-offset:3px;border-radius:8px}
 .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-.etq{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--vino);margin-bottom:14px}
-.etq::before{content:"✦";color:var(--oro);font-size:.9rem}
+.etq{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rojo);margin-bottom:14px}
+.etq::before{content:"❄";color:var(--oro);font-size:.95rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:999px;font:700 .97rem/1 'DM Sans',sans-serif;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s,border-color .2s}
 .btn:hover{transform:translateY(-2px)}
-.btn-oro{background:var(--oro);color:var(--pino)}
-.btn-oro:hover{background:#e6bd6c}
-.btn-vino{background:var(--vino);color:#fff}
-.btn-vino:hover{background:#82182a}
-.btn-claro{border-color:rgba(248,242,231,.55);color:var(--crema)}
-.btn-claro:hover{background:rgba(248,242,231,.1)}
-.btn-borde{border-color:var(--pino);color:var(--pino);background:transparent}
-.btn-borde:hover{background:var(--pino);color:var(--crema)}
+.btn-oro{background:var(--oro);color:var(--granate)}
+.btn-oro:hover{background:#f3cd6d}
+.btn-rojo{background:var(--rojo);color:#fff}
+.btn-rojo:hover{background:#a50d26}
+.btn-claro{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-claro:hover{background:rgba(255,255,255,.12)}
 .cab{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:44px}
 .cab h2{font-size:clamp(2.1rem,4.4vw,3.3rem);max-width:17ch}
 .cab p{max-width:46ch;color:var(--gris);margin:0}
 section{padding:100px 0}
+.suave{background:var(--nieve)}
 
 /* 1. Encabezado */
 .top{position:absolute;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s}
-.top.fijo{position:fixed;background:rgba(15,42,34,.96);box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(8px)}
+.top.fijo{position:fixed;background:rgba(90,8,18,.96);box-shadow:0 8px 24px rgba(0,0,0,.2);backdrop-filter:blur(8px)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:80px}
-.logo{display:flex;align-items:center;gap:10px;color:var(--crema);text-decoration:none;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600}
 .logo svg{width:30px;height:30px}
 .top nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
-.top nav a{color:rgba(248,242,231,.86);text-decoration:none;font-weight:500;font-size:.96rem}
+.top nav a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:500;font-size:.96rem}
 .top nav a:hover{color:var(--oro)}
 .top .cotizar{padding:11px 22px;font-size:.92rem}
-.menu-btn{display:none;background:none;border:0;color:var(--crema);padding:8px;cursor:pointer}
+.menu-btn{display:none;background:none;border:0;color:#fff;padding:8px;cursor:pointer}
 
 /* 2. Portada */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;color:var(--crema);overflow:hidden;
-  background:radial-gradient(ellipse at 70% 30%,#24503f 0%,var(--pino-2) 38%,var(--pino) 72%);padding:130px 0 80px}
-.luces{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden;
+  background:radial-gradient(ellipse at 72% 28%,#c41a30 0%,var(--rojo-oscuro) 42%,var(--granate) 80%);padding:130px 0 80px}
+.capa{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .luz{position:absolute;border-radius:50%;animation:titilar 3.2s ease-in-out infinite;opacity:.25}
-@keyframes titilar{0%,100%{opacity:.18;transform:scale(.8)}50%{opacity:.95;transform:scale(1.15)}}
-.guirnalda{position:absolute;left:0;right:0;top:78px;width:100%;height:70px;pointer-events:none;opacity:.9}
+@keyframes titilar{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+.copo{position:absolute;top:-10px;color:#fff;opacity:.7;animation:caer linear infinite;user-select:none}
+@keyframes caer{to{transform:translateY(110vh) translateX(30px) rotate(200deg)}}
+.guirnalda{position:absolute;left:0;right:0;top:78px;width:100%;height:70px;pointer-events:none}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;width:100%}
-.hero .etq{color:var(--oro);background:rgba(216,170,82,.1);border:1px solid rgba(216,170,82,.35);padding:8px 14px;border-radius:999px}
-.hero h1{color:var(--crema);font-size:clamp(2.7rem,6.4vw,5.2rem);font-weight:600}
+.hero .etq{color:var(--oro);background:rgba(255,255,255,.08);border:1px solid rgba(232,189,82,.45);padding:8px 14px;border-radius:999px}
+.hero h1{color:#fff;font-size:clamp(2.7rem,6.4vw,5.2rem)}
 .hero h1 em{color:var(--oro)}
-.hero p{font-size:1.15rem;color:rgba(248,242,231,.84);max-width:52ch;margin:22px 0 32px}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,.88);max-width:52ch;margin:22px 0 32px}
 .hero .acciones{display:flex;flex-wrap:wrap;gap:12px}
-.cifras{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:46px;padding-top:28px;border-top:1px solid rgba(216,170,82,.25);justify-content:start}
+.cifras{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:46px;padding-top:28px;border-top:1px solid rgba(232,189,82,.35);justify-content:start}
 .cifras b{display:block;font-family:'Playfair Display',serif;font-size:2.1rem;color:var(--oro);line-height:1}
-.cifras span{font-size:.88rem;color:rgba(248,242,231,.72)}
+.cifras span{font-size:.88rem;color:rgba(255,255,255,.78)}
 .arco{position:relative;justify-self:center;width:min(100%,420px)}
-.arco .marco{aspect-ratio:3/4;border-radius:999px 999px 24px 24px;border:3px solid var(--oro);padding:10px;background:rgba(216,170,82,.08)}
-.arco .foto{width:100%;height:100%;border-radius:999px 999px 16px 16px;background:var(--pino-2) center/cover no-repeat}
-.hero .sello{margin:0;position:absolute;left:-28px;bottom:42px;width:190px;background:var(--crema);color:var(--pino);border-radius:16px;padding:16px 18px;font-size:.9rem;font-weight:600;line-height:1.35;box-shadow:0 16px 36px rgba(0,0,0,.3)}
+.arco .marco{aspect-ratio:3/4;border-radius:999px 999px 24px 24px;border:3px solid var(--oro);padding:10px;background:rgba(255,255,255,.06)}
+.arco .foto{width:100%;height:100%;border-radius:999px 999px 16px 16px;background:var(--granate) center/cover no-repeat}
+.hero .sello{margin:0;position:absolute;left:-28px;bottom:42px;width:200px;background:#fff;color:var(--rojo-oscuro);border-radius:16px;padding:16px 18px;font-size:.9rem;font-weight:600;line-height:1.35;box-shadow:0 16px 36px rgba(0,0,0,.3);border-top:4px solid var(--verde)}
 .hero .sello::before{content:"★";display:block;color:var(--oro);font-size:1.3rem;margin-bottom:4px}
 
 /* 3. Cinta */
-.cinta{background:var(--vino);color:var(--crema);overflow:hidden;padding:15px 0;font-weight:600;letter-spacing:.04em}
+.cinta{background:var(--verde);color:#fff;overflow:hidden;padding:15px 0;font-weight:600;letter-spacing:.04em}
 .cinta div{display:flex;gap:28px;width:max-content;animation:correr 32s linear infinite}
 .cinta span{white-space:nowrap}
 .cinta i{font-style:normal;color:var(--oro)}
 @keyframes correr{to{transform:translateX(-50%)}}
 
+/* Nosotros */
+.nosotros .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.nosotros .foto{aspect-ratio:4/5;border-radius:var(--r);background:var(--nieve) center/cover no-repeat;position:relative;box-shadow:16px 16px 0 var(--rojo)}
+.nosotros h2{font-size:clamp(2.1rem,4.2vw,3.2rem);margin-bottom:18px}
+.nosotros p{color:var(--gris)}
+.valores{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.valores div{border-left:3px solid var(--rojo);padding-left:14px}
+.valores b{display:block;color:var(--rojo-oscuro)}
+.valores span{font-size:.92rem;color:var(--gris)}
+
 /* 4. Servicios */
 .servicios{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.servicio{background:var(--crema);border:1px solid var(--linea);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;gap:12px;transition:transform .3s,box-shadow .3s}
-.servicio:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(15,42,34,.1)}
-.ico{width:52px;height:52px;border-radius:14px;background:var(--pino);display:grid;place-items:center}
-.ico svg{width:26px;height:26px;stroke:var(--oro)}
+.servicio{background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;gap:12px;transition:transform .3s,box-shadow .3s}
+.servicio:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(142,15,30,.12)}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--rojo);display:grid;place-items:center}
+.ico svg{width:26px;height:26px;stroke:#fff}
 .servicio h3{font-size:1.4rem}
 .servicio p{margin:0;color:var(--gris);font-size:.95rem}
 .servicio ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:.92rem}
 .servicio li::before{content:"✦ ";color:var(--oro)}
+.servicio .cotiza{margin-top:auto;padding-top:8px;font-weight:700;color:var(--rojo);text-decoration:none;font-size:.95rem}
+.servicio .cotiza:hover{text-decoration:underline}
 
 /* 5. Cómo trabajamos */
-.proceso{background:var(--pino);color:var(--crema);position:relative;overflow:hidden}
-.proceso h2{color:var(--crema)}
+.proceso{background:var(--rojo-oscuro);color:#fff;position:relative;overflow:hidden}
+.proceso h2{color:#fff}
 .proceso h2 em{color:var(--oro)}
-.proceso .cab p{color:rgba(248,242,231,.75)}
+.proceso .cab p{color:rgba(255,255,255,.8)}
 .proceso .etq{color:var(--oro)}
 .pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;list-style:none;margin:0;padding:0;counter-reset:p}
-.paso{position:relative;border:1px solid rgba(216,170,82,.3);border-radius:var(--r);padding:28px 24px;background:rgba(255,255,255,.03)}
+.paso{position:relative;border:1px solid rgba(232,189,82,.35);border-radius:var(--r);padding:28px 24px;background:rgba(255,255,255,.05)}
 .paso::before{counter-increment:p;content:"0" counter(p);display:block;font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--oro);line-height:1;margin-bottom:14px}
-.paso h3{color:var(--crema);font-size:1.25rem;margin-bottom:8px}
-.paso p{margin:0;color:rgba(248,242,231,.75);font-size:.95rem}
+.paso h3{color:#fff;font-size:1.25rem;margin-bottom:8px}
+.paso p{margin:0;color:rgba(255,255,255,.8);font-size:.95rem}
 
 /* 6. Galería */
 .filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-.filtro{border:1.5px solid var(--linea);background:var(--papel);border-radius:999px;padding:9px 18px;font:600 .92rem 'DM Sans',sans-serif;color:var(--tinta);cursor:pointer}
-.filtro[aria-pressed="true"]{background:var(--pino);border-color:var(--pino);color:var(--crema)}
+.filtro{border:1.5px solid var(--linea);background:#fff;border-radius:999px;padding:9px 18px;font:600 .92rem 'DM Sans',sans-serif;color:var(--tinta);cursor:pointer}
+.filtro[aria-pressed="true"]{background:var(--rojo);border-color:var(--rojo);color:#fff}
 .galeria{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:16px}
-.item{position:relative;border:0;padding:0;border-radius:var(--r);overflow:hidden;cursor:zoom-in;background:var(--pino-2) center/cover no-repeat;text-align:left;color:#fff;font:inherit}
+.item{position:relative;border:0;padding:0;border-radius:var(--r);overflow:hidden;cursor:zoom-in;background:var(--rojo-oscuro) center/cover no-repeat;text-align:left;color:#fff;font:inherit}
 .item.ancho{grid-column:span 2}
 .item.alto{grid-row:span 2}
-.item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(15,42,34,.85));transition:opacity .3s}
+.item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(90,8,18,.88));transition:opacity .3s}
 .item span{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;font-size:.92rem;font-weight:600}
 .item small{display:block;font-weight:500;color:var(--oro);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
 .item:hover::after{opacity:.75}
 .item[hidden]{display:none}
-.visor{position:fixed;inset:0;z-index:200;background:rgba(10,20,16,.92);display:none;align-items:center;justify-content:center;padding:24px}
+.visor{position:fixed;inset:0;z-index:200;background:rgba(30,4,8,.94);display:none;align-items:center;justify-content:center;padding:24px}
 .visor.abierto{display:flex}
 .visor figure{margin:0;max-width:min(1100px,100%);width:100%}
 .visor .img{width:100%;aspect-ratio:3/2;max-height:78vh;border-radius:14px;background:#111 center/contain no-repeat}
-.visor figcaption{color:var(--crema);text-align:center;margin-top:14px}
+.visor figcaption{color:#fff;text-align:center;margin-top:14px}
 .visor button{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.3);color:#fff;font-size:1.4rem;cursor:pointer}
-
-/* 7. Packs */
-.packs-sec{background:var(--crema)}
-.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
-.pack{position:relative;background:var(--papel);border:1px solid var(--linea);border-radius:22px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s}
-.pack:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(15,42,34,.1)}
-.pack.top-pack{background:var(--pino);color:var(--crema);border-color:var(--pino)}
-.pack.top-pack h3{color:var(--crema)}
-.pack .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--vino);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.12em;padding:6px 14px;border-radius:999px}
-.pack h3{font-size:1.6rem}
-.precio{font-family:'Playfair Display',serif;font-size:2.3rem;color:var(--vino);line-height:1}
-.top-pack .precio{color:var(--oro)}
-.precio small{font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--gris);display:block;margin-bottom:6px}
-.top-pack .precio small{color:rgba(248,242,231,.7)}
-.pack ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:.95rem}
-.pack li::before{content:"✓ ";color:var(--oro);font-weight:700}
-.pack .btn{margin-top:auto}
-.nota-packs{text-align:center;color:var(--gris);font-size:.88rem;margin:28px 0 0}
 
 /* 8. Opiniones */
 .opiniones{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.opinion{margin:0;background:var(--crema);border-radius:var(--r);padding:30px;display:flex;flex-direction:column;gap:16px;border-top:4px solid var(--oro)}
+.opinion{margin:0;background:#fff;border-radius:var(--r);padding:30px;display:flex;flex-direction:column;gap:16px;border-top:4px solid var(--rojo);box-shadow:0 10px 30px rgba(142,15,30,.06)}
 .estrellas{color:var(--oro);letter-spacing:3px}
-.opinion blockquote{margin:0;font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;line-height:1.45;color:var(--pino)}
+.opinion blockquote{margin:0;font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;line-height:1.45;color:var(--rojo-oscuro)}
 .opinion figcaption{margin-top:auto;font-size:.9rem;color:var(--gris)}
 .opinion figcaption b{color:var(--tinta)}
 
 /* 9. Preguntas */
 .faq{max-width:820px;margin:0 auto}
 .faq details{border-bottom:1px solid var(--linea);padding:20px 0}
-.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px;font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--pino)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px;font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--rojo-oscuro)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--vino);font-family:'DM Sans',sans-serif;font-size:1.5rem;line-height:1;transition:transform .2s}
+.faq summary::after{content:"+";color:var(--rojo);font-family:'DM Sans',sans-serif;font-size:1.5rem;line-height:1;transition:transform .2s}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq p{margin:12px 0 0;color:var(--gris)}
 
 /* 10. Contacto */
-.contacto{position:relative;overflow:hidden;background:radial-gradient(ellipse at 20% 80%,#24503f 0%,var(--pino) 60%);color:var(--crema)}
+.contacto{position:relative;overflow:hidden;background:radial-gradient(ellipse at 20% 80%,#c41a30 0%,var(--rojo-oscuro) 45%,var(--granate) 90%);color:#fff}
 .contacto .wrap{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.contacto h2{color:var(--crema);font-size:clamp(2.1rem,4.4vw,3.3rem)}
+.contacto h2{color:#fff;font-size:clamp(2.1rem,4.4vw,3.3rem)}
 .contacto h2 em{color:var(--oro)}
 .contacto .etq{color:var(--oro)}
-.contacto p{color:rgba(248,242,231,.8)}
+.contacto p{color:rgba(255,255,255,.86)}
 .datos{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
 .datos li{display:flex;gap:12px;align-items:center}
 .datos svg{width:22px;height:22px;stroke:var(--oro);flex-shrink:0}
-.formulario{background:var(--papel);color:var(--tinta);border-radius:24px;padding:30px;box-shadow:0 24px 50px rgba(0,0,0,.25)}
+.formulario{background:#fff;color:var(--tinta);border-radius:24px;padding:30px;box-shadow:0 24px 50px rgba(0,0,0,.28)}
 .formulario .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .formulario .full{grid-column:1/-1}
 .formulario label{display:block;font-size:.82rem;font-weight:600;color:var(--gris);margin-bottom:6px}
@@ -189,16 +207,16 @@ section{padding:100px 0}
 .formulario .btn:hover{background:#1ebe5a}
 .formulario .btn svg{width:22px;height:22px}
 .msg{font-size:.88rem;margin:10px 0 0;color:var(--gris);min-height:1.2em}
-.msg.error{color:var(--vino);font-weight:600}
+.msg.error{color:var(--rojo);font-weight:600}
 
 /* 11. Pie */
-footer{background:#0a1d17;color:rgba(248,242,231,.7);padding:56px 0 100px;font-size:.92rem}
+footer{background:var(--granate);color:rgba(255,255,255,.75);padding:56px 0 100px;font-size:.92rem}
 footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
-footer h4{color:var(--crema);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;font-family:'DM Sans',sans-serif}
+footer h4{color:#fff;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;font-family:'DM Sans',sans-serif}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 footer a{text-decoration:none}
 footer a:hover{color:var(--oro)}
-.legal{grid-column:1/-1;border-top:1px solid rgba(248,242,231,.12);padding-top:22px;font-size:.84rem}
+.legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-size:.84rem}
 
 .wa-flotante{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#0b2e1a;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s}
 .wa-flotante:hover{transform:translateY(-3px)}
@@ -208,21 +226,21 @@ footer a:hover{color:var(--oro)}
 .rv.visto{opacity:1;transform:none}
 
 @media (max-width:1040px){
-  .hero .wrap{grid-template-columns:1fr;gap:48px}
+  .hero .wrap,.nosotros .wrap{grid-template-columns:1fr;gap:48px}
   .arco{width:min(100%,360px)}
+  .nosotros .foto{aspect-ratio:16/10}
   .servicios,.pasos{grid-template-columns:1fr 1fr}
   .galeria{grid-template-columns:repeat(2,1fr)}
-  .packs,.opiniones{grid-template-columns:1fr}
-  .packs{max-width:520px;margin:0 auto}
+  .opiniones{grid-template-columns:1fr}
   .contacto .wrap{grid-template-columns:1fr}
   footer .wrap{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
   .menu-btn{display:block}
-  .top nav{position:absolute;top:80px;left:0;right:0;background:rgba(15,42,34,.98);padding:8px 24px 20px;display:none}
+  .top nav{position:absolute;top:80px;left:0;right:0;background:rgba(90,8,18,.98);padding:8px 24px 20px;display:none}
   .top nav.abierto{display:block}
   .top nav ul{flex-direction:column;gap:0}
-  .top nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(216,170,82,.15);font-size:1.05rem}
+  .top nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(232,189,82,.2);font-size:1.05rem}
   .top .cotizar{display:none}
   section{padding:72px 0}
   .wrap{padding:0 18px}
@@ -230,7 +248,8 @@ footer a:hover{color:var(--oro)}
   .cifras b{font-size:1.6rem}
   .cifras span{font-size:.78rem}
   .hero .sello{left:0;bottom:16px;width:170px;font-size:.82rem}
-  .servicios,.pasos{grid-template-columns:1fr}
+  .nosotros .foto{box-shadow:10px 10px 0 var(--rojo)}
+  .servicios,.pasos,.valores{grid-template-columns:1fr}
   .galeria{grid-template-columns:1fr;grid-auto-rows:220px}
   .item.ancho{grid-column:auto}
   .item.alto{grid-row:auto}
@@ -245,6 +264,7 @@ footer a:hover{color:var(--oro)}
   *,.rv{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
   .luz{opacity:.6}
+  .copo{display:none}
 }
 </style>
 </head>
@@ -254,21 +274,22 @@ footer a:hover{color:var(--oro)}
   - Cada <section> de esta página equivale a una sección de Elementor, en el mismo orden.
   - Los colores definidos en :root van a Astra → Personalizar → Global → Colores.
   - Tipografías: Playfair Display (títulos) y DM Sans (texto) en Astra → Personalizar → Global → Tipografía.
-  - El formulario puede hacerse con un widget de formulario que redirija a WhatsApp, o con un plugin de contacto.
+  - SEO: título, descripción, datos estructurados y textos alternativos se configuran con Rank Math o Yoast.
+  - Analytics y Search Console: se conectan con Site Kit de Google o pegando el código en el encabezado.
 -->
 
 <!-- 1. Encabezado -->
 <header class="top" id="top">
   <div class="wrap">
     <a class="logo" href="#inicio" aria-label="Estrella Austral, inicio">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l3.6 10.1H30l-8.5 6.2 3.3 10.2L16 22.3l-8.8 6.2 3.3-10.2L2 12.1h10.4z" fill="#d8aa52"/></svg>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l3.6 10.1H30l-8.5 6.2 3.3 10.2L16 22.3l-8.8 6.2 3.3-10.2L2 12.1h10.4z" fill="#e8bd52"/></svg>
       Estrella Austral
     </a>
     <nav id="menu" aria-label="Principal">
       <ul>
+        <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#packs">Packs</a></li>
         <li><a href="#preguntas">Preguntas</a></li>
       </ul>
     </nav>
@@ -282,10 +303,11 @@ footer a:hover{color:var(--oro)}
 <main>
 <!-- 2. Portada -->
 <section class="hero" id="inicio" aria-label="Portada">
-  <div class="luces" id="luces-hero" aria-hidden="true"></div>
+  <div class="capa" id="luces-hero" aria-hidden="true"></div>
+  <div class="capa" id="nieve" aria-hidden="true"></div>
   <svg class="guirnalda" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 8 Q150 60 300 12 T600 12 T900 12 T1200 8" fill="none" stroke="#d8aa52" stroke-width="1.4" opacity=".75"/>
-    <g fill="#d8aa52"><circle cx="75" cy="30" r="3"/><circle cx="150" cy="37" r="3.4"/><circle cx="225" cy="28" r="3"/><circle cx="375" cy="30" r="3"/><circle cx="450" cy="37" r="3.4"/><circle cx="525" cy="28" r="3"/><circle cx="675" cy="30" r="3"/><circle cx="750" cy="37" r="3.4"/><circle cx="825" cy="28" r="3"/><circle cx="975" cy="30" r="3"/><circle cx="1050" cy="37" r="3.4"/><circle cx="1125" cy="28" r="3"/></g>
+    <path d="M0 8 Q150 60 300 12 T600 12 T900 12 T1200 8" fill="none" stroke="#e8bd52" stroke-width="1.4" opacity=".8"/>
+    <g><circle cx="75" cy="30" r="3.4" fill="#e8bd52"/><circle cx="150" cy="37" r="3.8" fill="#ffffff"/><circle cx="225" cy="28" r="3.4" fill="#5fd38a"/><circle cx="375" cy="30" r="3.4" fill="#e8bd52"/><circle cx="450" cy="37" r="3.8" fill="#ffffff"/><circle cx="525" cy="28" r="3.4" fill="#5fd38a"/><circle cx="675" cy="30" r="3.4" fill="#e8bd52"/><circle cx="750" cy="37" r="3.8" fill="#ffffff"/><circle cx="825" cy="28" r="3.4" fill="#5fd38a"/><circle cx="975" cy="30" r="3.4" fill="#e8bd52"/><circle cx="1050" cy="37" r="3.8" fill="#ffffff"/><circle cx="1125" cy="28" r="3.4" fill="#5fd38a"/></g>
   </svg>
   <div class="wrap">
     <div>
@@ -304,7 +326,7 @@ footer a:hover{color:var(--oro)}
     </div>
     <div class="arco">
       <div class="marco"><div class="foto" role="img" aria-label="Living decorado para Navidad con árbol y chimenea" style="background-image:url('https://images.unsplash.com/photo-1642335911245-238e13dcabf2?w=900&q=72&auto=format&fit=crop')"></div></div>
-      <p class="sello">Montaje, mantención y retiro incluidos en todos los packs</p>
+      <p class="sello">Diseño, montaje y retiro incluidos en cada proyecto</p>
     </div>
   </div>
 </section>
@@ -317,8 +339,27 @@ footer a:hover{color:var(--oro)}
   </div>
 </div>
 
+<!-- Presentación de la empresa -->
+<section class="nosotros" id="nosotros">
+  <div class="wrap">
+    <div class="foto rv" role="img" aria-label="Living con árbol de Navidad decorado" style="background-image:url('https://images.unsplash.com/photo-1640159750488-051fa6815bd4?w=1000&q=70&auto=format&fit=crop')"></div>
+    <div class="rv">
+      <span class="etq">Nosotros</span>
+      <h2>Expertos en crear <em>magia navideña</em> en el sur de Chile</h2>
+      <p>Somos un equipo valdiviano dedicado a la decoración de temporada. Diseñamos cada proyecto según el estilo de tu espacio, llevamos los materiales, instalamos de forma segura y en enero retiramos todo, para que tú solo te preocupes de disfrutar.</p>
+      <p>Trabajamos con hogares, oficinas, condominios y locales comerciales de Valdivia y alrededores.</p>
+      <div class="valores">
+        <div><b>Diseño a medida</b><span>Propuesta visual antes de instalar.</span></div>
+        <div><b>Materiales propios</b><span>Adornos y luces LED de calidad.</span></div>
+        <div><b>Instalación segura</b><span>Trabajo en altura y conexiones certificadas.</span></div>
+        <div><b>Retiro y bodegaje</b><span>Guardamos tus adornos hasta el próximo año.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 4. Servicios -->
-<section id="servicios">
+<section class="suave" id="servicios">
   <div class="wrap">
     <div class="cab rv">
       <div><span class="etq">Servicios</span><h2>Una Navidad a la medida de <em>cada espacio</em></h2></div>
@@ -330,24 +371,28 @@ footer a:hover{color:var(--oro)}
         <h3>Hogares</h3>
         <p>Living, comedor y entrada con un estilo que se siente tuyo.</p>
         <ul><li>Árbol armado y decorado</li><li>Mesa y chimenea</li><li>Coronas y guirnaldas</li></ul>
+        <a class="cotiza" href="#contacto" data-servicio="Decoración de hogar">Cotizar →</a>
       </article>
       <article class="servicio rv">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></div>
         <h3>Empresas</h3>
         <p>Recepciones y oficinas que reciben a clientes y equipos con calidez.</p>
         <ul><li>Instalación fuera de horario</li><li>Imagen corporativa</li><li>Factura y orden de compra</li></ul>
+        <a class="cotiza" href="#contacto" data-servicio="Oficina o empresa">Cotizar →</a>
       </article>
       <article class="servicio rv">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M3 9h18"/><path d="M9 20v-6h6v6"/></svg></div>
         <h3>Comercios</h3>
         <p>Vitrinas y salas de venta que atraen miradas y visitas.</p>
         <ul><li>Vitrinas temáticas</li><li>Puntos para fotos</li><li>Cambios de temporada</li></ul>
+        <a class="cotiza" href="#contacto" data-servicio="Vitrina o local comercial">Cotizar →</a>
       </article>
       <article class="servicio rv">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" aria-hidden="true"><path d="M2 6c3 3 7 3 10 0s7-3 10 0"/><path d="M5 8v3M9 8.5V12M15 8.5V12M19 8v3"/><circle cx="5" cy="13" r="1.5"/><circle cx="9" cy="14" r="1.5"/><circle cx="15" cy="14" r="1.5"/><circle cx="19" cy="13" r="1.5"/></svg></div>
         <h3>Exterior</h3>
         <p>Fachadas, jardines y árboles iluminados de forma segura.</p>
         <ul><li>Luces LED de bajo consumo</li><li>Instalación en altura</li><li>Programadores horarios</li></ul>
+        <a class="cotiza" href="#contacto" data-servicio="Iluminación exterior">Cotizar →</a>
       </article>
     </div>
   </div>
@@ -355,6 +400,7 @@ footer a:hover{color:var(--oro)}
 
 <!-- 5. Cómo trabajamos -->
 <section class="proceso" id="como-trabajamos">
+  <div class="capa" id="luces-proceso" aria-hidden="true"></div>
   <div class="wrap">
     <div class="cab rv">
       <div><span class="etq">Cómo trabajamos</span><h2>Cuatro pasos, <em>cero estrés</em></h2></div>
@@ -386,40 +432,8 @@ footer a:hover{color:var(--oro)}
   </div>
 </section>
 
-<!-- 7. Packs -->
-<section class="packs-sec" id="packs">
-  <div class="wrap">
-    <div class="cab rv">
-      <div><span class="etq">Packs</span><h2>Elige tu pack y <em>nosotros hacemos el resto</em></h2></div>
-      <p>Precios de ejemplo en pesos chilenos. Toca un pack para cotizarlo directamente.</p>
-    </div>
-    <div class="packs">
-      <article class="pack rv" data-pack="Esencial" tabindex="0" role="button" aria-label="Cotizar pack Esencial">
-        <h3>Esencial</h3>
-        <p class="precio"><small>Desde</small>$189.000</p>
-        <ul><li>Árbol de hasta 1,8 m decorado</li><li>Corona para la puerta</li><li>Instalación y retiro</li><li>Diseño según tu paleta</li></ul>
-        <span class="btn btn-borde">Cotizar Esencial</span>
-      </article>
-      <article class="pack top-pack rv" data-pack="Hogar completo" tabindex="0" role="button" aria-label="Cotizar pack Hogar completo">
-        <span class="badge">MÁS PEDIDO</span>
-        <h3>Hogar completo</h3>
-        <p class="precio"><small>Desde</small>$349.000</p>
-        <ul><li>Árbol de hasta 2,4 m decorado</li><li>Living, comedor y entrada</li><li>Luces en ventanas o balcón</li><li>Mantención a mitad de temporada</li><li>Retiro y embalaje</li></ul>
-        <span class="btn btn-oro">Cotizar Hogar completo</span>
-      </article>
-      <article class="pack rv" data-pack="Empresa y comercio" tabindex="0" role="button" aria-label="Cotizar pack Empresa y comercio">
-        <h3>Empresa y comercio</h3>
-        <p class="precio"><small>Precio</small>A medida</p>
-        <ul><li>Recepciones, oficinas y vitrinas</li><li>Instalación fuera de horario</li><li>Iluminación exterior</li><li>Bodegaje hasta la próxima temporada</li></ul>
-        <span class="btn btn-borde">Cotizar a medida</span>
-      </article>
-    </div>
-    <p class="nota-packs">Todos los packs incluyen montaje, mantención y retiro. Valores referenciales para Valdivia; otras comunas de Los Ríos con recargo de traslado.</p>
-  </div>
-</section>
-
 <!-- 8. Opiniones -->
-<section id="opiniones">
+<section class="suave" id="opiniones">
   <div class="wrap">
     <div class="cab rv">
       <div><span class="etq">Opiniones de ejemplo</span><h2>Lo que dicen <em>nuestros clientes</em></h2></div>
@@ -434,13 +448,13 @@ footer a:hover{color:var(--oro)}
 </section>
 
 <!-- 9. Preguntas frecuentes -->
-<section class="packs-sec" id="preguntas">
+<section id="preguntas">
   <div class="wrap">
     <div class="cab rv" style="justify-content:center;text-align:center"><div><span class="etq">Preguntas frecuentes</span><h2>Resolvemos tus <em>dudas</em></h2></div></div>
     <div class="faq rv">
       <details><summary>¿Con cuánta anticipación debo reservar?</summary><p>Recomendamos reservar con tres a cuatro semanas de anticipación. Las fechas de fines de noviembre y primera semana de diciembre son las primeras en completarse.</p></details>
-      <details><summary>¿Tengo que comprar los adornos?</summary><p>No. Los packs incluyen el material necesario, que llevamos nosotros. Si prefieres comprar adornos para quedártelos, te asesoramos en la compra.</p></details>
-      <details><summary>¿Pueden usar mis propios adornos?</summary><p>Sí. En la visita revisamos lo que tienes y lo integramos al diseño, complementando solo lo que falte. Eso puede bajar el valor del pack.</p></details>
+      <details><summary>¿Tengo que comprar los adornos?</summary><p>No. Cada propuesta incluye el material necesario, que llevamos nosotros. Si prefieres comprar adornos para quedártelos, te asesoramos en la compra.</p></details>
+      <details><summary>¿Pueden usar mis propios adornos?</summary><p>Sí. En la visita revisamos lo que tienes y lo integramos al diseño, complementando solo lo que falte. Eso puede bajar el valor del proyecto.</p></details>
       <details><summary>¿Instalan fuera de horario?</summary><p>Sí, para empresas y comercios instalamos de noche o en fin de semana, para no interrumpir la atención ni el trabajo.</p></details>
       <details><summary>¿Cómo se paga?</summary><p>Con un 50 % al confirmar la propuesta y el saldo el día de la instalación, por transferencia. Para empresas emitimos factura.</p></details>
     </div>
@@ -449,7 +463,7 @@ footer a:hover{color:var(--oro)}
 
 <!-- 10. Contacto -->
 <section class="contacto" id="contacto">
-  <div class="luces" id="luces-contacto" aria-hidden="true"></div>
+  <div class="capa" id="luces-contacto" aria-hidden="true"></div>
   <div class="wrap">
     <div class="rv">
       <span class="etq">Contacto</span>
@@ -464,12 +478,11 @@ footer a:hover{color:var(--oro)}
     <form class="formulario rv" id="formulario" novalidate aria-label="Solicitud de cotización por WhatsApp">
       <div class="grid">
         <div><label for="f-nombre">Nombre</label><input id="f-nombre" autocomplete="name" required></div>
-        <div><label for="f-espacio">Tipo de espacio</label>
-          <select id="f-espacio"><option>Hogar</option><option>Oficina o empresa</option><option>Local comercial</option><option>Exterior o fachada</option></select></div>
-        <div><label for="f-pack">Pack</label>
-          <select id="f-pack"><option>Esencial</option><option selected>Hogar completo</option><option>Empresa y comercio</option><option>Aún no lo sé</option></select></div>
+        <div><label for="f-servicio">Servicio de interés</label>
+          <select id="f-servicio"><option>Decoración de hogar</option><option>Oficina o empresa</option><option>Vitrina o local comercial</option><option>Iluminación exterior</option><option>Aún no lo sé</option></select></div>
+        <div><label for="f-comuna">Comuna</label><input id="f-comuna" placeholder="Ej.: Valdivia"></div>
         <div><label for="f-fecha">Fecha deseada</label><input id="f-fecha" type="date"></div>
-        <div class="full"><label for="f-msg">Mensaje</label><textarea id="f-msg" rows="3" placeholder="Comuna, tamaño del espacio, estilo que te gusta…"></textarea></div>
+        <div class="full"><label for="f-msg">Mensaje</label><textarea id="f-msg" rows="3" placeholder="Tamaño del espacio, estilo que te gusta, si ya tienes adornos…"></textarea></div>
       </div>
       <button class="btn" type="submit"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg>Enviar por WhatsApp</button>
       <p class="msg" id="msg" role="status">Se abrirá WhatsApp con tu solicitud lista para enviar.</p>
@@ -482,10 +495,10 @@ footer a:hover{color:var(--oro)}
 <footer>
   <div class="wrap">
     <div>
-      <a class="logo" href="#inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l3.6 10.1H30l-8.5 6.2 3.3 10.2L16 22.3l-8.8 6.2 3.3-10.2L2 12.1h10.4z" fill="#d8aa52"/></svg>Estrella Austral</a>
+      <a class="logo" href="#inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l3.6 10.1H30l-8.5 6.2 3.3 10.2L16 22.3l-8.8 6.2 3.3-10.2L2 12.1h10.4z" fill="#e8bd52"/></svg>Estrella Austral</a>
       <p>Decoración navideña para hogares, oficinas y comercios en Valdivia y alrededores.</p>
     </div>
-    <div><h4>Navega</h4><ul><li><a href="#servicios">Servicios</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#packs">Packs</a></li><li><a href="#preguntas">Preguntas</a></li></ul></div>
+    <div><h4>Navega</h4><ul><li><a href="#nosotros">Nosotros</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#preguntas">Preguntas</a></li></ul></div>
     <div><h4>Contacto (ejemplo)</h4><ul><li>+56 9 5555 1234</li><li>hola@ejemplo.invalid</li><li>Región de Los Ríos, Chile</li></ul></div>
     <p class="legal">© 2026 Estrella Austral · Negocio ficticio y propuesta de diseño de ejemplo. Fotografías de Unsplash. Diseño de ejemplo por Werex Studio.</p>
   </div>
@@ -502,6 +515,7 @@ footer a:hover{color:var(--oro)}
 (function(){
   var $=function(s){return document.querySelector(s);};
   var reducido=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var movil=window.innerWidth<700;
 
   /* Encabezado fijo al hacer scroll y menú móvil */
   var top=$('#top');
@@ -511,8 +525,8 @@ footer a:hover{color:var(--oro)}
   mb.addEventListener('click',function(){var a=menu.classList.toggle('abierto');mb.setAttribute('aria-expanded',a);});
   menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('abierto');mb.setAttribute('aria-expanded','false');}});
 
-  /* Luces titilantes de colores cálidos */
-  var COLORES=['#d8aa52','#f2c76e','#e8794f','#c93b4a','#fff1c9'];
+  /* Luces titilantes: blanco cálido, dorado y verde */
+  var COLORES=['#fff3cf','#e8bd52','#ffffff','#5fd38a','#ffd98a'];
   function luces(id,n){
     var c=document.getElementById(id);if(!c)return;
     for(var i=0;i<n;i++){
@@ -522,8 +536,20 @@ footer a:hover{color:var(--oro)}
       c.appendChild(l);
     }
   }
-  luces('luces-hero',window.innerWidth<700?34:70);
-  luces('luces-contacto',window.innerWidth<700?20:40);
+  luces('luces-hero',movil?30:60);
+  luces('luces-proceso',movil?14:26);
+  luces('luces-contacto',movil?18:36);
+
+  /* Nieve suave en la portada (desactivada con reducción de movimiento) */
+  if(!reducido){
+    var nv=$('#nieve'),nc=movil?18:36;
+    for(var k=0;k<nc;k++){
+      var c=document.createElement('span');c.className='copo';c.textContent='❄';
+      var s=8+Math.random()*10;
+      c.style.cssText='left:'+(Math.random()*100)+'%;font-size:'+s+'px;opacity:'+(.35+Math.random()*.5).toFixed(2)+';animation-duration:'+(9+Math.random()*10).toFixed(1)+'s;animation-delay:-'+(Math.random()*15).toFixed(1)+'s';
+      nv.appendChild(c);
+    }
+  }
 
   /* Galería con filtros y visor */
   var U='https://images.unsplash.com/photo-';
@@ -554,22 +580,18 @@ footer a:hover{color:var(--oro)}
   visor.addEventListener('click',function(e){if(e.target===visor)cerrar();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&visor.classList.contains('abierto'))cerrar();});
 
-  /* Packs: al tocar uno queda preseleccionado en el formulario */
-  function elegir(p){$('#f-pack').value=p.dataset.pack;$('#contacto').scrollIntoView({behavior:reducido?'auto':'smooth'});setTimeout(function(){$('#f-nombre').focus({preventScroll:true});},reducido?0:600);}
-  document.querySelectorAll('.pack').forEach(function(p){
-    p.addEventListener('click',function(){elegir(p);});
-    p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();elegir(p);}});
-  });
+  /* "Cotizar" en cada servicio deja ese servicio seleccionado en el formulario */
+  document.querySelectorAll('[data-servicio]').forEach(function(a){a.addEventListener('click',function(){$('#f-servicio').value=a.dataset.servicio;});});
 
   /* Formulario a WhatsApp */
-  var hoy=new Date();$('#f-fecha').min=hoy.toISOString().slice(0,10);
+  $('#f-fecha').min=new Date().toISOString().slice(0,10);
   $('#formulario').addEventListener('submit',function(e){
     e.preventDefault();
     var v=function(id){return document.getElementById(id).value.trim();},msg=$('#msg');
     if(!v('f-nombre')){msg.className='msg error';msg.textContent='Escribe tu nombre para continuar.';$('#f-nombre').focus();return;}
     msg.className='msg';msg.textContent='Abriendo WhatsApp…';
     var fecha=v('f-fecha')?v('f-fecha').split('-').reverse().join('-'):'por definir';
-    var t='Hola, soy '+v('f-nombre')+'. Quiero cotizar decoración navideña.\n• Espacio: '+v('f-espacio')+'\n• Pack: '+v('f-pack')+'\n• Fecha deseada: '+fecha+(v('f-msg')?'\n• Mensaje: '+v('f-msg'):'');
+    var t='Hola, soy '+v('f-nombre')+'. Quiero cotizar decoración navideña.\n• Servicio: '+v('f-servicio')+(v('f-comuna')?'\n• Comuna: '+v('f-comuna'):'')+'\n• Fecha deseada: '+fecha+(v('f-msg')?'\n• Mensaje: '+v('f-msg'):'');
     window.open('https://wa.me/56955551234?text='+encodeURIComponent(t),'_blank','noopener');
   });
 

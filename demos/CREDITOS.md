@@ -107,3 +107,4 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 - `navidad` g5 detalle de árbol con luces — https://images.unsplash.com/photo-1607256196663-6eb02d1e9fdb
 - `navidad` g6 edificio con luces navideñas — https://images.unsplash.com/photo-1640040295076-dad02f1e9756
 - `navidad` g7 café decorado — https://images.unsplash.com/photo-1746263772030-d466deefbb9e
+- `navidad` nosotros (living con árbol) — https://images.unsplash.com/photo-1640159750488-051fa6815bd4
