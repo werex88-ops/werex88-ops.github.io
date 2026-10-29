@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Propuesta privada para cliente: no indexar ni seguir enlaces -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Propuesta de sitio web · Celeste Valdivia</title>
+<meta name="description" content="Propuesta de diseño de sitio web para Celeste Valdivia, joyería bordada en cristales hecha a mano en Valdivia. Preparada por Werex Studio.">
+<meta name="theme-color" content="#0b1e26">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230b1e26'/%3E%3Cpath d='M32 12l10 14-10 26-10-26z' fill='%233fb6c9'/%3E%3Cpath d='M22 26h20L32 52z' fill='%23c9a24b' opacity='.8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Karla:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0b1e26;
+  --petroleo:#12343f;
+  --laguna:#1f5563;
+  --cristal:#3fb6c9;
+  --amatista:#7a4fd1;
+  --rubi:#c23b7a;
+  --oro:#c9a24b;
+  --perla:#f3f6f7;
+  --blanco:#ffffff;
+  --tinta:#13232a;
+  --gris:#5b6b70;
+  --linea:#dde6e8;
+  --r:18px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--blanco);color:var(--tinta);font-family:'Karla',system-ui,sans-serif;font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:'Gilda Display',Georgia,serif;font-weight:400;line-height:1.12;margin:0;color:var(--noche)}
+h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,var(--cristal),var(--amatista),var(--rubi));-webkit-background-clip:text;background-clip:text;color:transparent}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--cristal);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.script{font-family:'Allura',cursive;font-weight:400}
+.etq{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--laguna);margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:999px;font:700 .96rem/1 'Karla',sans-serif;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-cristal{background:var(--cristal);color:var(--noche)}
+.btn-cristal:hover{background:#5ccbdc}
+.btn-claro{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-claro:hover{background:rgba(255,255,255,.1)}
+.btn-oscuro{background:var(--noche);color:#fff}
+.btn-oscuro:hover{background:var(--laguna)}
+.cab{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:40px}
+.cab h2{font-size:clamp(2.1rem,4.4vw,3.2rem);max-width:17ch}
+.cab p{max-width:46ch;color:var(--gris);margin:0}
+section{padding:96px 0}
+.nota-foto{font-size:.78rem;color:var(--gris);font-style:italic}
+
+/* Aviso de propuesta */
+.propuesta{background:linear-gradient(90deg,var(--amatista),var(--rubi));color:#fff;font-size:.88rem;text-align:center;padding:9px 16px;font-weight:600}
+
+/* Encabezado */
+header.top{position:sticky;top:0;z-index:40;background:rgba(11,30,38,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(63,182,201,.2)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.logo{text-decoration:none;color:#fff;display:flex;flex-direction:column;line-height:1}
+.logo b{font-family:'Gilda Display',serif;font-weight:400;font-size:1.45rem;letter-spacing:.04em}
+.logo span{font-family:'Allura',cursive;font-size:1.15rem;color:var(--cristal);margin-top:2px}
+header nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+header nav a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:500;font-size:.95rem}
+header nav a:hover{color:var(--cristal)}
+.ig{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;border:1px solid rgba(255,255,255,.3);padding:9px 14px;border-radius:999px}
+.ig:hover{border-color:var(--cristal);color:var(--cristal)}
+.ig svg{width:18px;height:18px}
+.menu-btn{display:none;background:none;border:0;color:#fff;padding:8px;cursor:pointer}
+
+/* Portada */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(ellipse at 80% 20%,#1f5563 0%,var(--petroleo) 40%,var(--noche) 80%);padding:90px 0 110px}
+.destellos{position:absolute;inset:0;pointer-events:none}
+.destello{position:absolute;width:10px;height:10px;transform:rotate(45deg);animation:brillo 4s ease-in-out infinite;opacity:.2}
+@keyframes brillo{0%,100%{opacity:.1;transform:rotate(45deg) scale(.6)}50%{opacity:.9;transform:rotate(45deg) scale(1.1)}}
+.rama{position:absolute;right:-40px;bottom:-30px;width:420px;opacity:.18;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero .etq{color:var(--cristal)}
+.hero h1{color:#fff;font-size:clamp(2.8rem,6.2vw,5rem)}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,.85);max-width:50ch;margin:22px 0 32px}
+.hero .acciones{display:flex;flex-wrap:wrap;gap:12px}
+.joya{position:relative;justify-self:center;width:min(100%,430px)}
+.joya .foto{aspect-ratio:4/5;border-radius:220px 220px 22px 22px;background:var(--laguna) center/cover no-repeat;border:1px solid rgba(63,182,201,.4);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.joya .firma{position:absolute;left:-30px;bottom:34px;background:#fff;color:var(--noche);border-radius:16px;padding:14px 18px;box-shadow:0 16px 36px rgba(0,0,0,.3)}
+.joya .firma b{display:block;font-family:'Allura',cursive;font-weight:400;font-size:1.9rem;line-height:1;color:var(--amatista)}
+.joya .firma span{font-size:.85rem;color:var(--gris)}
+.joya .nota-foto{position:absolute;right:10px;bottom:-26px;color:rgba(255,255,255,.6)}
+
+/* Valores */
+.valores{background:var(--perla);border-bottom:1px solid var(--linea)}
+.valores .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:30px;padding-bottom:30px}
+.valor{display:flex;align-items:center;gap:12px}
+.valor svg{width:30px;height:30px;stroke:var(--laguna);flex-shrink:0}
+.valor b{display:block;font-size:.98rem}
+.valor span{font-size:.85rem;color:var(--gris)}
+
+/* Colecciones */
+.filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.filtro{border:1.5px solid var(--linea);background:#fff;border-radius:999px;padding:9px 18px;font:600 .92rem 'Karla',sans-serif;color:var(--tinta);cursor:pointer}
+.filtro[aria-pressed="true"]{background:var(--noche);border-color:var(--noche);color:#fff}
+.piezas{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pieza{border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.pieza:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(11,30,38,.1)}
+.pieza[hidden]{display:none}
+.pieza .foto{aspect-ratio:1/1;background:var(--perla) center/cover no-repeat;position:relative}
+.pieza .unica{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.94);color:var(--amatista);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.ilustra{display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#1f5563,var(--noche))}
+.ilustra svg{width:62%;height:62%}
+.pieza .cuerpo{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pieza small{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--laguna)}
+.pieza h3{font-size:1.25rem}
+.pieza p{margin:0;color:var(--gris);font-size:.92rem}
+.pieza button{margin-top:auto;align-self:flex-start;background:none;border:0;padding:8px 0 0;color:var(--amatista);font:700 .92rem 'Karla',sans-serif;cursor:pointer}
+.pieza button:hover{text-decoration:underline}
+
+/* Inspiración */
+.inspira{background:var(--noche);color:#fff}
+.inspira .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.inspira .foto{aspect-ratio:5/4;border-radius:var(--r);background:var(--laguna) center/cover no-repeat}
+.inspira h2{color:#fff;font-size:clamp(2.1rem,4.2vw,3.1rem);margin-bottom:18px}
+.inspira .etq{color:var(--cristal)}
+.inspira p{color:rgba(255,255,255,.82)}
+.inspira blockquote{margin:26px 0 0;padding-left:18px;border-left:2px solid var(--cristal);font-family:'Allura',cursive;font-size:2rem;line-height:1.2;color:var(--cristal)}
+.pendiente{display:inline-block;margin-top:14px;font-size:.8rem;color:rgba(255,255,255,.55);font-style:italic}
+
+/* Encargos */
+.encargos .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.encargos h2{font-size:clamp(2.1rem,4.2vw,3.1rem);margin-bottom:16px}
+.encargos p{color:var(--gris)}
+.pasos{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:16px;counter-reset:p}
+.pasos li{display:flex;gap:14px}
+.pasos li::before{counter-increment:p;content:counter(p);flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--perla);border:1px solid var(--cristal);display:grid;place-items:center;font-weight:700;color:var(--laguna)}
+.pasos b{display:block}
+.pasos span{color:var(--gris);font-size:.95rem}
+.formulario{background:var(--perla);border:1px solid var(--linea);border-radius:24px;padding:30px}
+.formulario .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formulario .full{grid-column:1/-1}
+.formulario label{display:block;font-size:.82rem;font-weight:600;color:var(--gris);margin-bottom:6px}
+.formulario input,.formulario select,.formulario textarea{width:100%;padding:13px 14px;border:1px solid var(--linea);border-radius:12px;background:#fff;font:500 1rem 'Karla',sans-serif;color:var(--tinta)}
+.formulario textarea{resize:vertical}
+.colores{display:flex;flex-wrap:wrap;gap:8px}
+.colores label{display:flex;align-items:center;gap:6px;margin:0;background:#fff;border:1px solid var(--linea);border-radius:999px;padding:6px 12px 6px 8px;cursor:pointer;font-weight:500;color:var(--tinta);font-size:.9rem}
+.colores input{width:auto;accent-color:var(--amatista)}
+.colores i{width:14px;height:14px;border-radius:50%;display:inline-block}
+.formulario .btn{width:100%;margin-top:18px;background:#25D366;color:#0b2e1a}
+.formulario .btn:hover{background:#1ebe5a}
+.formulario .btn svg{width:22px;height:22px}
+.msg{font-size:.88rem;margin:10px 0 0;color:var(--gris);min-height:1.2em}
+.msg.error{color:var(--rubi);font-weight:600}
+
+/* Talleres */
+.talleres{background:var(--perla)}
+.talleres .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.talleres h2{font-size:clamp(2.1rem,4.2vw,3.1rem);margin-bottom:16px}
+.talleres p{color:var(--gris)}
+.talleres ul{list-style:none;padding:0;margin:22px 0 28px;display:grid;gap:10px}
+.talleres li::before{content:"◆ ";color:var(--cristal)}
+.talleres .foto{aspect-ratio:4/3;border-radius:var(--r);background:var(--linea) center/cover no-repeat}
+
+/* Dónde */
+.donde .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.lugar{border:1px solid var(--linea);border-radius:var(--r);padding:26px}
+.lugar svg{width:30px;height:30px;stroke:var(--amatista);margin-bottom:12px}
+.lugar h3{font-size:1.3rem;margin-bottom:6px}
+.lugar p{margin:0;color:var(--gris);font-size:.95rem}
+.lugar a{color:var(--laguna);font-weight:700}
+
+footer{background:var(--noche);color:rgba(255,255,255,.72);padding:52px 0 96px;font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
+footer .logo{margin-bottom:10px}
+.legal{width:100%;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:.84rem}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.visto{opacity:1;transform:none}
+
+@media (max-width:1040px){
+  .hero .wrap,.inspira .wrap,.encargos .wrap,.talleres .wrap{grid-template-columns:1fr;gap:44px}
+  .joya{width:min(100%,360px)}
+  .piezas{grid-template-columns:repeat(2,1fr)}
+  .valores .wrap{grid-template-columns:1fr 1fr}
+  .donde .grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .menu-btn{display:block}
+  header nav{position:absolute;top:76px;left:0;right:0;background:var(--noche);padding:8px 24px 18px;display:none}
+  header nav.abierto{display:block}
+  header nav ul{flex-direction:column;gap:0}
+  header nav a{display:block;padding:12px 0;border-bottom:1px solid rgba(63,182,201,.15)}
+  .ig span{display:none}
+  section{padding:68px 0}
+  .wrap{padding:0 18px}
+  .hero{padding:60px 0 90px}
+  .joya .firma{left:0}
+  .piezas{grid-template-columns:1fr 1fr;gap:14px}
+  .pieza .cuerpo{padding:14px}
+  .pieza h3{font-size:1.08rem}
+  .pieza p{display:none}
+  .formulario{padding:22px}
+  .formulario .grid{grid-template-columns:1fr}
+}
+@media (max-width:420px){.valores .wrap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,.rv{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="propuesta" role="note">Propuesta de diseño para Celeste Valdivia, preparada por Werex Studio · No es el sitio oficial · Fotos referenciales</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Celeste Valdivia, inicio"><b>Celeste Valdivia</b><span>joyería bordada en cristal</span></a>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#colecciones">Colecciones</a></li>
+        <li><a href="#encargos">Encargos</a></li>
+        <li><a href="#talleres">Talleres</a></li>
+        <li><a href="#donde">Dónde encontrarnos</a></li>
+      </ul>
+    </nav>
+    <a class="ig" href="https://www.instagram.com/celeste.valdivia.cl" target="_blank" rel="noopener" aria-label="Instagram de Celeste Valdivia">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>Instagram</span>
+    </a>
+    <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero" aria-label="Portada">
+  <div class="destellos" id="destellos" aria-hidden="true"></div>
+  <svg class="rama" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#3fb6c9" stroke-width="1.2"><path d="M20 190C70 140 110 90 180 20"/><path d="M60 150c-20-6-30-22-28-40 18 4 28 20 28 40zM90 118c-20-6-30-22-28-40 18 4 28 20 28 40zM120 86c-20-6-30-22-28-40 18 4 28 20 28 40zM70 140c18-12 36-12 50 0-16 12-34 12-50 0zM100 108c18-12 36-12 50 0-16 12-34 12-50 0zM130 76c18-12 36-12 50 0-16 12-34 12-50 0z"/></g></svg>
+  <div class="wrap">
+    <div>
+      <span class="etq">Hecho a mano en Valdivia · Slow made</span>
+      <h1>Piezas únicas, <em>bordadas en cristal.</em></h1>
+      <p>Aros, collares y prendedores tejidos y bordados a mano, inspirados en la flora y la fauna del sur. Diseños de creadora, de inspiración atemporal, que toman el tiempo que merecen.</p>
+      <div class="acciones">
+        <a class="btn btn-cristal" href="#colecciones">Ver colecciones</a>
+        <a class="btn btn-claro" href="#encargos">Encargar una pieza</a>
+      </div>
+    </div>
+    <div class="joya">
+      <div class="foto" role="img" aria-label="Collar bordado con cuentas en tonos dorado y turquesa (foto referencial)" style="background-image:url('https://images.unsplash.com/photo-1719862056552-b9de4f843beb?w=900&q=72&auto=format&fit=crop')"></div>
+      <div class="firma"><b>Piezas únicas</b><span>Ninguna se repite</span></div>
+      <span class="nota-foto">Foto referencial</span>
+    </div>
+  </div>
+</section>
+
+<div class="valores" aria-label="Lo que nos define">
+  <div class="wrap">
+    <div class="valor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><path d="M7 11V5a2 2 0 014 0v5M11 10V4a2 2 0 014 0v6M15 10V6a2 2 0 014 0v8a7 7 0 01-7 7h-1a7 7 0 01-6-3.5L3 13a2 2 0 013.4-2L7 12"/></svg><div><b>Hecho a mano</b><span>Tejido y bordado pieza a pieza</span></div></div>
+    <div class="valor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 6-7 12-7-12z"/><path d="M5 9h14"/></svg><div><b>Piezas únicas</b><span>Diseños que no se repiten</span></div></div>
+    <div class="valor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Slow made</b><span>Fabricación lenta y cuidada</span></div></div>
+    <div class="valor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><path d="M5 21c0-8 5-14 14-16-1 9-7 14-14 16z"/><path d="M5 21l8-8"/></svg><div><b>Flora y fauna</b><span>Inspiración en el sur de Chile</span></div></div>
+  </div>
+</div>
+
+<section id="colecciones">
+  <div class="wrap">
+    <div class="cab rv">
+      <div><span class="etq">Colecciones</span><h2>Joyas con alma <em>de bosque y lago</em></h2></div>
+      <p>Cada modelo es una pieza única. Consulta disponibilidad o pide una versión en tus colores. <span class="nota-foto">Nombres y fotos referenciales, a reemplazar por las piezas reales.</span></p>
+    </div>
+    <div class="filtros" role="group" aria-label="Filtrar piezas">
+      <button class="filtro" type="button" data-f="todas" aria-pressed="true">Todas</button>
+      <button class="filtro" type="button" data-f="aros" aria-pressed="false">Aros</button>
+      <button class="filtro" type="button" data-f="collares" aria-pressed="false">Collares y colgantes</button>
+      <button class="filtro" type="button" data-f="prendedores" aria-pressed="false">Prendedores</button>
+      <button class="filtro" type="button" data-f="conjuntos" aria-pressed="false">Conjuntos</button>
+    </div>
+    <div class="piezas" id="piezas"></div>
+  </div>
+</section>
+
+<section class="inspira" id="historia">
+  <div class="wrap">
+    <div class="foto rv" role="img" aria-label="Lago en calma rodeado de bosque y neblina (foto referencial)" style="background-image:url('https://images.unsplash.com/photo-1775155636890-9d688754bdff?w=1000&q=70&auto=format&fit=crop')"></div>
+    <div class="rv">
+      <span class="etq">Diseños de creadora</span>
+      <h2>Inspiradas en el sur, <em>hechas sin prisa</em></h2>
+      <p>Cada pieza nace de la observación de la naturaleza que nos rodea: el vuelo de un picaflor, el cuello de un cisne en el humedal, el brillo del lago en invierno. Los cristales se tejen y bordan a mano, uno a uno, hasta formar joyas que no se repiten.</p>
+      <p>Trabajar de forma lenta permite cuidar cada detalle y crear accesorios atemporales, pensados para acompañarte por mucho tiempo.</p>
+      <blockquote>Todo lo que ves es hecho a mano, todo.</blockquote>
+      <span class="pendiente">Texto de ejemplo: se completa con la historia de Celeste.</span>
+    </div>
+  </div>
+</section>
+
+<section class="encargos" id="encargos">
+  <div class="wrap">
+    <div class="rv">
+      <span class="etq">A pedido</span>
+      <h2>Tu pieza, <em>a tu medida</em></h2>
+      <p>¿Buscas un regalo especial o un conjunto para una ocasión? Diseñamos piezas a pedido con la temática y los colores que prefieras.</p>
+      <ol class="pasos">
+        <li><div><b>Cuéntanos tu idea</b><span>Tipo de pieza, temática, colores y fecha.</span></div></li>
+        <li><div><b>Boceto y presupuesto</b><span>Te enviamos una propuesta y el valor.</span></div></li>
+        <li><div><b>Bordado a mano</b><span>Creamos tu pieza con el tiempo que necesita.</span></div></li>
+        <li><div><b>Entrega</b><span>Retiro en Valdivia o envío coordinado.</span></div></li>
+      </ol>
+    </div>
+    <form class="formulario rv" id="formulario" novalidate aria-label="Solicitud de pieza a pedido por WhatsApp">
+      <div class="grid">
+        <div><label for="f-nombre">Nombre</label><input id="f-nombre" autocomplete="name" required></div>
+        <div><label for="f-pieza">Tipo de pieza</label>
+          <select id="f-pieza"><option>Aros</option><option>Collar o colgante</option><option>Prendedor</option><option>Conjunto</option><option>Otro</option></select></div>
+        <div><label for="f-tema">Temática</label>
+          <select id="f-tema"><option>Fauna (aves, animales)</option><option>Flora (hojas, flores)</option><option>Diseño libre</option><option>Personalizada (te cuento)</option></select></div>
+        <div><label for="f-fecha">¿Para cuándo?</label><input id="f-fecha" type="date"></div>
+        <div class="full"><label>Colores preferidos</label>
+          <div class="colores" role="group" aria-label="Colores preferidos">
+            <label><input type="checkbox" value="turquesa"><i style="background:#3fb6c9"></i>Turquesa</label>
+            <label><input type="checkbox" value="azul"><i style="background:#2b4fc2"></i>Azul</label>
+            <label><input type="checkbox" value="violeta"><i style="background:#7a4fd1"></i>Violeta</label>
+            <label><input type="checkbox" value="rojo"><i style="background:#c2253b"></i>Rojo</label>
+            <label><input type="checkbox" value="dorado"><i style="background:#c9a24b"></i>Dorado</label>
+            <label><input type="checkbox" value="negro"><i style="background:#111"></i>Negro</label>
+          </div></div>
+        <div class="full"><label for="f-msg">Cuéntanos tu idea</label><textarea id="f-msg" rows="3" placeholder="Ej.: aros de picaflor para regalo de cumpleaños"></textarea></div>
+      </div>
+      <button class="btn" type="submit"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5z"/></svg>Enviar idea por WhatsApp</button>
+      <p class="msg" id="msg" role="status">Se abrirá WhatsApp con tu solicitud lista para enviar.</p>
+    </form>
+  </div>
+</section>
+
+<section class="talleres" id="talleres">
+  <div class="wrap">
+    <div class="rv">
+      <span class="etq">Talleres</span>
+      <h2>Aprende a bordar <em>con cristales</em></h2>
+      <p>Talleres para grupos, organizaciones y espacios culturales, donde cada participante crea su propia pieza guiada paso a paso.</p>
+      <ul>
+        <li>Grupos pequeños, sin experiencia previa</li>
+        <li>Materiales incluidos</li>
+        <li>Talleres en Valdivia y otras comunas de la región</li>
+      </ul>
+      <a class="btn btn-oscuro" href="#encargos" data-taller>Consultar por un taller</a>
+    </div>
+    <div class="foto rv" role="img" aria-label="Manos trabajando en una pieza de joyería (foto referencial)" style="background-image:url('https://images.unsplash.com/photo-1715374033196-0ff662284a7e?w=900&q=70&auto=format&fit=crop')"></div>
+  </div>
+</section>
+
+<section class="donde" id="donde">
+  <div class="wrap">
+    <div class="cab rv"><div><span class="etq">Dónde encontrarnos</span><h2>Visítanos <em>en Valdivia</em></h2></div></div>
+    <div class="grid">
+      <div class="lugar rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h3>Edificio Prales</h3><p>Valdivia · lunes a viernes, 10:00 a 18:00 h.</p></div>
+      <div class="lugar rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><h3>Ferias y exposiciones</h3><p>Participamos en ferias de artes y oficios de la región. Revisa las próximas fechas en Instagram.</p></div>
+      <div class="lugar rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><h3>Instagram</h3><p>Nuevos modelos y piezas disponibles en <a href="https://www.instagram.com/celeste.valdivia.cl" target="_blank" rel="noopener">@celeste.valdivia.cl</a>.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="logo" href="#inicio"><b>Celeste Valdivia</b><span>joyería bordada en cristal</span></a><p>Accesorios tejidos y bordados a mano en Valdivia.</p></div>
+    <p class="legal">Propuesta de diseño preparada por Werex Studio para Celeste Valdivia; no es el sitio oficial. Fotografías referenciales de Unsplash, a reemplazar por fotos propias de las piezas.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s);};
+  /* Número de WhatsApp de Celeste: completar antes de publicar (formato 569XXXXXXXX). Vacío abre WhatsApp para elegir contacto. */
+  var WA='';
+  var waUrl=function(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t);};
+
+  var mb=$('.menu-btn'),menu=$('#menu');
+  mb.addEventListener('click',function(){var a=menu.classList.toggle('abierto');mb.setAttribute('aria-expanded',a);});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('abierto');mb.setAttribute('aria-expanded','false');}});
+
+  /* Destellos de cristal */
+  var C=['#3fb6c9','#7a4fd1','#c23b7a','#c9a24b','#ffffff'],d=$('#destellos'),n=window.innerWidth<700?16:32;
+  for(var i=0;i<n;i++){var s=document.createElement('span'),t=4+Math.random()*8;s.className='destello';
+    s.style.cssText='left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;width:'+t+'px;height:'+t+'px;background:'+C[i%C.length]+';box-shadow:0 0 '+(t*2)+'px '+C[i%C.length]+';animation-delay:'+(Math.random()*4).toFixed(2)+'s';d.appendChild(s);}
+
+  /* Piezas: fotos referenciales o ilustraciones mientras no estén las fotos reales */
+  var U='https://images.unsplash.com/photo-',Q='?w=700&q=70&auto=format&fit=crop';
+  var AVE='<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M20 62c10-18 28-26 46-24l14-10-6 16c4 10 0 22-12 28-14 6-32 2-42-10z" fill="#3fb6c9"/><path d="M36 58c8-6 18-8 28-6" stroke="#fff" stroke-width="2" fill="none" opacity=".6"/><circle cx="68" cy="44" r="2.5" fill="#0b1e26"/><path d="M22 62l-12 10 16-4z" fill="#7a4fd1"/><g fill="#c9a24b"><circle cx="40" cy="70" r="2"/><circle cx="48" cy="72" r="2"/><circle cx="56" cy="70" r="2"/></g></svg>';
+  var CISNE='<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M30 70c0-14 14-20 30-18 12 2 18 10 14 18-6 10-40 10-44 0z" fill="#f3f6f7"/><path d="M62 52c-4-14-2-28 6-32 6-3 12 2 10 8" stroke="#111" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="78" cy="28" r="4" fill="#c2253b"/><g fill="#3fb6c9"><circle cx="40" cy="64" r="2"/><circle cx="48" cy="62" r="2"/><circle cx="56" cy="62" r="2"/></g></svg>';
+  var PIEZAS=[
+    {c:'aros',t:'Aros Abanico Dorado',d:'Medialuna tejida con cristales dorados y argolla.',img:'1679590988891-2357406aca80'},
+    {c:'aros',t:'Aros Laguna',d:'Cristales turquesa y azul con gota colgante.',img:'1573227895118-8f8fa1172a09'},
+    {c:'collares',t:'Colgante Luz de Invierno',d:'Gota de cristal facetado con marco filigrana.',img:'1690701346316-1ecb0e67a3e2'},
+    {c:'collares',t:'Collar Bosque Nativo',d:'Bordado de cuentas en verdes y dorados.',img:'1523252012848-c22188792c27'},
+    {c:'prendedores',t:'Prendedor Picaflor',d:'Ave bordada en cristales tornasol.',svg:AVE},
+    {c:'prendedores',t:'Prendedor Cisne de Cuello Negro',d:'Homenaje al humedal de Valdivia.',svg:CISNE},
+    {c:'conjuntos',t:'Conjunto Atardecer en el Lago',d:'Aros y colgante a juego, en tonos violeta y rubí.',img:'1601387603639-387c75bdcb0d'},
+    {c:'conjuntos',t:'Conjunto a pedido',d:'Diseñado con tu temática y tus colores.',img:'1646070107254-3713cec279c1'}
+  ];
+  var NOM={aros:'Aros',collares:'Collar',prendedores:'Prendedor',conjuntos:'Conjunto'};
+  $('#piezas').innerHTML=PIEZAS.map(function(p){
+    var foto=p.svg?'<div class="foto ilustra" role="img" aria-label="Ilustración de referencia: '+p.t+'">'+p.svg+'<span class="unica">Pieza única</span></div>'
+      :'<div class="foto" role="img" aria-label="Foto referencial: '+p.t+'" style="background-image:url(\''+U+p.img+Q+'\')"><span class="unica">Pieza única</span></div>';
+    return '<article class="pieza rv" data-c="'+p.c+'">'+foto+'<div class="cuerpo"><small>'+NOM[p.c]+'</small><h3>'+p.t+'</h3><p>'+p.d+'</p><button type="button" data-t="'+p.t+'">Consultar disponibilidad →</button></div></article>';
+  }).join('');
+  document.querySelectorAll('.filtro').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.filtro').forEach(function(x){x.setAttribute('aria-pressed','false');});
+    b.setAttribute('aria-pressed','true');
+    document.querySelectorAll('.pieza').forEach(function(p){p.hidden=!(b.dataset.f==='todas'||p.dataset.c===b.dataset.f);});
+  });});
+  $('#piezas').addEventListener('click',function(e){var b=e.target.closest('button[data-t]');if(!b)return;
+    window.open(waUrl('Hola Celeste, vi tu sitio y quiero consultar por la pieza "'+b.dataset.t+'". ¿Está disponible?'),'_blank','noopener');});
+
+  document.querySelector('[data-taller]').addEventListener('click',function(){$('#f-pieza').value='Otro';$('#f-msg').value='Me interesa un taller de bordado en cristales para un grupo.';});
+
+  $('#f-fecha').min=new Date().toISOString().slice(0,10);
+  $('#formulario').addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){return document.getElementById(id).value.trim();},msg=$('#msg');
+    if(!v('f-nombre')){msg.className='msg error';msg.textContent='Escribe tu nombre para continuar.';$('#f-nombre').focus();return;}
+    var col=[].map.call(document.querySelectorAll('.colores input:checked'),function(x){return x.value;}).join(', ');
+    var fecha=v('f-fecha')?v('f-fecha').split('-').reverse().join('-'):'sin apuro';
+    msg.className='msg';msg.textContent='Abriendo WhatsApp…';
+    window.open(waUrl('Hola Celeste, soy '+v('f-nombre')+'. Quiero una pieza a pedido.\n• Tipo: '+v('f-pieza')+'\n• Temática: '+v('f-tema')+(col?'\n• Colores: '+col:'')+'\n• Para: '+fecha+(v('f-msg')?'\n• Idea: '+v('f-msg'):'')),'_blank','noopener');
+  });
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visto');io.unobserve(x.target);}});},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
