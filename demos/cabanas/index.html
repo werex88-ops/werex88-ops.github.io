@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabañas Alerce Dormido — Propuesta de diseño de ejemplo</title>
+<meta name="description" content="Demo de página web para cabañas y turismo en el sur de Chile. Negocio ficticio, datos de ejemplo.">
+<meta name="theme-color" content="#1F4D3A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F4D3A'/%3E%3Cpath d='M32 10l16 26H38l8 14H18l8-14H16z' fill='%23E9A27F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1F4D3A;--forest-d:#143528;--terra:#B5532E;--terra-l:#E9A27F;--sand:#F6EFE4;--ink:#23302A;--dim:#51605A;--card:#FFFFFF;--line:rgba(31,77,58,.18)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:'Nunito Sans',system-ui,sans-serif;line-height:1.65;font-size:1.0625rem}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;margin:0 0 .5em;color:var(--forest-d)}
+a{color:var(--terra)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.aviso{background:#101C16;color:#F6EFE4;text-align:center;font-size:.85rem;padding:8px 16px}
+.aviso a{color:var(--terra-l)}
+header.top{position:sticky;top:0;z-index:10;background:rgba(246,239,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:'Fraunces',serif;font-weight:700;color:var(--forest-d);text-decoration:none;font-size:1.15rem}
+nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--terra)}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:#9A4323}
+.btn-line{border-color:#fff;color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.14)}
+.hero{position:relative;color:#fff;background:linear-gradient(180deg,rgba(14,40,29,.2),rgba(14,40,29,.85)),radial-gradient(circle at 78% 18%,#E9A27F 0,#E9A27F 7%,transparent 7.5%),linear-gradient(160deg,#2E6B50,#143528);overflow:hidden}
+.hero svg{position:absolute;bottom:0;left:0;width:100%;height:46%;opacity:.55}
+.hero .wrap{position:relative;padding-top:110px;padding-bottom:120px}
+.hero h1{color:#fff;font-size:clamp(2.2rem,6vw,4rem);max-width:15ch}
+.hero p{max-width:46ch;font-size:1.15rem}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+section{padding:72px 0}
+.kicker{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--terra);margin-bottom:8px}
+h2{font-size:clamp(1.7rem,4vw,2.4rem)}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.about .art{aspect-ratio:4/3;border-radius:20px;background:linear-gradient(135deg,var(--forest),#3C7A5C);position:relative;overflow:hidden}
+.about .art svg{position:absolute;inset:0;width:100%;height:100%}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card .ph{height:150px;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:700;font-size:.8rem}
+.card .body{padding:20px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.25rem}
+.card p{margin:0 0 12px;color:var(--dim);font-size:.97rem}
+.card ul{margin:0 0 16px;padding-left:18px;color:var(--dim);font-size:.93rem}
+.price{margin-top:auto;font-weight:700;color:var(--forest-d)}
+.price small{font-weight:400;color:var(--dim)}
+.alt{background:var(--forest-d);color:#F6EFE4}
+.alt h2{color:#fff}
+.alt .kicker{color:var(--terra-l)}
+.servicios{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;list-style:none;padding:0;margin:0}
+.servicios li{border:1px solid rgba(246,239,228,.25);border-radius:14px;padding:20px}
+.servicios strong{display:block;font-family:'Fraunces',serif;font-size:1.1rem;color:#fff;margin-bottom:4px}
+.servicios span{font-size:.93rem;color:#D8E2DB}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+blockquote{margin:0;background:var(--card);border-left:5px solid var(--terra);border-radius:12px;padding:22px}
+blockquote p{margin:0 0 10px}
+blockquote footer{font-size:.88rem;color:var(--dim)}
+.ejemplo{display:inline-block;font-size:.72rem;background:#F1DCCD;color:#7A3519;border-radius:999px;padding:2px 10px;font-weight:700;margin-bottom:8px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+form{display:grid;gap:14px}
+label{font-weight:700;font-size:.92rem;display:block;margin-bottom:4px}
+input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid #8A9A91;border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+.wa{display:inline-flex;align-items:center;gap:10px;background:#1B7F4B;color:#fff;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none}
+.wa:hover{background:#14663B}
+#msg{font-weight:700;color:var(--forest-d);min-height:1.5em}
+footer.pie{background:#101C16;color:#C9D6CE;padding:34px 0;font-size:.9rem;text-align:center}
+footer.pie a{color:var(--terra-l)}
+@media(max-width:860px){
+ .about,.contact{grid-template-columns:1fr}
+ .cards,.quotes{grid-template-columns:1fr}
+ .servicios{grid-template-columns:1fr 1fr}
+ nav ul{gap:14px}
+ nav li:nth-child(n+4){display:none}
+ section{padding:52px 0}
+ .hero .wrap{padding-top:70px;padding-bottom:90px}
+}
+@media(max-width:480px){.servicios{grid-template-columns:1fr}nav li:nth-child(n+3){display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="aviso" role="note"><strong>Propuesta de diseño de ejemplo; datos ficticios.</strong> <a href="../">← Volver al portafolio</a></div>
+<header class="top"><div class="wrap">
+ <a class="logo" href="#inicio">Cabañas Alerce Dormido</a>
+ <nav aria-label="Principal"><ul>
+  <li><a href="#nosotros">Nosotros</a></li>
+  <li><a href="#alojamiento">Alojamiento</a></li>
+  <li><a href="#servicios">Servicios</a></li>
+  <li><a href="#opiniones">Opiniones</a></li>
+  <li><a href="#contacto">Contacto</a></li>
+ </ul></nav>
+</div></header>
+<main id="inicio">
+<div class="hero">
+ <svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 300V190l60-60 50 70 70-120 70 130 60-80 80 110 70-90 80 120 70-70 90 100 70-140 80 130 70-80 80 110 70-60 80 90 70-100 80 80V300z" fill="#0E281D"/></svg>
+ <div class="wrap">
+  <p class="kicker" style="color:var(--terra-l)">Turismo rural · Sur de Chile</p>
+  <h1>Descansa entre bosque y río</h1>
+  <p>Tres cabañas equipadas, rodeadas de bosque nativo, a pocos minutos de caminatas, kayak y gastronomía local.</p>
+  <div class="btns"><a class="btn btn-terra" href="#alojamiento">Ver cabañas</a><a class="btn btn-line" href="#contacto">Consultar disponibilidad</a></div>
+ </div>
+</div>
+
+<section id="nosotros"><div class="wrap about">
+ <div>
+  <p class="kicker">Nosotros</p>
+  <h2>Un refugio familiar para desconectarse</h2>
+  <p>Somos un emprendimiento familiar de turismo rural. Construimos las cabañas con madera nativa de manejo sostenible y las pensamos para que cada estadía sea tranquila, cálida y sin apuros.</p>
+  <p>Te recibimos con leña seca, café recién molido y recomendaciones de rutas según la época del año.</p>
+ </div>
+ <div class="art" role="img" aria-label="Ilustración de un bosque con luna">
+  <svg viewBox="0 0 400 300" aria-hidden="true"><circle cx="300" cy="70" r="30" fill="#E9A27F"/><g fill="#143528"><path d="M60 300l40-130 40 130z"/><path d="M120 300l50-170 50 170z"/><path d="M230 300l40-110 40 110z"/><path d="M300 300l35-90 35 90z"/></g><rect x="150" y="235" width="110" height="65" fill="#B5532E"/><path d="M140 235l65-45 65 45z" fill="#7A3519"/><rect x="190" y="260" width="22" height="40" fill="#F6EFE4"/></svg>
+ </div>
+</div></section>
+
+<section id="alojamiento" class="alt"><div class="wrap">
+ <p class="kicker">Alojamiento</p>
+ <h2>Elige tu cabaña</h2>
+ <div class="cards" style="margin-top:28px">
+  <article class="card" style="color:var(--ink)">
+   <div class="ph" style="background:linear-gradient(135deg,#3C7A5C,#1F4D3A)">Imagen de ejemplo</div>
+   <div class="body"><h3>Cabaña Coihue</h3><p>Ideal para parejas. Dormitorio con cama king, tinaja privada y terraza al bosque.</p>
+   <ul><li>2 personas</li><li>Cocina equipada y calefacción a leña</li><li>Tinaja privada</li></ul>
+   <div class="price">Desde $65.000 <small>por noche (ejemplo)</small></div></div>
+  </article>
+  <article class="card" style="color:var(--ink)">
+   <div class="ph" style="background:linear-gradient(135deg,#B5532E,#7A3519)">Imagen de ejemplo</div>
+   <div class="body"><h3>Cabaña Ulmo</h3><p>Pensada para familias pequeñas, con loft para niños y quincho techado.</p>
+   <ul><li>4 personas</li><li>Dos ambientes y loft</li><li>Quincho y parrilla</li></ul>
+   <div class="price">Desde $85.000 <small>por noche (ejemplo)</small></div></div>
+  </article>
+  <article class="card" style="color:var(--ink)">
+   <div class="ph" style="background:linear-gradient(135deg,#5B7F6C,#2A4A3A)">Imagen de ejemplo</div>
+   <div class="body"><h3>Cabaña Tepú</h3><p>La más amplia, para grupos de amigos o dos familias. Living con ventanal al río.</p>
+   <ul><li>6 personas</li><li>Tres dormitorios, dos baños</li><li>Tinaja y quincho</li></ul>
+   <div class="price">Desde $120.000 <small>por noche (ejemplo)</small></div></div>
+  </article>
+ </div>
+</div></section>
+
+<section id="servicios"><div class="wrap">
+ <p class="kicker">Servicios</p>
+ <h2>Más que un lugar para dormir</h2>
+ <ul class="servicios" style="margin-top:28px;color:var(--ink)">
+  <li style="border-color:var(--line);background:#fff"><strong style="color:var(--forest-d)">Desayuno de campo</strong><span style="color:var(--dim)">Pan amasado, mermeladas caseras y huevos de campo.</span></li>
+  <li style="border-color:var(--line);background:#fff"><strong style="color:var(--forest-d)">Kayak y paseos</strong><span style="color:var(--dim)">Salidas guiadas por el río en temporada.</span></li>
+  <li style="border-color:var(--line);background:#fff"><strong style="color:var(--forest-d)">Leña y tinaja</strong><span style="color:var(--dim)">Encendido de tinaja con reserva previa.</span></li>
+  <li style="border-color:var(--line);background:#fff"><strong style="color:var(--forest-d)">Mascotas bienvenidas</strong><span style="color:var(--dim)">Consulta condiciones al reservar.</span></li>
+ </ul>
+</div></section>
+
+<section id="opiniones" class="alt"><div class="wrap">
+ <p class="kicker">Opiniones</p>
+ <h2>Lo que dirían nuestros huéspedes</h2>
+ <div class="quotes" style="margin-top:28px;color:var(--ink)">
+  <blockquote><span class="ejemplo">Testimonio de ejemplo</span><p>“Dormimos como nunca y el desayuno fue una maravilla. Volveremos en invierno.”</p><footer>— Huésped ficticio, Santiago</footer></blockquote>
+  <blockquote><span class="ejemplo">Testimonio de ejemplo</span><p>“Los niños se divirtieron en el río y nosotros descansamos de verdad.”</p><footer>— Huésped ficticia, Concepción</footer></blockquote>
+  <blockquote><span class="ejemplo">Testimonio de ejemplo</span><p>“Atención cercana y cabañas impecables. Muy buena recomendación de rutas.”</p><footer>— Huésped ficticio, Temuco</footer></blockquote>
+ </div>
+</div></section>
+
+<section id="contacto"><div class="wrap contact">
+ <div>
+  <p class="kicker">Contacto</p>
+  <h2>Reserva tu estadía</h2>
+  <p>Cuéntanos fechas y número de personas y te respondemos el mismo día (ejemplo).</p>
+  <p><strong>Ubicación ficticia:</strong> camino rural, Región de Los Ríos.<br><strong>Correo ficticio:</strong> reservas@ejemplo.invalid</p>
+  <a class="wa" href="https://wa.me/56900000000" rel="noopener">Escribir por WhatsApp (número ficticio)</a>
+ </div>
+ <form id="f" novalidate>
+  <div><label for="n">Nombre</label><input id="n" name="n" autocomplete="name" required></div>
+  <div><label for="c">Cabaña</label><select id="c"><option>Coihue (2 personas)</option><option>Ulmo (4 personas)</option><option>Tepú (6 personas)</option></select></div>
+  <div><label for="m">Mensaje</label><textarea id="m" rows="4"></textarea></div>
+  <button class="btn btn-terra" type="submit">Enviar consulta</button>
+  <p id="msg" role="status"></p>
+ </form>
+</div></section>
+</main>
+<footer class="pie"><div class="wrap">Propuesta de diseño de ejemplo; datos ficticios. · <a href="../">Portafolio de René Cerpa</a></div></footer>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();var m=document.getElementById('msg');if(!document.getElementById('n').value.trim()){m.textContent='Por favor escribe tu nombre.';return}m.textContent='Demo: el formulario no envía datos reales.';});
+</script>
+</body>
+</html>
