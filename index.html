@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>René Cerpa Andrade — Curriculum Vitae</title>
+<meta name="description" content="Curriculum Vitae de René Cerpa Andrade, Ingeniero en Informática en la Región de Los Ríos: educación artística, gestión cultural, desarrollo web y soporte técnico freelance.">
+<meta name="theme-color" content="#6E4BFF">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="René Cerpa Andrade — Curriculum Vitae">
+<meta property="og:description" content="Ingeniero en Informática ligado a la gestión cultural y la educación artística en la Región de Los Ríos. Desarrollo web y soporte técnico freelance.">
+<meta property="og:url" content="https://werex88-ops.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236E4BFF'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23fff'%3ERC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -191,7 +199,7 @@
   .free-card p{ margin:0; font-size:0.9rem; color:var(--ink-dim); }
   .badge-coral{
     display:inline-block; font-family:'Space Mono', monospace; font-size:0.68rem;
-    letter-spacing:0.06em; text-transform:uppercase; color:var(--coral);
+    letter-spacing:0.06em; text-transform:uppercase; color:#B83A20;
     background:rgba(255,106,77,0.1); padding:4px 10px; border-radius:20px; margin-bottom:14px;
   }
 
@@ -266,7 +274,32 @@
   }
   .reveal.in{ opacity:1; transform:none; }
 
+  a:focus-visible{ outline:3px solid var(--violet); outline-offset:3px; border-radius:4px; }
+  .btn-secondary{ color:var(--violet-deep); border:1.5px solid var(--violet); background:var(--card); margin-left:10px; }
+  .btn-secondary:hover{ transform:translateY(-3px); box-shadow:0 10px 24px rgba(110,75,255,0.18); }
+  footer .meta a{ color:var(--violet-deep); }
+  .portfolio-link{ margin-top:22px; font-size:0.9rem; }
+  .portfolio-link a{ color:var(--violet-deep); font-weight:600; }
+
+  @media print{
+    :root{ --bg:#fff; }
+    .blob, nav, .marquee, .art-panel, .btn, .portfolio-link{ display:none !important; }
+    body{ background:#fff; font-size:11pt; }
+    h1.name{ background:none; -webkit-text-fill-color:var(--ink); color:var(--ink); }
+    header.hero{ padding:0 0 20px; }
+    .hero-grid{ grid-template-columns:1fr; }
+    section{ padding:22px 0; }
+    .reveal{ opacity:1 !important; transform:none !important; }
+    .tl-item, .free-card, .edu-card{ break-inside:avoid; }
+    .tl-card, .free-card, .edu-card, .role-card, .chip{ box-shadow:none; }
+    footer{ padding:24px 0 0; }
+    .email-link{ padding:8px 14px; font-size:1.1rem; }
+    footer .meta{ margin-top:20px; }
+    a{ color:var(--ink); }
+  }
+
   @media (max-width: 860px){
+    .btn-secondary{ margin:12px 0 0; }
     .hero-grid{ grid-template-columns:1fr; }
     .art-panel{ max-width:420px; }
     .free-grid{ grid-template-columns:1fr; }
@@ -311,6 +344,7 @@
         Escríbeme
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
+      <a class="btn btn-secondary" href="demos/">Portafolio de páginas web</a>
     </div>
 
     <div class="art-panel">
@@ -354,7 +388,7 @@
   </div>
 </header>
 
-<div class="marquee">
+<div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span class="dot">●</span><span>EDUCACIÓN ARTÍSTICA</span>
     <span class="dot">●</span><span>GESTIÓN CULTURAL</span>
@@ -529,6 +563,7 @@
     <div class="meta">
       <span>Valdivia, Región de Los Ríos, Chile</span>
       <span>Curriculum Vitae — actualizado 2026</span>
+      <span><a href="demos/">Portafolio de páginas web</a></span>
     </div>
   </div>
 </footer>
