@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luz de Cera · Velas artesanales</title>
+<meta name="description" content="Velas de cera de soya hechas a mano en pequeños lotes. Envíos a todo Chile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --marfil: #f8f3ec;
+    --lino: #efe6da;
+    --arena: #e2d3c1;
+    --tierra: #3a2a20;
+    --terracota: #b4654a;
+    --suave: #85746a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; font-weight: 300; background: var(--marfil); color: var(--tierra); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+  .titular { font-family: 'Marcellus', serif; font-weight: 400; letter-spacing: .01em; }
+  .cursiva { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+  .contenedor { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  .mini { font-size: 12px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; }
+
+  .volver { position: fixed; bottom: 20px; left: 20px; z-index: 50; background: var(--tierra); color: var(--marfil); padding: 9px 16px; border-radius: 999px; font-size: 12px; font-weight: 400; }
+
+  .aviso { background: var(--tierra); color: var(--lino); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; overflow: hidden; padding: 11px 0; }
+  .aviso div { display: flex; gap: 64px; width: max-content; animation: correr 30s linear infinite; }
+  @keyframes correr { to { transform: translateX(-50%); } }
+
+  nav { border-bottom: 1px solid var(--arena); background: var(--marfil); position: sticky; top: 0; z-index: 30; }
+  nav .contenedor { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 76px; }
+  nav ul { display: flex; gap: 32px; list-style: none; font-size: 14px; letter-spacing: .06em; }
+  nav ul a:hover { color: var(--terracota); }
+  .logo { font-family: 'Marcellus'; font-size: 26px; letter-spacing: .14em; text-transform: uppercase; text-align: center; }
+  .logo small { display: block; font-family: 'Jost'; font-size: 9px; letter-spacing: .5em; color: var(--suave); margin-top: -2px; }
+  .carrito-btn { justify-self: end; background: none; border: 0; color: var(--tierra); display: flex; align-items: center; gap: 10px; font-size: 14px; letter-spacing: .06em; }
+  .carrito-btn .n { background: var(--terracota); color: #fff; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; transition: transform .3s; }
+  .carrito-btn .n.pulso { transform: scale(1.35); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--tierra); color: var(--marfil); padding: 17px 34px; font-size: 13px; font-weight: 400; letter-spacing: .18em; text-transform: uppercase; border: 0; transition: background .3s; }
+  .btn:hover { background: var(--terracota); }
+  .btn.borde { background: transparent; color: var(--tierra); box-shadow: inset 0 0 0 1px var(--tierra); }
+  .btn.borde:hover { background: var(--tierra); color: var(--marfil); }
+
+  /* Hero */
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 720px; }
+  .hero-texto { display: flex; flex-direction: column; justify-content: center; padding: 80px 80px 80px max(32px, calc((100vw - 1280px) / 2 + 32px)); background: var(--lino); }
+  .hero h1 { font-family: 'Marcellus'; font-weight: 400; font-size: clamp(46px, 5.4vw, 80px); line-height: 1.05; margin: 22px 0 26px; }
+  .hero h1 .cursiva { color: var(--terracota); font-size: 1.12em; }
+  .hero p { color: var(--suave); font-size: 17px; max-width: 430px; margin-bottom: 40px; }
+  .hero .acciones { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-img { position: relative; overflow: hidden; }
+  .hero-img img { animation: respirar 12s ease-in-out infinite alternate; }
+  @keyframes respirar { to { transform: scale(1.05); } }
+  .hero-img .flotante { position: absolute; left: 32px; bottom: 32px; background: rgba(248,243,236,.92); backdrop-filter: blur(8px); padding: 18px 22px; display: flex; gap: 16px; align-items: center; max-width: 300px; }
+  .hero-img .flotante b { font-family: 'Marcellus'; font-weight: 400; font-size: 34px; color: var(--terracota); line-height: 1; }
+  .hero-img .flotante span { font-size: 13px; line-height: 1.4; }
+
+  section { padding: 120px 0; }
+  .cab { text-align: center; margin-bottom: 64px; }
+  .cab h2 { font-family: 'Marcellus'; font-weight: 400; font-size: clamp(38px, 4.5vw, 58px); line-height: 1.1; margin-top: 14px; }
+  .cab h2 .cursiva { color: var(--terracota); font-size: 1.1em; }
+  .cab p { color: var(--suave); margin-top: 12px; }
+
+  /* Productos */
+  .filtros { display: flex; justify-content: center; gap: 8px; margin: -24px 0 48px; flex-wrap: wrap; }
+  .filtros button { background: none; border: 1px solid var(--arena); color: var(--suave); padding: 9px 20px; border-radius: 999px; font-size: 13px; letter-spacing: .06em; transition: all .25s; }
+  .filtros button.activo, .filtros button:hover { border-color: var(--tierra); color: var(--tierra); }
+  .productos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .vela { display: flex; flex-direction: column; }
+  .vela figure { position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--lino); margin-bottom: 18px; }
+  .vela figure img { transition: transform 1s cubic-bezier(.2,.7,.2,1); }
+  .vela:hover figure img { transform: scale(1.06); }
+  .vela .badge { position: absolute; top: 14px; left: 14px; background: var(--marfil); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; padding: 5px 10px; font-weight: 500; }
+  .vela .agregar { position: absolute; left: 14px; right: 14px; bottom: 14px; background: var(--tierra); color: var(--marfil); border: 0; padding: 14px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; transform: translateY(calc(100% + 20px)); transition: transform .4s cubic-bezier(.2,.7,.2,1), background .3s; }
+  .vela:hover .agregar, .vela .agregar:focus { transform: none; }
+  .vela .agregar:hover { background: var(--terracota); }
+  .vela .fila { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .vela h3 { font-family: 'Marcellus'; font-weight: 400; font-size: 21px; }
+  .vela .precio { font-size: 16px; font-weight: 400; }
+  .vela .notas { font-size: 13px; color: var(--suave); margin-top: 2px; }
+  .vela .meta { display: flex; gap: 6px; margin-top: 10px; }
+  .vela .meta span { font-size: 11px; border: 1px solid var(--arena); padding: 2px 9px; border-radius: 999px; color: var(--suave); }
+
+  /* Ritual */
+  .ritual { position: relative; height: 560px; overflow: hidden; display: grid; place-items: center; text-align: center; color: var(--marfil); }
+  .ritual > img { position: absolute; inset: 0; }
+  .ritual::before { content: ""; position: absolute; inset: 0; background: rgba(40,26,18,.55); z-index: 1; }
+  .ritual div { position: relative; z-index: 2; max-width: 760px; padding: 0 24px; }
+  .ritual blockquote { font-family: 'Cormorant Garamond'; font-style: italic; font-size: clamp(32px, 4.4vw, 56px); line-height: 1.2; margin: 18px 0 24px; }
+
+  /* Ingredientes */
+  .ingredientes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; align-items: stretch; }
+  .ing-img { overflow: hidden; min-height: 460px; }
+  .ing-lista { background: var(--lino); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+  .ing { display: grid; grid-template-columns: 44px 1fr; gap: 16px; }
+  .ing .num { font-family: 'Marcellus'; font-size: 26px; color: var(--terracota); line-height: 1.1; }
+  .ing h4 { font-family: 'Marcellus'; font-weight: 400; font-size: 20px; }
+  .ing p { color: var(--suave); font-size: 14px; }
+
+  /* Historia */
+  .historia { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+  .historia figure { aspect-ratio: 4/5; overflow: hidden; position: relative; }
+  .historia h2 { font-family: 'Marcellus'; font-weight: 400; font-size: clamp(36px, 4vw, 54px); line-height: 1.1; margin: 16px 0 26px; }
+  .historia p { color: var(--suave); margin-bottom: 16px; font-size: 17px; max-width: 480px; }
+  .firma { font-family: 'Cormorant Garamond'; font-style: italic; font-size: 30px; color: var(--terracota); margin-top: 26px; }
+
+  /* Reseñas */
+  .resenas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .resena { border-top: 1px solid var(--tierra); padding-top: 26px; }
+  .estrellas { color: var(--terracota); letter-spacing: .2em; font-size: 13px; }
+  .resena p { font-family: 'Cormorant Garamond'; font-style: italic; font-size: 23px; line-height: 1.4; margin: 14px 0 18px; }
+  .resena span { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--suave); }
+
+  /* Newsletter */
+  .news { background: var(--lino); text-align: center; padding: 100px 24px; }
+  .news form { display: flex; max-width: 480px; margin: 30px auto 0; border-bottom: 1px solid var(--tierra); }
+  .news input { flex: 1; background: none; border: 0; padding: 14px 0; font: inherit; font-size: 16px; color: var(--tierra); outline: none; }
+  .news button { background: none; border: 0; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--tierra); font-weight: 500; }
+
+  footer { padding: 70px 0 100px; font-size: 14px; color: var(--suave); }
+  footer .contenedor { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  footer h5 { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--tierra); font-weight: 500; margin-bottom: 14px; }
+  footer .logo { text-align: left; color: var(--tierra); margin-bottom: 12px; }
+
+  /* Carrito lateral */
+  .velo { position: fixed; inset: 0; background: rgba(40,26,18,.4); z-index: 60; opacity: 0; pointer-events: none; transition: opacity .4s; }
+  .panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100%); background: var(--marfil); z-index: 61; transform: translateX(100%); transition: transform .5s cubic-bezier(.2,.7,.2,1); display: flex; flex-direction: column; }
+  body.abierto .velo { opacity: 1; pointer-events: auto; }
+  body.abierto .panel { transform: none; }
+  .panel header { display: flex; justify-content: space-between; align-items: center; padding: 26px 28px; border-bottom: 1px solid var(--arena); }
+  .panel header h3 { font-family: 'Marcellus'; font-weight: 400; font-size: 22px; }
+  .cerrar { background: none; border: 0; font-size: 26px; line-height: 1; color: var(--tierra); }
+  .items { flex: 1; overflow-y: auto; padding: 10px 28px; }
+  .item { display: grid; grid-template-columns: 72px 1fr auto; gap: 16px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--lino); }
+  .item figure { width: 72px; height: 88px; overflow: hidden; }
+  .item h4 { font-family: 'Marcellus'; font-weight: 400; font-size: 17px; }
+  .cant { display: inline-flex; align-items: center; border: 1px solid var(--arena); margin-top: 8px; }
+  .cant button { background: none; border: 0; width: 28px; height: 28px; color: var(--tierra); }
+  .cant span { width: 24px; text-align: center; font-size: 13px; }
+  .vacio { text-align: center; padding: 80px 0; color: var(--suave); }
+  .panel footer { padding: 24px 28px 32px; border-top: 1px solid var(--arena); font-size: 15px; color: var(--tierra); display: block; }
+  .barra-envio { font-size: 13px; color: var(--suave); margin-bottom: 18px; }
+  .barra-envio .pista { height: 3px; background: var(--lino); margin-top: 8px; }
+  .barra-envio .pista i { display: block; height: 100%; background: var(--terracota); transition: width .4s; }
+  .total { display: flex; justify-content: space-between; margin-bottom: 18px; font-size: 18px; }
+  .panel .btn { width: 100%; }
+
+  .rv { opacity: 0; transform: translateY(26px); transition: opacity 1s, transform 1s cubic-bezier(.2,.7,.2,1); }
+  .rv.visto { opacity: 1; transform: none; }
+
+  @media (max-width: 1000px) {
+    nav ul { display: none; }
+    nav .contenedor { grid-template-columns: 1fr auto; }
+    .logo { text-align: left; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-texto { padding: 72px 32px; }
+    .hero-img { height: 520px; }
+    .productos { grid-template-columns: 1fr 1fr; }
+    .ingredientes { grid-template-columns: 1fr 1fr; }
+    .ing-lista { grid-column: 1 / -1; order: -1; }
+    .historia { grid-template-columns: 1fr; gap: 56px; }
+    .resenas { grid-template-columns: 1fr; }
+    footer .contenedor { grid-template-columns: 1fr 1fr; }
+    .vela .agregar { transform: none; position: static; margin-top: 12px; }
+    .vela figure { margin-bottom: 0; }
+    .vela { gap: 0; }
+    .vela .agregar { order: 2; }
+    .vela .info { order: 1; margin-top: 16px; }
+  }
+  @media (max-width: 560px) {
+    .contenedor { padding: 0 20px; }
+    .hero-texto { padding: 56px 20px; }
+    .hero-img { height: 420px; }
+    .productos { gap: 28px 14px; }
+    .vela h3 { font-size: 17px; }
+    .vela .meta { display: none; }
+    .ingredientes { grid-template-columns: 1fr; }
+    .ing-img { min-height: 300px; }
+    .ing-lista { padding: 36px 24px; }
+    .carrito-btn .txt { display: none; }
+    section { padding: 88px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+<a class="volver" href="../">← Portafolio</a>
+
+<div class="aviso"><div>
+  <span>Envío gratis sobre $30.000</span><span>Hechas a mano en pequeños lotes</span><span>Cera de soya 100% natural</span><span>Retiro gratis en Ñuñoa</span>
+  <span>Envío gratis sobre $30.000</span><span>Hechas a mano en pequeños lotes</span><span>Cera de soya 100% natural</span><span>Retiro gratis en Ñuñoa</span>
+</div></div>
+
+<nav>
+  <div class="contenedor">
+    <ul><li><a href="#tienda">Tienda</a></li><li><a href="#ingredientes">Ingredientes</a></li><li><a href="#historia">Nosotras</a></li></ul>
+    <a class="logo" href="#">Luz de Cera<small>Atelier · Santiago</small></a>
+    <button class="carrito-btn" id="abrir"><span class="txt">Carrito</span><span class="n" id="n">0</span></button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-texto rv">
+    <div class="mini" style="color:var(--terracota)">Colección otoño · 2026</div>
+    <h1>Aromas que convierten tu casa en <span class="cursiva">hogar.</span></h1>
+    <p>Velas de cera de soya, mechas de algodón y fragancias libres de tóxicos. Vertidas a mano, una por una, en nuestro taller.</p>
+    <div class="acciones">
+      <a class="btn" href="#tienda">Descubrir aromas</a>
+      <a class="btn borde" href="#historia">Nuestra historia</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="img/hero.jpg" alt="Velas encendidas junto a hojas secas de otoño">
+    <div class="flotante"><b>50h</b><span>de combustión limpia en cada vela de 220 g</span></div>
+  </div>
+</header>
+
+<section id="tienda">
+  <div class="contenedor">
+    <div class="cab rv">
+      <div class="mini" style="color:var(--suave)">La tienda</div>
+      <h2>Colección <span class="cursiva">otoño</span></h2>
+    </div>
+    <div class="filtros rv">
+      <button class="activo" data-f="todas">Todas</button>
+      <button data-f="calida">Cálidas</button>
+      <button data-f="fresca">Frescas</button>
+      <button data-f="floral">Florales</button>
+    </div>
+    <div class="productos rv" id="productos"></div>
+  </div>
+</section>
+
+<section class="ritual">
+  <img src="img/trio.jpg" alt="" loading="lazy">
+  <div>
+    <div class="mini">El ritual</div>
+    <blockquote>“Enciende, respira hondo y regálate diez minutos que sean solo tuyos.”</blockquote>
+    <a class="btn" style="background:var(--marfil);color:var(--tierra)" href="#tienda">Encontrar mi aroma</a>
+  </div>
+</section>
+
+<section id="ingredientes">
+  <div class="contenedor">
+    <div class="cab rv">
+      <div class="mini" style="color:var(--suave)">Lo que hay dentro</div>
+      <h2>Simple, <span class="cursiva">honesto</span> y natural</h2>
+    </div>
+    <div class="ingredientes rv">
+      <div class="ing-img"><img src="img/eucalipto.jpg" alt="Ramas de eucalipto y botánicos secos" loading="lazy"></div>
+      <div class="ing-lista">
+        <div class="ing"><div class="num">01</div><div><h4>Cera de soya</h4><p>Vegetal, biodegradable y de combustión limpia, sin hollín.</p></div></div>
+        <div class="ing"><div class="num">02</div><div><h4>Mecha de algodón</h4><p>Sin plomo ni metales. Llama estable y tranquila.</p></div></div>
+        <div class="ing"><div class="num">03</div><div><h4>Aceites esenciales</h4><p>Fragancias libres de ftalatos y parabenos.</p></div></div>
+        <div class="ing"><div class="num">04</div><div><h4>Vidrio reutilizable</h4><p>Lávalo con agua caliente y dale una segunda vida.</p></div></div>
+      </div>
+      <div class="ing-img"><img src="img/aceite.jpg" alt="Frasco ámbar de aceite esencial" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="historia" style="padding-top:20px">
+  <div class="contenedor historia">
+    <figure class="rv"><img src="img/manos.jpg" alt="Manos sosteniendo una vela encendida" loading="lazy"></figure>
+    <div class="rv">
+      <div class="mini" style="color:var(--terracota)">Nuestra historia</div>
+      <h2>Empezó en una cocina, con un regalo para amigas.</h2>
+      <p>Luz de Cera nació en 2023. Las velas gustaron tanto que, de a poco, la cocina se transformó en taller.</p>
+      <p>Hoy seguimos siendo un emprendimiento pequeño que cuida cada detalle, desde la mezcla del aroma hasta el lazo del paquete.</p>
+      <div class="firma">— Fernanda, fundadora</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="contenedor">
+    <div class="cab rv"><div class="mini" style="color:var(--suave)">+1.400 clientas felices</div><h2>Lo que <span class="cursiva">dicen</span></h2></div>
+    <div class="resenas rv">
+      <div class="resena"><div class="estrellas">★★★★★</div><p>“La de lavanda es la única que me ayuda a dormir. Ya voy en mi cuarta.”</p><span>Camila · Providencia</span></div>
+      <div class="resena"><div class="estrellas">★★★★★</div><p>“Llegó envuelta como un regalo, con una notita escrita a mano. Precioso.”</p><span>Josefa · Valparaíso</span></div>
+      <div class="resena"><div class="estrellas">★★★★★</div><p>“Duran muchísimo y el aroma llena todo el living sin ser invasivo.”</p><span>Martina · Ñuñoa</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="news">
+  <div class="mini" style="color:var(--terracota)">Club Luz de Cera</div>
+  <h2 class="titular" style="font-size:clamp(32px,4vw,46px);margin-top:12px">10% en tu primera compra</h2>
+  <form id="news"><input type="email" placeholder="Tu correo electrónico" required aria-label="Correo"><button>Suscribirme</button></form>
+</div>
+
+<footer>
+  <div class="contenedor">
+    <div><div class="logo">Luz de Cera</div><p>Velas artesanales de cera de soya.<br>Hechas a mano en Ñuñoa, Santiago.</p></div>
+    <div><h5>Tienda</h5><p>Velas<br>Sets de regalo<br>Recargas</p></div>
+    <div><h5>Ayuda</h5><p>Envíos<br>Cuidado de tu vela<br>Preguntas frecuentes</p></div>
+    <div><h5>Contacto</h5><p>@luzdecera.velas<br>hola@luzdecera.cl</p></div>
+  </div>
+</footer>
+
+<div class="velo" id="velo"></div>
+<aside class="panel" aria-label="Carrito">
+  <header><h3>Tu carrito</h3><button class="cerrar" id="cerrar" aria-label="Cerrar">×</button></header>
+  <div class="items" id="items"></div>
+  <footer>
+    <div class="barra-envio" id="envio"></div>
+    <div class="total"><span>Subtotal</span><span id="total">$0</span></div>
+    <button class="btn">Finalizar compra</button>
+  </footer>
+</aside>
+
+<script>
+  const velas = [
+    { id: 1, nombre: 'Bergamota & Neroli', notas: 'Cítrica · luminosa · fresca', precio: 12900, img: 'img/v1.jpg', tipo: 'fresca', badge: 'Nueva' },
+    { id: 2, nombre: 'Lavanda Nocturna',   notas: 'Herbal · para dormir mejor', precio: 12900, img: 'img/v2.jpg', tipo: 'floral', badge: 'Favorita' },
+    { id: 3, nombre: 'Canela & Manzana',   notas: 'Cálida · dulce · otoñal',     precio: 13900, img: 'img/v3.jpg', tipo: 'calida' },
+    { id: 4, nombre: 'Rosa & Peonía',      notas: 'Floral · suave · romántica',  precio: 12900, img: 'img/v4.jpg', tipo: 'floral', estilo: 'object-position:12% 50%;filter:saturate(1.3) hue-rotate(-14deg)' }
+  ];
+  const fmt = n => '$' + n.toLocaleString('es-CL');
+  const carrito = {};
+  const $ = id => document.getElementById(id);
+
+  $('productos').innerHTML = velas.map(v => `
+    <article class="vela" data-tipo="${v.tipo}">
+      <figure>${v.badge ? `<span class="badge">${v.badge}</span>` : ''}<img src="${v.img}" alt="Vela ${v.nombre}" loading="lazy" style="${v.estilo || ''}"><button class="agregar" data-id="${v.id}">Agregar al carrito</button></figure>
+      <div class="info">
+        <div class="fila"><h3>${v.nombre}</h3><span class="precio">${fmt(v.precio)}</span></div>
+        <div class="notas">${v.notas}</div>
+        <div class="meta"><span>220 g</span><span>50 h</span></div>
+      </div>
+    </article>`).join('');
+
+  document.querySelectorAll('.filtros button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.filtros button').forEach(x => x.classList.toggle('activo', x === b));
+    document.querySelectorAll('.vela').forEach(v => v.style.display = (b.dataset.f === 'todas' || v.dataset.tipo === b.dataset.f) ? '' : 'none');
+  }));
+
+  function pintar() {
+    const ids = Object.keys(carrito);
+    const unidades = ids.reduce((s, id) => s + carrito[id], 0);
+    const total = ids.reduce((s, id) => s + carrito[id] * velas.find(v => v.id == id).precio, 0);
+    $('n').textContent = unidades;
+    $('total').textContent = fmt(total);
+    $('items').innerHTML = ids.length ? ids.map(id => {
+      const v = velas.find(x => x.id == id);
+      return `<div class="item"><figure><img src="${v.img}" alt=""></figure><div><h4>${v.nombre}</h4><div class="cant"><button data-op="-1" data-id="${id}">−</button><span>${carrito[id]}</span><button data-op="1" data-id="${id}">+</button></div></div><div>${fmt(v.precio * carrito[id])}</div></div>`;
+    }).join('') : '<div class="vacio">Tu carrito está vacío.<br>Encuentra tu aroma favorito ✦</div>';
+    const falta = 30000 - total;
+    $('envio').innerHTML = (falta > 0 ? `Te faltan <b>${fmt(falta)}</b> para envío gratis` : '¡Tienes <b>envío gratis</b>! ✦') +
+      `<div class="pista"><i style="width:${Math.min(100, total / 300)}%"></i></div>`;
+  }
+
+  $('productos').addEventListener('click', e => {
+    const id = e.target.dataset.id; if (!id) return;
+    carrito[id] = (carrito[id] || 0) + 1;
+    pintar();
+    $('n').classList.add('pulso'); setTimeout(() => $('n').classList.remove('pulso'), 300);
+    document.body.classList.add('abierto');
+  });
+  $('items').addEventListener('click', e => {
+    const { id, op } = e.target.dataset; if (!op) return;
+    carrito[id] += Number(op);
+    if (carrito[id] <= 0) delete carrito[id];
+    pintar();
+  });
+  $('abrir').onclick = () => document.body.classList.add('abierto');
+  $('cerrar').onclick = $('velo').onclick = () => document.body.classList.remove('abierto');
+  addEventListener('keydown', e => { if (e.key === 'Escape') document.body.classList.remove('abierto'); });
+  $('news').addEventListener('submit', e => { e.preventDefault(); e.target.outerHTML = '<p class="cursiva" style="font-size:24px;margin-top:24px">¡Gracias! Revisa tu correo para tu cupón ✦</p>'; });
+  pintar();
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+</body>
+</html>

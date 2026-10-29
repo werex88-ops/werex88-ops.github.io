@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaiyō · Sushi Bar</title>
+<meta name="description" content="Sushi de autor y omakase en barra. Pescado del día, arroz al estilo Edo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --tinta: #0c0c0b;
+    --carbon: #151513;
+    --linea: rgba(237, 230, 218, .12);
+    --papel: #ede6da;
+    --gris: #9b958a;
+    --bermellon: #c8442f;
+    --oro: #c9a46a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; font-weight: 300; background: var(--tinta); color: var(--papel); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: inherit; text-decoration: none; }
+  .serif { font-family: 'Cormorant Garamond', serif; }
+  .jp { font-family: 'Noto Serif JP', serif; }
+  .contenedor { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  .eyebrow { display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--oro); }
+  .eyebrow::before { content: ""; width: 36px; height: 1px; background: currentColor; }
+
+  .volver { position: fixed; bottom: 20px; left: 20px; z-index: 50; background: var(--papel); color: var(--tinta); padding: 9px 16px; border-radius: 999px; font-size: 12px; font-weight: 500; letter-spacing: .04em; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+
+  /* Nav */
+  nav { position: fixed; inset: 0 0 auto; z-index: 40; transition: background .4s, padding .4s; padding: 28px 0; }
+  nav.solida { background: rgba(12,12,11,.86); backdrop-filter: blur(14px); padding: 16px 0; border-bottom: 1px solid var(--linea); }
+  nav .contenedor { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 20px; letter-spacing: .38em; }
+  .logo b { color: var(--bermellon); font-weight: 400; }
+  nav ul { display: flex; gap: 40px; list-style: none; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; }
+  nav ul a { opacity: .75; transition: opacity .2s; }
+  nav ul a:hover { opacity: 1; }
+  .nav-cta { border: 1px solid var(--papel); padding: 10px 22px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; transition: background .3s, color .3s; }
+  .nav-cta:hover { background: var(--papel); color: var(--tinta); }
+
+  /* Hero */
+  .hero { position: relative; min-height: min(100vh, 980px); display: flex; align-items: flex-end; overflow: hidden; }
+  .hero > img { position: absolute; inset: 0; transform: scale(1.06); animation: acercar 14s ease-out forwards; }
+  @keyframes acercar { to { transform: scale(1); } }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,12,11,.92) 0%, rgba(12,12,11,.55) 45%, rgba(12,12,11,.1) 100%), linear-gradient(0deg, var(--tinta) 0%, transparent 35%); }
+  .hero .contenedor { position: relative; z-index: 2; width: 100%; padding-bottom: 110px; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(52px, 8.5vw, 120px); line-height: .95; letter-spacing: -.01em; margin: 26px 0 28px; max-width: 9ch; }
+  .hero h1 em { color: var(--oro); }
+  .hero p { max-width: 440px; color: #cfc8bb; font-size: 17px; }
+  .acciones { display: flex; gap: 18px; margin-top: 40px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; background: var(--bermellon); color: #fff; padding: 17px 32px; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; transition: background .3s; }
+  .btn:hover { background: #a93623; }
+  .btn.linea { background: transparent; border: 1px solid rgba(237,230,218,.4); }
+  .btn.linea:hover { border-color: var(--papel); }
+  .kanji-vertical { position: absolute; right: 48px; top: 50%; transform: translateY(-50%); z-index: 2; writing-mode: vertical-rl; font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: .9em; color: rgba(237,230,218,.55); }
+  .hero-datos { position: absolute; right: 32px; bottom: 40px; z-index: 2; display: flex; gap: 48px; font-size: 12px; color: var(--gris); letter-spacing: .08em; }
+  .hero-datos b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 30px; color: var(--papel); letter-spacing: 0; }
+
+  section { padding: 140px 0; }
+  .titulo h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(40px, 5.5vw, 72px); line-height: 1; margin-top: 22px; }
+  .titulo h2 em { color: var(--oro); }
+
+  /* Filosofía */
+  .filosofia { display: grid; grid-template-columns: 1fr 1.1fr; gap: 100px; align-items: center; }
+  .filosofia p { color: #bdb6aa; font-size: 17px; margin-top: 18px; max-width: 520px; }
+  .pilares { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--linea); margin-top: 56px; }
+  .pilar { padding: 28px 24px 0 0; }
+  .pilar .jp { font-size: 30px; color: var(--bermellon); }
+  .pilar h4 { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 500; margin: 10px 0 6px; }
+  .pilar p { font-size: 14px; margin: 0; color: var(--gris); }
+  .mosaico { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 280px 220px; gap: 14px; }
+  .mosaico figure { overflow: hidden; }
+  .mosaico figure:first-child { grid-row: span 2; }
+  .mosaico img { transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  .mosaico figure:hover img { transform: scale(1.05); }
+
+  /* Menú */
+  .menu-sec { background: var(--carbon); }
+  .menu-cabecera { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 70px; flex-wrap: wrap; }
+  .menu-cabecera p { color: var(--gris); max-width: 360px; font-size: 15px; }
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--linea); margin-bottom: 56px; overflow-x: auto; }
+  .tabs button { background: none; border: 0; color: var(--gris); font: inherit; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; padding: 18px 28px; cursor: pointer; position: relative; white-space: nowrap; transition: color .3s; }
+  .tabs button::after { content: ""; position: absolute; left: 28px; right: 28px; bottom: -1px; height: 1px; background: var(--bermellon); transform: scaleX(0); transition: transform .4s; }
+  .tabs button.activo { color: var(--papel); }
+  .tabs button.activo::after { transform: scaleX(1); }
+  .panel { display: none; grid-template-columns: 420px 1fr; gap: 80px; align-items: start; }
+  .panel.activo { display: grid; animation: aparecer .6s ease; }
+  @keyframes aparecer { from { opacity: 0; transform: translateY(12px); } }
+  .panel figure { aspect-ratio: 4/5; overflow: hidden; }
+  .platos { list-style: none; }
+  .plato { display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; padding: 26px 0; border-bottom: 1px solid var(--linea); }
+  .plato:first-child { padding-top: 0; }
+  .plato h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 27px; line-height: 1.2; display: flex; align-items: baseline; gap: 14px; }
+  .plato h3 .jp { font-size: 13px; color: var(--gris); font-weight: 400; }
+  .plato .precio { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--oro); }
+  .plato p { color: var(--gris); font-size: 14px; grid-column: 1 / -1; }
+  .etiqueta { display: inline-block; font-family: 'Inter'; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--bermellon); border: 1px solid rgba(200,68,47,.5); padding: 3px 8px; vertical-align: middle; }
+
+  /* Chef */
+  .chef { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 720px; }
+  .chef figure { position: relative; overflow: hidden; }
+  .chef .texto { padding: 120px 9vw 120px 100px; display: flex; flex-direction: column; justify-content: center; }
+  .chef blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(28px, 3vw, 40px); line-height: 1.25; margin: 30px 0; }
+  .chef blockquote::before { content: "“"; display: block; font-size: 90px; line-height: .6; color: var(--bermellon); font-style: normal; }
+  .chef p { color: #bdb6aa; margin-bottom: 16px; max-width: 480px; }
+  .firma { margin-top: 28px; display: flex; align-items: center; gap: 18px; }
+  .firma .jp { font-size: 26px; color: var(--bermellon); }
+  .firma span { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gris); }
+
+  /* Reservas */
+  .reserva { position: relative; padding: 160px 0; overflow: hidden; }
+  .reserva > img { position: absolute; inset: 0; }
+  .reserva::before { content: ""; position: absolute; inset: 0; background: rgba(12,12,11,.82); z-index: 1; }
+  .reserva .contenedor { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+  .horario { margin-top: 40px; display: grid; gap: 14px; font-size: 14px; color: #cfc8bb; }
+  .horario div { display: flex; justify-content: space-between; border-bottom: 1px solid var(--linea); padding-bottom: 14px; max-width: 420px; }
+  form { background: rgba(21,21,19,.85); border: 1px solid var(--linea); padding: 48px; backdrop-filter: blur(8px); }
+  form h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 32px; margin-bottom: 28px; }
+  .campos { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .campo { display: flex; flex-direction: column; gap: 8px; }
+  .campo.ancho { grid-column: 1 / -1; }
+  label { font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--gris); }
+  input, select { background: transparent; border: 0; border-bottom: 1px solid rgba(237,230,218,.25); color: var(--papel); font: inherit; font-size: 15px; padding: 10px 0; outline: none; transition: border-color .3s; color-scheme: dark; }
+  input:focus, select:focus { border-color: var(--oro); }
+  select option { background: var(--carbon); }
+  form .btn { width: 100%; justify-content: center; margin-top: 32px; border: 0; cursor: pointer; font-family: inherit; }
+  .gracias { text-align: center; padding: 40px 0; }
+  .gracias .jp { font-size: 40px; color: var(--bermellon); }
+
+  footer { border-top: 1px solid var(--linea); padding: 60px 0 90px; font-size: 13px; color: var(--gris); }
+  footer .contenedor { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  footer h5 { font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--papel); font-weight: 500; margin-bottom: 14px; }
+  footer .logo { margin-bottom: 14px; color: var(--papel); }
+
+  .rv { opacity: 0; transform: translateY(28px); transition: opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
+  .rv.visto { opacity: 1; transform: none; }
+
+  @media (max-width: 960px) {
+    nav ul { display: none; }
+    .filosofia, .panel, .chef, .reserva .contenedor { grid-template-columns: 1fr; gap: 56px; }
+    .panel figure { aspect-ratio: 16/10; }
+    .chef figure { height: 460px; }
+    .chef .texto { padding: 80px 32px; }
+    .kanji-vertical, .hero-datos { display: none; }
+    footer .contenedor { grid-template-columns: 1fr 1fr; }
+    section { padding: 100px 0; }
+  }
+  @media (max-width: 560px) {
+    .contenedor { padding: 0 20px; }
+    .nav-cta { display: none; }
+    .pilares { grid-template-columns: 1fr; }
+    .mosaico { grid-template-rows: 200px 160px; }
+    .campos { grid-template-columns: 1fr; }
+    form { padding: 30px 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+<a class="volver" href="../">← Portafolio</a>
+
+<nav id="nav">
+  <div class="contenedor">
+    <a class="logo" href="#">KAIYŌ<b>.</b></a>
+    <ul>
+      <li><a href="#filosofia">Filosofía</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#chef">Itamae</a></li>
+      <li><a href="#reserva">Contacto</a></li>
+    </ul>
+    <a class="nav-cta" href="#reserva">Reservar</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="img/hero.jpg" alt="Nigiris de pescado fresco sobre pizarra negra">
+  <div class="kanji-vertical">海洋 · 鮨 · 職人</div>
+  <div class="contenedor">
+    <div class="eyebrow">Sushi bar · Desde 2016</div>
+    <h1>El océano, <em>pieza</em> a pieza.</h1>
+    <p>Sushi de autor preparado frente a ti con pescado del día y arroz sazonado según la tradición de Edo.</p>
+    <div class="acciones">
+      <a class="btn" href="#reserva">Reservar mesa →</a>
+      <a class="btn linea" href="#menu">Ver menú</a>
+    </div>
+  </div>
+  <div class="hero-datos">
+    <div><b>14</b>tiempos omakase</div>
+    <div><b>12</b>asientos en barra</div>
+  </div>
+</header>
+
+<section id="filosofia">
+  <div class="contenedor filosofia">
+    <div class="rv">
+      <div class="eyebrow">Filosofía</div>
+      <div class="titulo"><h2>Respetar el producto, <em>y nada más.</em></h2></div>
+      <p>No disfrazamos el pescado con salsas ni tendencias. Cada corte se elige al amanecer en el terminal pesquero, se madura los días justos y llega a la barra a la temperatura exacta.</p>
+      <div class="pilares">
+        <div class="pilar"><div class="jp">旬</div><h4>Shun</h4><p>Solo lo que está en temporada.</p></div>
+        <div class="pilar"><div class="jp">米</div><h4>Shari</h4><p>Arroz con vinagre rojo de Edo.</p></div>
+        <div class="pilar"><div class="jp">手</div><h4>Te</h4><p>Todo se corta a mano, al momento.</p></div>
+      </div>
+    </div>
+    <div class="mosaico rv">
+      <figure><img src="img/g2.jpg" alt="Rolls con topping flameado tomados con palillos" loading="lazy"></figure>
+      <figure><img src="img/g1.jpg" alt="Tabla de sushi variado sobre pizarra" loading="lazy"></figure>
+      <figure><img src="img/g3.jpg" alt="Barco de sushi con rolls y nigiris" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="menu-sec">
+  <div class="contenedor">
+    <div class="menu-cabecera rv">
+      <div>
+        <div class="eyebrow">お品書き · Carta</div>
+        <div class="titulo"><h2>Nuestro <em>menú</em></h2></div>
+      </div>
+      <p>La carta cambia con la pesca. Pregunta al itamae por los cortes fuera de carta de hoy.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="activo" data-tab="nigiri">Nigiri &amp; Sashimi</button>
+      <button data-tab="rolls">Rolls de autor</button>
+      <button data-tab="calientes">Calientes</button>
+      <button data-tab="omakase">Omakase</button>
+    </div>
+
+    <div class="panel activo" id="nigiri">
+      <figure><img src="img/nigiri.jpg" alt="Nigiris de salmón con sésamo y salsa de soya" loading="lazy"></figure>
+      <ul class="platos">
+        <li class="plato"><h3>Nigiri de salmón <span class="jp">サーモン</span></h3><div class="precio">$3.900</div><p>Dos piezas de salmón austral, ralladura de limón de Pica.</p></li>
+        <li class="plato"><h3>Atún aburi <span class="jp">炙り</span></h3><div class="precio">$4.500</div><p>Flameado al momento con soya dulce y sal de Cáhuil.</p></li>
+        <li class="plato"><h3>Hamachi <span class="jp">はまち</span></h3><div class="precio">$4.900</div><p>Medregal con ponzu cítrico y brote de shiso.</p></li>
+        <li class="plato"><h3>Sashimi del día <span class="etiqueta">12 cortes</span></h3><div class="precio">$12.900</div><p>Selección del itamae según la pesca de la mañana.</p></li>
+      </ul>
+    </div>
+    <div class="panel" id="rolls">
+      <figure><img src="img/rolls.jpg" alt="Rolls de salmón y queso crema" loading="lazy"></figure>
+      <ul class="platos">
+        <li class="plato"><h3>Kaiyō Roll <span class="etiqueta">Firma</span></h3><div class="precio">$8.900</div><p>Camarón tempura, palta, cubierto de salmón flameado y salsa de la casa.</p></li>
+        <li class="plato"><h3>Dragón negro</h3><div class="precio">$9.500</div><p>Anguila glaseada, pepino, mayonesa de tinta de sepia.</p></li>
+        <li class="plato"><h3>Acevichado</h3><div class="precio">$8.500</div><p>Pesca blanca, leche de tigre nikkei, cebollín y crocante de quínoa.</p></li>
+        <li class="plato"><h3>Spicy tuna</h3><div class="precio">$8.200</div><p>Atún picado, togarashi, pepino y tobiko.</p></li>
+      </ul>
+    </div>
+    <div class="panel" id="calientes">
+      <figure><img src="img/ramen.jpg" alt="Ramen con huevo marinado, nori y cebollín" loading="lazy"></figure>
+      <ul class="platos">
+        <li class="plato"><h3>Ramen tonkotsu <span class="jp">豚骨</span></h3><div class="precio">$10.900</div><p>Caldo de 18 horas, chashu, huevo ajitama y nori.</p></li>
+        <li class="plato"><h3>Gyozas de cerdo</h3><div class="precio">$5.900</div><p>Seis unidades selladas a la plancha, salsa ponzu.</p></li>
+        <li class="plato"><h3>Tempura mixta</h3><div class="precio">$7.500</div><p>Verduras de estación y camarón, sal de matcha.</p></li>
+        <li class="plato"><h3>Gindara misoyaki</h3><div class="precio">$14.900</div><p>Bacalao de profundidad marinado tres días en miso blanco.</p></li>
+      </ul>
+    </div>
+    <div class="panel" id="omakase">
+      <figure><img src="img/omakase.jpg" alt="Bowl de sashimi variado con ikura y pepino" loading="lazy"></figure>
+      <ul class="platos">
+        <li class="plato"><h3>Experiencia omakase <span class="jp">お任せ</span></h3><div class="precio">$45.000</div><p>Catorce tiempos servidos uno a uno en barra. Jueves a sábado, 20:00 y 22:00.</p></li>
+        <li class="plato"><h3>Maridaje de sake</h3><div class="precio">$22.000</div><p>Cuatro copas: junmai, ginjo, daiginjo y nigori.</p></li>
+        <li class="plato"><h3>Maridaje sin alcohol</h3><div class="precio">$14.000</div><p>Tés japoneses fríos e infusiones de la casa.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="chef" style="padding:0">
+  <div class="chef">
+    <figure><img src="img/chef.jpg" alt="Chef emplatando con pinzas bajo lámparas de cobre" loading="lazy"></figure>
+    <div class="texto rv">
+      <div class="eyebrow">板前 · Itamae</div>
+      <blockquote>Si el pescado no está perfecto, no llega a tu plato. Así de simple.</blockquote>
+      <p>Tomás Aoki se formó durante ocho años en Osaka, donde aprendió que el sushi es, sobre todo, paciencia.</p>
+      <p>Cada mañana recorre el terminal pesquero y decide la carta del día según lo que encuentra.</p>
+      <div class="firma"><span class="jp">青木</span><span>Tomás Aoki · Chef fundador</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="reserva" class="reserva">
+  <img src="img/salon.jpg" alt="" loading="lazy">
+  <div class="contenedor">
+    <div class="rv">
+      <div class="eyebrow">予約 · Reservas</div>
+      <div class="titulo"><h2>Una mesa <em>te espera.</em></h2></div>
+      <div class="horario">
+        <div><span>Martes a jueves</span><span>13:00 – 23:00</span></div>
+        <div><span>Viernes y sábado</span><span>13:00 – 00:00</span></div>
+        <div><span>Domingo</span><span>13:00 – 17:00</span></div>
+        <div><span>Av. Costanera 1240</span><span>+56 2 2345 6789</span></div>
+      </div>
+    </div>
+    <form id="form-reserva" class="rv">
+      <h3>Reserva en línea</h3>
+      <div class="campos">
+        <div class="campo ancho"><label for="nombre">Nombre</label><input id="nombre" type="text" required></div>
+        <div class="campo"><label for="fecha">Fecha</label><input id="fecha" type="date" required></div>
+        <div class="campo"><label for="hora">Hora</label>
+          <select id="hora"><option>13:00</option><option>14:30</option><option>20:00</option><option>21:30</option></select></div>
+        <div class="campo ancho"><label for="personas">Experiencia</label>
+          <select id="personas"><option>Mesa · 2 personas</option><option>Mesa · 4 personas</option><option>Barra omakase · 1 persona</option><option>Barra omakase · 2 personas</option></select></div>
+      </div>
+      <button class="btn" type="submit">Confirmar reserva →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="contenedor">
+    <div><div class="logo">KAIYŌ<b style="color:var(--bermellon);font-weight:400">.</b></div><p>Sushi bar &amp; omakase.<br>Av. Costanera 1240, Viña del Mar.</p></div>
+    <div><h5>Horario</h5><p>Mar – Sáb<br>13:00 – 23:30</p></div>
+    <div><h5>Contacto</h5><p>+56 2 2345 6789<br>hola@kaiyo.cl</p></div>
+    <div><h5>Síguenos</h5><p>Instagram<br>TikTok</p></div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('solida', scrollY > 60), { passive: true });
+
+  document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.tabs button, .panel').forEach(e => e.classList.remove('activo'));
+    b.classList.add('activo');
+    document.getElementById(b.dataset.tab).classList.add('activo');
+  }));
+
+  document.getElementById('form-reserva').addEventListener('submit', e => {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.split(' ')[0].replace(/[<>&"]/g, '');
+    e.target.innerHTML = `<div class="gracias"><div class="jp">ありがとう</div><h3 style="margin:18px 0 8px">Gracias, ${nombre}.</h3><p style="color:var(--gris)">Te enviaremos la confirmación por correo en unos minutos.</p></div>`;
+  });
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .15 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+</body>
+</html>
