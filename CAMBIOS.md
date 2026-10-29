@@ -1,5 +1,16 @@
 # Registro de cambios
 
+## 2026-10-29 (demo nueva: centro cultural, a pedido de René)
+
+### Portafolio de demos
+- Demo nueva `centro-cultural/`: Casa Vertiente, centro de artes ficticio en Valdivia (cobalto, magenta y amarillo; tipografías Syne y Work Sans).
+- Funciones: cartelera con filtros por disciplina, público y gratuidad, descarga de eventos al calendario (.ics), talleres con cupos y lista de espera, ficha de inscripción con validación de edad, programa de visitas mediadas para escuelas, convocatorias con cuenta regresiva y horario que marca el día actual.
+- Se agrega su tarjeta al portafolio (8 diseños) y los créditos de fotos.
+
+### Sugerencias pendientes para René
+- Esta demo sirve como pieza para ofrecer sitios a centros culturales, municipios, escuelas de arte y agrupaciones; evaluar una versión más simple para agrupaciones pequeñas.
+- Regenerar la miniatura con fotos cuando se habilite `images.unsplash.com`.
+
 ## 2026-10-29 (rediseño de currículum y demo de cabañas, a pedido de René)
 
 ### Currículum (`index.html`)

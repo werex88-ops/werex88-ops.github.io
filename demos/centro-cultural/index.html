@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Vertiente · Centro de Artes de Valdivia — Propuesta de diseño de ejemplo</title>
+<meta name="description" content="Demo de página web para un centro cultural y escuela de artes en la Región de Los Ríos: cartelera, talleres, programa para escuelas y convocatorias. Institución ficticia.">
+<meta name="theme-color" content="#2E3BD6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232E3BD6'/%3E%3Cpath d='M14 46c8-22 28-22 36 0' stroke='%23FFD23F' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='22' r='7' fill='%23E0367A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#15131F;
+  --gris:#55526A;
+  --cobalto:#2E3BD6;
+  --cobalto-d:#1F2AA8;
+  --magenta:#E0367A;
+  --amarillo:#FFD23F;
+  --menta:#DDF2EA;
+  --lila:#ECEBFF;
+  --papel:#F6F6FA;
+  --blanco:#FFFFFF;
+  --linea:#E2E1EC;
+  --r:20px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--blanco);color:var(--tinta);font-family:'Work Sans',system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Syne',sans-serif;line-height:1.02;margin:0;letter-spacing:-.02em}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--magenta);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem/1 'Syne',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalto);margin-bottom:16px}
+.kicker::before{content:"";width:22px;height:4px;border-radius:4px;background:var(--magenta)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:999px;font:700 .98rem/1 'Work Sans',sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-cobalto{background:var(--cobalto);color:#fff}
+.btn-cobalto:hover{background:var(--cobalto-d)}
+.btn-amarillo{background:var(--amarillo);color:var(--tinta)}
+.btn-amarillo:hover{background:#FFDD66}
+.btn-borde{border-color:var(--tinta);color:var(--tinta);background:transparent}
+.btn-borde:hover{background:var(--tinta);color:#fff}
+.btn-chico{padding:10px 16px;font-size:.88rem}
+
+/* Barra superior y navegación */
+.cinta{background:var(--tinta);color:#fff;font-size:.88rem}
+.cinta .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px}
+.cinta b{color:var(--amarillo);font-weight:600}
+header.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.2rem/1 'Syne',sans-serif}
+.logo svg{width:34px;height:34px}
+.logo small{display:block;font:500 .72rem/1.2 'Work Sans',sans-serif;color:var(--gris);letter-spacing:.02em}
+header nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+header nav a{text-decoration:none;font-weight:500;font-size:.95rem}
+header nav a:hover{color:var(--cobalto)}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+
+/* Portada */
+.hero{padding:56px 0 80px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(3rem,7.4vw,6.2rem);font-weight:800}
+.hero h1 .m{color:var(--magenta)}
+.hero h1 .c{position:relative;white-space:nowrap}
+.hero h1 .c::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.06em;height:.28em;background:var(--amarillo);z-index:-1;border-radius:6px}
+.hero p{font-size:1.18rem;color:var(--gris);max-width:46ch;margin:24px 0 32px}
+.hero .acciones{display:flex;gap:12px;flex-wrap:wrap}
+.collage{position:relative;height:540px}
+.collage .f{position:absolute;border-radius:var(--r);background:var(--lila) center/cover no-repeat;box-shadow:0 24px 48px rgba(21,19,31,.16)}
+.collage .f1{inset:0 18% 26% 0}
+.collage .f2{right:0;bottom:0;width:52%;height:52%;border:8px solid #fff}
+.collage .forma{position:absolute;border-radius:50%}
+.collage .fa{width:120px;height:120px;background:var(--amarillo);right:6%;top:4%;z-index:-1}
+.collage .fb{width:70px;height:70px;background:var(--magenta);left:-24px;bottom:18%}
+.proximo{position:absolute;left:4%;bottom:4%;background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 16px 36px rgba(21,19,31,.18);max-width:260px}
+.proximo span{font-size:.76rem;font-weight:600;color:var(--magenta);text-transform:uppercase;letter-spacing:.1em}
+.proximo b{display:block;font:700 1.05rem/1.2 'Syne',sans-serif;margin:4px 0}
+.proximo small{color:var(--gris)}
+
+/* Cifras */
+.cifras{background:var(--cobalto);color:#fff}
+.cifras .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:36px;padding-bottom:36px}
+.cifras b{display:block;font:800 2.6rem/1 'Syne',sans-serif;color:var(--amarillo)}
+.cifras span{font-size:.95rem;color:rgba(255,255,255,.85)}
+
+section{padding:100px 0}
+.cab{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:40px}
+.cab h2{font-size:clamp(2.2rem,4.6vw,3.6rem);max-width:15ch}
+.cab p{max-width:46ch;color:var(--gris);margin:0}
+
+/* Cartelera */
+.filtros{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:28px}
+.filtro{border:1.5px solid var(--linea);background:#fff;border-radius:999px;padding:9px 16px;font:600 .9rem 'Work Sans',sans-serif;cursor:pointer;color:var(--tinta)}
+.filtro[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.filtros select{border:1.5px solid var(--linea);border-radius:999px;padding:9px 14px;font:600 .9rem 'Work Sans',sans-serif;background:#fff;color:var(--tinta)}
+.filtros label.gratis{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;margin-left:auto;cursor:pointer}
+.filtros label.gratis input{width:18px;height:18px;accent-color:var(--cobalto)}
+.eventos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.evento{border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;background:#fff;transition:transform .3s,box-shadow .3s}
+.evento:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(21,19,31,.1)}
+.evento .foto{aspect-ratio:16/10;background:var(--lila) center/cover no-repeat;position:relative}
+.fecha-ev{position:absolute;left:14px;top:14px;background:#fff;border-radius:12px;padding:8px 10px;text-align:center;min-width:58px}
+.fecha-ev b{display:block;font:800 1.5rem/1 'Syne',sans-serif}
+.fecha-ev span{font-size:.72rem;font-weight:600;text-transform:uppercase;color:var(--gris)}
+.evento .cuerpo{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.disc{align-self:flex-start;font-size:.76rem;font-weight:700;padding:4px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.d-teatro{background:#FDE3EE;color:#A3164F}
+.d-musica{background:var(--lila);color:var(--cobalto-d)}
+.d-danza{background:#FFF3C4;color:#7A5A00}
+.d-visuales{background:var(--menta);color:#1D6B50}
+.d-cine{background:#E7E6EE;color:#3B3950}
+.evento h3{font-size:1.3rem}
+.evento .meta{font-size:.92rem;color:var(--gris);margin:0}
+.evento .pie{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--linea)}
+.evento .precio{font-weight:700}
+.ics{background:none;border:0;color:var(--cobalto);font:600 .9rem 'Work Sans',sans-serif;cursor:pointer;padding:6px 0}
+.ics:hover{text-decoration:underline}
+.vacio{grid-column:1/-1;text-align:center;padding:40px;border:2px dashed var(--linea);border-radius:var(--r);color:var(--gris)}
+
+/* Talleres */
+.talleres-sec{background:var(--papel)}
+.talleres{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.taller{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.taller .foto{aspect-ratio:4/3;background:var(--lila) center/cover no-repeat}
+.taller .cuerpo{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.taller h3{font-size:1.35rem}
+.taller p{margin:0;color:var(--gris);font-size:.96rem}
+.taller dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:4px 0 0;font-size:.9rem}
+.taller dt{color:var(--gris)}
+.taller dd{margin:0;font-weight:600}
+.cupos{margin-top:auto}
+.cupos .barra{height:8px;border-radius:8px;background:var(--linea);overflow:hidden;margin:6px 0 14px}
+.cupos .barra i{display:block;height:100%;background:var(--magenta);border-radius:8px}
+.cupos small{font-size:.86rem;color:var(--gris)}
+
+/* Inscripción */
+.inscripcion .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}
+.inscripcion h2{font-size:clamp(2.2rem,4.4vw,3.4rem)}
+.inscripcion .info p{color:var(--gris)}
+.pasos{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px;counter-reset:p}
+.pasos li{display:flex;gap:14px;align-items:flex-start}
+.pasos li::before{counter-increment:p;content:counter(p);flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--amarillo);display:grid;place-items:center;font:800 .95rem 'Syne',sans-serif}
+form.ficha{background:var(--tinta);color:#fff;border-radius:24px;padding:32px}
+.ficha .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ficha .full{grid-column:1/-1}
+.ficha label{display:block;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:6px}
+.ficha input,.ficha select{width:100%;padding:13px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;font:500 1rem 'Work Sans',sans-serif;color-scheme:dark}
+.ficha select option{color:var(--tinta)}
+.ficha .check{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:rgba(255,255,255,.8);font-weight:400;margin:4px 0 0}
+.ficha .check input{width:18px;height:18px;flex-shrink:0;accent-color:var(--amarillo);margin-top:2px}
+.ficha .btn{width:100%;margin-top:18px}
+.msg{margin:14px 0 0;font-size:.92rem;min-height:1.3em}
+.msg.error{color:#FFB3CD}
+.ok{background:var(--menta);color:var(--tinta);border-radius:16px;padding:18px;margin-top:16px}
+.ok b{font-family:'Syne',sans-serif}
+
+/* Escuelas */
+.escuelas{background:var(--cobalto);color:#fff;position:relative;overflow:hidden}
+.escuelas .kicker{color:var(--amarillo)}
+.escuelas .kicker::before{background:var(--amarillo)}
+.escuelas .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.escuelas h2{font-size:clamp(2.2rem,4.4vw,3.4rem)}
+.escuelas p{color:rgba(255,255,255,.85)}
+.etapas{display:grid;gap:14px;margin:28px 0}
+.etapa{display:flex;gap:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:16px 18px}
+.etapa b{font:800 1.6rem/1 'Syne',sans-serif;color:var(--amarillo);min-width:34px}
+.etapa h3{font-size:1.1rem;margin-bottom:2px}
+.etapa p{margin:0;font-size:.93rem}
+.escuelas .foto{border-radius:var(--r);aspect-ratio:4/5;background:var(--cobalto-d) center/cover no-repeat;border:8px solid rgba(255,255,255,.12)}
+
+/* Convocatorias */
+.convs{display:grid;gap:14px}
+.conv{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;border:1px solid var(--linea);border-radius:var(--r);padding:22px 26px;transition:border-color .2s}
+.conv:hover{border-color:var(--cobalto)}
+.cuenta{width:92px;text-align:center;border-radius:14px;padding:12px 6px;background:var(--lila)}
+.cuenta b{display:block;font:800 1.9rem/1 'Syne',sans-serif;color:var(--cobalto)}
+.cuenta span{font-size:.75rem;font-weight:600;color:var(--gris)}
+.cuenta.urgente{background:#FDE3EE}
+.cuenta.urgente b{color:var(--magenta)}
+.conv h3{font-size:1.25rem;margin-bottom:4px}
+.conv p{margin:0;color:var(--gris);font-size:.95rem}
+
+/* Visítanos */
+.visita{background:var(--papel)}
+.visita .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.horario{width:100%;border-collapse:collapse;margin-top:20px;font-size:.98rem}
+.horario td{padding:12px 0;border-bottom:1px solid var(--linea)}
+.horario td:last-child{text-align:right;font-weight:600}
+.horario tr.hoy td{color:var(--cobalto)}
+.accesible{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.accesible div{background:#fff;border-radius:14px;padding:16px}
+.accesible b{display:block;font-size:.95rem}
+.accesible span{font-size:.88rem;color:var(--gris)}
+.sala{border-radius:var(--r);min-height:420px;background:var(--lila) center/cover no-repeat;position:relative}
+.sala .tarjeta{position:absolute;left:18px;right:18px;bottom:18px;background:#fff;border-radius:16px;padding:18px 20px}
+.sala .tarjeta b{font-family:'Syne',sans-serif;font-size:1.1rem}
+.sala .tarjeta p{margin:4px 0 0;color:var(--gris);font-size:.93rem}
+
+footer{background:var(--tinta);color:rgba(255,255,255,.75);padding:64px 0 96px;font-size:.93rem}
+footer .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+footer .logo{color:#fff;margin-bottom:14px}
+footer .logo small{color:rgba(255,255,255,.6)}
+footer h4{color:#fff;font:700 .85rem 'Syne',sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+.legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:.82rem}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.visto{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  .hero .wrap,.inscripcion .wrap,.escuelas .wrap,.visita .wrap{grid-template-columns:1fr}
+  .collage{height:440px}
+  .eventos,.talleres{grid-template-columns:1fr 1fr}
+  .cifras .wrap{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  .escuelas .foto{aspect-ratio:16/10}
+}
+@media (max-width:760px){
+  .menu-btn{display:block}
+  header nav{position:fixed;inset:72px 0 auto;background:#fff;border-bottom:1px solid var(--linea);padding:8px 24px 20px;display:none}
+  header nav.abierto{display:block}
+  header nav ul{flex-direction:column;gap:2px}
+  header nav a{display:block;padding:12px 0;font-size:1.05rem}
+  header .inscribete{display:none}
+  .cinta .wrap span:last-child{display:none}
+  section{padding:72px 0}
+  .wrap{padding:0 18px}
+  .hero{padding:36px 0 56px}
+  .collage{height:360px}
+  .eventos,.talleres,.accesible{grid-template-columns:1fr}
+  .ficha .grid{grid-template-columns:1fr}
+  form.ficha{padding:22px}
+  .filtros label.gratis{margin-left:0}
+  .conv{grid-template-columns:auto 1fr;gap:16px;padding:18px}
+  .conv .btn{grid-column:1/-1}
+  footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:420px){.cifras .wrap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,.rv{transition:none!important;animation:none!important;opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cinta"><div class="wrap"><span><b>Nuevo:</b> inscripciones abiertas para talleres de verano 2027</span><span>Entrada liberada todos los domingos</span></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Casa Vertiente, inicio">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#2E3BD6"/><path d="M14 46c8-22 28-22 36 0" stroke="#FFD23F" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="32" cy="22" r="7" fill="#E0367A"/></svg>
+      <span>Casa Vertiente<small>Centro de Artes de Valdivia</small></span>
+    </a>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#cartelera">Cartelera</a></li>
+        <li><a href="#talleres">Talleres</a></li>
+        <li><a href="#escuelas">Escuelas</a></li>
+        <li><a href="#convocatorias">Convocatorias</a></li>
+        <li><a href="#visita">Visítanos</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-cobalto btn-chico inscribete" href="#inscripcion">Inscríbete</a>
+    <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio" style="padding-top:56px">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">Centro cultural · Escuela de artes</span>
+      <h1>El arte se aprende <span class="c">haciendo</span>, <span class="m">juntos.</span></h1>
+      <p>Talleres para niñas, niños, jóvenes y adultos, una cartelera abierta a la comunidad y un programa de mediación para escuelas de toda la Región de Los Ríos.</p>
+      <div class="acciones">
+        <a class="btn btn-cobalto" href="#talleres">Ver talleres 2027</a>
+        <a class="btn btn-borde" href="#cartelera">Cartelera del mes</a>
+      </div>
+    </div>
+    <div class="collage rv" aria-hidden="true">
+      <span class="forma fa"></span>
+      <div class="f f1" style="background-image:url('https://images.unsplash.com/photo-1503095396549-807759245b35?w=1100&q=70&auto=format&fit=crop')"></div>
+      <div class="f f2" style="background-image:url('https://images.unsplash.com/photo-1780751987564-79489283d67b?w=700&q=70&auto=format&fit=crop')"></div>
+      <span class="forma fb"></span>
+      <div class="proximo" id="proximo"><span>Próximo evento</span><b>—</b><small>—</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="cifras" aria-label="Casa Vertiente en cifras (ejemplo)">
+  <div class="wrap">
+    <div><b>24</b><span>talleres al año</span></div>
+    <div><b>3.800</b><span>estudiantes en visitas mediadas</span></div>
+    <div><b>120</b><span>funciones y exposiciones</span></div>
+    <div><b>70 %</b><span>de actividades gratuitas</span></div>
+  </div>
+</div>
+
+<section id="cartelera">
+  <div class="wrap">
+    <div class="cab rv">
+      <div><span class="kicker">Cartelera</span><h2>Qué pasa en Casa Vertiente</h2></div>
+      <p>Teatro, música, danza, cine y artes visuales. Filtra por disciplina o público y agrega cualquier actividad a tu calendario.</p>
+    </div>
+    <div class="filtros" role="group" aria-label="Filtrar cartelera">
+      <button class="filtro" data-d="todas" aria-pressed="true">Todas</button>
+      <button class="filtro" data-d="teatro" aria-pressed="false">Teatro</button>
+      <button class="filtro" data-d="musica" aria-pressed="false">Música</button>
+      <button class="filtro" data-d="danza" aria-pressed="false">Danza</button>
+      <button class="filtro" data-d="visuales" aria-pressed="false">Artes visuales</button>
+      <button class="filtro" data-d="cine" aria-pressed="false">Cine</button>
+      <select id="publico" aria-label="Público">
+        <option value="todos">Todo público</option>
+        <option value="familias">Familias</option>
+        <option value="jovenes">Jóvenes</option>
+        <option value="adultos">Adultos</option>
+      </select>
+      <label class="gratis"><input type="checkbox" id="soloGratis"> Solo gratuitas</label>
+    </div>
+    <div class="eventos" id="eventos" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="talleres-sec" id="talleres">
+  <div class="wrap">
+    <div class="cab rv">
+      <div><span class="kicker">Escuela de artes</span><h2>Talleres 2027</h2></div>
+      <p>Grupos pequeños, guiados por artistas educadores. Materiales incluidos y becas para estudiantes de establecimientos públicos.</p>
+    </div>
+    <div class="talleres" id="listaTalleres"></div>
+  </div>
+</section>
+
+<section class="inscripcion" id="inscripcion">
+  <div class="wrap">
+    <div class="info rv">
+      <span class="kicker">Inscripción</span>
+      <h2>Reserva tu cupo en minutos</h2>
+      <p>Completa la ficha y te confirmamos por correo dentro de 48 horas hábiles. Si el taller está lleno, quedas en lista de espera automáticamente.</p>
+      <ol class="pasos">
+        <li><span>Elige el taller y revisa la edad y el horario.</span></li>
+        <li><span>Completa los datos de la persona participante y de contacto.</span></li>
+        <li><span>Recibe la confirmación y el detalle de materiales.</span></li>
+      </ol>
+    </div>
+    <form class="ficha rv" id="ficha" novalidate aria-label="Ficha de inscripción">
+      <div class="grid">
+        <div class="full"><label for="f-taller">Taller</label><select id="f-taller" required></select></div>
+        <div><label for="f-nombre">Nombre de quien participa</label><input id="f-nombre" autocomplete="name" required></div>
+        <div><label for="f-edad">Edad</label><input id="f-edad" type="number" min="4" max="99" inputmode="numeric" required></div>
+        <div><label for="f-correo">Correo de contacto</label><input id="f-correo" type="email" autocomplete="email" required></div>
+        <div><label for="f-tel">Teléfono</label><input id="f-tel" type="tel" autocomplete="tel" placeholder="+56 9 …"></div>
+        <div class="full"><label class="check"><input type="checkbox" id="f-beca"> Postular a beca (estudiantes de establecimientos públicos)</label></div>
+      </div>
+      <button class="btn btn-amarillo" type="submit">Enviar inscripción</button>
+      <p class="msg" id="msg" role="status"></p>
+      <div id="ok"></div>
+    </form>
+  </div>
+</section>
+
+<section class="escuelas" id="escuelas">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">Programa para escuelas</span>
+      <h2>Visitas mediadas para tu curso</h2>
+      <p>Diseñamos cada visita junto al equipo docente, conectándola con el currículum de Artes Visuales, Música y Lenguaje. Sin costo para establecimientos de la región, con traslado coordinado para escuelas rurales.</p>
+      <div class="etapas">
+        <div class="etapa"><b>01</b><div><h3>Reunión con el equipo docente</h3><p>Definimos objetivos de aprendizaje y adaptamos la actividad al nivel.</p></div></div>
+        <div class="etapa"><b>02</b><div><h3>Mediación en sala</h3><p>Recorrido participativo por la exposición o ensayo abierto.</p></div></div>
+        <div class="etapa"><b>03</b><div><h3>Taller de creación</h3><p>Cada estudiante crea una obra y se lleva una guía para seguir en clases.</p></div></div>
+      </div>
+      <a class="btn btn-amarillo" href="mailto:escuelas@ejemplo.invalid?subject=Solicitud%20de%20visita%20mediada">Solicitar visita para mi curso</a>
+    </div>
+    <div class="foto rv" role="img" aria-label="Niñas dibujando con plumones en una mesa" style="background-image:url('https://images.unsplash.com/photo-1617117206620-b01f2919ff86?w=900&q=70&auto=format&fit=crop')"></div>
+  </div>
+</section>
+
+<section id="convocatorias">
+  <div class="wrap">
+    <div class="cab rv">
+      <div><span class="kicker">Convocatorias</span><h2>Postula tu proyecto</h2></div>
+      <p>Abrimos espacios para artistas, colectivos y agrupaciones de la región. Revisa las bases y el plazo de cada convocatoria.</p>
+    </div>
+    <div class="convs" id="convs"></div>
+  </div>
+</section>
+
+<section class="visita" id="visita">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">Visítanos</span>
+      <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem)">Una casa abierta a la comunidad</h2>
+      <p style="color:var(--gris)">Calle Los Canelos 1450 (dirección ficticia), Valdivia. A dos cuadras de la costanera, con estacionamiento para bicicletas.</p>
+      <table class="horario" id="horario" aria-label="Horario de atención">
+        <tbody>
+          <tr data-dias="1,2,3,4,5"><td>Lunes a viernes</td><td>10:00 – 20:00 h</td></tr>
+          <tr data-dias="6"><td>Sábado</td><td>11:00 – 19:00 h</td></tr>
+          <tr data-dias="0"><td>Domingo (entrada liberada)</td><td>11:00 – 15:00 h</td></tr>
+        </tbody>
+      </table>
+      <div class="accesible">
+        <div><b>Acceso universal</b><span>Rampas, ascensor y baños accesibles.</span></div>
+        <div><b>Funciones inclusivas</b><span>Interpretación en lengua de señas una vez al mes.</span></div>
+      </div>
+    </div>
+    <div class="sala rv" role="img" aria-label="Sala de teatro con butacas rojas" style="background-image:url('https://images.unsplash.com/photo-1615414047026-802692414b79?w=1000&q=70&auto=format&fit=crop')">
+      <div class="tarjeta"><b>Arriendo de salas</b><p>Sala de 180 butacas, sala de ensayo y galería para agrupaciones y organizaciones.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#inicio"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#2E3BD6"/><path d="M14 46c8-22 28-22 36 0" stroke="#FFD23F" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="32" cy="22" r="7" fill="#E0367A"/></svg><span>Casa Vertiente<small>Centro de Artes de Valdivia</small></span></a>
+      <p>Creación, formación y encuentro para las comunidades de la Región de Los Ríos.</p>
+    </div>
+    <div><h4>Programación</h4><ul><li><a href="#cartelera">Cartelera</a></li><li><a href="#talleres">Talleres</a></li><li><a href="#convocatorias">Convocatorias</a></li></ul></div>
+    <div><h4>Comunidad</h4><ul><li><a href="#escuelas">Escuelas</a></li><li><a href="#visita">Arriendo de salas</a></li><li><a href="#visita">Accesibilidad</a></li></ul></div>
+    <div><h4>Contacto (ficticio)</h4><ul><li>hola@ejemplo.invalid</li><li>+56 9 0000 0000</li><li>Valdivia, Chile</li></ul></div>
+    <p class="legal">© 2026 Casa Vertiente · Institución ficticia. Fotografías de Unsplash. Diseño de ejemplo por Werex Studio.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s);};
+  var menuBtn=$('.menu-btn'),menu=$('#menu');
+  menuBtn.addEventListener('click',function(){var a=menu.classList.toggle('abierto');menuBtn.setAttribute('aria-expanded',a);});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('abierto');menuBtn.setAttribute('aria-expanded','false');}});
+
+  var U='https://images.unsplash.com/photo-',Q='?w=800&q=70&auto=format&fit=crop';
+  var hoy=new Date();hoy.setHours(0,0,0,0);
+  var dia=function(n){var d=new Date(hoy);d.setDate(d.getDate()+n);return d;};
+  var MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  var SEM=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  var NOMBRE={teatro:'Teatro',musica:'Música',danza:'Danza',visuales:'Artes visuales',cine:'Cine'};
+
+  var EVENTOS=[
+    {t:'La casa que flota',d:'teatro',p:['familias','todos'],n:3,h:'17:00',lugar:'Sala principal',precio:0,img:'1558970439-add78fc68990'},
+    {t:'Cuerpos de agua',d:'danza',p:['jovenes','adultos','todos'],n:5,h:'20:00',lugar:'Sala principal',precio:4000,img:'1579539760267-b2e78d9d735e'},
+    {t:'Orquesta juvenil en concierto',d:'musica',p:['familias','todos'],n:8,h:'19:00',lugar:'Patio central',precio:0,img:'1763627516727-2ca3e324fa59'},
+    {t:'Trazos de río: muestra de talleres',d:'visuales',p:['familias','todos'],n:1,h:'10:00 – 20:00',lugar:'Galería',precio:0,img:'1761403942462-04b8b97f1fe9'},
+    {t:'Cineclub: memoria del sur',d:'cine',p:['adultos','todos'],n:11,h:'19:30',lugar:'Sala de cine',precio:2000,img:'1615414015111-8d98cb65677e'},
+    {t:'Noche de bandas locales',d:'musica',p:['jovenes','todos'],n:13,h:'21:00',lugar:'Patio central',precio:3000,img:'1541804627596-3b5b9ef58c93'},
+    {t:'Danza contemporánea: muestra abierta',d:'danza',p:['familias','jovenes','todos'],n:16,h:'18:00',lugar:'Sala de ensayo',precio:0,img:'1593408995262-1d8933c37afc'},
+    {t:'Monólogos de la lluvia',d:'teatro',p:['adultos','todos'],n:19,h:'20:30',lugar:'Sala principal',precio:5000,img:'1762786113000-fa587fd3d69c'},
+    {t:'Pintura al aire libre en la costanera',d:'visuales',p:['familias','adultos','todos'],n:22,h:'11:00',lugar:'Costanera de Valdivia',precio:0,img:'1770739879041-22f0dfc37301'}
+  ];
+  EVENTOS.sort(function(a,b){return a.n-b.n;});
+  EVENTOS.forEach(function(e){e.fecha=dia(e.n);});
+
+  var filtro={d:'todas',p:'todos',gratis:false};
+  var cont=$('#eventos');
+  function pesos(n){return n?'$'+n.toLocaleString('es-CL'):'Gratuito';}
+  function render(){
+    var lista=EVENTOS.filter(function(e){return (filtro.d==='todas'||e.d===filtro.d)&&e.p.indexOf(filtro.p)>-1&&(!filtro.gratis||!e.precio);});
+    if(!lista.length){cont.innerHTML='<p class="vacio">No hay actividades con esos filtros. Prueba con otra disciplina o público.</p>';return;}
+    cont.innerHTML=lista.map(function(e,i){
+      var f=e.fecha;
+      return '<article class="evento"><div class="foto" role="img" aria-label="Fotografía de referencia de '+NOMBRE[e.d].toLowerCase()+'" style="background-image:url(\''+U+e.img+Q+'\')"><div class="fecha-ev"><b>'+f.getDate()+'</b><span>'+MES[f.getMonth()]+'</span></div></div>'+
+      '<div class="cuerpo"><span class="disc d-'+e.d+'">'+NOMBRE[e.d]+'</span><h3>'+e.t+'</h3><p class="meta">'+SEM[f.getDay()]+' · '+e.h+' · '+e.lugar+'</p>'+
+      '<div class="pie"><span class="precio">'+pesos(e.precio)+'</span><button class="ics" type="button" data-i="'+EVENTOS.indexOf(e)+'">+ Agregar a calendario</button></div></div></article>';
+    }).join('');
+  }
+  document.querySelectorAll('.filtro').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.filtro').forEach(function(x){x.setAttribute('aria-pressed','false');});
+    b.setAttribute('aria-pressed','true');filtro.d=b.dataset.d;render();});});
+  $('#publico').addEventListener('change',function(e){filtro.p=e.target.value;render();});
+  $('#soloGratis').addEventListener('change',function(e){filtro.gratis=e.target.checked;render();});
+  render();
+
+  var px=EVENTOS.slice().sort(function(a,b){return a.n-b.n;})[0];
+  $('#proximo').innerHTML='<span>Próximo evento</span><b>'+px.t+'</b><small>'+SEM[px.fecha.getDay()]+' '+px.fecha.getDate()+' de '+MES[px.fecha.getMonth()]+' · '+px.h+'</small>';
+
+  function dosDig(n){return String(n).padStart(2,'0');}
+  cont.addEventListener('click',function(ev){
+    var b=ev.target.closest('.ics');if(!b)return;
+    var e=EVENTOS[+b.dataset.i],f=e.fecha,hm=(e.h.match(/(\d{1,2}):(\d{2})/)||[0,'10','00']);
+    var ini=f.getFullYear()+dosDig(f.getMonth()+1)+dosDig(f.getDate())+'T'+dosDig(hm[1])+hm[2]+'00';
+    var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Casa Vertiente (ejemplo)//ES','BEGIN:VEVENT','UID:'+ini+'-'+b.dataset.i+'@ejemplo.invalid','DTSTART:'+ini,'SUMMARY:'+e.t,'LOCATION:'+e.lugar+', Valdivia','DESCRIPTION:Actividad de ejemplo; datos ficticios.','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='casa-vertiente-'+b.dataset.i+'.ics';document.body.appendChild(a);a.click();a.remove();
+    b.textContent='✓ Descargado';
+  });
+
+  var TALLERES=[
+    {id:'pintura',t:'Pintura y color',desc:'Exploración de técnicas acuosas, mezcla de color y composición a partir del paisaje local.',edad:[8,12],h:'Martes y jueves, 17:00 h',cupos:16,ocupados:11,img:'1780751379328-9271686e4e06'},
+    {id:'teatro',t:'Teatro para jóvenes',desc:'Juego dramático, voz y cuerpo para crear una obra colectiva que se presenta en diciembre.',edad:[13,18],h:'Miércoles, 18:00 h',cupos:18,ocupados:15,img:'1588928781379-c355ab3edc9b'},
+    {id:'danza',t:'Danza contemporánea',desc:'Técnica, improvisación y creación coreográfica para todos los niveles.',edad:[15,99],h:'Lunes y miércoles, 19:30 h',cupos:20,ocupados:9,img:'1524594152303-9fd13543fe6e'},
+    {id:'ceramica',t:'Cerámica en familia',desc:'Modelado en arcilla para hacer piezas en conjunto entre niños y adultos.',edad:[5,99],h:'Sábados, 11:00 h',cupos:12,ocupados:12,img:'1596464716127-f2a82984de30'},
+    {id:'coro',t:'Coro comunitario',desc:'Canto colectivo y repertorio latinoamericano, sin necesidad de experiencia previa.',edad:[16,99],h:'Jueves, 19:00 h',cupos:30,ocupados:17,img:'1763627516727-2ca3e324fa59'},
+    {id:'ilustracion',t:'Ilustración y cómic',desc:'Personajes, narrativa visual y fanzine propio, con técnicas análogas y digitales.',edad:[12,17],h:'Viernes, 17:30 h',cupos:15,ocupados:6,img:'1698340311456-77454d0abdc7'}
+  ];
+  $('#listaTalleres').innerHTML=TALLERES.map(function(t){
+    var libres=t.cupos-t.ocupados,pct=Math.round(t.ocupados/t.cupos*100);
+    var edad=t.edad[1]>=99?'Desde '+t.edad[0]+' años':t.edad[0]+' a '+t.edad[1]+' años';
+    return '<article class="taller rv"><div class="foto" role="img" aria-label="Fotografía de referencia del taller '+t.t+'" style="background-image:url(\''+U+t.img+Q+'\')"></div><div class="cuerpo"><h3>'+t.t+'</h3><p>'+t.desc+'</p>'+
+    '<dl><dt>Edad</dt><dd>'+edad+'</dd><dt>Horario</dt><dd>'+t.h+'</dd><dt>Valor</dt><dd>$18.000 mensual</dd></dl>'+
+    '<div class="cupos"><small>'+(libres?libres+' cupos disponibles de '+t.cupos:'Cupos completos · lista de espera')+'</small><div class="barra" aria-hidden="true"><i style="width:'+pct+'%"></i></div>'+
+    '<a class="btn '+(libres?'btn-cobalto':'btn-borde')+' btn-chico" href="#inscripcion" data-taller="'+t.id+'">'+(libres?'Inscribirme':'Unirme a la lista de espera')+'</a></div></div></article>';
+  }).join('');
+  var sel=$('#f-taller');
+  sel.innerHTML=TALLERES.map(function(t){return '<option value="'+t.id+'">'+t.t+' · '+t.h+'</option>';}).join('');
+  document.querySelectorAll('[data-taller]').forEach(function(a){a.addEventListener('click',function(){sel.value=a.dataset.taller;});});
+
+  $('#ficha').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var t=TALLERES.filter(function(x){return x.id===sel.value;})[0],msg=$('#msg'),ok=$('#ok');
+    var nombre=$('#f-nombre').value.trim(),edad=+$('#f-edad').value,correo=$('#f-correo').value.trim();
+    ok.innerHTML='';msg.className='msg error';
+    if(!nombre){msg.textContent='Ingresa el nombre de quien participa.';$('#f-nombre').focus();return;}
+    if(!edad){msg.textContent='Ingresa la edad.';$('#f-edad').focus();return;}
+    if(edad<t.edad[0]||edad>t.edad[1]){msg.textContent='El taller '+t.t+' es para '+(t.edad[1]>=99?'mayores de '+t.edad[0]:t.edad[0]+' a '+t.edad[1])+' años. Revisa otro taller.';sel.focus();return;}
+    if(!/^\S+@\S+\.\S+$/.test(correo)){msg.textContent='Revisa el correo de contacto.';$('#f-correo').focus();return;}
+    msg.className='msg';msg.textContent='';
+    var lleno=t.ocupados>=t.cupos;
+    ok.innerHTML='<div class="ok"><b>'+(lleno?'Quedaste en lista de espera':'¡Inscripción recibida!')+'</b><br>'+nombre+' · '+t.t+'<br><small>Esta es una demostración: no se envió ningún dato.</small></div>';
+    ev.target.reset();sel.value=t.id;
+  });
+
+  var CONV=[
+    {t:'Residencia de creación 2027',desc:'Dos meses de trabajo en Casa Vertiente para artistas o colectivos de la región, con aporte económico y muestra final.',n:6},
+    {t:'Exposición colectiva de artistas emergentes',desc:'Selección de obras para la galería durante el otoño. Abierta a artistas menores de 35 años.',n:19},
+    {t:'Talleres comunitarios en barrios',desc:'Propuestas de talleres para juntas de vecinos y organizaciones territoriales de Valdivia.',n:34}
+  ];
+  $('#convs').innerHTML=CONV.map(function(c){
+    var f=dia(c.n);
+    return '<article class="conv rv"><div class="cuenta'+(c.n<=7?' urgente':'')+'"><b>'+c.n+'</b><span>días para postular</span></div><div><h3>'+c.t+'</h3><p>'+c.desc+' Cierre: '+f.getDate()+' de '+MES[f.getMonth()]+'.</p></div><a class="btn btn-borde btn-chico" href="mailto:convocatorias@ejemplo.invalid?subject='+encodeURIComponent(c.t)+'">Solicitar bases</a></article>';
+  }).join('');
+
+  var d=new Date().getDay();
+  document.querySelectorAll('#horario tr').forEach(function(tr){if(tr.dataset.dias.split(',').indexOf(String(d))>-1)tr.classList.add('hoy');});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+</script>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+</body>
+</html>
