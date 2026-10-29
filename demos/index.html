@@ -104,6 +104,29 @@
     .info h2 { font-size: 25px; }
   }
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
+
+  /* Contacto por WhatsApp */
+  .wa-flotante{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#0B2E1A;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.22);transition:transform .2s}
+  .wa-flotante:hover{transform:translateY(-3px)}
+  .wa-flotante svg{width:24px;height:24px}
+  .wa-form{text-align:left;border-radius:18px;padding:26px}
+  .wa-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .wa-full{grid-column:1/-1}
+  .wa-form label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px}
+  .wa-form input,.wa-form select,.wa-form textarea{width:100%;padding:12px 13px;border-radius:10px;font:inherit;font-size:.97rem}
+  .wa-form textarea{resize:vertical}
+  .wa-enviar{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:16px;background:#25D366;color:#0B2E1A;border:0;border-radius:12px;padding:15px;font-family:inherit;font-size:1rem;font-weight:700;line-height:1;cursor:pointer;transition:background .2s}
+  .wa-enviar:hover{background:#1EBE5A}
+  .wa-enviar svg{width:22px;height:22px}
+  .wa-nota{font-size:.85rem;margin:10px 0 0;opacity:.8}
+  .wa-nota.wa-error{color:#E5484D;opacity:1}
+  @media (max-width:600px){.wa-grid{grid-template-columns:1fr}.wa-flotante span{display:none}.wa-flotante{padding:14px}}
+  @media print{.wa-flotante,.wa-form,.contacto-wa{display:none!important}}
+  .wa-oscuro{max-width:640px;margin:0 auto;background:var(--panel);border:1px solid var(--linea)}
+  .wa-oscuro label{color:#bdbbb3}
+  .wa-oscuro input,.wa-oscuro select,.wa-oscuro textarea{background:var(--fondo);border:1px solid var(--linea);color:var(--texto);color-scheme:dark}
+  .wa-oscuro input:focus,.wa-oscuro select:focus,.wa-oscuro textarea:focus{outline:2px solid var(--acento);outline-offset:1px}
+  .contacto .wa-oscuro .wa-nota{color:var(--gris);margin:10px 0 0;font-size:.85rem;max-width:none}
 </style>
 </head>
 <body>
@@ -181,10 +204,29 @@
     </div>
   </section>
 
-  <section class="contacto rv">
+  <section class="contacto rv" id="contacto">
     <h2>¿Tu negocio es <span class="serif">el próximo?</span></h2>
-    <p>Cuéntame de tu proyecto y te respondo en menos de 24 horas.</p>
-    <a class="btn" href="mailto:rene.cerpa.a@gmail.com">Hablemos →</a>
+    <p>Cuéntame qué necesitas y te respondo por WhatsApp en menos de 24 horas. También puedes escribirme a <a href="mailto:rene.cerpa.a@gmail.com" style="text-decoration:underline">rene.cerpa.a@gmail.com</a>.</p>
+    <form class="wa-form wa-oscuro" id="wa-form" novalidate aria-label="Formulario de contacto por WhatsApp">
+      <div class="wa-grid">
+        <div><label for="wa-nombre">Tu nombre</label><input id="wa-nombre" autocomplete="name" required></div>
+        <div><label for="wa-negocio">Negocio u organización</label><input id="wa-negocio" placeholder="Ej.: Cabañas El Bosque"></div>
+        <div><label for="wa-necesito">¿Qué necesitas?</label>
+          <select id="wa-necesito">
+            <option>Una página web nueva</option>
+            <option>Mejorar o rediseñar mi página</option>
+            <option>Reservas, agenda o pedidos en línea</option>
+            <option>Página para un espacio u organización cultural</option>
+            <option>Soporte técnico o redes</option>
+            <option>Otro</option>
+          </select></div>
+        <div><label for="wa-plazo">¿Para cuándo?</label>
+          <select id="wa-plazo"><option>Lo antes posible</option><option>Durante este mes</option><option>En los próximos meses</option><option>Solo estoy cotizando</option></select></div>
+        <div class="wa-full"><label for="wa-msg">Cuéntame brevemente</label><textarea id="wa-msg" rows="3" placeholder="Rubro, comuna, si ya tienes logo, fotos o dominio…"></textarea></div>
+      </div>
+      <button class="wa-enviar" type="submit"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg>Enviar por WhatsApp</button>
+      <p class="wa-nota" id="wa-nota" role="status">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+    </form>
   </section>
 </main>
 
@@ -198,6 +240,21 @@
 <script>
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .1 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+<a class="wa-flotante" href="https://wa.me/56977987960?text=Hola%20Ren%C3%A9%2C%20vi%20tu%20portafolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg><span>WhatsApp</span></a>
+<script>
+(function(){
+  var f=document.getElementById('wa-form');if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){return document.getElementById(id).value.trim();};
+    var nota=document.getElementById('wa-nota');
+    if(!v('wa-nombre')){nota.textContent='Escribe tu nombre para continuar.';nota.classList.add('wa-error');document.getElementById('wa-nombre').focus();return;}
+    nota.classList.remove('wa-error');nota.textContent='Abriendo WhatsApp…';
+    var t='Hola René, soy '+v('wa-nombre')+(v('wa-negocio')?' de '+v('wa-negocio'):'')+'.\n• Necesito: '+v('wa-necesito')+'\n• Plazo: '+v('wa-plazo')+(v('wa-msg')?'\n• Detalle: '+v('wa-msg'):'');
+    window.open('https://wa.me/56977987960?text='+encodeURIComponent(t),'_blank','noopener');
+  });
+})();
 </script>
 </body>
 </html>

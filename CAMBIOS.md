@@ -1,5 +1,10 @@
 # Registro de cambios
 
+## 2026-10-29 (contacto por WhatsApp, a pedido de René)
+
+- Currículum y portafolio: botón flotante de WhatsApp (+56 9 7798 7960) y formulario de consulta (nombre, negocio, qué necesita, plazo y detalle) que abre WhatsApp con el mensaje listo.
+- Currículum: la sección de contacto muestra correo y WhatsApp; el formulario y el botón flotante no aparecen en la versión PDF.
+
 ## 2026-10-29 (centro cultural rediseñado como sitio informativo, a pedido de René)
 
 ### Portafolio de demos
