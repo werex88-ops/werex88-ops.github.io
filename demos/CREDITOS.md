@@ -67,3 +67,16 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 - `mascotas/img/corriendo.jpg` — https://images.unsplash.com/photo-1534361960057-19889db9621e
 - `mascotas/img/amigos.jpg` — https://images.unsplash.com/photo-1548199973-03cce0bbc87b
 - `mascotas/img/pug.jpg` — https://images.unsplash.com/photo-1517849845537-4d257902454a
+
+## Cabañas (enlazadas directamente desde Unsplash)
+
+- `cabanas` portada — https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8
+- `cabanas` cabaña Ulmo — https://images.unsplash.com/photo-1542718610-a1d656d1884c
+- `cabanas` cabaña Coigüe — https://images.unsplash.com/photo-1575403071235-5dcd06cbf169
+- `cabanas` cabaña Alerce — https://images.unsplash.com/photo-1607272485702-5ff1af8caf08
+- `cabanas` kayak — https://images.unsplash.com/photo-1521336575822-6da63fb45455
+- `cabanas` tinaja — https://images.unsplash.com/photo-1634253539564-8887939e239f
+- `cabanas` fogón — https://images.unsplash.com/photo-1782226796423-8d72656a332c
+- `cabanas` senderos y cierre — https://images.unsplash.com/photo-1775155636890-9d688754bdff
+- `cabanas` días de lluvia — https://images.unsplash.com/photo-1761319914911-71b059a655d8
+- `cabanas` nosotros — https://images.unsplash.com/photo-1773423391716-04e278b07b1b

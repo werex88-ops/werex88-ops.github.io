@@ -5,562 +5,463 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>René Cerpa Andrade — Curriculum Vitae</title>
 <meta name="description" content="Curriculum Vitae de René Cerpa Andrade, Ingeniero en Informática en la Región de Los Ríos: educación artística, gestión cultural, desarrollo web y soporte técnico freelance.">
-<meta name="theme-color" content="#6E4BFF">
+<meta name="theme-color" content="#14213D">
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="es_CL">
 <meta property="og:title" content="René Cerpa Andrade — Curriculum Vitae">
 <meta property="og:description" content="Ingeniero en Informática ligado a la gestión cultural y la educación artística en la Región de Los Ríos. Desarrollo web y soporte técnico freelance.">
 <meta property="og:url" content="https://werex88-ops.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236E4BFF'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23fff'%3ERC%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314213D'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%23fff'%3ERC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#F7F5FC;
-    --bg-2:#EEE9FA;
-    --card:#FFFFFF;
-    --ink:#1F1B33;
-    --ink-dim:rgba(31,27,51,0.62);
-    --violet:#6E4BFF;
-    --violet-deep:#4B2FD1;
-    --lime:#3FA92B;
-    --lime-bright:#B6FF6B;
-    --coral:#FF6A4D;
-    --line: rgba(31,27,51,0.12);
+    --tinta:#14213D;      /* azul marino */
+    --texto:#1F2937;
+    --gris:#5B6474;
+    --suave:#8A93A3;
+    --fondo:#FFFFFF;
+    --papel:#F5F6F8;
+    --linea:#E3E6EB;
+    --acento:#2C5BD3;     /* azul institucional */
+    --acento-suave:#E9EFFC;
+    --verde:#1F8A5B;
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter', sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  h1,h2,h3{
-    font-family:'Bricolage Grotesque', sans-serif;
-    margin:0;
-    color:var(--ink);
-    font-weight:700;
-    letter-spacing:-0.01em;
-  }
-  .mono{ font-family:'Space Mono', monospace; }
-  .wrap{ max-width:1000px; margin:0 auto; padding:0 28px; position:relative; z-index:2; }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--fondo);color:var(--texto);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--acento)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:6px}
+  h1,h2,h3{margin:0;color:var(--tinta);line-height:1.2}
+  .serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 
-  .blob{
-    position:fixed;
-    border-radius:50%;
-    filter:blur(100px);
-    z-index:0;
-    pointer-events:none;
-  }
-  .blob-1{
-    width:520px;height:520px;
-    background:var(--violet);
-    opacity:0.14;
-    top:-200px; right:-140px;
-    animation:float1 18s ease-in-out infinite;
-  }
-  .blob-2{
-    width:420px;height:420px;
-    background:var(--lime-bright);
-    opacity:0.28;
-    bottom:5%; left:-180px;
-    animation:float2 22s ease-in-out infinite;
-  }
-  @keyframes float1{
-    0%,100%{ transform:translate(0,0) scale(1); }
-    50%{ transform:translate(-40px,50px) scale(1.1); }
-  }
-  @keyframes float2{
-    0%,100%{ transform:translate(0,0) scale(1); }
-    50%{ transform:translate(50px,-30px) scale(1.15); }
-  }
-  @media (prefers-reduced-motion: reduce){ .blob{ animation:none; } }
+  /* Navegación */
+  nav.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+  .marca{font-weight:700;color:var(--tinta);text-decoration:none;letter-spacing:-.01em}
+  .marca span{color:var(--acento)}
+  nav.top ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+  nav.top ul a{color:var(--gris);text-decoration:none;font-size:.92rem;font-weight:500}
+  nav.top ul a:hover{color:var(--tinta)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font:600 .95rem/1 'Inter',sans-serif;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn svg{width:17px;height:17px}
+  .btn-primario{background:var(--tinta);color:#fff}
+  .btn-primario:hover{background:#22325A}
+  .btn-borde{border-color:var(--linea);color:var(--tinta);background:#fff}
+  .btn-borde:hover{border-color:var(--tinta)}
+  .btn-chico{padding:9px 14px;font-size:.86rem}
 
-  nav{
-    position:sticky; top:0; z-index:20;
-    background:rgba(247,245,252,0.78);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  nav .wrap{
-    display:flex; justify-content:space-between; align-items:center;
-    padding-top:16px; padding-bottom:16px;
-  }
-  nav .brand{ font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:1.05rem; }
-  nav .brand span{ color:var(--violet); }
-  nav ul{ list-style:none; display:flex; gap:26px; margin:0; padding:0; }
-  nav a{
-    color:var(--ink); text-decoration:none; font-size:0.9rem; font-weight:500;
-    opacity:0.68; transition:opacity .2s ease, color .2s ease;
-  }
-  nav a:hover, nav a:focus-visible{ opacity:1; color:var(--violet); }
+  /* Encabezado */
+  header.hero{padding:72px 0 56px;border-bottom:1px solid var(--linea);background:linear-gradient(180deg,var(--papel),#fff)}
+  .hero-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:56px;align-items:start}
+  .etiqueta{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gris)}
+  .etiqueta i{width:8px;height:8px;border-radius:50%;background:var(--verde)}
+  h1.nombre{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(2.8rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.01em;margin:18px 0 14px}
+  .titular{font-size:1.12rem;font-weight:600;color:var(--tinta);margin:0 0 16px}
+  .titular span{color:var(--suave);font-weight:400;margin:0 6px}
+  .resumen{color:var(--gris);font-size:1.05rem;max-width:58ch;margin:0 0 28px}
+  .acciones{display:flex;flex-wrap:wrap;gap:10px}
+  .ficha{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:26px;box-shadow:0 12px 32px rgba(20,33,61,.06)}
+  .ficha .cargo-etq{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--verde)}
+  .ficha h2{font-size:1.12rem;margin:8px 0 4px}
+  .ficha .org{color:var(--gris);font-size:.93rem;margin:0}
+  .ficha dl{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--linea);display:grid;gap:12px}
+  .ficha dl div{display:grid;grid-template-columns:96px 1fr;gap:10px;font-size:.93rem}
+  .ficha dt{color:var(--suave)}
+  .ficha dd{margin:0;color:var(--texto);font-weight:500}
+  .cifras{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:14px;overflow:hidden;margin-top:40px}
+  .cifras div{background:#fff;padding:18px 20px}
+  .cifras b{display:block;font-family:'Instrument Serif',serif;font-weight:400;font-size:2.2rem;line-height:1;color:var(--tinta)}
+  .cifras span{font-size:.85rem;color:var(--gris)}
 
-  /* HERO */
-  header.hero{ padding:96px 0 70px; position:relative; }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.15fr 0.85fr;
-    gap:48px;
-    align-items:center;
-  }
-  .eyebrow{
-    font-family:'Space Mono', monospace;
-    font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase;
-    color:var(--violet-deep); margin-bottom:20px; display:inline-flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{
-    content:""; width:8px; height:8px; border-radius:50%;
-    background:var(--lime); box-shadow:0 0 10px rgba(63,169,43,0.5);
-    animation:pulse 1.8s ease-in-out infinite;
-  }
-  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+  /* Secciones */
+  section{padding:64px 0;border-bottom:1px solid var(--linea)}
+  .sec{display:grid;grid-template-columns:240px 1fr;gap:48px}
+  .sec-cab{position:sticky;top:96px;align-self:start}
+  .sec-cab .num{font-size:.8rem;font-weight:600;color:var(--acento);letter-spacing:.08em}
+  .sec-cab h2{font-size:1.6rem;margin-top:6px;letter-spacing:-.01em}
+  .sec-cab p{color:var(--gris);font-size:.92rem;margin:10px 0 0}
 
-  h1.name{
-    font-size:clamp(2.3rem, 5.4vw, 3.8rem);
-    line-height:1.0;
-    margin-bottom:22px;
-    background:linear-gradient(100deg, var(--ink) 25%, var(--violet-deep) 65%, var(--lime) 100%);
-    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-  }
-  .role-card{
-    display:inline-flex; flex-direction:column; gap:4px;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-left:3px solid var(--violet);
-    padding:16px 20px; border-radius:8px; margin-bottom:24px;
-    box-shadow:0 6px 18px rgba(31,27,51,0.05);
-  }
-  .role-card .role{ font-size:1.0rem; font-weight:600; }
-  .role-card .since{ font-family:'Space Mono', monospace; font-size:0.78rem; color:var(--ink-dim); }
-  .tagline{ font-size:1.05rem; color:var(--ink-dim); max-width:520px; margin-bottom:30px; }
+  .perfil p{font-size:1.06rem;margin:0 0 16px;max-width:68ch}
+  .perfil p:first-child{font-size:1.2rem;color:var(--tinta)}
 
-  .btn{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:15px 26px; border-radius:8px;
-    font-size:0.95rem; font-weight:600; text-decoration:none;
-    transition:transform .2s cubic-bezier(.2,.8,.2,1), box-shadow .2s ease;
-  }
-  .btn-primary{
-    background:linear-gradient(100deg, var(--violet), var(--violet-deep));
-    color:#fff; box-shadow:0 10px 26px rgba(110,75,255,0.30);
-  }
-  .btn-primary:hover{ transform:translateY(-3px) scale(1.02); box-shadow:0 16px 32px rgba(110,75,255,0.4); }
-  .btn-primary svg{ width:16px; height:16px; }
+  /* Experiencia */
+  .exp{position:relative;padding:0 0 34px 28px;border-left:2px solid var(--linea)}
+  .exp:last-child{padding-bottom:0}
+  .exp::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--suave)}
+  .exp.actual::before{background:var(--acento);border-color:var(--acento);box-shadow:0 0 0 5px var(--acento-suave)}
+  .exp .fecha{font-size:.85rem;font-weight:600;color:var(--gris)}
+  .exp .fecha b{color:var(--verde);font-weight:600;background:#E6F4EC;padding:2px 8px;border-radius:999px;margin-left:6px;font-size:.75rem}
+  .exp h3{font-size:1.12rem;margin:4px 0 2px}
+  .exp .org{color:var(--acento);font-weight:500;font-size:.95rem;margin:0 0 10px}
+  .exp ul{margin:0;padding-left:18px;color:var(--gris)}
+  .exp li{margin-bottom:4px}
+  .exp li::marker{color:var(--suave)}
 
-  /* hero illustration */
-  .art-panel{
-    position:relative;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:14px;
-    box-shadow:0 20px 50px rgba(31,27,51,0.08);
-  }
-  .art-panel svg{ width:100%; height:auto; display:block; }
+  /* Servicios */
+  .servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .servicio{border:1px solid var(--linea);border-radius:14px;padding:24px;background:#fff;display:flex;flex-direction:column;gap:10px}
+  .servicio .ico{width:42px;height:42px;border-radius:10px;background:var(--acento-suave);display:grid;place-items:center}
+  .servicio .ico svg{width:22px;height:22px;stroke:var(--acento)}
+  .servicio h3{font-size:1.05rem}
+  .servicio p{margin:0;color:var(--gris);font-size:.95rem}
+  .servicio a{margin-top:auto;font-weight:600;font-size:.92rem;text-decoration:none}
+  .servicio a:hover{text-decoration:underline}
+  .nota-free{margin:18px 0 0;color:var(--gris);font-size:.92rem}
 
-  /* MARQUEE */
-  .marquee{
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:15px 0; overflow:hidden; white-space:nowrap;
-    background:var(--bg-2);
-  }
-  .marquee-track{ display:inline-block; animation:scroll 26s linear infinite; }
-  .marquee span{ font-family:'Space Mono', monospace; font-size:0.84rem; color:var(--ink-dim); margin-right:38px; }
-  .marquee span.dot{ color:var(--violet); margin-right:38px; }
-  @keyframes scroll{ 0%{ transform:translateX(0); } 100%{ transform:translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
+  /* Competencias */
+  .competencias{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .competencias h3{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);margin-bottom:12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:.88rem;background:var(--papel);border:1px solid var(--linea);color:var(--texto);padding:6px 12px;border-radius:8px}
 
-  section{ padding:74px 0; }
-  .section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:40px; }
-  .section-head .idx{ font-family:'Space Mono', monospace; font-size:0.8rem; color:var(--violet); }
-  .section-head h2{ font-size:1.8rem; }
+  /* Formación */
+  .formacion{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .estudio{border:1px solid var(--linea);border-radius:14px;padding:22px}
+  .estudio .fecha{font-size:.85rem;font-weight:600;color:var(--gris)}
+  .estudio h3{font-size:1.08rem;margin:4px 0}
+  .estudio p{margin:0;color:var(--gris);font-size:.95rem}
 
-  /* FREELANCE */
-  .free-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-  .free-card{
-    background:var(--card); border:1px solid var(--line); border-radius:12px;
-    padding:26px; transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-  }
-  .free-card:hover{ transform:translateY(-6px); border-color:var(--coral); box-shadow:0 16px 30px rgba(255,106,77,0.14); }
-  .free-icon{
-    width:42px; height:42px; border-radius:10px;
-    background:rgba(255,106,77,0.12);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:16px;
-  }
-  .free-icon svg{ width:22px; height:22px; stroke:var(--coral); }
-  .free-card h3{ font-size:1.05rem; margin-bottom:8px; }
-  .free-card p{ margin:0; font-size:0.9rem; color:var(--ink-dim); }
-  .badge-coral{
-    display:inline-block; font-family:'Space Mono', monospace; font-size:0.68rem;
-    letter-spacing:0.06em; text-transform:uppercase; color:#B83A20;
-    background:rgba(255,106,77,0.1); padding:4px 10px; border-radius:20px; margin-bottom:14px;
-  }
+  /* Contacto */
+  footer{background:var(--tinta);color:#fff;padding:72px 0 40px}
+  footer .etq{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9FB3E8}
+  footer h2{color:#fff;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2.2rem,4.6vw,3.4rem);margin:12px 0 24px;max-width:20ch;line-height:1.1}
+  .correo{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--tinta);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:12px;font-size:1.05rem}
+  .correo:hover{background:#E9EFFC}
+  .pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:56px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15);font-size:.88rem;color:rgba(255,255,255,.7)}
+  .pie a{color:#fff}
 
-  /* TIMELINE */
-  .timeline{ position:relative; padding-left:28px; border-left:1.5px solid var(--line); }
-  .tl-item{ position:relative; padding-bottom:40px; }
-  .tl-item:last-child{ padding-bottom:0; }
-  .tl-item::before{
-    content:""; position:absolute; left:-33.5px; top:6px;
-    width:10px; height:10px; border-radius:50%;
-    background:var(--violet); box-shadow:0 0 0 5px var(--bg);
-  }
-  .tl-item.past::before{ background:var(--ink-dim); }
-  .tl-card{
-    background:var(--card); border:1px solid var(--line); border-radius:10px;
-    padding:22px 24px; transition:transform .25s ease, border-color .25s ease;
-  }
-  .tl-card:hover{ transform:translateX(6px); border-color:var(--violet); }
-  .tl-date{ font-family:'Space Mono', monospace; font-size:0.78rem; color:var(--violet-deep); margin-bottom:8px; display:block; }
-  .tl-item h3{ font-size:1.1rem; margin-bottom:3px; }
-  .tl-org{ font-size:0.9rem; color:var(--ink-dim); margin-bottom:12px; font-weight:500; }
-  .tl-item p{ margin:0; font-size:0.94rem; color:var(--ink-dim); max-width:640px; }
-  .current-tag{
-    display:inline-block; margin-left:8px; font-family:'Space Mono', monospace; font-size:0.65rem;
-    letter-spacing:0.06em; text-transform:uppercase; background:var(--violet); color:#fff;
-    padding:3px 9px; border-radius:20px; vertical-align:middle; font-weight:700;
-  }
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
 
-  .edu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  .edu-card{
-    background:var(--card); border:1px solid var(--line); border-radius:10px;
-    padding:26px; transition:transform .25s ease, border-color .25s ease;
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .sec{grid-template-columns:1fr;gap:24px}
+    .sec-cab{position:static}
+    .servicios,.competencias{grid-template-columns:1fr 1fr}
   }
-  .edu-card:hover{ transform:translateY(-5px); border-color:var(--violet); }
-  .edu-card .tl-date{ margin-bottom:10px; }
-  .edu-card h3{ font-size:1.05rem; margin-bottom:4px; }
-  .edu-card p{ margin:0; font-size:0.9rem; color:var(--ink-dim); }
-
-  .chip-row{ display:flex; flex-wrap:wrap; gap:12px; }
-  .chip{
-    font-family:'Space Mono', monospace; font-size:0.82rem;
-    padding:9px 16px; border:1px solid var(--line); border-radius:20px;
-    color:var(--ink); background:var(--card);
-    transition:border-color .2s ease, color .2s ease;
+  @media (max-width:680px){
+    nav.top ul{display:none}
+    .wrap{padding:0 20px}
+    header.hero{padding:48px 0 40px}
+    .servicios,.competencias,.formacion{grid-template-columns:1fr}
+    .cifras{grid-template-columns:1fr}
+    .ficha dl div{grid-template-columns:1fr;gap:0}
+    section{padding:48px 0}
   }
-  .chip:hover{ border-color:var(--violet); color:var(--violet-deep); }
-
-  footer{ padding:84px 0 50px; text-align:center; }
-  footer .eyebrow{ justify-content:center; }
-  footer h2{ font-size:clamp(1.8rem, 4.6vw, 2.7rem); margin-bottom:28px; }
-  .email-link{
-    display:inline-flex; align-items:center; gap:12px;
-    font-family:'Bricolage Grotesque', sans-serif;
-    font-size:clamp(1.2rem, 3.2vw, 1.8rem); font-weight:600;
-    color:var(--ink); text-decoration:none;
-    padding:19px 32px; border:1.5px solid var(--violet); border-radius:12px;
-    background:var(--card);
-    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rv{opacity:1;transform:none;transition:none}
   }
-  .email-link:hover{
-    transform:translateY(-4px); box-shadow:0 16px 34px rgba(110,75,255,0.22); border-color:var(--coral);
-  }
-  footer .meta{
-    margin-top:52px; padding-top:22px; border-top:1px solid var(--line);
-    font-family:'Space Mono', monospace; font-size:0.76rem; color:var(--ink-dim);
-    display:flex; justify-content:center; gap:24px; flex-wrap:wrap;
-  }
-
-  .reveal{
-    opacity:0; transform:translateY(24px) scale(0.98);
-    transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);
-  }
-  .reveal.in{ opacity:1; transform:none; }
-
-  a:focus-visible{ outline:3px solid var(--violet); outline-offset:3px; border-radius:4px; }
-  .btn-secondary{ color:var(--violet-deep); border:1.5px solid var(--violet); background:var(--card); margin-left:10px; }
-  .btn-secondary:hover{ transform:translateY(-3px); box-shadow:0 10px 24px rgba(110,75,255,0.18); }
-  footer .meta a{ color:var(--violet-deep); }
-  .portfolio-link{ margin-top:22px; font-size:0.9rem; }
-  .portfolio-link a{ color:var(--violet-deep); font-weight:600; }
-
   @media print{
-    :root{ --bg:#fff; }
-    .blob, nav, .marquee, .art-panel, .btn, .portfolio-link{ display:none !important; }
-    body{ background:#fff; font-size:11pt; }
-    h1.name{ background:none; -webkit-text-fill-color:var(--ink); color:var(--ink); }
-    header.hero{ padding:0 0 20px; }
-    .hero-grid{ grid-template-columns:1fr; }
-    section{ padding:22px 0; }
-    .reveal{ opacity:1 !important; transform:none !important; }
-    .tl-item, .free-card, .edu-card{ break-inside:avoid; }
-    .tl-card, .free-card, .edu-card, .role-card, .chip{ box-shadow:none; }
-    footer{ padding:24px 0 0; }
-    .email-link{ padding:8px 14px; font-size:1.1rem; }
-    footer .meta{ margin-top:20px; }
-    a{ color:var(--ink); }
-  }
-
-  @media (max-width: 860px){
-    .btn-secondary{ margin:12px 0 0; }
-    .hero-grid{ grid-template-columns:1fr; }
-    .art-panel{ max-width:420px; }
-    .free-grid{ grid-template-columns:1fr; }
-    .edu-grid{ grid-template-columns:1fr; }
-    nav ul{ gap:16px; }
-    nav ul li:nth-child(1){ display:none; }
-  }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .reveal{ opacity:1; transform:none; transition:none; }
+    @page{size:A4;margin:14mm}
+    body{font-size:9.5pt;line-height:1.38;color:#000}
+    .cifras,.ficha dl div:nth-child(n+3){display:none}
+    .resumen{font-size:10pt;margin-bottom:0}
+    .perfil p,.perfil p:first-child{font-size:10pt;margin-bottom:6px}
+    .exp li{margin-bottom:1px}
+    .exp h3{font-size:10.5pt}
+    .exp .org{margin-bottom:3px}
+    .servicios{gap:8px}
+    .servicio p{font-size:9pt}
+    .competencias{gap:12px}
+    .chip{padding:2px 7px;font-size:8.5pt}
+    .chips{gap:4px}
+    .sec-cab h2{font-size:13pt}
+    .pie span:last-child{display:none}
+    .pie{margin-top:4px;padding-top:6px}
+    .servicios,.competencias{grid-template-columns:repeat(3,1fr)!important}
+    .formacion{grid-template-columns:1fr 1fr!important}
+    .hero-grid{grid-template-columns:1.5fr 1fr!important}
+    .sec{grid-template-columns:130px 1fr!important}
+    .sec-cab{position:static!important}
+    .ficha dl div{grid-template-columns:70px 1fr!important}
+    nav.top,.acciones,.rv-ignore,.servicio a,.pie a.solo-web{display:none!important}
+    header.hero{padding:0 0 12px;background:none}
+    .hero-grid{grid-template-columns:1.5fr 1fr;gap:20px}
+    h1.nombre{font-size:30pt;margin:6px 0}
+    .ficha,.servicio,.estudio{box-shadow:none}
+    .cifras{margin-top:14px}
+    section{padding:8px 0}
+    .sec{grid-template-columns:150px 1fr;gap:16px}
+    .sec-cab{position:static}
+    .sec-cab p{display:none}
+    .exp{padding-bottom:8px;break-inside:avoid}
+    .servicio,.estudio{break-inside:avoid;padding:12px}
+    .rv{opacity:1!important;transform:none!important}
+    footer{background:none;color:#000;padding:14px 0 0}
+    footer h2,footer .etq{display:none}
+    .correo{padding:0;color:#000}
+    .pie{color:#000;border-color:#ccc;margin-top:10px}
+    .pie a{color:#000}
+    a{color:#000;text-decoration:none}
   }
 </style>
 </head>
 <body>
 
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-
-<nav>
+<nav class="top" aria-label="Secciones">
   <div class="wrap">
-    <span class="brand">René <span>Cerpa</span> A.</span>
+    <a class="marca" href="#inicio">René Cerpa <span>A.</span></a>
     <ul>
+      <li><a href="#perfil">Perfil</a></li>
       <li><a href="#trayectoria">Trayectoria</a></li>
       <li><a href="#freelance">Freelance</a></li>
+      <li><a href="#competencias">Competencias</a></li>
       <li><a href="#formacion">Formación</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
+    <button class="btn btn-borde btn-chico" type="button" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>PDF
+    </button>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Curriculum Vitae</span>
-      <h1 class="name">René Bastián<br>Cerpa Andrade</h1>
-      <div class="role-card">
-        <span class="role">Profesional del Departamento de Formación en Arte y Cultura <span class="current-tag">Actual</span></span>
-        <span class="since">SEREMI de las Culturas, las Artes y el Patrimonio — Región de Los Ríos · desde marzo 2025</span>
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="etiqueta"><i></i>Curriculum Vitae · Valdivia, Región de Los Ríos</span>
+        <h1 class="nombre">René Bastián<br>Cerpa Andrade</h1>
+        <p class="titular">Ingeniero en Informática<span>·</span>Gestión cultural y educación artística<span>·</span>Desarrollo web y soporte TI</p>
+        <p class="resumen">Ingeniero en Informática ligado a la gestión cultural y la educación artística en la Región de Los Ríos, y con más de 8 años ofreciendo desarrollo web y soporte técnico de forma freelance.</p>
+        <div class="acciones">
+          <a class="btn btn-primario" href="mailto:rene.cerpa.a@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Escríbeme
+          </a>
+          <a class="btn btn-borde" href="demos/">Portafolio de páginas web</a>
+          <button class="btn btn-borde" type="button" onclick="window.print()">Descargar CV en PDF</button>
+        </div>
       </div>
-      <p class="tagline">Ingeniero en Informática ligado a la gestión cultural y la educación artística en la Región de Los Ríos, y con más de 8 años ofreciendo desarrollo web y soporte técnico de forma freelance.</p>
-      <a class="btn btn-primary" href="mailto:rene.cerpa.a@gmail.com">
-        Escríbeme
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <a class="btn btn-secondary" href="demos/">Portafolio de páginas web</a>
+      <aside class="ficha" aria-label="Cargo actual y datos de contacto">
+        <span class="cargo-etq">Cargo actual</span>
+        <h2>Profesional del Departamento de Formación en Arte y Cultura</h2>
+        <p class="org">SEREMI de las Culturas, las Artes y el Patrimonio — Región de Los Ríos · desde marzo 2025</p>
+        <dl>
+          <div><dt>Ubicación</dt><dd>Valdivia, Región de Los Ríos, Chile</dd></div>
+          <div><dt>Correo</dt><dd><a href="mailto:rene.cerpa.a@gmail.com">rene.cerpa.a@gmail.com</a></dd></div>
+          <div><dt>Profesión</dt><dd>Ingeniero en Informática, INACAP</dd></div>
+          <div><dt>Freelance</dt><dd>Desarrollo web y soporte técnico, desde 2017</dd></div>
+        </dl>
+      </aside>
     </div>
-
-    <div class="art-panel">
-      <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#6E4BFF"/>
-            <stop offset="100%" stop-color="#3FA92B"/>
-          </linearGradient>
-        </defs>
-        <rect x="0" y="0" width="400" height="420" rx="16" fill="#F7F5FC"/>
-        <path d="M20 340 C 90 300, 110 260, 70 210 C 30 160, 60 110, 140 100 C 220 90, 230 150, 300 140 C 350 133, 370 90, 385 50"
-              fill="none" stroke="url(#riverGrad)" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
-        <g stroke="#1F1B33" stroke-opacity="0.12" stroke-width="1.5">
-          <line x1="70" y1="210" x2="140" y2="100"/>
-          <line x1="140" y1="100" x2="230" y2="150"/>
-          <line x1="230" y1="150" x2="300" y2="140"/>
-          <line x1="70" y1="210" x2="20" y2="340"/>
-        </g>
-        <circle cx="70" cy="210" r="16" fill="#6E4BFF"/>
-        <circle cx="140" cy="100" r="11" fill="#B6FF6B" stroke="#3FA92B" stroke-width="2"/>
-        <circle cx="230" cy="150" r="13" fill="#FFFFFF" stroke="#6E4BFF" stroke-width="2.5"/>
-        <circle cx="300" cy="140" r="9" fill="#FF6A4D"/>
-        <circle cx="20" cy="340" r="14" fill="#FFFFFF" stroke="#3FA92B" stroke-width="2.5"/>
-        <circle cx="385" cy="50" r="8" fill="#6E4BFF" opacity="0.7"/>
-        <g transform="translate(210,255)">
-          <rect x="-46" y="-34" width="92" height="68" rx="14" fill="#FFFFFF" stroke="#1F1B33" stroke-opacity="0.1" stroke-width="1.5"/>
-          <text x="0" y="8" text-anchor="middle" font-family="Space Mono, monospace" font-size="22" fill="#6E4BFF">&lt;/&gt;</text>
-        </g>
-        <g transform="translate(300,300)">
-          <path d="M0 0 C 4 -18, 22 -22, 26 -4 C 28 8, 14 14, 6 6 C 0 0, -2 -4, 0 0 Z" fill="#FF6A4D" opacity="0.85"/>
-          <circle cx="13" cy="-6" r="3" fill="#FFFFFF"/>
-        </g>
-        <g transform="translate(95,300)" opacity="0.9">
-          <circle cx="0" cy="0" r="4" fill="#3FA92B"/>
-          <circle cx="14" cy="6" r="3" fill="#3FA92B"/>
-          <circle cx="-10" cy="10" r="2.5" fill="#3FA92B"/>
-        </g>
-      </svg>
+    <div class="cifras" aria-label="Trayectoria en cifras">
+      <div><b>+18 años</b><span>de trayectoria laboral (desde 2007)</span></div>
+      <div><b>+6 años</b><span>en el Ministerio de las Culturas, las Artes y el Patrimonio</span></div>
+      <div><b>+8 años</b><span>de servicios informáticos freelance</span></div>
     </div>
   </div>
 </header>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="dot">●</span><span>EDUCACIÓN ARTÍSTICA</span>
-    <span class="dot">●</span><span>GESTIÓN CULTURAL</span>
-    <span class="dot">●</span><span>FONDOS FAE</span>
-    <span class="dot">●</span><span>SOPORTE TÉCNICO FREELANCE</span>
-    <span class="dot">●</span><span>DESARROLLO WEB</span>
-    <span class="dot">●</span><span>VINCULACIÓN TERRITORIAL</span>
-    <span class="dot">●</span><span>EDUCACIÓN ARTÍSTICA</span>
-    <span class="dot">●</span><span>GESTIÓN CULTURAL</span>
-    <span class="dot">●</span><span>FONDOS FAE</span>
-    <span class="dot">●</span><span>SOPORTE TÉCNICO FREELANCE</span>
-    <span class="dot">●</span><span>DESARROLLO WEB</span>
-    <span class="dot">●</span><span>VINCULACIÓN TERRITORIAL</span>
-  </div>
-</div>
-
-<section id="freelance">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx">01</span>
-      <h2>Servicios freelance</h2>
-    </div>
-    <span class="badge-coral reveal">Desde noviembre 2017 · a la fecha</span>
-    <div class="free-grid">
-      <div class="free-card reveal">
-        <div class="free-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 5h18v12H3z"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h3>Desarrollo web</h3>
-        <p>Diseño y desarrollo de sitios en WordPress y JavaScript, a medida para empresas y particulares.</p>
-      </div>
-      <div class="free-card reveal">
-        <div class="free-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v4M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4M15 21h4a2 2 0 002-2v-4"/></svg></div>
-        <h3>Soporte técnico y redes</h3>
-        <p>Solución de problemas de hardware, software y redes, de forma presencial y remota.</p>
-      </div>
-      <div class="free-card reveal">
-        <div class="free-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
-        <h3>Asesorías tecnológicas</h3>
-        <p>Acompañamiento y capacitación en herramientas digitales para equipos y organizaciones.</p>
-      </div>
+<main>
+<section id="perfil">
+  <div class="wrap sec">
+    <div class="sec-cab"><span class="num">01</span><h2>Perfil profesional</h2></div>
+    <div class="perfil rv">
+      <p>Combino gestión pública, trabajo territorial y tecnología para que los proyectos culturales y educativos se ejecuten bien y lleguen a las comunidades.</p>
+      <p>Me desempeño en el área programática y administrativa de la educación artística regional: coordino con establecimientos educacionales, Servicios Locales de Educación Pública (SLEP) y municipios, doy seguimiento a fondos y convenios, y elaboro informes técnicos para la toma de decisiones.</p>
+      <p>Mi formación en informática me permite apoyar a equipos en la adopción de herramientas digitales, y desde 2017 ofrezco de forma independiente desarrollo web, soporte técnico y asesorías tecnológicas a empresas y particulares.</p>
     </div>
   </div>
 </section>
 
 <section id="trayectoria">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx">02</span>
-      <h2>Trayectoria profesional</h2>
+  <div class="wrap sec">
+    <div class="sec-cab"><span class="num">02</span><h2>Trayectoria profesional</h2><p>Experiencia en el sector público cultural, la educación superior, la capacitación y el soporte informático.</p></div>
+    <div>
+      <article class="exp actual rv">
+        <span class="fecha">Marzo 2025 — a la fecha <b>Actual</b></span>
+        <h3>Profesional del Departamento de Formación en Arte y Cultura</h3>
+        <p class="org">SEREMI de las Culturas, las Artes y el Patrimonio, Región de Los Ríos</p>
+        <ul>
+          <li>Gestión programática y administrativa vinculada a la educación artística regional.</li>
+          <li>Educación artística y mediación artística y cultural; seguimiento de proyectos del Fondo de Apoyo a la Educación Artística (FAE).</li>
+          <li>Coordinación con establecimientos educacionales, Servicios Locales de Educación Pública (SLEP) y municipios; articulación territorial y mesas regionales de trabajo.</li>
+          <li>Gestión administrativa: compras públicas, convenios y seguimiento presupuestario.</li>
+          <li>Reportabilidad de los proyectos del programa ACCIONA en el sistema SIRAC y elaboración de la Revista Acciona Los Ríos 2026.</li>
+          <li>Elaboración de informes técnicos y gestión de proyectos culturales y educativos.</li>
+        </ul>
+      </article>
+      <article class="exp rv">
+        <span class="fecha">Noviembre 2020 — 2025</span>
+        <h3>Encargado OIRS Cecrea Los Ríos</h3>
+        <p class="org">Centro de Creación (CECREA) — SEREMI de las Culturas, las Artes y el Patrimonio</p>
+        <ul>
+          <li>Atención a público, entrega de información y programación.</li>
+          <li>Difusión de actividades de forma virtual y presencial.</li>
+          <li>Vinculación con instituciones educacionales y residencias Sename.</li>
+          <li>Redacción de informes y análisis de público.</li>
+          <li>Capacitación al equipo de educación regional en herramientas tecnológicas y programas en la nube.</li>
+        </ul>
+      </article>
+      <article class="exp rv">
+        <span class="fecha">Noviembre 2017 — a la fecha</span>
+        <h3>Emprendedor en Servicios Computacionales</h3>
+        <p class="org">Freelance, Valdivia</p>
+        <ul>
+          <li>Desarrollo y diseño web en WordPress y JavaScript; sitios estáticos para pymes publicados en GitHub Pages.</li>
+          <li>Soporte técnico y de redes para empresas y particulares.</li>
+          <li>Diagnóstico y reparación de notebooks con Windows, macOS y Linux: cambio de disco a SSD y recuperación de sistemas.</li>
+          <li>Asesorías tecnológicas y computacionales.</li>
+        </ul>
+      </article>
+      <article class="exp rv">
+        <span class="fecha">Abril — Diciembre 2019</span>
+        <h3>Profesional de apoyo, Programa Nacional de Desarrollo Artístico en la Educación</h3>
+        <p class="org">SEREMI de las Culturas, las Artes y el Patrimonio, Región de Los Ríos</p>
+        <ul>
+          <li>Apoyo en procesos administrativos de la unidad de educación artística regional.</li>
+          <li>Seguimiento y reportabilidad de proyectos del Fondo de Apoyo a la Educación Artística (FAE).</li>
+          <li>Gestión de la Mesa Regional de Educación Artística y capacitaciones para educadores.</li>
+        </ul>
+      </article>
+      <article class="exp rv">
+        <span class="fecha">Marzo 2016 — Marzo 2019</span>
+        <h3>Relator SENCE</h3>
+        <p class="org">Fundación Rosner y Mahiros Capacita</p>
+        <ul>
+          <li>Relator de Tecnologías de la Información y Comunicación, y de cursos de Word y Excel básico e intermedio.</li>
+          <li>Asistencias técnicas y de acompañamiento.</li>
+        </ul>
+      </article>
+      <article class="exp rv">
+        <span class="fecha">Mayo 2015 — Junio 2017</span>
+        <h3>Ingeniero en Informática — Proyecto REA (AUS 1410, MINEDUC)</h3>
+        <p class="org">Facultad de Anatomía, Universidad Austral de Chile, Valdivia</p>
+        <ul>
+          <li>A cargo del equipo de implementación del repositorio digital de Recursos Educativos Abiertos.</li>
+          <li>Planificación estratégica, supervisión de avances e informes técnicos.</li>
+          <li>Instructor en capacitaciones sobre el repositorio institucional.</li>
+        </ul>
+      </article>
+      <article class="exp rv">
+        <span class="fecha">Febrero 2014 — Abril 2015</span>
+        <h3>Agente de soporte informático</h3>
+        <p class="org">ST Computación — Grupo Copesa, Santiago</p>
+        <ul>
+          <li>Soporte técnico gerencial y resolución de problemas de hardware, software y redes para las publicaciones del grupo.</li>
+          <li>Generación de informes y seguimientos administrativos.</li>
+        </ul>
+      </article>
+      <article class="exp rv">
+        <span class="fecha">Mayo 2007 — Enero 2014</span>
+        <h3>Supervisor Administrativo</h3>
+        <p class="org">Transportes Cruz del Sur, Valdivia</p>
+        <ul>
+          <li>Atención a público y solución de problemas.</li>
+          <li>Elaboración de informes de ventas y procesos administrativos.</li>
+          <li>Uso avanzado de planillas Excel.</li>
+        </ul>
+      </article>
     </div>
-    <div class="timeline">
+  </div>
+</section>
 
-      <div class="tl-item reveal">
-        <span class="tl-date">Marzo 2025 — a la fecha</span>
-        <div class="tl-card">
-          <h3>Profesional del Departamento de Formación en Arte y Cultura</h3>
-          <div class="tl-org">SEREMI de las Culturas, las Artes y el Patrimonio, Región de Los Ríos</div>
-          <p>Gestión programática y administrativa vinculada a la educación artística regional.</p>
+<section id="freelance">
+  <div class="wrap sec">
+    <div class="sec-cab"><span class="num">03</span><h2>Servicios freelance</h2><p>Desde noviembre 2017 · a la fecha.</p></div>
+    <div>
+      <div class="servicios">
+        <div class="servicio rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h3>Desarrollo web</h3>
+          <p>Diseño y desarrollo de sitios en WordPress y JavaScript, a medida para empresas y particulares. Páginas rápidas y adaptadas a celular para pymes.</p>
+          <a href="demos/">Ver portafolio de páginas →</a>
+        </div>
+        <div class="servicio rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
+          <h3>Soporte técnico y redes</h3>
+          <p>Solución de problemas de hardware, software y redes, de forma presencial y remota, en equipos con Windows, macOS y Linux.</p>
+        </div>
+        <div class="servicio rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8-4.3-4.1 5.9-.9z"/></svg></div>
+          <h3>Asesorías tecnológicas</h3>
+          <p>Acompañamiento y capacitación en herramientas digitales para equipos y organizaciones.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="tl-item past reveal">
-        <span class="tl-date">Noviembre 2020 — 2025</span>
-        <div class="tl-card">
-          <h3>Encargado OIRS Cecrea Los Ríos</h3>
-          <div class="tl-org">Centro de Creación (CECREA) — SEREMI de las Culturas, las Artes y el Patrimonio</div>
-          <p>Atención a público, entrega de información y programación. Difusión de actividades de forma virtual y presencial. Vinculación con instituciones educacionales y residencias Sename. Redacción de informes y análisis de público. Capacitación al equipo de educación regional en herramientas tecnológicas y programas en la nube.</p>
+<section id="competencias">
+  <div class="wrap sec">
+    <div class="sec-cab"><span class="num">04</span><h2>Competencias</h2></div>
+    <div class="competencias rv">
+      <div>
+        <h3>Gestión pública y cultural</h3>
+        <div class="chips">
+          <span class="chip">Educación artística</span>
+          <span class="chip">Mediación artística y cultural</span>
+          <span class="chip">Gestión cultural</span>
+          <span class="chip">Fondos FAE</span>
+          <span class="chip">Vinculación territorial</span>
+          <span class="chip">Mesas regionales de trabajo</span>
+          <span class="chip">Compras públicas</span>
+          <span class="chip">Convenios</span>
+          <span class="chip">Seguimiento presupuestario</span>
+          <span class="chip">Redacción de informes técnicos</span>
         </div>
       </div>
-
-      <div class="tl-item past reveal">
-        <span class="tl-date">Noviembre 2017 — a la fecha</span>
-        <div class="tl-card">
-          <h3>Emprendedor en Servicios Computacionales</h3>
-          <div class="tl-org">Freelance, Valdivia</div>
-          <p>Desarrollo y diseño web en WordPress y JavaScript. Soporte técnico y de redes para empresas y particulares. Asesorías tecnológicas y computacionales. <em>(ver detalle en Servicios freelance)</em></p>
+      <div>
+        <h3>Tecnología</h3>
+        <div class="chips">
+          <span class="chip">Desarrollo web</span>
+          <span class="chip">HTML, CSS y JavaScript</span>
+          <span class="chip">WordPress</span>
+          <span class="chip">Git y GitHub Pages</span>
+          <span class="chip">Soporte Windows, macOS y Linux</span>
+          <span class="chip">Redes</span>
+          <span class="chip">Acceso remoto (SSH y VPN)</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Excel avanzado</span>
+          <span class="chip">Herramientas de IA generativa</span>
         </div>
       </div>
-
-      <div class="tl-item past reveal">
-        <span class="tl-date">Abril — Diciembre 2019</span>
-        <div class="tl-card">
-          <h3>Profesional de apoyo, Programa Nacional de Desarrollo Artístico en la Educación</h3>
-          <div class="tl-org">SEREMI de las Culturas, las Artes y el Patrimonio, Región de Los Ríos</div>
-          <p>Apoyo en procesos administrativos de la unidad de educación artística regional. Seguimiento y reportabilidad de proyectos del Fondo de Apoyo a la Educación Artística (FAE). Gestión de la Mesa Regional de Educación Artística y capacitaciones para educadores.</p>
+      <div>
+        <h3>Formación y comunicación</h3>
+        <div class="chips">
+          <span class="chip">Relatoría SENCE</span>
+          <span class="chip">Capacitación en herramientas digitales</span>
+          <span class="chip">Programas en la nube</span>
+          <span class="chip">Atención de público</span>
+          <span class="chip">Difusión de actividades</span>
+          <span class="chip">Análisis de público</span>
         </div>
       </div>
-
-      <div class="tl-item past reveal">
-        <span class="tl-date">Marzo 2016 — Marzo 2019</span>
-        <div class="tl-card">
-          <h3>Relator SENCE</h3>
-          <div class="tl-org">Fundación Rosner y Mahiros Capacita</div>
-          <p>Relator de Tecnologías de la Información y Comunicación, y de cursos de Word y Excel básico e intermedio. Asistencias técnicas y de acompañamiento.</p>
-        </div>
-      </div>
-
-      <div class="tl-item past reveal">
-        <span class="tl-date">Mayo 2015 — Junio 2017</span>
-        <div class="tl-card">
-          <h3>Ingeniero en Informática — Proyecto REA (AUS 1410, MINEDUC)</h3>
-          <div class="tl-org">Facultad de Anatomía, Universidad Austral de Chile, Valdivia</div>
-          <p>A cargo del equipo de implementación del repositorio digital de Recursos Educativos Abiertos. Planificación estratégica, supervisión de avances e informes técnicos. Instructor en capacitaciones sobre el repositorio institucional.</p>
-        </div>
-      </div>
-
-      <div class="tl-item past reveal">
-        <span class="tl-date">Febrero 2014 — Abril 2015</span>
-        <div class="tl-card">
-          <h3>Agente de soporte informático</h3>
-          <div class="tl-org">ST Computación — Grupo Copesa, Santiago</div>
-          <p>Soporte técnico gerencial y resolución de problemas de hardware, software y redes para las publicaciones del grupo. Generación de informes y seguimientos administrativos.</p>
-        </div>
-      </div>
-
-      <div class="tl-item past reveal">
-        <span class="tl-date">Mayo 2007 — Enero 2014</span>
-        <div class="tl-card">
-          <h3>Supervisor Administrativo</h3>
-          <div class="tl-org">Transportes Cruz del Sur, Valdivia</div>
-          <p>Atención a público y solución de problemas. Elaboración de informes de ventas y procesos administrativos. Uso avanzado de planillas Excel.</p>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 <section id="formacion">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx">03</span>
-      <h2>Formación académica</h2>
-    </div>
-    <div class="edu-grid">
-      <div class="edu-card reveal">
-        <span class="tl-date mono">2009 — 2013</span>
+  <div class="wrap sec">
+    <div class="sec-cab"><span class="num">05</span><h2>Formación académica</h2></div>
+    <div class="formacion">
+      <div class="estudio rv">
+        <span class="fecha">2009 — 2013</span>
         <h3>Ingeniería en Informática</h3>
         <p>Universidad Tecnológica de Chile INACAP, Valdivia</p>
       </div>
-      <div class="edu-card reveal">
-        <span class="tl-date mono">2006 — 2007</span>
+      <div class="estudio rv">
+        <span class="fecha">2006 — 2007</span>
         <h3>Psicopedagogía</h3>
         <p>Universidad Tecnológica de Chile INACAP, Valdivia</p>
       </div>
     </div>
   </div>
 </section>
-
-<section id="areas">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx">04</span>
-      <h2>Áreas de trabajo</h2>
-    </div>
-    <div class="chip-row reveal">
-      <span class="chip">Educación artística</span>
-      <span class="chip">Gestión cultural</span>
-      <span class="chip">Fondos FAE</span>
-      <span class="chip">Vinculación territorial</span>
-      <span class="chip">Redacción de informes técnicos</span>
-      <span class="chip">Soporte técnico freelance</span>
-      <span class="chip">Desarrollo web</span>
-    </div>
-  </div>
-</section>
+</main>
 
 <footer id="contacto">
   <div class="wrap">
-    <span class="eyebrow">Contacto</span>
+    <span class="etq">Contacto</span>
     <h2>Escríbeme directamente por correo</h2>
-    <a class="email-link" href="mailto:rene.cerpa.a@gmail.com">rene.cerpa.a@gmail.com</a>
-    <div class="meta">
+    <a class="correo" href="mailto:rene.cerpa.a@gmail.com">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>rene.cerpa.a@gmail.com
+    </a>
+    <div class="pie">
       <span>Valdivia, Región de Los Ríos, Chile</span>
       <span>Curriculum Vitae — actualizado 2026</span>
       <span><a href="demos/">Portafolio de páginas web</a></span>
@@ -570,12 +471,9 @@
 
 <script>
   const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
-
 </body>
 </html>

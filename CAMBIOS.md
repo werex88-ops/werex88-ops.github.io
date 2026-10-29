@@ -1,5 +1,23 @@
 # Registro de cambios
 
+## 2026-10-29 (rediseño de currículum y demo de cabañas, a pedido de René)
+
+### Currículum (`index.html`)
+- Rediseño completo con identidad más sobria: azul marino y azul institucional, tipografías Inter e Instrument Serif; se eliminan las manchas de color y la cinta animada.
+- Nuevas secciones: ficha de cargo actual, cifras de trayectoria, perfil profesional y competencias agrupadas (gestión pública y cultural, tecnología, formación y comunicación).
+- Experiencia en viñetas; el cargo actual se complementa con funciones informadas por René (FAE, SLEP y municipios, compras públicas, convenios, presupuesto, ACCIONA/SIRAC y Revista Acciona Los Ríos 2026). El trabajo freelance suma sitios en GitHub Pages y reparación de notebooks.
+- Botón para descargar el CV en PDF; la versión impresa queda en 3 páginas A4.
+
+### Demo de cabañas
+- Rediseño completo "Alerce Dormido": paleta azul petróleo, verde río y latón (reemplaza crema y terracota), tipografías DM Serif Display y Manrope.
+- Fotografías de Unsplash enlazadas directamente, buscador en portada, calculadora de estadía con extras y descuentos, envío de la solicitud por WhatsApp sin número fijo, preguntas frecuentes y mapa ilustrativo.
+- Nueva miniatura en el portafolio (generada sin fotos, porque el entorno no puede descargarlas).
+
+### Sugerencias pendientes para René
+- Revisar que las funciones del cargo actual estén redactadas como te acomoda.
+- Agregar teléfono o LinkedIn al currículum si quieres que aparezcan.
+- Regenerar la miniatura de cabañas con fotos cuando se habilite `images.unsplash.com`.
+
 ## 2026-10-29 (integración manual: demos con fotografías)
 
 ### Portafolio de demos
