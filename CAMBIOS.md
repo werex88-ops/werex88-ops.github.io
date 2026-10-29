@@ -1,5 +1,13 @@
 # Registro de cambios
 
+## 2026-10-29 (Estrella Austral: paleta roja, sin packs y con SEO)
+
+- `navidad/`: nueva paleta navideña (rojos, dorado, acento verde pino y nieve), reemplazando el verde y crema.
+- Se eliminan los packs; se agrega la sección "Nosotros" (presentación de la empresa) y botones "Cotizar" en cada servicio que preseleccionan el formulario.
+- Formulario con servicio de interés y comuna; nieve animada en la portada (se desactiva con reducción de movimiento).
+- SEO: título y descripción orientados a búsquedas locales, URL canónica, Open Graph, datos estructurados LocalBusiness y espacios comentados para Google Analytics 4 y Search Console.
+- Tarjeta del portafolio y captura actualizadas.
+
 ## 2026-10-29 (demo nueva: decoración navideña, prioritaria)
 
 ### Portafolio de demos
