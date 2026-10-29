@@ -1,5 +1,13 @@
 # Registro de cambios
 
+## 2026-10-29 (centro cultural rediseñado como sitio informativo, a pedido de René)
+
+### Portafolio de demos
+- `centro-cultural/` pasa de escuela de talleres (Casa Vertiente) a sitio institucional e informativo: Ribera, Centro Cultural de Valdivia (ficticio).
+- Estilo sobrio: negro, blanco y carmín; tipografías Archivo y Newsreader.
+- Contenido: exposiciones destacadas en carrusel, "Hoy en Ribera", exposiciones en exhibición y próximas, agenda con filtros por tipo y descarga al calendario, visita (horario con estado abierto/cerrado, entrada, cómo llegar, accesibilidad), educación y mediación, salas, noticias y boletín.
+- Se actualizan la tarjeta del portafolio y los créditos.
+
 ## 2026-10-29 (demo nueva: centro cultural, a pedido de René)
 
 ### Portafolio de demos
