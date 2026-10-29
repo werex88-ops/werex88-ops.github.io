@@ -96,3 +96,14 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 - `centro-cultural` noticia 1 — https://images.unsplash.com/photo-1569783721854-33a99b4c0bae
 - `centro-cultural` noticia 2 — https://images.unsplash.com/photo-1617117206620-b01f2919ff86
 - `centro-cultural` noticia 3 — https://images.unsplash.com/photo-1558970439-add78fc68990
+
+## Navidad · Estrella Austral (enlazadas directamente desde Unsplash)
+
+- `navidad` hero (living decorado con chimenea) — https://images.unsplash.com/photo-1642335911245-238e13dcabf2
+- `navidad` g1 árbol decorado en living — https://images.unsplash.com/photo-1703278535051-963e0826ec60
+- `navidad` g2 vitrina con árboles y adornos — https://images.unsplash.com/photo-1700157039521-cf4630cdb87a
+- `navidad` g3 casa iluminada de noche — https://images.unsplash.com/photo-1576692155415-95f820a2c4c1
+- `navidad` g4 exhibidor con adornos — https://images.unsplash.com/photo-1734007369904-28b24e404814
+- `navidad` g5 detalle de árbol con luces — https://images.unsplash.com/photo-1607256196663-6eb02d1e9fdb
+- `navidad` g6 edificio con luces navideñas — https://images.unsplash.com/photo-1640040295076-dad02f1e9756
+- `navidad` g7 café decorado — https://images.unsplash.com/photo-1746263772030-d466deefbb9e

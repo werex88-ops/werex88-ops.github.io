@@ -1,5 +1,17 @@
 # Registro de cambios
 
+## 2026-10-29 (demo nueva: decoración navideña, prioritaria)
+
+### Portafolio de demos
+- Demo nueva `navidad/`: Estrella Austral, decoración navideña ficticia en Valdivia y alrededores, pensada para replicarse en WordPress con Astra y Elementor (incluye comentario guía en el HTML).
+- Secciones: encabezado transparente, portada con luces titilantes y guirnalda, cinta animada, servicios, cómo trabajamos, galería con filtros y visor, packs que se preseleccionan en el formulario, opiniones de ejemplo, preguntas frecuentes, contacto con formulario a WhatsApp (número de ejemplo) y pie.
+- Fotos de Unsplash gratuitas, enlazadas desde images.unsplash.com: las 8 indicadas originalmente no se pudieron abrir desde el entorno, por lo que se usaron equivalentes verificadas.
+- Tarjeta en primer lugar del portafolio, cifra de diseños actualizada y créditos registrados.
+
+### Sugerencias pendientes para René
+- Regenerar la captura `demos/img/navidad.jpg` con fotos cuando se habilite `images.unsplash.com` (hoy muestra el arco sin la foto).
+- Si prefieres exactamente las fotos que elegiste, envíame sus enlaces de imagen o habilita el dominio para reemplazarlas.
+
 ## 2026-10-29 (contacto por WhatsApp, a pedido de René)
 
 - Currículum y portafolio: botón flotante de WhatsApp (+56 9 7798 7960) y formulario de consulta (nombre, negocio, qué necesita, plazo y detalle) que abre WhatsApp con el mensaje listo.
