@@ -3,56 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio de páginas web — René Cerpa</title>
-<meta name="description" content="Portafolio de páginas web de ejemplo para pymes de la Región de Los Ríos. Todos los negocios y datos son ficticios.">
-<meta name="theme-color" content="#6E4BFF">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236E4BFF'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23fff'%3ERC%3C/text%3E%3C/svg%3E">
+<title>Werex · Portafolio de diseño web</title>
+<meta name="description" content="Propuestas de diseño web de ejemplo para negocios locales de la Región de Los Ríos: turismo, restaurantes, gimnasios, cafeterías y emprendimientos. Negocios y datos ficticios.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F7F5FC;--ink:#1F1B33;--dim:#55516B;--violet:#6E4BFF;--vd:#4B2FD1;--line:rgba(31,27,51,.14)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6}
-.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
-a:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:4px}
-h1,h2{font-family:'Bricolage Grotesque',sans-serif;margin:0}
-header{padding:56px 0 24px}
-.back{color:var(--vd);font-weight:600;text-decoration:none;font-size:.92rem}
-h1{font-size:clamp(2rem,5vw,3rem);margin:18px 0 12px;line-height:1.1}
-.lead{max-width:60ch;color:var(--dim);margin:0}
-.aviso{margin:20px 0 0;display:inline-block;background:#fff;border:1px solid var(--line);border-left:3px solid var(--violet);padding:10px 16px;border-radius:8px;font-size:.9rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;padding:32px 0 70px}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(31,27,51,.1)}
-.thumb{height:120px}
-.body{padding:20px;display:flex;flex-direction:column;flex:1}
-.rubro{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--vd)}
-h2{font-size:1.25rem;margin:4px 0 6px}
-.body p{margin:0 0 16px;color:var(--dim);font-size:.95rem}
-.btn{margin-top:auto;align-self:flex-start;background:var(--vd);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;padding:10px 20px;border-radius:8px}
-.btn:hover{background:#3A21B0}
-footer{border-top:1px solid var(--line);padding:26px 0;font-size:.88rem;color:var(--dim);text-align:center}
-footer a{color:var(--vd)}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --fondo: #0e0e0d;
+    --panel: #171716;
+    --linea: #2a2a28;
+    --texto: #f1efe8;
+    --gris: #8f8d86;
+    --acento: #ff6b3d;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter Tight', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: inherit; text-decoration: none; }
+  .serif { font-family: 'Instrument Serif', serif; font-weight: 400; }
+  .contenedor { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+  nav { padding: 28px 0; }
+  nav .contenedor { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-weight: 600; font-size: 18px; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; }
+  .logo i { width: 10px; height: 10px; border-radius: 50%; background: var(--acento); }
+  .estado { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gris); }
+  .estado b { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 0 rgba(74,222,128,.6); animation: pulso 2s infinite; }
+  @keyframes pulso { 70% { box-shadow: 0 0 0 10px rgba(74,222,128,0); } 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); } }
+
+  header { padding: 90px 0 110px; }
+  .etiqueta { font-size: 13px; color: var(--gris); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 28px; }
+  h1 { font-size: clamp(52px, 8.4vw, 128px); line-height: .95; letter-spacing: -.045em; font-weight: 500; max-width: 12ch; }
+  h1 .serif { font-style: italic; letter-spacing: -.02em; color: var(--acento); }
+  .intro { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 56px; flex-wrap: wrap; }
+  .intro p { max-width: 460px; color: var(--gris); font-size: 18px; }
+  .cifras { display: flex; gap: 48px; }
+  .cifras b { display: block; font-family: 'Instrument Serif'; font-weight: 400; font-size: 52px; line-height: 1; }
+  .cifras span { font-size: 13px; color: var(--gris); }
+
+  .seccion-cab { margin-top: 20px; display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--linea); padding-top: 22px; margin-bottom: 48px; font-size: 14px; color: var(--gris); }
+
+  .proyectos { display: grid; grid-template-columns: 1fr 1fr; gap: 72px 40px; padding-bottom: 120px; }
+  .proyecto { display: block; }
+  .proyecto:nth-child(even) { margin-top: 120px; }
+  .navegador { background: var(--panel); border: 1px solid var(--linea); border-radius: 14px; overflow: hidden; transition: transform .6s cubic-bezier(.2,.7,.2,1), border-color .4s; }
+  .proyecto:hover .navegador { transform: translateY(-8px); border-color: #3d3d3a; }
+  .barra { display: flex; align-items: center; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--linea); }
+  .barra i { width: 10px; height: 10px; border-radius: 50%; background: #2f2f2d; }
+  .barra span { margin-left: 12px; font-size: 12px; color: var(--gris); background: var(--fondo); padding: 4px 12px; border-radius: 6px; flex: 1; max-width: 260px; }
+  .captura { aspect-ratio: 3 / 2; overflow: hidden; }
+  .captura img { object-position: top; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  .proyecto:hover .captura img { transform: scale(1.04); }
+  .info { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-top: 24px; }
+  .info h2 { font-size: 30px; font-weight: 500; letter-spacing: -.03em; line-height: 1.1; }
+  .info p { color: var(--gris); font-size: 15px; margin-top: 6px; max-width: 400px; }
+  .flecha { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--linea); display: grid; place-items: center; flex-shrink: 0; font-size: 18px; transition: background .3s, color .3s, transform .3s, border-color .3s; }
+  .proyecto:hover .flecha { background: var(--acento); border-color: var(--acento); color: var(--fondo); transform: rotate(-45deg); }
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+  .meta span { font-size: 12px; border: 1px solid var(--linea); border-radius: 999px; padding: 4px 12px; color: #bdbbb3; }
+  .paleta { display: flex; margin-left: 6px; }
+  .paleta i { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--fondo); margin-left: -5px; }
+
+  .servicios { border-top: 1px solid var(--linea); padding: 110px 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; }
+  .servicios h2 { font-size: clamp(40px, 4.8vw, 64px); line-height: 1; letter-spacing: -.04em; font-weight: 500; }
+  .servicios h2 .serif { font-style: italic; color: var(--acento); letter-spacing: -.01em; }
+  .lista-serv { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--linea); border: 1px solid var(--linea); border-radius: 18px; overflow: hidden; }
+  .serv { background: var(--fondo); padding: 32px; }
+  .serv .n { font-family: 'Instrument Serif'; font-style: italic; color: var(--acento); font-size: 22px; }
+  .serv h3 { font-size: 20px; font-weight: 500; margin: 8px 0 6px; letter-spacing: -.02em; }
+  .serv p { color: var(--gris); font-size: 15px; }
+
+  .contacto { text-align: center; padding: 120px 0 140px; border-top: 1px solid var(--linea); }
+  .contacto h2 { font-size: clamp(48px, 8vw, 116px); line-height: .95; letter-spacing: -.045em; font-weight: 500; }
+  .contacto h2 .serif { font-style: italic; color: var(--acento); letter-spacing: -.02em; }
+  .contacto p { color: var(--gris); margin: 24px auto 40px; max-width: 440px; font-size: 18px; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; background: var(--texto); color: var(--fondo); padding: 18px 32px; border-radius: 999px; font-weight: 600; font-size: 16px; transition: background .3s, transform .3s; }
+  .btn:hover { background: var(--acento); transform: translateY(-2px); }
+
+  footer { border-top: 1px solid var(--linea); padding: 32px 0 48px; font-size: 13px; color: var(--gris); }
+  footer a { text-decoration: underline; }
+  footer .contenedor { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+  .rv { opacity: 0; transform: translateY(30px); transition: opacity .9s, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .rv.visto { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .proyectos { grid-template-columns: 1fr; gap: 64px; }
+    .proyecto:nth-child(even) { margin-top: 0; }
+    .servicios { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 560px) {
+    .contenedor { padding: 0 18px; }
+    header { padding: 50px 0 80px; }
+    .estado span { display: none; }
+    .cifras { gap: 28px; }
+    .cifras b { font-size: 40px; }
+    .lista-serv { grid-template-columns: 1fr; }
+    .info h2 { font-size: 25px; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
-<header><div class="wrap">
- <a class="back" href="../">← Currículum de René Cerpa</a>
- <h1>Portafolio de páginas web</h1>
- <p class="lead">Propuestas de diseño para pymes de la Región de Los Ríos: rápidas, claras y pensadas para el celular.</p>
- <p class="aviso">Todas las demos son propuestas de diseño de ejemplo; negocios y datos ficticios.</p>
-</div></header>
-<main class="wrap"><div class="grid">
- <article class="card">
-  <div class="thumb" style="background:linear-gradient(135deg,#1F4D3A,#B5532E)" aria-hidden="true"></div>
-  <div class="body"><span class="rubro">Cabañas y turismo</span><h2>Cabañas Alerce Dormido</h2><p>Alojamiento rural con tarjetas de cabañas, servicios y contacto por WhatsApp.</p><a class="btn" href="cabanas/">Ver demo</a></div>
- </article>
- <article class="card">
-  <div class="thumb" style="background:linear-gradient(135deg,#2B1D16,#F2B84B)" aria-hidden="true"></div>
-  <div class="body"><span class="rubro">Gastronomía y cafetería</span><h2>Café Lluvia Tibia</h2><p>Cafetería con carta por categorías, historia y horarios de atención.</p><a class="btn" href="cafeteria/">Ver demo</a></div>
- </article>
-</div></main>
-<footer><div class="wrap">¿Quieres una página así para tu negocio? Escribe a <a href="mailto:rene.cerpa.a@gmail.com">rene.cerpa.a@gmail.com</a></div></footer>
+<nav>
+  <div class="contenedor">
+    <a class="logo" href="#"><i></i>Werex Studio</a>
+    <div class="estado"><b></b><span>Disponible para nuevos proyectos</span></div>
+  </div>
+</nav>
+
+<header class="contenedor">
+  <div class="etiqueta rv">Portafolio · Propuestas de diseño web</div>
+  <h1 class="rv">Sitios web para <span class="serif">negocios locales.</span></h1>
+  <div class="intro rv">
+    <p>Diseño páginas para restaurantes, gimnasios, cafeterías y emprendimientos locales: rápidas, adaptadas a celular y pensadas para convertir visitas en clientes. Las páginas de este portafolio son propuestas de diseño de ejemplo: los negocios y sus datos son ficticios.</p>
+    <div class="cifras">
+      <div><b>7</b><span>diseños de ejemplo</span></div>
+      <div><b>100%</b><span>responsive</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="contenedor">
+  <div class="seccion-cab rv"><span>Propuestas de ejemplo · datos ficticios</span><span>2026</span></div>
+  <div class="proyectos">
+    <a class="proyecto rv" href="cabanas/">
+      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · cabanas</span></div><div class="captura"><img src="img/cabanas.jpg" alt="Vista previa del sitio Cabañas Alerce Dormido" loading="lazy"></div></div>
+      <div class="info"><div><h2>Cabañas Alerce Dormido</h2><p>Turismo rural en el sur de Chile: cabañas, servicios, opiniones de ejemplo y contacto por WhatsApp.</p></div><span class="flecha">→</span></div>
+      <div class="meta"><span>Turismo</span><span>Alojamiento</span><span class="paleta"><i style="background:#1f3d2b;border-color:#333"></i><i style="background:#b5532f"></i><i style="background:#f6efe4"></i></span></div>
+    </a>
+    <a class="proyecto rv" href="sushi/">
+      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · sushi</span></div><div class="captura"><img src="img/sushi.jpg" alt="Vista previa del sitio Kaiyō Sushi Bar" loading="lazy"></div></div>
+      <div class="info"><div><h2>Kaiyō Sushi Bar</h2><p>Sushi de autor con estética editorial oscura, carta por categorías y reservas en línea.</p></div><span class="flecha">→</span></div>
+      <div class="meta"><span>Restaurante</span><span>Reservas</span><span class="paleta"><i style="background:#0c0c0b;border-color:#333"></i><i style="background:#c8442f"></i><i style="background:#c9a46a"></i><i style="background:#ede6da"></i></span></div>
+    </a>
+    <a class="proyecto rv" href="gimnasio/">
+      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · gimnasio</span></div><div class="captura"><img src="img/gimnasio.jpg" alt="Vista previa del sitio Forja Gym" loading="lazy"></div></div>
+      <div class="info"><div><h2>Forja Gym</h2><p>Gimnasio de alto rendimiento: planes, horario interactivo de clases y equipo de coaches.</p></div><span class="flecha">→</span></div>
+      <div class="meta"><span>Deporte</span><span>Horario dinámico</span><span class="paleta"><i style="background:#0a0a0a;border-color:#333"></i><i style="background:#d4ff3a"></i><i style="background:#f5f5f0"></i></span></div>
+    </a>
+    <a class="proyecto rv" href="cafeteria/">
+      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · cafeteria</span></div><div class="captura"><img src="img/cafeteria.jpg" alt="Vista previa del sitio Grano y Calma" loading="lazy"></div></div>
+      <div class="info"><div><h2>Grano &amp; Calma</h2><p>Cafetería de especialidad con carta fotografiada, historia del origen y horario del día.</p></div><span class="flecha">→</span></div>
+      <div class="meta"><span>Cafetería</span><span>Carta digital</span><span class="paleta"><i style="background:#f5eee3"></i><i style="background:#b9773f"></i><i style="background:#2b1d14;border-color:#333"></i></span></div>
+    </a>
+    <a class="proyecto rv" href="velas/">
+      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · velas</span></div><div class="captura"><img src="img/velas.jpg" alt="Vista previa del sitio Luz de Cera" loading="lazy"></div></div>
+      <div class="info"><div><h2>Luz de Cera</h2><p>Tienda boutique de velas artesanales con filtros por aroma y carrito lateral.</p></div><span class="flecha">→</span></div>
+      <div class="meta"><span>E-commerce</span><span>Carrito</span><span class="paleta"><i style="background:#f8f3ec"></i><i style="background:#b4654a"></i><i style="background:#3a2a20;border-color:#333"></i></span></div>
+    </a>
+    <a class="proyecto rv" href="plantas/">
+      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · plantas</span></div><div class="captura"><img src="img/plantas.jpg" alt="Vista previa del sitio Raíz Verde" loading="lazy"></div></div>
+      <div class="info"><div><h2>Raíz Verde</h2><p>Plantas a domicilio con filtros por luz, fichas de cuidado y kits de regalo.</p></div><span class="flecha">→</span></div>
+      <div class="meta"><span>E-commerce</span><span>Filtros</span><span class="paleta"><i style="background:#f3f1ea"></i><i style="background:#1d3a2b;border-color:#333"></i><i style="background:#b6e36b"></i></span></div>
+    </a>
+    <a class="proyecto rv" href="mascotas/">
+      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · mascotas</span></div><div class="captura"><img src="img/mascotas.jpg" alt="Vista previa del sitio Pata Feliz" loading="lazy"></div></div>
+      <div class="info"><div><h2>Pata Feliz</h2><p>Snacks naturales para perros con armador de pedidos que envía el detalle por WhatsApp.</p></div><span class="flecha">→</span></div>
+      <div class="meta"><span>Emprendimiento</span><span>WhatsApp</span><span class="paleta"><i style="background:#fff8ec"></i><i style="background:#ffc93c"></i><i style="background:#ff7a59"></i><i style="background:#1e1d3a;border-color:#333"></i></span></div>
+    </a>
+  </div>
+
+  <section class="servicios">
+    <div class="rv"><h2>Qué incluye <span class="serif">cada sitio</span></h2></div>
+    <div class="lista-serv rv">
+      <div class="serv"><div class="n">01</div><h3>Diseño a medida</h3><p>Identidad visual, tipografías y paleta pensadas para cada marca.</p></div>
+      <div class="serv"><div class="n">02</div><h3>Adaptado a celular</h3><p>Se ve y funciona perfecto en cualquier pantalla.</p></div>
+      <div class="serv"><div class="n">03</div><h3>Rápido y liviano</h3><p>Sin plantillas pesadas: HTML, CSS y JavaScript a mano.</p></div>
+      <div class="serv"><div class="n">04</div><h3>Listo para vender</h3><p>Reservas, carritos, pedidos por WhatsApp y llamados a la acción claros.</p></div>
+    </div>
+  </section>
+
+  <section class="contacto rv">
+    <h2>¿Tu negocio es <span class="serif">el próximo?</span></h2>
+    <p>Cuéntame de tu proyecto y te respondo en menos de 24 horas.</p>
+    <a class="btn" href="mailto:rene.cerpa.a@gmail.com">Hablemos →</a>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor">
+    <span>© 2026 Werex Studio</span>
+    <span>Fotografías de Unsplash (<a href="CREDITOS.md">créditos</a>) · Negocios y datos ficticios · <a href="../">Currículum de René Cerpa</a></span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
 </body>
 </html>

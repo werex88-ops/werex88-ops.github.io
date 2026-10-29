@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forja Gym · Entrenamiento 24/7</title>
+<meta name="description" content="Gimnasio de alto rendimiento abierto 24/7. Fuerza, HIIT, crossfit, box y movilidad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --negro: #0a0a0a;
+    --grafito: #141414;
+    --borde: #262626;
+    --blanco: #f5f5f0;
+    --gris: #8a8a85;
+    --acido: #d4ff3a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--negro); color: var(--blanco); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: inherit; text-decoration: none; }
+  .display { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; line-height: .9; letter-spacing: .005em; }
+  .contenedor { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+  .acido { color: var(--acido); }
+  .chip { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+  .chip::before { content: ""; width: 8px; height: 8px; background: var(--acido); }
+
+  .volver { position: fixed; bottom: 20px; left: 20px; z-index: 50; background: var(--acido); color: var(--negro); padding: 9px 16px; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+
+  nav { position: absolute; inset: 0 0 auto; z-index: 20; padding: 26px 0; }
+  nav .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+  .logo { font-family: 'Anton'; font-size: 30px; letter-spacing: .04em; }
+  .logo span { color: var(--acido); }
+  nav ul { display: flex; gap: 36px; list-style: none; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+  nav ul a:hover { color: var(--acido); }
+  .btn { display: inline-flex; align-items: center; gap: 12px; background: var(--acido); color: var(--negro); padding: 18px 30px; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; transition: transform .2s, box-shadow .2s; border: 0; cursor: pointer; font-family: inherit; }
+  .btn:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--blanco); }
+  .btn.contorno { background: transparent; color: var(--blanco); outline: 1px solid rgba(245,245,240,.35); }
+  .btn.contorno:hover { box-shadow: 6px 6px 0 var(--acido); }
+
+  /* Hero */
+  .hero { position: relative; min-height: min(100vh, 960px); display: flex; align-items: flex-end; overflow: hidden; }
+  .hero > img { position: absolute; inset: 0; object-position: 50% 40%; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.5) 0%, rgba(10,10,10,.2) 40%, var(--negro) 100%); }
+  .hero .contenedor { position: relative; z-index: 2; width: 100%; padding-bottom: 72px; }
+  .hero h1 { font-size: clamp(76px, 15vw, 220px); margin: 26px 0 32px; }
+  .hero h1 .linea { display: block; }
+  .hero h1 .hueco { color: transparent; -webkit-text-stroke: 2px var(--blanco); }
+  .hero-pie { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+  .hero-pie p { max-width: 430px; color: #c7c7c0; font-size: 17px; }
+  .acciones { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+  .stat { padding: 40px 32px; border-right: 1px solid var(--borde); }
+  .stat:last-child { border-right: 0; }
+  .stat b { font-family: 'Anton'; font-weight: 400; font-size: 64px; line-height: 1; display: block; }
+  .stat span { font-size: 13px; color: var(--gris); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
+
+  /* Cinta */
+  .cinta { background: var(--acido); color: var(--negro); overflow: hidden; padding: 20px 0; transform: rotate(-1.5deg); margin: 90px -20px; }
+  .cinta div { display: flex; gap: 48px; width: max-content; font-family: 'Anton'; font-size: 40px; text-transform: uppercase; animation: correr 26s linear infinite; }
+  .cinta span::after { content: "✦"; margin-left: 48px; }
+  @keyframes correr { to { transform: translateX(-50%); } }
+
+  section { padding: 110px 0; }
+  .cabecera { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 64px; flex-wrap: wrap; }
+  .cabecera h2 { font-size: clamp(56px, 8vw, 112px); margin-top: 18px; }
+  .cabecera p { color: var(--gris); max-width: 380px; }
+
+  /* Instalaciones */
+  .instalaciones { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 320px 320px; gap: 16px; }
+  .instalaciones figure { position: relative; overflow: hidden; }
+  .instalaciones figure:first-child { grid-row: span 2; }
+  .instalaciones img { transition: transform 1s cubic-bezier(.2,.7,.2,1); filter: saturate(.85); }
+  .instalaciones figure:hover img { transform: scale(1.05); }
+  .instalaciones figcaption { position: absolute; left: 0; bottom: 0; right: 0; padding: 28px; background: linear-gradient(0deg, rgba(10,10,10,.9), transparent); }
+  .instalaciones figcaption b { font-family: 'Anton'; font-weight: 400; font-size: 30px; text-transform: uppercase; display: block; line-height: 1.1; }
+  .instalaciones figcaption span { font-size: 14px; color: #bdbdb6; }
+
+  /* Planes */
+  .planes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .plan { background: var(--grafito); border: 1px solid var(--borde); padding: 44px 36px; display: flex; flex-direction: column; position: relative; transition: border-color .3s; }
+  .plan:hover { border-color: #444; }
+  .plan h3 { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--gris); }
+  .valor { font-family: 'Anton'; font-size: 68px; line-height: 1; margin: 22px 0 6px; }
+  .valor small { font-family: 'Inter'; font-size: 15px; color: var(--gris); font-weight: 500; }
+  .plan .desc { color: var(--gris); font-size: 14px; padding-bottom: 28px; border-bottom: 1px solid var(--borde); }
+  .plan ul { list-style: none; margin: 28px 0 40px; flex: 1; display: grid; gap: 14px; align-content: start; }
+  .plan li { display: flex; gap: 12px; font-size: 15px; }
+  .plan li::before { content: ""; flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; background: var(--acido); clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); }
+  .plan .btn { justify-content: center; }
+  .plan.top { background: var(--acido); color: var(--negro); border-color: var(--acido); }
+  .plan.top h3, .plan.top .desc, .plan.top .valor small { color: rgba(10,10,10,.65); }
+  .plan.top .desc { border-color: rgba(10,10,10,.15); }
+  .plan.top li::before { background: var(--negro); }
+  .plan.top .btn { background: var(--negro); color: var(--acido); }
+  .plan.top .btn:hover { box-shadow: 6px 6px 0 var(--blanco); }
+  .sello { position: absolute; top: -14px; right: 24px; background: var(--negro); color: var(--acido); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 7px 12px; }
+
+  /* Horario */
+  .dias { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .dias button { background: transparent; color: var(--blanco); border: 1px solid var(--borde); padding: 12px 22px; font: inherit; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: all .2s; }
+  .dias button:hover { border-color: var(--gris); }
+  .dias button.activo { background: var(--blanco); color: var(--negro); border-color: var(--blanco); }
+  .clases { border-top: 1px solid var(--borde); }
+  .clase { display: grid; grid-template-columns: 140px 1fr 1fr 160px; align-items: center; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--borde); transition: background .2s, padding .2s; }
+  .clase:hover { background: var(--grafito); padding-left: 20px; padding-right: 20px; }
+  .clase .hora { font-family: 'Anton'; font-size: 34px; }
+  .clase .nombre { font-family: 'Anton'; font-size: 34px; text-transform: uppercase; }
+  .clase .coach { color: var(--gris); font-size: 14px; }
+  .nivel { white-space: nowrap; justify-self: end; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; border: 1px solid var(--borde); padding: 6px 12px; }
+  .nivel.alto { color: var(--acido); border-color: rgba(212,255,58,.4); }
+
+  /* Coaches */
+  .coaches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .coach figure { aspect-ratio: 3/4; overflow: hidden; margin-bottom: 20px; position: relative; }
+  .coach img { filter: grayscale(1) contrast(1.1); transition: filter .5s, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .coach:hover img { filter: grayscale(0); transform: scale(1.04); }
+  .coach figure span { position: absolute; top: 16px; left: 16px; background: var(--acido); color: var(--negro); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 10px; }
+  .coach h4 { font-family: 'Anton'; font-weight: 400; font-size: 30px; text-transform: uppercase; line-height: 1.1; }
+  .coach p { color: var(--gris); font-size: 14px; }
+
+  /* CTA */
+  .cta-final { position: relative; overflow: hidden; padding: 160px 0; text-align: center; }
+  .cta-final > img { position: absolute; inset: 0; filter: grayscale(1); }
+  .cta-final::before { content: ""; position: absolute; inset: 0; background: rgba(10,10,10,.78); z-index: 1; }
+  .cta-final .contenedor { position: relative; z-index: 2; }
+  .cta-final h2 { font-size: clamp(60px, 10vw, 150px); margin-bottom: 26px; }
+  .cta-final p { color: #c7c7c0; max-width: 480px; margin: 0 auto 40px; font-size: 17px; }
+
+  footer { border-top: 1px solid var(--borde); padding: 70px 0 100px; }
+  footer .contenedor { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  footer h5 { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; color: var(--acido); }
+  footer p { color: var(--gris); font-size: 14px; }
+
+  .rv { opacity: 0; transform: translateY(30px); transition: opacity .8s, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .rv.visto { opacity: 1; transform: none; }
+
+  @media (max-width: 1000px) {
+    nav ul { display: none; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(2) { border-right: 0; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--borde); }
+    .planes, .coaches { grid-template-columns: 1fr 1fr; }
+    .plan.top { order: -1; grid-column: 1 / -1; }
+    .instalaciones { grid-template-columns: 1fr; grid-template-rows: 380px 260px 260px; }
+    .instalaciones figure:first-child { grid-row: auto; }
+    .clase { grid-template-columns: 100px 1fr auto; }
+    .clase .coach { display: none; }
+    footer .contenedor { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .contenedor { padding: 0 20px; }
+    nav .btn { display: none; }
+    .planes, .coaches { grid-template-columns: 1fr; }
+    .stat { padding: 28px 20px; }
+    .stat b { font-size: 46px; }
+    .clase { grid-template-columns: 1fr auto; gap: 4px 16px; }
+    .clase .hora { font-size: 22px; color: var(--acido); grid-column: 1 / -1; }
+    .clase .nombre { font-size: 28px; }
+    .cinta div { font-size: 28px; }
+    section { padding: 80px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
+</style>
+<style>html{overflow-x:clip}</style>
+</head>
+<body>
+<a class="volver" href="../">← Portafolio</a>
+
+<nav>
+  <div class="contenedor">
+    <a class="logo" href="#">FORJA<span>.</span></a>
+    <ul>
+      <li><a href="#instalaciones">Instalaciones</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#horario">Clases</a></li>
+      <li><a href="#coaches">Coaches</a></li>
+    </ul>
+    <a class="btn" href="#planes">Únete hoy</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="img/hero.jpg" alt="Atleta preparando un levantamiento con barra en un gimnasio oscuro">
+  <div class="contenedor">
+    <div class="chip">Abierto 24/7 · Calle Industrial 450</div>
+    <h1 class="display"><span class="linea">Sin excusas.</span><span class="linea"><span class="hueco">Solo</span> <span class="acido">forja.</span></span></h1>
+    <div class="hero-pie">
+      <p>Equipamiento de competición, coaches certificados y una comunidad que no te deja rendirte.</p>
+      <div class="acciones">
+        <a class="btn" href="#planes">Primera semana gratis →</a>
+        <a class="btn contorno" href="#horario">Ver clases</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="contenedor">
+  <div class="stats">
+    <div class="stat"><b data-n="24">24/7</b><span>Acceso total</span></div>
+    <div class="stat"><b>+40</b><span>Clases semanales</span></div>
+    <div class="stat"><b>1.200</b><span>m² de entrenamiento</span></div>
+    <div class="stat"><b>12</b><span>Coaches certificados</span></div>
+  </div>
+</div>
+
+<div class="cinta" aria-hidden="true"><div>
+  <span>Fuerza</span><span>HIIT</span><span>Crossfit</span><span>Box</span><span>Movilidad</span><span>Powerlifting</span>
+  <span>Fuerza</span><span>HIIT</span><span>Crossfit</span><span>Box</span><span>Movilidad</span><span>Powerlifting</span>
+</div></div>
+
+<section id="instalaciones" style="padding-top:40px">
+  <div class="contenedor">
+    <div class="cabecera rv">
+      <div><div class="chip">Instalaciones</div><h2 class="display">Hecho para <span class="acido">sudar</span></h2></div>
+      <p>Una bodega industrial de 1.200 m² transformada en el espacio de entrenamiento más completo de la ciudad.</p>
+    </div>
+    <div class="instalaciones rv">
+      <figure><img src="img/pesas.jpg" alt="Rack de mancuernas en sala de musculación" loading="lazy"><figcaption><b>Zona de fuerza</b><span>Mancuernas hasta 60 kg, 8 racks y plataformas olímpicas.</span></figcaption></figure>
+      <figure><img src="img/sala.jpg" alt="Sala de cardio y máquinas" loading="lazy"><figcaption><b>Cardio &amp; máquinas</b><span>Equipamiento de última generación.</span></figcaption></figure>
+      <figure><img src="img/cuerdas.jpg" alt="Atleta entrenando con cuerdas de batalla" loading="lazy"><figcaption><b>Box funcional</b><span>Cuerdas, trineos y 40 m de pista.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="planes">
+  <div class="contenedor">
+    <div class="cabecera rv">
+      <div><div class="chip">Membresías</div><h2 class="display">Elige tu <span class="acido">plan</span></h2></div>
+      <p>Sin matrícula, sin permanencia mínima. Congela tu plan cuando lo necesites.</p>
+    </div>
+    <div class="planes rv">
+      <div class="plan">
+        <h3>Básico</h3>
+        <div class="valor">$19.990 <small>/ mes</small></div>
+        <p class="desc">Para quienes entrenan por su cuenta.</p>
+        <ul><li>Sala de musculación y cardio</li><li>Horario 6:00 – 22:00</li><li>Evaluación física inicial</li></ul>
+        <a class="btn contorno" href="#">Elegir Básico</a>
+      </div>
+      <div class="plan top">
+        <span class="sello">Más elegido</span>
+        <h3>Full</h3>
+        <div class="valor">$29.990 <small>/ mes</small></div>
+        <p class="desc">Todo el gimnasio, a cualquier hora.</p>
+        <ul><li>Acceso 24/7</li><li>Todas las clases grupales</li><li>Plan de entrenamiento mensual</li><li>Lockers y duchas</li></ul>
+        <a class="btn" href="#">Elegir Full</a>
+      </div>
+      <div class="plan">
+        <h3>Élite</h3>
+        <div class="valor">$54.990 <small>/ mes</small></div>
+        <p class="desc">Acompañamiento personalizado total.</p>
+        <ul><li>Todo lo del plan Full</li><li>8 sesiones con coach personal</li><li>Asesoría nutricional</li><li>Toalla y bebida isotónica</li></ul>
+        <a class="btn contorno" href="#">Elegir Élite</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="horario">
+  <div class="contenedor">
+    <div class="cabecera rv">
+      <div><div class="chip">Horario</div><h2 class="display">Clases de la <span class="acido">semana</span></h2></div>
+      <p>Cupos limitados a 16 personas. Reserva desde la app hasta 2 horas antes.</p>
+    </div>
+    <div class="dias" id="dias"></div>
+    <div class="clases" id="clases"></div>
+  </div>
+</section>
+
+<section id="coaches" style="padding-top:20px">
+  <div class="contenedor">
+    <div class="cabecera rv">
+      <div><div class="chip">Equipo</div><h2 class="display">Nuestros <span class="acido">coaches</span></h2></div>
+      <p>Certificados, exigentes y siempre de tu lado.</p>
+    </div>
+    <div class="coaches rv">
+      <div class="coach"><figure><img src="img/camila.jpg" alt="Camila levantando una barra" loading="lazy"><span>Campeona 2024</span></figure><h4>Camila Rojas</h4><p>Powerlifting · Fuerza máxima</p></div>
+      <div class="coach"><figure><img src="img/diego.jpg" alt="Diego entrenando box con manoplas" loading="lazy"></figure><h4>Diego Fuentes</h4><p>Box y acondicionamiento</p></div>
+      <div class="coach"><figure><img src="img/valentina.jpg" alt="Valentina haciendo ejercicio de core" loading="lazy"></figure><h4>Valentina Soto</h4><p>Movilidad y prevención de lesiones</p></div>
+      <div class="coach"><figure><img src="img/matias.jpg" alt="Matías entrenando con barra" loading="lazy"><span>CF-L2</span></figure><h4>Matías Lagos</h4><p>Crossfit · HIIT</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <img src="img/cuerdas.jpg" alt="" loading="lazy">
+  <div class="contenedor rv">
+    <div class="chip" style="justify-content:center">7 días gratis</div>
+    <h2 class="display" style="margin-top:22px">Tu mejor versión<br><span class="acido">empieza hoy.</span></h2>
+    <p>Ven a entrenar una semana sin costo. Sin compromiso, sin letra chica.</p>
+    <a class="btn" href="#planes">Reclamar mi semana →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="contenedor">
+    <div><div class="logo" style="margin-bottom:12px">FORJA<span>.</span></div><p>Calle Industrial 450, Bodega 3.<br>Abierto 24 horas, 365 días.</p></div>
+    <div><h5>Contacto</h5><p>+56 9 1234 5678<br>hola@forjagym.cl</p></div>
+    <div><h5>Recepción</h5><p>Lun – Vie 7:00 – 22:00<br>Sáb 9:00 – 14:00</p></div>
+    <div><h5>Síguenos</h5><p>Instagram<br>YouTube</p></div>
+  </div>
+</footer>
+
+<script>
+  const horario = {
+    Lunes:     [['07:00','HIIT','Matías Lagos','alto'],['12:30','Crossfit','Matías Lagos','alto'],['19:00','Powerlifting','Camila Rojas','medio'],['20:30','Box','Diego Fuentes','medio']],
+    Martes:    [['07:00','Movilidad','Valentina Soto','suave'],['12:30','Box','Diego Fuentes','medio'],['19:00','HIIT','Matías Lagos','alto'],['20:30','Crossfit','Matías Lagos','alto']],
+    Miércoles: [['07:00','HIIT','Matías Lagos','alto'],['12:30','Crossfit','Matías Lagos','alto'],['19:00','Box','Diego Fuentes','medio'],['20:30','Movilidad','Valentina Soto','suave']],
+    Jueves:    [['07:00','Movilidad','Valentina Soto','suave'],['12:30','Box','Diego Fuentes','medio'],['19:00','Powerlifting','Camila Rojas','medio'],['20:30','Crossfit','Matías Lagos','alto']],
+    Viernes:   [['07:00','HIIT','Matías Lagos','alto'],['12:30','Crossfit','Matías Lagos','alto'],['19:00','Funcional','Valentina Soto','medio']]
+  };
+  const niveles = { alto: 'Intenso', medio: 'Intermedio', suave: 'Todos los niveles' };
+  const dias = document.getElementById('dias'), clases = document.getElementById('clases');
+  function mostrar(dia) {
+    [...dias.children].forEach(b => b.classList.toggle('activo', b.textContent === dia));
+    clases.innerHTML = horario[dia].map(([h, n, c, l]) =>
+      `<div class="clase"><div class="hora">${h}</div><div class="nombre">${n}</div><div class="coach">con ${c}</div><div class="nivel ${l === 'alto' ? 'alto' : ''}">${niveles[l]}</div></div>`).join('');
+  }
+  Object.keys(horario).forEach(d => {
+    const b = document.createElement('button'); b.textContent = d; b.onclick = () => mostrar(d); dias.appendChild(b);
+  });
+  const hoy = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'][new Date().getDay()];
+  mostrar(horario[hoy] ? hoy : 'Lunes');
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+</body>
+</html>
