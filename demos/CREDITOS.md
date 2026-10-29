@@ -81,23 +81,18 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 - `cabanas` días de lluvia — https://images.unsplash.com/photo-1761319914911-71b059a655d8
 - `cabanas` nosotros — https://images.unsplash.com/photo-1773423391716-04e278b07b1b
 
-## Centro cultural (enlazadas directamente desde Unsplash)
+## Centro cultural Ribera (enlazadas directamente desde Unsplash)
 
-- `centro-cultural` portada — https://images.unsplash.com/photo-1503095396549-807759245b35
-- `centro-cultural` portada 2 — https://images.unsplash.com/photo-1780751987564-79489283d67b
-- `centro-cultural` escuelas — https://images.unsplash.com/photo-1617117206620-b01f2919ff86
-- `centro-cultural` sala — https://images.unsplash.com/photo-1615414047026-802692414b79
-- `centro-cultural` teatro familiar — https://images.unsplash.com/photo-1558970439-add78fc68990
-- `centro-cultural` danza — https://images.unsplash.com/photo-1579539760267-b2e78d9d735e
-- `centro-cultural` orquesta / coro — https://images.unsplash.com/photo-1763627516727-2ca3e324fa59
-- `centro-cultural` muestra de talleres — https://images.unsplash.com/photo-1761403942462-04b8b97f1fe9
-- `centro-cultural` cineclub — https://images.unsplash.com/photo-1615414015111-8d98cb65677e
-- `centro-cultural` bandas — https://images.unsplash.com/photo-1541804627596-3b5b9ef58c93
-- `centro-cultural` danza muestra — https://images.unsplash.com/photo-1593408995262-1d8933c37afc
-- `centro-cultural` monólogos — https://images.unsplash.com/photo-1762786113000-fa587fd3d69c
-- `centro-cultural` pintura al aire libre — https://images.unsplash.com/photo-1770739879041-22f0dfc37301
-- `centro-cultural` taller pintura — https://images.unsplash.com/photo-1780751379328-9271686e4e06
-- `centro-cultural` taller teatro — https://images.unsplash.com/photo-1588928781379-c355ab3edc9b
-- `centro-cultural` taller danza — https://images.unsplash.com/photo-1524594152303-9fd13543fe6e
-- `centro-cultural` taller cerámica — https://images.unsplash.com/photo-1596464716127-f2a82984de30
-- `centro-cultural` taller ilustración — https://images.unsplash.com/photo-1698340311456-77454d0abdc7
+- `centro-cultural` destacado 1 — https://images.unsplash.com/photo-1563293743-a9761195b52e
+- `centro-cultural` destacado 2 y fotografía — https://images.unsplash.com/photo-1561490497-43bc900ac2d8
+- `centro-cultural` destacado 3 — https://images.unsplash.com/photo-1763627516727-2ca3e324fa59
+- `centro-cultural` pintura — https://images.unsplash.com/photo-1605429523419-d828acb941d9
+- `centro-cultural` textil — https://images.unsplash.com/photo-1547296017-978c31e1c124
+- `centro-cultural` educación — https://images.unsplash.com/photo-1545518514-ce8448f542b3
+- `centro-cultural` galería — https://images.unsplash.com/photo-1572947650440-e8a97ef053b2
+- `centro-cultural` sala escénica — https://images.unsplash.com/photo-1615414047026-802692414b79
+- `centro-cultural` sala multiuso — https://images.unsplash.com/photo-1624066968542-742ce732188a
+- `centro-cultural` hall — https://images.unsplash.com/photo-1714621186557-c862830f157f
+- `centro-cultural` noticia 1 — https://images.unsplash.com/photo-1569783721854-33a99b4c0bae
+- `centro-cultural` noticia 2 — https://images.unsplash.com/photo-1617117206620-b01f2919ff86
+- `centro-cultural` noticia 3 — https://images.unsplash.com/photo-1558970439-add78fc68990
