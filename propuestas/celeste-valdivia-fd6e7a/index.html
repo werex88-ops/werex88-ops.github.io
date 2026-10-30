@@ -7,31 +7,39 @@
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>Propuesta de sitio web · Celeste Valdivia</title>
 <meta name="description" content="Propuesta de diseño de sitio web para Celeste Valdivia, joyería tejida y bordada en cristales, hecha a mano en Valdivia. Preparada por Werex Studio.">
-<meta name="theme-color" content="#0f2a30">
+<meta name="theme-color" content="#0d1626">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230f2a30'/%3E%3Cpath d='M16 46C26 34 36 24 48 14' stroke='%238fc9cf' stroke-width='2' fill='none'/%3E%3Cpath d='M26 36c-6-1-9-6-8-11 5 1 8 6 8 11zM34 28c-6-1-9-6-8-11 5 1 8 6 8 11zM30 32c5-4 11-4 15 0-5 4-10 4-15 0z' fill='%238fc9cf'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Parisienne&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Parisienne&family=Quicksand:wght@300;400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --noche:#0f2a30;      /* azul petróleo de su emblema */
-  --noche-2:#163b42;
-  --agua:#8fc9cf;       /* línea botánica del emblema */
-  --madera:#6b4630;
-  --madera-d:#4a2f20;
-  --papel:#f1f4f2;
-  --tinta:#1a2a2c;
-  --gris:#5d6b6c;
+  /* Paleta por defecto: "Sur del mundo", tomada de su logo (azul noche, pinceladas azules, ramas celestes, rombo lila) */
+  --noche:#0d1626;
+  --noche-2:#1c3150;
+  --noche-3:#080e19;
+  --agua:#a9c8dc;
+  --papel:#eef2f6;
+  --tinta:#18222e;
+  --gris:#5a6573;
   /* destellos de cristal, como sus piezas */
   --turquesa:#2bb3c0;
   --azul:#2f5bd3;
   --violeta:#8a4fd8;
   --rubi:#d1305f;
-  --oro:#d6a944;
-  --noche-3:#091b1f;
-  /* Paleta Laguna (por defecto): petróleo de su logo, franjas verde lago, dorado suave */
-  --banda-1:#1f5a63;--banda-2:#174a52;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.8);--banda-acento:#f0d48a;
+  --oro:#4f84ad;
+  --rombo:#9d8fa3;
+  --banda-1:#f7fafc;--banda-2:#e8eff6;--banda-texto:#0d1626;--banda-suave:#4a5a6c;--banda-acento:#3b6a8e;
 }
+/* Sur del mundo: como el logo, con franjas azules */
+:root[data-paleta="sur"]{--oro:#cdb8d6;--banda-1:#2a4a6d;--banda-2:#203c5b;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.82);--banda-acento:#d9c8e0}
+/* Glaciar: azul hielo y blanco */
+:root[data-paleta="glaciar"]{--noche:#12283d;--noche-2:#1d3d5c;--noche-3:#0b1a29;--agua:#bcd7ea;--papel:#f2f7fb;--oro:#3f7cab;--rombo:#bcd7ea;--banda-1:#e3eef7;--banda-2:#cfe1ef;--banda-texto:#12283d;--banda-suave:#405a72;--banda-acento:#2f6a98}
+/* Escarcha: azul acero con blanco */
+:root[data-paleta="escarcha"]{--noche:#152331;--noche-2:#24384c;--noche-3:#0d1620;--agua:#d3e2ee;--papel:#f1f5f8;--oro:#9fc2dd;--rombo:#d3e2ee;--banda-1:#4d7796;--banda-2:#3f6582;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.86);--banda-acento:#e6f0f8}
+/* Laguna: petróleo y verde lago */
+:root[data-paleta="laguna"]{--noche:#0f2a30;--noche-2:#163b42;--noche-3:#091b1f;--agua:#8fc9cf;--papel:#f1f4f2;--oro:#d6a944;--rombo:#8fc9cf;--banda-1:#1f5a63;--banda-2:#174a52;--banda-acento:#f0d48a}
+
 /* Océano: azul profundo de mar austral */
 :root[data-paleta="oceano"]{--noche:#0b1f3a;--noche-2:#13325c;--noche-3:#071429;--agua:#8fcbe8;--banda-1:#1d5f8a;--banda-2:#164d72;--banda-acento:#ffd27a;--oro:#f0b94a;--papel:#eef4f8}
 /* Bosque: verde de árboles nativos y helechos */
@@ -75,12 +83,13 @@ header nav a{text-decoration:none;color:rgba(255,255,255,.8)}
 header nav a:hover{color:var(--agua)}
 header nav.der ul{justify-content:flex-end}
 .marca{text-decoration:none;color:#fff;text-align:center;line-height:1}
-.marca b{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.7rem;letter-spacing:.08em}
+.marca b{display:block;font-family:'Quicksand',sans-serif;font-weight:300;font-size:1.6rem;letter-spacing:.06em}
 .marca span{font-family:'Parisienne',cursive;color:var(--agua);font-size:1.1rem}
 .menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px;justify-self:end}
 
 /* Portada */
 .hero{color:#fff;overflow:hidden;padding:70px 0 120px;background:radial-gradient(ellipse at 50% 35%,var(--noche-2),var(--noche) 70%)}
+:root:not([data-paleta]) .hero,:root[data-paleta="sur"] .hero{background:radial-gradient(ellipse at 78% 30%,rgba(120,160,195,.35),transparent 55%),linear-gradient(104deg,#070d18 0%,#0d1626 40%,#1a2f4d 55%,#2b5274 78%,#3b6a8e 100%)}
 .destellos{position:absolute;inset:0;pointer-events:none}
 .destello{position:absolute;transform:rotate(45deg);animation:brillo 4.5s ease-in-out infinite;opacity:.15}
 @keyframes brillo{0%,100%{opacity:.1;transform:rotate(45deg) scale(.5)}50%{opacity:.95;transform:rotate(45deg) scale(1.1)}}
@@ -89,11 +98,9 @@ header nav.der ul{justify-content:flex-end}
 .ramas.der{right:-40px;bottom:10px;width:340px;transform:scaleX(-1) rotate(10deg)}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;gap:20px}
 .emblema{text-align:center}
-.emblema .circulo{width:min(78vw,330px);aspect-ratio:1;margin:0 auto;border-radius:50%;border:1px solid color-mix(in srgb,var(--agua) 50%,transparent);display:grid;place-items:center;position:relative;background:radial-gradient(circle at 50% 40%,var(--noche-2),var(--noche) 75%);box-shadow:0 0 0 10px rgba(143,201,207,.06),0 30px 60px rgba(0,0,0,.35)}
-.emblema .circulo svg.rama{color:var(--agua);position:absolute;inset:14%;width:72%;height:72%;opacity:.55}
-.emblema .nombre{position:relative;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.3rem,4.6vw,3.3rem);line-height:1.02;letter-spacing:.06em}
-.emblema .nombre small{display:block;font-family:'Parisienne',cursive;font-size:.5em;color:var(--agua);letter-spacing:0;margin-top:10px}
-.hero h1{font-size:clamp(1.6rem,2.6vw,2.1rem);font-style:italic;margin:34px auto 12px;max-width:24ch;color:#fff}
+.emblema .circulo{width:min(80vw,380px);aspect-ratio:1;margin:0 auto}
+.emblema .logo-img{width:100%;height:100%;object-fit:cover;-webkit-mask-image:radial-gradient(circle at 50% 46%,#000 48%,transparent 66%);mask-image:radial-gradient(circle at 50% 46%,#000 48%,transparent 66%)}
+.hero h1{font-size:clamp(1.6rem,2.6vw,2.1rem);font-style:italic;margin:6px auto 12px;max-width:24ch;color:#fff}
 .hero p{color:rgba(255,255,255,.78);max-width:46ch;margin:0 auto 28px;text-align:center}
 .boton{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:500;letter-spacing:.04em;border:1px solid rgba(255,255,255,.55);color:#fff;transition:background .25s,color .25s,transform .25s;cursor:pointer;background:transparent;font:500 .98rem 'Work Sans',sans-serif}
 .boton:hover{background:#fff;color:var(--noche);transform:translateY(-2px)}
@@ -216,7 +223,7 @@ footer .gracias{font-family:'Parisienne',cursive;font-size:1.6rem;color:var(--ag
 .madera .boton:hover{background:var(--banda-texto);color:var(--banda-1)}
 .manifiesto p{color:var(--banda-texto);text-shadow:none}
 .manifiesto i{color:var(--banda-acento)}
-:root[data-paleta="niebla"] .madera .pola{box-shadow:0 10px 24px rgba(15,42,48,.18)}
+:root:not([data-paleta]) .madera .pola,:root[data-paleta="glaciar"] .madera .pola,:root[data-paleta="niebla"] .madera .pola{box-shadow:0 10px 24px rgba(15,42,48,.18)}
 
 /* Selector de paletas (solo para la propuesta) */
 .paletas{position:fixed;left:14px;bottom:14px;z-index:80;font:500 .82rem 'Work Sans',sans-serif}
@@ -227,6 +234,8 @@ footer .gracias{font-family:'Parisienne',cursive;font-size:1.6rem;color:var(--ag
 .paletas li button:hover{background:#eef2f2}
 .paletas li button[aria-pressed="true"]{background:#1a2a2c;color:#fff}
 .paletas i{display:inline-block;width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);flex-shrink:0}
+.paletas li.grupo{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6b7a86;padding:8px 10px 4px}
+.paletas ul{max-height:70vh;overflow:auto}
 .paletas li.flot{padding:6px 10px 10px;border-bottom:1px solid #e3e8e8;margin-bottom:6px}
 .paletas li.flot label{display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:600}
 .enviar.ig{margin-top:10px;background:linear-gradient(90deg,#833ab4,#c13584,#e1306c,#f77737);color:#fff;text-decoration:none}
@@ -335,10 +344,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
   <div class="wrap">
     <figure class="pola a rv" style="margin:0"><div class="img" role="img" aria-label="Aros dorados y fucsia junto a la tarjeta de Celeste Valdivia, con el río de fondo" style="background-image:url('img/tarjeta.jpg')"></div><figcaption>junto al río</figcaption></figure>
     <div class="emblema">
-      <div class="circulo">
-        <svg class="rama" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".6"><path d="M15 88C40 62 62 40 86 12"/><path d="M34 68c-8-2-12-8-11-15 7 2 11 8 11 15zM46 54c-8-2-12-8-11-15 7 2 11 8 11 15zM58 40c-8-2-12-8-11-15 7 2 11 8 11 15zM40 62c7-5 15-4 20 2-7 5-14 4-20-2zM52 48c7-5 15-4 20 2-7 5-14 4-20-2zM64 34c7-5 15-4 20 2-7 5-14 4-20-2z"/></g></svg>
-        <div class="nombre">Celeste<br>Valdivia<small>sur del mundo</small></div>
-      </div>
+      <div class="circulo"><img class="logo-img" src="img/logo.jpg" alt="Logo de Celeste Valdivia, Sur del mundo" width="720" height="720"></div>
       <h1>Piezas de matices intensos, llenas de luz y color.</h1>
       <p>Tejo y bordo cristales a mano, uno a uno, en Valdivia. Aros, conjuntos y prendedores de inspiración atemporal: diseños de creadora y piezas únicas, hechas sin prisa.</p>
       <div class="acciones">
@@ -478,8 +484,8 @@ footer .marca{display:inline-block;margin-bottom:14px}
   <a class="f-wa" href="https://wa.me/56986627083?text=Hola%20Celeste%2C%20vi%20tu%20sitio%20%F0%9F%8C%BF" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5z"/></svg></a>
 </div>
 <div class="paletas" id="paletas">
-  <button type="button" aria-expanded="false" aria-controls="lista-paletas"><i id="paleta-muestra" style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Paleta: <span id="paleta-nombre">Laguna</span> ▴</button>
-  <ul id="lista-paletas"><li class="flot"><label><input type="checkbox" id="ver-flotante" checked> Botones flotantes</label></li><li><button type="button" data-p="laguna" aria-pressed="true"><i style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Laguna</button></li><li><button type="button" data-p="oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#1d5f8a 50%)"></i>Océano</button></li><li><button type="button" data-p="bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#3f6e48 50%)"></i>Bosque</button></li><li><button type="button" data-p="madera" aria-pressed="false"><i style="background:linear-gradient(135deg,#2a1d15 50%,#a47c55 50%)"></i>Madera</button></li><li><button type="button" data-p="madera-oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#a47c55 50%)"></i>Madera y océano</button></li><li><button type="button" data-p="madera-bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#a47c55 50%)"></i>Madera y bosque</button></li><li><button type="button" data-p="roca" aria-pressed="false"><i style="background:linear-gradient(135deg,#24282a 50%,#8e9592 50%)"></i>Roca</button></li><li><button type="button" data-p="ocre" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#8c6d42 50%)"></i>Ocre del sur</button></li><li><button type="button" data-p="niebla" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#f4f7f7 50%)"></i>Niebla y cristal</button></li></ul>
+  <button type="button" aria-expanded="false" aria-controls="lista-paletas"><i id="paleta-muestra" style="background:linear-gradient(135deg,#0d1626 50%,#f7fafc 50%)"></i>Paleta: <span id="paleta-nombre">Azul y blanco</span> ▴</button>
+  <ul id="lista-paletas"><li class="flot"><label><input type="checkbox" id="ver-flotante" checked> Botones flotantes</label></li><li class="grupo">Fríos (azul y blanco)</li><li><button type="button" data-p="azul" aria-pressed="true"><i style="background:linear-gradient(135deg,#0d1626 50%,#f7fafc 50%)"></i>Azul y blanco</button></li><li><button type="button" data-p="glaciar" aria-pressed="false"><i style="background:linear-gradient(135deg,#12283d 50%,#cfe1ef 50%)"></i>Glaciar</button></li><li><button type="button" data-p="escarcha" aria-pressed="false"><i style="background:linear-gradient(135deg,#152331 50%,#4d7796 50%)"></i>Escarcha</button></li><li><button type="button" data-p="sur" aria-pressed="false"><i style="background:linear-gradient(135deg,#0d1626 50%,#2b5274 50%)"></i>Sur del mundo (logo)</button></li><li class="grupo">Otras</li><li><button type="button" data-p="laguna" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Laguna</button></li><li><button type="button" data-p="oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#1d5f8a 50%)"></i>Océano</button></li><li><button type="button" data-p="bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#3f6e48 50%)"></i>Bosque</button></li><li><button type="button" data-p="madera" aria-pressed="false"><i style="background:linear-gradient(135deg,#2a1d15 50%,#a47c55 50%)"></i>Madera</button></li><li><button type="button" data-p="madera-oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#a47c55 50%)"></i>Madera y océano</button></li><li><button type="button" data-p="madera-bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#a47c55 50%)"></i>Madera y bosque</button></li><li><button type="button" data-p="roca" aria-pressed="false"><i style="background:linear-gradient(135deg,#24282a 50%,#8e9592 50%)"></i>Roca</button></li><li><button type="button" data-p="ocre" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#8c6d42 50%)"></i>Ocre del sur</button></li><li><button type="button" data-p="niebla" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#f4f7f7 50%)"></i>Niebla y cristal</button></li></ul>
 </div>
 
 <footer>
@@ -495,10 +501,10 @@ footer .marca{display:inline-block;margin-bottom:14px}
   var WA='56986627083';
   /* Selector de paletas: también se puede abrir con ?paleta=ocre o ?paleta=niebla */
   var caja=$('#paletas'),abre=caja.querySelector('button');
-  function paleta(n){if(n==='laguna')document.documentElement.removeAttribute('data-paleta');else document.documentElement.setAttribute('data-paleta',n);
+  function paleta(n){if(n==='azul')document.documentElement.removeAttribute('data-paleta');else document.documentElement.setAttribute('data-paleta',n);
     caja.querySelectorAll('li button').forEach(function(b){var on=b.dataset.p===n;b.setAttribute('aria-pressed',on?'true':'false');
       if(on){$('#paleta-nombre').textContent=b.textContent;$('#paleta-muestra').style.background=b.querySelector('i').style.background;}});
-    try{history.replaceState(null,'',n==='laguna'?location.pathname:'?paleta='+n);}catch(e){}}
+    try{history.replaceState(null,'',n==='azul'?location.pathname:'?paleta='+n);}catch(e){}}
   var chk=$('#ver-flotante'),flo=$('#flotante');
   if(/flotante=0/.test(location.search)){chk.checked=false;flo.classList.add('oculto');}
   chk.addEventListener('change',function(){flo.classList.toggle('oculto',!chk.checked);});
