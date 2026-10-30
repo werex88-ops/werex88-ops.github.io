@@ -28,7 +28,13 @@
   --violeta:#8a4fd8;
   --rubi:#d1305f;
   --oro:#d6a944;
+  /* Paleta A · Laguna (por defecto): franjas en verde lago, acentos dorado suave */
+  --banda-1:#1f5a63;--banda-2:#174a52;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.8);--banda-acento:#f0d48a;
 }
+/* Paleta B · Ocre del sur: café medio dorado, liso y cálido */
+:root[data-paleta="ocre"]{--banda-1:#8c6d42;--banda-2:#6c5332;--banda-texto:#fffaf0;--banda-suave:rgba(255,250,240,.85);--banda-acento:#fbe3a6;--oro:#e2bb63}
+/* Paleta C · Niebla y cristal: franjas claras, acentos turquesa y fucsia de sus piezas */
+:root[data-paleta="niebla"]{--banda-1:#f4f7f7;--banda-2:#e5eded;--banda-texto:#0f2a30;--banda-suave:#4f6466;--banda-acento:#c23b7a;--oro:#c23b7a}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--noche);color:var(--tinta);font-family:'Work Sans',system-ui,sans-serif;font-size:1.05rem;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -41,11 +47,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 section{position:relative;padding:100px 0}
 
 /* Texturas */
-.madera{color:#fff;background-color:var(--madera);background-image:
-  repeating-linear-gradient(91deg,rgba(255,255,255,.035) 0 2px,transparent 2px 15px),
-  repeating-linear-gradient(89deg,rgba(0,0,0,.09) 0 1px,transparent 1px 27px),
-  radial-gradient(ellipse at 30% 40%,rgba(255,220,180,.10),transparent 60%),
-  linear-gradient(180deg,#7b5239,var(--madera-d))}
+.madera{color:var(--banda-texto);background:linear-gradient(180deg,var(--banda-1),var(--banda-2))}
 .papel{background-color:var(--papel);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* Aviso de propuesta */
@@ -187,6 +189,25 @@ header nav.der ul{justify-content:flex-end}
 @media (max-width:1000px){.utiles{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.utiles{grid-template-columns:1fr}}
 
+/* Franjas según paleta */
+.madera .titulo p,.madera .disponibles,.talleres p{color:var(--banda-suave)}
+.madera .titulo .mano,.talleres .mano,.madera .disponibles b,.talleres li::before{color:var(--banda-acento)}
+.madera .pieza .info,.madera .pieza .info button{color:var(--banda-texto);border-color:var(--banda-suave)}
+.madera .pieza .info small{color:var(--banda-suave)}
+.madera .boton{border-color:var(--banda-texto);color:var(--banda-texto)}
+.madera .boton:hover{background:var(--banda-texto);color:var(--banda-1)}
+.manifiesto p{color:var(--banda-texto);text-shadow:none}
+.manifiesto i{color:var(--banda-acento)}
+:root[data-paleta="niebla"] .madera .pola{box-shadow:0 10px 24px rgba(15,42,48,.18)}
+
+/* Selector de paletas (solo para la propuesta) */
+.paletas{position:fixed;left:14px;bottom:14px;z-index:80;background:#fff;color:#1a2a2c;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);padding:10px 12px;font:500 .8rem 'Work Sans',sans-serif;display:flex;align-items:center;gap:8px;flex-wrap:wrap;max-width:calc(100% - 28px)}
+.paletas b{font-weight:600;margin-right:2px}
+.paletas button{display:inline-flex;align-items:center;gap:6px;border:1.5px solid #d6dfe0;background:#fff;border-radius:999px;padding:5px 10px 5px 6px;font:500 .8rem 'Work Sans',sans-serif;cursor:pointer;color:#1a2a2c}
+.paletas button[aria-pressed="true"]{border-color:#0f2a30;background:#0f2a30;color:#fff}
+.paletas i{display:inline-block;width:14px;height:14px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+@media print{.paletas{display:none}}
+
 /* Talleres */
 .talleres .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 .talleres .pola{--g:-4deg;width:100%;max-width:420px;justify-self:center}
@@ -303,7 +324,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
 <!-- Piezas -->
 <section class="madera" id="piezas">
   <div class="wrap">
-    <div class="titulo rv"><span class="mano">del taller</span><h2>Aros tejidos en cristal</h2><p>Mostacillas y cristales tejidos a mano, uno a uno, en colores intensos. Cada par es una pieza única; si te gusta alguno, escríbeme por WhatsApp.</p></div>
+    <div class="titulo rv"><span class="mano">del taller</span><h2>Aros tejidos en cristal</h2><p>Cristales tejidos a mano, uno a uno, en colores intensos. Cada par es una pieza única; si te gusta alguno, escríbeme por WhatsApp.</p></div>
     <div class="etiquetas" role="group" aria-label="Filtrar aros por color">
       <button class="etiqueta" type="button" data-f="todas" aria-pressed="true">todos</button>
       <button class="etiqueta" type="button" data-f="azul" aria-pressed="false">azules y turquesa</button>
@@ -430,6 +451,13 @@ footer .marca{display:inline-block;margin-bottom:14px}
 </section>
 </main>
 
+<div class="paletas" role="group" aria-label="Probar paletas de color (solo propuesta)">
+  <b>Paleta:</b>
+  <button type="button" data-p="laguna" aria-pressed="true"><i style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Laguna</button>
+  <button type="button" data-p="ocre" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#8c6d42 50%)"></i>Ocre del sur</button>
+  <button type="button" data-p="niebla" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#f4f7f7 50%)"></i>Niebla y cristal</button>
+</div>
+
 <footer>
   <a class="marca" href="#inicio"><b>Celeste Valdivia</b><span>sur del mundo</span></a>
   <p>Propuesta de diseño preparada por Werex Studio para Celeste Valdivia; no es el sitio oficial. Fotografías de las piezas: @celeste.valdivia.cl.</p>
@@ -440,6 +468,11 @@ footer .marca{display:inline-block;margin-bottom:14px}
   var $=function(s){return document.querySelector(s);};
   /* Número de WhatsApp de Celeste: completar antes de publicar (formato 569XXXXXXXX). Vacío abre WhatsApp para elegir contacto. */
   var WA='';
+  /* Selector de paletas: también se puede abrir con ?paleta=ocre o ?paleta=niebla */
+  function paleta(n){if(n==='laguna')document.documentElement.removeAttribute('data-paleta');else document.documentElement.setAttribute('data-paleta',n);
+    document.querySelectorAll('.paletas button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===n?'true':'false');});}
+  var inicial=(location.search.match(/paleta=(ocre|niebla|laguna)/)||[])[1];if(inicial)paleta(inicial);
+  document.querySelectorAll('.paletas button').forEach(function(b){b.addEventListener('click',function(){paleta(b.dataset.p);});});
   var wa=function(t){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank','noopener');};
 
   /* Menú móvil: une ambos menús */
