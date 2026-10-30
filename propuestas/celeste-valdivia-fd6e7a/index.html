@@ -28,12 +28,21 @@
   --violeta:#8a4fd8;
   --rubi:#d1305f;
   --oro:#d6a944;
-  /* Paleta A · Laguna (por defecto): franjas en verde lago, acentos dorado suave */
+  --noche-3:#091b1f;
+  /* Paleta Laguna (por defecto): petróleo de su logo, franjas verde lago, dorado suave */
   --banda-1:#1f5a63;--banda-2:#174a52;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.8);--banda-acento:#f0d48a;
 }
-/* Paleta B · Ocre del sur: café medio dorado, liso y cálido */
+/* Océano: azul profundo de mar austral */
+:root[data-paleta="oceano"]{--noche:#0b1f3a;--noche-2:#13325c;--noche-3:#071429;--agua:#8fcbe8;--banda-1:#1d5f8a;--banda-2:#164d72;--banda-acento:#ffd27a;--oro:#f0b94a;--papel:#eef4f8}
+/* Bosque: verde de árboles nativos y helechos */
+:root[data-paleta="bosque"]{--noche:#13261c;--noche-2:#1d3a2a;--noche-3:#0c1a13;--agua:#b3d39f;--banda-1:#3f6e48;--banda-2:#30593a;--banda-acento:#f2d98c;--oro:#d8b25c;--papel:#eff3ec}
+/* Madera: raulí y coigüe, cálida y lisa */
+:root[data-paleta="madera"]{--noche:#2a1d15;--noche-2:#3c2a1e;--noche-3:#1d140e;--agua:#e1c49a;--banda-1:#a47c55;--banda-2:#8b6646;--banda-texto:#fffaf2;--banda-suave:rgba(255,250,242,.86);--banda-acento:#fbe7c0;--oro:#d4a55a;--papel:#f6f0e6}
+/* Roca: piedra laja y pizarra del sur */
+:root[data-paleta="roca"]{--noche:#24282a;--noche-2:#343a3c;--noche-3:#181b1c;--agua:#c3cbc8;--banda-1:#8e9592;--banda-2:#78807d;--banda-acento:#f5e6c4;--oro:#c9a96b;--papel:#eeeeeb}
+/* Ocre del sur: café medio dorado */
 :root[data-paleta="ocre"]{--banda-1:#8c6d42;--banda-2:#6c5332;--banda-texto:#fffaf0;--banda-suave:rgba(255,250,240,.85);--banda-acento:#fbe3a6;--oro:#e2bb63}
-/* Paleta C · Niebla y cristal: franjas claras, acentos turquesa y fucsia de sus piezas */
+/* Niebla y cristal: franjas claras con acento fucsia */
 :root[data-paleta="niebla"]{--banda-1:#f4f7f7;--banda-2:#e5eded;--banda-texto:#0f2a30;--banda-suave:#4f6466;--banda-acento:#c23b7a;--oro:#c23b7a}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -51,11 +60,11 @@ section{position:relative;padding:100px 0}
 .papel{background-color:var(--papel);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* Aviso de propuesta */
-.propuesta{background:#091b1f;color:rgba(255,255,255,.75);font-size:.8rem;text-align:center;padding:7px 16px;letter-spacing:.04em}
+.propuesta{background:var(--noche-3);color:rgba(255,255,255,.75);font-size:.8rem;text-align:center;padding:7px 16px;letter-spacing:.04em}
 .propuesta b{color:var(--oro);font-weight:600}
 
 /* Encabezado */
-header.top{position:sticky;top:0;z-index:40;background:rgba(15,42,48,.94);backdrop-filter:blur(8px)}
+header.top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--noche) 94%,transparent);backdrop-filter:blur(8px)}
 header.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px;gap:16px}
 header nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:.92rem;letter-spacing:.06em}
 header nav a{text-decoration:none;color:rgba(255,255,255,.8)}
@@ -71,13 +80,13 @@ header nav.der ul{justify-content:flex-end}
 .destellos{position:absolute;inset:0;pointer-events:none}
 .destello{position:absolute;transform:rotate(45deg);animation:brillo 4.5s ease-in-out infinite;opacity:.15}
 @keyframes brillo{0%,100%{opacity:.1;transform:rotate(45deg) scale(.5)}50%{opacity:.95;transform:rotate(45deg) scale(1.1)}}
-.ramas{position:absolute;pointer-events:none;opacity:.5}
+.ramas{position:absolute;pointer-events:none;opacity:.5;color:var(--agua)}
 .ramas.izq{left:-30px;top:40px;width:300px}
 .ramas.der{right:-40px;bottom:10px;width:340px;transform:scaleX(-1) rotate(10deg)}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;gap:20px}
 .emblema{text-align:center}
-.emblema .circulo{width:min(78vw,330px);aspect-ratio:1;margin:0 auto;border-radius:50%;border:1px solid rgba(143,201,207,.5);display:grid;place-items:center;position:relative;background:radial-gradient(circle at 50% 40%,#1c4850,var(--noche) 75%);box-shadow:0 0 0 10px rgba(143,201,207,.06),0 30px 60px rgba(0,0,0,.35)}
-.emblema .circulo svg.rama{position:absolute;inset:14%;width:72%;height:72%;opacity:.55}
+.emblema .circulo{width:min(78vw,330px);aspect-ratio:1;margin:0 auto;border-radius:50%;border:1px solid color-mix(in srgb,var(--agua) 50%,transparent);display:grid;place-items:center;position:relative;background:radial-gradient(circle at 50% 40%,var(--noche-2),var(--noche) 75%);box-shadow:0 0 0 10px rgba(143,201,207,.06),0 30px 60px rgba(0,0,0,.35)}
+.emblema .circulo svg.rama{color:var(--agua);position:absolute;inset:14%;width:72%;height:72%;opacity:.55}
 .emblema .nombre{position:relative;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.3rem,4.6vw,3.3rem);line-height:1.02;letter-spacing:.06em}
 .emblema .nombre small{display:block;font-family:'Parisienne',cursive;font-size:.5em;color:var(--agua);letter-spacing:0;margin-top:10px}
 .hero h1{font-size:clamp(1.6rem,2.6vw,2.1rem);font-style:italic;margin:34px auto 12px;max-width:24ch;color:#fff}
@@ -126,7 +135,7 @@ header nav.der ul{justify-content:flex-end}
 .pieza[hidden]{display:none}
 .pieza:nth-child(4n+1){--g:-3deg}.pieza:nth-child(4n+2){--g:2.5deg}.pieza:nth-child(4n+3){--g:-1.5deg}.pieza:nth-child(4n+4){--g:3deg}
 .pieza:hover{transform:rotate(0) translateY(-6px)}
-.pieza .ilustra{display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#1c4850,var(--noche))}
+.pieza .ilustra{display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,var(--noche-2),var(--noche))}
 .pieza .ilustra svg{width:64%;height:64%}
 .pieza .info{text-align:center;margin-top:14px;color:#fff}
 .pieza .info small{display:block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
@@ -136,14 +145,14 @@ header nav.der ul{justify-content:flex-end}
 
 /* Inspiración: fauna y flora */
 .fauna{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center}
-.fauna .circ{width:180px;height:180px;margin:0 auto 20px;border-radius:50%;border:1px solid rgba(143,201,207,.45);display:grid;place-items:center;background:radial-gradient(circle,#1c4850,var(--noche) 75%)}
-.fauna .circ svg{width:62%;height:62%}
+.fauna .circ{width:180px;height:180px;margin:0 auto 20px;border-radius:50%;border:1px solid color-mix(in srgb,var(--agua) 45%,transparent);display:grid;place-items:center;background:radial-gradient(circle,var(--noche-2),var(--noche) 75%)}
+.fauna .circ svg{width:62%;height:62%;color:var(--agua)}
 .fauna h3{font-size:2rem;color:#fff}
 .fauna p{color:rgba(255,255,255,.72);max-width:30ch;margin:8px auto 0;font-size:.97rem}
 
 /* Cita sobre el lago */
 .cita{min-height:440px;display:grid;place-items:center;text-align:center;color:#fff;background:var(--noche-2) center/cover no-repeat}
-.cita::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,42,48,.55),rgba(15,42,48,.75))}
+.cita::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--noche) 50%,transparent),color-mix(in srgb,var(--noche) 75%,transparent))}
 .cita blockquote{position:relative;margin:0;padding:0 24px}
 .cita .mano{font-size:clamp(2.6rem,6.6vw,4.8rem);line-height:1.15}
 .cita span{display:block;margin-top:16px;letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;color:var(--agua)}
@@ -189,6 +198,11 @@ header nav.der ul{justify-content:flex-end}
 @media (max-width:1000px){.utiles{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.utiles{grid-template-columns:1fr}}
 
+.sobre{max-width:720px;margin:-12px auto 54px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.25rem,2.2vw,1.5rem);line-height:1.5;color:rgba(255,255,255,.88)}
+.sobre::before,.sobre::after{content:"“";color:var(--agua);font-size:1.6em;line-height:0;vertical-align:-.3em;margin-right:.08em}
+.sobre::after{content:"”";margin:0 0 0 .08em}
+footer .gracias{font-family:'Parisienne',cursive;font-size:1.6rem;color:var(--agua);margin:0 0 10px}
+
 /* Franjas según paleta */
 .madera .titulo p,.madera .disponibles,.talleres p{color:var(--banda-suave)}
 .madera .titulo .mano,.talleres .mano,.madera .disponibles b,.talleres li::before{color:var(--banda-acento)}
@@ -201,11 +215,14 @@ header nav.der ul{justify-content:flex-end}
 :root[data-paleta="niebla"] .madera .pola{box-shadow:0 10px 24px rgba(15,42,48,.18)}
 
 /* Selector de paletas (solo para la propuesta) */
-.paletas{position:fixed;left:14px;bottom:14px;z-index:80;background:#fff;color:#1a2a2c;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);padding:10px 12px;font:500 .8rem 'Work Sans',sans-serif;display:flex;align-items:center;gap:8px;flex-wrap:wrap;max-width:calc(100% - 28px)}
-.paletas b{font-weight:600;margin-right:2px}
-.paletas button{display:inline-flex;align-items:center;gap:6px;border:1.5px solid #d6dfe0;background:#fff;border-radius:999px;padding:5px 10px 5px 6px;font:500 .8rem 'Work Sans',sans-serif;cursor:pointer;color:#1a2a2c}
-.paletas button[aria-pressed="true"]{border-color:#0f2a30;background:#0f2a30;color:#fff}
-.paletas i{display:inline-block;width:14px;height:14px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.paletas{position:fixed;left:14px;bottom:14px;z-index:80;font:500 .82rem 'Work Sans',sans-serif}
+.paletas > button{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1a2a2c;border:0;border-radius:999px;padding:9px 14px 9px 10px;box-shadow:0 10px 30px rgba(0,0,0,.3);cursor:pointer;font:600 .82rem 'Work Sans',sans-serif}
+.paletas ul{position:absolute;left:0;bottom:calc(100% + 8px);list-style:none;margin:0;padding:8px;background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);display:none;min-width:200px}
+.paletas.abierto ul{display:block}
+.paletas li button{display:flex;align-items:center;gap:10px;width:100%;border:0;background:none;padding:8px 10px;border-radius:9px;cursor:pointer;color:#1a2a2c;font:500 .86rem 'Work Sans',sans-serif;text-align:left}
+.paletas li button:hover{background:#eef2f2}
+.paletas li button[aria-pressed="true"]{background:#1a2a2c;color:#fff}
+.paletas i{display:inline-block;width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);flex-shrink:0}
 @media print{.paletas{display:none}}
 
 /* Talleres */
@@ -232,7 +249,7 @@ header nav.der ul{justify-content:flex-end}
 .redes a:hover{color:var(--oro)}
 .redes svg{width:26px;height:26px}
 
-footer{background:#091b1f;color:rgba(255,255,255,.62);text-align:center;padding:50px 24px 90px;font-size:.84rem}
+footer{background:var(--noche-3);color:rgba(255,255,255,.62);text-align:center;padding:50px 24px 90px;font-size:.84rem}
 footer .marca{display:inline-block;margin-bottom:14px}
 
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -251,7 +268,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
   header nav{display:none}
   header nav.abierto{display:block;position:absolute;left:0;right:0;top:78px;background:var(--noche);padding:6px 24px 16px}
   header nav.abierto ul{flex-direction:column;gap:0}
-  header nav.abierto a{display:block;padding:12px 0;border-bottom:1px solid rgba(143,201,207,.15)}
+  header nav.abierto a{display:block;padding:12px 0;border-bottom:1px solid color-mix(in srgb,var(--agua) 15%,transparent)}
   .menu-btn{display:block}
   .marca{text-align:left;grid-column:1}
   section{padding:72px 0}
@@ -284,7 +301,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
     </nav>
     <a class="marca" href="#inicio" aria-label="Celeste Valdivia, inicio"><b>Celeste Valdivia</b><span>sur del mundo</span></a>
     <nav class="der" id="menu-der" aria-label="Más secciones">
-      <ul><li><a href="#talleres">Talleres</a></li><li><a href="#donde">Dónde estamos</a></li><li><a href="https://www.instagram.com/celeste.valdivia.cl" target="_blank" rel="noopener">Instagram</a></li></ul>
+      <ul><li><a href="#prendedores">Prendedores</a></li><li><a href="#donde">Dónde estamos</a></li><li><a href="https://www.instagram.com/celeste.valdivia.cl" target="_blank" rel="noopener">Instagram</a></li></ul>
     </nav>
     <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -296,17 +313,17 @@ footer .marca{display:inline-block;margin-bottom:14px}
 <!-- Portada -->
 <section class="hero" aria-label="Portada">
   <div class="destellos" id="destellos" aria-hidden="true"></div>
-  <svg class="ramas izq" viewBox="0 0 200 260" aria-hidden="true"><g fill="none" stroke="#8fc9cf" stroke-width="1"><path d="M10 250C60 200 100 120 120 10"/><path d="M40 210c-18-4-28-18-26-34 16 4 26 18 26 34zM62 172c-18-4-28-18-26-34 16 4 26 18 26 34zM82 132c-18-4-28-18-26-34 16 4 26 18 26 34zM100 90c-18-4-28-18-26-34 16 4 26 18 26 34zM52 196c16-10 32-8 44 4-14 10-30 8-44-4zM74 156c16-10 32-8 44 4-14 10-30 8-44-4zM92 116c16-10 32-8 44 4-14 10-30 8-44-4zM108 74c16-10 32-8 44 4-14 10-30 8-44-4z"/></g></svg>
-  <svg class="ramas der" viewBox="0 0 200 260" aria-hidden="true"><g fill="none" stroke="#8fc9cf" stroke-width="1"><path d="M10 250C60 200 100 120 120 10"/><path d="M40 210c-18-4-28-18-26-34 16 4 26 18 26 34zM62 172c-18-4-28-18-26-34 16 4 26 18 26 34zM82 132c-18-4-28-18-26-34 16 4 26 18 26 34zM52 196c16-10 32-8 44 4-14 10-30 8-44-4zM74 156c16-10 32-8 44 4-14 10-30 8-44-4z"/></g></svg>
+  <svg class="ramas izq" viewBox="0 0 200 260" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M10 250C60 200 100 120 120 10"/><path d="M40 210c-18-4-28-18-26-34 16 4 26 18 26 34zM62 172c-18-4-28-18-26-34 16 4 26 18 26 34zM82 132c-18-4-28-18-26-34 16 4 26 18 26 34zM100 90c-18-4-28-18-26-34 16 4 26 18 26 34zM52 196c16-10 32-8 44 4-14 10-30 8-44-4zM74 156c16-10 32-8 44 4-14 10-30 8-44-4zM92 116c16-10 32-8 44 4-14 10-30 8-44-4zM108 74c16-10 32-8 44 4-14 10-30 8-44-4z"/></g></svg>
+  <svg class="ramas der" viewBox="0 0 200 260" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M10 250C60 200 100 120 120 10"/><path d="M40 210c-18-4-28-18-26-34 16 4 26 18 26 34zM62 172c-18-4-28-18-26-34 16 4 26 18 26 34zM82 132c-18-4-28-18-26-34 16 4 26 18 26 34zM52 196c16-10 32-8 44 4-14 10-30 8-44-4zM74 156c16-10 32-8 44 4-14 10-30 8-44-4z"/></g></svg>
   <div class="wrap">
     <figure class="pola a rv" style="margin:0"><div class="img" role="img" aria-label="Aros dorados y fucsia junto a la tarjeta de Celeste Valdivia, con el río de fondo" style="background-image:url('img/tarjeta.jpg')"></div><figcaption>junto al río</figcaption></figure>
     <div class="emblema">
       <div class="circulo">
-        <svg class="rama" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#8fc9cf" stroke-width=".6"><path d="M15 88C40 62 62 40 86 12"/><path d="M34 68c-8-2-12-8-11-15 7 2 11 8 11 15zM46 54c-8-2-12-8-11-15 7 2 11 8 11 15zM58 40c-8-2-12-8-11-15 7 2 11 8 11 15zM40 62c7-5 15-4 20 2-7 5-14 4-20-2zM52 48c7-5 15-4 20 2-7 5-14 4-20-2zM64 34c7-5 15-4 20 2-7 5-14 4-20-2z"/></g></svg>
+        <svg class="rama" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".6"><path d="M15 88C40 62 62 40 86 12"/><path d="M34 68c-8-2-12-8-11-15 7 2 11 8 11 15zM46 54c-8-2-12-8-11-15 7 2 11 8 11 15zM58 40c-8-2-12-8-11-15 7 2 11 8 11 15zM40 62c7-5 15-4 20 2-7 5-14 4-20-2zM52 48c7-5 15-4 20 2-7 5-14 4-20-2zM64 34c7-5 15-4 20 2-7 5-14 4-20-2z"/></g></svg>
         <div class="nombre">Celeste<br>Valdivia<small>sur del mundo</small></div>
       </div>
-      <h1>Cuando la lluvia pinta Valdivia de gris, yo bordo luz y color, cristal por cristal.</h1>
-      <p>Aros, conjuntos y prendedores tejidos y bordados a mano en cristales, de matices intensos y llenos de brillo. Diseños de creadora, inspiración atemporal y piezas únicas.</p>
+      <h1>Piezas de matices intensos, llenas de luz y color.</h1>
+      <p>Tejo y bordo cristales a mano, uno a uno, en Valdivia. Aros, conjuntos y prendedores de inspiración atemporal: diseños de creadora y piezas únicas, hechas sin prisa.</p>
       <div class="acciones">
         <a class="boton lleno" href="#piezas">Ver las piezas</a>
         <a class="boton" href="#encargos">Encargar una pieza</a>
@@ -324,7 +341,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
 <!-- Piezas -->
 <section class="madera" id="piezas">
   <div class="wrap">
-    <div class="titulo rv"><span class="mano">del taller</span><h2>Aros tejidos en cristal</h2><p>Cristales tejidos a mano, uno a uno, en colores intensos. Cada par es una pieza única; si te gusta alguno, escríbeme por WhatsApp.</p></div>
+    <div class="titulo rv"><span class="mano">del taller</span><h2>Aros tejidos en cristal</h2><p>Cada par nace en pequeña escala y no se repite. Si alguno te enamora, escríbeme y lo conversamos 🌿</p></div>
     <div class="etiquetas" role="group" aria-label="Filtrar aros por color">
       <button class="etiqueta" type="button" data-f="todas" aria-pressed="true">todos</button>
       <button class="etiqueta" type="button" data-f="azul" aria-pressed="false">azules y turquesa</button>
@@ -338,9 +355,9 @@ footer .marca{display:inline-block;margin-bottom:14px}
 <!-- Prendedores -->
 <section class="oscuro" id="prendedores">
   <div class="wrap">
-    <div class="titulo rv"><span class="mano">bestiario bordado</span><h2>Prendedores</h2><p>Aves que he visto en el sur, criaturas del bosque y del mar, bordadas cristal por cristal.</p></div>
+    <div class="titulo rv"><span class="mano">bestiario bordado</span><h2>Prendedores</h2><p>Este invierno bordé prendedores de todas las aves que he visto. Me faltan muchas por ver y por bordar.</p></div>
     <div class="piezas" id="bestiario"></div>
-    <p class="disponibles rv"><b>Algunos prendedores que he bordado:</b> colibrí, ballena azul, cola de ballena, amanita muscaria, higo fresco, caracol gigante, carpintero, chucao, martín pescador, garza chica, corazón tapatío, cisne de cuello negro y mil pies azul.</p>
+    <p class="disponibles rv"><b>Algunos de los que he bordado:</b> colibrí, ballena azul, cola de ballena, amanita muscaria, higo fresco, caracol gigante, carpintero, chucao, martín pescador, garza chica, corazón tapatío, cisne de cuello negro y mil pies azul.</p>
     <span class="nota">Ilustraciones provisorias: aquí irán las fotos de los prendedores.</span>
   </div>
 </section>
@@ -348,19 +365,20 @@ footer .marca{display:inline-block;margin-bottom:14px}
 <!-- Inspiración -->
 <section class="oscuro" id="inspiracion">
   <div class="wrap">
-    <div class="titulo rv"><span class="mano">devota del color y el brillo</span><h2>Lo que me inspira</h2><p>Las lluvias y las heladas pintan el paisaje de gris; por eso mis piezas buscan matices intensos, llenos de luz y color.</p></div>
+    <div class="titulo rv"><span class="mano">devota del color y el brillo</span><h2>Lo que me inspira</h2><p>Las lluvias y las heladas suelen hacer del paisaje una pintura gris. Por eso dedico mi arte a crear piezas de matices intensos, llenas de luz y color.</p></div>
+    <blockquote class="sobre rv">Crear en pequeña escala, crear piezas únicas, es un arte que disfruto. Trato siempre de rodearme de almas creativas que, a través de su trabajo, iluminan una realidad que no siempre es tan llevadera.</blockquote>
     <div class="fauna">
       <div class="rv">
         <div class="circ"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M18 60c10-18 28-26 46-24l16-10-6 16c4 10 0 22-12 28-14 6-34 2-44-10z" fill="none" stroke="#2bb3c0" stroke-width="1.4"/><path d="M80 26l14-6" stroke="#2bb3c0" stroke-width="1.4"/><g fill="#8a4fd8"><circle cx="38" cy="58" r="2.4"/><circle cx="46" cy="55" r="2.4"/></g><g fill="#2bb3c0"><circle cx="54" cy="54" r="2.4"/><circle cx="62" cy="55" r="2.4"/></g><g fill="#d6a944"><circle cx="42" cy="66" r="2"/><circle cx="50" cy="68" r="2"/><circle cx="58" cy="66" r="2"/></g><circle cx="66" cy="42" r="1.8" fill="#fff"/></svg></div>
-        <h3>Las aves del sur</h3><p>Este invierno bordé prendedores de todas las aves que he visto. Me faltan muchas por ver y por bordar.</p>
+        <h3>Aves del sur</h3><p>Chucaos, carpinteros, martines pescadores y colibríes: bordo las aves que me encuentro en el camino.</p>
       </div>
       <div class="rv">
         <div class="circ"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M26 70c0-14 14-20 30-18 12 2 18 10 14 18-6 10-40 10-44 0z" fill="none" stroke="#f1f4f2" stroke-width="1.4"/><path d="M60 52c-4-14-2-28 6-32 6-3 12 2 10 8" stroke="#f1f4f2" stroke-width="5" fill="none" stroke-linecap="round" opacity=".9"/><circle cx="76" cy="27" r="3.4" fill="#d1305f"/><g fill="#f1f4f2"><circle cx="38" cy="66" r="2"/><circle cx="46" cy="64" r="2"/><circle cx="54" cy="64" r="2"/></g></svg></div>
-        <h3>Humedal y mar</h3><p>Cisnes de cuello negro, garzas y ballenas, bordados con cristales que imitan el agua.</p>
+        <h3>Río, humedal y mar</h3><p>Cisnes de cuello negro, garzas y ballenas azules, con todos los brillos del agua.</p>
       </div>
       <div class="rv">
-        <div class="circ"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#8fc9cf" stroke-width="1.2"><path d="M50 90V20"/><path d="M50 70c-14-2-22-10-24-22 14 2 22 10 24 22zM50 70c14-2 22-10 24-22-14 2-22 10-24 22zM50 50c-12-2-18-10-20-20 12 2 18 10 20 20zM50 50c12-2 18-10 20-20-12 2-18 10-20 20z"/></g><g fill="#d6a944"><circle cx="50" cy="20" r="3"/></g></svg></div>
-        <h3>Bosque y lluvia</h3><p>Hongos, caracoles y hojas del bosque valdiviano, convertidos en joyas para usar.</p>
+        <div class="circ"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M50 90V20"/><path d="M50 70c-14-2-22-10-24-22 14 2 22 10 24 22zM50 70c14-2 22-10 24-22-14 2-22 10-24 22zM50 50c-12-2-18-10-20-20 12 2 18 10 20 20zM50 50c12-2 18-10 20-20-12 2-18 10-20 20z"/></g><g fill="#d6a944"><circle cx="50" cy="20" r="3"/></g></svg></div>
+        <h3>Bosque y huerta</h3><p>Amanitas, caracoles gigantes e higos frescos: lo que crece con la lluvia también se borda.</p>
       </div>
     </div>
   </div>
@@ -377,12 +395,12 @@ footer .marca{display:inline-block;margin-bottom:14px}
     <div class="texto rv">
       <span class="mano">agenda de pedidos abierta</span>
       <h2>Todo puede ser bordado</h2>
-      <p>Un perrito salchicha, la cabeza de un rinoceronte o una escena completa: me encantan los pedidos de animalitos impensados. Cuéntame tu idea y la convierto en arte que puedas usar.</p>
+      <p>Me encanta cuando llegan pedidos de animalitos impensados: un perrito salchicha, la cabeza de un rinoceronte o una escena completa, como El Principito y el zorro. Cuéntame tu idea; feliz de escucharte y de crear arte que puedas usar.</p>
       <ol class="pasos">
-        <li><span>Me cuentas la pieza, la temática y los colores.</span></li>
+        <li><span>Me cuentas tu idea: la pieza, la temática y los colores.</span></li>
         <li><span>Conversamos los detalles por WhatsApp.</span></li>
-        <li><span>La bordo a mano; por lo general en unos 2 días hábiles, según la demanda.</span></li>
-        <li><span>Entrega en mi stand, sin costo en el radio urbano de Valdivia, o envío a todo Chile y el extranjero.</span></li>
+        <li><span>La bordo a mano, cristal por cristal. Por lo general demora unos 2 días hábiles, según la demanda.</span></li>
+        <li><span>La retiras en mi stand, te la llevo sin costo dentro del radio urbano de Valdivia o te la envío a cualquier lugar de Chile y del mundo.</span></li>
       </ol>
     </div>
     <form class="carta rv" id="formulario" novalidate aria-label="Encargo de pieza por WhatsApp">
@@ -412,29 +430,15 @@ footer .marca{display:inline-block;margin-bottom:14px}
   </div>
 </section>
 
-<!-- Talleres -->
-<section class="madera talleres" id="talleres">
-  <div class="wrap">
-    <figure class="pola rv" style="margin:0"><div class="img" role="img" aria-label="Manos trabajando en una pieza de joyería (foto referencial)" style="background-image:url('https://images.unsplash.com/photo-1715374033196-0ff662284a7e?w=800&q=70&auto=format&fit=crop')"></div><figcaption>taller de bordado</figcaption></figure>
-    <div class="rv">
-      <span class="mano">aprende conmigo</span>
-      <h2>Talleres de bordado en cristal</h2>
-      <p>Encuentros para grupos, organizaciones y espacios culturales, donde cada persona borda su propia pieza paso a paso.</p>
-      <ul><li>Sin experiencia previa</li><li>Materiales incluidos</li><li>En Valdivia y otras comunas de la región</li></ul>
-      <a class="boton" href="#encargos" data-taller>Quiero un taller</a>
-    </div>
-  </div>
-</section>
-
 <!-- Información útil -->
 <section class="papel info-util" id="info">
   <div class="wrap">
-    <div class="titulo rv"><span class="mano">información importante</span><h2>Antes de pedir</h2></div>
+    <div class="titulo rv"><span class="mano">información importante</span><h2>Envíos y encargos</h2><p>Eso que debería decir más seguido, pero que a veces se me olvida.</p></div>
     <div class="utiles">
-      <div class="rv"><b>Envíos</b><span>A todo Chile y al extranjero.</span></div>
+      <div class="rv"><b>Envíos</b><span>Nacionales e internacionales.</span></div>
       <div class="rv"><b>Entregas en Valdivia</b><span>Sin costo dentro del radio urbano, y todos los días en mi stand.</span></div>
-      <div class="rv"><b>Encargos</b><span>Agenda abierta para piezas a pedido; por lo general están listas en unos 2 días hábiles.</span></div>
-      <div class="rv"><b>Contacto</b><span>Escríbeme por WhatsApp o Instagram, te respondo personalmente.</span></div>
+      <div class="rv"><b>Agenda de pedidos</b><span>Abierta. La demora depende de la demanda; por lo general, 2 días hábiles.</span></div>
+      <div class="rv"><b>Contacto</b><span>Por WhatsApp o Instagram. Te respondo yo misma.</span></div>
     </div>
   </div>
 </section>
@@ -443,7 +447,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
 <section class="oscuro" id="donde">
   <div class="wrap">
     <div class="boleto rv">
-      <div class="izq"><span class="mano">nos vemos en</span><h2>Edificio Prales</h2><p>Frente a la Plaza de la República, en Valdivia, junto a otras creadoras y artesanas. Ven a ver las piezas, probártelas y conversar sobre tu encargo. También me encuentras en ferias de creadores locales, como en el Parque Saval en Navidad.</p></div>
+      <div class="izq"><span class="mano">nos vemos en</span><h2>Edificio Prales</h2><p>Frente a la Plaza de la República, en Valdivia, junto a otras creadoras y artesanas. Pasa a verme: siempre feliz de compartir contigo, probar piezas y conversar sobre tu encargo. También participo en ferias de creadores locales; las fechas las publico en Instagram.</p></div>
       <div class="der"><span>lunes a viernes</span><b>10 a 18 h</b><span>fechas en Instagram</span></div>
     </div>
     <div class="redes rv"><a href="https://www.instagram.com/celeste.valdivia.cl" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@celeste.valdivia.cl</a></div>
@@ -451,15 +455,14 @@ footer .marca{display:inline-block;margin-bottom:14px}
 </section>
 </main>
 
-<div class="paletas" role="group" aria-label="Probar paletas de color (solo propuesta)">
-  <b>Paleta:</b>
-  <button type="button" data-p="laguna" aria-pressed="true"><i style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Laguna</button>
-  <button type="button" data-p="ocre" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#8c6d42 50%)"></i>Ocre del sur</button>
-  <button type="button" data-p="niebla" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#f4f7f7 50%)"></i>Niebla y cristal</button>
+<div class="paletas" id="paletas">
+  <button type="button" aria-expanded="false" aria-controls="lista-paletas"><i id="paleta-muestra" style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Paleta: <span id="paleta-nombre">Laguna</span> ▴</button>
+  <ul id="lista-paletas"><li><button type="button" data-p="laguna" aria-pressed="true"><i style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Laguna</button></li><li><button type="button" data-p="oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#1d5f8a 50%)"></i>Océano</button></li><li><button type="button" data-p="bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#3f6e48 50%)"></i>Bosque</button></li><li><button type="button" data-p="madera" aria-pressed="false"><i style="background:linear-gradient(135deg,#2a1d15 50%,#a47c55 50%)"></i>Madera</button></li><li><button type="button" data-p="roca" aria-pressed="false"><i style="background:linear-gradient(135deg,#24282a 50%,#8e9592 50%)"></i>Roca</button></li><li><button type="button" data-p="ocre" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#8c6d42 50%)"></i>Ocre del sur</button></li><li><button type="button" data-p="niebla" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#f4f7f7 50%)"></i>Niebla y cristal</button></li></ul>
 </div>
 
 <footer>
   <a class="marca" href="#inicio"><b>Celeste Valdivia</b><span>sur del mundo</span></a>
+  <p class="gracias">Gracias por preferir lo hecho a mano y local 🤍</p>
   <p>Propuesta de diseño preparada por Werex Studio para Celeste Valdivia; no es el sitio oficial. Fotografías de las piezas: @celeste.valdivia.cl.</p>
 </footer>
 
@@ -469,10 +472,14 @@ footer .marca{display:inline-block;margin-bottom:14px}
   /* Número de WhatsApp de Celeste: completar antes de publicar (formato 569XXXXXXXX). Vacío abre WhatsApp para elegir contacto. */
   var WA='';
   /* Selector de paletas: también se puede abrir con ?paleta=ocre o ?paleta=niebla */
+  var caja=$('#paletas'),abre=caja.querySelector('button');
   function paleta(n){if(n==='laguna')document.documentElement.removeAttribute('data-paleta');else document.documentElement.setAttribute('data-paleta',n);
-    document.querySelectorAll('.paletas button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===n?'true':'false');});}
-  var inicial=(location.search.match(/paleta=(ocre|niebla|laguna)/)||[])[1];if(inicial)paleta(inicial);
-  document.querySelectorAll('.paletas button').forEach(function(b){b.addEventListener('click',function(){paleta(b.dataset.p);});});
+    caja.querySelectorAll('li button').forEach(function(b){var on=b.dataset.p===n;b.setAttribute('aria-pressed',on?'true':'false');
+      if(on){$('#paleta-nombre').textContent=b.textContent;$('#paleta-muestra').style.background=b.querySelector('i').style.background;}});
+    try{history.replaceState(null,'',n==='laguna'?location.pathname:'?paleta='+n);}catch(e){}}
+  var inicial=(location.search.match(/paleta=(\w+)/)||[])[1];if(inicial&&caja.querySelector('[data-p="'+inicial+'"]'))paleta(inicial);
+  abre.addEventListener('click',function(){var a=caja.classList.toggle('abierto');abre.setAttribute('aria-expanded',a);});
+  caja.querySelectorAll('li button').forEach(function(b){b.addEventListener('click',function(){paleta(b.dataset.p);caja.classList.remove('abierto');abre.setAttribute('aria-expanded','false');});});
   var wa=function(t){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank','noopener');};
 
   /* Menú móvil: une ambos menús */
@@ -546,7 +553,6 @@ footer .marca{display:inline-block;margin-bottom:14px}
   });});
   ['#lista','#bestiario'].forEach(function(id){$(id).addEventListener('click',function(e){var b=e.target.closest('button[data-t]');if(b)wa('Hola Celeste, vi tu sitio y quiero consultar por '+b.dataset.t+'.');});});
 
-  $('[data-taller]').addEventListener('click',function(){$('#f-pieza').value='Algo distinto';$('#f-msg').value='Me interesa un taller de bordado en cristal para un grupo.';});
 
   $('#f-fecha').min=new Date().toISOString().slice(0,10);
   $('#formulario').addEventListener('submit',function(e){
