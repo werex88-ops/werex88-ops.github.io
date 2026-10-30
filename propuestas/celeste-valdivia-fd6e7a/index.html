@@ -88,9 +88,18 @@ header nav.der ul{justify-content:flex-end}
 .menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px;justify-self:end}
 
 /* Portada */
-.hero{color:#fff;overflow:hidden;padding:70px 0 120px;background:radial-gradient(ellipse at 50% 35%,var(--noche-2),var(--noche) 70%)}
-:root:not([data-paleta]) .hero,:root[data-paleta="sur"] .hero,:root[data-paleta="glaciar"] .hero,:root[data-paleta="escarcha"] .hero{background:linear-gradient(180deg,rgba(8,14,25,.3),rgba(8,14,25,.1) 40%,rgba(8,14,25,.6)),url('img/caihuin.jpg') center 42%/cover no-repeat,#0d1626}
-:root:not([data-paleta]) .hero::after,:root[data-paleta="sur"] .hero::after,:root[data-paleta="glaciar"] .hero::after,:root[data-paleta="escarcha"] .hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
+.hero{color:#fff;overflow:hidden;padding:70px 0 120px;
+  /* Foto de Caihuín del logo, teñida con los colores de cada paleta */
+  background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.05) 40%,rgba(0,0,0,.5)),url('img/caihuin.jpg') center 42%/cover no-repeat,linear-gradient(104deg,var(--noche-3) 0%,var(--noche) 42%,var(--noche-2) 58%,var(--banda-1) 100%);
+  background-blend-mode:normal,luminosity,normal}
+/* Paletas frías: la foto con sus colores originales, como en el logo */
+:root:not([data-paleta]) .hero,:root[data-paleta="sur"] .hero,:root[data-paleta="glaciar"] .hero,:root[data-paleta="escarcha"] .hero{background:linear-gradient(180deg,rgba(8,14,25,.3),rgba(8,14,25,.1) 40%,rgba(8,14,25,.6)),url('img/caihuin.jpg') center 42%/cover no-repeat,#0d1626;background-blend-mode:normal}
+:root[data-paleta="niebla"] .hero{background-image:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.05) 40%,rgba(0,0,0,.5)),url('img/caihuin.jpg'),linear-gradient(104deg,#0f2a30,#1f5a63)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
+/* Versión sin logo */
+:root.sin-logo .emblema .circulo{display:none}
+:root.sin-logo .hero h1{font-size:clamp(2rem,3.2vw,2.7rem);margin-top:0;max-width:18ch}
+:root.sin-logo .hero .emblema::before{content:"Celeste Valdivia";display:block;font-family:'Dosis',sans-serif;font-weight:200;font-size:clamp(1rem,1.6vw,1.2rem);letter-spacing:.4em;text-transform:uppercase;color:var(--agua);margin-bottom:18px}
 .destellos{position:absolute;inset:0;pointer-events:none}
 .destello{position:absolute;transform:rotate(45deg);animation:brillo 4.5s ease-in-out infinite;opacity:.15}
 @keyframes brillo{0%,100%{opacity:.1;transform:rotate(45deg) scale(.5)}50%{opacity:.95;transform:rotate(45deg) scale(1.1)}}
@@ -240,7 +249,7 @@ footer .gracias{font-family:'Parisienne',cursive;font-size:1.6rem;color:var(--ag
 .paletas li.grupo{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6b7a86;padding:8px 10px 4px}
 .paletas ul{max-height:70vh;overflow:auto}
 .paletas li.flot{padding:6px 10px 10px;border-bottom:1px solid #e3e8e8;margin-bottom:6px}
-.paletas li.flot label{display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:600}
+.paletas li.flot label{margin:4px 0;display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:600}
 .enviar.ig{margin-top:10px;background:linear-gradient(90deg,#833ab4,#c13584,#e1306c,#f77737);color:#fff;text-decoration:none}
 .enviar.ig:hover{filter:brightness(1.08);background:linear-gradient(90deg,#833ab4,#c13584,#e1306c,#f77737)}
 .enviar.ig svg{width:20px;height:20px}
@@ -488,7 +497,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
 </div>
 <div class="paletas" id="paletas">
   <button type="button" aria-expanded="false" aria-controls="lista-paletas"><i id="paleta-muestra" style="background:linear-gradient(135deg,#0d1626 50%,#f7fafc 50%)"></i>Paleta: <span id="paleta-nombre">Azul y blanco</span> ▴</button>
-  <ul id="lista-paletas"><li class="flot"><label><input type="checkbox" id="ver-flotante" checked> Botones flotantes</label></li><li class="grupo">Fríos (azul y blanco)</li><li><button type="button" data-p="azul" aria-pressed="true"><i style="background:linear-gradient(135deg,#0d1626 50%,#f7fafc 50%)"></i>Azul y blanco</button></li><li><button type="button" data-p="glaciar" aria-pressed="false"><i style="background:linear-gradient(135deg,#12283d 50%,#cfe1ef 50%)"></i>Glaciar</button></li><li><button type="button" data-p="escarcha" aria-pressed="false"><i style="background:linear-gradient(135deg,#152331 50%,#4d7796 50%)"></i>Escarcha</button></li><li><button type="button" data-p="sur" aria-pressed="false"><i style="background:linear-gradient(135deg,#0d1626 50%,#2b5274 50%)"></i>Sur del mundo (logo)</button></li><li class="grupo">Otras</li><li><button type="button" data-p="laguna" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Laguna</button></li><li><button type="button" data-p="oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#1d5f8a 50%)"></i>Océano</button></li><li><button type="button" data-p="bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#3f6e48 50%)"></i>Bosque</button></li><li><button type="button" data-p="madera" aria-pressed="false"><i style="background:linear-gradient(135deg,#2a1d15 50%,#a47c55 50%)"></i>Madera</button></li><li><button type="button" data-p="madera-oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#a47c55 50%)"></i>Madera y océano</button></li><li><button type="button" data-p="madera-bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#a47c55 50%)"></i>Madera y bosque</button></li><li><button type="button" data-p="roca" aria-pressed="false"><i style="background:linear-gradient(135deg,#24282a 50%,#8e9592 50%)"></i>Roca</button></li><li><button type="button" data-p="ocre" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#8c6d42 50%)"></i>Ocre del sur</button></li><li><button type="button" data-p="niebla" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#f4f7f7 50%)"></i>Niebla y cristal</button></li></ul>
+  <ul id="lista-paletas"><li class="flot"><label><input type="checkbox" id="ver-logo" checked> Logo en la portada</label><label><input type="checkbox" id="ver-flotante" checked> Botones flotantes</label></li><li class="grupo">Fríos (azul y blanco)</li><li><button type="button" data-p="azul" aria-pressed="true"><i style="background:linear-gradient(135deg,#0d1626 50%,#f7fafc 50%)"></i>Azul y blanco</button></li><li><button type="button" data-p="glaciar" aria-pressed="false"><i style="background:linear-gradient(135deg,#12283d 50%,#cfe1ef 50%)"></i>Glaciar</button></li><li><button type="button" data-p="escarcha" aria-pressed="false"><i style="background:linear-gradient(135deg,#152331 50%,#4d7796 50%)"></i>Escarcha</button></li><li><button type="button" data-p="sur" aria-pressed="false"><i style="background:linear-gradient(135deg,#0d1626 50%,#2b5274 50%)"></i>Sur del mundo (logo)</button></li><li class="grupo">Otras</li><li><button type="button" data-p="laguna" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Laguna</button></li><li><button type="button" data-p="oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#1d5f8a 50%)"></i>Océano</button></li><li><button type="button" data-p="bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#3f6e48 50%)"></i>Bosque</button></li><li><button type="button" data-p="madera" aria-pressed="false"><i style="background:linear-gradient(135deg,#2a1d15 50%,#a47c55 50%)"></i>Madera</button></li><li><button type="button" data-p="madera-oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#a47c55 50%)"></i>Madera y océano</button></li><li><button type="button" data-p="madera-bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#a47c55 50%)"></i>Madera y bosque</button></li><li><button type="button" data-p="roca" aria-pressed="false"><i style="background:linear-gradient(135deg,#24282a 50%,#8e9592 50%)"></i>Roca</button></li><li><button type="button" data-p="ocre" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#8c6d42 50%)"></i>Ocre del sur</button></li><li><button type="button" data-p="niebla" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#f4f7f7 50%)"></i>Niebla y cristal</button></li></ul>
 </div>
 
 <footer>
@@ -507,10 +516,16 @@ footer .marca{display:inline-block;margin-bottom:14px}
   function paleta(n){if(n==='azul')document.documentElement.removeAttribute('data-paleta');else document.documentElement.setAttribute('data-paleta',n);
     caja.querySelectorAll('li button').forEach(function(b){var on=b.dataset.p===n;b.setAttribute('aria-pressed',on?'true':'false');
       if(on){$('#paleta-nombre').textContent=b.textContent;$('#paleta-muestra').style.background=b.querySelector('i').style.background;}});
-    try{history.replaceState(null,'',n==='azul'?location.pathname:'?paleta='+n);}catch(e){}}
+    actual=n;url();}
+  var actual='azul';
+  function url(){var q=[];if(actual!=='azul')q.push('paleta='+actual);if(chkL&&!chkL.checked)q.push('logo=0');if(chk&&!chk.checked)q.push('flotante=0');
+    try{history.replaceState(null,'',location.pathname+(q.length?'?'+q.join('&'):''));}catch(e){}}
+  var chkL=$('#ver-logo');
+  if(/logo=0/.test(location.search)){chkL.checked=false;document.documentElement.classList.add('sin-logo');}
+  chkL.addEventListener('change',function(){document.documentElement.classList.toggle('sin-logo',!chkL.checked);url();});
   var chk=$('#ver-flotante'),flo=$('#flotante');
   if(/flotante=0/.test(location.search)){chk.checked=false;flo.classList.add('oculto');}
-  chk.addEventListener('change',function(){flo.classList.toggle('oculto',!chk.checked);});
+  chk.addEventListener('change',function(){flo.classList.toggle('oculto',!chk.checked);url();});
   var inicial=(location.search.match(/paleta=([\w-]+)/)||[])[1];if(inicial&&caja.querySelector('[data-p="'+inicial+'"]'))paleta(inicial);
   abre.addEventListener('click',function(){var a=caja.classList.toggle('abierto');abre.setAttribute('aria-expanded',a);});
   caja.querySelectorAll('li button').forEach(function(b){b.addEventListener('click',function(){paleta(b.dataset.p);caja.classList.remove('abierto');abre.setAttribute('aria-expanded','false');});});
