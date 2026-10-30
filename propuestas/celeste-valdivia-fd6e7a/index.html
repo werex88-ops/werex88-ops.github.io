@@ -98,8 +98,10 @@ header nav.der ul{justify-content:flex-end}
 .ramas.der{right:-40px;bottom:10px;width:340px;transform:scaleX(-1) rotate(10deg)}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;gap:20px}
 .emblema{text-align:center}
-.emblema .circulo{width:min(80vw,380px);aspect-ratio:1;margin:0 auto}
-.emblema .logo-img{width:100%;height:100%;object-fit:cover;-webkit-mask-image:radial-gradient(circle at 50% 46%,#000 48%,transparent 66%);mask-image:radial-gradient(circle at 50% 46%,#000 48%,transparent 66%)}
+.emblema .circulo{position:relative;width:min(68vw,300px);aspect-ratio:410/550;margin:0 auto;container-type:inline-size}
+.emblema .logo-img{width:100%;height:100%;display:block}
+.emblema .nombre{position:absolute;left:0;right:8%;top:44%;text-align:center;font-family:'Quicksand',sans-serif;font-weight:300;font-size:12.5cqw;line-height:1.08;letter-spacing:.04em;color:#f3f8fc}
+.emblema .nombre small{display:block;font-family:'Parisienne',cursive;font-size:.5em;letter-spacing:.14em;color:#cfe4f2;margin-top:2px}
 .hero h1{font-size:clamp(1.6rem,2.6vw,2.1rem);font-style:italic;margin:6px auto 12px;max-width:24ch;color:#fff}
 .hero p{color:rgba(255,255,255,.78);max-width:46ch;margin:0 auto 28px;text-align:center}
 .boton{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:500;letter-spacing:.04em;border:1px solid rgba(255,255,255,.55);color:#fff;transition:background .25s,color .25s,transform .25s;cursor:pointer;background:transparent;font:500 .98rem 'Work Sans',sans-serif}
@@ -344,7 +346,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
   <div class="wrap">
     <figure class="pola a rv" style="margin:0"><div class="img" role="img" aria-label="Aros dorados y fucsia junto a la tarjeta de Celeste Valdivia, con el río de fondo" style="background-image:url('img/tarjeta.jpg')"></div><figcaption>junto al río</figcaption></figure>
     <div class="emblema">
-      <div class="circulo"><img class="logo-img" src="img/logo.jpg" alt="Logo de Celeste Valdivia, Sur del mundo" width="720" height="720"></div>
+      <div class="circulo"><img class="logo-img" src="img/logo-trazos.png" alt="" width="410" height="550"><div class="nombre" role="img" aria-label="Celeste Valdivia, Sur del mundo">Celeste<br>Valdivia<small>Sur del mundo</small></div></div>
       <h1>Piezas de matices intensos, llenas de luz y color.</h1>
       <p>Tejo y bordo cristales a mano, uno a uno, en Valdivia. Aros, conjuntos y prendedores de inspiración atemporal: diseños de creadora y piezas únicas, hechas sin prisa.</p>
       <div class="acciones">
