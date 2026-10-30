@@ -38,6 +38,10 @@
 :root[data-paleta="bosque"]{--noche:#13261c;--noche-2:#1d3a2a;--noche-3:#0c1a13;--agua:#b3d39f;--banda-1:#3f6e48;--banda-2:#30593a;--banda-acento:#f2d98c;--oro:#d8b25c;--papel:#eff3ec}
 /* Madera: raulí y coigüe, cálida y lisa */
 :root[data-paleta="madera"]{--noche:#2a1d15;--noche-2:#3c2a1e;--noche-3:#1d140e;--agua:#e1c49a;--banda-1:#a47c55;--banda-2:#8b6646;--banda-texto:#fffaf2;--banda-suave:rgba(255,250,242,.86);--banda-acento:#fbe7c0;--oro:#d4a55a;--papel:#f6f0e6}
+/* Madera y océano: franjas de madera con fondos de mar profundo */
+:root[data-paleta="madera-oceano"]{--noche:#0b1f3a;--noche-2:#13325c;--noche-3:#071429;--agua:#8fcbe8;--banda-1:#a47c55;--banda-2:#8b6646;--banda-texto:#fffaf2;--banda-suave:rgba(255,250,242,.86);--banda-acento:#fbe7c0;--oro:#d4a55a;--papel:#f6f0e6}
+/* Madera y bosque: franjas de madera con fondos de bosque nativo */
+:root[data-paleta="madera-bosque"]{--noche:#13261c;--noche-2:#1d3a2a;--noche-3:#0c1a13;--agua:#b3d39f;--banda-1:#a47c55;--banda-2:#8b6646;--banda-texto:#fffaf2;--banda-suave:rgba(255,250,242,.86);--banda-acento:#fbe7c0;--oro:#d4a55a;--papel:#f6f0e6}
 /* Roca: piedra laja y pizarra del sur */
 :root[data-paleta="roca"]{--noche:#24282a;--noche-2:#343a3c;--noche-3:#181b1c;--agua:#c3cbc8;--banda-1:#8e9592;--banda-2:#78807d;--banda-acento:#f5e6c4;--oro:#c9a96b;--papel:#eeeeeb}
 /* Ocre del sur: café medio dorado */
@@ -223,7 +227,20 @@ footer .gracias{font-family:'Parisienne',cursive;font-size:1.6rem;color:var(--ag
 .paletas li button:hover{background:#eef2f2}
 .paletas li button[aria-pressed="true"]{background:#1a2a2c;color:#fff}
 .paletas i{display:inline-block;width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);flex-shrink:0}
-@media print{.paletas{display:none}}
+.paletas li.flot{padding:6px 10px 10px;border-bottom:1px solid #e3e8e8;margin-bottom:6px}
+.paletas li.flot label{display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:600}
+.enviar.ig{margin-top:10px;background:linear-gradient(90deg,#833ab4,#c13584,#e1306c,#f77737);color:#fff;text-decoration:none}
+.enviar.ig:hover{filter:brightness(1.08);background:linear-gradient(90deg,#833ab4,#c13584,#e1306c,#f77737)}
+.enviar.ig svg{width:20px;height:20px}
+.flotante{position:fixed;right:14px;bottom:14px;z-index:79;display:flex;flex-direction:column;gap:10px}
+.flotante a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.3);transition:transform .2s}
+.flotante a:hover{transform:scale(1.08)}
+.flotante svg{width:24px;height:24px}
+.flotante .f-ig{background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 95%)}
+.flotante .f-wa{background:#25D366;color:#0b2e1a}
+.flotante.oculto{display:none}
+@media (max-width:600px){.flotante a{width:44px;height:44px}}
+@media print{.paletas,.flotante{display:none}}
 
 /* Talleres */
 .talleres .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
@@ -425,7 +442,8 @@ footer .marca{display:inline-block;margin-bottom:14px}
         <div class="full"><label for="f-msg">Mi idea</label><textarea id="f-msg" rows="3"></textarea></div>
       </div>
       <button class="enviar" type="submit"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5z"/></svg>Enviar por WhatsApp</button>
-      <p class="msg" id="msg" role="status">Se abrirá WhatsApp con tu mensaje listo.</p>
+      <a class="enviar ig" href="https://ig.me/m/celeste.valdivia.cl" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>O escríbeme por Instagram</a>
+      <p class="msg" id="msg" role="status">Se abrirá WhatsApp con tu mensaje listo, o te llevo a mis mensajes de Instagram.</p>
     </form>
   </div>
 </section>
@@ -455,9 +473,13 @@ footer .marca{display:inline-block;margin-bottom:14px}
 </section>
 </main>
 
+<div class="flotante" id="flotante" aria-label="Contacto rápido">
+  <a class="f-ig" href="https://ig.me/m/celeste.valdivia.cl" target="_blank" rel="noopener" aria-label="Escribir por Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+  <a class="f-wa" href="https://wa.me/56986627083?text=Hola%20Celeste%2C%20vi%20tu%20sitio%20%F0%9F%8C%BF" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5z"/></svg></a>
+</div>
 <div class="paletas" id="paletas">
   <button type="button" aria-expanded="false" aria-controls="lista-paletas"><i id="paleta-muestra" style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Paleta: <span id="paleta-nombre">Laguna</span> ▴</button>
-  <ul id="lista-paletas"><li><button type="button" data-p="laguna" aria-pressed="true"><i style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Laguna</button></li><li><button type="button" data-p="oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#1d5f8a 50%)"></i>Océano</button></li><li><button type="button" data-p="bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#3f6e48 50%)"></i>Bosque</button></li><li><button type="button" data-p="madera" aria-pressed="false"><i style="background:linear-gradient(135deg,#2a1d15 50%,#a47c55 50%)"></i>Madera</button></li><li><button type="button" data-p="roca" aria-pressed="false"><i style="background:linear-gradient(135deg,#24282a 50%,#8e9592 50%)"></i>Roca</button></li><li><button type="button" data-p="ocre" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#8c6d42 50%)"></i>Ocre del sur</button></li><li><button type="button" data-p="niebla" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#f4f7f7 50%)"></i>Niebla y cristal</button></li></ul>
+  <ul id="lista-paletas"><li class="flot"><label><input type="checkbox" id="ver-flotante" checked> Botones flotantes</label></li><li><button type="button" data-p="laguna" aria-pressed="true"><i style="background:linear-gradient(135deg,#0f2a30 50%,#1f5a63 50%)"></i>Laguna</button></li><li><button type="button" data-p="oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#1d5f8a 50%)"></i>Océano</button></li><li><button type="button" data-p="bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#3f6e48 50%)"></i>Bosque</button></li><li><button type="button" data-p="madera" aria-pressed="false"><i style="background:linear-gradient(135deg,#2a1d15 50%,#a47c55 50%)"></i>Madera</button></li><li><button type="button" data-p="madera-oceano" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b1f3a 50%,#a47c55 50%)"></i>Madera y océano</button></li><li><button type="button" data-p="madera-bosque" aria-pressed="false"><i style="background:linear-gradient(135deg,#13261c 50%,#a47c55 50%)"></i>Madera y bosque</button></li><li><button type="button" data-p="roca" aria-pressed="false"><i style="background:linear-gradient(135deg,#24282a 50%,#8e9592 50%)"></i>Roca</button></li><li><button type="button" data-p="ocre" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#8c6d42 50%)"></i>Ocre del sur</button></li><li><button type="button" data-p="niebla" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f2a30 50%,#f4f7f7 50%)"></i>Niebla y cristal</button></li></ul>
 </div>
 
 <footer>
@@ -470,14 +492,17 @@ footer .marca{display:inline-block;margin-bottom:14px}
 (function(){
   var $=function(s){return document.querySelector(s);};
   /* Número de WhatsApp de Celeste: completar antes de publicar (formato 569XXXXXXXX). Vacío abre WhatsApp para elegir contacto. */
-  var WA='';
+  var WA='56986627083';
   /* Selector de paletas: también se puede abrir con ?paleta=ocre o ?paleta=niebla */
   var caja=$('#paletas'),abre=caja.querySelector('button');
   function paleta(n){if(n==='laguna')document.documentElement.removeAttribute('data-paleta');else document.documentElement.setAttribute('data-paleta',n);
     caja.querySelectorAll('li button').forEach(function(b){var on=b.dataset.p===n;b.setAttribute('aria-pressed',on?'true':'false');
       if(on){$('#paleta-nombre').textContent=b.textContent;$('#paleta-muestra').style.background=b.querySelector('i').style.background;}});
     try{history.replaceState(null,'',n==='laguna'?location.pathname:'?paleta='+n);}catch(e){}}
-  var inicial=(location.search.match(/paleta=(\w+)/)||[])[1];if(inicial&&caja.querySelector('[data-p="'+inicial+'"]'))paleta(inicial);
+  var chk=$('#ver-flotante'),flo=$('#flotante');
+  if(/flotante=0/.test(location.search)){chk.checked=false;flo.classList.add('oculto');}
+  chk.addEventListener('change',function(){flo.classList.toggle('oculto',!chk.checked);});
+  var inicial=(location.search.match(/paleta=([\w-]+)/)||[])[1];if(inicial&&caja.querySelector('[data-p="'+inicial+'"]'))paleta(inicial);
   abre.addEventListener('click',function(){var a=caja.classList.toggle('abierto');abre.setAttribute('aria-expanded',a);});
   caja.querySelectorAll('li button').forEach(function(b){b.addEventListener('click',function(){paleta(b.dataset.p);caja.classList.remove('abierto');abre.setAttribute('aria-expanded','false');});});
   var wa=function(t){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank','noopener');};
