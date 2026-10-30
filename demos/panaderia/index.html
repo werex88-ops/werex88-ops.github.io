@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horno Pellín · Panadería de masa madre en Paillaco</title>
+<meta name="description" content="Panadería artesanal de masa madre en Paillaco: panes de campo, croissants, kuchen y encargos por WhatsApp. Sitio de ejemplo con datos ficticios.">
+<meta name="theme-color" content="#b4361f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--ladrillo:#b4361f;--ladrillo-osc:#8e2815;--harina:#fbf7ef;--carbon:#1c1a18;--trigo:#e8b04b;--suave:#5f574e;--linea:#e6dccb;--papel:#f3ecdd}
+  html{scroll-behavior:smooth}
+  body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--harina);color:var(--carbon);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer}
+  .serif{font-family:'Newsreader',Georgia,serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--carbon);outline-offset:3px;box-shadow:0 0 0 6px var(--trigo);border-radius:6px}
+  .saltar{position:absolute;left:12px;top:-60px;background:var(--carbon);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+  .saltar:focus{top:12px}
+  .sobre{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ladrillo)}
+  h2{font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1;letter-spacing:-.03em;margin-top:12px}
+  h2 em{font-family:'Newsreader',serif;font-weight:400;font-style:italic;letter-spacing:-.01em}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--carbon);color:#fff;padding:14px 26px;border-radius:999px;border:0;font-weight:600;font-size:16px;transition:transform .25s,background .25s}
+  .btn:hover{transform:translateY(-2px);background:var(--ladrillo)}
+  .btn.rojo{background:var(--ladrillo)}.btn.rojo:hover{background:var(--ladrillo-osc)}
+  .btn.borde{background:transparent;color:var(--carbon);box-shadow:inset 0 0 0 2px var(--carbon)}
+  .btn.borde:hover{background:var(--carbon);color:#fff}
+
+  /* Cinta superior */
+  .cinta{background:var(--carbon);color:#f1e7d6;font-size:14px;text-align:center;padding:9px 16px}
+  .cinta b{color:var(--trigo);font-weight:600}
+  .punto{display:inline-block;width:9px;height:9px;border-radius:50%;background:#7bd88f;margin-right:8px}
+  .punto.cerrado{background:#ff8a70}
+
+  header.nav{position:sticky;top:0;z-index:40;background:rgba(251,247,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.03em}
+  .logo svg{width:34px;height:34px}
+  .menu{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px}
+  .menu a:hover{color:var(--ladrillo)}
+  .carrito-btn{position:relative;background:var(--ladrillo);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px}
+  .carrito-btn span{background:var(--trigo);color:var(--carbon);border-radius:999px;padding:1px 8px;margin-left:6px;font-size:13px}
+
+  /* Portada */
+  .hero{background:var(--ladrillo);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 40px,transparent 40px 80px);pointer-events:none}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:72px}
+  .hero h1{font-weight:800;font-size:clamp(46px,7.4vw,104px);line-height:.92;letter-spacing:-.045em}
+  .hero h1 em{font-family:'Newsreader',serif;font-weight:400;font-style:italic;color:var(--trigo);letter-spacing:-.02em}
+  .hero p.lead{font-size:19px;max-width:480px;margin:24px 0 32px;color:#fde9e1}
+  .hero .acciones{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .btn{background:var(--harina);color:var(--carbon)}.hero .btn:hover{background:var(--trigo)}
+  .hero .btn.borde{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #fff}.hero .btn.borde:hover{background:#fff;color:var(--ladrillo)}
+  .horno{position:relative;aspect-ratio:1/1;max-width:460px;margin:0 auto;width:100%}
+  .horno .plato{position:absolute;inset:6% 6% 6% 6%;border-radius:50%;background:var(--harina);box-shadow:0 30px 60px rgba(0,0,0,.28)}
+  .horno svg.pan{position:absolute;inset:12%;width:76%;height:76%}
+  .horno .foto{position:absolute;right:-2%;bottom:-2%;width:44%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:6px solid var(--harina);box-shadow:0 14px 30px rgba(0,0,0,.3)}
+  .sello{position:absolute;left:-2%;top:2%;width:112px;height:112px;border-radius:50%;background:var(--trigo);color:var(--carbon);display:grid;place-items:center;text-align:center;font-weight:800;font-size:13px;line-height:1.15;transform:rotate(-12deg);padding:12px}
+  .sello b{display:block;font-size:26px;font-family:'Newsreader',serif;font-style:italic;font-weight:400}
+
+  /* Horneadas del día */
+  .horneadas{background:var(--carbon);color:#f5ecdd;padding:56px 0}
+  .horneadas .cab{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+  .horneadas h2{color:#fff;font-size:clamp(28px,4vw,44px)}
+  .prox{background:#2b2825;border-radius:14px;padding:14px 18px;font-size:15px;color:#e9dcc6}
+  .prox b{color:var(--trigo)}
+  .tandas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tanda{background:#262321;border:1px solid #3a3531;border-radius:18px;padding:22px}
+  .tanda.ahora{border-color:var(--trigo);box-shadow:0 0 0 1px var(--trigo)}
+  .tanda .hora{font-family:'Newsreader',serif;font-size:40px;line-height:1;color:var(--trigo)}
+  .tanda h3{font-size:18px;margin:10px 0 4px}
+  .tanda p{font-size:15px;color:#d4c7b2}
+  .tanda .etq{display:inline-block;margin-top:12px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:#3a3531;color:#f1e4cc}
+  .tanda.ahora .etq{background:var(--trigo);color:var(--carbon)}
+
+  /* Propuesta */
+  section{padding:88px 0}
+  .valor{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+  .valor article{background:var(--papel);border-radius:22px;padding:30px}
+  .valor .ico{width:48px;height:48px;border-radius:14px;background:var(--ladrillo);display:grid;place-items:center;margin-bottom:18px}
+  .valor svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .valor h3{font-size:22px;letter-spacing:-.02em;margin-bottom:8px}
+  .valor p{color:var(--suave)}
+
+  /* Carta */
+  .carta{background:var(--papel)}
+  .carta .cab{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+  .filtros{display:flex;gap:8px;flex-wrap:wrap}
+  .filtros button{border:2px solid var(--carbon);background:transparent;border-radius:999px;padding:8px 18px;font-weight:600;font-size:15px}
+  .filtros button[aria-pressed="true"]{background:var(--carbon);color:#fff}
+  .grilla{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+  .prod{background:var(--harina);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--linea)}
+  .prod[hidden]{display:none}
+  .prod .img{aspect-ratio:4/3;background:var(--trigo);position:relative;overflow:hidden}
+  .prod .img svg{position:absolute;inset:0;width:100%;height:100%}
+  .prod .cuerpo{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+  .prod h3{font-size:19px;letter-spacing:-.02em;line-height:1.2}
+  .prod p{font-size:14.5px;color:var(--suave);margin:6px 0 14px;flex:1}
+  .prod .pie{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .precio{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .precio small{display:block;font-weight:500;font-size:12px;color:var(--suave);letter-spacing:0}
+  .add{background:var(--ladrillo);color:#fff;border:0;border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px}
+  .add:hover{background:var(--ladrillo-osc)}
+
+  /* Panel de encargo */
+  .panel-fondo{position:fixed;inset:0;background:rgba(28,26,24,.55);z-index:60;opacity:0;pointer-events:none;transition:opacity .3s}
+  .panel-fondo.on{opacity:1;pointer-events:auto}
+  .panel{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--harina);z-index:70;transform:translateX(100%);transition:transform .35s;display:flex;flex-direction:column;box-shadow:-20px 0 50px rgba(0,0,0,.2)}
+  .panel.on{transform:none}
+  .panel header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--linea)}
+  .panel header h3{font-size:24px;letter-spacing:-.03em}
+  .cerrar{background:none;border:0;font-size:30px;line-height:1;padding:0 6px}
+  .panel .lista{flex:1;overflow:auto;padding:12px 24px}
+  .linea{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 0;border-bottom:1px dashed var(--linea)}
+  .linea b{font-weight:600}
+  .cant{display:flex;align-items:center;gap:8px}
+  .cant button{width:30px;height:30px;border-radius:50%;border:2px solid var(--carbon);background:transparent;font-weight:700;line-height:1}
+  .vacio{padding:40px 0;text-align:center;color:var(--suave)}
+  .panel .datos{padding:16px 24px;border-top:1px solid var(--linea);background:var(--papel);display:grid;gap:10px}
+  .panel label{font-size:13px;font-weight:600;display:grid;gap:4px}
+  .panel input,.panel select{font:inherit;padding:10px 12px;border-radius:10px;border:1.5px solid #b9ad99;background:#fff}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .total{display:flex;justify-content:space-between;font-weight:800;font-size:22px;letter-spacing:-.02em}
+  .panel .btn{justify-content:center;width:100%}
+  .nota{font-size:12.5px;color:var(--suave)}
+
+  /* Nosotros */
+  .nosotros .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .nosotros p{color:var(--suave);margin-top:18px;font-size:17.5px}
+  .nosotros .cifras{display:flex;gap:32px;margin-top:30px;flex-wrap:wrap}
+  .cifras b{display:block;font-size:42px;line-height:1;letter-spacing:-.04em;color:var(--ladrillo)}
+  .cifras span{font-size:14px;color:var(--suave)}
+  .masa{background:var(--carbon);border-radius:28px;padding:36px;color:#f1e7d6}
+  .masa h3{font-family:'Newsreader',serif;font-weight:400;font-style:italic;font-size:30px;color:var(--trigo)}
+  .masa ol{list-style:none;margin-top:20px;display:grid;gap:14px;counter-reset:p}
+  .masa li{counter-increment:p;display:grid;grid-template-columns:36px 1fr;gap:12px;font-size:16px}
+  .masa li::before{content:counter(p);width:32px;height:32px;border-radius:50%;background:var(--ladrillo);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px}
+
+  /* Opiniones */
+  .opiniones{background:var(--papel)}
+  .ops{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+  .op{background:var(--harina);border-radius:20px;padding:26px;border:1px solid var(--linea)}
+  .op .estr{color:#b36a00;letter-spacing:3px;font-size:16px}
+  .op p{font-family:'Newsreader',serif;font-size:20px;line-height:1.4;margin:10px 0 16px}
+  .op small{color:var(--suave);font-size:13px}
+  .aclara{margin-top:16px;font-size:13px;color:var(--suave)}
+
+  /* Ubicación */
+  .ubic .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .horario{list-style:none;margin-top:24px;border-top:2px solid var(--carbon)}
+  .horario li{display:flex;justify-content:space-between;padding:12px 4px;border-bottom:1px solid var(--linea);font-size:16.5px}
+  .horario li.hoy{background:var(--trigo);font-weight:700;border-radius:8px;padding-left:12px;padding-right:12px;border-bottom-color:transparent}
+  .mapa{background:var(--papel);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:14px}
+  .mapa svg{width:100%;height:auto;border-radius:14px}
+  .mapa address{font-style:normal;font-size:17px}
+
+  /* Contacto */
+  .contacto{background:var(--ladrillo);color:#fff;text-align:center}
+  .contacto h2{color:#fff}
+  .contacto p{max-width:520px;margin:16px auto 28px;color:#fde9e1;font-size:18px}
+  .contacto .btn{background:var(--harina);color:var(--carbon)}.contacto .btn:hover{background:var(--trigo)}
+  footer.pie-pag{background:var(--carbon);color:#cdbfa9;padding:36px 0 96px;font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+  .rv.in{opacity:1;transform:none}
+
+  @media (max-width:960px){
+    .grilla{grid-template-columns:repeat(2,1fr)}
+    .hero .wrap,.nosotros .wrap,.ubic .wrap{grid-template-columns:1fr}
+    .tandas,.valor,.ops{grid-template-columns:1fr}
+    .menu{display:none}
+    .hero .wrap{padding-top:48px}
+    .horno{max-width:340px}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 18px}
+    section{padding:64px 0}
+    .grilla{grid-template-columns:1fr}
+    .dos{grid-template-columns:1fr}
+    .sello{width:92px;height:92px;font-size:11px}.sello b{font-size:21px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rv{opacity:1;transform:none;transition:none}
+    .panel,.panel-fondo,.btn{transition:none}
+  }
+</style>
+</head>
+<body>
+<a class="saltar" href="#carta">Saltar a la carta</a>
+
+<div class="cinta" id="cinta" role="status"><span class="punto" aria-hidden="true"></span><span id="cinta-txt">Calculando horario…</span></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Horno Pellín, inicio">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#b4361f"/><path d="M8 24c0-6 5-10 12-10s12 4 12 10c0 2-1 3-3 3H11c-2 0-3-1-3-3z" fill="#e8b04b"/><path d="M14 19l3 4M20 17l2 5M26 19l-1 4" stroke="#b4361f" stroke-width="2" stroke-linecap="round"/></svg>
+      Horno Pellín
+    </a>
+    <ul class="menu">
+      <li><a href="#horneadas">Horneadas</a></li>
+      <li><a href="#carta">Carta</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#visitanos">Visítanos</a></li>
+    </ul>
+    <button class="carrito-btn" id="abrir" aria-haspopup="dialog">Mi encargo<span id="n">0</span></button>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="sobre" style="color:var(--trigo)">Panadería de masa madre · Paillaco</p>
+        <h1 style="margin-top:14px">Pan lento, <em>hecho en la madrugada.</em></h1>
+        <p class="lead">Masa madre de 9 años, harina de molino del sur y horno de ladrillo. Reserva tu pan del día y pasa a buscarlo calentito.</p>
+        <div class="acciones">
+          <a class="btn" href="#carta">Armar mi encargo →</a>
+          <a class="btn borde" href="#horneadas">¿Qué sale hoy?</a>
+        </div>
+      </div>
+      <div class="horno" aria-hidden="true">
+        <div class="plato"></div>
+        <svg class="pan" viewBox="0 0 200 200"><ellipse cx="100" cy="150" rx="82" ry="14" fill="#000" opacity=".1"/><path d="M18 118c0-46 36-78 82-78s82 32 82 78c0 16-10 28-28 28H46c-18 0-28-12-28-28z" fill="#c8802e"/><path d="M26 112c4-38 34-62 74-62s70 24 74 62" fill="none" stroke="#e8b04b" stroke-width="10" stroke-linecap="round" opacity=".7"/><path d="M62 82l22 36M100 70l12 46M140 84l-12 34" stroke="#f6e3b8" stroke-width="9" stroke-linecap="round"/></svg>
+        <div class="foto"><img src="img/croissant.jpg" alt="" loading="eager"></div>
+        <div class="sello"><span>horno<b>de ladrillo</b>desde 2017</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="horneadas" id="horneadas" aria-labelledby="h-hor" style="padding:56px 0">
+    <div class="wrap">
+      <div class="cab">
+        <div><p class="sobre" style="color:var(--trigo)">Hoy en el horno</p><h2 id="h-hor">Tres horneadas al día</h2></div>
+        <div class="prox" id="prox" aria-live="polite">Calculando…</div>
+      </div>
+      <div class="tandas">
+        <div class="tanda" data-h="7.5"><div class="hora">07:30</div><h3>Panes de campo</h3><p>Masa madre campesina, centeno con nueces y ciabatta.</p><span class="etq">Primera horneada</span></div>
+        <div class="tanda" data-h="10.5"><div class="hora">10:30</div><h3>Hojaldre y kuchen</h3><p>Croissants de mantequilla, kuchen de arándano y galletas.</p><span class="etq">Segunda horneada</span></div>
+        <div class="tanda" data-h="15.5"><div class="hora">15:30</div><h3>Marraquetas y empanadas</h3><p>Para la once: marraquetas crujientes y empanadas de pino.</p><span class="etq">Tercera horneada</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-val">
+    <div class="wrap">
+      <div class="rv"><p class="sobre">Por qué es distinto</p><h2 id="h-val">Pocos ingredientes, <em>mucho tiempo.</em></h2></div>
+      <div class="valor">
+        <article class="rv"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Fermentación de 24 horas</h3><p>Sin aditivos ni apuros: la masa madre trabaja toda la noche y se nota en el sabor y la miga.</p></article>
+        <article class="rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21c-5-3-8-7-8-12 4 0 7 2 8 5 1-3 4-5 8-5 0 5-3 9-8 12z"/></svg></div><h3>Harinas del sur</h3><p>Trigo molido en molinos de la región; centeno, avena y nueces de proveedores cercanos.</p></article>
+        <article class="rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h16l-1.5 11h-13z"/><path d="M8 8a4 4 0 018 0"/></svg></div><h3>Encarga y retira</h3><p>Arma tu pedido en línea, elige día y hora, y pasa a buscarlo sin hacer fila.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="carta" id="carta" aria-labelledby="h-car">
+    <div class="wrap">
+      <div class="cab">
+        <div><p class="sobre">La carta</p><h2 id="h-car">Lo que sale <em>del horno</em></h2></div>
+        <div class="filtros" role="group" aria-label="Filtrar por categoría">
+          <button type="button" data-f="todo" aria-pressed="true">Todo</button>
+          <button type="button" data-f="panes" aria-pressed="false">Panes</button>
+          <button type="button" data-f="dulce" aria-pressed="false">Dulce</button>
+          <button type="button" data-f="salado" aria-pressed="false">Salado</button>
+        </div>
+      </div>
+      <div class="grilla" id="grilla"></div>
+      <p class="aclara">Precios en pesos chilenos (CLP) de ejemplo. Algunos productos se agotan temprano: el encargo asegura tu pieza.</p>
+    </div>
+  </section>
+
+  <section class="nosotros" id="nosotros" aria-labelledby="h-nos">
+    <div class="wrap">
+      <div class="rv">
+        <p class="sobre">Nosotros</p>
+        <h2 id="h-nos">Una familia, un horno <em>y una masa madre.</em></h2>
+        <p>Horno Pellín (negocio ficticio) nació en un patio de Paillaco con un horno de ladrillo y un frasco de masa madre. Hoy somos un equipo pequeño que hornea de madrugada y atiende en una esquina del centro.</p>
+        <div class="cifras"><div><b>9</b><span>años de masa madre</span></div><div><b>3</b><span>horneadas al día</span></div><div><b>4</b><span>ingredientes en el pan base</span></div></div>
+      </div>
+      <div class="masa rv">
+        <h3>El camino de un pan</h3>
+        <ol>
+          <li><span><b>Tarde:</b> refrescamos la masa madre y mezclamos harina, agua y sal.</span></li>
+          <li><span><b>Noche:</b> la masa fermenta lento, en reposo, durante unas 24 horas.</span></li>
+          <li><span><b>Madrugada:</b> formamos cada pieza a mano y encendemos el horno.</span></li>
+          <li><span><b>7:30:</b> sale la primera horneada y abrimos la puerta.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="opiniones" aria-labelledby="h-op">
+    <div class="wrap">
+      <div class="rv"><p class="sobre">Opiniones de ejemplo</p><h2 id="h-op">Lo que dirían <em>los vecinos</em></h2></div>
+      <div class="ops">
+        <figure class="op rv"><div class="estr" aria-label="5 de 5 estrellas">★★★★★</div><p>“El pan de campo dura toda la semana y sigue rico tostado.”</p><small>Opinión de ejemplo · vecina de Paillaco</small></figure>
+        <figure class="op rv"><div class="estr" aria-label="5 de 5 estrellas">★★★★★</div><p>“Encargué el kuchen para un cumpleaños y llegó justo a la hora.”</p><small>Opinión de ejemplo · cliente de La Unión</small></figure>
+        <figure class="op rv"><div class="estr" aria-label="5 de 5 estrellas">★★★★★</div><p>“Los croissants crujen de verdad. Hay que llegar temprano.”</p><small>Opinión de ejemplo · visitante</small></figure>
+      </div>
+      <p class="aclara">Textos redactados como ejemplo para la propuesta de diseño; no corresponden a clientes reales.</p>
+    </div>
+  </section>
+
+  <section class="ubic" id="visitanos" aria-labelledby="h-ub">
+    <div class="wrap">
+      <div>
+        <p class="sobre">Visítanos</p>
+        <h2 id="h-ub">Abrimos <em>con el horno.</em></h2>
+        <ul class="horario" id="horario">
+          <li data-d="1"><span>Lunes</span><span>Cerrado</span></li>
+          <li data-d="2"><span>Martes</span><span>07:30 – 19:30</span></li>
+          <li data-d="3"><span>Miércoles</span><span>07:30 – 19:30</span></li>
+          <li data-d="4"><span>Jueves</span><span>07:30 – 19:30</span></li>
+          <li data-d="5"><span>Viernes</span><span>07:30 – 19:30</span></li>
+          <li data-d="6"><span>Sábado</span><span>07:30 – 19:30</span></li>
+          <li data-d="0"><span>Domingo</span><span>08:00 – 14:00</span></li>
+        </ul>
+      </div>
+      <div class="mapa">
+        <svg viewBox="0 0 400 220" role="img" aria-label="Mapa ilustrativo del centro de Paillaco"><rect width="400" height="220" fill="#efe5d0"/><path d="M0 150h400M0 80h400M110 0v220M270 0v220" stroke="#fbf7ef" stroke-width="14"/><path d="M0 40c90 20 180-20 400 10" stroke="#9fc3d1" stroke-width="12" fill="none"/><circle cx="190" cy="115" r="14" fill="#b4361f"/><circle cx="190" cy="115" r="5" fill="#fff"/><text x="210" y="119" font-family="sans-serif" font-size="14" font-weight="700" fill="#1c1a18">Horno Pellín</text></svg>
+        <address>Calle Los Notros 412 (dirección ficticia)<br>Paillaco, Región de Los Ríos<br>Teléfono de ejemplo: +56 9 5550 1234</address>
+        <p class="nota" style="font-size:13px;color:var(--suave)">Mapa ilustrativo, no corresponde a una ubicación real.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" aria-labelledby="h-co">
+    <div class="wrap rv">
+      <p class="sobre" style="color:var(--trigo)">Encargos</p>
+      <h2 id="h-co">Tu pan, <em>reservado.</em></h2>
+      <p>Arma tu encargo, elige día y hora de retiro y te lo dejamos listo. Se envía como mensaje de WhatsApp.</p>
+      <button class="btn" type="button" id="abrir2">Armar mi encargo →</button>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pag">
+  <div class="wrap"><span>© Horno Pellín · negocio ficticio de ejemplo · Paillaco, Los Ríos</span><span>Sitio diseñado por Werex Studio</span></div>
+</footer>
+
+<div class="panel-fondo" id="fondo"></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="t-panel" aria-hidden="true">
+  <header><h3 id="t-panel">Mi encargo</h3><button class="cerrar" type="button" id="cerrar" aria-label="Cerrar encargo">×</button></header>
+  <div class="lista" id="lista"></div>
+  <form class="datos" id="form" novalidate>
+    <div class="dos">
+      <label>Día de retiro<select id="dia"></select></label>
+      <label>Hora<select id="hora"></select></label>
+    </div>
+    <label>Tu nombre<input id="nombre" autocomplete="name" placeholder="Ej.: Camila"></label>
+    <div class="total"><span>Total</span><span id="total">$0</span></div>
+    <button class="btn rojo" type="submit">Enviar encargo por WhatsApp</button>
+    <p class="nota">Pago al retirar. El mensaje se abre en WhatsApp sin número fijo (demo).</p>
+  </form>
+</aside>
+
+<script>
+(function(){
+  var P=[
+    {id:1,n:'Pan campesino 1 kg',d:'Masa madre, corteza gruesa y miga abierta.',p:4800,c:'panes',t:'pan'},
+    {id:2,n:'Centeno con nueces',d:'Denso, aromático, ideal con quesos.',p:5500,c:'panes',t:'centeno'},
+    {id:3,n:'Ciabatta',d:'Crujiente por fuera, alveolada por dentro.',p:2200,c:'panes',t:'ciabatta'},
+    {id:4,n:'Marraquetas (4 un.)',d:'La clásica chilena, hecha con masa madre.',p:1800,c:'panes',t:'marraqueta'},
+    {id:5,n:'Croissant de mantequilla',d:'Hojaldre laminado a mano, 27 capas.',p:2300,c:'dulce',img:'croissant.jpg',a:'Croissant dorado sobre una tabla oscura'},
+    {id:6,n:'Kuchen de arándano',d:'Porción generosa, crema suave y fruta del sur.',p:2900,c:'dulce',img:'kuchen.jpg',a:'Porción de kuchen con arándanos sobre un plato'},
+    {id:7,n:'Galleta de chocolate',d:'Chips de chocolate y un toque de sal.',p:1600,c:'dulce',img:'galleta.jpg',a:'Galletas con chips de chocolate'},
+    {id:8,n:'Tostado de queso',d:'Pan de molde artesanal con queso derretido.',p:3900,c:'salado',img:'tostado.jpg',a:'Sándwich tostado cortado en triángulos'},
+    {id:9,n:'Empanada de pino horneada',d:'Masa suave, pino jugoso, huevo y aceituna.',p:2500,c:'salado',t:'empanada'}
+  ];
+  var cl=function(n){return '$'+n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')};
+  var SV={
+    pan:'<ellipse cx="200" cy="165" rx="130" ry="70" fill="#c8802e"/><path d="M130 130l30 50M200 118l10 60M270 130l-26 50" stroke="#f6e3b8" stroke-width="12" stroke-linecap="round"/>',
+    centeno:'<ellipse cx="200" cy="160" rx="140" ry="62" fill="#6b4328"/><g fill="#d9b27a"><circle cx="150" cy="150" r="9"/><circle cx="200" cy="135" r="9"/><circle cx="250" cy="150" r="9"/><circle cx="175" cy="180" r="9"/><circle cx="230" cy="180" r="9"/></g>',
+    ciabatta:'<rect x="60" y="110" width="280" height="90" rx="44" fill="#d9a35a" transform="rotate(-8 200 155)"/><path d="M110 150h30M180 140h30M250 130h30" stroke="#f6e3b8" stroke-width="8" stroke-linecap="round"/>',
+    marraqueta:'<g fill="#d38a3a"><ellipse cx="140" cy="150" rx="46" ry="62"/><ellipse cx="200" cy="150" rx="46" ry="62"/><ellipse cx="260" cy="150" rx="46" ry="62"/></g><g stroke="#f6e3b8" stroke-width="7" stroke-linecap="round"><path d="M140 100v100M200 100v100M260 100v100"/></g>',
+    empanada:'<path d="M70 190c0-70 60-110 130-110s130 40 130 110z" fill="#d9964a"/><path d="M96 186h208" stroke="#f6e3b8" stroke-width="8" stroke-dasharray="2 14" stroke-linecap="round"/>'
+  };
+  var bg={pan:'#e8b04b',centeno:'#c9a77a',ciabatta:'#f0d49a',marraqueta:'#f2c46a',empanada:'#e9a58f'};
+  var g=document.getElementById('grilla'),html='';
+  P.forEach(function(x){
+    var vis=x.img?'<img src="img/'+x.img+'" alt="'+x.a+'" loading="lazy">':'<svg viewBox="0 0 400 300" role="img" aria-label="Ilustración de '+x.n+'" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="'+bg[x.t]+'"/>'+SV[x.t]+'</svg>';
+    html+='<article class="prod rv" data-c="'+x.c+'"><div class="img">'+vis+'</div><div class="cuerpo"><h3>'+x.n+'</h3><p>'+x.d+'</p><div class="pie"><div class="precio">'+cl(x.p)+'</div><button class="add" type="button" data-id="'+x.id+'" aria-label="Agregar '+x.n+' al encargo">Agregar +</button></div></div></article>';
+  });
+  g.innerHTML=html;
+
+  // filtros
+  var fb=document.querySelectorAll('.filtros button');
+  fb.forEach(function(b){b.addEventListener('click',function(){
+    fb.forEach(function(o){o.setAttribute('aria-pressed',o===b)});
+    g.querySelectorAll('.prod').forEach(function(p){p.hidden=!(b.dataset.f==='todo'||p.dataset.c===b.dataset.f)});
+  })});
+
+  // encargo
+  var C={},panel=document.getElementById('panel'),fondo=document.getElementById('fondo'),lista=document.getElementById('lista'),opener=null;
+  function total(){var t=0,n=0;P.forEach(function(x){if(C[x.id]){t+=C[x.id]*x.p;n+=C[x.id]}});return{t:t,n:n}}
+  function pintar(){
+    var s=total(),h='';
+    P.forEach(function(x){if(C[x.id])h+='<div class="linea"><b>'+x.n+'</b><span>'+cl(C[x.id]*x.p)+'</span><div class="cant"><button type="button" data-m="'+x.id+'" aria-label="Quitar uno de '+x.n+'">−</button><span aria-live="polite">'+C[x.id]+'</span><button type="button" data-a="'+x.id+'" aria-label="Agregar uno de '+x.n+'">+</button></div></div>'});
+    lista.innerHTML=h||'<p class="vacio">Tu encargo está vacío.<br>Agrega algo rico de la carta.</p>';
+    document.getElementById('n').textContent=s.n;document.getElementById('total').textContent=cl(s.t);
+  }
+  function abrir(e){opener=e&&e.currentTarget;panel.classList.add('on');fondo.classList.add('on');panel.setAttribute('aria-hidden','false');document.getElementById('cerrar').focus()}
+  function cerrar(){panel.classList.remove('on');fondo.classList.remove('on');panel.setAttribute('aria-hidden','true');if(opener)opener.focus()}
+  document.getElementById('abrir').addEventListener('click',abrir);
+  document.getElementById('abrir2').addEventListener('click',abrir);
+  document.getElementById('cerrar').addEventListener('click',cerrar);
+  fondo.addEventListener('click',cerrar);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panel.classList.contains('on'))cerrar()});
+  g.addEventListener('click',function(e){var b=e.target.closest('.add');if(!b)return;var i=+b.dataset.id;C[i]=(C[i]||0)+1;pintar();b.textContent='Agregado ✓';setTimeout(function(){b.textContent='Agregar +'},900)});
+  lista.addEventListener('click',function(e){var a=e.target.closest('[data-a]'),m=e.target.closest('[data-m]');
+    if(a)C[a.dataset.a]++;if(m){C[m.dataset.m]--;if(C[m.dataset.m]<=0)delete C[m.dataset.m]}pintar()});
+
+  // días y horas de retiro
+  var DN=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  var H={0:[8,14],1:null,2:[7.5,19.5],3:[7.5,19.5],4:[7.5,19.5],5:[7.5,19.5],6:[7.5,19.5]};
+  function ahoraCL(){
+    var f=new Intl.DateTimeFormat('es-CL',{timeZone:'America/Santiago',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),o={};
+    f.forEach(function(p){o[p.type]=p.value});
+    var map={dom:0,lun:1,mar:2,mié:3,jue:4,vie:5,sáb:6},w=o.weekday.toLowerCase().replace('.','');
+    return{d:map[w],h:(+o.hour%24)+(+o.minute)/60};
+  }
+  var now=ahoraCL(),ds=document.getElementById('dia'),hs=document.getElementById('hora');
+  for(var k=0;k<5;k++){var d=(now.d+k)%7;if(!H[d])continue;var o=document.createElement('option');o.value=d;o.textContent=(k===0?'Hoy ':k===1?'Mañana ':'')+DN[d];ds.appendChild(o)}
+  function horas(){hs.innerHTML='';var r=H[ds.value];for(var t=r[0];t<=r[1]-.5;t+=.5){var hh=Math.floor(t),mm=t%1?'30':'00',s=(hh<10?'0':'')+hh+':'+mm;var op=document.createElement('option');op.textContent=s;hs.appendChild(op)}}
+  ds.addEventListener('change',horas);horas();
+
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();var s=total();
+    if(!s.n){alert('Agrega al menos un producto a tu encargo.');return}
+    var nom=document.getElementById('nombre').value.trim()||'(sin nombre)';
+    var tx='Hola Horno Pellín (demo), quiero hacer un encargo:%0A';
+    P.forEach(function(x){if(C[x.id])tx+='• '+C[x.id]+' × '+encodeURIComponent(x.n)+' ('+encodeURIComponent(cl(C[x.id]*x.p))+')%0A'});
+    tx+='Total: '+encodeURIComponent(cl(s.t))+'%0ARetiro: '+encodeURIComponent(DN[ds.value]+' '+hs.value)+'%0ANombre: '+encodeURIComponent(nom);
+    window.open('https://wa.me/?text='+tx,'_blank','noopener');
+  });
+
+  // estado abierto / horneadas
+  function estado(){
+    var n=ahoraCL(),r=H[n.d],abierto=r&&n.h>=r[0]&&n.h<r[1],t;
+    var punto=document.querySelector('.cinta .punto'),txt=document.getElementById('cinta-txt');
+    function hf(x){var a=Math.floor(x);return (a<10?'0':'')+a+':'+(x%1?'30':'00')}
+    if(abierto){t='<b>Abierto ahora</b> · hasta las '+hf(r[1])+' · Paillaco';punto.classList.remove('cerrado')}
+    else{punto.classList.add('cerrado');var k=0,nd=n.d,hh=null;
+      if(r&&n.h<r[0]){hh=r[0];nd=n.d}else{for(k=1;k<=7;k++){nd=(n.d+k)%7;if(H[nd]){hh=H[nd][0];break}}}
+      t='<b>Cerrado</b> · abrimos '+(nd===n.d?'hoy':k===1?'mañana':'el '+DN[nd])+' a las '+hf(hh)}
+    txt.innerHTML=t;
+    // horneadas
+    var T=[].slice.call(document.querySelectorAll('.tanda')),prox=document.getElementById('prox'),act=-1,sig=-1;
+    var hoyAbre=r&&n.h<r[1];
+    T.forEach(function(el,i){el.classList.remove('ahora');var h=+el.dataset.h;if(hoyAbre&&n.h>=h&&n.h<h+1.5)act=i;if(hoyAbre&&h>n.h&&sig<0)sig=i});
+    if(!r){prox.innerHTML='Hoy <b>no hay horneada</b>: el horno descansa.'}
+    else if(act>=0){T[act].classList.add('ahora');T[act].querySelector('.etq').textContent='Saliendo ahora';prox.innerHTML='<b>Recién horneado</b>: '+T[act].querySelector('h3').textContent}
+    else if(sig>=0){var m=Math.round((+T[sig].dataset.h-n.h)*60);prox.innerHTML='Próxima horneada en <b>'+(m>=60?Math.floor(m/60)+' h '+(m%60)+' min':m+' min')+'</b>: '+T[sig].querySelector('h3').textContent}
+    else{prox.innerHTML='Terminaron las horneadas de hoy. Mañana, más.'}
+    document.querySelectorAll('#horario li').forEach(function(li){li.classList.toggle('hoy',+li.dataset.d===n.d)});
+  }
+  estado();setInterval(estado,60000);
+
+  // aparición suave
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+    rv.forEach(function(el){io.observe(el)});
+  }else rv.forEach(function(el){el.classList.add('in')});
+  pintar();
+})();
+</script>
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+</body>
+</html>

@@ -166,6 +166,8 @@
     section { padding: 80px 0; }
   }
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
+  /* Foco visible para teclado (doble anillo, legible sobre cualquier fondo) */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
 </style>
 <style>html{overflow-x:clip}</style>
 </head>
