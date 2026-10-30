@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230f2a30'/%3E%3Cpath d='M16 46C26 34 36 24 48 14' stroke='%238fc9cf' stroke-width='2' fill='none'/%3E%3Cpath d='M26 36c-6-1-9-6-8-11 5 1 8 6 8 11zM34 28c-6-1-9-6-8-11 5 1 8 6 8 11zM30 32c5-4 11-4 15 0-5 4-10 4-15 0z' fill='%238fc9cf'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Parisienne&family=Quicksand:wght@300;400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Parisienne&family=Dosis:wght@200;300&family=La+Belle+Aurore&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Paleta por defecto: "Sur del mundo", tomada de su logo (azul noche, pinceladas azules, ramas celestes, rombo lila) */
@@ -83,25 +83,26 @@ header nav a{text-decoration:none;color:rgba(255,255,255,.8)}
 header nav a:hover{color:var(--agua)}
 header nav.der ul{justify-content:flex-end}
 .marca{text-decoration:none;color:#fff;text-align:center;line-height:1}
-.marca b{display:block;font-family:'Quicksand',sans-serif;font-weight:300;font-size:1.6rem;letter-spacing:.06em}
-.marca span{font-family:'Parisienne',cursive;color:var(--agua);font-size:1.1rem}
+.marca b{display:block;font-family:'Dosis',sans-serif;font-weight:200;font-size:1.8rem;letter-spacing:.06em}
+.marca span{font-family:'La Belle Aurore',cursive;color:var(--agua);font-size:1rem;letter-spacing:.22em}
 .menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px;justify-self:end}
 
 /* Portada */
 .hero{color:#fff;overflow:hidden;padding:70px 0 120px;background:radial-gradient(ellipse at 50% 35%,var(--noche-2),var(--noche) 70%)}
-:root:not([data-paleta]) .hero,:root[data-paleta="sur"] .hero{background:radial-gradient(ellipse at 78% 30%,rgba(120,160,195,.35),transparent 55%),linear-gradient(104deg,#070d18 0%,#0d1626 40%,#1a2f4d 55%,#2b5274 78%,#3b6a8e 100%)}
+:root:not([data-paleta]) .hero,:root[data-paleta="sur"] .hero,:root[data-paleta="glaciar"] .hero,:root[data-paleta="escarcha"] .hero{background:linear-gradient(180deg,rgba(8,14,25,.3),rgba(8,14,25,.1) 40%,rgba(8,14,25,.6)),url('img/caihuin.jpg') center 42%/cover no-repeat,#0d1626}
+:root:not([data-paleta]) .hero::after,:root[data-paleta="sur"] .hero::after,:root[data-paleta="glaciar"] .hero::after,:root[data-paleta="escarcha"] .hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
 .destellos{position:absolute;inset:0;pointer-events:none}
 .destello{position:absolute;transform:rotate(45deg);animation:brillo 4.5s ease-in-out infinite;opacity:.15}
 @keyframes brillo{0%,100%{opacity:.1;transform:rotate(45deg) scale(.5)}50%{opacity:.95;transform:rotate(45deg) scale(1.1)}}
 .ramas{position:absolute;pointer-events:none;opacity:.5;color:var(--agua)}
 .ramas.izq{left:-30px;top:40px;width:300px}
 .ramas.der{right:-40px;bottom:10px;width:340px;transform:scaleX(-1) rotate(10deg)}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;gap:20px}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;gap:20px}
 .emblema{text-align:center}
 .emblema .circulo{position:relative;width:min(68vw,300px);aspect-ratio:410/550;margin:0 auto;container-type:inline-size}
 .emblema .logo-img{width:100%;height:100%;display:block}
-.emblema .nombre{position:absolute;left:0;right:8%;top:44%;text-align:center;font-family:'Quicksand',sans-serif;font-weight:300;font-size:12.5cqw;line-height:1.08;letter-spacing:.04em;color:#f3f8fc}
-.emblema .nombre small{display:block;font-family:'Parisienne',cursive;font-size:.5em;letter-spacing:.14em;color:#cfe4f2;margin-top:2px}
+.emblema .nombre{position:absolute;left:0;right:8%;top:44%;text-align:center;font-family:'Dosis',sans-serif;font-weight:200;font-size:14cqw;line-height:1.02;letter-spacing:.05em;color:#eef5fa}
+.emblema .nombre small{display:block;font-family:'La Belle Aurore',cursive;font-size:.4em;letter-spacing:.3em;color:#d7e8f3;margin-top:6px}
 .hero h1{font-size:clamp(1.6rem,2.6vw,2.1rem);font-style:italic;margin:6px auto 12px;max-width:24ch;color:#fff}
 .hero p{color:rgba(255,255,255,.78);max-width:46ch;margin:0 auto 28px;text-align:center}
 .boton{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:500;letter-spacing:.04em;border:1px solid rgba(255,255,255,.55);color:#fff;transition:background .25s,color .25s,transform .25s;cursor:pointer;background:transparent;font:500 .98rem 'Work Sans',sans-serif}
@@ -327,7 +328,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
     <nav class="izq" id="menu-izq" aria-label="Secciones">
       <ul><li><a href="#piezas">Piezas</a></li><li><a href="#inspiracion">Inspiración</a></li><li><a href="#encargos">Encargos</a></li></ul>
     </nav>
-    <a class="marca" href="#inicio" aria-label="Celeste Valdivia, inicio"><b>Celeste Valdivia</b><span>sur del mundo</span></a>
+    <a class="marca" href="#inicio" aria-label="Celeste Valdivia, inicio"><b>Celeste Valdivia</b><span>Sur del mundo</span></a>
     <nav class="der" id="menu-der" aria-label="Más secciones">
       <ul><li><a href="#prendedores">Prendedores</a></li><li><a href="#donde">Dónde estamos</a></li><li><a href="https://www.instagram.com/celeste.valdivia.cl" target="_blank" rel="noopener">Instagram</a></li></ul>
     </nav>
@@ -491,7 +492,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
 </div>
 
 <footer>
-  <a class="marca" href="#inicio"><b>Celeste Valdivia</b><span>sur del mundo</span></a>
+  <a class="marca" href="#inicio"><b>Celeste Valdivia</b><span>Sur del mundo</span></a>
   <p class="gracias">Gracias por preferir lo hecho a mano y local 🤍</p>
   <p>Propuesta de diseño preparada por Werex Studio para Celeste Valdivia; no es el sitio oficial. Fotografías de las piezas: @celeste.valdivia.cl.</p>
 </footer>
