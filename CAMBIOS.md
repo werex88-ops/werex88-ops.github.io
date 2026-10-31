@@ -1,5 +1,32 @@
 # Registro de cambios
 
+## 2026-10-31 (mejora diaria + demo nueva: kayak y pesca)
+
+Esta rama parte de la rama de la solicitud abierta #22 (panadería, 30-oct), para no duplicar trabajo; incluye además lo ya fusionado en `main`.
+
+### Currículum (`index.html`) — 3 mejoras, sin tocar contenido
+- Títulos con `text-wrap: balance` (sin líneas huérfanas) y párrafos con `text-wrap: pretty`.
+- `scroll-padding-top` y `text-size-adjust` para un desplazamiento por anclas y una lectura móvil más estables.
+- Números de sección con cifras tabulares (alineación uniforme).
+
+### Portafolio y demos existentes (1 mejora por página, sin cambios de diseño)
+- Color de la barra del navegador (`theme-color`) e ícono de pestaña propio, con la paleta de cada página, en el portafolio, sushi, gimnasio, cafetería, velas, plantas y mascotas.
+- Revisión con Playwright de las 11 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript y sin respuestas 404. Todas tienen aviso de datos ficticios y respetan `prefers-reduced-motion`.
+
+### Demo nueva: `kayak/` — Mawün Kayak (Lago Ranco, ficticia)
+- Identidad: azul noche, azul lago y naranja; tipografías Fraunces y Outfit.
+- Funciones: 6 salidas con filtro por dificultad, armador de reserva (salida, fecha, hora, personas y extras) con total en CLP y pedido por WhatsApp (sin número fijo), condición esperada del lago según la hora, y estado abierto/cerrado con hora de Chile.
+- Secciones: propuesta de valor, salidas, seguridad y guías de ejemplo, opiniones rotuladas como ejemplo, preguntas frecuentes, horario y mapa ilustrativo en SVG.
+- Fotos: `images.unsplash.com` sigue bloqueado desde el entorno; se enlazaron 3 fotos ya verificadas de Cabañas (kayak, lago con neblina, fogón). No se descargaron, así que la captura `demos/img/kayak.jpg` (72 KB) muestra la portada sin foto.
+- Tarjeta en el portafolio y cifra actualizada a 11 diseños; créditos registrados.
+
+### Sugerencias pendientes para René
+- Regenerar `demos/img/kayak.jpg` con la foto de portada cuando se habilite `images.unsplash.com`.
+- Mawün Kayak reutiliza fotos de Cabañas; conviene sumar fotos propias de pesca con mosca y de la isla.
+- Verifica que el nombre "Mawün Kayak" no coincida con un negocio real antes de mostrarlo a clientes.
+- Currículum: falta un `og:image` (imagen de vista previa al compartir); requiere una imagen que elijas tú.
+- Cafetería, gimnasio, plantas, sushi y velas no usan la etiqueta `main` (cambio estructural, no aplicado hoy).
+
 ## 2026-10-30 (mejora diaria + demo nueva: panadería)
 
 ### Currículum (`index.html`) — 3 mejoras, sin tocar contenido
