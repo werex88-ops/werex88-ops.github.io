@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luz de Cera · Velas artesanales</title>
 <meta name="description" content="Velas de cera de soya hechas a mano en pequeños lotes. Envíos a todo Chile.">
+<meta name="theme-color" content="#f8f3ec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b4654a'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23ffffff'%3EL%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
@@ -122,8 +124,8 @@
   /* Newsletter */
   .news { background: var(--lino); text-align: center; padding: 100px 24px; }
   .news form { display: flex; max-width: 480px; margin: 30px auto 0; border-bottom: 1px solid var(--tierra); }
-  .news input { flex: 1; background: none; border: 0; padding: 14px 0; font: inherit; font-size: 16px; color: var(--tierra); outline: none; }
-  .news button { background: none; border: 0; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--tierra); font-weight: 500; }
+  .news input { flex: 1; min-width: 0; background: none; border: 0; padding: 14px 0; font: inherit; font-size: 16px; color: var(--tierra); outline: none; }
+  .news button { flex-shrink: 0; background: none; border: 0; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--tierra); font-weight: 500; }
 
   footer { padding: 70px 0 100px; font-size: 14px; color: var(--suave); }
   footer .contenedor { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
@@ -189,6 +191,8 @@
     section { padding: 88px 0; }
   }
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
+  /* Foco visible para teclado (doble anillo, legible sobre cualquier fondo) */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
 </style>
 </head>
 <body>

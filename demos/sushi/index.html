@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kaiyō · Sushi Bar</title>
 <meta name="description" content="Sushi de autor y omakase en barra. Pescado del día, arroz al estilo Edo.">
+<meta name="theme-color" content="#0c0c0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c8442f'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23ffffff'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -159,6 +161,8 @@
     form { padding: 30px 22px; }
   }
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
+  /* Foco visible para teclado (doble anillo, legible sobre cualquier fondo) */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
 </style>
 </head>
 <body>

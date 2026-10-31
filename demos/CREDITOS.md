@@ -108,3 +108,16 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 - `navidad` g6 edificio con luces navideñas — https://images.unsplash.com/photo-1640040295076-dad02f1e9756
 - `navidad` g7 café decorado — https://images.unsplash.com/photo-1746263772030-d466deefbb9e
 - `navidad` nosotros (living con árbol) — https://images.unsplash.com/photo-1640159750488-051fa6815bd4
+
+## Panadería · Horno Pellín (copias locales de fotos ya registradas en cafetería)
+
+- `panaderia/img/croissant.jpg` — https://images.unsplash.com/photo-1555507036-ab1f4038808a
+- `panaderia/img/kuchen.jpg` — https://images.unsplash.com/photo-1533134242443-d4fd215305ad
+- `panaderia/img/galleta.jpg` — https://images.unsplash.com/photo-1499636136210-6f4ee915583e
+- `panaderia/img/tostado.jpg` — https://images.unsplash.com/photo-1528735602780-2552fd46c7af
+
+## Mawün Kayak (enlazadas directamente desde Unsplash; fotos ya verificadas en Cabañas)
+
+- `kayak` portada y "Amanecer en calma" — https://images.unsplash.com/photo-1521336575822-6da63fb45455
+- `kayak` "Neblina en la bahía" — https://images.unsplash.com/photo-1775155636890-9d688754bdff
+- `kayak` "Fogón después de remar" — https://images.unsplash.com/photo-1782226796423-8d72656a332c
