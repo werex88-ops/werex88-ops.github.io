@@ -17,8 +17,8 @@
     --papel: #fbf7f0;
     --espresso: #2b1d14;
     --cafe: #4a3122;
-    --caramelo: #b9773f;
-    --suave: #7d6a5c;
+    --caramelo: #925e32;
+    --suave: #786658;
     --linea: #e3d6c4;
   }
   html { scroll-behavior: smooth; }
@@ -196,10 +196,10 @@
       <p>Leche vegetal (avena, almendra o coco) sin costo adicional. Todos nuestros cafés se pueden pedir descafeinados.</p>
     </div>
     <div class="tabs" role="tablist">
-      <button class="activo" data-tab="cafes">Cafés</button>
-      <button data-tab="frios">Fríos</button>
-      <button data-tab="dulce">Dulce</button>
-      <button data-tab="salado">Salado</button>
+      <button role="tab" aria-selected="true" class="activo" data-tab="cafes">Cafés</button>
+      <button role="tab" aria-selected="false" data-tab="frios">Fríos</button>
+      <button role="tab" aria-selected="false" data-tab="dulce">Dulce</button>
+      <button role="tab" aria-selected="false" data-tab="salado">Salado</button>
     </div>
 
     <div class="carta activo" id="cafes">
@@ -282,6 +282,7 @@
 <script>
   document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('.tabs button, .carta').forEach(e => e.classList.remove('activo'));
+    document.querySelectorAll('.tabs button').forEach(t => t.setAttribute('aria-selected', t === b));
     b.classList.add('activo');
     document.getElementById(b.dataset.tab).classList.add('activo');
   }));

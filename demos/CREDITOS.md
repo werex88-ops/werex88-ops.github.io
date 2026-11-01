@@ -121,3 +121,10 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 - `kayak` portada y "Amanecer en calma" — https://images.unsplash.com/photo-1521336575822-6da63fb45455
 - `kayak` "Neblina en la bahía" — https://images.unsplash.com/photo-1775155636890-9d688754bdff
 - `kayak` "Fogón después de remar" — https://images.unsplash.com/photo-1782226796423-8d72656a332c
+
+## Clínica veterinaria · Weñi (copias locales de fotos ya registradas en Pata Feliz / mascotas)
+
+- `veterinaria/img/hero.jpg` — https://images.unsplash.com/photo-1530281700549-e82e7bf110d6
+- `veterinaria/img/lola.jpg` — https://images.unsplash.com/photo-1543466835-00a7907e9de1
+- `veterinaria/img/bruno.jpg` — https://images.unsplash.com/photo-1552053831-71594a27632d
+- `veterinaria/img/toby.jpg` — https://images.unsplash.com/photo-1587300003388-59208cc962cb

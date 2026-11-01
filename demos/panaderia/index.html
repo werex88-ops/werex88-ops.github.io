@@ -237,7 +237,7 @@
   <section class="horneadas" id="horneadas" aria-labelledby="h-hor" style="padding:56px 0">
     <div class="wrap">
       <div class="cab">
-        <div><p class="sobre" style="color:var(--trigo)">Hoy en el horno</p><h2 id="h-hor">Tres horneadas al día</h2></div>
+        <div><p class="sobre" style="color:#f6e1bb">Hoy en el horno</p><h2 id="h-hor">Tres horneadas al día</h2></div>
         <div class="prox" id="prox" aria-live="polite">Calculando…</div>
       </div>
       <div class="tandas">
@@ -332,7 +332,7 @@
 
   <section class="contacto" aria-labelledby="h-co">
     <div class="wrap rv">
-      <p class="sobre" style="color:var(--trigo)">Encargos</p>
+      <p class="sobre" style="color:#f6e1bb">Encargos</p>
       <h2 id="h-co">Tu pan, <em>reservado.</em></h2>
       <p>Arma tu encargo, elige día y hora de retiro y te lo dejamos listo. Se envía como mensaje de WhatsApp.</p>
       <button class="btn" type="button" id="abrir2">Armar mi encargo →</button>
@@ -345,7 +345,7 @@
 </footer>
 
 <div class="panel-fondo" id="fondo"></div>
-<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="t-panel" aria-hidden="true">
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="t-panel" aria-hidden="true" inert>
   <header><h3 id="t-panel">Mi encargo</h3><button class="cerrar" type="button" id="cerrar" aria-label="Cerrar encargo">×</button></header>
   <div class="lista" id="lista"></div>
   <form class="datos" id="form" novalidate>
@@ -405,8 +405,8 @@
     lista.innerHTML=h||'<p class="vacio">Tu encargo está vacío.<br>Agrega algo rico de la carta.</p>';
     document.getElementById('n').textContent=s.n;document.getElementById('total').textContent=cl(s.t);
   }
-  function abrir(e){opener=e&&e.currentTarget;panel.classList.add('on');fondo.classList.add('on');panel.setAttribute('aria-hidden','false');document.getElementById('cerrar').focus()}
-  function cerrar(){panel.classList.remove('on');fondo.classList.remove('on');panel.setAttribute('aria-hidden','true');if(opener)opener.focus()}
+  function abrir(e){opener=e&&e.currentTarget;panel.classList.add('on');fondo.classList.add('on');panel.setAttribute('aria-hidden','false');panel.removeAttribute('inert');document.getElementById('cerrar').focus()}
+  function cerrar(){panel.classList.remove('on');fondo.classList.remove('on');panel.setAttribute('aria-hidden','true');panel.setAttribute('inert','');if(opener)opener.focus()}
   document.getElementById('abrir').addEventListener('click',abrir);
   document.getElementById('abrir2').addEventListener('click',abrir);
   document.getElementById('cerrar').addEventListener('click',cerrar);

@@ -101,7 +101,7 @@
   .plato h3 .jp { font-size: 13px; color: var(--gris); font-weight: 400; }
   .plato .precio { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--oro); }
   .plato p { color: var(--gris); font-size: 14px; grid-column: 1 / -1; }
-  .etiqueta { display: inline-block; font-family: 'Inter'; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--bermellon); border: 1px solid rgba(200,68,47,.5); padding: 3px 8px; vertical-align: middle; }
+  .etiqueta { display: inline-block; font-family: 'Inter'; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #d0604e; border: 1px solid rgba(200,68,47,.5); padding: 3px 8px; vertical-align: middle; }
 
   /* Chef */
   .chef { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 720px; }
@@ -230,10 +230,10 @@
     </div>
 
     <div class="tabs" role="tablist">
-      <button class="activo" data-tab="nigiri">Nigiri &amp; Sashimi</button>
-      <button data-tab="rolls">Rolls de autor</button>
-      <button data-tab="calientes">Calientes</button>
-      <button data-tab="omakase">Omakase</button>
+      <button role="tab" aria-selected="true" class="activo" data-tab="nigiri">Nigiri &amp; Sashimi</button>
+      <button role="tab" aria-selected="false" data-tab="rolls">Rolls de autor</button>
+      <button role="tab" aria-selected="false" data-tab="calientes">Calientes</button>
+      <button role="tab" aria-selected="false" data-tab="omakase">Omakase</button>
     </div>
 
     <div class="panel activo" id="nigiri">
@@ -330,6 +330,7 @@
 
   document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('.tabs button, .panel').forEach(e => e.classList.remove('activo'));
+    document.querySelectorAll('.tabs button').forEach(t => t.setAttribute('aria-selected', t === b));
     b.classList.add('activo');
     document.getElementById(b.dataset.tab).classList.add('activo');
   }));

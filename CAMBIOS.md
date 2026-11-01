@@ -1,5 +1,35 @@
 # Registro de cambios
 
+## 2026-11-01 (mejora diaria + demo nueva: clínica veterinaria)
+
+Esta rama parte de la rama de la solicitud abierta #24 (kayak, 31-oct), que a su vez incluye la #22 (panadería), para no duplicar demos ni generar conflictos.
+
+### Currículum (`index.html`) — 3 mejoras, sin tocar contenido
+- Contraste AA: el verde de las etiquetas ("cargo" y fechas) pasó de #1F8A5B a #167348, los rótulos de la ficha lateral usan el gris de texto y la nota del formulario de WhatsApp ya no pierde contraste por transparencia.
+- Menú superior con indicador de sección activa (subrayado y `aria-current`) al desplazarse; se ve y se anuncia en qué parte vas.
+- Metaetiquetas `twitter:title` y `twitter:description` para vistas previas al compartir.
+
+### Portafolio y demos existentes (auditoría con axe-core + Playwright a 320, 390 y 1440 px)
+- Contraste AA en el portafolio (nota del formulario), cafetería (caramelo y gris de texto), mascotas (nuevo coral de texto para rótulos, sellos y recuadro de cifra), plantas (gris de texto), sushi (etiqueta sobre fondo oscuro), velas (gris y terracota de texto) y panadería (rótulos sobre fondo ladrillo).
+- Sushi y cafetería: las pestañas de la carta ahora son `role="tab"` con `aria-selected` actualizado al hacer clic.
+- Panadería: el panel de encargo cerrado quedaba oculto pero enfocable con teclado; ahora usa `inert` mientras está cerrado.
+- Sin desbordes horizontales, sin errores de JavaScript, sin respuestas 404, todas con aviso de datos ficticios. Páginas HTML bajo 60 KB (máximo 43 KB).
+
+### Demo nueva: `veterinaria/` — Weñi Clínica Veterinaria (Río Bueno, ficticia)
+- Identidad: verde pino, lima, menta y salmón; tipografías Familjen Grotesk y Hanken Grotesk; portada con marco en arco.
+- Funciones: estado abierto/cerrado según hora de Chile; pedir hora con servicio, mascota, día, horas libres/tomadas, total en CLP y envío por WhatsApp; guía "¿Es urgente?" con prioridad según lo que se observa; horario con el día de hoy resaltado.
+- Secciones: servicios con precios, equipo (nombres ficticios), planes de cuidado, pacientes con opiniones rotuladas como ejemplo, horario, mapa ilustrativo en SVG y preguntas frecuentes.
+- Fotos: `images.unsplash.com` sigue bloqueado desde el entorno; se copiaron 4 fotos de perros ya verificadas de Pata Feliz (`demos/mascotas`) y los íconos y el mapa son SVG. Registradas en `demos/CREDITOS.md`.
+- Tarjeta y captura (`demos/img/veterinaria.jpg`, 95 KB) en el portafolio; cifra actualizada a 12 diseños.
+
+### Sugerencias pendientes para René
+- Cuando se habilite `images.unsplash.com`, sumar fotos de gatos y de la consulta a Weñi (hoy solo hay perros) y regenerar la captura.
+- Verifica que el nombre "Weñi" no coincida con una clínica real antes de mostrarlo a clientes; la guía de urgencia es orientativa y conviene que la revise un veterinario real si se usa en un proyecto verdadero.
+- Cafetería: el texto gigante decorativo "grande-firma" tiene bajo contraste a propósito (es ornamento); si prefieres, se puede marcar `aria-hidden`.
+- Estrella Austral (`navidad/`): axe reporta un atributo ARIA no permitido en un elemento; conviene revisarlo al tocar esa propuesta de cliente.
+- Currículum: falta un `og:image` (imagen de vista previa); requiere una imagen que elijas tú.
+- Cafetería, gimnasio, plantas, sushi y velas no usan la etiqueta `main` (cambio estructural, no aplicado).
+
 ## 2026-10-31 (mejora diaria + demo nueva: kayak y pesca)
 
 Esta rama parte de la rama de la solicitud abierta #22 (panadería, 30-oct), para no duplicar trabajo; incluye además lo ya fusionado en `main`.
