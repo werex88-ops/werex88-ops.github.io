@@ -128,3 +128,8 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 - `veterinaria/img/lola.jpg` — https://images.unsplash.com/photo-1543466835-00a7907e9de1
 - `veterinaria/img/bruno.jpg` — https://images.unsplash.com/photo-1552053831-71594a27632d
 - `veterinaria/img/toby.jpg` — https://images.unsplash.com/photo-1587300003388-59208cc962cb
+
+## Cervecería · Hualle (enlazadas directamente desde Unsplash; fotos ya verificadas en Cabañas)
+
+- `cerveceria` portada y "Después del turno" — https://images.unsplash.com/photo-1782226796423-8d72656a332c
+- `cerveceria` "El sur que nos inspira" — https://images.unsplash.com/photo-1775155636890-9d688754bdff

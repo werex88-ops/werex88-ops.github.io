@@ -1,5 +1,31 @@
 # Registro de cambios
 
+## 2026-11-02 (mejora diaria + demo nueva: cervecería artesanal)
+
+Esta rama parte de la rama de la solicitud abierta #25 (veterinaria, 1-nov), que incluye la #24 (kayak) y la #22 (panadería), para no duplicar demos ni generar conflictos.
+
+### Currículum (`index.html`) — 3 mejoras, sin tocar contenido
+- Datos estructurados (JSON-LD `Person`) con solo datos que ya están en la página: nombre, cargo, sitio, correo y región.
+- Metaetiqueta `robots` con `max-image-preview:large` para vistas previas completas en buscadores.
+- Color de selección de texto (`::selection`) con la paleta azul del currículum.
+
+### Portafolio y demos existentes (auditoría con Playwright a 320, 390 y 1440 px)
+- Cafetería: las fotos `granos.jpg` (379 → 263 KB) y `local.jpg` (329 → 229 KB) se recomprimieron para quedar bajo 300 KB; no cambia el diseño.
+- Revisión de las 13 páginas: sin desplazamiento horizontal, sin errores de JavaScript, sin 404 y todas con aviso de datos ficticios. HTML bajo 60 KB (máximo 43 KB).
+
+### Demo nueva: `cerveceria/` — Hualle Cervecería Artesanal (Valdivia, ficticia)
+- Identidad: negro malta, cobre, crema espuma y verde lúpulo; tipografías Big Shoulders Display y Work Sans.
+- Funciones: carta de 6 cervezas con filtro por estilo y medidor de amargor; armador de packs con descuento por volumen (10 % desde 6 latas, 15 % desde 12), retiro o despacho, confirmación de mayoría de edad y pedido por WhatsApp; estado abierto/cerrado con hora de Chile y día resaltado en el horario.
+- Secciones: portada, carta, armador, proceso de elaboración, opiniones rotuladas como ejemplo, sala de degustación con precios, mapa ilustrativo en SVG y pie con aviso legal de alcohol.
+- Fotos: `images.unsplash.com` sigue bloqueado desde el entorno; se enlazaron 2 fotos ya verificadas de Cabañas (lago con neblina y fogón). Los vasos y el mapa son SVG. Registradas en `demos/CREDITOS.md`.
+- Tarjeta y captura (`demos/img/cerveceria.jpg`, 65 KB) en el portafolio; cifra actualizada a 13 diseños.
+
+### Sugerencias pendientes para René
+- Cuando se habilite `images.unsplash.com`, sumar fotos propias de cerveza, tanques y la sala a Hualle y regenerar la captura (hoy la portada usa un fogón de Cabañas).
+- Verifica que el nombre "Hualle" no coincida con una cervecería real antes de mostrarlo a clientes. Para un cliente real, la venta de alcohol online exige revisar patente y normas locales.
+- Las capturas se generan sin acceso a Google Fonts, por lo que muestran una tipografía de reemplazo; en el sitio real se ve la fuente definitiva.
+- Quedan pendientes de revisión las sugerencias del 1-nov (etiqueta `main` en cafetería, gimnasio, plantas, sushi y velas; ARIA en Estrella Austral; `og:image` del currículum).
+
 ## 2026-11-01 (mejora diaria + demo nueva: clínica veterinaria)
 
 Esta rama parte de la rama de la solicitud abierta #24 (kayak, 31-oct), que a su vez incluye la #22 (panadería), para no duplicar demos ni generar conflictos.
