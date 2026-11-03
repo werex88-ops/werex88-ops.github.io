@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230f2a30'/%3E%3Cpath d='M16 46C26 34 36 24 48 14' stroke='%238fc9cf' stroke-width='2' fill='none'/%3E%3Cpath d='M26 36c-6-1-9-6-8-11 5 1 8 6 8 11zM34 28c-6-1-9-6-8-11 5 1 8 6 8 11zM30 32c5-4 11-4 15 0-5 4-10 4-15 0z' fill='%238fc9cf'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Parisienne&family=Dosis:wght@200;300&family=La+Belle+Aurore&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Dosis:wght@200;300;400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Paleta por defecto: "Sur del mundo", tomada de su logo (azul noche, pinceladas azules, ramas celestes, rombo lila) */
@@ -38,12 +38,12 @@
 /* Escarcha: azul acero con blanco */
 :root[data-paleta="escarcha"]{--noche:#152331;--noche-2:#24384c;--noche-3:#0d1620;--agua:#d3e2ee;--papel:#f1f5f8;--oro:#9fc2dd;--rombo:#d3e2ee;--banda-1:#4d7796;--banda-2:#3f6582;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.86);--banda-acento:#e6f0f8}
 /* Laguna: petróleo y verde lago */
-:root[data-paleta="laguna"]{--noche:#0f2a30;--noche-2:#163b42;--noche-3:#091b1f;--agua:#8fc9cf;--papel:#f1f4f2;--oro:#d6a944;--rombo:#8fc9cf;--banda-1:#1f5a63;--banda-2:#174a52;--banda-acento:#f0d48a}
+:root[data-paleta="laguna"]{--noche:#0f2a30;--noche-2:#163b42;--noche-3:#091b1f;--agua:#8fc9cf;--papel:#f1f4f2;--oro:#d6a944;--rombo:#8fc9cf;--banda-1:#1f5a63;--banda-2:#174a52;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.86);--banda-acento:#f0d48a}
 
 /* Océano: azul profundo de mar austral */
-:root[data-paleta="oceano"]{--noche:#0b1f3a;--noche-2:#13325c;--noche-3:#071429;--agua:#8fcbe8;--banda-1:#1d5f8a;--banda-2:#164d72;--banda-acento:#ffd27a;--oro:#f0b94a;--papel:#eef4f8}
+:root[data-paleta="oceano"]{--noche:#0b1f3a;--noche-2:#13325c;--noche-3:#071429;--agua:#8fcbe8;--banda-1:#1d5f8a;--banda-2:#164d72;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.86);--banda-acento:#ffd27a;--oro:#f0b94a;--papel:#eef4f8}
 /* Bosque: verde de árboles nativos y helechos */
-:root[data-paleta="bosque"]{--noche:#13261c;--noche-2:#1d3a2a;--noche-3:#0c1a13;--agua:#b3d39f;--banda-1:#3f6e48;--banda-2:#30593a;--banda-acento:#f2d98c;--oro:#d8b25c;--papel:#eff3ec}
+:root[data-paleta="bosque"]{--noche:#13261c;--noche-2:#1d3a2a;--noche-3:#0c1a13;--agua:#b3d39f;--banda-1:#2f5a38;--banda-2:#24492c;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.88);--banda-acento:#f2d98c;--oro:#d8b25c;--papel:#eff3ec}
 /* Madera: raulí y coigüe, cálida y lisa */
 :root[data-paleta="madera"]{--noche:#2a1d15;--noche-2:#3c2a1e;--noche-3:#1d140e;--agua:#e1c49a;--banda-1:#a47c55;--banda-2:#8b6646;--banda-texto:#fffaf2;--banda-suave:rgba(255,250,242,.86);--banda-acento:#fbe7c0;--oro:#d4a55a;--papel:#f6f0e6}
 /* Madera y océano: franjas de madera con fondos de mar profundo */
@@ -51,7 +51,7 @@
 /* Madera y bosque: franjas de madera con fondos de bosque nativo */
 :root[data-paleta="madera-bosque"]{--noche:#13261c;--noche-2:#1d3a2a;--noche-3:#0c1a13;--agua:#b3d39f;--banda-1:#a47c55;--banda-2:#8b6646;--banda-texto:#fffaf2;--banda-suave:rgba(255,250,242,.86);--banda-acento:#fbe7c0;--oro:#d4a55a;--papel:#f6f0e6}
 /* Roca: piedra laja y pizarra del sur */
-:root[data-paleta="roca"]{--noche:#24282a;--noche-2:#343a3c;--noche-3:#181b1c;--agua:#c3cbc8;--banda-1:#8e9592;--banda-2:#78807d;--banda-acento:#f5e6c4;--oro:#c9a96b;--papel:#eeeeeb}
+:root[data-paleta="roca"]{--noche:#24282a;--noche-2:#343a3c;--noche-3:#181b1c;--agua:#c3cbc8;--banda-1:#5d6462;--banda-2:#4d5452;--banda-texto:#ffffff;--banda-suave:rgba(255,255,255,.86);--banda-acento:#f5e6c4;--oro:#c9a96b;--papel:#eeeeeb}
 /* Ocre del sur: café medio dorado */
 :root[data-paleta="ocre"]{--banda-1:#8c6d42;--banda-2:#6c5332;--banda-texto:#fffaf0;--banda-suave:rgba(255,250,240,.85);--banda-acento:#fbe3a6;--oro:#e2bb63}
 /* Niebla y cristal: franjas claras con acento fucsia */
@@ -62,7 +62,7 @@ body{margin:0;background:var(--noche);color:var(--tinta);font-family:'Work Sans'
 a{color:inherit}
 img{display:block;max-width:100%}
 h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;line-height:1.08;margin:0;letter-spacing:.01em}
-.mano{font-family:'Parisienne',cursive;font-weight:400;letter-spacing:0}
+.mano{font-family:'Dosis',sans-serif;font-weight:400;letter-spacing:.28em;text-transform:uppercase}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px dashed var(--oro);outline-offset:4px}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 section{position:relative;padding:100px 0}
@@ -84,7 +84,7 @@ header nav a:hover{color:var(--agua)}
 header nav.der ul{justify-content:flex-end}
 .marca{text-decoration:none;color:#fff;text-align:center;line-height:1}
 .marca b{display:block;font-family:'Dosis',sans-serif;font-weight:200;font-size:1.8rem;letter-spacing:.06em}
-.marca span{font-family:'La Belle Aurore',cursive;color:var(--agua);font-size:1rem;letter-spacing:.22em}
+.marca span{font-family:'Dosis',sans-serif;font-weight:300;text-transform:uppercase;color:var(--agua);font-size:.72rem;letter-spacing:.32em}
 .menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px;justify-self:end}
 
 /* Portada */
@@ -111,8 +111,8 @@ header nav.der ul{justify-content:flex-end}
 .emblema .circulo{position:relative;width:min(68vw,300px);aspect-ratio:410/550;margin:0 auto;container-type:inline-size}
 .emblema .logo-img{width:100%;height:100%;display:block}
 .emblema .nombre{position:absolute;left:0;right:8%;top:44%;text-align:center;font-family:'Dosis',sans-serif;font-weight:200;font-size:14cqw;line-height:1.02;letter-spacing:.05em;color:#eef5fa}
-.emblema .nombre small{display:block;font-family:'La Belle Aurore',cursive;font-size:.4em;letter-spacing:.3em;color:#d7e8f3;margin-top:6px}
-.hero h1{font-size:clamp(1.6rem,2.6vw,2.1rem);font-style:italic;margin:6px auto 12px;max-width:24ch;color:#fff}
+.emblema .nombre small{display:block;font-family:'Dosis',sans-serif;font-weight:300;text-transform:uppercase;font-size:.26em;letter-spacing:.34em;color:#d7e8f3;margin-top:6px}
+.hero h1{font-size:clamp(1.6rem,2.6vw,2.1rem);margin:6px auto 12px;max-width:24ch;color:#fff}
 .hero p{color:rgba(255,255,255,.78);max-width:46ch;margin:0 auto 28px;text-align:center}
 .boton{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:500;letter-spacing:.04em;border:1px solid rgba(255,255,255,.55);color:#fff;transition:background .25s,color .25s,transform .25s;cursor:pointer;background:transparent;font:500 .98rem 'Work Sans',sans-serif}
 .boton:hover{background:#fff;color:var(--noche);transform:translateY(-2px)}
@@ -124,7 +124,7 @@ header nav.der ul{justify-content:flex-end}
 .pola{background:#fff;padding:10px 10px 44px;box-shadow:0 14px 30px rgba(0,0,0,.35);position:relative;transform:rotate(var(--g,0deg));transition:transform .35s}
 .pola::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;transform:translateX(-50%) rotate(-3deg);background:rgba(232,226,205,.75);box-shadow:0 1px 2px rgba(0,0,0,.12)}
 .pola .img{aspect-ratio:1/1;background:#d9dede center/cover no-repeat}
-.pola figcaption,.pola .pie{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-family:'Parisienne',cursive;color:var(--tinta);font-size:1.3rem;line-height:1}
+.pola figcaption,.pola .pie{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-family:'Dosis',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--tinta);font-size:.8rem;line-height:1}
 .hero .pola{width:100%;max-width:230px;justify-self:center}
 .hero .pola.a{--g:-7deg;margin-top:-60px}
 .hero .pola.b{--g:6deg;margin-top:120px}
@@ -132,12 +132,12 @@ header nav.der ul{justify-content:flex-end}
 
 /* Manifiesto sobre madera */
 .manifiesto{padding:46px 0;text-align:center;overflow:hidden}
-.manifiesto p{margin:0;font-family:'Parisienne',cursive;font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.3;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.35)}
+.manifiesto p{margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.3;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.35)}
 .manifiesto i{font-style:normal;color:var(--oro);margin:0 .4em}
 
 /* Encabezados de sección */
 .titulo{text-align:center;margin-bottom:46px}
-.titulo .mano{display:block;font-size:1.7rem;color:var(--turquesa);margin-bottom:4px}
+.titulo .mano{display:block;font-size:.9rem;margin-bottom:10px!important;color:var(--turquesa);margin-bottom:4px}
 .titulo h2{font-size:clamp(2.3rem,5vw,3.6rem)}
 .titulo p{max-width:52ch;margin:14px auto 0;color:var(--gris)}
 .madera .titulo .mano{color:var(--oro)}
@@ -164,7 +164,7 @@ header nav.der ul{justify-content:flex-end}
 .pieza .info small{display:block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 .pieza .info button{margin-top:6px;background:none;border:0;border-bottom:1px dashed rgba(255,255,255,.6);color:#fff;font:500 .9rem 'Work Sans',sans-serif;cursor:pointer;padding:2px 0}
 .pieza .info button:hover{color:var(--oro);border-color:var(--oro)}
-.nota{display:block;text-align:center;margin-top:40px;font-size:.82rem;color:rgba(255,255,255,.65);font-style:italic}
+.nota{display:block;text-align:center;margin-top:40px;font-size:.82rem;color:rgba(255,255,255,.65)}
 
 /* Inspiración: fauna y flora */
 .fauna{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center}
@@ -177,14 +177,14 @@ header nav.der ul{justify-content:flex-end}
 .cita{min-height:440px;display:grid;place-items:center;text-align:center;color:#fff;background:var(--noche-2) center/cover no-repeat}
 .cita::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--noche) 50%,transparent),color-mix(in srgb,var(--noche) 75%,transparent))}
 .cita blockquote{position:relative;margin:0;padding:0 24px}
-.cita .mano{font-size:clamp(2.6rem,6.6vw,4.8rem);line-height:1.15}
+.cita .mano{font-family:'Cormorant Garamond',serif;font-weight:300;text-transform:none;letter-spacing:.01em;font-size:clamp(2.3rem,5.8vw,4.2rem);line-height:1.15}
 .cita span{display:block;margin-top:16px;letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;color:var(--agua)}
-.cita .nota-foto{position:absolute;right:16px;bottom:12px;font-size:.72rem;color:rgba(255,255,255,.55);font-style:italic}
+.cita .nota-foto{position:absolute;right:16px;bottom:12px;font-size:.72rem;color:rgba(255,255,255,.55)}
 
 /* Encargos */
 .encargos .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
 .encargos .texto h2{font-size:clamp(2.3rem,4.6vw,3.4rem)}
-.encargos .texto .mano{font-size:1.7rem;color:var(--turquesa)}
+.encargos .texto .mano{font-size:.9rem;color:var(--turquesa)}
 .encargos .texto p{color:var(--gris)}
 .pasos{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px;counter-reset:p}
 .pasos li{display:flex;gap:14px;align-items:baseline}
@@ -193,7 +193,7 @@ header nav.der ul{justify-content:flex-end}
 .carta::before,.carta::after{content:"";position:absolute;top:-12px;width:90px;height:26px;background:rgba(214,169,68,.35)}
 .carta::before{left:24px;transform:rotate(-6deg)}
 .carta::after{right:24px;transform:rotate(5deg)}
-.carta h3{font-family:'Parisienne',cursive;font-size:2.2rem;color:var(--noche);margin-bottom:14px}
+.carta h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:2rem;color:var(--noche);margin-bottom:14px}
 .carta .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .carta .full{grid-column:1/-1}
 .carta label{display:block;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gris);margin-bottom:4px}
@@ -222,10 +222,10 @@ header nav.der ul{justify-content:flex-end}
 @media (max-width:560px){.utiles{grid-template-columns:1fr}}
 
 .manifiesto-celeste{max-width:640px!important;font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.2vw,1.6rem)!important;line-height:1.5;color:rgba(255,255,255,.9)!important}
-.sobre{max-width:720px;margin:-12px auto 54px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.25rem,2.2vw,1.5rem);line-height:1.5;color:rgba(255,255,255,.88)}
+.sobre{max-width:720px;margin:-12px auto 54px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2.2vw,1.5rem);line-height:1.5;color:rgba(255,255,255,.88)}
 .sobre::before,.sobre::after{content:"“";color:var(--agua);font-size:1.6em;line-height:0;vertical-align:-.3em;margin-right:.08em}
 .sobre::after{content:"”";margin:0 0 0 .08em}
-footer .gracias{font-family:'Parisienne',cursive;font-size:1.6rem;color:var(--agua);margin:0 0 10px}
+footer .gracias{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--agua);margin:0 0 10px}
 
 /* Franjas según paleta */
 .madera .titulo p,.madera .disponibles,.talleres p{color:var(--banda-suave)}
@@ -277,14 +277,14 @@ footer .gracias{font-family:'Parisienne',cursive;font-size:1.6rem;color:var(--ag
 /* Dónde: entrada tipo boleto */
 .boleto{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 220px;background:#fff;box-shadow:0 18px 40px rgba(0,0,0,.25);position:relative}
 .boleto .izq{padding:34px 36px;border-right:2px dashed #cfd7d8}
-.boleto .izq .mano{font-size:1.8rem;color:var(--turquesa)}
+.boleto .izq .mano{font-size:.9rem;color:var(--turquesa)}
 .boleto h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--noche)}
 .boleto p{color:var(--gris);margin:10px 0 0}
 .boleto .der{padding:30px 24px;display:flex;flex-direction:column;justify-content:center;gap:6px;text-align:center;background:var(--papel)}
 .boleto .der b{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:400;color:var(--noche);line-height:1}
 .boleto .der span{font-size:.85rem;color:var(--gris);letter-spacing:.06em;text-transform:uppercase}
 .redes{text-align:center;margin-top:44px;color:#fff}
-.redes a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:'Parisienne',cursive;font-size:2rem}
+.redes a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:'Dosis',sans-serif;font-weight:400;letter-spacing:.08em;font-size:1.35rem}
 .redes a:hover{color:var(--oro)}
 .redes svg{width:26px;height:26px}
 
@@ -315,7 +315,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
   .ramas{display:none}
   .piezas{gap:34px 18px}
   .pola{padding:8px 8px 36px}
-  .pola figcaption,.pola .pie{font-size:1.05rem}
+  .pola figcaption,.pola .pie{font-size:.7rem;letter-spacing:.1em}
   .carta{padding:26px 20px;transform:none}
   .carta .grid{grid-template-columns:1fr}
   .boleto{grid-template-columns:1fr}
@@ -394,7 +394,7 @@ footer .marca{display:inline-block;margin-bottom:14px}
     <div class="titulo rv"><span class="mano">bestiario bordado</span><h2>Prendedores</h2><p>Este invierno bordé prendedores de todas las aves que he visto. Me faltan muchas por ver y por bordar.</p></div>
     <div class="piezas" id="bestiario"></div>
     <p class="disponibles rv"><b>Algunos de los que he bordado:</b> colibrí, ballena azul, cola de ballena, amanita muscaria, higo fresco, caracol gigante, carpintero, chucao, martín pescador, garza chica, corazón tapatío, cisne de cuello negro y mil pies azul.</p>
-    <span class="nota">Ilustraciones provisorias: aquí irán las fotos de los prendedores.</span>
+    <span class="nota" id="nota-prendedores">Ilustraciones provisorias: aquí irán las fotos de los prendedores.</span>
   </div>
 </section>
 
@@ -570,32 +570,25 @@ footer .marca{display:inline-block;margin-bottom:14px}
     amanita:'<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M44 56h12l3 26H41z" fill="#f1f4f2"/><path d="M18 58c2-22 18-34 32-34s30 12 32 34z" fill="#d1305f"/><g fill="#fff"><circle cx="34" cy="44" r="4"/><circle cx="50" cy="34" r="4"/><circle cx="64" cy="44" r="4"/><circle cx="44" cy="50" r="3"/><circle cx="58" cy="52" r="3"/></g></svg>',
     ballena:'<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M10 56c4-16 24-22 44-18 14 3 22 10 26 18-8 8-26 12-44 10-14-1-24-4-26-10z" fill="#2f5bd3"/><path d="M80 56l10-12-2 14 8 6-14-2z" fill="#2f5bd3"/><path d="M18 62c14 6 40 8 58-2" stroke="#bfe3e7" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="24" cy="52" r="2" fill="#fff"/>'+brillos(['#2bb3c0','#ffffff'])+'</svg>'
   };
-  var G=[
-    {f:'azul-cristal',c:'azul',t:'azul y cristal'},{f:'turquesa-limon',c:'azul',t:'turquesa y limón'},
-    {f:'rojo-cristal',c:'rojo',t:'rojo cristal'},{f:'perla',c:'luz',t:'perla'},
-    {f:'turquesa-rosa',c:'azul',t:'turquesa y rosa'},{f:'fucsia-dorado',c:'rojo',t:'fucsia y dorado'},
-    {f:'hexagono-cobre',c:'luz',t:'hexágono cobre'},{f:'verde-agua',c:'azul',t:'verde agua'},
-    {f:'rojo-turquesa',c:'rojo',t:'rojo y turquesa'},{f:'sol-amarillo',c:'azul',t:'sol y mar'},
-    {f:'hexagono-lila',c:'luz',t:'hexágono lila'},{f:'rojo-intenso',c:'rojo',t:'rojo intenso'}
-  ];
-  $('#lista').innerHTML=G.map(function(g){
-    return '<figure class="pieza" data-c="'+g.c+'"><div class="pola"><div class="img" role="img" aria-label="Aros tejidos en cristal, '+g.t+'" style="background-image:url(\'img/'+g.f+'.jpg\')"></div><span class="pie">'+g.t+'</span></div><div class="info"><small>aros · pieza única</small><button type="button" data-t="los aros '+g.t+'">consultar por WhatsApp</button></div></figure>';
-  }).join('');
-  var P=[
-    {c:'aves',t:'Colibrí',i:'colibri'},
-    {c:'aros',t:'Aros Camino al dorado',i:'aros'},
-    {c:'aves',t:'Chucao',i:'chucao'},
-    {c:'naturaleza',t:'Amanita muscaria',i:'amanita'},
-    {c:'aves',t:'Martín pescador',i:'martin'},
-    {c:'aves',t:'Cisne de cuello negro',i:'cisne'},
-    {c:'naturaleza',t:'Ballena azul',i:'ballena'},
-    {c:'aves',t:'Carpintero',i:'carpintero'}
-  ];
-  var NOM={aves:'prendedor',naturaleza:'prendedor',aros:'aros'};
-  $('#bestiario').innerHTML=P.filter(function(p){return p.c!=='aros';}).map(function(p){
-    var img='<div class="img ilustra" role="img" aria-label="Ilustración de referencia: '+p.t+'">'+ICON[p.i]+'</div>';
-    return '<figure class="pieza" data-c="'+p.c+'"><div class="pola">'+img+'<span class="pie">'+p.t+'</span></div><div class="info"><small>'+NOM[p.c]+' · pieza única</small><button type="button" data-t="el prendedor '+p.t+'">consultar por WhatsApp</button></div></figure>';
-  }).join('');
+  /* Las fotos y nombres se leen de piezas.json, que Celeste edita desde el panel /admin */
+  var BASE='/propuestas/celeste-valdivia-fd6e7a/';
+  function ruta(f){return /^\//.test(f)&&location.protocol==='file:'?f.replace(BASE,''):f;}
+  function esc(t){return String(t||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function tarjeta(foto,svg,nombre,tipo,c,frase){
+    var img=foto?'<div class="img" role="img" aria-label="'+esc(tipo+' '+nombre)+'" style="background-image:url(\''+esc(ruta(foto))+'\')"></div>'
+      :'<div class="img ilustra" role="img" aria-label="Ilustración provisoria: '+esc(nombre)+'">'+svg+'</div>';
+    return '<figure class="pieza" data-c="'+esc(c)+'"><div class="pola">'+img+'<span class="pie">'+esc(nombre)+'</span></div><div class="info"><small>'+tipo+' · pieza única</small><button type="button" data-t="'+esc(frase+' '+nombre)+'">consultar por WhatsApp</button></div></figure>';
+  }
+  function pintar(d){
+    $('#lista').innerHTML=(d.aros||[]).filter(function(a){return a.foto;}).map(function(a){return tarjeta(a.foto,'',a.nombre,'aros',a.color||'todas','los aros');}).join('');
+    var pr=(d.prendedores||[]).filter(function(p){return p.foto||ICON[p.ilustracion];});
+    $('#bestiario').innerHTML=pr.map(function(p){return tarjeta(p.foto,ICON[p.ilustracion]||'',p.nombre,'prendedor','prendedor','el prendedor');}).join('');
+    $('#nota-prendedores').hidden=!pr.some(function(p){return !p.foto;});
+    var activo=document.querySelector('.etiqueta[aria-pressed="true"]');if(activo)activo.click();
+  }
+  var RESPALDO={"aros":[{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/azul-cristal.jpg","nombre":"azul y cristal","color":"azul"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/turquesa-limon.jpg","nombre":"turquesa y limón","color":"azul"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/rojo-cristal.jpg","nombre":"rojo cristal","color":"rojo"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/perla.jpg","nombre":"perla","color":"luz"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/turquesa-rosa.jpg","nombre":"turquesa y rosa","color":"azul"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/fucsia-dorado.jpg","nombre":"fucsia y dorado","color":"rojo"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/hexagono-cobre.jpg","nombre":"hexágono cobre","color":"luz"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/verde-agua.jpg","nombre":"verde agua","color":"azul"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/rojo-turquesa.jpg","nombre":"rojo y turquesa","color":"rojo"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/sol-amarillo.jpg","nombre":"sol y mar","color":"azul"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/hexagono-lila.jpg","nombre":"hexágono lila","color":"luz"},{"foto":"/propuestas/celeste-valdivia-fd6e7a/img/piezas/rojo-intenso.jpg","nombre":"rojo intenso","color":"rojo"}],"prendedores":[{"foto":"","nombre":"Colibrí","ilustracion":"colibri"},{"foto":"","nombre":"Chucao","ilustracion":"chucao"},{"foto":"","nombre":"Amanita muscaria","ilustracion":"amanita"},{"foto":"","nombre":"Martín pescador","ilustracion":"martin"},{"foto":"","nombre":"Cisne de cuello negro","ilustracion":"cisne"},{"foto":"","nombre":"Ballena azul","ilustracion":"ballena"},{"foto":"","nombre":"Carpintero","ilustracion":"carpintero"}]};
+  pintar(RESPALDO);
+  fetch('piezas.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){if(d)pintar(d);}).catch(function(){});
   document.querySelectorAll('.etiqueta').forEach(function(b){b.addEventListener('click',function(){
     document.querySelectorAll('.etiqueta').forEach(function(x){x.setAttribute('aria-pressed','false');});
     b.setAttribute('aria-pressed','true');

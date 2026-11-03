@@ -1,0 +1,70 @@
+# Panel de Celeste: edita piezas.json y sube fotos a img/piezas.
+# Cada cambio se guarda directo en el sitio (tarda 1 a 2 minutos en verse).
+backend:
+  name: github
+  repo: werex88-ops/werex88-ops.github.io
+  branch: main
+  commit_messages:
+    update: "Celeste actualiza sus piezas"
+    uploadMedia: "Celeste sube una foto: {{path}}"
+    deleteMedia: "Celeste elimina una foto: {{path}}"
+
+site_url: https://werex88-ops.github.io/propuestas/celeste-valdivia-fd6e7a/
+display_url: https://werex88-ops.github.io/propuestas/celeste-valdivia-fd6e7a/
+
+media_folder: propuestas/celeste-valdivia-fd6e7a/img/piezas
+public_folder: /propuestas/celeste-valdivia-fd6e7a/img/piezas
+
+# Las fotos del celular (también HEIC de iPhone) se achican y convierten antes de subir
+media_libraries:
+  default:
+    config:
+      max_file_size: 25000000
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1400
+          height: 1400
+
+collections:
+  - name: vitrina
+    label: Mi vitrina
+    icon: diamond
+    files:
+      - name: piezas
+        label: Aros y prendedores
+        file: propuestas/celeste-valdivia-fd6e7a/piezas.json
+        format: json
+        fields:
+          - label: Aros
+            name: aros
+            widget: list
+            label_singular: par de aros
+            add_to_top: true
+            summary: "{{fields.nombre}}"
+            hint: "Arrastra para cambiar el orden. El primero aparece primero en el sitio."
+            fields:
+              - { label: Foto, name: foto, widget: image, hint: "Foto cuadrada o vertical, con buena luz." }
+              - { label: Nombre, name: nombre, widget: string, hint: "Ej.: turquesa y limón" }
+              - label: Color
+                name: color
+                widget: select
+                default: azul
+                hint: "Define en qué filtro aparece."
+                options:
+                  - { label: "Azules y turquesa", value: azul }
+                  - { label: "Rojos y fucsia", value: rojo }
+                  - { label: "Perla, cobre y lila", value: luz }
+          - label: Prendedores
+            name: prendedores
+            widget: list
+            label_singular: prendedor
+            add_to_top: true
+            summary: "{{fields.nombre}}"
+            hint: "Mientras un prendedor no tenga foto, se muestra un dibujo provisorio."
+            fields:
+              - { label: Foto, name: foto, widget: image, required: false }
+              - { label: Nombre, name: nombre, widget: string, hint: "Ej.: Martín pescador" }
+              - { label: Dibujo provisorio, name: ilustracion, widget: hidden, required: false }

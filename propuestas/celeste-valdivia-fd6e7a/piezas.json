@@ -1,0 +1,101 @@
+{
+  "aros": [
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/azul-cristal.jpg",
+      "nombre": "azul y cristal",
+      "color": "azul"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/turquesa-limon.jpg",
+      "nombre": "turquesa y limón",
+      "color": "azul"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/rojo-cristal.jpg",
+      "nombre": "rojo cristal",
+      "color": "rojo"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/perla.jpg",
+      "nombre": "perla",
+      "color": "luz"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/turquesa-rosa.jpg",
+      "nombre": "turquesa y rosa",
+      "color": "azul"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/fucsia-dorado.jpg",
+      "nombre": "fucsia y dorado",
+      "color": "rojo"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/hexagono-cobre.jpg",
+      "nombre": "hexágono cobre",
+      "color": "luz"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/verde-agua.jpg",
+      "nombre": "verde agua",
+      "color": "azul"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/rojo-turquesa.jpg",
+      "nombre": "rojo y turquesa",
+      "color": "rojo"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/sol-amarillo.jpg",
+      "nombre": "sol y mar",
+      "color": "azul"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/hexagono-lila.jpg",
+      "nombre": "hexágono lila",
+      "color": "luz"
+    },
+    {
+      "foto": "/propuestas/celeste-valdivia-fd6e7a/img/piezas/rojo-intenso.jpg",
+      "nombre": "rojo intenso",
+      "color": "rojo"
+    }
+  ],
+  "prendedores": [
+    {
+      "foto": "",
+      "nombre": "Colibrí",
+      "ilustracion": "colibri"
+    },
+    {
+      "foto": "",
+      "nombre": "Chucao",
+      "ilustracion": "chucao"
+    },
+    {
+      "foto": "",
+      "nombre": "Amanita muscaria",
+      "ilustracion": "amanita"
+    },
+    {
+      "foto": "",
+      "nombre": "Martín pescador",
+      "ilustracion": "martin"
+    },
+    {
+      "foto": "",
+      "nombre": "Cisne de cuello negro",
+      "ilustracion": "cisne"
+    },
+    {
+      "foto": "",
+      "nombre": "Ballena azul",
+      "ilustracion": "ballena"
+    },
+    {
+      "foto": "",
+      "nombre": "Carpintero",
+      "ilustracion": "carpintero"
+    }
+  ]
+}
