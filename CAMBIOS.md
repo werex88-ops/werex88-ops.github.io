@@ -1,5 +1,12 @@
 # Registro de cambios
 
+## 2026-11-03 (propuesta Celeste: sin cursiva, contraste y panel de fotos)
+
+- Se reemplazan las tipografías cursivas e itálicas por Dosis (la del logo) y Cormorant recta.
+- Paletas Bosque, Laguna, Océano y Roca: franjas más oscuras con texto blanco para que se lea bien.
+- Aros y prendedores se leen desde `piezas.json`; nuevo panel `admin/` (Sveltia CMS) para que Celeste suba fotos, cambie nombres y ordene las piezas desde el celular.
+- Fotos de aros movidas a `img/piezas/`.
+
 ## 2026-10-29 (Estrella Austral: paleta roja, sin packs y con SEO)
 
 - `navidad/`: nueva paleta navideña (rojos, dorado, acento verde pino y nieve), reemplazando el verde y crema.
