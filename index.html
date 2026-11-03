@@ -6,6 +6,7 @@
 <title>René Cerpa Andrade — Curriculum Vitae</title>
 <meta name="description" content="Curriculum Vitae de René Cerpa Andrade, Ingeniero en Informática en la Región de Los Ríos: educación artística, gestión cultural, desarrollo web y soporte técnico freelance.">
 <meta name="theme-color" content="#14213D">
+<meta name="color-scheme" content="light">
 <meta name="author" content="René Cerpa Andrade">
 <link rel="canonical" href="https://werex88-ops.github.io/">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -109,6 +110,7 @@
   .exp:last-child{padding-bottom:0}
   .exp::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--suave)}
   .exp.actual::before{background:var(--acento);border-color:var(--acento);box-shadow:0 0 0 5px var(--acento-suave)}
+  .exp .fecha,.estudio .fecha{font-variant-numeric:tabular-nums}
   .exp .fecha{font-size:.85rem;font-weight:600;color:var(--gris)}
   .exp .fecha b{color:var(--verde);font-weight:600;background:#E6F4EC;padding:2px 8px;border-radius:999px;margin-left:6px;font-size:.75rem}
   .exp h3{font-size:1.12rem;margin:4px 0 2px}
@@ -516,7 +518,7 @@
       <form class="wa-form wa-claro" id="wa-form" novalidate aria-label="Formulario de contacto por WhatsApp">
       <div class="wa-grid">
         <div><label for="wa-nombre">Tu nombre</label><input id="wa-nombre" autocomplete="name" required></div>
-        <div><label for="wa-negocio">Negocio u organización</label><input id="wa-negocio" placeholder="Ej.: Cabañas El Bosque"></div>
+        <div><label for="wa-negocio">Negocio u organización</label><input id="wa-negocio" autocomplete="organization" placeholder="Ej.: Cabañas El Bosque"></div>
         <div><label for="wa-necesito">¿Qué necesitas?</label>
           <select id="wa-necesito">
             <option>Una página web nueva</option>
