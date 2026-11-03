@@ -1,5 +1,112 @@
 # Registro de cambios
 
+## 2026-11-02 (mejora diaria + demo nueva: cervecería artesanal)
+
+Esta rama parte de la rama de la solicitud abierta #25 (veterinaria, 1-nov), que incluye la #24 (kayak) y la #22 (panadería), para no duplicar demos ni generar conflictos.
+
+### Currículum (`index.html`) — 3 mejoras, sin tocar contenido
+- Datos estructurados (JSON-LD `Person`) con solo datos que ya están en la página: nombre, cargo, sitio, correo y región.
+- Metaetiqueta `robots` con `max-image-preview:large` para vistas previas completas en buscadores.
+- Color de selección de texto (`::selection`) con la paleta azul del currículum.
+
+### Portafolio y demos existentes (auditoría con Playwright a 320, 390 y 1440 px)
+- Cafetería: las fotos `granos.jpg` (379 → 263 KB) y `local.jpg` (329 → 229 KB) se recomprimieron para quedar bajo 300 KB; no cambia el diseño.
+- Revisión de las 13 páginas: sin desplazamiento horizontal, sin errores de JavaScript, sin 404 y todas con aviso de datos ficticios. HTML bajo 60 KB (máximo 43 KB).
+
+### Demo nueva: `cerveceria/` — Hualle Cervecería Artesanal (Valdivia, ficticia)
+- Identidad: negro malta, cobre, crema espuma y verde lúpulo; tipografías Big Shoulders Display y Work Sans.
+- Funciones: carta de 6 cervezas con filtro por estilo y medidor de amargor; armador de packs con descuento por volumen (10 % desde 6 latas, 15 % desde 12), retiro o despacho, confirmación de mayoría de edad y pedido por WhatsApp; estado abierto/cerrado con hora de Chile y día resaltado en el horario.
+- Secciones: portada, carta, armador, proceso de elaboración, opiniones rotuladas como ejemplo, sala de degustación con precios, mapa ilustrativo en SVG y pie con aviso legal de alcohol.
+- Fotos: `images.unsplash.com` sigue bloqueado desde el entorno; se enlazaron 2 fotos ya verificadas de Cabañas (lago con neblina y fogón). Los vasos y el mapa son SVG. Registradas en `demos/CREDITOS.md`.
+- Tarjeta y captura (`demos/img/cerveceria.jpg`, 65 KB) en el portafolio; cifra actualizada a 13 diseños.
+
+### Sugerencias pendientes para René
+- Cuando se habilite `images.unsplash.com`, sumar fotos propias de cerveza, tanques y la sala a Hualle y regenerar la captura (hoy la portada usa un fogón de Cabañas).
+- Verifica que el nombre "Hualle" no coincida con una cervecería real antes de mostrarlo a clientes. Para un cliente real, la venta de alcohol online exige revisar patente y normas locales.
+- Las capturas se generan sin acceso a Google Fonts, por lo que muestran una tipografía de reemplazo; en el sitio real se ve la fuente definitiva.
+- Quedan pendientes de revisión las sugerencias del 1-nov (etiqueta `main` en cafetería, gimnasio, plantas, sushi y velas; ARIA en Estrella Austral; `og:image` del currículum).
+
+## 2026-11-01 (mejora diaria + demo nueva: clínica veterinaria)
+
+Esta rama parte de la rama de la solicitud abierta #24 (kayak, 31-oct), que a su vez incluye la #22 (panadería), para no duplicar demos ni generar conflictos.
+
+### Currículum (`index.html`) — 3 mejoras, sin tocar contenido
+- Contraste AA: el verde de las etiquetas ("cargo" y fechas) pasó de #1F8A5B a #167348, los rótulos de la ficha lateral usan el gris de texto y la nota del formulario de WhatsApp ya no pierde contraste por transparencia.
+- Menú superior con indicador de sección activa (subrayado y `aria-current`) al desplazarse; se ve y se anuncia en qué parte vas.
+- Metaetiquetas `twitter:title` y `twitter:description` para vistas previas al compartir.
+
+### Portafolio y demos existentes (auditoría con axe-core + Playwright a 320, 390 y 1440 px)
+- Contraste AA en el portafolio (nota del formulario), cafetería (caramelo y gris de texto), mascotas (nuevo coral de texto para rótulos, sellos y recuadro de cifra), plantas (gris de texto), sushi (etiqueta sobre fondo oscuro), velas (gris y terracota de texto) y panadería (rótulos sobre fondo ladrillo).
+- Sushi y cafetería: las pestañas de la carta ahora son `role="tab"` con `aria-selected` actualizado al hacer clic.
+- Panadería: el panel de encargo cerrado quedaba oculto pero enfocable con teclado; ahora usa `inert` mientras está cerrado.
+- Sin desbordes horizontales, sin errores de JavaScript, sin respuestas 404, todas con aviso de datos ficticios. Páginas HTML bajo 60 KB (máximo 43 KB).
+
+### Demo nueva: `veterinaria/` — Weñi Clínica Veterinaria (Río Bueno, ficticia)
+- Identidad: verde pino, lima, menta y salmón; tipografías Familjen Grotesk y Hanken Grotesk; portada con marco en arco.
+- Funciones: estado abierto/cerrado según hora de Chile; pedir hora con servicio, mascota, día, horas libres/tomadas, total en CLP y envío por WhatsApp; guía "¿Es urgente?" con prioridad según lo que se observa; horario con el día de hoy resaltado.
+- Secciones: servicios con precios, equipo (nombres ficticios), planes de cuidado, pacientes con opiniones rotuladas como ejemplo, horario, mapa ilustrativo en SVG y preguntas frecuentes.
+- Fotos: `images.unsplash.com` sigue bloqueado desde el entorno; se copiaron 4 fotos de perros ya verificadas de Pata Feliz (`demos/mascotas`) y los íconos y el mapa son SVG. Registradas en `demos/CREDITOS.md`.
+- Tarjeta y captura (`demos/img/veterinaria.jpg`, 95 KB) en el portafolio; cifra actualizada a 12 diseños.
+
+### Sugerencias pendientes para René
+- Cuando se habilite `images.unsplash.com`, sumar fotos de gatos y de la consulta a Weñi (hoy solo hay perros) y regenerar la captura.
+- Verifica que el nombre "Weñi" no coincida con una clínica real antes de mostrarlo a clientes; la guía de urgencia es orientativa y conviene que la revise un veterinario real si se usa en un proyecto verdadero.
+- Cafetería: el texto gigante decorativo "grande-firma" tiene bajo contraste a propósito (es ornamento); si prefieres, se puede marcar `aria-hidden`.
+- Estrella Austral (`navidad/`): axe reporta un atributo ARIA no permitido en un elemento; conviene revisarlo al tocar esa propuesta de cliente.
+- Currículum: falta un `og:image` (imagen de vista previa); requiere una imagen que elijas tú.
+- Cafetería, gimnasio, plantas, sushi y velas no usan la etiqueta `main` (cambio estructural, no aplicado).
+
+## 2026-10-31 (mejora diaria + demo nueva: kayak y pesca)
+
+Esta rama parte de la rama de la solicitud abierta #22 (panadería, 30-oct), para no duplicar trabajo; incluye además lo ya fusionado en `main`.
+
+### Currículum (`index.html`) — 3 mejoras, sin tocar contenido
+- Títulos con `text-wrap: balance` (sin líneas huérfanas) y párrafos con `text-wrap: pretty`.
+- `scroll-padding-top` y `text-size-adjust` para un desplazamiento por anclas y una lectura móvil más estables.
+- Números de sección con cifras tabulares (alineación uniforme).
+
+### Portafolio y demos existentes (1 mejora por página, sin cambios de diseño)
+- Color de la barra del navegador (`theme-color`) e ícono de pestaña propio, con la paleta de cada página, en el portafolio, sushi, gimnasio, cafetería, velas, plantas y mascotas.
+- Revisión con Playwright de las 11 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript y sin respuestas 404. Todas tienen aviso de datos ficticios y respetan `prefers-reduced-motion`.
+
+### Demo nueva: `kayak/` — Mawün Kayak (Lago Ranco, ficticia)
+- Identidad: azul noche, azul lago y naranja; tipografías Fraunces y Outfit.
+- Funciones: 6 salidas con filtro por dificultad, armador de reserva (salida, fecha, hora, personas y extras) con total en CLP y pedido por WhatsApp (sin número fijo), condición esperada del lago según la hora, y estado abierto/cerrado con hora de Chile.
+- Secciones: propuesta de valor, salidas, seguridad y guías de ejemplo, opiniones rotuladas como ejemplo, preguntas frecuentes, horario y mapa ilustrativo en SVG.
+- Fotos: `images.unsplash.com` sigue bloqueado desde el entorno; se enlazaron 3 fotos ya verificadas de Cabañas (kayak, lago con neblina, fogón). No se descargaron, así que la captura `demos/img/kayak.jpg` (72 KB) muestra la portada sin foto.
+- Tarjeta en el portafolio y cifra actualizada a 11 diseños; créditos registrados.
+
+### Sugerencias pendientes para René
+- Regenerar `demos/img/kayak.jpg` con la foto de portada cuando se habilite `images.unsplash.com`.
+- Mawün Kayak reutiliza fotos de Cabañas; conviene sumar fotos propias de pesca con mosca y de la isla.
+- Verifica que el nombre "Mawün Kayak" no coincida con un negocio real antes de mostrarlo a clientes.
+- Currículum: falta un `og:image` (imagen de vista previa al compartir); requiere una imagen que elijas tú.
+- Cafetería, gimnasio, plantas, sushi y velas no usan la etiqueta `main` (cambio estructural, no aplicado hoy).
+
+## 2026-10-30 (mejora diaria + demo nueva: panadería)
+
+### Currículum (`index.html`) — 3 mejoras, sin tocar contenido
+- Enlace "Saltar al contenido" para teclado y lectores de pantalla (oculto hasta recibir foco y en la versión impresa).
+- Metaetiquetas: URL canónica, autor y Twitter Card.
+- `main` con ancla `#contenido`, necesaria para el enlace anterior.
+
+### Portafolio y demos existentes
+- Foco visible de teclado (doble anillo, legible sobre cualquier fondo) en el portafolio, cafetería, gimnasio, plantas, sushi, velas y mascotas (1 mejora por página).
+- Velas: corregido un desborde horizontal de 21 px a 320 px en el formulario del boletín.
+- Revisión sin hallazgos de enlaces rotos, errores de JavaScript ni páginas sobre 60 KB.
+
+### Demo nueva: `panaderia/` — Horno Pellín (Paillaco, ficticia)
+- Identidad: ladrillo, harina, trigo y carbón; tipografías Bricolage Grotesque y Newsreader.
+- Funciones: estado abierto/cerrado según hora de Chile, "hoy en el horno" con cuenta regresiva a la próxima horneada, carta con filtros, encargo con cantidades, día y hora de retiro, y envío por WhatsApp (sin número fijo).
+- Fotos: `images.unsplash.com` sigue bloqueado desde el entorno; se reutilizaron 4 fotos ya verificadas de la cafetería (croissant, kuchen, galleta, tostado) y los panes son ilustraciones SVG. Registradas en `demos/CREDITOS.md`.
+- Tarjeta y captura (`demos/img/panaderia.jpg`, 94 KB) en el portafolio; cifra actualizada a 10 diseños.
+
+### Sugerencias pendientes para René
+- Reemplazar las ilustraciones de panes de Horno Pellín por fotos reales de pan cuando se habilite `images.unsplash.com`.
+- Currículum: un `og:image` (imagen de vista previa al compartir el enlace) mejoraría cómo se ve en WhatsApp; requiere una imagen que elijas tú.
+- Cafetería, gimnasio, plantas, sushi y velas no usan la etiqueta `main`; conviene agregarla al revisar cada una (cambio estructural, no aplicado hoy).
+- Mascotas ya tenía foco en las opciones; se sumó el general.
+
 ## 2026-10-29 (Estrella Austral: paleta roja, sin packs y con SEO)
 
 - `navidad/`: nueva paleta navideña (rojos, dorado, acento verde pino y nieve), reemplazando el verde y crema.

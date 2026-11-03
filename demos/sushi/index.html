@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kaiyō · Sushi Bar</title>
 <meta name="description" content="Sushi de autor y omakase en barra. Pescado del día, arroz al estilo Edo.">
+<meta name="theme-color" content="#0c0c0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c8442f'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23ffffff'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -99,7 +101,7 @@
   .plato h3 .jp { font-size: 13px; color: var(--gris); font-weight: 400; }
   .plato .precio { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--oro); }
   .plato p { color: var(--gris); font-size: 14px; grid-column: 1 / -1; }
-  .etiqueta { display: inline-block; font-family: 'Inter'; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--bermellon); border: 1px solid rgba(200,68,47,.5); padding: 3px 8px; vertical-align: middle; }
+  .etiqueta { display: inline-block; font-family: 'Inter'; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #d0604e; border: 1px solid rgba(200,68,47,.5); padding: 3px 8px; vertical-align: middle; }
 
   /* Chef */
   .chef { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 720px; }
@@ -159,6 +161,8 @@
     form { padding: 30px 22px; }
   }
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
+  /* Foco visible para teclado (doble anillo, legible sobre cualquier fondo) */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
 </style>
 </head>
 <body>
@@ -226,10 +230,10 @@
     </div>
 
     <div class="tabs" role="tablist">
-      <button class="activo" data-tab="nigiri">Nigiri &amp; Sashimi</button>
-      <button data-tab="rolls">Rolls de autor</button>
-      <button data-tab="calientes">Calientes</button>
-      <button data-tab="omakase">Omakase</button>
+      <button role="tab" aria-selected="true" class="activo" data-tab="nigiri">Nigiri &amp; Sashimi</button>
+      <button role="tab" aria-selected="false" data-tab="rolls">Rolls de autor</button>
+      <button role="tab" aria-selected="false" data-tab="calientes">Calientes</button>
+      <button role="tab" aria-selected="false" data-tab="omakase">Omakase</button>
     </div>
 
     <div class="panel activo" id="nigiri">
@@ -326,6 +330,7 @@
 
   document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('.tabs button, .panel').forEach(e => e.classList.remove('activo'));
+    document.querySelectorAll('.tabs button').forEach(t => t.setAttribute('aria-selected', t === b));
     b.classList.add('activo');
     document.getElementById(b.dataset.tab).classList.add('activo');
   }));

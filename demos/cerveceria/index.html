@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hualle · Cervecería Artesanal en Valdivia</title>
+<meta name="description" content="Cervecería artesanal de Valdivia: seis cervezas del sur en lata, sala de degustación y armador de packs con pedido por WhatsApp. Venta solo a mayores de 18 años.">
+<meta name="theme-color" content="#17120d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317120d'/%3E%3Cpath d='M20 14h24l-3 36a4 4 0 0 1-4 4H27a4 4 0 0 1-4-4z' fill='%23e08a1e'/%3E%3Cpath d='M18 14a7 7 0 0 1 13-4 7 7 0 0 1 15 4z' fill='%23f6ecd6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--malta:#17120d;--malta2:#241a12;--malta3:#32241a;--cobre:#e08a1e;--cobre-t:#9a4a0c;--espuma:#f6ecd6;--espuma2:#ebdcbc;--lupulo:#a5b83a;--tinta:#2a1d12;--suave:#6b5a45;--suave-o:#b9ab92;--linea:rgba(246,236,214,.16)}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{font-family:'Work Sans',system-ui,sans-serif;background:var(--malta);color:var(--espuma);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid var(--cobre);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.disp{font-family:'Big Shoulders Display',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.92}
+.saltar{position:absolute;left:-999px;top:8px;background:var(--cobre);color:var(--malta);padding:10px 16px;border-radius:8px;z-index:100;font-weight:600}
+.saltar:focus{left:12px}
+.rot{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cobre)}
+.claro .rot{color:var(--cobre-t)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--cobre);color:var(--malta);font-weight:600;font-size:16px;padding:15px 26px;border-radius:6px;border:0;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:#f0a13c}
+.btn.borde{background:transparent;color:var(--espuma);border:1.5px solid var(--espuma)}
+.btn.borde:hover{background:var(--espuma);color:var(--malta)}
+.btn.wsp{background:#25d366;color:#052e14}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+
+/* Nav */
+header.nav{position:sticky;top:0;z-index:40;background:rgba(23,18,13,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-size:30px;font-weight:900}
+.logo svg{width:34px;height:34px}
+.menu{display:flex;gap:26px;list-style:none;font-size:15px;font-weight:500}
+.menu a{padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover{border-color:var(--cobre)}
+.estado{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;border:1px solid var(--linea);border-radius:999px;padding:6px 14px;white-space:nowrap}
+.estado i{width:9px;height:9px;border-radius:50%;background:#e5533d}
+.estado.abierto i{background:#4ade80;animation:pulso 2s infinite}
+@keyframes pulso{70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}}
+
+/* Hero */
+.hero{position:relative;min-height:calc(100svh - 68px);display:flex;align-items:flex-end;padding:90px 0 70px;background:var(--malta) linear-gradient(180deg,rgba(23,18,13,.55),rgba(23,18,13,.92)),url('https://images.unsplash.com/photo-1782226796423-8d72656a332c?w=1800&q=70&auto=format&fit=crop') center/cover no-repeat;overflow:hidden}
+.hero h1{font-size:clamp(46px,11vw,168px);font-weight:900;max-width:11ch}
+.hero h1 em{font-style:normal;color:var(--cobre)}
+.hero p{max-width:520px;font-size:19px;color:var(--espuma2);margin:26px 0 34px}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
+.edad{margin-top:30px;font-size:13px;color:var(--suave-o)}
+.burbujas{position:absolute;right:6%;bottom:0;width:min(34vw,380px);opacity:.9;pointer-events:none}
+.burbujas circle{fill:none;stroke:var(--cobre);stroke-width:2;animation:sube 7s linear infinite}
+@keyframes sube{from{transform:translateY(0);opacity:0}15%{opacity:.8}to{transform:translateY(-260px);opacity:0}}
+.burbujas circle:nth-child(2n){animation-duration:9s;animation-delay:-3s}.burbujas circle:nth-child(3n){animation-duration:11s;animation-delay:-6s}
+
+.franja{background:var(--cobre);color:var(--malta);overflow:hidden;padding:14px 0}
+.franja div{display:flex;gap:44px;width:max-content;animation:corre 32s linear infinite;font-size:26px;font-weight:800}
+.franja span::after{content:"✦";margin-left:44px}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+section{padding:100px 0}
+.claro{background:var(--espuma);color:var(--tinta)}
+.cab{max-width:680px;margin-bottom:46px}
+.cab h2{font-size:clamp(34px,6vw,78px);font-weight:900;margin:10px 0 14px}
+.cab p{color:var(--suave-o);font-size:17px}
+.claro .cab p{color:var(--suave)}
+
+/* Cervezas */
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.filtros button{background:transparent;border:1px solid var(--linea);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:500;transition:all .2s}
+.filtros button[aria-pressed="true"]{background:var(--espuma);color:var(--malta);border-color:var(--espuma)}
+.cervezas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cerveza{background:var(--malta2);border:1px solid var(--linea);border-radius:14px;padding:26px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.cerveza:hover{transform:translateY(-5px);border-color:var(--cobre)}
+.cerveza[hidden]{display:none}
+.vaso{height:150px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:14px}
+.vaso svg{height:100%;width:auto}
+.cerveza h3{font-size:38px;font-weight:900}
+.cerveza .estilo{font-size:14px;color:var(--cobre);font-weight:600}
+.cerveza p{color:var(--suave-o);font-size:15px;margin:10px 0 18px;flex:1}
+.datos{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;color:var(--suave-o);margin-bottom:16px}
+.datos b{display:block;font-size:17px;color:var(--espuma);font-weight:600}
+.amargor{grid-column:1/-1}
+.amargor .barra{height:6px;background:var(--malta3);border-radius:3px;margin-top:6px;overflow:hidden}
+.amargor .barra i{display:block;height:100%;background:linear-gradient(90deg,var(--lupulo),var(--cobre));border-radius:3px}
+.precio{font-size:22px;font-weight:600}
+.precio small{font-size:13px;color:var(--suave-o);font-weight:400}
+
+/* Armador */
+.armador{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:start}
+.lineas{display:grid;gap:10px}
+.linea{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;background:#fff;border:1px solid var(--espuma2);border-radius:12px;padding:10px 16px 10px 12px}
+.linea .mini{height:44px;display:flex;align-items:flex-end}.linea .mini svg{height:100%;width:auto}
+.linea b{display:block;font-size:16px}.linea small{color:var(--suave);font-size:13px}
+.cont{display:flex;align-items:center;gap:10px}
+.cont button{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--tinta);background:transparent;font-size:19px;line-height:1;color:var(--tinta)}
+.cont button:hover{background:var(--tinta);color:var(--espuma)}
+.cont output{min-width:24px;text-align:center;font-weight:600;font-size:17px}
+.resumen{background:var(--malta);color:var(--espuma);border-radius:16px;padding:30px;position:sticky;top:90px}
+.resumen h3{font-size:30px;font-weight:900;margin-bottom:6px}
+.escala{display:flex;gap:6px;margin:14px 0 6px}
+.escala i{flex:1;height:6px;border-radius:3px;background:var(--malta3);transition:background .3s}
+.escala i.on{background:var(--cobre)}
+.nota{font-size:13px;color:var(--suave-o);min-height:40px}
+.filas{margin:16px 0;font-size:15px;display:grid;gap:8px}
+.filas div{display:flex;justify-content:space-between;gap:12px}
+.filas .tot{border-top:1px solid var(--linea);padding-top:12px;font-size:17px;font-weight:600}
+.filas .tot b{font-size:28px;color:var(--cobre)}
+.entrega{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.entrega label{border:1px solid var(--linea);border-radius:10px;padding:10px 12px;font-size:14px;cursor:pointer;display:block}
+.entrega input{position:absolute;opacity:0}
+.entrega input:checked+span{color:var(--cobre);font-weight:600}
+.entrega label:has(input:checked){border-color:var(--cobre)}
+.entrega label:has(input:focus-visible){outline:3px solid var(--cobre);outline-offset:2px}
+.entrega small{display:block;color:var(--suave-o);font-size:12px}
+.mayor{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-bottom:16px;color:var(--espuma2)}
+.mayor input{width:20px;height:20px;accent-color:var(--cobre);flex:none;margin-top:2px}
+.resumen .btn{width:100%}
+
+/* Proceso / nosotros */
+.nosotros{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.fotos{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.foto{border-radius:14px;min-height:320px;background:var(--malta3) center/cover no-repeat;position:relative;overflow:hidden}
+.foto:nth-child(2){margin-top:46px}
+.foto span{position:absolute;left:12px;bottom:12px;background:rgba(23,18,13,.8);color:var(--espuma);font-size:12px;padding:4px 10px;border-radius:999px}
+.nosotros h2{font-size:clamp(34px,5.4vw,70px);font-weight:900;margin:10px 0 16px}
+.nosotros p{color:var(--suave-o);margin-bottom:14px}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:70px;list-style:none;counter-reset:p}
+.pasos li{border-top:2px solid var(--cobre);padding-top:16px;counter-increment:p}
+.pasos li::before{content:"0" counter(p);font-family:'Big Shoulders Display',sans-serif;font-size:40px;font-weight:900;color:var(--cobre)}
+.pasos b{display:block;font-size:17px;margin:4px 0}
+.pasos span{font-size:14px;color:var(--suave-o);display:block}
+
+/* Opiniones */
+.opiniones{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.opinion{background:#fff;border-radius:14px;padding:30px;border:1px solid var(--espuma2);display:flex;flex-direction:column}
+.opinion .est{color:var(--cobre-t);letter-spacing:3px}
+.opinion p{font-size:18px;margin:12px 0 20px;flex:1}
+.opinion small{color:var(--suave);font-size:13px}
+.opinion em{display:inline-block;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--espuma);color:var(--cobre-t);padding:3px 10px;border-radius:999px;margin-bottom:6px;align-self:flex-start}
+
+/* Visita */
+.visita{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.horario{list-style:none;border-top:1px solid var(--linea);margin:20px 0}
+.horario li{display:flex;justify-content:space-between;padding:12px 4px;border-bottom:1px solid var(--linea);font-size:16px}
+.horario li.hoy{color:var(--cobre);font-weight:600;background:rgba(224,138,30,.1)}
+.horario li.hoy::after{content:"hoy";font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-left:10px;align-self:center;border:1px solid var(--cobre);border-radius:999px;padding:1px 8px}
+.horario li span:first-child{flex:1}
+.carta{display:grid;gap:6px;margin-top:20px;font-size:15px}
+.carta div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dotted var(--linea);padding-bottom:6px}
+.carta b{color:var(--cobre);font-weight:600}
+.mapa{background:var(--malta2);border:1px solid var(--linea);border-radius:14px;overflow:hidden;position:relative;min-height:340px}
+.mapa svg{width:100%;height:100%;min-height:340px}
+.mapa .pie{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(23,18,13,.88);border-radius:10px;padding:12px 14px;font-size:14px}
+
+footer{padding:70px 0 120px;border-top:1px solid var(--linea)}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:34px}
+footer h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--cobre);margin-bottom:10px}
+footer p,footer li{color:var(--suave-o);font-size:15px;list-style:none}
+footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);padding-top:20px}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.visto{opacity:1;transform:none}
+
+@media (max-width:1000px){
+ .cervezas{grid-template-columns:1fr 1fr}
+ .armador,.nosotros,.visita{grid-template-columns:1fr}
+ .resumen{position:static}
+ .pasos{grid-template-columns:1fr 1fr}
+ .opiniones{grid-template-columns:1fr}
+ .menu{display:none}
+}
+@media (max-width:620px){
+ section{padding:72px 0}
+ .wrap{padding:0 18px}
+ .cervezas{grid-template-columns:1fr}
+ .estado{font-size:12px;padding:5px 10px}
+ .logo{font-size:26px}
+ .fotos{grid-template-columns:1fr}.foto:nth-child(2){margin-top:0}.foto{min-height:240px}
+ .pasos{grid-template-columns:1fr}
+ .entrega{grid-template-columns:1fr}
+ .resumen{padding:22px}
+ footer .wrap{grid-template-columns:1fr}
+ .burbujas{display:none}
+}
+@media (max-width:420px){.logo{font-size:0;gap:0}.estado{font-size:11.5px;padding:5px 10px;white-space:normal;line-height:1.25;min-width:0}header.nav .wrap{height:auto;min-height:68px;padding-top:8px;padding-bottom:8px}}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *{animation:none!important;transition:none!important}
+ .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="saltar" href="#cervezas">Saltar al contenido</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo disp" href="#inicio" aria-label="Hualle, inicio">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 14h24l-3 36a4 4 0 0 1-4 4H27a4 4 0 0 1-4-4z" fill="#e08a1e"/><path d="M18 14a7 7 0 0 1 13-4 7 7 0 0 1 15 4z" fill="#f6ecd6"/></svg>
+      Hualle
+    </a>
+    <nav aria-label="Principal"><ul class="menu">
+      <li><a href="#cervezas">Cervezas</a></li><li><a href="#pack">Armar pack</a></li><li><a href="#nosotros">Cervecería</a></li><li><a href="#visita">Visítanos</a></li><li><a href="#contacto">Contacto</a></li>
+    </ul></nav>
+    <span class="estado" id="estado" role="status"><i></i><span>Revisando horario…</span></span>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <svg class="burbujas" viewBox="0 0 380 300" aria-hidden="true"><circle cx="40" cy="290" r="8"/><circle cx="110" cy="296" r="5"/><circle cx="170" cy="290" r="11"/><circle cx="230" cy="296" r="6"/><circle cx="290" cy="290" r="9"/><circle cx="340" cy="296" r="5"/></svg>
+  <div class="wrap">
+    <span class="rot">Cervecería artesanal · Valdivia</span>
+    <h1 class="disp" style="margin-top:14px">Cerveza con <em>carácter</em> del sur</h1>
+    <p>Seis cervezas elaboradas en lotes pequeños, con malta, lúpulo y fruta de la región. Pruébalas en nuestra sala o llévate un pack a casa.</p>
+    <div class="acciones">
+      <a class="btn" href="#pack">Armar mi pack</a>
+      <a class="btn borde" href="#cervezas">Ver las cervezas</a>
+    </div>
+    <p class="edad">Venta y consumo solo para mayores de 18 años. El consumo excesivo de alcohol es dañino.</p>
+  </div>
+</section>
+
+<div class="franja" aria-hidden="true"><div class="disp"><span>Lotes pequeños</span><span>Agua del sur</span><span>Maqui y lúpulo</span><span>Sala de degustación</span><span>Lotes pequeños</span><span>Agua del sur</span><span>Maqui y lúpulo</span><span>Sala de degustación</span></div></div>
+
+<section id="cervezas">
+  <div class="wrap">
+    <div class="cab rv"><span class="rot">La carta</span><h2 class="disp">Seis cervezas, seis humores</h2><p>Filtra por estilo y mira cuánto amarga cada una. Todas en lata de 473 ml.</p></div>
+    <div class="filtros rv" role="group" aria-label="Filtrar cervezas">
+      <button type="button" data-f="todas" aria-pressed="true">Todas</button>
+      <button type="button" data-f="suave" aria-pressed="false">Suaves y frescas</button>
+      <button type="button" data-f="amarga" aria-pressed="false">Amargas</button>
+      <button type="button" data-f="oscura" aria-pressed="false">Oscuras y de fruta</button>
+    </div>
+    <div class="cervezas" id="lista"></div>
+  </div>
+</section>
+
+<section class="claro" id="pack">
+  <div class="wrap">
+    <div class="cab rv"><span class="rot">Arma tu pack</span><h2 class="disp">Elige tus latas, nosotros las enfriamos</h2><p>Desde 6 latas tienes 10 % de descuento; desde 12, 15 %. El pedido llega por WhatsApp y te confirmamos el retiro o el despacho.</p></div>
+    <div class="armador">
+      <div class="lineas" id="lineas"></div>
+      <aside class="resumen" aria-labelledby="rt">
+        <h3 class="disp" id="rt">Tu pack</h3>
+        <div class="escala" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="nota" id="nota" aria-live="polite"></p>
+        <div class="filas">
+          <div><span>Latas</span><span id="n">0</span></div>
+          <div><span>Subtotal</span><span id="sub">$0</span></div>
+          <div><span>Descuento</span><span id="dto">$0</span></div>
+          <div><span>Despacho</span><span id="env">$0</span></div>
+          <div class="tot"><span>Total</span><b id="tot">$0</b></div>
+        </div>
+        <div class="entrega" role="radiogroup" aria-label="Entrega">
+          <label><input type="radio" name="ent" value="retiro" checked><span>Retiro en la cervecería<small>Sin costo</small></span></label>
+          <label><input type="radio" name="ent" value="despacho"><span>Despacho en Valdivia<small>$2.500 · gratis desde $40.000</small></span></label>
+        </div>
+        <label class="mayor"><input type="checkbox" id="mayor"> <span>Confirmo que soy mayor de 18 años.</span></label>
+        <a class="btn wsp" id="pedir" href="#pack" aria-disabled="true">Enviar pedido por WhatsApp</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap">
+    <div class="nosotros">
+      <div class="fotos rv">
+        <div class="foto" role="img" aria-label="Lago en calma con bosque y neblina" style="background-image:url('https://images.unsplash.com/photo-1775155636890-9d688754bdff?w=900&q=70&auto=format&fit=crop')"><span>El sur que nos inspira</span></div>
+        <div class="foto" role="img" aria-label="Fogón al atardecer junto a una cabaña" style="background-image:url('https://images.unsplash.com/photo-1782226796423-8d72656a332c?w=700&q=70&auto=format&fit=crop')"><span>Después del turno</span></div>
+      </div>
+      <div class="rv">
+        <span class="rot">La cervecería</span>
+        <h2 class="disp">Hecha en lotes de 500 litros</h2>
+        <p>Hualle nació en un galpón de Valdivia con dos tanques y mucha curiosidad. Hoy seguimos cocinando en lotes pequeños para controlar cada detalle, de la molienda a la lata.</p>
+        <p>Trabajamos con agua de lluvia filtrada, maltas importadas y lúpulo seleccionado, y sumamos ingredientes del sur como el maqui. Todo el equipo prueba cada lote antes de salir.</p>
+        <a class="btn borde" href="#visita" style="margin-top:10px">Conoce la sala</a>
+      </div>
+    </div>
+    <ol class="pasos rv">
+      <li><b>Maceración</b><span>La malta se remoja a 66 °C y libera sus azúcares.</span></li>
+      <li><b>Hervor y lúpulo</b><span>Sumamos lúpulo en tres momentos para amargor y aroma.</span></li>
+      <li><b>Fermentación</b><span>Entre 2 y 4 semanas, según el estilo, a temperatura controlada.</span></li>
+      <li><b>Envasado</b><span>Enlatamos a mano en tandas pequeñas y las guardamos en frío.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="claro" id="opiniones">
+  <div class="wrap">
+    <div class="cab rv"><span class="rot">Opiniones de ejemplo</span><h2 class="disp">Lo que dirían los que pasan por la sala</h2></div>
+    <div class="opiniones">
+      <figure class="opinion rv"><em>Opinión de ejemplo</em><span class="est" aria-label="5 de 5 estrellas">★★★★★</span><p>“La Alerce es mi IPA favorita de la zona: amarga, pero con mucha fruta. Y el equipo explica cada cerveza sin apuro.”</p><small>Cliente de ejemplo · Valdivia</small></figure>
+      <figure class="opinion rv"><em>Opinión de ejemplo</em><span class="est" aria-label="5 de 5 estrellas">★★★★★</span><p>“Armé un pack de 12 para el cumpleaños y el pedido por WhatsApp fue facilísimo. Lo retiramos frío y listo.”</p><small>Cliente de ejemplo · La Unión</small></figure>
+      <figure class="opinion rv"><em>Opinión de ejemplo</em><span class="est" aria-label="4 de 5 estrellas">★★★★☆</span><p>“La Maqui es distinta a todo lo que he probado. Ideal para quien no es tan de cerveza. Ojalá abrieran más días.”</p><small>Cliente de ejemplo · Paillaco</small></figure>
+    </div>
+  </div>
+</section>
+
+<section id="visita">
+  <div class="wrap">
+    <div class="cab rv"><span class="rot">Visítanos</span><h2 class="disp">La sala de degustación</h2><p>Mesas largas, cerveza fresca desde el tanque y picoteos para compartir. Se aceptan mascotas en la terraza.</p></div>
+    <div class="visita rv">
+      <div>
+        <ul class="horario" id="horario">
+          <li data-d="1"><span>Lunes</span><span>Cerrado</span></li>
+          <li data-d="2"><span>Martes</span><span>Cerrado</span></li>
+          <li data-d="3"><span>Miércoles</span><span>17:00 – 23:00</span></li>
+          <li data-d="4"><span>Jueves</span><span>17:00 – 23:00</span></li>
+          <li data-d="5"><span>Viernes</span><span>13:00 – 00:00</span></li>
+          <li data-d="6"><span>Sábado</span><span>13:00 – 00:00</span></li>
+          <li data-d="0"><span>Domingo</span><span>13:00 – 20:00</span></li>
+        </ul>
+        <div class="carta" aria-label="Carta de la sala">
+          <div><span>Tabla de degustación (4 vasos de 150 ml)</span><b>$6.900</b></div>
+          <div><span>Pinta de 473 ml</span><b>$4.200</b></div>
+          <div><span>Tabla de quesos y embutidos</span><b>$9.800</b></div>
+          <div><span>Papas rústicas con salsa de merkén</span><b>$4.500</b></div>
+        </div>
+      </div>
+      <div class="mapa">
+        <svg viewBox="0 0 520 420" role="img" aria-label="Mapa ilustrativo de la ubicación de la cervecería junto al río en Valdivia" preserveAspectRatio="xMidYMid slice">
+          <rect width="520" height="420" fill="#241a12"/>
+          <path d="M0 300C90 260 150 330 250 300S420 250 520 290V420H0z" fill="#27465a"/>
+          <path d="M0 300C90 260 150 330 250 300S420 250 520 290" fill="none" stroke="#3f6b86" stroke-width="3"/>
+          <g stroke="#3a2b1e" stroke-width="14" fill="none" stroke-linecap="round"><path d="M0 120H520"/><path d="M0 210H520"/><path d="M120 0V300"/><path d="M300 0V290"/><path d="M430 0V270"/></g>
+          <g fill="#32241a"><rect x="140" y="20" width="140" height="80" rx="6"/><rect x="320" y="20" width="90" height="80" rx="6"/><rect x="320" y="140" width="90" height="50" rx="6"/><rect x="20" y="140" width="80" height="50" rx="6"/><rect x="140" y="230" width="140" height="40" rx="6"/></g>
+          <path d="M210 150a22 22 0 1 1 44 0c0 16-22 40-22 40s-22-24-22-40z" fill="#e08a1e"/><circle cx="232" cy="150" r="8" fill="#17120d"/>
+          <text x="262" y="150" fill="#f6ecd6" font-family="Work Sans,sans-serif" font-size="15" font-weight="600">Hualle</text>
+          <text x="20" y="400" fill="#9db8c9" font-family="Work Sans,sans-serif" font-size="13">Río (ilustración)</text>
+        </svg>
+        <div class="pie"><b>Calle Los Lúpulos 123, Valdivia</b><br>Dirección ficticia · a pasos de la costanera.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div>
+      <p class="logo disp" style="margin-bottom:10px;color:var(--espuma)">Hualle</p>
+      <p>Cervecería artesanal ficticia de Valdivia, creada como propuesta de diseño. Pedidos, eventos y venta a locales por WhatsApp.</p>
+    </div>
+    <div><h4>Contacto</h4><ul><li>WhatsApp: +56 9 5555 0142</li><li>hola@hualle.example</li></ul></div>
+    <div><h4>Seguimos</h4><ul><li>Pedidos para eventos</li><li>Venta a restaurantes</li><li>Tours de la planta (con reserva)</li></ul></div>
+    <p class="legal">Venta y consumo exclusivos para mayores de 18 años. No conduzca bajo los efectos del alcohol. El consumo excesivo de alcohol es dañino para la salud.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var B=[
+    {id:'niebla',n:'Niebla',e:'Kölsch',g:'suave',c:'#f2c44d',t:'Dorada, limpia y refrescante. Con un toque de pan y manzana verde.',abv:4.8,ibu:20,p:2800},
+    {id:'lluvia',n:'Lluvia',e:'Weizen',g:'suave',c:'#eec45e',t:'Turbia y cremosa, con notas de plátano y clavo de olor. Perfecta para el verano.',abv:5.0,ibu:14,p:3000},
+    {id:'cobre',n:'Cobre',e:'Red Ale',g:'amarga',c:'#b9561c',t:'Ámbar rojiza, caramelo y nueces tostadas, con un final seco.',abv:5.6,ibu:30,p:3100},
+    {id:'alerce',n:'Alerce',e:'IPA',g:'amarga',c:'#d98c1f',t:'Lúpulo cítrico y resinoso, cuerpo medio y un amargor firme.',abv:6.4,ibu:58,p:3500},
+    {id:'carbon',n:'Carbón',e:'Stout',g:'oscura',c:'#1e130c',t:'Negra y sedosa, con café, cacao y una espuma densa.',abv:5.9,ibu:34,p:3400},
+    {id:'maqui',n:'Maqui',e:'Sour con fruta',g:'oscura',c:'#8a2d4f',t:'Ácida y frutal, con maqui del sur. Una cerveza para quien dice que no le gusta la cerveza.',abv:4.5,ibu:8,p:3600}
+  ];
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var clp=function(v){return '$'+Math.round(v).toLocaleString('es-CL')};
+  function vaso(c,h){return '<svg viewBox="0 0 80 120" aria-hidden="true"><path d="M14 22h52l-5 84a8 8 0 0 1-8 8H27a8 8 0 0 1-8-8z" fill="'+c+'" stroke="#f6ecd6" stroke-opacity=".55" stroke-width="2"/><path d="M12 22a12 12 0 0 1 22-7 12 12 0 0 1 22-1 11 11 0 0 1 12 8z" fill="#f6ecd6"/><circle cx="32" cy="70" r="2" fill="#fff" fill-opacity=".45"/><circle cx="46" cy="88" r="3" fill="#fff" fill-opacity=".4"/><circle cx="40" cy="52" r="1.6" fill="#fff" fill-opacity=".5"/></svg>'}
+
+  /* Cervezas */
+  $('#lista').innerHTML=B.map(function(b){
+    return '<article class="cerveza rv" data-g="'+b.g+'"><div class="vaso">'+vaso(b.c)+'</div><span class="estilo">'+b.e+'</span><h3 class="disp">'+b.n+'</h3><p>'+b.t+'</p><div class="datos"><div>Alcohol<b>'+String(b.abv).replace('.',',')+' %</b></div><div>Amargor<b>'+b.ibu+' IBU</b></div><div class="amargor"><div class="barra" role="img" aria-label="Amargor '+b.ibu+' de 70"><i style="width:'+Math.min(100,b.ibu/70*100)+'%"></i></div></div></div><div class="precio">'+clp(b.p)+' <small>/ lata 473 ml</small></div></article>';
+  }).join('');
+  $$('.filtros button').forEach(function(bt){bt.addEventListener('click',function(){
+    $$('.filtros button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});
+    var f=bt.dataset.f;
+    $$('.cerveza').forEach(function(c){c.hidden=!(f==='todas'||c.dataset.g===f)});
+  })});
+
+  /* Armador */
+  var cant={};B.forEach(function(b){cant[b.id]=0});
+  $('#lineas').innerHTML=B.map(function(b){
+    return '<div class="linea"><div class="mini">'+vaso(b.c)+'</div><div><b>'+b.n+'</b><small>'+b.e+' · '+clp(b.p)+'</small></div><div class="cont"><button type="button" data-id="'+b.id+'" data-d="-1" aria-label="Quitar una lata de '+b.n+'">−</button><output id="c-'+b.id+'" aria-label="Latas de '+b.n+'">0</output><button type="button" data-id="'+b.id+'" data-d="1" aria-label="Agregar una lata de '+b.n+'">+</button></div></div>';
+  }).join('');
+  function calc(){
+    var n=0,sub=0;B.forEach(function(b){n+=cant[b.id];sub+=cant[b.id]*b.p});
+    var pct=n>=12?.15:n>=6?.10:0,dto=sub*pct;
+    var desp=document.querySelector('input[name=ent]:checked').value==='despacho';
+    var env=(desp&&n>0&&(sub-dto)<40000)?2500:0;
+    var tot=sub-dto+env;
+    $('#n').textContent=n;$('#sub').textContent=clp(sub);$('#dto').textContent=dto?'−'+clp(dto)+' ('+Math.round(pct*100)+' %)':'$0';
+    $('#env').textContent=desp&&n>0?(env?clp(env):'Gratis'):'$0';$('#tot').textContent=clp(tot);
+    $$('.escala i').forEach(function(i,k){i.classList.toggle('on',k<Math.min(6,Math.ceil(n/2)))});
+    $('#nota').textContent=n===0?'Agrega latas para ver tu descuento.':n<6?'Te faltan '+(6-n)+' para el 10 % de descuento.':n<12?'Tienes 10 % de descuento. Con '+(12-n)+' más llegas al 15 %.':'Tienes el 15 % de descuento. ¡Buen pack!';
+    var ok=n>0&&$('#mayor').checked,a=$('#pedir');
+    a.setAttribute('aria-disabled',ok?'false':'true');a.tabIndex=ok?0:-1;
+    if(ok){
+      var l=B.filter(function(b){return cant[b.id]>0}).map(function(b){return '• '+cant[b.id]+' × '+b.n+' ('+b.e+')'}).join('\n');
+      var t='Hola Hualle, quiero pedir un pack:\n'+l+'\nTotal: '+clp(tot)+'\nEntrega: '+(desp?'despacho en Valdivia':'retiro en la cervecería')+'\nConfirmo que soy mayor de 18 años.';
+      a.href='https://wa.me/56955550142?text='+encodeURIComponent(t);a.target='_blank';a.rel='noopener';
+    }else{a.href='#pack';a.removeAttribute('target')}
+  }
+  $('#lineas').addEventListener('click',function(e){
+    var bt=e.target.closest('button');if(!bt)return;
+    var id=bt.dataset.id;cant[id]=Math.max(0,Math.min(24,cant[id]+(+bt.dataset.d)));
+    $('#c-'+id).textContent=cant[id];calc();
+  });
+  $('#mayor').addEventListener('change',calc);
+  $$('input[name=ent]').forEach(function(r){r.addEventListener('change',calc)});
+  calc();
+
+  /* Horario en vivo (hora de Chile) */
+  var H={0:[13,20],3:[17,23],4:[17,23],5:[13,24],6:[13,24]};
+  function ahora(){
+    var p={};new Intl.DateTimeFormat('en-US',{timeZone:'America/Santiago',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+    var d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[p.weekday];
+    return {d:d,h:(+p.hour)+(+p.minute)/60};
+  }
+  function estado(){
+    var a=ahora(),r=H[a.d],ab=!!r&&a.h>=r[0]&&a.h<r[1],el=$('#estado');
+    el.className='estado'+(ab?' abierto':'');
+    var txt;
+    if(ab)txt='Abierto · cierra '+(r[1]===24?'00:00':r[1]+':00');
+    else if(r&&a.h<r[0])txt='Cerrado · abre hoy '+r[0]+':00';
+    else{var k=1;while(k<8&&!H[(a.d+k)%7])k++;var nx=(a.d+k)%7;txt='Cerrado · abre '+['domingo','lunes','martes','miércoles','jueves','viernes','sábado'][nx]+' '+H[nx][0]+':00'}
+    $('span',el).textContent=txt;
+    $$('#horario li').forEach(function(li){li.classList.toggle('hoy',+li.dataset.d===a.d)});
+  }
+  estado();setInterval(estado,60000);
+
+  /* Aparición suave */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target)}})},{threshold:.1});
+  $$('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weñi Clínica Veterinaria · Río Bueno</title>
+<meta name="description" content="Clínica veterinaria en Río Bueno: consultas, vacunas, cirugía, laboratorio y urgencias. Agenda tu hora y reserva por WhatsApp. Sitio de ejemplo con datos ficticios.">
+<meta name="theme-color" content="#0d3b3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d3b3a'/%3E%3Cpath d='M26 14h12v12h12v12H38v12H26V38H14V26h12z' fill='%23d9f26b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,500;0,700;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--pino:#0d3b3a;--pino2:#165a58;--menta:#d5eee3;--crema:#f6f5ef;--blanco:#fff;--lima:#d9f26b;--salmon:#ff8a73;--salmon-t:#b13a22;--suave:#4c615f;--linea:#dbe5df}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%;overflow-x:clip}
+.hero{overflow-x:clip}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--crema);color:var(--pino);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+img{width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Familjen Grotesk',system-ui,sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,56px)}
+h2 em{font-style:italic;font-weight:500;color:var(--pino2)}
+.oscuro h2 em{color:var(--lima)}
+p{text-wrap:pretty}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--pino);outline-offset:3px;box-shadow:0 0 0 6px var(--lima);border-radius:8px}
+.oscuro a:focus-visible,.oscuro button:focus-visible,.oscuro input:focus-visible{outline-color:#fff;box-shadow:0 0 0 6px var(--pino2)}
+.saltar{position:absolute;left:12px;top:-60px;background:var(--pino);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.saltar:focus{top:12px}
+.sobre{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pino2)}
+.oscuro .sobre{color:var(--lima)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--lima);color:var(--pino);padding:15px 26px;border-radius:999px;border:0;font-weight:700;font-size:16px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 0 var(--pino)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--pino)}
+.btn.osc{background:var(--pino);color:#fff;box-shadow:0 4px 0 var(--pino2)}
+.btn.osc:hover{box-shadow:0 6px 0 var(--pino2)}
+.btn.wsp{background:#25d366;color:#06301a}
+.btn svg{width:20px;height:20px;fill:currentColor}
+section{padding:100px 0}
+
+/* Barra */
+.top{position:sticky;top:0;z-index:50;background:rgba(246,245,239,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.02em}
+.logo svg{width:38px;height:38px}
+.logo small{display:block;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--suave);line-height:1}
+.menu{display:flex;gap:26px;list-style:none;font-weight:600;font-size:15px}
+.menu a:hover{color:var(--pino2);text-decoration:underline;text-underline-offset:6px}
+.top .btn{padding:10px 20px;font-size:15px;box-shadow:0 3px 0 var(--pino)}
+
+/* Portada */
+.hero{padding:48px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.estado{display:inline-flex;align-items:center;gap:10px;background:var(--blanco);border:1px solid var(--linea);padding:7px 14px 7px 12px;border-radius:999px;font-size:14px;font-weight:600}
+.estado i{width:10px;height:10px;border-radius:50%;background:#1f9d55;box-shadow:0 0 0 0 rgba(31,157,85,.5);animation:pulso 2.4s infinite}
+.estado.cerrado i{background:var(--salmon-t);animation:none}
+@keyframes pulso{70%{box-shadow:0 0 0 9px rgba(31,157,85,0)}100%{box-shadow:0 0 0 0 rgba(31,157,85,0)}}
+.hero h1{font-size:clamp(46px,7vw,92px);margin:22px 0 22px}
+.hero h1 em{font-style:italic;font-weight:500;background:linear-gradient(transparent 62%,var(--lima) 62%,var(--lima) 90%,transparent 90%);padding:0 4px}
+.hero p.baj{font-size:19px;color:var(--suave);max-width:520px}
+.acc{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 36px}
+.cifras{display:flex;gap:34px;flex-wrap:wrap}
+.cifras b{font-family:'Familjen Grotesk',sans-serif;font-size:34px;display:block;line-height:1}
+.cifras span{font-size:14px;color:var(--suave)}
+.arco{position:relative;max-width:470px;margin-left:auto;width:100%}
+.arco .foto{aspect-ratio:4/5;border-radius:999px 999px 36px 36px;overflow:hidden;border:8px solid var(--blanco);box-shadow:0 30px 60px rgba(13,59,58,.2);background:var(--menta)}
+.arco .foto img{object-position:50% 62%}
+.arco::before{content:"";position:absolute;inset:-18px -18px 40px 40px;border-radius:999px 999px 36px 36px;background:var(--menta);z-index:-1}
+.ficha{position:absolute;background:var(--blanco);padding:12px 16px;border-radius:18px;box-shadow:0 14px 34px rgba(13,59,58,.16);display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px;line-height:1.25;animation:flota 5s ease-in-out infinite}
+.ficha small{display:block;font-weight:500;font-size:12.5px;color:var(--suave)}
+.ficha .ic{width:38px;height:38px;border-radius:12px;background:var(--lima);display:grid;place-items:center}
+.ficha .ic svg{width:20px;height:20px}
+.f1{left:-26px;bottom:18%}
+.f2{right:-14px;top:12%;animation-delay:-2.5s}
+@keyframes flota{50%{transform:translateY(-9px)}}
+
+/* Servicios */
+.cab{max-width:660px;margin-bottom:54px}
+.cab p{color:var(--suave);font-size:18px;margin-top:14px}
+.servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.serv{background:var(--blanco);border:1px solid var(--linea);border-radius:26px;padding:28px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,background .3s}
+.serv:hover{transform:translateY(-5px);box-shadow:0 22px 40px rgba(13,59,58,.1)}
+.serv .ic{width:54px;height:54px;border-radius:16px;background:var(--menta);display:grid;place-items:center;margin-bottom:20px}
+.serv .ic svg{width:28px;height:28px;stroke:var(--pino);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.serv h3{font-size:24px;margin-bottom:8px}
+.serv p{color:var(--suave);font-size:15.5px;flex:1}
+.serv .pie{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:16px;border-top:1px dashed var(--linea);font-size:14px;color:var(--suave)}
+.serv .pie b{font-family:'Familjen Grotesk',sans-serif;font-size:21px;color:var(--pino)}
+.serv.urg{background:var(--pino);color:#fff;border-color:var(--pino)}
+.serv.urg .ic{background:var(--lima)}
+.serv.urg p,.serv.urg .pie{color:#c9e0d9;border-color:rgba(255,255,255,.2)}
+.serv.urg .pie b{color:#fff}
+
+/* Agenda */
+.agenda{background:var(--pino);color:#fff}
+.agenda .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+.agenda .intro p{color:#c9e0d9;font-size:18px;margin-top:16px}
+.agenda .intro ul{list-style:none;margin-top:28px;display:grid;gap:12px;font-size:16px}
+.agenda .intro li{display:flex;gap:12px;align-items:flex-start}
+.agenda .intro li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;background:var(--lima);color:var(--pino);display:grid;place-items:center;font-weight:700;font-size:14px;margin-top:2px}
+.form{background:var(--blanco);color:var(--pino);border-radius:30px;padding:34px;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.paso{margin-bottom:24px;border:0}
+.paso legend,.paso>label.t{display:block;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pino2);margin-bottom:10px}
+.opc{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.opc input{position:absolute;opacity:0;pointer-events:none}
+.opc label{display:block;border:1.5px solid var(--linea);border-radius:14px;padding:11px 12px;font-weight:600;font-size:15px;cursor:pointer;line-height:1.3;transition:background .2s,border-color .2s}
+.opc label small{display:block;font-weight:500;color:var(--suave);font-size:13px}
+.opc label:hover{border-color:var(--pino2)}
+.opc input:checked+label{background:var(--pino);color:#fff;border-color:var(--pino)}
+.opc input:checked+label small{color:#c9e0d9}
+.opc input:focus-visible+label{outline:3px solid var(--pino);outline-offset:2px;box-shadow:0 0 0 6px var(--lima)}
+.horas{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr))}
+.horas{gap:8px}
+.horas input:disabled+label{background:var(--crema);color:#6f807d;text-decoration:line-through;cursor:not-allowed;border-style:dashed}
+.horas label{text-align:center;padding:9px 4px}
+.campo input[type=text]{width:100%;border:1.5px solid var(--linea);border-radius:14px;padding:12px 14px;background:var(--blanco)}
+.campo input[type=text]:focus-visible{border-color:var(--pino2)}
+.resumen{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:var(--crema);border-radius:18px;padding:16px 18px;margin:6px 0 18px}
+.resumen span{font-size:15px;color:var(--suave);flex:1 1 200px}
+.resumen b{font-family:'Familjen Grotesk',sans-serif;font-size:30px;line-height:1}
+.form .btn{width:100%}
+.nota{font-size:13px;color:var(--suave);margin-top:12px;text-align:center}
+
+/* Triage */
+.triage .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.sint{display:grid;gap:8px;margin-top:26px}
+.sint label{display:flex;gap:14px;align-items:center;background:var(--blanco);border:1.5px solid var(--linea);border-radius:16px;padding:14px 16px;cursor:pointer;font-weight:500;line-height:1.35;transition:border-color .2s,background .2s}
+.sint label:hover{border-color:var(--pino2)}
+.sint input{width:20px;height:20px;accent-color:var(--pino);flex:none}
+.sint label:has(input:checked){background:var(--menta);border-color:var(--pino2)}
+.sint label:focus-within{outline:3px solid var(--pino);outline-offset:2px}
+.veredicto{border-radius:30px;padding:36px;min-height:330px;display:flex;flex-direction:column;justify-content:center;transition:background .4s,color .4s;background:var(--menta)}
+.veredicto .ni{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.veredicto h3{font-size:clamp(28px,3.4vw,40px);margin-bottom:12px}
+.veredicto p{font-size:17px;margin-bottom:22px}
+.veredicto.n3{background:var(--salmon-t);color:#fff}
+.veredicto.n2{background:#f7e3a1}
+.veredicto.n1{background:var(--menta)}
+.veredicto .btn{align-self:flex-start}
+.veredicto small{display:block;margin-top:18px;font-size:13px;opacity:.9}
+
+/* Equipo */
+.equipo{background:var(--menta)}
+.eq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vet{background:var(--blanco);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.vet .av{width:84px;height:84px;border-radius:26px;display:grid;place-items:center;font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:30px}
+.vet:nth-child(1) .av{background:var(--lima)}
+.vet:nth-child(2) .av{background:var(--salmon)}
+.vet:nth-child(3) .av{background:#bfd8f5}
+.vet h3{font-size:24px}
+.vet .rol{font-size:14px;font-weight:700;color:var(--pino2)}
+.vet p{color:var(--suave);font-size:15.5px}
+.etq{display:flex;flex-wrap:wrap;gap:6px}
+.etq span{background:var(--crema);border-radius:999px;padding:3px 11px;font-size:13px;font-weight:600}
+
+/* Planes */
+.planes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{background:var(--blanco);border:1.5px solid var(--linea);border-radius:28px;padding:30px;display:flex;flex-direction:column;position:relative}
+.plan.dest{background:var(--pino);color:#fff;border-color:var(--pino);transform:translateY(-10px)}
+.plan .tag{position:absolute;top:-13px;right:24px;background:var(--lima);color:var(--pino);font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:999px}
+.plan h3{font-size:26px}
+.plan .para{font-size:14px;color:var(--suave);margin:2px 0 16px}
+.plan.dest .para{color:#c9e0d9}
+.plan .pr{font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1;letter-spacing:-.02em}
+.plan .pr small{font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:500;color:var(--suave);letter-spacing:0}
+.plan.dest .pr small{color:#c9e0d9}
+.plan ul{list-style:none;margin:22px 0 26px;display:grid;gap:10px;flex:1;font-size:15.5px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:50%;background:var(--lima) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' fill='none' stroke='%230d3b3a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat}
+.plan .btn{width:100%}
+.plan:not(.dest) .btn{background:var(--pino);color:#fff;box-shadow:0 4px 0 var(--pino2)}
+.plan:not(.dest) .btn:hover{box-shadow:0 6px 0 var(--pino2)}
+
+/* Pacientes */
+.pac{background:var(--blanco)}
+.pacs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pc{background:var(--crema);border-radius:28px;overflow:hidden;display:flex;flex-direction:column}
+.pc figure{aspect-ratio:4/3}
+.pc .tx{padding:26px;display:flex;flex-direction:column;flex:1;gap:16px}
+.pc blockquote{font-size:18px;line-height:1.5;flex:1}
+.pc cite{font-style:normal;font-size:14px;color:var(--suave);display:block}
+.pc cite b{display:block;color:var(--pino);font-size:16px}
+.ejemplo{display:inline-block;background:var(--menta);padding:2px 10px;border-radius:999px;font-size:12px;font-weight:700;color:var(--pino2);align-self:flex-start}
+
+/* Ubicación */
+.ubi .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch}
+.horario{width:100%;border-collapse:collapse;margin:22px 0 18px;font-size:16px}
+.horario th,.horario td{text-align:left;padding:13px 0;border-bottom:1px solid var(--linea);font-weight:500}
+.horario td{text-align:right;font-weight:700}
+.horario tr.hoy th,.horario tr.hoy td{color:var(--pino);background:linear-gradient(90deg,var(--lima),var(--lima));margin:0;padding-left:12px;padding-right:12px}
+.horario tr.hoy th{border-radius:12px 0 0 12px}.horario tr.hoy td{border-radius:0 12px 12px 0}
+.datos{display:grid;gap:8px;font-size:16px}
+.datos b{font-weight:700}
+.mapa{background:var(--menta);border-radius:30px;overflow:hidden;min-height:340px;position:relative}
+.mapa svg{width:100%;height:100%;position:absolute;inset:0}
+.mapa .pie{position:absolute;left:16px;bottom:16px;background:var(--blanco);border-radius:14px;padding:8px 14px;font-size:13px;font-weight:600}
+
+/* FAQ */
+.faq{background:var(--blanco)}
+.faq .wrap{max-width:860px}
+details{border-bottom:1px solid var(--linea);padding:20px 0}
+summary{cursor:pointer;font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:22px;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:28px;line-height:1;transition:transform .25s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--suave);margin-top:12px;max-width:62ch}
+
+footer{background:var(--pino);color:#c9e0d9;padding:70px 0 110px}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
+footer .logo{color:#fff;margin-bottom:12px}
+footer .logo small{color:#9fc3b9}
+footer h4{color:#fff;font-size:15px;margin-bottom:10px}
+footer p{font-size:15px}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.visto{opacity:1;transform:none}
+.plan.dest.rv.visto{transform:translateY(-10px)}
+
+@media (max-width:1000px){
+  .menu{display:none}
+  .hero .wrap,.agenda .wrap,.triage .wrap,.ubi .wrap{grid-template-columns:1fr}
+  .arco{margin:0 auto}
+  .servicios,.eq,.pacs,.planes{grid-template-columns:1fr 1fr}
+  .plan.dest,.plan.dest.rv.visto{transform:none}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  footer .wrap>div:first-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  .wrap{padding:0 18px}
+  section{padding:74px 0}
+  .top .btn span{display:none}
+  .servicios,.eq,.pacs,.planes{grid-template-columns:1fr}
+  .f1{left:-6px}.f2{right:-4px}
+  .ficha{font-size:13px;padding:10px 12px}
+  .form{padding:24px 16px}
+  .veredicto{padding:26px 20px}
+  .plan .pr{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){*,.rv{animation:none!important;transition:none!important;opacity:1;transform:none}html{scroll-behavior:auto}.plan.dest{transform:none}}
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Weñi Clínica Veterinaria, inicio">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#0d3b3a"/><path d="M16.5 8h7v8.5H32v7h-8.5V32h-7v-8.5H8v-7h8.5z" fill="#d9f26b"/></svg>
+      <span>Weñi<small>Clínica veterinaria</small></span>
+    </a>
+    <ul class="menu">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#agenda">Pedir hora</a></li>
+      <li><a href="#triage">¿Es urgente?</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#ubicacion">Horario</a></li>
+    </ul>
+    <a class="btn" href="#agenda"><span>Pedir hora</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3zm-1 8v10h12V10zm2 2h3v3H8z"/></svg></a>
+  </div>
+</header>
+
+<main id="contenido">
+<section class="hero" style="padding-top:48px">
+  <div class="wrap">
+    <div class="rv">
+      <div class="estado" id="estado" role="status"><i></i><span id="estado-txt">Calculando horario…</span></div>
+      <h1>Cuidamos a quien te espera en <em>la puerta</em>.</h1>
+      <p class="baj">Clínica veterinaria en Río Bueno para perros, gatos y animales de compañía. Atención cercana, sin apuros y con explicaciones claras en cada consulta.</p>
+      <div class="acc">
+        <a class="btn" href="#agenda">Agendar una hora →</a>
+        <a class="btn osc" href="#triage">¿Es urgente?</a>
+      </div>
+      <div class="cifras">
+        <div><b>Perros y gatos</b><span>y otros animales de compañía</span></div>
+        <div><b>6 días</b><span>atención a la semana</span></div>
+        <div><b>Guardia</b><span>telefónica nocturna</span></div>
+      </div>
+    </div>
+    <div class="arco rv">
+      <div class="foto"><img src="img/hero.jpg" alt="Perro café con collar corriendo feliz por la orilla del mar al atardecer"></div>
+      <div class="ficha f1"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#0d3b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg></span><span>Control sin apuros<small>30 min por consulta</small></span></div>
+      <div class="ficha f2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#0d3b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 8L9 4l-3 8H2"/></svg></span><span>Urgencias<small>Llámanos primero</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" style="padding-top:20px">
+  <div class="wrap">
+    <div class="cab rv">
+      <p class="sobre">Qué hacemos</p>
+      <h2>Todo lo que necesita, <em>en un solo lugar</em></h2>
+      <p>Medicina preventiva, procedimientos y diagnóstico con equipo propio. Los valores son referenciales de este sitio de ejemplo.</p>
+    </div>
+    <div class="servicios">
+      <article class="serv rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0v1a4 4 0 0 1-4 4h-1"/><path d="M4 12v3a3 3 0 0 0 3 3h1v-6H4z"/><circle cx="15" cy="19" r="2"/></svg></div><h3>Consulta general</h3><p>Revisión completa, peso, plan de alimentación y dudas de conducta. Con ficha clínica digital para cada paciente.</p><div class="pie"><span>desde</span><b>$18.000</b></div></article>
+      <article class="serv rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4l6 6M12 6l6 6-8 8H4v-6zM8 14l2 2"/></svg></div><h3>Vacunas y desparasitación</h3><p>Esquemas para cachorros y adultos, con recordatorio por WhatsApp cuando se acerca el refuerzo.</p><div class="pie"><span>desde</span><b>$22.000</b></div></article>
+      <article class="serv rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 15h8"/></svg></div><h3>Laboratorio y ecografía</h3><p>Hemograma, perfil bioquímico y ecografía abdominal en la clínica, para decidir con datos y sin esperas largas.</p><div class="pie"><span>desde</span><b>$19.000</b></div></article>
+      <article class="serv rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20L20 4M14 4h6v6M7 13l4 4"/></svg></div><h3>Cirugía y esterilización</h3><p>Pabellón propio, monitoreo durante todo el procedimiento y control postoperatorio incluido en el valor.</p><div class="pie"><span>desde</span><b>$65.000</b></div></article>
+      <article class="serv rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 3 6 5.5 6 9a6 6 0 0 1-12 0c0-3.500 3-6 6-9z"/><path d="M9.500 13.500a2.500 2.500 0 0 0 2.500 2.500"/></svg></div><h3>Baño y peluquería</h3><p>Baño medicado, corte higiénico y limpieza de oídos, con manejo tranquilo para perros y gatos nerviosos.</p><div class="pie"><span>desde</span><b>$20.000</b></div></article>
+      <article class="serv urg rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5M12 17h.01M10.300 3.900L2.400 18a2 2 0 0 0 1.700 3h15.800a2 2 0 0 0 1.700-3L13.700 3.900a2 2 0 0 0-3.400 0z"/></svg></div><h3>Urgencias</h3><p>Atención dentro del horario y guardia telefónica fuera de él. Llama antes de salir para dejar el pabellón listo.</p><div class="pie"><span>recargo desde</span><b>$30.000</b></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="agenda oscuro" id="agenda">
+  <div class="wrap">
+    <div class="intro rv">
+      <p class="sobre">Pedir hora</p>
+      <h2>Elige el día y <em>nosotros lo dejamos listo</em></h2>
+      <p>Arma tu solicitud en un minuto. Se envía por WhatsApp y te confirmamos el mismo día hábil.</p>
+      <ul>
+        <li>Los horarios tachados ya están tomados.</li>
+        <li>Si tu mascota está grave, no pidas hora: usa la sección “¿Es urgente?”.</li>
+        <li>Puedes llevar el carné de vacunas o una foto de él.</li>
+      </ul>
+    </div>
+    <form class="form rv" id="form" novalidate>
+      <fieldset class="paso"><legend>1 · Servicio</legend>
+        <div class="opc" id="o-serv"></div></fieldset>
+      <fieldset class="paso"><legend>2 · Tu mascota</legend>
+        <div class="opc">
+          <input type="radio" name="esp" id="e1" value="perro" checked><label for="e1">Perro</label>
+          <input type="radio" name="esp" id="e2" value="gato"><label for="e2">Gato</label>
+          <input type="radio" name="esp" id="e3" value="otro animal"><label for="e3">Otro</label>
+        </div></fieldset>
+      <fieldset class="paso"><legend>3 · Día</legend>
+        <div class="opc" id="o-dia"></div></fieldset>
+      <fieldset class="paso"><legend>4 · Hora</legend>
+        <div class="opc horas" id="o-hora"></div></fieldset>
+      <div class="paso campo"><label class="t" for="nom">5 · Nombre de tu mascota</label>
+        <input type="text" id="nom" autocomplete="off" placeholder="Ej.: Canela" maxlength="30"></div>
+      <div class="resumen"><span id="res-txt">Elige un servicio y un horario.</span><b id="total">$0</b></div>
+      <a class="btn wsp" id="enviar" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2z"/></svg>Enviar solicitud por WhatsApp</a>
+      <p class="nota">Valores referenciales. El precio final lo confirma el equipo.</p>
+    </form>
+  </div>
+</section>
+
+<section class="triage" id="triage">
+  <div class="wrap">
+    <div class="rv">
+      <p class="sobre">Guía rápida</p>
+      <h2>¿Es <em>urgente</em>?</h2>
+      <p style="color:var(--suave);font-size:18px;margin-top:14px">Marca lo que estás viendo y te decimos con qué prioridad conviene venir. Es una orientación y no reemplaza la consulta.</p>
+      <fieldset class="sint" id="sint" style="border:0"><legend class="sobre" style="margin-bottom:10px">Qué observas</legend></fieldset>
+    </div>
+    <div class="veredicto rv" id="ver" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="equipo" id="equipo">
+  <div class="wrap">
+    <div class="cab rv">
+      <p class="sobre">Equipo</p>
+      <h2>Las personas <em>detrás de cada ficha</em></h2>
+      <p>Perfiles de ejemplo con nombres ficticios.</p>
+    </div>
+    <div class="eq">
+      <article class="vet rv"><div class="av" aria-hidden="true">FO</div><div><h3>Dra. Francisca Orellana</h3><p class="rol">Directora médica · medicina interna</p></div><p>Lleva la consulta de adultos y seniors. Le gusta explicar cada examen con calma y por escrito.</p><div class="etq"><span>Medicina interna</span><span>Ecografía</span></div></article>
+      <article class="vet rv"><div class="av" aria-hidden="true">TQ</div><div><h3>Dr. Tomás Quezada</h3><p class="rol">Cirugía y urgencias</p></div><p>Encargado de pabellón y de la guardia telefónica. Atiende también a animales de campo cercanos.</p><div class="etq"><span>Cirugía</span><span>Urgencias</span></div></article>
+      <article class="vet rv"><div class="av" aria-hidden="true">MP</div><div><h3>Camila Paillalef</h3><p class="rol">Técnica veterinaria · peluquería</p></div><p>Cuida a los más nerviosos: baños sin prisa, corte higiénico y primer contacto amable con cachorros.</p><div class="etq"><span>Cachorros</span><span>Peluquería</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="planes">
+  <div class="wrap">
+    <div class="cab rv">
+      <p class="sobre">Planes de cuidado</p>
+      <h2>Prevenir sale <em>más barato</em></h2>
+      <p>Pagas una cuota mensual y tienes controles, vacunas y descuentos incluidos durante el año.</p>
+    </div>
+    <div class="planes">
+      <article class="plan rv"><h3>Cachorro</h3><p class="para">Primer año de vida</p><div class="pr">$14.900<small> /mes</small></div><ul><li>Esquema de vacunas completo</li><li>Desparasitación programada</li><li>4 controles de crecimiento</li><li>Guía de alimentación y adiestramiento básico</li></ul><a class="btn" href="#agenda">Pedir hora</a></article>
+      <article class="plan dest rv"><span class="tag">El más elegido</span><h3>Adulto</h3><p class="para">De 1 a 7 años</p><div class="pr">$12.900<small> /mes</small></div><ul><li>Control anual con examen completo</li><li>Vacunas y desparasitación al día</li><li>10 % en laboratorio y ecografía</li><li>Recordatorios por WhatsApp</li></ul><a class="btn" href="#agenda">Pedir hora</a></article>
+      <article class="plan rv"><h3>Senior</h3><p class="para">Desde los 7 años</p><div class="pr">$17.900<small> /mes</small></div><ul><li>2 controles al año con perfil bioquímico</li><li>Revisión de articulaciones y dientes</li><li>15 % en laboratorio y ecografía</li><li>Línea directa con el equipo médico</li></ul><a class="btn" href="#agenda">Pedir hora</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="pac">
+  <div class="wrap">
+    <div class="cab rv">
+      <p class="sobre">Pacientes</p>
+      <h2>Algunas caras <em>que nos alegran el día</em></h2>
+    </div>
+    <div class="pacs">
+      <figure class="pc rv"><div style="aspect-ratio:4/3"><img src="img/lola.jpg" alt="Lola, una beagle sonriente mirando a la cámara" loading="lazy"></div><div class="tx"><span class="ejemplo">Opinión de ejemplo</span><blockquote>“Lola llega moviendo la cola hasta la puerta del box. Eso lo dice todo.”</blockquote><cite><b>Lola y su familia</b>Paillaco</cite></div></figure>
+      <figure class="pc rv"><div style="aspect-ratio:4/3"><img src="img/bruno.jpg" alt="Cachorro golden retriever sentado con un tulipán en el hocico" loading="lazy" style="object-position:50% 35%"></div><div class="tx"><span class="ejemplo">Opinión de ejemplo</span><blockquote>“El plan cachorro nos ordenó todo: vacunas, comida y hasta los horarios de paseo.”</blockquote><cite><b>Bruno y su familia</b>Río Bueno</cite></div></figure>
+      <figure class="pc rv"><div style="aspect-ratio:4/3"><img src="img/toby.jpg" alt="Perro border collie café y blanco con la lengua afuera" loading="lazy"></div><div class="tx"><span class="ejemplo">Opinión de ejemplo</span><blockquote>“Me explicaron la ecografía con dibujos y me mandaron el resumen por WhatsApp.”</blockquote><cite><b>Toby y su familia</b>La Unión</cite></div></figure>
+    </div>
+  </div>
+</section>
+
+<section class="ubi" id="ubicacion">
+  <div class="wrap">
+    <div class="rv">
+      <p class="sobre">Dónde y cuándo</p>
+      <h2>Estamos en <em>Río Bueno</em></h2>
+      <table class="horario" id="horario">
+        <caption class="sobre" style="text-align:left;caption-side:top;margin-bottom:4px">Horario de atención</caption>
+        <tbody>
+          <tr data-d="1"><th scope="row">Lunes</th><td>09:00 – 19:00</td></tr>
+          <tr data-d="2"><th scope="row">Martes</th><td>09:00 – 19:00</td></tr>
+          <tr data-d="3"><th scope="row">Miércoles</th><td>09:00 – 19:00</td></tr>
+          <tr data-d="4"><th scope="row">Jueves</th><td>09:00 – 19:00</td></tr>
+          <tr data-d="5"><th scope="row">Viernes</th><td>09:00 – 19:00</td></tr>
+          <tr data-d="6"><th scope="row">Sábado</th><td>10:00 – 14:00</td></tr>
+          <tr data-d="0"><th scope="row">Domingo</th><td>Solo guardia</td></tr>
+        </tbody>
+      </table>
+      <div class="datos">
+        <p><b>Dirección:</b> Calle Ejemplo 123, Río Bueno (dirección ficticia)</p>
+        <p><b>WhatsApp y guardia:</b> +56 9 5555 0189 (ficticio)</p>
+        <p><b>Estacionamiento:</b> frente a la clínica, con acceso para sillas de ruedas.</p>
+      </div>
+    </div>
+    <div class="mapa rv" role="img" aria-label="Mapa ilustrativo: la clínica está en una esquina cerca de la plaza, a una cuadra del río">
+      <svg viewBox="0 0 520 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="520" height="420" fill="#d5eee3"/>
+        <path d="M-10 330C90 300 150 360 250 335S420 290 540 330V430H-10z" fill="#a9d7e6"/>
+        <path d="M-10 330C90 300 150 360 250 335S420 290 540 330" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/>
+        <g fill="#fff"><rect x="0" y="90" width="520" height="30"/><rect x="0" y="210" width="520" height="26"/><rect x="110" y="0" width="28" height="330"/><rect x="330" y="0" width="30" height="330"/></g>
+        <g fill="#bde0cf"><rect x="150" y="130" width="168" height="68" rx="10"/><rect x="372" y="130" width="120" height="68" rx="10"/><rect x="20" y="130" width="76" height="68" rx="10"/><rect x="150" y="20" width="168" height="56" rx="10"/><rect x="372" y="20" width="120" height="56" rx="10"/><rect x="20" y="20" width="76" height="56" rx="10"/><rect x="150" y="250" width="168" height="50" rx="10"/></g>
+        <circle cx="234" cy="164" r="22" fill="#9fd1a7"/>
+        <g transform="translate(432 160)"><circle r="28" fill="#0d3b3a" opacity=".12"/><path d="M-5-14h10v9h9v10h-9v9h-10v-9h-9v-10h9z" fill="#0d3b3a"/><circle cx="0" cy="0" r="3" fill="#d9f26b"/></g>
+        <text x="234" y="169" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#0d3b3a">Plaza</text>
+        <text x="260" y="360" text-anchor="middle" font-family="sans-serif" font-size="13" font-style="italic" fill="#0d3b3a">río</text>
+      </svg>
+      <div class="pie">Mapa ilustrativo</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="preguntas">
+  <div class="wrap">
+    <div class="cab rv" style="margin-bottom:30px">
+      <p class="sobre">Preguntas frecuentes</p>
+      <h2>Lo que más <em>nos preguntan</em></h2>
+    </div>
+    <details class="rv"><summary>¿Atienden sin hora previa?</summary><p>Sí, cuando hay espacio, pero con hora te atendemos antes y sin esperar. En urgencias llama primero: así preparamos todo antes de que llegues.</p></details>
+    <details class="rv"><summary>¿Cómo pago?</summary><p>Aceptamos efectivo, transferencia y tarjetas. Los planes de cuidado se pagan con cuota mensual.</p></details>
+    <details class="rv"><summary>¿Atienden gatos y animales exóticos?</summary><p>Sí, atendemos gatos en un box separado y tranquilo. Para conejos, aves y otros animales, escríbenos antes para confirmar que podemos ayudarte.</p></details>
+    <details class="rv"><summary>¿Qué llevo a la primera consulta?</summary><p>El carné de vacunas si lo tienes, cualquier examen anterior y el nombre del alimento que come. Los gatos deben llegar en transportadora.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="logo" href="#" aria-label="Weñi, volver arriba"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#d9f26b"/><path d="M16.500 8h7v8.500H32v7h-8.500V32h-7v-8.500H8v-7h8.500z" fill="#0d3b3a"/></svg><span>Weñi<small>Clínica veterinaria</small></span></a><p>Clínica veterinaria de ejemplo en Río Bueno, Región de Los Ríos. Weñi significa “amigo” en mapudungun.</p></div>
+    <div><h4>Contacto</h4><p>+56 9 5555 0189<br>hola@ejemplo.invalid</p></div>
+    <div><h4>Síguenos</h4><p>@weni.veterinaria<br>(ficticio)</p></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var cl=function(n){return '$'+n.toLocaleString('es-CL')};
+  var SERV=[
+    {id:'consulta',n:'Consulta general',p:18000,d:'30 min'},
+    {id:'vacuna',n:'Vacuna y control',p:22000,d:'20 min'},
+    {id:'lab',n:'Laboratorio',p:19000,d:'15 min'},
+    {id:'eco',n:'Ecografía',p:35000,d:'30 min'},
+    {id:'peluq',n:'Baño y corte',p:20000,d:'60 min'},
+    {id:'cirugia',n:'Evaluación de cirugía',p:18000,d:'30 min'}
+  ];
+  var DIAS=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  var DC=['dom','lun','mar','mié','jue','vie','sáb'];
+  var MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+
+  /* Fecha y hora de Chile */
+  function ahoraCL(){
+    var p={};new Intl.DateTimeFormat('en-CA',{timeZone:'America/Santiago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+    var d=new Date(Date.UTC(+p.year,+p.month-1,+p.day));
+    return {y:+p.year,m:+p.month-1,d:+p.day,min:(+p.hour)*60+(+p.minute),dow:d.getUTCDay(),t:d};
+  }
+  function franjas(dow){
+    if(dow===0)return [];
+    if(dow===6)return [[600,840]];
+    return [[540,1140]];
+  }
+  function abierto(a){var f=franjas(a.dow);return f.some(function(r){return a.min>=r[0]&&a.min<r[1]})}
+  function hh(m){return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')}
+
+  /* Estado de la clínica */
+  var ahora=ahoraCL(),est=document.getElementById('estado'),et=document.getElementById('estado-txt');
+  if(abierto(ahora)){et.textContent='Abierto ahora · hasta las '+hh(franjas(ahora.dow)[0][1]);}
+  else{est.classList.add('cerrado');
+    var prox=null;
+    for(var i=0;i<8&&prox===null;i++){var dw=(ahora.dow+i)%7,f=franjas(dw);
+      if(f.length&&(i>0||ahora.min<f[0][0])){prox=(i===0?'hoy':i===1?'mañana':DIAS[dw])+' a las '+hh(f[0][0]);}}
+    et.textContent='Cerrado · atendemos '+prox+' · guardia telefónica activa';}
+  document.querySelectorAll('#horario tr').forEach(function(tr){if(+tr.dataset.d===ahora.dow)tr.classList.add('hoy')});
+
+  /* Agenda */
+  var oServ=document.getElementById('o-serv'),oDia=document.getElementById('o-dia'),oHora=document.getElementById('o-hora');
+  oServ.innerHTML=SERV.map(function(s,i){return '<input type="radio" name="serv" id="s'+i+'" value="'+s.id+'"'+(i===0?' checked':'')+'><label for="s'+i+'">'+s.n+'<small>'+cl(s.p)+' · '+s.d+'</small></label>'}).join('');
+  var dias=[];
+  for(var k=0;k<10&&dias.length<6;k++){
+    var dt=new Date(ahora.t.getTime()+k*86400000),dw=dt.getUTCDay();
+    if(dw===0)continue;
+    if(k===0&&ahora.min>=franjas(dw)[0][1]-30)continue;
+    dias.push({dt:dt,dw:dw,k:k,key:dt.toISOString().slice(0,10)});
+  }
+  oDia.innerHTML=dias.map(function(d,i){return '<input type="radio" name="dia" id="d'+i+'" value="'+i+'"'+(i===0?' checked':'')+'><label for="d'+i+'">'+(d.k===0?'Hoy':d.k===1?'Mañana':DC[d.dw])+'<small>'+d.dt.getUTCDate()+' '+MES[d.dt.getUTCMonth()]+'</small></label>'}).join('');
+  function tomado(key,m){var h=0,s=key+m;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h%100<34}
+  function pintaHoras(){
+    var i=+document.querySelector('[name=dia]:checked').value,d=dias[i],f=franjas(d.dw)[0],out='',prev=document.querySelector('[name=hora]:checked');
+    var pv=prev?prev.value:null,ok=false;
+    for(var m=f[0];m<f[1];m+=30){
+      var pasado=d.k===0&&m<=ahora.min+30;
+      var dis=pasado||tomado(d.key,m);
+      if(!dis&&pv===String(m))ok=true;
+      out+='<input type="radio" name="hora" id="h'+m+'" value="'+m+'"'+(dis?' disabled':'')+'><label for="h'+m+'">'+hh(m)+'</label>';
+    }
+    oHora.innerHTML=out;
+    var el=ok?document.getElementById('h'+pv):oHora.querySelector('input:not(:disabled)');
+    if(el)el.checked=true;
+    resumen();
+  }
+  function resumen(){
+    var s=SERV.filter(function(x){return x.id===document.querySelector('[name=serv]:checked').value})[0];
+    var d=dias[+document.querySelector('[name=dia]:checked').value],h=document.querySelector('[name=hora]:checked');
+    var esp=document.querySelector('[name=esp]:checked').value,nom=document.getElementById('nom').value.trim();
+    var fecha=DIAS[d.dw]+' '+d.dt.getUTCDate()+' de '+['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][d.dt.getUTCMonth()];
+    document.getElementById('total').textContent=cl(s.p);
+    var tx=h?s.n+' · '+fecha+', '+hh(+h.value):'No quedan horas libres ese día; elige otro.';
+    document.getElementById('res-txt').textContent=tx;
+    var msg='¡Hola Weñi! Quiero pedir una hora:\n• Servicio: '+s.n+' ('+cl(s.p)+')\n• Mascota: '+esp+(nom?' ('+nom+')':'')+'\n• Día: '+(h?fecha+', '+hh(+h.value):fecha+' (sin hora elegida)')+'\n¿Me confirman por favor?';
+    document.getElementById('enviar').href='https://wa.me/56955550189?text='+encodeURIComponent(msg);
+  }
+  document.getElementById('form').addEventListener('change',function(e){if(e.target.name==='dia')pintaHoras();else resumen()});
+  document.getElementById('nom').addEventListener('input',resumen);
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault()});
+  pintaHoras();
+
+  /* Guía de urgencia */
+  var SINT=[
+    {t:'Le cuesta respirar, tiene las encías pálidas o convulsiona',n:3},
+    {t:'Fue atropellado, se cayó de altura o recibió un golpe fuerte',n:3},
+    {t:'Vómitos o diarrea que se repiten por más de un día',n:2},
+    {t:'Cojea o no apoya una pata',n:2},
+    {t:'Se rasca mucho o sacude la cabeza; la oreja huele mal',n:1},
+    {t:'Come menos que antes, pero juega y toma agua',n:1}
+  ];
+  var VER={
+    0:{c:'n1',ni:'Sin datos todavía',h:'Marca lo que estás viendo',p:'Con eso te sugerimos con qué prioridad pedir hora. Si dudas, escríbenos: siempre es mejor consultar.',b:'Escribir a la clínica',w:'Hola Weñi, tengo una duda sobre mi mascota.'},
+    1:{c:'n1',ni:'Prioridad baja',h:'Pide hora en los próximos días',p:'No parece una emergencia, pero conviene revisarlo. Pide una consulta general y lleva anotado desde cuándo ocurre.',b:'Pedir hora',a:'#agenda',w:null},
+    2:{c:'n2',ni:'Prioridad media',h:'Que lo vea un veterinario hoy o mañana',p:'Estos síntomas pueden empeorar. Escríbenos para encontrarte un espacio cuanto antes y evita darle medicamentos humanos.',b:'Pedir hora para hoy',w:'Hola Weñi, mi mascota tiene síntomas que conviene revisar hoy o mañana. ¿Tienen hora?'},
+    3:{c:'n3',ni:'Urgencia',h:'Llama y ven ahora',p:'No esperes a pedir hora por el formulario. Llama a la clínica o a la guardia mientras vienes en camino, así dejamos listo el pabellón.',b:'Avisar por WhatsApp ahora',w:'URGENCIA: voy en camino con mi mascota. Necesito atención inmediata.'}
+  };
+  var cont=document.getElementById('sint');
+  cont.insertAdjacentHTML('beforeend',SINT.map(function(s,i){return '<label><input type="checkbox" value="'+s.n+'" id="x'+i+'"><span>'+s.t+'</span></label>'}).join(''));
+  function veredicto(){
+    var mx=0;cont.querySelectorAll('input:checked').forEach(function(c){mx=Math.max(mx,+c.value)});
+    var v=VER[mx],box=document.getElementById('ver');
+    box.className='veredicto '+v.c;
+    var href=v.a||('https://wa.me/56955550189?text='+encodeURIComponent(v.w));
+    box.innerHTML='<span class="ni">'+v.ni+'</span><h3>'+v.h+'</h3><p>'+v.p+'</p><a class="btn'+(mx===3?'':' osc')+'" href="'+href+'"'+(v.a?'':' target="_blank" rel="noopener"')+'>'+v.b+'</a><small>Orientación general de este sitio de ejemplo. No reemplaza la evaluación de un veterinario.</small>';
+    if(mx===3){var b=box.querySelector('.btn');b.style.background='#fff';b.style.color='#7a2412';b.style.boxShadow='0 4px 0 rgba(0,0,0,.3)'}
+  }
+  cont.addEventListener('change',veredicto);veredicto();
+
+  /* Aparición suave */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+</body>
+</html>
