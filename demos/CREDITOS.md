@@ -133,3 +133,7 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 
 - `cerveceria` portada y "Después del turno" — https://images.unsplash.com/photo-1782226796423-8d72656a332c
 - `cerveceria` "El sur que nos inspira" — https://images.unsplash.com/photo-1775155636890-9d688754bdff
+
+## Barbería Tricahue
+
+- `barberia` no usa fotografías (ilustraciones SVG/CSS propias).

@@ -1,5 +1,33 @@
 # Registro de cambios
 
+## 2026-11-03 (mejora diaria + demo nueva: barbería)
+
+Esta rama parte de la rama de la solicitud abierta #26 (cervecería, 2-nov), que incluye la #25, #24 y #22. La #27 (panel de fotos de Celeste) es de propuestas de clientes y no toca el portafolio, así que no se usó como base.
+
+### Currículum (`index.html`) — 3 mejoras, sin tocar contenido
+- `autocomplete="organization"` en el campo "Negocio u organización" del formulario de contacto.
+- Metaetiqueta `color-scheme: light` para que el navegador no aplique modo oscuro automático a controles del formulario.
+- Cifras tabulares en las fechas de experiencia y estudios (alineación más ordenada).
+
+### Portafolio y demos existentes (auditoría con axe-core + Playwright a 320, 390 y 1440 px)
+- Mascotas y veterinaria: el botón de la barra superior perdía su nombre accesible en móvil (se oculta el texto); se agregó `aria-label`.
+- Cafetería: el texto decorativo "Grano & Calma" se marcó `aria-hidden` (axe sigue avisando su bajo contraste, es ornamento intencional).
+- Revisión de las 15 páginas: sin desplazamiento horizontal, sin errores de JavaScript, sin 404, todas con aviso de datos ficticios. HTML bajo 60 KB.
+
+### Demo nueva: `barberia/` — Barbería Tricahue (Paillaco, ficticia)
+- Identidad: azul tinta, rojo de poste de barbero, hueso y oro; tipografías Alfa Slab One, Barlow y Barlow Condensed; poste de barbero animado en SVG.
+- Funciones: estado abierto/cerrado con hora de Chile y día resaltado; carta con precios en CLP; reserva por servicios (varios), barbero, día y hora con horarios tomados tachados, total y duración, y envío por WhatsApp; preguntas frecuentes.
+- Secciones: portada, propuesta, carta, reserva, barberos (nombres ficticios), opiniones rotuladas como ejemplo, mapa ilustrativo en SVG, horario y pie.
+- Fotos: `images.unsplash.com` sigue bloqueado (403) desde el entorno y no hay fotos verificadas de barbería, por lo que esta demo no usa fotografías: todo es SVG/CSS. Anotado como pendiente.
+- Tarjeta y captura (`demos/img/barberia.jpg`, 88 KB) en el portafolio; cifra actualizada a 14 diseños.
+
+### Sugerencias pendientes para René
+- Cuando se habilite Unsplash, sumar fotos reales de barbería (sillón, navaja, fade) a Tricahue y regenerar la captura.
+- Verifica que el nombre "Tricahue" no coincida con una barbería real antes de mostrarlo a clientes.
+- Las capturas se generan sin Google Fonts, por eso muestran tipografía de reemplazo; en el sitio real se ve la definitiva.
+- Siguen pendientes las sugerencias del 1-nov: etiqueta `main` en cafetería, gimnasio, plantas, sushi y velas; ARIA en Estrella Austral; `og:image` del currículum.
+- Hay 5 solicitudes de mejora abiertas encadenadas (#22, #24, #25, #26 y esta); basta fusionar la última para incluir todas.
+
 ## 2026-11-02 (mejora diaria + demo nueva: cervecería artesanal)
 
 Esta rama parte de la rama de la solicitud abierta #25 (veterinaria, 1-nov), que incluye la #24 (kayak) y la #22 (panadería), para no duplicar demos ni generar conflictos.

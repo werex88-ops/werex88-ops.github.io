@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbería Tricahue · Paillaco</title>
+<meta name="description" content="Barbería en Paillaco: cortes clásicos y degradados, barba con toalla caliente y reserva de hora por WhatsApp. Sitio de ejemplo con datos ficticios.">
+<meta name="theme-color" content="#111d33">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111d33'/%3E%3Crect x='24' y='8' width='16' height='48' rx='8' fill='%23f4efe4'/%3E%3Cpath d='M24 20l16-8v8l-16 8zM24 36l16-8v8l-16 8z' fill='%23d6342b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--tinta:#111d33;--tinta2:#1b2c4d;--hueso:#f4efe4;--papel:#fbf8f1;--rojo:#d6342b;--rojo-t:#b4231b;--oro:#e0b45a;--gris:#4f5a70;--linea:#ddd5c3}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:'Barlow',system-ui,sans-serif;background:var(--hueso);color:var(--tinta);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Alfa Slab One',Georgia,serif;font-weight:400;line-height:1.08;text-wrap:balance}
+h2{font-size:clamp(30px,4.4vw,52px)}
+p{text-wrap:pretty}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--rojo);outline-offset:3px;border-radius:6px}
+.osc a:focus-visible,.osc button:focus-visible,.osc input:focus-visible,.osc summary:focus-visible{outline-color:var(--oro)}
+.saltar{position:absolute;left:12px;top:-60px;background:var(--tinta);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.saltar:focus{top:12px}
+.sobre{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:var(--rojo-t);display:flex;align-items:center;gap:12px}
+.sobre::before{content:"";width:34px;height:8px;border-radius:2px;background:repeating-linear-gradient(135deg,var(--rojo) 0 6px,var(--hueso) 6px 12px,var(--tinta) 12px 18px)}
+.osc .sobre{color:var(--oro)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--rojo);color:#fff;padding:15px 28px;border:2px solid var(--rojo);border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.1em;text-transform:uppercase;transition:transform .25s,background .25s,color .25s}
+.btn:hover{transform:translateY(-2px);background:var(--rojo-t);border-color:var(--rojo-t)}
+.btn.lin{background:transparent;color:inherit;border-color:currentColor}
+.btn.lin:hover{background:var(--hueso);color:var(--tinta);border-color:var(--hueso)}
+.btn.wsp{background:#25d366;border-color:#25d366;color:#06301a}
+.btn svg{width:20px;height:20px;fill:currentColor}
+section{padding:96px 0}
+
+.top{position:sticky;top:0;z-index:50;background:rgba(17,29,51,.96);color:var(--hueso);backdrop-filter:blur(8px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Alfa Slab One',serif;font-size:20px;letter-spacing:.01em}
+.logo svg{width:22px;height:40px}
+.logo small{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--oro);line-height:1}
+.menu{display:flex;gap:26px;list-style:none;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:17px;letter-spacing:.1em;text-transform:uppercase}
+.menu a:hover{color:var(--oro)}
+.top .btn{padding:9px 20px;font-size:16px}
+
+.hero{background:var(--tinta);color:var(--hueso);padding:64px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.025) 22px 23px)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+.estado{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(244,239,228,.3);padding:6px 14px;border-radius:999px;font-size:14px;font-weight:600}
+.estado i{width:10px;height:10px;border-radius:50%;background:#3fcf7a;animation:pulso 2.4s infinite}
+.estado.cerrado i{background:#ff7d73;animation:none}
+@keyframes pulso{70%{box-shadow:0 0 0 9px rgba(63,207,122,0)}0%{box-shadow:0 0 0 0 rgba(63,207,122,.5)}100%{box-shadow:0 0 0 0 rgba(63,207,122,0)}}
+.hero h1{font-size:clamp(42px,6.6vw,86px);margin:22px 0 20px}
+.hero h1 em{font-style:normal;color:var(--oro)}
+.hero .baj{font-size:19px;max-width:520px;color:#d9dfeb}
+.acc{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.cifras{display:flex;flex-wrap:wrap;gap:34px;margin-top:44px;padding-top:26px;border-top:1px solid rgba(244,239,228,.2)}
+.cifras b{display:block;font-family:'Alfa Slab One',serif;font-weight:400;font-size:28px;color:var(--oro);line-height:1.1}
+.cifras span{font-size:14px;color:#c9d1e0}
+.poste{display:flex;justify-content:center;position:relative}
+.poste svg{width:min(100%,330px);height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.franja{animation:gira 2.6s linear infinite}
+@keyframes gira{to{transform:translateY(36px)}}
+.sello{position:absolute;right:2%;bottom:6%;width:128px;height:128px;border-radius:50%;background:var(--oro);color:var(--tinta);display:grid;place-items:center;text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;line-height:1.15;transform:rotate(-10deg);box-shadow:0 0 0 5px var(--tinta),0 0 0 7px var(--oro)}
+.sello b{display:block;font-family:'Alfa Slab One',serif;font-weight:400;font-size:30px;letter-spacing:0}
+
+.cab{max-width:640px;margin-bottom:48px}
+.cab h2{margin:14px 0 14px}
+.cab p{color:var(--gris);font-size:18px}
+.valores{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.val{background:var(--papel);border:1px solid var(--linea);border-radius:6px;padding:32px 28px;position:relative}
+.val .n{font-family:'Alfa Slab One',serif;font-size:44px;color:var(--rojo);line-height:1}
+.val h3{font-size:22px;margin:14px 0 8px}
+.val p{color:var(--gris)}
+
+.carta{background:var(--papel);border-block:1px solid var(--linea)}
+.lista{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.item{display:flex;align-items:baseline;gap:12px;padding:20px 0;border-bottom:1px dashed #bdb39b}
+.item h3{font-size:20px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.item .pt{flex:1;border-bottom:2px dotted #b5ab94;transform:translateY(-4px);min-width:16px}
+.item .pr{font-family:'Alfa Slab One',serif;font-size:20px;color:var(--rojo-t)}
+.item small{display:block;width:100%;order:5;color:var(--gris);font-size:15px;margin-top:2px}
+.item{flex-wrap:wrap}
+.nota{margin-top:26px;color:var(--gris);font-size:15px}
+
+.reserva{background:var(--tinta);color:var(--hueso)}
+.reserva .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.reserva .intro p{color:#d0d7e5;font-size:18px;margin:14px 0 22px}
+.reserva .intro h2{margin-top:14px}
+.reserva ul{list-style:none;display:grid;gap:10px;color:#c9d1e0;font-size:16px}
+.reserva li{padding-left:26px;position:relative}
+.reserva li::before{content:"✂";position:absolute;left:0;color:var(--oro)}
+.form{background:var(--hueso);color:var(--tinta);border-radius:8px;padding:32px;display:grid;gap:22px}
+fieldset{border:0}
+legend{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.14em;text-transform:uppercase;color:var(--rojo-t);margin-bottom:10px}
+.opc{display:flex;flex-wrap:wrap;gap:8px}
+.opc input{position:absolute;opacity:0;pointer-events:none}
+.opc label{border:2px solid var(--linea);background:#fff;border-radius:4px;padding:8px 14px;font-weight:600;font-size:15px;cursor:pointer;transition:background .2s,border-color .2s}
+.opc label small{display:block;font-weight:500;color:var(--gris);font-size:13px;line-height:1.2}
+.opc input:checked+label{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.opc input:checked+label small{color:#c9d1e0}
+.opc input:focus-visible+label{outline:3px solid var(--rojo);outline-offset:2px}
+.opc input:disabled+label{opacity:.55;text-decoration:line-through;cursor:not-allowed;background:#ece6d7}
+.fila{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.campo label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}
+.campo input{width:100%;padding:12px 13px;border:2px solid var(--linea);border-radius:4px;background:#fff;font-size:16px}
+.resumen{background:var(--tinta);color:var(--hueso);border-radius:6px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.resumen p{font-size:15px;color:#d0d7e5}
+.resumen b{display:block;font-family:'Alfa Slab One',serif;font-weight:400;font-size:30px;color:var(--oro);line-height:1.1}
+.msj{font-size:14px;color:var(--rojo-t);min-height:20px;font-weight:600}
+.pie-form{font-size:13px;color:var(--gris)}
+
+.equipo .fila3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.bar{background:var(--papel);border:1px solid var(--linea);border-radius:6px;overflow:hidden}
+.bar .av{height:170px;display:grid;place-items:center;position:relative;color:#fff}
+.bar .av span{font-family:'Alfa Slab One',serif;font-size:64px;letter-spacing:.02em}
+.bar:nth-child(1) .av{background:var(--tinta2)}
+.bar:nth-child(2) .av{background:var(--rojo-t)}
+.bar:nth-child(3) .av{background:#5a4b22}
+.bar .tx{padding:22px 24px 26px}
+.bar h3{font-size:22px}
+.bar .rol{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:var(--rojo-t);margin:4px 0 10px}
+.bar p{color:var(--gris);font-size:16px}
+
+.opiniones{background:var(--papel);border-block:1px solid var(--linea)}
+.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.op{background:#fff;border:1px solid var(--linea);border-radius:6px;padding:26px}
+.op .est{color:#a77712;letter-spacing:.2em;font-size:18px}
+.op p{margin:10px 0 16px;font-size:17px}
+.op footer{display:flex;align-items:center;gap:12px;font-size:15px}
+.op footer i{width:38px;height:38px;border-radius:50%;background:var(--tinta);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700}
+.op footer small{display:block;color:var(--gris);font-size:13px}
+
+.ubic .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.mapa{background:#e9e2d0;border:1px solid var(--linea);border-radius:8px;overflow:hidden}
+.mapa svg{width:100%;height:auto}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+td{padding:10px 4px;border-bottom:1px solid var(--linea);font-size:17px}
+td:last-child{text-align:right;font-weight:600}
+tr.hoy td{background:var(--tinta);color:var(--hueso);padding-inline:12px}
+.datos p{margin-bottom:8px}
+
+.faq{background:var(--tinta);color:var(--hueso)}
+.faq .cab p{color:#c9d1e0}
+details{border-top:1px solid rgba(244,239,228,.25);padding:18px 0}
+details:last-of-type{border-bottom:1px solid rgba(244,239,228,.25)}
+summary{cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:21px;letter-spacing:.06em;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--oro);font-size:26px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:#d0d7e5;max-width:720px}
+
+footer.pie{background:#0a1224;color:#c9d1e0;padding:48px 0 90px;font-size:15px}
+footer.pie .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+footer.pie h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:8px;font-size:15px}
+.legal{grid-column:1/-1;border-top:1px solid rgba(244,239,228,.15);padding-top:18px;font-size:13px;color:#9aa5bc}
+
+.wa-flot{position:fixed;right:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#06301a;font-weight:700;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.wa-flot svg{width:24px;height:24px;fill:currentColor}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.visto{opacity:1;transform:none}
+@media (max-width:960px){
+  .menu{display:none}
+  .hero .wrap,.reserva .grid,.ubic .grid{grid-template-columns:1fr}
+  .poste{order:-1;max-height:280px}
+  .poste svg{width:auto;height:280px}
+  .sello{display:none}
+  .valores,.ops,.equipo .fila3{grid-template-columns:1fr}
+  .lista{grid-template-columns:1fr}
+  footer.pie .wrap{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  section{padding:64px 0}
+  .form{padding:22px 16px}
+  .fila{grid-template-columns:1fr}
+  .top .btn span{display:none}
+  .top .btn{padding:9px 14px}
+  .logo{font-size:17px}
+  .hero{padding:36px 0 64px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,.rv{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Barbería Tricahue, inicio">
+      <svg viewBox="0 0 22 40" aria-hidden="true"><rect x="3" y="4" width="16" height="32" rx="8" fill="#f4efe4"/><path d="M3 14l16-7v7L3 21zM3 27l16-7v7L3 34z" fill="#d6342b"/><rect x="5" y="0" width="12" height="5" rx="2" fill="#e0b45a"/><rect x="5" y="35" width="12" height="5" rx="2" fill="#e0b45a"/></svg>
+      <span>Tricahue<small>Barbería · Paillaco</small></span>
+    </a>
+    <ul class="menu">
+      <li><a href="#carta">Carta</a></li>
+      <li><a href="#reserva">Reservar</a></li>
+      <li><a href="#equipo">Barberos</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#ubicacion">Horario</a></li>
+    </ul>
+    <a class="btn" href="#reserva" aria-label="Reservar hora"><span>Reservar hora</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3zm-1 8v10h12V10zm2 2h3v3H8z"/></svg></a>
+  </div>
+</header>
+
+<main id="contenido">
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="rv">
+      <div class="estado" id="estado" role="status"><i></i><span id="estado-txt">Calculando horario…</span></div>
+      <h1>Corte limpio, barba <em>a navaja</em> y buena conversa.</h1>
+      <p class="baj">Barbería de barrio en Paillaco. Cortes clásicos y degradados, afeitado con toalla caliente y un sillón donde nadie te apura.</p>
+      <div class="acc">
+        <a class="btn" href="#reserva">Reservar mi hora</a>
+        <a class="btn lin" href="#carta">Ver la carta</a>
+      </div>
+      <div class="cifras">
+        <div><b>3 sillones</b><span>y 3 barberos de oficio</span></div>
+        <div><b>Desde $6.000</b><span>perfilado de barba</span></div>
+        <div><b>Mar a sáb</b><span>con hora o a tu turno</span></div>
+      </div>
+    </div>
+    <div class="poste rv" aria-hidden="true">
+      <svg viewBox="0 0 220 420">
+        <defs><clipPath id="cp"><rect x="40" y="60" width="140" height="300" rx="70"/></clipPath>
+        <linearGradient id="br" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset=".3" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient></defs>
+        <rect x="52" y="14" width="116" height="52" rx="14" fill="#e0b45a"/>
+        <rect x="52" y="354" width="116" height="52" rx="14" fill="#e0b45a"/>
+        <rect x="40" y="60" width="140" height="300" rx="70" fill="#f4efe4"/>
+        <g clip-path="url(#cp)"><g class="franja">
+          <g id="fr"><path d="M20-60L200 0V36L20-24z" fill="#d6342b"/><path d="M20-24L200 36V72L20 12z" fill="#1b2c4d"/></g>
+          <use href="#fr" y="72"/><use href="#fr" y="144"/><use href="#fr" y="216"/><use href="#fr" y="288"/><use href="#fr" y="360" /><use href="#fr" y="432"/>
+        </g></g>
+        <rect x="40" y="60" width="140" height="300" rx="70" fill="url(#br)"/>
+      </svg>
+      <div class="sello"><span>Desde<b>2014</b>(ficticio)</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="propuesta">
+  <div class="wrap">
+    <div class="cab rv">
+      <p class="sobre">La casa</p>
+      <h2>Oficio de barrio, <br>acabado de ciudad</h2>
+      <p>Aquí se viene a salir mejor de como se entró. Sin apuros, sin sorpresas en el precio.</p>
+    </div>
+    <div class="valores">
+      <article class="val rv"><div class="n">01</div><h3>Navaja y toalla caliente</h3><p>Cada barba termina con vapor, aceite y afeitado a navaja. Se nota desde la primera vez.</p></article>
+      <article class="val rv"><div class="n">02</div><h3>Hora que se respeta</h3><p>Reservas por WhatsApp y entras a tu hora. Si prefieres llegar sin cita, tomas turno y listo.</p></article>
+      <article class="val rv"><div class="n">03</div><h3>Precio claro</h3><p>Lo que ves en la carta es lo que pagas. Efectivo, débito, crédito y transferencia.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="carta" id="carta">
+  <div class="wrap">
+    <div class="cab rv">
+      <p class="sobre">Carta de servicios</p>
+      <h2>Lo que hacemos <br>en el sillón</h2>
+    </div>
+    <div class="lista rv" id="lista"></div>
+    <p class="nota">Precios referenciales en pesos chilenos, válidos solo para este sitio de ejemplo.</p>
+  </div>
+</section>
+
+<section class="reserva osc" id="reserva">
+  <div class="wrap grid">
+    <div class="intro rv">
+      <p class="sobre">Reservar hora</p>
+      <h2>Elige tu corte, <br>nosotros el sillón</h2>
+      <p>Arma tu hora en un minuto. Se envía por WhatsApp y te confirmamos antes de que acabe el día.</p>
+      <ul>
+        <li>Los horarios tachados ya están tomados.</li>
+        <li>Los tiempos son estimados; si pides corte y barba, se suman.</li>
+        <li>Puedes cancelar o mover tu hora hasta 2 horas antes.</li>
+      </ul>
+    </div>
+    <form class="form rv" id="form" novalidate>
+      <fieldset><legend>1 · Servicios</legend><div class="opc extras" id="o-serv"></div></fieldset>
+      <fieldset><legend>2 · Barbero</legend><div class="opc" id="o-bar"></div></fieldset>
+      <fieldset><legend>3 · Día</legend><div class="opc" id="o-dia"></div></fieldset>
+      <fieldset><legend>4 · Hora</legend><div class="opc" id="o-hora" aria-live="polite"></div></fieldset>
+      <div class="fila">
+        <div class="campo"><label for="nombre">Tu nombre</label><input id="nombre" autocomplete="given-name" placeholder="Ej.: Matías"></div>
+        <div class="campo"><label for="nota">Algo que debamos saber (opcional)</label><input id="nota" placeholder="Ej.: degradado bajo, tijera arriba"></div>
+      </div>
+      <div class="resumen"><p id="res-txt">Elige al menos un servicio.</p><div><p>Total estimado</p><b id="total">$0</b></div></div>
+      <p class="msj" id="msj" role="alert"></p>
+      <button class="btn wsp" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Enviar por WhatsApp</button>
+      <p class="pie-form">Se abrirá WhatsApp con tu solicitud ya escrita. Número de ejemplo: +56 9 5555 0142 (ficticio).</p>
+    </form>
+  </div>
+</section>
+
+<section class="equipo" id="equipo">
+  <div class="wrap">
+    <div class="cab rv">
+      <p class="sobre">Los barberos</p>
+      <h2>Tres manos, <br>tres estilos</h2>
+      <p>Nombres y perfiles de ejemplo. Cada barbero tiene su especialidad, y tú eliges con quién sentarte.</p>
+    </div>
+    <div class="fila3">
+      <article class="bar rv"><div class="av" aria-hidden="true"><span>K</span></div><div class="tx"><h3>Kino</h3><p class="rol">Clásico y navaja</p><p>Quince años con la tijera. Cortes de caballero, patillas rectas y afeitados que duran toda la semana.</p></div></article>
+      <article class="bar rv"><div class="av" aria-hidden="true"><span>L</span></div><div class="tx"><h3>Lalo</h3><p class="rol">Degradados</p><p>Fades bajos, medios y altos con transición perfecta. Le gustan los diseños con máquina bien medidos.</p></div></article>
+      <article class="bar rv"><div class="av" aria-hidden="true"><span>F</span></div><div class="tx"><h3>Fran</h3><p class="rol">Barba y niños</p><p>Paciencia con los más chicos y mano firme con las barbas largas. Perfilado y cuidado de piel.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="opiniones" id="opiniones">
+  <div class="wrap">
+    <div class="cab rv">
+      <p class="sobre">Clientes</p>
+      <h2>Lo que dicen <br>en el sillón</h2>
+      <p>Opiniones de ejemplo, escritas para este sitio de demostración. No son de personas reales.</p>
+    </div>
+    <div class="ops">
+      <article class="op rv"><div class="est" aria-label="5 de 5 estrellas">★★★★★</div><p>“Llegué diez minutos antes y ya estaba listo mi turno. Salí con el mejor degradado que me han hecho en la zona.”</p><footer><i aria-hidden="true">M</i><div>Matías (ejemplo)<small>Opinión de ejemplo</small></div></footer></article>
+      <article class="op rv"><div class="est" aria-label="5 de 5 estrellas">★★★★★</div><p>“El afeitado con toalla caliente es otra cosa. Reservé por WhatsApp y todo fue clarito, con el precio de antemano.”</p><footer><i aria-hidden="true">J</i><div>Jorge (ejemplo)<small>Opinión de ejemplo</small></div></footer></article>
+      <article class="op rv"><div class="est" aria-label="5 de 5 estrellas">★★★★★</div><p>“Mi hijo es muy inquieto y Fran tuvo toda la paciencia del mundo. Volvemos cada mes.”</p><footer><i aria-hidden="true">P</i><div>Paula (ejemplo)<small>Opinión de ejemplo</small></div></footer></article>
+    </div>
+  </div>
+</section>
+
+<section class="ubic" id="ubicacion">
+  <div class="wrap grid">
+    <div class="datos rv">
+      <p class="sobre">Dónde y cuándo</p>
+      <h2 style="margin:14px 0 16px">Pasa por <br>la esquina</h2>
+      <p>Calle Ficticia 123, Paillaco, Región de Los Ríos. A pasos de la plaza, con estacionamiento en la calle.</p>
+      <table id="horario" aria-label="Horario de atención">
+        <tr data-d="1"><td>Lunes</td><td>Cerrado</td></tr>
+        <tr data-d="2"><td>Martes</td><td>10:00 – 20:00</td></tr>
+        <tr data-d="3"><td>Miércoles</td><td>10:00 – 20:00</td></tr>
+        <tr data-d="4"><td>Jueves</td><td>10:00 – 20:00</td></tr>
+        <tr data-d="5"><td>Viernes</td><td>10:00 – 20:00</td></tr>
+        <tr data-d="6"><td>Sábado</td><td>10:00 – 18:00</td></tr>
+        <tr data-d="0"><td>Domingo</td><td>Cerrado</td></tr>
+      </table>
+      <p><b>WhatsApp:</b> +56 9 5555 0142 (ficticio)</p>
+    </div>
+    <div class="mapa rv">
+      <svg viewBox="0 0 520 420" role="img" aria-label="Mapa ilustrativo: la barbería está en la esquina de Calle Ficticia, a una cuadra de la plaza">
+        <rect width="520" height="420" fill="#e9e2d0"/>
+        <rect x="40" y="40" width="180" height="140" rx="6" fill="#d9d0b8"/><rect x="300" y="40" width="180" height="140" rx="6" fill="#d9d0b8"/>
+        <rect x="40" y="250" width="180" height="130" rx="6" fill="#d9d0b8"/><rect x="300" y="250" width="180" height="130" rx="6" fill="#d9d0b8"/>
+        <rect x="0" y="195" width="520" height="40" fill="#fbf8f1"/><rect x="238" y="0" width="46" height="420" fill="#fbf8f1"/>
+        <rect x="318" y="58" width="144" height="104" rx="10" fill="#b7cfa2"/><text x="390" y="116" text-anchor="middle" font-family="Barlow,sans-serif" font-size="15" font-weight="700" fill="#2e4a22">Plaza</text>
+        <text x="40" y="220" font-family="Barlow,sans-serif" font-size="13" fill="#4f5a70" font-weight="600">CALLE FICTICIA</text>
+        <circle cx="261" cy="215" r="26" fill="#d6342b" opacity=".22"/><circle cx="261" cy="215" r="13" fill="#d6342b" stroke="#fff" stroke-width="4"/>
+        <text x="261" y="262" text-anchor="middle" font-family="Barlow,sans-serif" font-size="17" font-weight="700" fill="#111d33">Barbería Tricahue</text>
+        <text x="500" y="410" text-anchor="end" font-family="Barlow,sans-serif" font-size="11" fill="#4f5a70">Mapa ilustrativo</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="faq osc" id="faq">
+  <div class="wrap">
+    <div class="cab rv"><p class="sobre">Preguntas frecuentes</p><h2>Antes de <br>sentarte</h2></div>
+    <details><summary>¿Atienden sin hora?</summary><p>Sí, por orden de llegada cuando hay sillón libre. Con reserva tienes tu espacio asegurado y no esperas.</p></details>
+    <details><summary>¿Cuánto dura un corte?</summary><p>Entre 30 y 45 minutos según el servicio. Corte con barba suma unos 25 minutos más.</p></details>
+    <details><summary>¿Cortan a niños?</summary><p>Sí, desde los 3 años. Fran atiende a los más chicos con calma y sin apuro.</p></details>
+    <details><summary>¿Qué medios de pago aceptan?</summary><p>Efectivo, débito, crédito y transferencia. En este sitio de ejemplo los valores son referenciales.</p></details>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div><h4>Barbería Tricahue</h4><p>Barbería de ejemplo en Paillaco. Negocio y datos ficticios, creados para mostrar una propuesta de diseño web.</p></div>
+    <div><h4>Contacto</h4><p>+56 9 5555 0142<br>hola@ejemplo.invalid</p></div>
+    <div><h4>Sigue la casa</h4><p>@barberiatricahue (ejemplo)</p></div>
+    <p class="legal">© 2026 Barbería Tricahue (ficticia). Diseño de ejemplo por Werex Studio.</p>
+  </div>
+</footer>
+
+<a class="wa-flot" href="https://wa.me/56955550142?text=Hola%2C%20quiero%20reservar%20una%20hora%20(ejemplo)." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg><span>WhatsApp</span></a>
+
+<script>
+(function(){
+  var cl=function(n){return '$'+n.toLocaleString('es-CL')};
+  var SERV=[
+    {id:'clasico',n:'Corte clásico',p:9000,m:40,d:'Tijera y máquina, lavado y peinado.'},
+    {id:'fade',n:'Degradado (fade)',p:10000,m:45,d:'Bajo, medio o alto, con terminación a navaja.'},
+    {id:'barba',n:'Perfilado de barba',p:6000,m:25,d:'Diseño de líneas, recorte y aceite.'},
+    {id:'afeitado',n:'Afeitado con toalla caliente',p:8500,m:30,d:'Vapor, espuma y navaja. El clásico.'},
+    {id:'combo',n:'Corte + barba',p:15000,m:65,d:'El combo de la casa, con descuento.'},
+    {id:'nino',n:'Corte niño (hasta 12)',p:7000,m:30,d:'Con calma y sin apuro.'},
+    {id:'color',n:'Cobertura de canas',p:14000,m:40,d:'Tono natural, en barba o pelo.'},
+    {id:'lavado',n:'Lavado y masaje',p:2000,m:10,d:'Extra para sumar a cualquier servicio.'}
+  ];
+  var BARB=['Cualquiera','Kino','Lalo','Fran'];
+  var DIAS=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  var DC=['dom','lun','mar','mié','jue','vie','sáb'];
+  var MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  function ahoraCL(){
+    var p={};new Intl.DateTimeFormat('en-CA',{timeZone:'America/Santiago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+    var d=new Date(Date.UTC(+p.year,+p.month-1,+p.day));
+    return {min:(+p.hour)*60+(+p.minute),dow:d.getUTCDay(),t:d};
+  }
+  function franja(dow){if(dow>=2&&dow<=5)return [600,1200];if(dow===6)return [600,1080];return null}
+  function hh(m){return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')}
+
+  var ahora=ahoraCL(),est=document.getElementById('estado'),et=document.getElementById('estado-txt');
+  var f=franja(ahora.dow);
+  if(f&&ahora.min>=f[0]&&ahora.min<f[1]){et.textContent='Abierto ahora · hasta las '+hh(f[1]);}
+  else{est.classList.add('cerrado');var prox='';
+    for(var i=0;i<8&&!prox;i++){var dw=(ahora.dow+i)%7,g=franja(dw);if(g&&(i>0||ahora.min<g[0]))prox=(i===0?'hoy':i===1?'mañana':'el '+DIAS[dw])+' a las '+hh(g[0]);}
+    et.textContent='Cerrado · abrimos '+prox;}
+  document.querySelectorAll('#horario tr').forEach(function(tr){if(+tr.dataset.d===ahora.dow)tr.classList.add('hoy')});
+
+  /* Carta */
+  document.getElementById('lista').innerHTML=SERV.map(function(s){
+    return '<div class="item"><h3>'+s.n+'</h3><span class="pt" aria-hidden="true"></span><span class="pr">'+cl(s.p)+'</span><small>'+s.d+' · '+s.m+' min</small></div>';}).join('');
+
+  /* Reserva */
+  var oS=document.getElementById('o-serv'),oB=document.getElementById('o-bar'),oD=document.getElementById('o-dia'),oH=document.getElementById('o-hora');
+  oS.innerHTML=SERV.map(function(s){return '<input type="checkbox" id="s-'+s.id+'" value="'+s.id+'"><label for="s-'+s.id+'">'+s.n+'<small>'+cl(s.p)+' · '+s.m+' min</small></label>'}).join('');
+  oB.innerHTML=BARB.map(function(b,i){return '<input type="radio" name="bar" id="b'+i+'" value="'+b+'"'+(i===0?' checked':'')+'><label for="b'+i+'">'+b+'</label>'}).join('');
+  var dias=[];
+  for(var k=0;dias.length<6&&k<14;k++){
+    var d=new Date(ahora.t.getTime()+k*864e5),dw=d.getUTCDay(),g=franja(dw);
+    if(!g)continue; if(k===0&&ahora.min>=g[1]-45)continue;
+    dias.push({k:k,dw:dw,d:d.getUTCDate(),m:d.getUTCMonth(),g:g,lbl:(k===0?'Hoy':k===1?'Mañana':DC[dw])+' '+d.getUTCDate()+' '+MES[d.getUTCMonth()]});
+  }
+  oD.innerHTML=dias.map(function(x,i){return '<input type="radio" name="dia" id="d'+i+'" value="'+i+'"'+(i===0?' checked':'')+'><label for="d'+i+'">'+x.lbl+'</label>'}).join('');
+  function tomado(x,min,b){var h=(x.d*31+x.m*17+min/30*13+BARB.indexOf(b)*7)%10;return h<3}
+  function horas(){
+    var x=dias[+(document.querySelector('[name=dia]:checked')||{value:0}).value],b=(document.querySelector('[name=bar]:checked')||{value:'Cualquiera'}).value,out='',first=true;
+    for(var m=x.g[0];m<x.g[1]-30;m+=30){
+      var pasado=x.k===0&&m<=ahora.min+20,off=pasado||tomado(x,m,b);
+      out+='<input type="radio" name="hora" id="h'+m+'" value="'+hh(m)+'"'+(off?' disabled':'')+'><label for="h'+m+'">'+hh(m)+'</label>';}
+    oH.innerHTML=out;
+  }
+  function resumen(){
+    var sel=SERV.filter(function(s){return document.getElementById('s-'+s.id).checked});
+    var tot=0,min=0;sel.forEach(function(s){tot+=s.p;min+=s.m});
+    document.getElementById('total').textContent=cl(tot);
+    document.getElementById('res-txt').textContent=sel.length?sel.map(function(s){return s.n}).join(' + ')+' · unos '+min+' min':'Elige al menos un servicio.';
+    return {sel:sel,tot:tot,min:min};
+  }
+  document.getElementById('form').addEventListener('change',function(e){if(e.target.name==='dia'||e.target.name==='bar')horas();resumen();});
+  horas();resumen();
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var r=resumen(),h=document.querySelector('[name=hora]:checked'),n=document.getElementById('nombre').value.trim(),msj=document.getElementById('msj');
+    if(!r.sel.length){msj.textContent='Elige al menos un servicio.';return}
+    if(!h){msj.textContent='Elige una hora disponible.';return}
+    if(!n){msj.textContent='Escribe tu nombre para reservar.';document.getElementById('nombre').focus();return}
+    msj.textContent='';
+    var x=dias[+document.querySelector('[name=dia]:checked').value],b=document.querySelector('[name=bar]:checked').value,nt=document.getElementById('nota').value.trim();
+    var t='Hola, soy '+n+'. Quiero reservar en Barbería Tricahue (ejemplo): '+r.sel.map(function(s){return s.n}).join(' + ')+', con '+(b==='Cualquiera'?'cualquier barbero':b)+', el '+DIAS[x.dw]+' '+x.d+' de '+MES[x.m]+' a las '+h.value+'. Total estimado '+cl(r.tot)+'.'+(nt?' Nota: '+nt:'');
+    window.open('https://wa.me/56955550142?text='+encodeURIComponent(t),'_blank','noopener');
+  });
+
+  /* Aparición suave */
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visto');io.unobserve(en.target)}})},{threshold:.12});rv.forEach(function(el){io.observe(el)})}
+  else rv.forEach(function(el){el.classList.add('visto')});
+})();
+</script>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+</body>
+</html>
