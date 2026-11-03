@@ -73,6 +73,10 @@
   .servicios h2 .serif { font-style: italic; color: var(--acento); letter-spacing: -.01em; }
   .lista-serv { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--linea); border: 1px solid var(--linea); border-radius: 18px; overflow: hidden; }
   .serv { background: var(--fondo); padding: 32px; }
+  .soporte { border-top: 0; padding-top: 40px; }
+  .soporte-intro { color: var(--gris); font-size: 17px; margin: 24px 0 28px; max-width: 420px; }
+  .soporte-btn { display: inline-block; background: var(--acento); color: var(--fondo); font-weight: 600; padding: 14px 22px; border-radius: 999px; text-decoration: none; transition: transform .2s; }
+  .soporte-btn:hover { transform: translateY(-2px); }
   .serv .n { font-family: 'Instrument Serif'; font-style: italic; color: var(--acento); font-size: 22px; }
   .serv h3 { font-size: 20px; font-weight: 500; margin: 8px 0 6px; letter-spacing: -.02em; }
   .serv p { color: var(--gris); font-size: 15px; }
@@ -137,15 +141,15 @@
 <nav>
   <div class="contenedor">
     <a class="logo" href="#"><i></i>Werex Studio</a>
-    <div class="estado"><b></b><span>Disponible para nuevos proyectos</span></div>
+    <div class="estado"><b></b><span>Soporte técnico y proyectos web</span></div>
   </div>
 </nav>
 
 <header class="contenedor">
-  <div class="etiqueta rv">Portafolio · Propuestas de diseño web</div>
+  <div class="etiqueta rv">Soporte técnico · Diseño web</div>
   <h1 class="rv">Sitios web para <span class="serif">negocios locales.</span></h1>
   <div class="intro rv">
-    <p>Diseño páginas para centros culturales, turismo, restaurantes, gimnasios, cafeterías y emprendimientos locales: rápidas, adaptadas a celular y pensadas para convertir visitas en clientes. Las páginas de este portafolio son propuestas de diseño de ejemplo: los negocios y sus datos son ficticios.</p>
+    <p>Hago <a href="#soporte" style="color:var(--texto);text-decoration:underline">soporte técnico</a> presencial en Valdivia y remoto, y diseño páginas para centros culturales, turismo, restaurantes, gimnasios, cafeterías y emprendimientos locales: rápidas, adaptadas a celular y pensadas para convertir visitas en clientes. Las páginas de este portafolio son propuestas de diseño de ejemplo: los negocios y sus datos son ficticios.</p>
     <div class="cifras">
       <div><b>14</b><span>diseños de ejemplo</span></div>
       <div><b>100%</b><span>responsive</span></div>
@@ -154,6 +158,21 @@
 </header>
 
 <main class="contenedor">
+  <section class="servicios soporte" id="soporte">
+    <div class="rv"><h2>Soporte técnico <span class="serif">sin vueltas</span></h2>
+      <p class="soporte-intro">Informático de formación, con experiencia en soporte desde 2014. Primero diagnostico, después reparo: te explico qué tiene tu equipo y cuánto cuesta antes de hacer nada.</p>
+      <a class="soporte-btn" href="#contacto" data-necesito="Soporte técnico o redes">Pedir soporte por WhatsApp →</a>
+    </div>
+    <div class="lista-serv rv">
+      <div class="serv"><div class="n">01</div><h3>Computador lento o con fallas</h3><p>Diagnóstico, limpieza de virus, pantallazos azules, errores de arranque y reinstalación de Windows sin perder tus archivos.</p></div>
+      <div class="serv"><div class="n">02</div><h3>Cambio a SSD y mejoras</h3><p>Disco sólido, más memoria RAM y clonado del sistema: tu equipo queda varias veces más rápido.</p></div>
+      <div class="serv"><div class="n">03</div><h3>Redes e internet</h3><p>Wi-Fi que no llega o se corta, configuración de routers, impresoras y equipos compartidos en casa u oficina.</p></div>
+      <div class="serv"><div class="n">04</div><h3>Respaldo y recuperación</h3><p>Copias de seguridad automáticas y recuperación de información de discos con problemas.</p></div>
+      <div class="serv"><div class="n">05</div><h3>Windows, macOS y Linux</h3><p>Instalación y configuración de sistemas, programas, correo y Office en notebooks y equipos de escritorio.</p></div>
+      <div class="serv"><div class="n">06</div><h3>Presencial o remoto</h3><p>Voy a tu casa u oficina en Valdivia, o te ayudo a distancia conectándome a tu equipo.</p></div>
+    </div>
+  </section>
+
   <div class="seccion-cab rv"><span>Propuestas de ejemplo · datos ficticios</span><span>2026</span></div>
   <div class="proyectos">
     <a class="proyecto rv" href="cerveceria/">
@@ -229,7 +248,7 @@
   </div>
 
   <section class="servicios">
-    <div class="rv"><h2>Qué incluye <span class="serif">cada sitio</span></h2></div>
+    <div class="rv"><h2>Qué incluye <span class="serif">cada sitio web</span></h2></div>
     <div class="lista-serv rv">
       <div class="serv"><div class="n">01</div><h3>Diseño a medida</h3><p>Identidad visual, tipografías y paleta pensadas para cada marca.</p></div>
       <div class="serv"><div class="n">02</div><h3>Adaptado a celular</h3><p>Se ve y funciona perfecto en cualquier pantalla.</p></div>
@@ -289,6 +308,7 @@
     window.open('https://wa.me/56977987960?text='+encodeURIComponent(t),'_blank','noopener');
   });
 })();
+  document.querySelectorAll('[data-necesito]').forEach(function(a){a.addEventListener('click',function(){var sel=document.getElementById('wa-necesito');if(sel)sel.value=a.dataset.necesito;});});
 </script>
 </body>
 </html>
