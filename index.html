@@ -6,6 +6,14 @@
 <title>René Cerpa Andrade — Curriculum Vitae</title>
 <meta name="description" content="Curriculum Vitae de René Cerpa Andrade, Ingeniero en Informática en la Región de Los Ríos: educación artística, gestión cultural, desarrollo web y soporte técnico freelance.">
 <meta name="theme-color" content="#14213D">
+<meta name="color-scheme" content="light">
+<meta name="author" content="René Cerpa Andrade">
+<link rel="canonical" href="https://werex88-ops.github.io/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"René Cerpa Andrade","jobTitle":"Ingeniero en Informática","url":"https://werex88-ops.github.io/","email":"mailto:rene.cerpa.a@gmail.com","address":{"@type":"PostalAddress","addressRegion":"Región de Los Ríos","addressCountry":"CL"}}</script>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="René Cerpa Andrade — Curriculum Vitae">
+<meta name="twitter:description" content="Ingeniero en Informática ligado a la gestión cultural y la educación artística en la Región de Los Ríos. Desarrollo web y soporte técnico freelance.">
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="es_CL">
 <meta property="og:title" content="René Cerpa Andrade — Curriculum Vitae">
@@ -16,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
+  ::selection{background:#14213D;color:#fff}
   :root{
     --tinta:#14213D;      /* azul marino */
     --texto:#1F2937;
@@ -26,9 +35,16 @@
     --linea:#E3E6EB;
     --acento:#2C5BD3;     /* azul institucional */
     --acento-suave:#E9EFFC;
-    --verde:#1F8A5B;
+    --verde:#167348;
   }
   *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:16px}
+  h1,h2,h3{text-wrap:balance}
+  p,li{text-wrap:pretty}
+  .num,.cifra b,.cifras b{font-variant-numeric:tabular-nums}
+  .saltar{position:absolute;left:12px;top:-60px;z-index:100;background:var(--tinta);color:#fff;padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none}
+  .saltar:focus{top:12px}
+  @media print{.saltar{display:none}}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--fondo);color:var(--texto);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
   a{color:var(--acento)}
@@ -44,7 +60,8 @@
   .marca span{color:var(--acento)}
   nav.top ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
   nav.top ul a{color:var(--gris);text-decoration:none;font-size:.92rem;font-weight:500}
-  nav.top ul a:hover{color:var(--tinta)}
+  nav.top ul a:hover,nav.top ul a[aria-current]{color:var(--tinta)}
+  nav.top ul a[aria-current]{box-shadow:0 2px 0 var(--acento);padding-bottom:4px}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font:600 .95rem/1 'Inter',sans-serif;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s}
   .btn:hover{transform:translateY(-1px)}
   .btn svg{width:17px;height:17px}
@@ -70,7 +87,7 @@
   .ficha .org{color:var(--gris);font-size:.93rem;margin:0}
   .ficha dl{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--linea);display:grid;gap:12px}
   .ficha dl div{display:grid;grid-template-columns:96px 1fr;gap:10px;font-size:.93rem}
-  .ficha dt{color:var(--suave)}
+  .ficha dt{color:var(--gris)}
   .ficha dd{margin:0;color:var(--texto);font-weight:500}
   .cifras{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:14px;overflow:hidden;margin-top:40px}
   .cifras div{background:#fff;padding:18px 20px}
@@ -93,6 +110,7 @@
   .exp:last-child{padding-bottom:0}
   .exp::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--suave)}
   .exp.actual::before{background:var(--acento);border-color:var(--acento);box-shadow:0 0 0 5px var(--acento-suave)}
+  .exp .fecha,.estudio .fecha{font-variant-numeric:tabular-nums}
   .exp .fecha{font-size:.85rem;font-weight:600;color:var(--gris)}
   .exp .fecha b{color:var(--verde);font-weight:600;background:#E6F4EC;padding:2px 8px;border-radius:999px;margin-left:6px;font-size:.75rem}
   .exp h3{font-size:1.12rem;margin:4px 0 2px}
@@ -213,7 +231,7 @@
   .wa-enviar{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:16px;background:#25D366;color:#0B2E1A;border:0;border-radius:12px;padding:15px;font-family:inherit;font-size:1rem;font-weight:700;line-height:1;cursor:pointer;transition:background .2s}
   .wa-enviar:hover{background:#1EBE5A}
   .wa-enviar svg{width:22px;height:22px}
-  .wa-nota{font-size:.85rem;margin:10px 0 0;opacity:.8}
+  .wa-nota{font-size:.85rem;margin:10px 0 0;opacity:1}
   .wa-nota.wa-error{color:#E5484D;opacity:1}
   @media (max-width:600px){.wa-grid{grid-template-columns:1fr}.wa-flotante span{display:none}.wa-flotante{padding:14px}}
   @media print{.wa-flotante,.wa-form,.contacto-wa{display:none!important}}
@@ -231,6 +249,7 @@
 </head>
 <body>
 
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 <nav class="top" aria-label="Secciones">
   <div class="wrap">
     <a class="marca" href="#inicio">René Cerpa <span>A.</span></a>
@@ -284,7 +303,7 @@
   </div>
 </header>
 
-<main>
+<main id="contenido" tabindex="-1">
 <section id="perfil">
   <div class="wrap sec">
     <div class="sec-cab"><span class="num">01</span><h2>Perfil profesional</h2></div>
@@ -499,7 +518,7 @@
       <form class="wa-form wa-claro" id="wa-form" novalidate aria-label="Formulario de contacto por WhatsApp">
       <div class="wa-grid">
         <div><label for="wa-nombre">Tu nombre</label><input id="wa-nombre" autocomplete="name" required></div>
-        <div><label for="wa-negocio">Negocio u organización</label><input id="wa-negocio" placeholder="Ej.: Cabañas El Bosque"></div>
+        <div><label for="wa-negocio">Negocio u organización</label><input id="wa-negocio" autocomplete="organization" placeholder="Ej.: Cabañas El Bosque"></div>
         <div><label for="wa-necesito">¿Qué necesitas?</label>
           <select id="wa-necesito">
             <option>Una página web nueva</option>
@@ -530,6 +549,22 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+<script>
+(function(){
+  var links=document.querySelectorAll('nav.top ul a[href^="#"]');
+  if(!links.length||!('IntersectionObserver' in window))return;
+  var mapa={};links.forEach(function(a){mapa[a.getAttribute('href').slice(1)]=a;});
+  var so=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      links.forEach(function(a){a.removeAttribute('aria-current');});
+      var a=mapa[e.target.id];if(a)a.setAttribute('aria-current','true');
+    });
+  },{rootMargin:'-30% 0px -60% 0px'});
+  Object.keys(mapa).forEach(function(id){var el=document.getElementById(id);if(el)so.observe(el);});
+  /* contacto es un footer: se observa igual */
+})();
 </script>
 <a class="wa-flotante" href="https://wa.me/56977987960?text=Hola%20Ren%C3%A9%2C%20vi%20tu%20portafolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg><span>WhatsApp</span></a>
 <script>
