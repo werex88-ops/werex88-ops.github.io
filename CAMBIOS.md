@@ -1,5 +1,26 @@
 # Registro de cambios
 
+## 2026-11-04 (mejora diaria: demo de taller mecánico)
+
+### Currículum (`index.html`)
+- Anclas del menú: el margen de desplazamiento sube de 16 a 80 px para que los títulos de sección no queden tapados por la barra fija (64 px).
+- Contraste: marcadores de la línea de experiencia pasan de #8A93A3 a #7A8497 (mejor contraste para elementos gráficos, WCAG 1.4.11).
+- No se modificó texto, secciones, datos de contacto ni identidad visual.
+
+### Revisión de demos y portafolio
+- Se revisaron las 15 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin enlaces ni imágenes locales rotas, aviso de datos ficticios presente en todas, ninguna foto sobre 300 KB y todas las páginas bajo 60 KB. No hubo correcciones necesarias.
+
+### Demo nueva
+- `taller/`: Newen, taller mecánico ficticio en La Unión (grafito, amarillo seguridad y hueso; tipografías Big Shoulders Display e IBM Plex Sans).
+- Funciones: cotizador por tipo de vehículo y servicio, agenda de día y hora con horario real de Chile, envío por WhatsApp sin número fijo, guía interactiva de luces del tablero, estado abierto/cerrado en vivo.
+- Sin fotografías: ilustraciones SVG/CSS propias, porque `images.unsplash.com` no es accesible desde el entorno y no se podían verificar identificadores nuevos.
+- Tarjeta en el portafolio (15 diseños) y captura `img/taller.jpg`.
+
+### Sugerencias pendientes para René
+- Reemplazar las ilustraciones del taller por fotos reales (propias o de Unsplash verificadas) cuando se habilite `images.unsplash.com`.
+- Currículum: considerar agregar teléfono o LinkedIn y logros medibles (no se inventaron datos).
+- Las capturas del portafolio se generan sin las tipografías de Google Fonts (bloqueadas en el entorno); regenerarlas desde un navegador con acceso total para fidelidad exacta.
+
 ## 2026-11-03 (propuesta Celeste: sin cursiva, contraste y panel de fotos)
 
 - Se reemplazan las tipografías cursivas e itálicas por Dosis (la del logo) y Cormorant recta.

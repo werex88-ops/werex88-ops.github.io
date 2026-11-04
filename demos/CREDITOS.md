@@ -137,3 +137,7 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 ## Barbería Tricahue
 
 - `barberia` no usa fotografías (ilustraciones SVG/CSS propias).
+
+## Taller mecánico · Newen
+
+- `taller` no usa fotografías: ilustraciones SVG/CSS propias (tablero, elevador, mapa), porque `images.unsplash.com` no es accesible desde el entorno y no se pudieron verificar fotos nuevas.
