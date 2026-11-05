@@ -1,5 +1,28 @@
 # Registro de cambios
 
+## 2026-11-05 (mejora diaria: demo de artesanía en madera)
+
+Esta rama parte desde la del 4 de noviembre (solicitud #31, aún abierta), para no duplicar trabajo ni generar conflictos.
+
+### Currículum (`index.html`)
+- Áreas táctiles: los enlaces "Ver servicios de soporte" y "Ver portafolio de páginas", el nombre de la barra superior y el botón PDF pasan a tener al menos 44 px de alto (mejor uso en celular, WCAG 2.5.8).
+- No se modificó texto, secciones, datos de contacto ni identidad visual.
+
+### Revisión de demos y portafolio
+- Se revisaron las 17 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin imágenes ni enlaces locales rotos, aviso de datos ficticios en todas las demos, ninguna foto sobre 300 KB y todas las páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
+
+### Demo nueva
+- `madera/`: Mañío, taller ficticio de artesanía en madera nativa en Panguipulli (nogal oscuro, cobre y musgo; tipografías Fraunces y Karla).
+- Funciones: armador de piezas (tipo, madera, medidas con deslizadores, acabado, grabado y entrega) con vista previa dibujada y precio estimado en CLP, catálogo filtrable que precarga el armador, envío del diseño por WhatsApp sin número fijo, estado abierto/cerrado según horario de Chile y preguntas frecuentes.
+- Sin fotografías: ilustraciones SVG/CSS propias, porque `images.unsplash.com` no es accesible desde el entorno y no se podían verificar identificadores nuevos.
+- Tarjeta en el portafolio (16 diseños) y captura `img/madera.jpg` (1200×800, 73 KB).
+
+### Sugerencias pendientes para René
+- Reemplazar las ilustraciones de Mañío (y de taller y barbería) por fotos reales o de Unsplash verificadas cuando haya acceso a `images.unsplash.com`.
+- Currículum: agregar teléfono o LinkedIn y logros medibles si quieres; no se inventaron datos.
+- Las capturas del portafolio se generan sin las tipografías de Google Fonts (bloqueadas en el entorno); conviene regenerarlas desde un navegador con acceso total.
+- Revisar si quieres que el armador de Mañío calcule también plazos según la carga del taller.
+
 ## 2026-11-04 (mejora diaria: demo de taller mecánico)
 
 ### Currículum (`index.html`)
