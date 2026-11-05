@@ -9,7 +9,7 @@ Esta rama parte desde la del 4 de noviembre (solicitud #31, aún abierta), para 
 - No se modificó texto, secciones, datos de contacto ni identidad visual.
 
 ### Revisión de demos y portafolio
-- Se revisaron las 17 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin imágenes ni enlaces locales rotos, aviso de datos ficticios en todas las demos, ninguna foto sobre 300 KB y todas las páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
+- Se revisaron las 18 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin imágenes ni enlaces locales rotos, aviso de datos ficticios en todas las demos, ninguna foto sobre 300 KB y todas las páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
 
 ### Demo nueva
 - `madera/`: Mañío, taller ficticio de artesanía en madera nativa en Panguipulli (nogal oscuro, cobre y musgo; tipografías Fraunces y Karla).
