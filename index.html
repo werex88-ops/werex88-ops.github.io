@@ -49,6 +49,7 @@
   body{margin:0;background:var(--fondo);color:var(--texto);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
   a{color:var(--acento)}
   a:focus-visible,button:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:6px}
+  .wa-form input:focus-visible,.wa-form select:focus-visible,.wa-form textarea:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
   h1,h2,h3{margin:0;color:var(--tinta);line-height:1.2}
   .serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
   .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
@@ -229,7 +230,7 @@
   .wa-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .wa-full{grid-column:1/-1}
   .wa-form label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px}
-  .wa-form input,.wa-form select,.wa-form textarea{width:100%;padding:12px 13px;border-radius:10px;font:inherit;font-size:.97rem}
+  .wa-form input,.wa-form select,.wa-form textarea{width:100%;min-height:44px;padding:12px 13px;border-radius:10px;font:inherit;font-size:.97rem}
   .wa-form textarea{resize:vertical}
   .wa-enviar{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:16px;background:#25D366;color:#0B2E1A;border:0;border-radius:12px;padding:15px;font-family:inherit;font-size:1rem;font-weight:700;line-height:1;cursor:pointer;transition:background .2s}
   .wa-enviar:hover{background:#1EBE5A}

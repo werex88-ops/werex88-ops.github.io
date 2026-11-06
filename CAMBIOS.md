@@ -1,5 +1,28 @@
 # Registro de cambios
 
+## 2026-11-06 (mejora diaria: demo de yoga y pilates)
+
+Esta rama parte desde la del 5 de noviembre (solicitud #32, aún abierta, que a su vez incluye la #31), para no duplicar trabajo ni generar conflictos.
+
+### Currículum (`index.html`)
+- Accesibilidad del formulario de contacto: anillo de foco visible (3 px) en los campos y alto mínimo de 44 px en cada campo.
+- No se modificó texto, secciones, datos de contacto ni identidad visual.
+
+### Revisión de demos y portafolio
+- Se revisaron las 20 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin enlaces, anclas ni imágenes locales rotas, aviso de datos ficticios en todas las demos y páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
+
+### Demo nueva
+- `yoga/`: Aire Sur, estudio ficticio de yoga y pilates en Futrono (verde bosque, arcilla y salvia; tipografías Gloock y Figtree).
+- Funciones: horario semanal con pestañas de día y filtros por disciplina, nivel y momento del día; cupos que bajan al reservar (lista de espera al llenarse); reserva por WhatsApp sin número fijo; pausa guiada de respiración (inhala 4 s, exhala 6 s) que respeta la reducción de movimiento; próxima clase y estado abierto/cerrado según hora de Chile; planes en CLP.
+- Sin fotografías: ilustraciones SVG/CSS propias (paisaje del lago, mapa), porque `images.unsplash.com` responde 403 desde el entorno y no se podían verificar identificadores nuevos.
+- Tarjeta en el portafolio (17 diseños) y captura `img/yoga.jpg` (1200×800, 58 KB).
+
+### Sugerencias pendientes para René
+- Reemplazar las ilustraciones de Aire Sur (y de taller, barbería y Mañío) por fotos reales o de Unsplash verificadas cuando haya acceso a `images.unsplash.com`.
+- Currículum: agregar teléfono o LinkedIn y logros medibles si quieres; no se inventaron datos.
+- Las capturas del portafolio se generan sin las tipografías de Google Fonts (bloqueadas en el entorno); conviene regenerarlas desde un navegador con acceso total.
+- Aire Sur podría ofrecerse a estudios de yoga, pilates, danza o terapias de Los Ríos; evaluar sumar pago en línea si el cliente lo pide.
+
 ## 2026-11-05 (mejora diaria: demo de artesanía en madera)
 
 Esta rama parte desde la del 4 de noviembre (solicitud #31, aún abierta), para no duplicar trabajo ni generar conflictos.
