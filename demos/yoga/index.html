@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aire Sur · Yoga y Pilates en Futrono</title>
+<meta name="description" content="Estudio de yoga y pilates frente al lago Ranco, en Futrono. Mira el horario semanal, reserva tu clase y escríbenos por WhatsApp. Sitio de ejemplo con datos ficticios.">
+<meta name="theme-color" content="#22342b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2322342b'/%3E%3Cpath d='M32 12c-9 9-9 24 0 34 9-10 9-25 0-34z' fill='%23e9b8a0'/%3E%3Cpath d='M12 26c11 0 17 9 20 20-11 0-18-8-20-20zM52 26c-11 0-17 9-20 20 11 0 18-8 20-20z' fill='%23dfe6d8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bosque:#22342b;--bosque2:#31483c;--hueso:#f5f0e6;--crema:#fbf8f2;--salvia:#dfe6d8;--salvia2:#c3d0bb;--arcilla:#a24b31;--arcilla-c:#e9b8a0;--lago:#4d6f7b;--tinta:#1f2a24;--suave:#566259;--linea:#d9d4c5}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:'Figtree',system-ui,sans-serif;background:var(--hueso);color:var(--tinta);line-height:1.65;font-size:17px;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Gloock',Georgia,serif;font-weight:400;line-height:1.1;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,50px)}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--arcilla);outline-offset:3px;border-radius:6px}
+.osc :focus-visible{outline-color:var(--arcilla-c)}
+.saltar{position:absolute;left:12px;top:-60px;background:var(--arcilla-c);color:var(--bosque);padding:10px 16px;border-radius:8px;z-index:100;font-weight:700}
+.saltar:focus{top:12px}
+.eti{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--arcilla);margin-bottom:12px}
+.osc .eti{color:var(--arcilla-c)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;border:2px solid transparent;min-height:48px;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.b1{background:var(--arcilla);color:#fff}.b1:hover{background:#873c26}
+.b2{border-color:currentColor;background:transparent}
+.osc .b1{background:var(--arcilla-c);color:var(--bosque)}.osc .b1:hover{background:#f2c9b5}
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(34,52,43,.95);backdrop-filter:blur(8px);color:var(--hueso)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{font-family:'Gloock',serif;font-size:24px;display:flex;align-items:center;gap:10px;min-height:44px}
+.logo svg{width:30px;height:30px}
+.nav ul{display:flex;gap:6px;list-style:none}
+.nav ul a{display:block;padding:10px 12px;font-weight:500;font-size:15px;border-radius:999px;opacity:.9}
+.nav ul a:hover{background:rgba(255,255,255,.1);opacity:1}
+.nav .btn{padding:9px 20px;min-height:44px}
+@media(max-width:880px){.nav ul{display:none}}
+/* portada */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:var(--hueso);background:linear-gradient(180deg,#f0c9a8 0%,#e7b79c 22%,#a9a9a3 52%,#4d6f7b 66%,#22342b 100%);overflow:hidden;padding:110px 0 70px}
+.hero>svg{position:absolute;inset:auto 0 0 0;width:100%;height:68%;pointer-events:none}
+.hero .w{position:relative;z-index:2}
+.hero-in{max-width:600px}
+.hero h1{font-size:clamp(46px,8.4vw,92px);color:#1c2a22;text-shadow:0 1px 0 rgba(255,255,255,.25)}
+.hero h1 em{font-style:normal;color:#7d2f1a}
+.hero p.lead{font-size:clamp(18px,2.2vw,21px);margin:20px 0 28px;color:#1c2a22;max-width:30em;font-weight:500}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero .b2{color:#1c2a22}
+.hero .b2:hover{background:rgba(255,255,255,.35)}
+.proxima{display:inline-flex;align-items:center;gap:10px;margin-top:30px;background:rgba(251,248,242,.92);color:var(--tinta);padding:10px 18px;border-radius:999px;font-size:15px;font-weight:600;max-width:100%}
+.proxima i{width:10px;height:10px;border-radius:50%;background:#2f7a4a;flex:none}
+.sol{animation:sube 2.4s ease-out both}
+@keyframes sube{from{transform:translateY(40px);opacity:.3}to{transform:none;opacity:1}}
+/* secciones */
+section{padding:92px 0}
+.cab{max-width:640px;margin-bottom:44px}
+.cab p{color:var(--suave);margin-top:14px}
+.osc .cab p{color:#c9d3c8}
+.osc{background:var(--bosque);color:var(--hueso)}
+.sal{background:var(--salvia)}
+.valor{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:24px}
+.valor article{background:var(--crema);border:1px solid var(--linea);border-radius:22px;padding:28px}
+.valor svg{width:44px;height:44px;margin-bottom:16px;color:var(--arcilla)}
+.valor h3{font-size:24px;margin-bottom:8px}
+.valor p{color:var(--suave);font-size:16px}
+/* horario */
+.filtros{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.chip{border:1.5px solid var(--bosque);background:transparent;border-radius:999px;padding:8px 18px;font-weight:600;font-size:15px;min-height:44px}
+.chip[aria-pressed=true]{background:var(--bosque);color:var(--hueso)}
+.filtros select{border:1.5px solid var(--bosque);background:var(--crema);border-radius:999px;padding:8px 14px;min-height:44px;font-weight:600;font-size:15px}
+.dias{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:22px}
+.dia{background:var(--crema);border:1.5px solid var(--linea);border-radius:14px;padding:8px 2px;text-align:center;font-weight:700;min-height:56px;line-height:1.2}
+.dia small{display:block;font-weight:500;font-size:12px;color:var(--suave)}
+.dia[aria-pressed=true]{background:var(--bosque);border-color:var(--bosque);color:var(--hueso)}
+.dia[aria-pressed=true] small{color:var(--salvia2)}
+.dia.hoy small::after{content:" ·"}
+.clases{list-style:none;display:grid;gap:12px;min-height:120px}
+.clase{display:grid;grid-template-columns:84px minmax(0,1fr) auto;gap:16px;align-items:center;background:var(--crema);border:1px solid var(--linea);border-radius:18px;padding:16px 20px}
+.clase .hora{font-family:'Gloock',serif;font-size:28px;line-height:1}
+.clase .hora small{display:block;font-family:'Figtree',sans-serif;font-size:13px;color:var(--suave);margin-top:4px}
+.clase h3{font-size:21px;margin-bottom:4px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:14px;color:var(--suave)}
+.tag{display:inline-block;border-radius:999px;padding:1px 10px;font-size:12px;font-weight:700;background:var(--salvia);color:var(--bosque)}
+.tag.p{background:#f3dccf;color:#6b2c18}.tag.m{background:#d5e3e8;color:#244753}
+.cupo{font-size:13px;font-weight:600;color:#2f6a43}
+.cupo.poco{color:#8a4a0b}.cupo.lleno{color:#8c2f1f}
+.clase .btn{padding:10px 20px;min-height:46px;font-size:15px}
+.vacio{padding:34px;text-align:center;color:var(--suave);background:var(--crema);border:1px dashed var(--linea);border-radius:18px}
+.nota{font-size:14px;color:var(--suave);margin-top:16px}
+@media(max-width:620px){.clase{grid-template-columns:70px minmax(0,1fr)}.clase .btn{grid-column:1/-1;width:100%}.clase .hora{font-size:24px}.dia{font-size:14px;border-radius:10px}}
+/* disciplinas */
+.disc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.disc article{border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:10px;min-height:250px}
+.disc h3{font-size:28px}
+.disc .d1{background:var(--salvia)}.disc .d2{background:#f3dccf}.disc .d3{background:#d5e3e8}
+.disc ul{list-style:none;margin-top:auto;display:flex;flex-wrap:wrap;gap:6px}
+.disc li{background:rgba(255,255,255,.6);border-radius:999px;padding:3px 12px;font-size:14px;font-weight:600}
+/* respira */
+.resp{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.circulo{position:relative;width:min(100%,320px);aspect-ratio:1;margin:0 auto;display:grid;place-items:center}
+.circulo .aro{position:absolute;inset:0;border-radius:50%;border:2px dashed var(--salvia2);opacity:.5}
+.circulo .esfera{width:42%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f6d6c4,var(--arcilla-c) 60%,#c98467);transition:transform 4s ease-in-out}
+.circulo .esfera.in{transform:scale(2)}
+.circulo .esfera.out{transform:scale(1);transition-duration:6s}
+.circulo .txt{position:absolute;font-family:'Gloock',serif;font-size:26px;color:var(--bosque);text-align:center;pointer-events:none}
+.resp-ctl{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.resp-ctl .b2{color:var(--hueso)}
+@media(max-width:820px){.resp{grid-template-columns:minmax(0,1fr);gap:32px}}
+/* planes */
+.planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px}
+.plan{background:var(--crema);border:1.5px solid var(--linea);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;gap:6px}
+.plan.dest{border-color:var(--bosque);background:#fff;box-shadow:0 14px 34px -18px rgba(34,52,43,.5)}
+.plan .ins{align-self:flex-start;background:var(--bosque);color:var(--hueso);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 12px;border-radius:999px}
+.plan h3{font-size:26px}
+.plan .pr{font-family:'Gloock',serif;font-size:38px;line-height:1.1}
+.plan .pr small{font:500 14px 'Figtree',sans-serif;color:var(--suave)}
+.plan p{font-size:15px;color:var(--suave);flex:1}
+.plan .btn{margin-top:14px;padding:10px 18px;min-height:46px;font-size:15px}
+/* nosotras */
+.nos{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.nos p+p{margin-top:14px}
+.prof{display:grid;gap:16px}
+.prof article{display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.08);border-radius:20px;padding:18px}
+.avatar{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-family:'Gloock',serif;font-size:26px;background:var(--arcilla-c);color:var(--bosque)}
+.prof h3{font-size:21px}.prof p{font-size:15px;color:#c9d3c8}
+@media(max-width:820px){.nos{grid-template-columns:minmax(0,1fr);gap:32px}}
+/* opiniones */
+.ops{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px}
+.ops blockquote{background:var(--crema);border:1px solid var(--linea);border-radius:22px;padding:28px}
+.ops blockquote p{font-size:18px}
+.ops footer{margin-top:16px;font-size:14px;color:var(--suave);font-weight:600}
+.ejemplo{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--salvia);color:var(--bosque);padding:2px 10px;border-radius:999px}
+/* ubicación */
+.ub{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.ub dl{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin:18px 0}
+.ub dt{font-weight:700}
+.ub dd.hoy-fila{font-weight:700;color:var(--arcilla)}
+.estado{display:inline-flex;align-items:center;gap:8px;font-weight:700;background:var(--crema);border:1px solid var(--linea);border-radius:999px;padding:6px 16px;margin-bottom:6px}
+.estado i{width:10px;height:10px;border-radius:50%;background:#8c2f1f}
+.estado.abierto i{background:#2f7a4a}
+.mapa{border-radius:24px;overflow:hidden;border:1px solid var(--linea);background:var(--salvia)}
+@media(max-width:820px){.ub{grid-template-columns:minmax(0,1fr);gap:28px}}
+/* contacto */
+.ct{max-width:720px;margin:0 auto}
+form{background:var(--crema);color:var(--tinta);border-radius:24px;padding:30px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+form .full{grid-column:1/-1}
+label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+input,select,textarea{width:100%;min-height:48px;padding:11px 14px;border:1.5px solid #8d978f;border-radius:12px;background:#fff}
+textarea{resize:vertical;min-height:90px}
+.err{display:block;color:#8c2f1f;font-size:13px;font-weight:600;min-height:18px;margin-top:4px}
+form .btn{border:0}
+@media(max-width:560px){form{grid-template-columns:minmax(0,1fr);padding:22px}}
+footer.pie{background:#17241d;color:#b9c4b8;padding:36px 0 96px;font-size:15px}
+footer.pie .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer.pie a{text-decoration:underline}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sol{animation:none}.rv{opacity:1;transform:none;transition:none}.btn,.circulo .esfera{transition:none}}
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header>
+ <div class="w nav">
+  <a class="logo" href="#inicio" aria-label="Aire Sur, inicio"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="#e9b8a0"/><g fill="#22342b"><path d="M32 14c-9 9-9 21 0 31 9-10 9-22 0-31z"/><path d="M13 27c11 0 17 8 19 18-11 0-17-7-19-18z"/><path d="M51 27c-11 0-17 8-19 18 11 0 17-7 19-18z"/></g></svg>Aire Sur</a>
+  <nav aria-label="Secciones"><ul>
+   <li><a href="#horario">Horario</a></li><li><a href="#clases">Clases</a></li><li><a href="#respira">Respira</a></li><li><a href="#planes">Planes</a></li><li><a href="#ubicacion">Ubicación</a></li>
+  </ul></nav>
+  <a class="btn b1" href="#reservar">Reservar</a>
+ </div>
+</header>
+
+<main id="contenido">
+<section class="hero" id="inicio" aria-label="Portada">
+ <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+  <circle class="sol" cx="1180" cy="140" r="66" fill="#fbe3cf" opacity=".95"/>
+  <path d="M0 330 L170 250 L290 300 L430 215 L560 300 L700 260 L860 330 L1010 270 L1180 190 L1300 270 L1440 230 V600 H0Z" fill="#7f8e93" opacity=".75"/>
+  <path d="M1000 600 L1180 205 L1230 205 L1420 600Z" fill="#5f747c" opacity=".7"/>
+  <path d="M0 400 C200 360 360 380 520 350 C700 320 860 380 1040 350 C1200 325 1320 350 1440 335 V600H0Z" fill="#3f5a52"/>
+  <path d="M0 470 H1440 V600 H0Z" fill="#4d6f7b" opacity=".92"/>
+  <g stroke="#dce8ea" stroke-width="3" stroke-linecap="round" opacity=".5"><path d="M900 500h210M960 525h140M840 550h300"/></g>
+  <path d="M0 560 C240 520 420 560 700 540 C980 520 1200 560 1440 530 V600H0Z" fill="#22342b"/>
+  <g fill="#22342b"><path d="M120 560 L140 420 L160 560Z"/><path d="M165 560 L190 380 L215 560Z"/><path d="M215 560 L232 440 L250 560Z"/></g>
+ </svg>
+ <div class="w"><div class="hero-in">
+  <p class="eti" style="color:#5a2412">Yoga y pilates · Futrono</p>
+  <h1>Respira. Alarga. <em>Vuelve a ti.</em></h1>
+  <p class="lead">Un estudio pequeño frente al lago Ranco, con clases para todos los niveles y cupos reducidos para que cada persona sea mirada.</p>
+  <div class="hero-btns"><a class="btn b1" href="#horario">Ver horario semanal</a><a class="btn b2" href="#respira">Probar una pausa de respiración</a></div>
+  <p class="proxima" id="proxima" role="status"><i aria-hidden="true"></i><span>Calculando la próxima clase…</span></p>
+ </div></div>
+</section>
+
+<section aria-labelledby="t-valor">
+ <div class="w">
+  <div class="cab rv"><p class="eti">Por qué Aire Sur</p><h2 id="t-valor">Practicar sin prisa, con compañía real</h2></div>
+  <div class="valor">
+   <article class="rv"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M24 14v10l7 5"/></svg><h3>Cupos de 10 personas</h3><p>Sala luminosa con vista al lago y grupos pequeños para corregir posturas y acompañar cada ritmo.</p></article>
+   <article class="rv"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 32c6-10 12-10 18 0s12 10 18 0"/><path d="M6 22c6-10 12-10 18 0s12 10 18 0" opacity=".5"/></svg><h3>Para todos los niveles</h3><p>Si nunca has practicado, partes con clases iniciales. Si ya tienes camino, hay opciones de mayor exigencia.</p></article>
+   <article class="rv"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M8 38h32M14 38V22l10-12 10 12v16"/><path d="M20 38v-9h8v9"/></svg><h3>Todo incluido</h3><p>Colchonetas, bloques, cintas y mantas disponibles. Tú solo traes ropa cómoda y ganas de pausar.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="sal" id="horario" aria-labelledby="t-hor">
+ <div class="w">
+  <div class="cab rv"><p class="eti">Horario semanal</p><h2 id="t-hor">Encuentra tu clase y resérvala</h2><p>Filtra por disciplina, nivel o momento del día. Los cupos se actualizan al reservar.</p></div>
+  <div class="filtros" role="group" aria-label="Filtrar por disciplina" id="f-disc">
+   <button type="button" class="chip" data-v="todas" aria-pressed="true">Todas</button>
+   <button type="button" class="chip" data-v="yoga" aria-pressed="false">Yoga</button>
+   <button type="button" class="chip" data-v="pilates" aria-pressed="false">Pilates</button>
+   <button type="button" class="chip" data-v="meditacion" aria-pressed="false">Meditación</button>
+   <label class="sr" for="f-nivel" style="position:absolute;left:-9999px">Nivel</label>
+   <select id="f-nivel"><option value="">Todos los niveles</option><option>Inicial</option><option>Intermedio</option></select>
+   <label for="f-mom" style="position:absolute;left:-9999px">Momento del día</label>
+   <select id="f-mom"><option value="">Cualquier hora</option><option value="manana">Mañana</option><option value="mediodia">Mediodía</option><option value="noche">Tarde-noche</option></select>
+  </div>
+  <div class="dias" role="group" aria-label="Día de la semana" id="dias"></div>
+  <ul class="clases" id="clases-lista" aria-live="polite"></ul>
+  <p class="nota">Las clases duran entre 30 y 75 minutos. Cambios de última hora se avisan por WhatsApp. Horarios y cupos de ejemplo.</p>
+ </div>
+</section>
+
+<section id="clases" aria-labelledby="t-cl">
+ <div class="w">
+  <div class="cab rv"><p class="eti">Disciplinas</p><h2 id="t-cl">Tres caminos hacia el mismo bienestar</h2></div>
+  <div class="disc">
+   <article class="d1 rv"><h3>Yoga</h3><p>Hatha suave, vinyasa, yin y prenatal. Posturas, respiración y quietud para soltar tensión y ganar movilidad.</p><ul><li>Hatha suave</li><li>Vinyasa</li><li>Yin</li><li>Prenatal</li></ul></article>
+   <article class="d2 rv"><h3>Pilates mat</h3><p>Trabajo de fuerza central, postura y control del movimiento. Ideal para cuidar la espalda y complementar otros deportes.</p><ul><li>Inicial</li><li>Espalda sana</li><li>Intermedio</li></ul></article>
+   <article class="d3 rv"><h3>Meditación y pausa</h3><p>Prácticas guiadas cortas para bajar el ritmo después de la jornada, con respiración y atención al cuerpo.</p><ul><li>30 minutos</li><li>Sin experiencia previa</li></ul></article>
+  </div>
+ </div>
+</section>
+
+<section class="osc" id="respira" aria-labelledby="t-re">
+ <div class="w resp">
+  <div class="rv">
+   <p class="eti">Pausa de 1 minuto</p><h2 id="t-re">Respira con nosotras, ahora mismo</h2>
+   <p style="margin-top:14px;color:#c9d3c8">Inhala 4 segundos por la nariz y exhala 6 segundos, lento. Sigue la esfera: crece al inhalar y se achica al exhalar. Es una práctica general de relajación, no reemplaza consejo de salud.</p>
+   <div class="resp-ctl"><button type="button" class="btn b1" id="resp-btn" aria-pressed="false">Comenzar</button></div>
+  </div>
+  <div class="circulo" aria-hidden="true"><span class="aro"></span><span class="esfera" id="esfera"></span><span class="txt" id="resp-txt">Listo</span></div>
+  <p id="resp-sr" class="sr" role="status" style="position:absolute;left:-9999px"></p>
+ </div>
+</section>
+
+<section id="planes" aria-labelledby="t-pl">
+ <div class="w">
+  <div class="cab rv"><p class="eti">Planes en pesos chilenos</p><h2 id="t-pl">Elige la frecuencia que te acomode</h2><p>Valores de ejemplo. Los packs duran 60 días desde la primera clase.</p></div>
+  <div class="planes">
+   <article class="plan rv"><h3>Clase suelta</h3><div class="pr">$9.000</div><p>Para probar sin compromiso. Una clase de cualquier disciplina.</p><button class="btn b2" data-plan="Clase suelta" type="button">Elegir</button></article>
+   <article class="plan rv"><h3>Pack 4 clases</h3><div class="pr">$32.000 <small>$8.000 c/u</small></div><p>Una clase por semana durante un mes, con flexibilidad para cambiar de día.</p><button class="btn b2" data-plan="Pack 4 clases" type="button">Elegir</button></article>
+   <article class="plan dest rv"><span class="ins">Más elegido</span><h3>Pack 8 clases</h3><div class="pr">$56.000 <small>$7.000 c/u</small></div><p>Dos clases por semana: la frecuencia en que se nota el cambio en postura y descanso.</p><button class="btn b1" data-plan="Pack 8 clases" type="button">Elegir</button></article>
+   <article class="plan rv"><h3>Mensual libre</h3><div class="pr">$64.000 <small>al mes</small></div><p>Todas las clases que quieras, de lunes a sábado. Incluye una pausa mensual si viajas.</p><button class="btn b2" data-plan="Mensual libre" type="button">Elegir</button></article>
+  </div>
+ </div>
+</section>
+
+<section class="osc" aria-labelledby="t-no">
+ <div class="w nos">
+  <div class="rv"><p class="eti">Nosotras</p><h2 id="t-no">Un estudio hecho a escala humana</h2>
+   <p style="margin-top:16px">Aire Sur nació como un espacio de práctica en una casa con vista al lago Ranco. Hoy es un estudio donde conviven quienes caminan, pedalean, trabajan sentados todo el día o simplemente necesitan una pausa.</p>
+   <p>Creemos en progresar despacio: sin competir, sin forzar y con la seguridad de que cada cuerpo tiene su propio ritmo.</p></div>
+  <div class="prof rv">
+   <article><div class="avatar" aria-hidden="true">P</div><div><h3>Pía</h3><p>Instructora de yoga y meditación. Dirige las clases de hatha, yin y las pausas guiadas.</p></div></article>
+   <article><div class="avatar" aria-hidden="true">T</div><div><h3>Tomás</h3><p>Instructor de pilates mat. Trabaja fuerza central, postura y cuidado de la espalda.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section aria-labelledby="t-op">
+ <div class="w">
+  <div class="cab rv"><p class="eti">Opiniones</p><h2 id="t-op">Lo que dicen quienes practican</h2></div>
+  <div class="ops">
+   <blockquote class="rv"><p>«Llegué con la espalda cargada de tanto escritorio. A las pocas semanas dormía mejor y me movía distinto.»</p><footer>Alumna de ejemplo, Futrono<br><span class="ejemplo">Opinión de ejemplo</span></footer></blockquote>
+   <blockquote class="rv"><p>«Nunca había hecho yoga y me sentí cómodo desde la primera clase. Nadie te apura ni te compara.»</p><footer>Alumno de ejemplo, Lago Ranco<br><span class="ejemplo">Opinión de ejemplo</span></footer></blockquote>
+   <blockquote class="rv"><p>«La clase de las 19:00 es mi cierre del día. Salgo liviana y con la cabeza tranquila.»</p><footer>Alumna de ejemplo, Llifén<br><span class="ejemplo">Opinión de ejemplo</span></footer></blockquote>
+  </div>
+ </div>
+</section>
+
+<section class="sal" id="ubicacion" aria-labelledby="t-ub">
+ <div class="w ub">
+  <div>
+   <p class="eti">Ubicación y horario</p><h2 id="t-ub">Te esperamos frente al lago</h2>
+   <p style="margin:14px 0 16px">Camino a Llifén, kilómetro 2 (dirección de ejemplo), comuna de Futrono, Región de Los Ríos. Estacionamiento en el predio.</p>
+   <p class="estado" id="estado" role="status"><i aria-hidden="true"></i><span>Revisando horario…</span></p>
+   <dl id="horas">
+    <dt>Lunes a viernes</dt><dd>08:00 a 21:00</dd>
+    <dt>Sábado</dt><dd>09:00 a 13:30</dd>
+    <dt>Domingo</dt><dd>Cerrado</dd>
+   </dl>
+   <a class="btn b1" href="#reservar">Reservar una clase</a>
+  </div>
+  <div class="mapa rv"><svg viewBox="0 0 480 380" role="img" aria-label="Mapa ilustrado: el estudio queda junto al lago, a pocos minutos del centro de Futrono">
+   <rect width="480" height="380" fill="#dfe6d8"/>
+   <path d="M0 230 C90 200 170 250 260 225 C350 200 420 230 480 210 V380 H0Z" fill="#9fbac2"/>
+   <path d="M0 270 C100 250 190 290 290 268 C370 250 430 275 480 262" stroke="#fff" stroke-width="2.5" fill="none" opacity=".6"/>
+   <path d="M20 120 C110 150 190 90 280 130 S420 120 470 90" stroke="#fbf8f2" stroke-width="12" fill="none" stroke-linecap="round"/>
+   <path d="M20 120 C110 150 190 90 280 130 S420 120 470 90" stroke="#c3d0bb" stroke-width="2" fill="none" stroke-dasharray="6 8"/>
+   <path d="M250 135 L250 195" stroke="#fbf8f2" stroke-width="10" stroke-linecap="round"/>
+   <g fill="#31483c"><circle cx="70" cy="60" r="16"/><circle cx="105" cy="75" r="12"/><circle cx="395" cy="55" r="16"/><circle cx="425" cy="70" r="11"/></g>
+   <circle cx="250" cy="195" r="24" fill="#a24b31"/><path d="M250 183v14m-7-7h14" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+   <text x="250" y="240" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="700" font-size="17" fill="#22342b">Aire Sur</text>
+   <text x="460" y="110" text-anchor="end" font-family="Figtree,sans-serif" font-size="13" fill="#566259">hacia Llifén →</text>
+   <text x="20" y="105" font-family="Figtree,sans-serif" font-size="13" fill="#566259">← centro de Futrono</text>
+   <text x="240" y="335" text-anchor="middle" font-family="Figtree,sans-serif" font-style="normal" font-weight="600" font-size="15" fill="#fff">Lago Ranco</text>
+  </svg></div>
+ </div>
+</section>
+
+<section class="osc" id="reservar" aria-labelledby="t-re2">
+ <div class="w ct">
+  <div class="cab" style="max-width:none;text-align:center"><p class="eti">Reserva</p><h2 id="t-re2">Aparta tu lugar por WhatsApp</h2><p>Elige la clase en el horario o aquí mismo, y el mensaje queda listo para enviar. Este sitio es una demostración: no se guarda ningún dato.</p></div>
+  <form id="form" novalidate aria-label="Formulario de reserva">
+   <div><label for="nom">Tu nombre</label><input id="nom" name="nombre" autocomplete="name" required aria-describedby="e-nom"><span class="err" id="e-nom" aria-live="polite"></span></div>
+   <div><label for="niv">Tu experiencia</label><select id="niv"><option>Nunca he practicado</option><option>Practico a veces</option><option>Practico seguido</option></select><span class="err"></span></div>
+   <div class="full"><label for="cla">Clase que quieres reservar</label><select id="cla" required aria-describedby="e-cla"></select><span class="err" id="e-cla" aria-live="polite"></span></div>
+   <div class="full"><label for="pla">Plan</label><select id="pla"><option>Clase suelta</option><option>Pack 4 clases</option><option>Pack 8 clases</option><option>Mensual libre</option></select></div>
+   <div class="full"><label for="msg">¿Algo que debamos saber? (opcional)</label><textarea id="msg" placeholder="Lesiones, embarazo, objetivos…"></textarea></div>
+   <div class="full"><button class="btn b1" type="submit" style="width:100%">Enviar reserva por WhatsApp</button></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="w"><span>Aire Sur · Yoga y Pilates · Futrono, Región de Los Ríos</span><span>Sitio de ejemplo · Diseño por <a href="../">Werex Studio</a></span></div></footer>
+
+<script>
+(function(){
+var DIAS=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'],NOMDIA=['lunes','martes','miércoles','jueves','viernes','sábado','domingo'];
+var C=[
+[0,'08:00','Hatha suave','yoga','Todos',60,'Pía',10,3],[0,'12:30','Pilates mat exprés','pilates','Inicial',45,'Tomás',10,6],[0,'19:00','Vinyasa','yoga','Intermedio',75,'Pía',10,8],[0,'20:15','Meditación guiada','meditacion','Todos',30,'Pía',12,4],
+[1,'08:00','Pilates mat','pilates','Todos',60,'Tomás',10,5],[1,'10:00','Yoga prenatal','yoga','Todos',60,'Pía',8,3],[1,'18:30','Pilates espalda sana','pilates','Inicial',60,'Tomás',10,7],[1,'20:00','Hatha','yoga','Todos',60,'Pía',10,9],
+[2,'08:00','Vinyasa','yoga','Intermedio',75,'Pía',10,4],[2,'12:30','Yoga exprés','yoga','Todos',30,'Pía',10,2],[2,'19:00','Pilates mat','pilates','Intermedio',60,'Tomás',10,10],[2,'20:15','Meditación guiada','meditacion','Todos',30,'Pía',12,5],
+[3,'08:00','Hatha suave','yoga','Todos',60,'Pía',10,6],[3,'10:00','Pilates inicial','pilates','Inicial',60,'Tomás',10,2],[3,'18:30','Vinyasa','yoga','Intermedio',75,'Pía',10,7],[3,'20:00','Yin yoga','yoga','Todos',60,'Pía',10,4],
+[4,'08:00','Pilates mat','pilates','Todos',60,'Tomás',10,5],[4,'12:30','Yoga exprés','yoga','Todos',30,'Pía',10,3],[4,'18:30','Yin y meditación','meditacion','Todos',75,'Pía',12,6],
+[5,'09:30','Vinyasa fluido','yoga','Intermedio',75,'Pía',10,9],[5,'11:00','Pilates mat','pilates','Todos',60,'Tomás',10,4],[5,'12:15','Estiramiento restaurativo','yoga','Todos',45,'Pía',12,3]
+].map(function(c,i){return{id:i,d:c[0],h:c[1],n:c[2],t:c[3],niv:c[4],dur:c[5],prof:c[6],cap:c[7],res:c[8]}});
+var TIPO={yoga:['Yoga',''],pilates:['Pilates','p'],meditacion:['Meditación','m']};
+function ahoraCL(){
+ try{var p=new Intl.DateTimeFormat('es-CL',{timeZone:'America/Santiago',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()),o={};
+  p.forEach(function(x){o[x.type]=x.value});
+  var m={lun:0,mar:1,mié:2,mie:2,jue:3,vie:4,sáb:5,sab:5,dom:6};
+  var w=m[String(o.weekday).toLowerCase().replace('.','')];
+  if(w===undefined)throw 0;
+  return{d:w,min:(+o.hour)*60+(+o.minute)}}
+ catch(e){var n=new Date();return{d:(n.getDay()+6)%7,min:n.getHours()*60+n.getMinutes()}}
+}
+function mins(h){var a=h.split(':');return+a[0]*60+ +a[1]}
+function momento(h){var m=mins(h);return m<720?'manana':(m<1080?'mediodia':'noche')}
+var hoy=ahoraCL().d,sel=hoy>5?0:hoy,fd='todas',$=function(i){return document.getElementById(i)};
+function cupos(c){return c.cap-c.res}
+function pinta(){
+ var nv=$('f-nivel').value,mo=$('f-mom').value,ul=$('clases-lista');
+ var l=C.filter(function(c){return c.d===sel&&(fd==='todas'||c.t===fd)&&(!nv||c.niv===nv)&&(!mo||momento(c.h)===mo)});
+ ul.innerHTML='';
+ if(!l.length){var li=document.createElement('li');li.className='vacio';li.textContent=sel===6?'Los domingos descansamos. Nos vemos el lunes.':'No hay clases con esos filtros este día. Prueba otro día o quita algún filtro.';ul.appendChild(li);return}
+ l.forEach(function(c){
+  var k=cupos(c),li=document.createElement('li');li.className='clase';
+  var cl=k<=0?'lleno':(k<=2?'poco':''),tx=k<=0?'Completa · lista de espera':(k===1?'Queda 1 cupo':'Quedan '+k+' cupos');
+  li.innerHTML='<div class="hora">'+c.h+'<small>'+c.dur+' min</small></div><div><h3></h3><div class="meta"><span class="tag '+TIPO[c.t][1]+'">'+TIPO[c.t][0]+'</span><span>Nivel: '+c.niv+'</span><span>Con '+c.prof+'</span></div><span class="cupo '+cl+'">'+tx+'</span></div><button type="button" class="btn b2" data-id="'+c.id+'"></button>';
+  li.querySelector('h3').textContent=c.n;
+  var b=li.querySelector('button');b.textContent=k<=0?'Anotarme en espera':'Reservar';
+  b.setAttribute('aria-label',b.textContent+': '+c.n+', '+NOMDIA[c.d]+' '+c.h);
+  ul.appendChild(li)});
+}
+var dd=$('dias');
+DIAS.forEach(function(n,i){var b=document.createElement('button');b.type='button';b.className='dia'+(i===hoy?' hoy':'');b.setAttribute('aria-pressed',i===sel);b.innerHTML=n+'<small>'+(i===hoy?'hoy':(i===6?'cerrado':'&nbsp;'))+'</small>';
+ b.addEventListener('click',function(){sel=i;[].forEach.call(dd.children,function(x,j){x.setAttribute('aria-pressed',j===i)});pinta()});dd.appendChild(b)});
+$('f-disc').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;fd=b.dataset.v;[].forEach.call(this.querySelectorAll('.chip'),function(x){x.setAttribute('aria-pressed',x===b)});pinta()});
+$('f-nivel').addEventListener('change',pinta);$('f-mom').addEventListener('change',pinta);
+// select de clases del formulario
+var sc=$('cla');
+function llena(sel0){sc.innerHTML='<option value="">Elige una clase…</option>';C.forEach(function(c){var o=document.createElement('option');o.value=c.id;o.textContent=NOMDIA[c.d].charAt(0).toUpperCase()+NOMDIA[c.d].slice(1)+' '+c.h+' · '+c.n;sc.appendChild(o)});if(sel0!==undefined)sc.value=sel0}
+llena();
+$('clases-lista').addEventListener('click',function(e){var b=e.target.closest('button[data-id]');if(!b)return;
+ var c=C[+b.dataset.id];if(cupos(c)>0)c.res++;sc.value=c.id;pinta();
+ var f=$('reservar');f.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});setTimeout(function(){$('nom').focus({preventScroll:true})},450)});
+document.querySelectorAll('[data-plan]').forEach(function(b){b.addEventListener('click',function(){$('pla').value=b.dataset.plan;$('reservar').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})})});
+// próxima clase y estado
+function proxima(){
+ var a=ahoraCL(),res=null;
+ for(var k=0;k<7&&!res;k++){var d=(a.d+k)%7;
+  C.filter(function(c){return c.d===d}).sort(function(x,y){return mins(x.h)-mins(y.h)}).some(function(c){if(k>0||mins(c.h)>a.min){res={c:c,k:k};return true}})}
+ var t=$('proxima').querySelector('span');
+ if(!res){t.textContent='Revisa el horario semanal para elegir tu clase.';return}
+ var c=res.c,cuando=res.k===0?'hoy':(res.k===1?'mañana':'el '+NOMDIA[c.d]);
+ t.textContent='Próxima clase: '+c.n+', '+cuando+' a las '+c.h;
+}
+function estado(){
+ var a=ahoraCL(),ab=a.d<5?(a.min>=480&&a.min<1260):(a.d===5&&a.min>=540&&a.min<810);
+ var e=$('estado');e.className='estado'+(ab?' abierto':'');e.querySelector('span').textContent=ab?'Abierto ahora':'Cerrado ahora';
+ var dts=$('horas').querySelectorAll('dd');dts[a.d<5?0:(a.d===5?1:2)].className='hoy-fila';
+}
+proxima();estado();pinta();
+// respiración
+var rb=$('resp-btn'),es=$('esfera'),rt=$('resp-txt'),rs=$('resp-sr'),tm=null,run=false,cy=0;
+var red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function fase(inh){es.className='esfera '+(inh?'in':'out');rt.textContent=inh?'Inhala':'Exhala';rs.textContent=inh?'Inhala':'Exhala'}
+function ciclo(){fase(true);tm=setTimeout(function(){fase(false);tm=setTimeout(function(){cy++;if(cy>=6){para(true)}else ciclo()},6000)},4000)}
+function para(fin){run=false;clearTimeout(tm);es.className='esfera';rt.textContent=fin?'Bien hecho':'Listo';rs.textContent=fin?'Pausa terminada':'';rb.textContent=fin?'Repetir':'Comenzar';rb.setAttribute('aria-pressed','false')}
+rb.addEventListener('click',function(){if(run){para(false);return}run=true;cy=0;rb.textContent='Detener';rb.setAttribute('aria-pressed','true');ciclo()});
+if(red){es.style.transition='none'}
+// formulario
+$('form').addEventListener('submit',function(e){
+ e.preventDefault();var ok=true,n=$('nom').value.trim();
+ $('e-nom').textContent=n?'':'Escribe tu nombre.';$('e-cla').textContent=sc.value?'':'Elige una clase.';
+ if(!n){$('nom').setAttribute('aria-invalid','true');ok=false}else $('nom').removeAttribute('aria-invalid');
+ if(!sc.value){sc.setAttribute('aria-invalid','true');ok=false}else sc.removeAttribute('aria-invalid');
+ if(!ok){(n?sc:$('nom')).focus();return}
+ var c=C[+sc.value],t='Hola, soy '+n+'. Quiero reservar '+c.n+' el '+NOMDIA[c.d]+' a las '+c.h+'. Plan: '+$('pla').value+'. Experiencia: '+$('niv').value+'.'+($('msg').value.trim()?' Nota: '+$('msg').value.trim():'')+' (Mensaje de prueba desde el sitio de ejemplo de Aire Sur)';
+ window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener');
+});
+// aparición suave
+var rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window&&!red){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12});rv.forEach(function(x){io.observe(x)})}else rv.forEach(function(x){x.classList.add('on')});
+})();
+</script>
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+</body>
+</html>
