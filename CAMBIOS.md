@@ -9,7 +9,7 @@ Esta rama parte desde la del 5 de noviembre (solicitud #32, aún abierta, que a 
 - No se modificó texto, secciones, datos de contacto ni identidad visual.
 
 ### Revisión de demos y portafolio
-- Se revisaron las 20 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin enlaces, anclas ni imágenes locales rotas, aviso de datos ficticios en todas las demos y páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
+- Se revisaron las 19 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin enlaces, anclas ni imágenes locales rotas, aviso de datos ficticios en todas las demos y páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
 
 ### Demo nueva
 - `yoga/`: Aire Sur, estudio ficticio de yoga y pilates en Futrono (verde bosque, arcilla y salvia; tipografías Gloock y Figtree).
