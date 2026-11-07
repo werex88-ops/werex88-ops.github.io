@@ -178,7 +178,12 @@
     html{scroll-behavior:auto}
     .rv{opacity:1;transform:none;transition:none}
   }
+  @media (forced-colors:active){
+    a:focus-visible,button:focus-visible,.wa-form input:focus-visible,.wa-form select:focus-visible,.wa-form textarea:focus-visible{outline-color:Highlight}
+  }
   @media print{
+    h2,h3{break-after:avoid}
+    p,li{orphans:3;widows:3}
     @page{size:A4;margin:14mm}
     body{font-size:9.5pt;line-height:1.38;color:#000}
     .cifras,.ficha dl div:nth-child(n+3){display:none}

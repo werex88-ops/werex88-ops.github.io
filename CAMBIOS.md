@@ -1,5 +1,29 @@
 # Registro de cambios
 
+## 2026-11-07 (mejora diaria: demo de ferretería)
+
+Esta rama parte desde la del 6 de noviembre (solicitud #33, aún abierta, que a su vez incluye la #32 y la #31), para no duplicar trabajo ni generar conflictos.
+
+### Currículum (`index.html`)
+- Impresión: los títulos de sección y de cargo ya no quedan solos al final de una página (`break-after: avoid`) y se evitan líneas sueltas (huérfanas y viudas).
+- Accesibilidad: en modo de alto contraste de Windows, el anillo de foco usa el color del sistema.
+- No se modificó texto, secciones, datos de contacto ni identidad visual.
+
+### Revisión de demos y portafolio
+- Se revisaron las 20 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin enlaces, anclas ni imágenes locales rotas, aviso de datos ficticios en todas las demos y páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
+
+### Demo nueva
+- `ferreteria/`: Lleuque, ferretería ficticia en Río Bueno (azul petróleo, rojo óxido y papel; tipografías Bricolage Grotesque, Public Sans y DM Mono).
+- Funciones: calculadora de materiales (cerco, radier, pintura de muros, cajones de huerto) con holgura opcional y total en CLP; catálogo de 29 productos con filtros y búsqueda; pedido con cantidades, entrega (despacho urbano gratis desde $60.000) y envío por WhatsApp sin número fijo; estado abierto/cerrado según hora de Chile.
+- Sin fotografías: ilustraciones SVG propias, porque `images.unsplash.com` sigue respondiendo 403 desde el entorno y no se podían verificar identificadores nuevos.
+- Tarjeta en el portafolio (18 diseños) y captura `img/ferreteria.jpg` (1200×800, 103 KB).
+
+### Sugerencias pendientes para René
+- Reemplazar las ilustraciones de Lleuque (y de taller, barbería, Mañío y Aire Sur) por fotos reales o de Unsplash verificadas cuando haya acceso a `images.unsplash.com`.
+- Currículum: agregar teléfono o LinkedIn y logros medibles si quieres; no se inventaron datos.
+- Las capturas del portafolio se generan sin las tipografías de Google Fonts (bloqueadas en el entorno); conviene regenerarlas desde un navegador con acceso total.
+- Las cantidades de la calculadora de Lleuque son aproximadas; un cliente real debería validarlas con su propio maestro.
+
 ## 2026-11-06 (mejora diaria: demo de yoga y pilates)
 
 Esta rama parte desde la del 5 de noviembre (solicitud #32, aún abierta, que a su vez incluye la #31), para no duplicar trabajo ni generar conflictos.
