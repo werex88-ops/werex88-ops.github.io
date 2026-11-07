@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mañío · Artesanía en madera nativa en Panguipulli</title>
+<meta name="description" content="Taller de artesanía en madera en Panguipulli: tablas, repisas, bancos y mesas a medida. Arma tu pieza, mira el precio y pídela por WhatsApp. Sitio de ejemplo con datos ficticios.">
+<meta name="theme-color" content="#2e1d12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e1d12'/%3E%3Cpath d='M32 10c9 8 14 16 14 25 0 8-6 14-14 14s-14-6-14-14c0-9 5-17 14-25z' fill='none' stroke='%23d9a066' stroke-width='3'/%3E%3Cpath d='M32 22v28' stroke='%23d9a066' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--noz:#2e1d12;--noz2:#47301f;--papel:#f4ecdf;--crema:#fbf6ec;--linea:#dccdb4;--cobre:#9a4f1f;--cobre-c:#d9a066;--musgo:#46602a;--tinta:#2a1c12;--suave:#6a5646}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:'Karla',system-ui,sans-serif;background:var(--papel);color:var(--tinta);line-height:1.65;font-size:17px;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:700;line-height:1.08;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,52px);letter-spacing:-.01em}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--cobre);outline-offset:3px;border-radius:4px}
+.os :focus-visible{outline-color:var(--cobre-c)}
+.saltar{position:absolute;left:12px;top:-60px;background:var(--cobre-c);color:var(--noz);padding:10px 16px;border-radius:8px;z-index:100;font-weight:700}
+.saltar:focus{top:12px}
+.eti{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--cobre);margin-bottom:12px}
+.os .eti{color:var(--cobre-c)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;border:2px solid transparent;transition:transform .2s,background .2s;min-height:48px}
+.btn:hover{transform:translateY(-2px)}
+.b1{background:var(--cobre);color:#fff}.b1:hover{background:#7f3f15}
+.b2{border-color:currentColor;background:transparent}
+.os .b1{background:var(--cobre-c);color:var(--noz)}.os .b1:hover{background:#e8b67f}
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(46,29,18,.94);backdrop-filter:blur(8px);color:var(--papel)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-family:'Fraunces',serif;font-weight:800;font-size:24px;display:flex;align-items:center;gap:10px}
+.logo svg{width:28px;height:28px}
+.menu{display:flex;gap:26px;font-size:15px;font-weight:500}
+.menu a{opacity:.85;padding:8px 0}.menu a:hover{opacity:1;color:var(--cobre-c)}
+.nav .btn{padding:9px 18px;min-height:40px;font-size:15px}
+@media(max-width:820px){.menu{display:none}}
+.hero{background:var(--noz);color:var(--papel);padding:130px 0 80px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,transparent 0 46px,rgba(217,160,102,.05) 46px 48px,transparent 48px 120px);pointer-events:none}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative}
+.hero h1{font-size:clamp(40px,6.4vw,76px);letter-spacing:-.02em;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--cobre-c)}
+.hero p.lead{font-size:19px;max-width:520px;color:#e6d9c4;margin-bottom:30px}
+.hero .acc{display:flex;gap:14px;flex-wrap:wrap}
+.hero .dato{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;font-size:14px;color:#d8c9b0}
+.hero .dato b{display:block;font-family:'Fraunces',serif;font-size:28px;color:var(--cobre-c)}
+.troncos{aspect-ratio:1/1.05;max-width:460px;margin-left:auto;width:100%}
+@media(max-width:860px){.hero .w{grid-template-columns:1fr}.troncos{max-width:340px;margin:0 auto}}
+.estado{display:inline-flex;align-items:center;gap:8px;font-size:14px;background:rgba(255,255,255,.08);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+.estado i{width:9px;height:9px;border-radius:50%;background:#8a8a8a}
+.estado.on i{background:#6fcf7a;box-shadow:0 0 0 4px rgba(111,207,122,.25)}
+section{padding:92px 0}
+.cab{max-width:640px;margin-bottom:44px}
+.cab p{color:var(--suave);margin-top:14px}
+.os .cab p{color:#d8c9b0}
+.valores{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.val{background:var(--crema);border:1px solid var(--linea);border-radius:18px;padding:28px}
+.val svg{width:44px;height:44px;margin-bottom:14px}
+.val h3{font-size:22px;margin-bottom:8px}
+.val p{color:var(--suave);font-size:16px}
+@media(max-width:820px){.valores{grid-template-columns:1fr}}
+.filtros{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filtros button{padding:9px 18px;border-radius:999px;border:1.5px solid var(--linea);background:var(--crema);font-weight:700;font-size:15px;min-height:44px}
+.filtros button[aria-pressed=true]{background:var(--noz);color:var(--papel);border-color:var(--noz)}
+.cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.pz{background:var(--crema);border:1px solid var(--linea);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.pz:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(46,29,18,.14)}
+.pz[hidden]{display:none}
+.pz .img{aspect-ratio:4/3;background:#e9dcc4}
+.pz .img svg{width:100%;height:100%}
+.pz .tx{padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pz h3{font-size:21px}
+.pz p{font-size:15px;color:var(--suave);flex:1}
+.pz .pie{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:8px}
+.pz .pr{font-family:'Fraunces',serif;font-weight:700;font-size:19px}
+.pz .ar{font-size:14px;font-weight:700;color:var(--cobre);background:none;border:0;text-decoration:underline;padding:10px 0;min-height:44px}
+.os{background:var(--noz);color:var(--papel)}
+.conf{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+@media(max-width:900px){.conf{grid-template-columns:1fr}}
+.panel{background:var(--noz2);border-radius:20px;padding:28px}
+.campo{margin-bottom:18px}
+.campo>label,.campo>span.l{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px;color:#f0e4d0}
+.campo output{color:var(--cobre-c)}
+select,input[type=text]{width:100%;background:#2e1d12;border:1.5px solid #6b4d36;border-radius:12px;padding:12px 14px;min-height:46px;color:var(--papel)}
+input[type=range]{width:100%;accent-color:var(--cobre-c);height:32px}
+.maderas{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.maderas label{cursor:pointer;position:relative}
+.maderas input{position:absolute;opacity:0;pointer-events:none}
+.maderas span{display:block;text-align:center;padding:10px 4px;border:2px solid #6b4d36;border-radius:12px;font-size:14px;font-weight:700;color:#f0e4d0}
+.maderas i{display:block;height:20px;border-radius:6px;margin-bottom:6px}
+.maderas input:checked+span{border-color:var(--cobre-c);background:rgba(217,160,102,.14)}
+.maderas input:focus-visible+span{outline:3px solid var(--cobre-c);outline-offset:2px}
+.vista{background:#e9dcc4;border-radius:20px;padding:20px;color:var(--tinta);position:sticky;top:84px}
+.vista svg{width:100%;height:auto;aspect-ratio:16/10;background:#f4ecdf;border-radius:12px}
+.vista .res{margin-top:16px;display:grid;gap:6px;font-size:15px}
+.vista .res div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed #bfa98a;padding-bottom:6px}
+.vista .tot{font-family:'Fraunces',serif;font-size:34px;font-weight:800;margin:12px 0 4px}
+.vista small{color:#5a4637;display:block;margin-bottom:14px}
+.vista .btn{width:100%}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:p}
+.paso{border-top:3px solid var(--cobre);padding-top:16px}
+.paso::before{counter-increment:p;content:"0" counter(p);font-family:'Fraunces',serif;font-size:34px;font-weight:800;color:var(--cobre)}
+.paso h3{font-size:20px;margin:6px 0}
+.paso p{color:var(--suave);font-size:15.5px}
+@media(max-width:900px){.pasos{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pasos{grid-template-columns:1fr}}
+.nos{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.nos .taller{border-radius:22px;overflow:hidden;background:var(--noz)}
+.nos p+p{margin-top:14px}
+.nos p{color:var(--suave)}
+@media(max-width:860px){.nos{grid-template-columns:1fr}}
+.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.op{background:var(--crema);border:1px solid var(--linea);border-radius:18px;padding:26px}
+.op blockquote{font-family:'Fraunces',serif;font-size:19px;line-height:1.4;margin-bottom:16px}
+.op cite{font-style:normal;font-size:14px;color:var(--suave);display:block}
+.op .rot{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#e9dcc4;color:#5a4637;padding:3px 10px;border-radius:999px}
+@media(max-width:900px){.ops{grid-template-columns:1fr}}
+.faq details{border-bottom:1px solid var(--linea);padding:4px 0}
+.faq summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:48px}
+.faq summary::after{content:"+";font-size:24px;color:var(--cobre);line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--suave);padding:0 0 18px;max-width:720px}
+.ubi{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+@media(max-width:860px){.ubi{grid-template-columns:1fr}}
+.horas{list-style:none;margin-top:18px}
+.horas li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #6b4d36;font-size:16px}
+.horas li.hoy{color:var(--cobre-c);font-weight:700}
+.mapa{border-radius:20px;overflow:hidden;background:#2e1d12;border:1px solid #6b4d36}
+.mapa svg{width:100%;height:auto}
+.dir{margin-top:20px;color:#e6d9c4}
+footer{background:#1d120a;color:#bfae96;padding:36px 0 90px;font-size:14.5px}
+footer .w{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer b{font-family:'Fraunces',serif;color:var(--papel);font-size:20px}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+@keyframes viruta{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(3deg)}}
+.vir{animation:viruta 6s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+@media(max-width:600px){section{padding:68px 0}.w{padding:0 18px}.hero{padding-top:110px}}
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header><div class="w nav">
+  <a class="logo" href="#inicio" aria-label="Mañío, inicio"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6c10 8 16 17 16 28 0 9-7 16-16 16S16 43 16 34C16 23 22 14 32 6z" fill="none" stroke="#d9a066" stroke-width="4"/><path d="M32 20v38" stroke="#d9a066" stroke-width="4"/></svg>Mañío</a>
+  <nav class="menu" aria-label="Principal"><a href="#piezas">Piezas</a><a href="#armador">Arma tu pieza</a><a href="#proceso">Proceso</a><a href="#nosotros">Taller</a><a href="#visita">Visítanos</a></nav>
+  <a class="btn b1" href="#armador">Cotizar</a>
+</div></header>
+<main id="contenido">
+<section class="hero" id="inicio"><div class="w">
+  <div>
+    <p class="estado" id="estado" role="status"><i></i><span>Revisando horario…</span></p>
+    <h1>Madera nativa, <em>hecha a mano</em> en Panguipulli</h1>
+    <p class="lead">Tablas, repisas, bancos y mesas que se construyen contigo: eliges la madera y las medidas, nosotros la trabajamos con herramientas de mano y aceites naturales.</p>
+    <div class="acc"><a class="btn b1" href="#armador">Arma tu pieza</a><a class="btn b2" href="#piezas">Ver colección</a></div>
+    <div class="dato"><div><b>4</b>maderas disponibles</div><div><b>7–10</b>días hábiles de fabricación</div><div><b>100%</b>acabados sin solventes</div></div>
+  </div>
+  <svg class="troncos" viewBox="0 0 400 420" role="img" aria-label="Ilustración de troncos y anillos de crecimiento de la madera">
+    <defs><radialGradient id="anillo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e8b67f"/><stop offset="1" stop-color="#b9743c"/></radialGradient></defs>
+    <circle cx="200" cy="200" r="168" fill="url(#anillo)"/>
+    <g fill="none" stroke="#7d4a22" stroke-width="2.4" opacity=".75"><circle cx="200" cy="200" r="150"/><circle cx="200" cy="200" r="126"/><circle cx="200" cy="200" r="104"/><circle cx="200" cy="200" r="82"/><circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="38"/><circle cx="200" cy="200" r="16"/></g>
+    <path d="M200 200L340 120M200 200L90 330" stroke="#7d4a22" stroke-width="2" opacity=".5"/>
+    <circle cx="200" cy="200" r="168" fill="none" stroke="#47301f" stroke-width="12"/>
+    <g class="vir"><path d="M318 330c20-30 50-38 62-28-10 22-34 40-62 28z" fill="#d9a066"/></g>
+    <g class="vir" style="animation-delay:-2s"><path d="M30 90c18-26 44-32 56-22-8 20-30 34-56 22z" fill="#e8b67f"/></g>
+    <rect x="40" y="372" width="320" height="22" rx="8" fill="#47301f"/>
+  </svg>
+</div></section>
+
+<section id="valores"><div class="w">
+  <div class="cab rv"><p class="eti">Por qué Mañío</p><h2>Piezas pensadas para durar décadas</h2></div>
+  <div class="valores">
+    <div class="val rv"><svg viewBox="0 0 48 48" fill="none" stroke="#46602a" stroke-width="3" aria-hidden="true"><path d="M24 4c8 7 12 14 12 22 0 7-5 12-12 12S12 33 12 26C12 18 16 11 24 4z"/><path d="M24 16v28"/></svg><h3>Madera de origen conocido</h3><p>Trabajamos con maderas secas al aire, de aserraderos de la zona, y aprovechamos cada tabla para que sobre lo mínimo.</p></div>
+    <div class="val rv"><svg viewBox="0 0 48 48" fill="none" stroke="#46602a" stroke-width="3" aria-hidden="true"><path d="M8 36l22-22 6 6-22 22H8z"/><path d="M28 16l6 6"/></svg><h3>Hecho a mano y a tu medida</h3><p>Cada pieza se corta, ensambla y lija en el taller. Si necesitas otra medida, la hacemos sin costo adicional de diseño.</p></div>
+    <div class="val rv"><svg viewBox="0 0 48 48" fill="none" stroke="#46602a" stroke-width="3" aria-hidden="true"><path d="M24 6c6 8 10 14 10 20a10 10 0 01-20 0c0-6 4-12 10-20z"/></svg><h3>Acabados naturales</h3><p>Aceite de linaza y cera de abejas, seguros para el contacto con alimentos. Barniz marino solo si la pieza va a la intemperie.</p></div>
+  </div>
+</div></section>
+
+<section id="piezas" style="background:#efe3cf"><div class="w">
+  <div class="cab rv"><p class="eti">Colección</p><h2>Piezas listas para encargar</h2><p>Precios referenciales en pesos chilenos; la medida final se ajusta en el armador.</p></div>
+  <div class="filtros rv" role="group" aria-label="Filtrar por categoría" id="filtros">
+    <button type="button" aria-pressed="true" data-f="todas">Todas</button>
+    <button type="button" aria-pressed="false" data-f="cocina">Cocina</button>
+    <button type="button" aria-pressed="false" data-f="hogar">Hogar</button>
+    <button type="button" aria-pressed="false" data-f="exterior">Exterior</button>
+  </div>
+  <div class="cat" id="cat"></div>
+</div></section>
+
+<section class="os" id="armador"><div class="w">
+  <div class="cab rv"><p class="eti">Arma tu pieza</p><h2>Elige madera, medidas y acabado</h2><p>Mira cómo queda, revisa el valor estimado y envíanos tu diseño por WhatsApp. El precio final se confirma tras una conversación breve.</p></div>
+  <div class="conf">
+    <form class="panel" id="f" onsubmit="return false" aria-label="Armador de piezas">
+      <div class="campo"><label for="tipo">Tipo de pieza</label><select id="tipo"></select></div>
+      <div class="campo"><span class="l" id="lm">Madera</span>
+        <div class="maderas" id="maderas" role="radiogroup" aria-labelledby="lm"></div></div>
+      <div class="campo"><label for="an">Ancho <output id="oan"></output></label><input type="range" id="an"></div>
+      <div class="campo"><label for="la">Largo <output id="ola"></output></label><input type="range" id="la"></div>
+      <div class="campo"><label for="ac">Acabado</label><select id="ac"></select></div>
+      <div class="campo"><label for="gr">Grabado (opcional, máx. 18 letras)</label><input type="text" id="gr" maxlength="18" autocomplete="off" placeholder="Ej.: Familia Soto"></div>
+      <div class="campo"><label for="en">Entrega</label><select id="en"><option value="0">Retiro en el taller (gratis)</option><option value="6000">Envío dentro de la Región de Los Ríos (+$6.000)</option></select></div>
+    </form>
+    <div class="vista" aria-live="polite">
+      <svg id="pre" viewBox="0 0 320 200" role="img" aria-label="Vista previa de la pieza elegida"></svg>
+      <div class="res" id="res"></div>
+      <p class="tot" id="tot"></p><small>Valor estimado, IVA incluido. Ejemplo ficticio.</small>
+      <a class="btn b1" id="wa" href="#" target="_blank" rel="noopener">Enviar diseño por WhatsApp</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="proceso"><div class="w">
+  <div class="cab rv"><p class="eti">Proceso</p><h2>De la idea a tu casa en cuatro pasos</h2></div>
+  <div class="pasos">
+    <div class="paso rv"><h3>Conversamos</h3><p>Nos cuentas para qué la quieres y dónde irá. Te sugerimos madera y medidas.</p></div>
+    <div class="paso rv"><h3>Confirmamos</h3><p>Te enviamos el boceto y el valor final. Se reserva con un abono del 40 %.</p></div>
+    <div class="paso rv"><h3>Fabricamos</h3><p>Corte, ensamble, lijado a mano y acabado. Plazo habitual de 7 a 10 días hábiles.</p></div>
+    <div class="paso rv"><h3>Entregamos</h3><p>Retiras en el taller o la enviamos embalada a tu comuna de la región.</p></div>
+  </div>
+</div></section>
+
+<section id="nosotros" style="background:#efe3cf"><div class="w nos">
+  <div class="taller rv"><svg viewBox="0 0 480 360" role="img" aria-label="Ilustración de un banco de carpintero con cepillo, serrucho y una tabla">
+    <rect width="480" height="360" fill="#47301f"/><rect y="250" width="480" height="110" fill="#2e1d12"/>
+    <rect x="40" y="228" width="400" height="26" rx="5" fill="#b9743c"/><rect x="70" y="254" width="26" height="100" fill="#8a5528"/><rect x="384" y="254" width="26" height="100" fill="#8a5528"/>
+    <rect x="110" y="196" width="190" height="32" rx="5" fill="#e8b67f"/><path d="M118 212h174M118 204h120M130 220h150" stroke="#b9743c" stroke-width="2" fill="none"/>
+    <path d="M320 226l70-34 14 10-24 24z" fill="#d9a066"/><rect x="368" y="176" width="40" height="14" rx="6" fill="#2e1d12"/>
+    <path d="M60 60l190 70" stroke="#c9ccd0" stroke-width="10" stroke-linecap="round"/><path d="M60 60l-16-8" stroke="#8a5528" stroke-width="16" stroke-linecap="round"/>
+    <g stroke="#d9a066" stroke-width="3" fill="none" opacity=".6"><path d="M330 70h100M330 90h80M330 110h100"/></g>
+  </svg></div>
+  <div class="rv"><p class="eti">El taller</p><h2>Un oficio aprendido en familia</h2>
+    <p style="margin-top:16px">Mañío es un taller ficticio de Panguipulli, creado para este ejemplo, que nace de una carpintería familiar. Trabajamos pocas piezas a la vez para cuidar cada detalle.</p>
+    <p>Preferimos que una mesa dure tres generaciones a venderte tres mesas. Por eso explicamos cómo mantener la madera y ofrecemos reparación de nuestras propias piezas.</p></div>
+</div></section>
+
+<section id="opiniones"><div class="w">
+  <div class="cab rv"><p class="eti">Opiniones</p><h2>Lo que dirían nuestros clientes</h2></div>
+  <div class="ops">
+    <div class="op rv"><blockquote>“La tabla de picoteo llegó perfecta y el grabado quedó nítido. Se nota el cariño en el lijado.”</blockquote><cite>Cliente de ejemplo · Valdivia</cite><span class="rot">Opinión de ejemplo</span></div>
+    <div class="op rv"><blockquote>“Pedí un banco para la terraza con barniz marino y ha aguantado muy bien la lluvia del sur.”</blockquote><cite>Cliente de ejemplo · Lago Ranco</cite><span class="rot">Opinión de ejemplo</span></div>
+    <div class="op rv"><blockquote>“Me ayudaron a elegir la madera según el espacio. Comunicación clara y entrega a tiempo.”</blockquote><cite>Cliente de ejemplo · Futrono</cite><span class="rot">Opinión de ejemplo</span></div>
+  </div>
+</div></section>
+
+<section id="faq" style="background:#efe3cf"><div class="w faq">
+  <div class="cab rv"><p class="eti">Preguntas frecuentes</p><h2>Antes de encargar</h2></div>
+  <details><summary>¿Cómo cuido una pieza de madera?</summary><p>Límpiala con un paño húmedo, sin sumergirla. Cada seis meses aplica una capa fina de aceite de linaza; te enviamos las instrucciones con tu pedido.</p></details>
+  <details><summary>¿Puedo pedir una medida distinta a las del armador?</summary><p>Sí. Escríbenos por WhatsApp y evaluamos la medida; la mayoría de los pedidos especiales no tienen costo extra de diseño.</p></details>
+  <details><summary>¿Cómo se paga?</summary><p>Con un abono del 40 % al confirmar y el saldo al retirar o recibir. Aceptamos transferencia y tarjetas.</p></details>
+  <details><summary>¿Hacen envíos fuera de la región?</summary><p>Por ahora coordinamos envíos dentro de la Región de Los Ríos. Para otras zonas, consúltanos y buscamos un transporte seguro.</p></details>
+</div></section>
+
+<section class="os" id="visita"><div class="w ubi">
+  <div class="rv"><p class="eti">Visítanos</p><h2>Taller abierto en Panguipulli</h2>
+    <ul class="horas" id="horas" aria-label="Horario de atención"></ul>
+    <p class="dir"><b>Dirección de ejemplo:</b> Camino al Lago km 3, Panguipulli (dato ficticio).<br><b>WhatsApp de ejemplo:</b> +56 9 0000 0000<br><b>Correo de ejemplo:</b> contacto@ejemplo.invalid</p>
+    <p style="margin-top:22px"><a class="btn b1" href="https://wa.me/?text=Hola%2C%20quiero%20consultar%20por%20una%20pieza%20de%20madera" target="_blank" rel="noopener">Escribir por WhatsApp</a></p></div>
+  <div class="mapa rv"><svg viewBox="0 0 400 320" role="img" aria-label="Mapa ilustrativo: el taller queda en el camino que bordea el lago">
+    <rect width="400" height="320" fill="#2e1d12"/><path d="M0 0h400v120c-70 40-130-10-200 20S60 150 0 110z" fill="#3b5a6a"/>
+    <text x="150" y="60" fill="#cfe2ea" font-size="15" font-family="Karla,sans-serif">Lago (ilustrativo)</text>
+    <path d="M0 190c90-30 150 20 230-10s120-20 170-40" stroke="#d9a066" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M60 300V230M110 300V240M340 310V240M290 310V250" stroke="#46602a" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="235" cy="228" r="18" fill="#d9a066"/><path d="M226 232l9-12 9 12z" fill="#2e1d12"/>
+    <text x="206" y="276" fill="#f4ecdf" font-size="15" font-weight="700" font-family="Karla,sans-serif">Taller Mañío</text>
+  </svg></div>
+</div></section>
+</main>
+<footer><div class="w"><div><b>Mañío</b><br>Artesanía en madera · Panguipulli, Región de Los Ríos</div><div>Sitio de ejemplo creado por Werex Studio.<br>Negocio, precios y contactos ficticios.</div></div></footer>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+var CLP=function(n){return '$'+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')};
+var MAD={rau:{n:'Raulí',c:'#b5623a',c2:'#8f4526',k:1},len:{n:'Lenga',c:'#d3a46c',c2:'#b3814a',k:1.12},ulm:{n:'Ulmo',c:'#e4c68c',c2:'#c7a266',k:1.25},pin:{n:'Pino',c:'#e8cf9d',c2:'#d0b57c',k:.8}};
+var TIPOS={
+ tabla:{n:'Tabla de picoteo',w:[20,50,30],h:[25,70,40],base:5000,m:9,cat:'cocina',d:'Con canal para jugos y asa. Ideal para quesos y fiambres.',ac:['aceite','cera']},
+ repisa:{n:'Repisa flotante',w:[15,35,22],h:[40,160,80],base:7000,m:8,cat:'hogar',d:'Fijación oculta, resiste libros y plantas.',ac:['aceite','cera']},
+ banco:{n:'Banco de terraza',w:[30,50,38],h:[60,180,100],base:16000,m:12,cat:'exterior',d:'Cuatro patas, listones separados para drenar la lluvia.',ac:['marino','aceite']},
+ mesa:{n:'Mesa de centro',w:[40,80,55],h:[60,130,90],base:24000,m:7,cat:'hogar',d:'Tapa maciza y patas con ensamble de espiga.',ac:['aceite','cera']}
+};
+var ACS={aceite:{n:'Aceite de linaza',p:0},cera:{n:'Cera de abejas',p:3000},marino:{n:'Barniz marino',p:5000}};
+var CAT=[
+ {t:'tabla',nom:'Tabla Quila',d:'Tabla de picoteo con canal y asa.',pr:0,m:'rau',cat:'cocina'},
+ {t:'tabla',nom:'Tabla Pehuén',d:'Tabla grande en lenga para compartir.',pr:0,m:'len',cat:'cocina'},
+ {t:'repisa',nom:'Repisa Copihue',d:'Repisa flotante de 80 cm en raulí.',pr:0,m:'rau',cat:'hogar'},
+ {t:'mesa',nom:'Mesa Lahuén',d:'Mesa de centro en ulmo, 90 × 55 cm.',pr:0,m:'ulm',cat:'hogar'},
+ {t:'banco',nom:'Banco Ñire',d:'Banco de terraza con barniz marino.',ac:'marino',pr:0,m:'len',cat:'exterior'},
+ {t:'banco',nom:'Banco Pillán',d:'Banco largo en pino, económico y firme.',pr:0,m:'pin',cat:'exterior'}
+];
+function dib(t,m,w,h,txt){ // dibuja pieza en vista frontal esquemática
+ var M=MAD[m],s='';
+ var id='g'+Math.random().toString(36).slice(2,7);
+ s+='<defs><pattern id="'+id+'" width="40" height="8" patternUnits="userSpaceOnUse"><rect width="40" height="8" fill="'+M.c+'"/><path d="M0 2c10-2 20 2 40 0M0 6c12 2 24-2 40 0" stroke="'+M.c2+'" stroke-width="1" fill="none" opacity=".7"/></pattern></defs>';
+ var rw=TIPOS[t].w,rh=TIPOS[t].h;
+ var fw=.38+.5*(w-rw[0])/(rw[1]-rw[0]),fh=.36+.5*(h-rh[0])/(rh[1]-rh[0]);
+ var W=280*fw,H=(t==='repisa'||t==='tabla')?150*fw*.9:140*fh,x=160-W/2,y=100-H/2;
+ s+='<ellipse cx="160" cy="176" rx="'+(W/2+10)+'" ry="6" fill="#000" opacity=".12"/>';
+ if(t==='tabla'){s+='<rect x="'+x+'" y="'+y+'" width="'+W+'" height="'+H+'" rx="18" fill="url(#'+id+')" stroke="'+M.c2+'" stroke-width="2"/><rect x="'+(x+14)+'" y="'+(y+14)+'" width="'+(W-28)+'" height="'+(H-28)+'" rx="10" fill="none" stroke="'+M.c2+'" stroke-width="1.5" opacity=".6"/><circle cx="'+(x+W-26)+'" cy="'+(y+H/2)+'" r="7" fill="#f4ecdf" stroke="'+M.c2+'"/>'}
+ else if(t==='repisa'){H=26;y=84;s+='<rect x="'+x+'" y="'+y+'" width="'+W+'" height="'+H+'" rx="4" fill="url(#'+id+')" stroke="'+M.c2+'" stroke-width="2"/><rect x="'+(x+12)+'" y="'+(y+H)+'" width="10" height="12" fill="#6a5646"/><rect x="'+(x+W-22)+'" y="'+(y+H)+'" width="10" height="12" fill="#6a5646"/><rect x="'+(x+W*.3)+'" y="'+(y-30)+'" width="'+(W*.12)+'" height="30" fill="#46602a"/><rect x="'+(x+W*.5)+'" y="'+(y-22)+'" width="'+(W*.1)+'" height="22" fill="#9a4f1f"/>'}
+ else if(t==='banco'){var top=y+H*.18;s+='<rect x="'+x+'" y="'+y+'" width="'+W+'" height="'+(H*.2)+'" rx="4" fill="url(#'+id+')" stroke="'+M.c2+'" stroke-width="2"/><rect x="'+(x+12)+'" y="'+top+'" width="12" height="'+(H*.82)+'" fill="'+M.c2+'"/><rect x="'+(x+W-24)+'" y="'+top+'" width="12" height="'+(H*.82)+'" fill="'+M.c2+'"/><rect x="'+(x+12)+'" y="'+(y+H*.6)+'" width="'+(W-24)+'" height="8" fill="'+M.c2+'"/>'}
+ else {s+='<rect x="'+x+'" y="'+y+'" width="'+W+'" height="'+(H*.22)+'" rx="5" fill="url(#'+id+')" stroke="'+M.c2+'" stroke-width="2"/><rect x="'+(x+14)+'" y="'+(y+H*.22)+'" width="14" height="'+(H*.78)+'" fill="'+M.c2+'"/><rect x="'+(x+W-28)+'" y="'+(y+H*.22)+'" width="14" height="'+(H*.78)+'" fill="'+M.c2+'"/><rect x="'+(x+14)+'" y="'+(y+H*.55)+'" width="'+(W-28)+'" height="8" fill="'+M.c2+'"/>'}
+ if(txt){var ty=t==='tabla'?y+H/2+5:t==='repisa'?y+17:y+(H*.14)+4;s+='<text x="160" y="'+ty+'" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="'+(t==='repisa'?12:15)+'" fill="'+M.c2+'" stroke="#3b2416" stroke-width=".4" opacity=".95">'+txt.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</text>'}
+ return s;
+}
+// catálogo
+var cat=$('#cat');
+CAT.forEach(function(p){var T=TIPOS[p.t];p.pr=Math.round(((T.base+T.w[2]*T.h[2]*T.m)*MAD[p.m].k+(p.ac?ACS[p.ac].p:0))/100)*100});
+CAT.forEach(function(p,i){
+ var el=document.createElement('article');el.className='pz rv';el.dataset.cat=p.cat;
+ var T=TIPOS[p.t];
+ el.innerHTML='<div class="img"><svg viewBox="0 0 320 200" role="img" aria-label="Ilustración de '+p.nom+' en '+MAD[p.m].n.toLowerCase()+'">'+dib(p.t,p.m,T.w[2],T.h[2],'')+'</svg></div><div class="tx"><h3>'+p.nom+'</h3><p>'+p.d+' Madera: '+MAD[p.m].n+'.</p><div class="pie"><span class="pr">'+CLP(p.pr)+'</span><button type="button" class="ar" data-i="'+i+'">Personalizar</button></div></div>';
+ cat.appendChild(el);
+});
+$('#filtros').addEventListener('click',function(e){
+ var b=e.target.closest('button');if(!b)return;
+ [].forEach.call($('#filtros').children,function(x){x.setAttribute('aria-pressed',x===b)});
+ [].forEach.call(cat.children,function(c){c.hidden=!(b.dataset.f==='todas'||c.dataset.cat===b.dataset.f)});
+});
+// armador
+var tipo=$('#tipo'),an=$('#an'),la=$('#la'),ac=$('#ac'),gr=$('#gr'),en=$('#en'),mad=$('#maderas');
+Object.keys(TIPOS).forEach(function(k){tipo.insertAdjacentHTML('beforeend','<option value="'+k+'">'+TIPOS[k].n+'</option>')});
+Object.keys(MAD).forEach(function(k,i){mad.insertAdjacentHTML('beforeend','<label><input type="radio" name="mad" value="'+k+'"'+(i===0?' checked':'')+'><span><i style="background:'+MAD[k].c+'"></i>'+MAD[k].n+'</span></label>')});
+function setTipo(reset){
+ var T=TIPOS[tipo.value];
+ an.min=T.w[0];an.max=T.w[1];la.min=T.h[0];la.max=T.h[1];
+ if(reset){an.value=T.w[2];la.value=T.h[2]}
+ ac.innerHTML='';T.ac.forEach(function(a){ac.insertAdjacentHTML('beforeend','<option value="'+a+'">'+ACS[a].n+(ACS[a].p?' (+'+CLP(ACS[a].p)+')':'')+'</option>')});
+}
+function calc(){
+ var T=TIPOS[tipo.value],m=document.querySelector('input[name=mad]:checked').value,w=+an.value,h=+la.value,txt=gr.value.trim();
+ $('#oan').textContent=w+' cm';$('#ola').textContent=h+' cm';
+ var mat=(T.base+w*h*T.m)*MAD[m].k,acp=ACS[ac.value].p,grp=txt?4000:0,env=+en.value;
+ var tot=Math.round((mat+acp+grp+env)/100)*100;
+ $('#pre').innerHTML=dib(tipo.value,m,w,h,txt);
+ $('#res').innerHTML='<div><span>'+T.n+' en '+MAD[m].n+'</span><span>'+w+' × '+h+' cm</span></div><div><span>Base y madera</span><span>'+CLP(mat)+'</span></div><div><span>Acabado</span><span>'+(acp?CLP(acp):'Incluido')+'</span></div><div><span>Grabado</span><span>'+(grp?CLP(grp):'—')+'</span></div><div><span>Entrega</span><span>'+(env?CLP(env):'Gratis')+'</span></div>';
+ $('#tot').textContent=CLP(tot);
+ var msg='Hola, quiero cotizar: '+T.n+' en '+MAD[m].n+', '+w+' × '+h+' cm, acabado '+ACS[ac.value].n.toLowerCase()+(txt?', grabado "'+txt+'"':'')+', '+(env?'con envío regional':'retiro en taller')+'. Valor estimado '+CLP(tot)+'.';
+ $('#wa').href='https://wa.me/?text='+encodeURIComponent(msg);
+}
+tipo.addEventListener('change',function(){setTipo(true);calc()});
+[an,la,ac,gr,en].forEach(function(e){e.addEventListener('input',calc)});
+mad.addEventListener('change',calc);
+cat.addEventListener('click',function(e){
+ var b=e.target.closest('.ar');if(!b)return;
+ var p=CAT[+b.dataset.i];tipo.value=p.t;setTipo(true);
+ document.querySelector('input[name=mad][value='+p.m+']').checked=true;if(p.ac)ac.value=p.ac;calc();
+ $('#armador').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
+});
+setTipo(true);calc();
+// horario
+var H=[['Lunes a viernes','10:00 – 18:30',[1,2,3,4,5],600,1110],['Sábado','10:00 – 14:00',[6],600,840],['Domingo','Cerrado',[0],0,0]];
+function ahora(){
+ try{var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Santiago',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});
+  var d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday);return {d:d,min:(+o.hour%24)*60+ +o.minute}}
+ catch(e){var n=new Date();return {d:n.getDay(),min:n.getHours()*60+n.getMinutes()}}
+}
+function horario(){
+ var a=ahora(),ul=$('#horas'),abierto=false;
+ ul.innerHTML=H.map(function(r){var hoy=r[2].indexOf(a.d)>-1;if(hoy&&a.min>=r[3]&&a.min<r[4])abierto=true;return '<li'+(hoy?' class="hoy" aria-current="date"':'')+'><span>'+r[0]+'</span><span>'+r[1]+'</span></li>'}).join('');
+ var e=$('#estado');e.classList.toggle('on',abierto);e.querySelector('span').textContent=abierto?'Taller abierto ahora':'Taller cerrado ahora · ver horario';
+}
+horario();setInterval(horario,60000);
+// aparición
+var rv=[].slice.call(document.querySelectorAll('.rv'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12});rv.forEach(function(r){io.observe(r)})}else rv.forEach(function(r){r.classList.add('on')});
+})();
+</script>
+</body>
+</html>

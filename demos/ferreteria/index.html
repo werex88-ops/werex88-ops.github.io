@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferretería Lleuque · Materiales y herramientas en Río Bueno</title>
+<meta name="description" content="Ferretería de barrio en Río Bueno: calculadora de materiales para cercos, radieres y pintura, catálogo con pedido por WhatsApp y despacho en la comuna. Sitio de ejemplo con datos ficticios.">
+<meta name="theme-color" content="#10304a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310304a'/%3E%3Cpath d='M18 22h28v8H18zM28 30h8v22h-8z' fill='%23f5f0e4'/%3E%3Ccircle cx='46' cy='26' r='4' fill='%23d4452a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--az:#10304a;--az2:#1b4566;--noche:#0a2133;--papel:#f5f0e4;--crema:#fbf8f0;--linea:#d9d0ba;--rojo:#c63d22;--rojo-c:#ff8a6b;--acero:#55626e;--tinta:#14232f;--verde:#2f6b4f}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--papel);color:var(--tinta);line-height:1.6;font-size:17px;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.08;letter-spacing:-.015em;text-wrap:balance}
+p{text-wrap:pretty}
+.mono{font-family:'DM Mono',ui-monospace,monospace}
+.w{max-width:1160px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--rojo);outline-offset:3px;border-radius:4px}
+.os :focus-visible,.hero :focus-visible,footer :focus-visible{outline-color:var(--rojo-c)}
+.saltar{position:absolute;left:12px;top:-60px;background:var(--rojo);color:#fff;padding:10px 16px;border-radius:8px;z-index:100;font-weight:700}
+.saltar:focus{top:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:6px;font-weight:700;font-size:.97rem;border:2px solid transparent;transition:transform .15s,background .15s;text-align:center}
+.b1{background:var(--rojo);color:#fff}
+.b1:hover{background:#a8311a;transform:translateY(-1px)}
+.b2{border-color:currentColor;background:transparent}
+.b2:hover{background:rgba(255,255,255,.1)}
+.b3{background:var(--az);color:#fff}
+.b3:hover{background:var(--az2)}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
+/* cabecera */
+header{position:sticky;top:0;z-index:50;background:var(--az);color:var(--papel);border-bottom:4px solid var(--rojo)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.28rem;letter-spacing:-.01em;min-height:44px}
+.logo i{width:34px;height:34px;border-radius:7px;background:var(--papel);display:grid;place-items:center;flex:none}
+.menu{display:flex;gap:4px;align-items:center}
+.menu a{padding:10px 12px;font-weight:600;font-size:.93rem;border-radius:6px}
+.menu a:hover{background:rgba(255,255,255,.12)}
+.nav-der{display:flex;gap:8px;align-items:center}
+.pedido-link{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:6px;background:var(--papel);color:var(--az);font-weight:700;font-size:.93rem}
+.pedido-link b{background:var(--rojo);color:#fff;border-radius:99px;min-width:22px;height:22px;display:grid;place-items:center;font-size:.78rem;padding:0 6px}
+.burger{display:none;min-height:44px;min-width:44px;background:transparent;border:2px solid var(--papel);color:var(--papel);border-radius:6px;font-weight:700;padding:0 12px}
+/* portada */
+.hero{background:var(--az);color:var(--papel);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(245,240,228,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(245,240,228,.07) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.hero .w{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:64px}
+.eti{font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rojo);font-weight:500}
+.hero .eti{color:var(--rojo-c)}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.7rem);font-weight:800;margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--rojo-c)}
+.hero p.lead{font-size:1.14rem;max-width:50ch;color:#dfe6e8}
+.hero .acc{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.estado{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:.93rem;background:rgba(0,0,0,.25);border:1px solid rgba(245,240,228,.25);padding:8px 14px;border-radius:99px}
+.estado i{width:10px;height:10px;border-radius:50%;background:#9aa6af;flex:none}
+.estado.abierto i{background:#58d68d;box-shadow:0 0 0 4px rgba(88,214,141,.25)}
+.hero svg.pared{width:100%;height:auto;border-radius:10px;box-shadow:0 24px 50px rgba(0,0,0,.35);border:6px solid #0a2133}
+/* secciones */
+section{padding:84px 0}
+.cab{max-width:680px;margin-bottom:38px}
+.cab h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:800;margin:10px 0 12px}
+.cab p{color:var(--acero)}
+.os{background:var(--az);color:var(--papel)}
+.os .cab p{color:#cdd8de}
+.os .eti{color:var(--rojo-c)}
+.alt{background:var(--crema);border-block:1px solid var(--linea)}
+.valores{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.val{background:var(--crema);border:1px solid var(--linea);border-top:4px solid var(--az);padding:22px;border-radius:4px}
+.val svg{width:40px;height:40px;color:var(--rojo);margin-bottom:12px}
+.val h3{font-size:1.2rem;margin-bottom:6px}
+.val p{font-size:.95rem;color:var(--acero)}
+/* calculadora */
+.calc{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
+.panel{background:var(--noche);border:1px solid rgba(245,240,228,.18);border-radius:8px;padding:26px}
+.campo{display:grid;gap:7px;margin-bottom:20px}
+.campo label,.campo legend{font-weight:700;font-size:.9rem}
+.campo select,.campo input[type=number],.campo input[type=text]{min-height:48px;border-radius:6px;border:2px solid #4a6a83;background:#0f2c42;color:var(--papel);padding:0 12px;width:100%}
+.campo input[type=range]{width:100%;accent-color:var(--rojo-c);min-height:32px}
+.fila-num{display:grid;grid-template-columns:1fr 96px;gap:14px;align-items:center}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;min-height:44px;align-items:center}
+.chk input{width:22px;height:22px;accent-color:var(--rojo-c);flex:none}
+.ayuda{font-size:.85rem;color:#b9c8d1}
+.lista{width:100%;border-collapse:collapse;font-size:.95rem}
+.lista caption{text-align:left;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.3rem;padding-bottom:12px}
+.lista th{font-family:'DM Mono',monospace;font-weight:500;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#aebdc7;padding:6px 8px;border-bottom:1px solid rgba(245,240,228,.25)}
+.lista td{padding:10px 8px;border-bottom:1px solid rgba(245,240,228,.12);vertical-align:top}
+.lista td.n,.lista th.n{text-align:right;font-family:'DM Mono',monospace;white-space:nowrap}
+.lista tfoot td{border:0;font-weight:700;font-size:1.1rem;padding-top:14px}
+.acc-calc{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;align-items:center}
+.nota-calc{font-size:.85rem;color:#b9c8d1;margin-top:14px}
+/* catálogo */
+.cat-wrap{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{min-height:44px;padding:0 16px;border-radius:99px;border:2px solid var(--az);background:transparent;font-weight:600;font-size:.92rem;color:var(--az)}
+.chip[aria-pressed="true"]{background:var(--az);color:#fff}
+.buscar{margin-bottom:18px}
+.buscar input{width:100%;min-height:48px;border:2px solid var(--linea);background:#fff;border-radius:6px;padding:0 14px}
+.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.prod{background:#fff;border:1px solid var(--linea);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.prod .ico{width:100%;height:76px;background:var(--papel);border-radius:4px;display:grid;place-items:center;color:var(--az);margin-bottom:4px}
+.prod .ico svg{width:42px;height:42px}
+.prod .cat{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acero)}
+.prod h3{font-size:1.04rem;font-weight:600;font-family:'Public Sans',sans-serif;letter-spacing:0;line-height:1.3}
+.prod .pr{font-family:'DM Mono',monospace;font-weight:500;font-size:1.12rem;margin-top:auto;padding-top:6px}
+.prod .pr small{font-size:.74rem;color:var(--acero)}
+.prod .btn{min-height:44px;padding:0 12px;font-size:.9rem}
+.vacio{padding:30px;border:2px dashed var(--linea);border-radius:6px;color:var(--acero);text-align:center;grid-column:1/-1}
+.ped{position:sticky;top:90px;background:#fff;border:2px solid var(--az);border-radius:8px;padding:20px}
+.ped h3{font-size:1.4rem;margin-bottom:10px}
+.ped ul{list-style:none;display:grid;gap:10px;margin-bottom:14px;max-height:300px;overflow:auto}
+.ped li{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:.93rem;border-bottom:1px dashed var(--linea);padding-bottom:10px}
+.ped li .sub{font-family:'DM Mono',monospace;text-align:right}
+.qty{display:inline-flex;align-items:center;border:2px solid var(--az);border-radius:6px;overflow:hidden}
+.qty button{width:44px;height:44px;border:0;background:var(--papel);font-weight:700;font-size:1.1rem}
+.qty output{min-width:34px;text-align:center;font-family:'DM Mono',monospace}
+.ped .vacio{padding:18px;font-size:.92rem}
+.tot{display:grid;grid-template-columns:1fr auto;gap:4px;font-size:.95rem;margin:10px 0}
+.tot span:nth-child(even){font-family:'DM Mono',monospace;text-align:right}
+.tot .gran{font-weight:700;font-size:1.15rem;border-top:2px solid var(--az);padding-top:8px;margin-top:4px}
+.ped .campo{margin-bottom:12px}
+.ped .campo select,.ped .campo input{border:2px solid var(--linea);background:#fff;color:var(--tinta);min-height:46px;border-radius:6px;padding:0 10px;width:100%}
+.ped .btn{width:100%}
+.mini{font-size:.82rem;color:var(--acero);margin-top:10px}
+.aviso-ok{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* nosotros */
+.nos{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.nos svg{width:100%;height:auto;border-radius:8px;border:1px solid var(--linea)}
+.nos p{margin-top:14px;color:#33444f}
+.cifras{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.cifras div{border-left:4px solid var(--rojo);padding-left:12px}
+.cifras b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:1.7rem;line-height:1.1}
+.cifras span{font-size:.85rem;color:var(--acero)}
+.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.op{background:#fff;border:1px solid var(--linea);padding:24px;border-radius:6px}
+.op blockquote{font-size:1.04rem;margin-bottom:14px}
+.op cite{font-style:normal;font-weight:700;font-size:.92rem;display:block}
+.op .rot{display:inline-block;margin-top:8px;font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;background:var(--papel);padding:3px 8px;border-radius:3px;color:var(--acero)}
+.ubi{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.hor{width:100%;border-collapse:collapse;margin:14px 0 18px}
+.hor td{padding:9px 0;border-bottom:1px solid rgba(245,240,228,.18)}
+.hor td:last-child{text-align:right;font-family:'DM Mono',monospace}
+.hor tr.hoy td{color:var(--rojo-c);font-weight:700}
+.dir{color:#dfe6e8;margin-top:6px}
+.mapa{width:100%;height:auto;border-radius:8px;border:1px solid rgba(245,240,228,.25)}
+details{background:#fff;border:1px solid var(--linea);border-radius:6px;margin-bottom:10px}
+summary{padding:16px 20px;font-weight:700;cursor:pointer;min-height:48px;list-style-position:inside}
+details p{padding:0 20px 18px;color:#33444f}
+.faq{max-width:780px}
+footer{background:var(--noche);color:#c3d0d8;padding:34px 0 90px;font-size:.9rem}
+footer .w{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between}
+footer b{color:#fff}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.rv.v{opacity:1;transform:none}
+@media (max-width:980px){
+ .valores{grid-template-columns:repeat(2,1fr)}
+ .calc,.cat-wrap,.ubi,.nos,.hero .w{grid-template-columns:1fr}
+ .ped{position:static}
+ .ops{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+ .burger{display:inline-flex;align-items:center}
+ .menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--az);flex-direction:column;align-items:stretch;padding:8px 20px 16px;border-bottom:4px solid var(--rojo)}
+ .menu.abierto{display:flex}
+ .menu a{padding:14px 12px;min-height:48px}
+ .nav-der .wa-h{display:none}
+}
+@media (max-width:560px){
+ section{padding:60px 0}
+ .valores{grid-template-columns:1fr}
+ .cifras{grid-template-columns:1fr}
+ .fila-num{grid-template-columns:1fr 84px}
+ .logo span{font-size:1.1rem}
+ .pedido-link span.t{display:none}
+ .lista{font-size:.88rem}
+ .lista thead th:nth-child(2),.lista tbody td:nth-child(2){display:none}
+ .hero .w{padding-top:36px}
+}
+@media (max-width:360px){.w{padding:0 14px}.logo span{font-size:1rem}.btn{padding:0 14px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <defs>
+  <symbol id="i-her" viewBox="0 0 48 48"><path d="M8 14h22v10H8z" fill="currentColor"/><path d="M30 17h10v4H30zM24 24h4v20h-4z" fill="currentColor"/></symbol>
+  <symbol id="i-fij" viewBox="0 0 48 48"><path d="M12 8h24v6H12zM21 14h6v6l-3 22-3-22z" fill="currentColor"/><path d="M21 24h6M22 30h4M23 36h2" stroke="#f5f0e4" stroke-width="2"/></symbol>
+  <symbol id="i-con" viewBox="0 0 48 48"><path d="M5 12h18v10H5zM25 12h18v10H25zM5 24h8v10H5zM15 24h18v10H15zM35 24h8v10h-8z" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 48 48"><path d="M8 8h28v12H8z" fill="currentColor"/><path d="M36 14h6v12H24v6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M21 32h6v12h-6z" fill="currentColor"/></symbol>
+  <symbol id="i-ele" viewBox="0 0 48 48"><path d="M27 4 12 27h10l-3 17 17-25H26z" fill="currentColor"/></symbol>
+  <symbol id="i-hog" viewBox="0 0 48 48"><path d="M24 4C12 12 10 24 18 32c-2 5-2 8-2 12h4c0-4 0-6 3-10 10 0 16-12 1-30z" fill="currentColor"/></symbol>
+ </defs>
+</svg>
+<a class="saltar" href="#catalogo">Saltar al catálogo</a>
+<header><div class="w nav">
+  <a class="logo" href="#inicio" aria-label="Ferretería Lleuque, inicio"><i aria-hidden="true"><svg width="22" height="22" viewBox="0 0 48 48"><path d="M8 12h32v10H8zM19 22h10v22H19z" fill="#10304a"/><circle cx="38" cy="17" r="4" fill="#c63d22"/></svg></i><span>Lleuque</span></a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#calculadora">Calculadora</a><a href="#catalogo">Catálogo</a><a href="#nosotros">Nosotros</a><a href="#visita">Visítanos</a>
+  </nav>
+  <div class="nav-der">
+    <a class="pedido-link" href="#catalogo" aria-label="Ver mi pedido"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h3l2.5 11h10L21 7H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg><span class="t">Pedido</span><b id="cnt">0</b></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menú</button>
+  </div>
+</div></header>
+
+<main>
+<section class="hero" id="inicio" style="padding:0"><div class="w">
+  <div>
+    <p class="eti">Ferretería de barrio · Río Bueno</p>
+    <h1>Todo para tu obra, <em>sin viajar a la ciudad.</em></h1>
+    <p class="lead">Herramientas, fijaciones, materiales y pintura con consejo de quien sí ha hecho el cerco. Calcula lo que necesitas, arma tu pedido y lo dejamos listo para retirar o despachar.</p>
+    <div class="acc">
+      <a class="btn b1" href="#calculadora">Calcular mis materiales</a>
+      <a class="btn b2" href="#catalogo">Ver catálogo</a>
+    </div>
+    <div class="estado" id="estado" role="status"><i></i><span>Revisando horario…</span></div>
+  </div>
+  <svg class="pared" viewBox="0 0 520 440" role="img" aria-label="Ilustración de un panel de herramientas con martillo, llave, serrucho, alicate y huincha">
+    <defs><pattern id="pp" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="13" cy="13" r="2.4" fill="#0a2133" opacity=".55"/></pattern></defs>
+    <rect width="520" height="440" fill="#1b4566"/><rect width="520" height="440" fill="url(#pp)"/>
+    <g fill="#f5f0e4" stroke="#0a2133" stroke-width="3" stroke-linejoin="round">
+      <g transform="rotate(-18 130 140)"><rect x="118" y="70" width="22" height="170" rx="6" fill="#d9a066"/><rect x="82" y="56" width="96" height="30" rx="5" fill="#c9d2d8"/><rect x="156" y="62" width="30" height="18" fill="#c9d2d8"/></g>
+      <g transform="rotate(14 330 130)"><rect x="318" y="70" width="24" height="180" rx="6" fill="#c63d22"/><path d="M300 40a30 30 0 0 1 60 0v30h-14v-26a16 16 0 0 0-32 0v26h-14z" fill="#c9d2d8"/></g>
+      <g transform="rotate(-8 400 340)"><path d="M300 300h190l-10 28H310z" fill="#c9d2d8"/><rect x="460" y="298" width="46" height="36" rx="6" fill="#d9a066"/><path d="M312 328l8 12 8-12 8 12 8-12 8 12 8-12 8 12 8-12 8 12 8-12 8 12 8-12 8 12 8-12z" fill="#c9d2d8"/></g>
+      <g transform="rotate(10 120 340)"><path d="M92 270h20l6 50-12 90h-8l-12-90z" fill="#c63d22"/><path d="M92 270c-14-14-6-36 12-38 14 2 22 20 8 38z" fill="#c9d2d8"/></g>
+      <g><circle cx="230" cy="300" r="46" fill="#f5c400" stroke="#0a2133"/><circle cx="230" cy="300" r="22" fill="#1b4566"/><rect x="262" y="318" width="36" height="22" rx="4" fill="#0a2133"/></g>
+    </g>
+    <text x="260" y="420" text-anchor="middle" font-family="DM Mono, monospace" font-size="13" fill="#f5f0e4" opacity=".8">cada cosa en su lugar</text>
+  </svg>
+</div></section>
+
+<section aria-labelledby="t-val"><div class="w">
+  <div class="cab rv"><p class="eti">Por qué Lleuque</p><h2 id="t-val">Una ferretería que te ahorra el segundo viaje</h2><p>Sabemos que nadie quiere volver por un tornillo. Por eso armamos el pedido contigo, completo y con holgura.</p></div>
+  <div class="valores">
+    <div class="val rv"><svg aria-hidden="true"><use href="#i-con"/></svg><h3>Lista completa</h3><p>Te preguntamos el proyecto y armamos la lista con cantidades, para que nada falte a mitad del trabajo.</p></div>
+    <div class="val rv"><svg aria-hidden="true"><use href="#i-her"/></svg><h3>Consejo honesto</h3><p>Te decimos cuándo conviene la herramienta económica y cuándo vale la pena una mejor.</p></div>
+    <div class="val rv"><svg aria-hidden="true"><use href="#i-hog"/></svg><h3>Pensado para el sur</h3><p>Preservantes, selladores y fijaciones para la lluvia y la humedad del invierno de Los Ríos.</p></div>
+    <div class="val rv"><svg aria-hidden="true"><use href="#i-ele"/></svg><h3>Despacho local</h3><p>Entregamos en Río Bueno y sectores cercanos. Retiro en tienda sin costo.</p></div>
+  </div>
+</div></section>
+
+<section class="os" id="calculadora" aria-labelledby="t-cal"><div class="w">
+  <div class="cab rv"><p class="eti">Calculadora de materiales</p><h2 id="t-cal">¿Qué vas a construir?</h2><p>Elige el proyecto, indica el tamaño y te armamos una lista estimada. Después la sumas a tu pedido con un clic.</p></div>
+  <div class="calc">
+    <div class="panel rv">
+      <div class="campo"><label for="proy">Proyecto</label>
+        <select id="proy">
+          <option value="cerco">Cerco de madera</option>
+          <option value="radier">Radier (piso de hormigón)</option>
+          <option value="pintar">Pintar muros interiores</option>
+          <option value="huerto">Cajones de huerto</option>
+        </select></div>
+      <div class="campo"><label for="medida" id="lab-med">Largo del cerco (metros)</label>
+        <div class="fila-num"><input type="range" id="medida" min="2" max="60" value="12" aria-labelledby="lab-med"><input type="number" id="medida-n" min="1" max="500" value="12" aria-labelledby="lab-med"></div>
+        <span class="ayuda" id="ayuda-med">Cerco de 1,2 m de alto con tablas horizontales.</span></div>
+      <label class="chk"><input type="checkbox" id="holgura" checked> Incluir 10 % de holgura por cortes y mermas</label>
+    </div>
+    <div class="panel rv">
+      <table class="lista" aria-live="polite">
+        <caption id="cap">Lista para tu cerco</caption>
+        <thead><tr><th scope="col">Material</th><th scope="col">Detalle</th><th scope="col" class="n">Cant.</th><th scope="col" class="n">Subtotal</th></tr></thead>
+        <tbody id="lista-b"></tbody>
+        <tfoot><tr><td colspan="3">Total estimado</td><td class="n" id="lista-t">$0</td></tr></tfoot>
+      </table>
+      <div class="acc-calc"><button class="btn b1" id="add-todo" type="button">Agregar todo a mi pedido</button><span class="ayuda" id="add-msg" role="status"></span></div>
+      <p class="nota-calc">Es una estimación para planificar. Antes de comprar, te la revisamos en el mesón sin costo.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="catalogo" aria-labelledby="t-cat"><div class="w">
+  <div class="cab rv"><p class="eti">Catálogo</p><h2 id="t-cat">Arma tu pedido y lo dejamos listo</h2><p>Filtra por categoría o busca por nombre. Los precios son de ejemplo e incluyen IVA.</p></div>
+  <div class="cat-wrap">
+    <div>
+      <div class="filtros" id="filtros" role="group" aria-label="Categorías"></div>
+      <div class="buscar"><label for="q" class="aviso-ok">Buscar producto</label><input type="search" id="q" placeholder="Buscar: clavos, látex, taladro…" autocomplete="off"></div>
+      <div class="prods" id="prods" aria-live="polite"></div>
+    </div>
+    <aside class="ped" aria-labelledby="t-ped">
+      <h3 id="t-ped">Tu pedido</h3>
+      <ul id="ped-l"></ul>
+      <div class="tot" id="tot"></div>
+      <div class="campo"><label for="ent">Entrega</label>
+        <select id="ent"><option value="0">Retiro en tienda · gratis</option><option value="3500">Despacho en Río Bueno urbano · $3.500</option><option value="8900">Despacho sector rural cercano · $8.900</option></select></div>
+      <div class="campo"><label for="nom">Tu nombre</label><input type="text" id="nom" placeholder="Ej.: Marcela" autocomplete="given-name"></div>
+      <a class="btn b1" id="wa" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar pedido por WhatsApp</a>
+      <p class="mini">Despacho urbano gratis desde $60.000. Confirmamos stock y valor final por WhatsApp antes de cobrar.</p>
+    </aside>
+  </div>
+</div></section>
+
+<section class="alt" id="nosotros" aria-labelledby="t-nos"><div class="w nos">
+  <svg viewBox="0 0 520 380" role="img" aria-label="Ilustración de la fachada de la ferretería con letrero y estantes visibles por la vitrina">
+    <rect width="520" height="380" fill="#e9dfc8"/>
+    <rect y="300" width="520" height="80" fill="#cfc3a6"/>
+    <rect x="50" y="70" width="420" height="230" fill="#10304a"/>
+    <rect x="50" y="70" width="420" height="52" fill="#c63d22"/>
+    <text x="260" y="105" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="30" fill="#fbf8f0">FERRETERÍA LLEUQUE</text>
+    <rect x="76" y="148" width="190" height="128" fill="#1b4566" stroke="#f5f0e4" stroke-width="4"/>
+    <g stroke="#f5f0e4" stroke-width="3"><path d="M76 190h190M76 232h190"/></g>
+    <g fill="#d9a066"><rect x="90" y="166" width="34" height="18"/><rect x="134" y="160" width="22" height="24"/><rect x="170" y="168" width="40" height="16"/><rect x="96" y="208" width="44" height="18"/><rect x="156" y="204" width="26" height="22"/><rect x="200" y="210" width="50" height="16"/></g>
+    <g fill="#f5f0e4"><rect x="92" y="248" width="30" height="22"/><rect x="132" y="244" width="30" height="26"/><rect x="172" y="250" width="30" height="20"/></g>
+    <rect x="300" y="148" width="64" height="152" fill="#0a2133" stroke="#f5f0e4" stroke-width="4"/>
+    <circle cx="352" cy="228" r="4" fill="#f5f0e4"/>
+    <rect x="388" y="190" width="56" height="86" fill="#f5f0e4"/><text x="416" y="214" text-anchor="middle" font-family="DM Mono, monospace" font-size="11" fill="#10304a">ABIERTO</text><text x="416" y="234" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#10304a">de lun a sáb</text>
+    <g fill="#55626e"><rect x="40" y="320" width="80" height="8"/><rect x="400" y="330" width="90" height="8"/></g>
+    <g stroke="#2f6b4f" stroke-width="5" fill="none"><path d="M440 300c0-26 8-42 24-54M440 300c0-18-6-30-20-40"/></g>
+  </svg>
+  <div class="rv">
+    <p class="eti">Nosotros</p>
+    <h2 id="t-nos" style="font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin:10px 0 0">Del mesón de barrio a tu obra</h2>
+    <p>Lleuque es una ferretería ficticia de Río Bueno, creada para este ejemplo, que parte con una idea simple: atender como se atiende a un vecino. Preguntamos qué vas a hacer, calculamos contigo y anotamos lo que falta antes de que lo necesites.</p>
+    <p>Trabajamos con maestros, constructores independientes, dueños de parcela y gente que arregla su casa los fines de semana.</p>
+    <div class="cifras"><div><b>6 días</b><span>de atención a la semana</span></div><div><b>6</b><span>categorías de productos</span></div><div><b>0 $</b><span>retiro en tienda</span></div></div>
+  </div>
+</div></section>
+
+<section aria-labelledby="t-op"><div class="w">
+  <div class="cab rv"><p class="eti">Opiniones</p><h2 id="t-op">Lo que dirían nuestros clientes</h2></div>
+  <div class="ops">
+    <div class="op rv"><blockquote>“Me armaron la lista del cerco completa y alcanzó justo. No tuve que volver a buscar clavos.”</blockquote><cite>Cliente de ejemplo · Río Bueno</cite><span class="rot">Opinión de ejemplo</span></div>
+    <div class="op rv"><blockquote>“Pedí por WhatsApp en la mañana y a la tarde estaba todo embolsado para retirar. Muy ordenados.”</blockquote><cite>Cliente de ejemplo · La Unión</cite><span class="rot">Opinión de ejemplo</span></div>
+    <div class="op rv"><blockquote>“Me aconsejaron un sellador para la humedad del baño y se nota la diferencia después del invierno.”</blockquote><cite>Cliente de ejemplo · Paillaco</cite><span class="rot">Opinión de ejemplo</span></div>
+  </div>
+</div></section>
+
+<section class="alt" aria-labelledby="t-faq"><div class="w faq">
+  <div class="cab rv"><p class="eti">Preguntas frecuentes</p><h2 id="t-faq">Antes de venir</h2></div>
+  <details><summary>¿Puedo devolver lo que me sobre?</summary><p>Sí, los materiales sin abrir y con boleta se pueden cambiar o devolver dentro de 15 días. Los cortes a medida no tienen devolución.</p></details>
+  <details><summary>¿Cortan la madera a medida?</summary><p>Hacemos cortes rectos en el mesón sin costo cuando compras la madera con nosotros.</p></details>
+  <details><summary>¿Despachan a sectores rurales?</summary><p>Sí, a sectores cercanos a Río Bueno con la tarifa del pedido. Para distancias mayores te cotizamos por WhatsApp.</p></details>
+  <details><summary>¿Los precios del catálogo son reales?</summary><p>No. Este es un sitio de ejemplo con precios y productos ficticios, creado para mostrar cómo funcionaría el catálogo de una ferretería.</p></details>
+</div></section>
+
+<section class="os" id="visita" aria-labelledby="t-vis"><div class="w ubi">
+  <div class="rv">
+    <p class="eti">Visítanos</p>
+    <h2 id="t-vis" style="font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin:10px 0 0">Horario y ubicación</h2>
+    <table class="hor" id="hor"><caption class="aviso-ok">Horario de atención</caption>
+      <tbody>
+        <tr data-d="1,2,3,4,5"><td>Lunes a viernes</td><td>08:30–13:30 · 15:00–19:00</td></tr>
+        <tr data-d="6"><td>Sábado</td><td>09:00–14:00</td></tr>
+        <tr data-d="0"><td>Domingo y festivos</td><td>Cerrado</td></tr>
+      </tbody></table>
+    <p class="dir"><b>Dirección de ejemplo:</b> Av. Comercio 1480, Río Bueno (dato ficticio).<br><b>WhatsApp de ejemplo:</b> +56 9 0000 0000<br><b>Correo de ejemplo:</b> contacto@ejemplo.invalid</p>
+    <p style="margin-top:22px"><a class="btn b1" href="https://wa.me/?text=Hola%2C%20quiero%20consultar%20por%20unos%20materiales" target="_blank" rel="noopener">Escribir por WhatsApp</a></p>
+  </div>
+  <svg class="mapa rv" viewBox="0 0 520 360" role="img" aria-label="Mapa esquemático de ejemplo con el río, la plaza y la ubicación de la ferretería">
+    <rect width="520" height="360" fill="#1b4566"/>
+    <path d="M-10 250C100 220 160 290 280 260s180-60 260-20v140H-10z" fill="#2c6a8f"/>
+    <g stroke="#f5f0e4" stroke-opacity=".45" stroke-width="10" fill="none"><path d="M0 120h520M0 200h330M140 0v230M330 0v260"/></g>
+    <rect x="170" y="140" width="130" height="50" fill="#2f6b4f" opacity=".85"/><text x="235" y="170" text-anchor="middle" font-family="DM Mono, monospace" font-size="12" fill="#f5f0e4">plaza</text>
+    <g transform="translate(345 70)"><path d="M0 0c-16 0-26 12-26 26 0 20 26 44 26 44s26-24 26-44c0-14-10-26-26-26z" fill="#c63d22" stroke="#f5f0e4" stroke-width="3"/><circle cy="26" r="9" fill="#f5f0e4"/></g>
+    <text x="345" y="162" text-anchor="middle" font-family="Public Sans, sans-serif" font-weight="700" font-size="14" fill="#f5f0e4">Lleuque</text>
+    <text x="60" y="320" font-family="DM Mono, monospace" font-size="12" fill="#cfe3ef">río</text>
+  </svg>
+</div></section>
+</main>
+
+<footer><div class="w"><div><b>Ferretería Lleuque</b><br>Materiales y herramientas · Río Bueno, Región de Los Ríos</div><div>Sitio de ejemplo creado por Werex Studio.<br>Negocio, precios y contactos ficticios. Ilustraciones propias.</div></div></footer>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+var fmt=function(n){return '$'+Math.round(n).toLocaleString('es-CL')};
+var CATS={her:'Herramientas',fij:'Fijaciones',con:'Construcción',pin:'Pintura',ele:'Electricidad',hog:'Hogar y jardín'};
+var P=[
+{id:'martillo',n:'Martillo de carpintero 16 oz',c:'her',p:8990,u:'unidad'},
+{id:'taladro',n:'Taladro percutor 650 W',c:'her',p:42990,u:'unidad'},
+{id:'serrucho',n:'Serrucho 20 pulgadas',c:'her',p:7490,u:'unidad'},
+{id:'nivel',n:'Nivel de burbuja 60 cm',c:'her',p:6990,u:'unidad'},
+{id:'huincha',n:'Huincha de medir 8 m',c:'her',p:4490,u:'unidad'},
+{id:'guantes',n:'Guantes de cuero reforzados',c:'her',p:3990,u:'par'},
+{id:'clavo3',n:'Clavos corrientes 3 pulgadas',c:'fij',p:2890,u:'kilo'},
+{id:'clavo2',n:'Clavos corrientes 2 pulgadas',c:'fij',p:2890,u:'kilo'},
+{id:'drywall',n:'Tornillos drywall 6×1⅝″, caja 100',c:'fij',p:3290,u:'caja'},
+{id:'tmadera',n:'Tornillos para madera 8×2″, caja 100',c:'fij',p:4990,u:'caja'},
+{id:'tarugo',n:'Tarugos 6 mm con tornillo, bolsa 50',c:'fij',p:2990,u:'bolsa'},
+{id:'cemento',n:'Cemento 25 kg',c:'con',p:5490,u:'saco'},
+{id:'arena',n:'Arena lavada, saco 25 kg',c:'con',p:1990,u:'saco'},
+{id:'gravilla',n:'Gravilla, saco 25 kg',c:'con',p:2190,u:'saco'},
+{id:'malla',n:'Malla electrosoldada 2,6×5 m',c:'con',p:39990,u:'unidad'},
+{id:'poli',n:'Polietileno para radier, 25 m²',c:'con',p:7990,u:'rollo'},
+{id:'poste',n:'Poste impregnado 4″ × 2,40 m',c:'con',p:6990,u:'unidad'},
+{id:'tabla',n:'Tabla de pino 1×4″ × 3,20 m',c:'con',p:2390,u:'unidad'},
+{id:'preserv',n:'Preservante de madera, 1 galón',c:'pin',p:18990,u:'galón'},
+{id:'latex',n:'Látex interior blanco, 1 galón',c:'pin',p:17990,u:'galón'},
+{id:'sellador',n:'Sellador para muros, 1 galón',c:'pin',p:13990,u:'galón'},
+{id:'rodillo',n:'Kit rodillo y bandeja',c:'pin',p:6490,u:'kit'},
+{id:'cinta',n:'Cinta de enmascarar 24 mm',c:'pin',p:1490,u:'rollo'},
+{id:'lija',n:'Lija para madera grano 120',c:'pin',p:490,u:'pliego'},
+{id:'alarg',n:'Alargador 5 m con 3 enchufes',c:'ele',p:8990,u:'unidad'},
+{id:'led',n:'Ampolletas LED 9 W, pack 4',c:'ele',p:5990,u:'pack'},
+{id:'hacha',n:'Hacha para leña 1,5 lb',c:'hog',p:15990,u:'unidad'},
+{id:'tubo',n:'Tubo de estufa galvanizado 6″ × 1 m',c:'hog',p:12990,u:'unidad'},
+{id:'manguera',n:'Manguera de jardín 15 m',c:'hog',p:14990,u:'unidad'},
+{id:'tierra',n:'Tierra de hoja, saco 25 L',c:'hog',p:3990,u:'saco'}
+];
+var byId={};P.forEach(function(x){byId[x.id]=x});
+var cart={};
+/* ---- horario (hora de Chile) ---- */
+function ahoraChile(){
+ var f=new Intl.DateTimeFormat('es-CL',{timeZone:'America/Santiago',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+ var o={};f.forEach(function(x){o[x.type]=x.value});
+ var map={'dom':0,'lun':1,'mar':2,'mié':3,'jue':4,'vie':5,'sáb':6};
+ var wd=(o.weekday||'').toLowerCase().replace('.','');
+ var d=map[wd];if(d===undefined){d=new Date().getDay()}
+ return {d:d,m:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
+}
+var TRAMOS={1:[[510,810],[900,1140]],2:[[510,810],[900,1140]],3:[[510,810],[900,1140]],4:[[510,810],[900,1140]],5:[[510,810],[900,1140]],6:[[540,840]],0:[]};
+function hh(m){return ('0'+Math.floor(m/60)).slice(-2)+':'+('0'+m%60).slice(-2)}
+function estado(){
+ var a=ahoraChile(),t=TRAMOS[a.d]||[],el=$('#estado'),txt;
+ var cur=t.filter(function(r){return a.m>=r[0]&&a.m<r[1]})[0];
+ if(cur){txt='Abierto ahora · cierra a las '+hh(cur[1]);el.classList.add('abierto')}
+ else{el.classList.remove('abierto');var prox=t.filter(function(r){return r[0]>a.m})[0];
+  txt=prox?'Cerrado ahora · abre hoy a las '+hh(prox[0]):'Cerrado ahora · abre el próximo día hábil';
+  if(!prox){var k,s=0;for(k=1;k<=7;k++){var dd=(a.d+k)%7;if((TRAMOS[dd]||[]).length){txt='Cerrado ahora · abre '+(k===1?'mañana':'el '+['domingo','lunes','martes','miércoles','jueves','viernes','sábado'][dd])+' a las '+hh(TRAMOS[dd][0][0]);break}}}}
+ el.lastElementChild.textContent=txt;
+ document.querySelectorAll('#hor tr').forEach(function(tr){tr.classList.toggle('hoy',tr.dataset.d.split(',').indexOf(String(a.d))>-1)});
+}
+estado();setInterval(estado,60000);
+/* ---- calculadora ---- */
+var PROY={
+ cerco:{t:'cerco',lab:'Largo del cerco (metros)',ayuda:'Cerco de 1,2 m de alto con tablas horizontales.',min:2,max:60,def:12,
+  f:function(L){var postes=Math.ceil(L/2)+1;return [['poste',postes,'Uno cada 2 m, más el de cierre'],['tabla',Math.ceil(L*2.5),'8 hileras de tabla'],['clavo3',Math.ceil(L*.15),'Para fijar las tablas'],['preserv',Math.ceil(L/12),'Protege de la humedad'],['cemento',Math.ceil(postes/3),'Para afirmar los postes']]}},
+ radier:{t:'radier',lab:'Superficie del radier (m²)',ayuda:'Radier de 8 cm de espesor con malla.',min:2,max:80,def:12,
+  f:function(S){return [['cemento',Math.ceil(S*.96),'Dosis de 300 kg por m³'],['arena',Math.ceil(S*2.6),'También a granel'],['gravilla',Math.ceil(S*4.2),'También a granel'],['malla',Math.ceil(S/12),'Con traslapes'],['poli',Math.ceil(S/25),'Barrera de humedad']]}},
+ pintar:{t:'pintura de muros',lab:'Superficie de muros (m²)',ayuda:'Dos manos de látex sobre muro ya sellado.',min:5,max:200,def:40,
+  f:function(S){return [['latex',Math.ceil(S*2/35),'Rinde unos 35 m² por mano'],['sellador',Math.ceil(S/35),'Una mano previa'],['rodillo',1,'Si aún no tienes uno'],['cinta',Math.ceil(S/30),'Para proteger bordes'],['lija',Math.ceil(S/6),'Para alisar imperfecciones']]}},
+ huerto:{t:'huerto',lab:'Cantidad de cajones (1,2 × 2,4 m)',ayuda:'Cajones de 30 cm de alto, sin tratar la madera para cultivo.',min:1,max:12,def:2,
+  f:function(N){return [['tabla',N*7,'Tres hileras por lado'],['tmadera',Math.ceil(N*1.5),'Armado de esquinas'],['tierra',N*6,'Relleno de tierra de hoja'],['guantes',1,'Para el armado']]}}
+};
+var cur='cerco',lastRows=[];
+function calc(){
+ var pr=PROY[cur],v=Math.max(pr.min,parseFloat($('#medida-n').value)||pr.def);
+ var h=$('#holgura').checked,rows=[],tot=0;
+ pr.f(v).forEach(function(r){
+  var q=r[1];if(h&&r[0]!=='rodillo'&&r[0]!=='guantes'){q=Math.ceil(q*1.1)}
+  var pd=byId[r[0]],sub=q*pd.p;tot+=sub;rows.push({id:r[0],q:q,sub:sub,nota:r[2]});
+ });
+ lastRows=rows;
+ $('#cap').textContent='Lista para '+({cerco:'tu cerco',radier:'tu radier',pintar:'pintar tus muros',huerto:'tu huerto'})[cur];
+ $('#lista-b').innerHTML=rows.map(function(r){var pd=byId[r.id];return '<tr><th scope="row" style="text-align:left;font-weight:600;font-family:inherit;font-size:inherit;letter-spacing:0;text-transform:none;color:inherit;border-bottom:1px solid rgba(245,240,228,.12);padding:10px 8px">'+pd.n+'</th><td>'+r.nota+'</td><td class="n">'+r.q+'</td><td class="n">'+fmt(r.sub)+'</td></tr>'}).join('');
+ $('#lista-t').textContent=fmt(tot);
+}
+function cfg(){
+ var pr=PROY[cur],r=$('#medida'),n=$('#medida-n');
+ $('#lab-med').textContent=pr.lab;$('#ayuda-med').textContent=pr.ayuda;
+ r.min=pr.min;r.max=pr.max;r.value=pr.def;n.min=pr.min;n.max=pr.max*5;n.value=pr.def;calc();
+}
+$('#proy').addEventListener('change',function(){cur=this.value;cfg()});
+$('#medida').addEventListener('input',function(){$('#medida-n').value=this.value;calc()});
+$('#medida-n').addEventListener('input',function(){var v=parseFloat(this.value);if(v>=PROY[cur].min&&v<=PROY[cur].max)$('#medida').value=v;calc()});
+$('#holgura').addEventListener('change',calc);
+$('#add-todo').addEventListener('click',function(){
+ lastRows.forEach(function(r){cart[r.id]=(cart[r.id]||0)+r.q});
+ renderPed();
+ $('#add-msg').textContent='Agregado: '+lastRows.length+' productos a tu pedido.';
+ setTimeout(function(){$('#add-msg').textContent=''},4000);
+});
+/* ---- catálogo ---- */
+var filtro='todo';
+function chips(){
+ var h='<button type="button" class="chip" data-c="todo" aria-pressed="true">Todo</button>';
+ Object.keys(CATS).forEach(function(k){h+='<button type="button" class="chip" data-c="'+k+'" aria-pressed="false">'+CATS[k]+'</button>'});
+ $('#filtros').innerHTML=h;
+ $('#filtros').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;filtro=b.dataset.c;
+  document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});renderProds()});
+}
+function renderProds(){
+ var q=$('#q').value.trim().toLowerCase();
+ var l=P.filter(function(x){return (filtro==='todo'||x.c===filtro)&&(!q||x.n.toLowerCase().indexOf(q)>-1)});
+ $('#prods').innerHTML=l.length?l.map(function(x){return '<article class="prod"><div class="ico" aria-hidden="true"><svg><use href="#i-'+x.c+'"/></svg></div><span class="cat">'+CATS[x.c]+'</span><h3>'+x.n+'</h3><div class="pr">'+fmt(x.p)+' <small>/ '+x.u+'</small></div><button type="button" class="btn b3" data-add="'+x.id+'" aria-label="Agregar al pedido: '+x.n.replace(/"/g,'')+'">Agregar</button></article>'}).join(''):'<p class="vacio">No encontramos productos con esa búsqueda. Escríbenos por WhatsApp y los buscamos.</p>';
+}
+$('#q').addEventListener('input',renderProds);
+$('#prods').addEventListener('click',function(e){var b=e.target.closest('[data-add]');if(!b)return;cart[b.dataset.add]=(cart[b.dataset.add]||0)+1;renderPed()});
+/* ---- pedido ---- */
+function renderPed(){
+ var ids=Object.keys(cart).filter(function(k){return cart[k]>0}),sub=0,n=0;
+ $('#ped-l').innerHTML=ids.length?ids.map(function(k){var p=byId[k],q=cart[k];sub+=p.p*q;n+=q;
+  return '<li><span>'+p.n+'</span><span class="sub">'+fmt(p.p*q)+'</span><span class="qty"><button type="button" data-m="'+k+'" aria-label="Quitar una unidad de '+p.n.replace(/"/g,'')+'">−</button><output>'+q+'</output><button type="button" data-p="'+k+'" aria-label="Agregar una unidad de '+p.n.replace(/"/g,'')+'">+</button></span><button type="button" class="chip" style="min-height:44px;border-width:1px;font-size:.8rem;justify-self:end" data-x="'+k+'">Quitar</button></li>'}).join(''):'<li class="vacio" style="display:block">Aún no hay productos. Agrega desde el catálogo o usa la calculadora.</li>';
+ var env=parseInt($('#ent').value,10);
+ if(env===3500&&sub>=60000)env=0;
+ var tot=sub+(ids.length?env:0);
+ $('#tot').innerHTML='<span>Productos</span><span>'+fmt(sub)+'</span><span>Entrega</span><span>'+(env?fmt(env):'Gratis')+'</span><span class="gran">Total estimado</span><span class="gran">'+fmt(ids.length?tot:0)+'</span>';
+ $('#cnt').textContent=n;
+ var wa=$('#wa'),nom=$('#nom').value.trim();
+ if(!ids.length){wa.setAttribute('aria-disabled','true');wa.removeAttribute('href');return}
+ wa.removeAttribute('aria-disabled');
+ var msg='Hola, soy '+(nom||'un cliente')+'. Quiero este pedido:\n'+ids.map(function(k){return '• '+cart[k]+' × '+byId[k].n+' — '+fmt(byId[k].p*cart[k])}).join('\n')+'\nEntrega: '+$('#ent').options[$('#ent').selectedIndex].text.split(' · ')[0]+'\nTotal estimado: '+fmt(tot);
+ wa.href='https://wa.me/?text='+encodeURIComponent(msg);
+}
+$('#ped-l').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+ if(b.dataset.p)cart[b.dataset.p]++;
+ if(b.dataset.m)cart[b.dataset.m]=Math.max(0,cart[b.dataset.m]-1);
+ if(b.dataset.x)cart[b.dataset.x]=0;
+ renderPed()});
+$('#ent').addEventListener('change',renderPed);$('#nom').addEventListener('input',renderPed);
+/* ---- menú y animaciones ---- */
+$('#burger').addEventListener('click',function(){var m=$('#menu'),o=m.classList.toggle('abierto');this.setAttribute('aria-expanded',o)});
+$('#menu').addEventListener('click',function(e){if(e.target.closest('a')){this.classList.remove('abierto');$('#burger').setAttribute('aria-expanded','false')}});
+chips();renderProds();renderPed();cfg();
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)})}else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('v')})}
+})();
+</script>
+</body>
+</html>
