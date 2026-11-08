@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lenga Asesorías · Contabilidad para pymes en Paillaco</title>
+<meta name="description" content="Estudio contable y tributario para emprendedores y pymes de Paillaco y Los Ríos. Cotiza tu plan mensual, calcula el IVA y agenda una reunión. Sitio de ejemplo con datos ficticios.">
+<meta name="theme-color" content="#3b1623">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233b1623'/%3E%3Cpath d='M20 14v32h24' fill='none' stroke='%23d6a84f' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--vino:#3b1623;--vino2:#5a2236;--latón:#d6a84f;--latón-o:#7a560f;--papel:#f8f5ee;--hueso:#efe9dc;--blanco:#fffdf9;--tinta:#241a1e;--suave:#625459;--linea:#ddd3c3;--ok:#25623f;--alerta:#8c2f1f}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{font-family:'Schibsted Grotesk',system-ui,sans-serif;background:var(--papel);color:var(--tinta);line-height:1.6;font-size:17px;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:600;line-height:1.1;text-wrap:balance}
+h2{font-size:clamp(32px,4.4vw,48px);letter-spacing:-.01em}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--latón-o);outline-offset:3px;border-radius:6px}
+.osc :focus-visible,header :focus-visible{outline-color:var(--latón)}
+.saltar{position:absolute;left:12px;top:-60px;background:var(--latón);color:var(--vino);padding:10px 16px;border-radius:8px;z-index:100;font-weight:700}
+.saltar:focus{top:12px}
+.eti{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--latón-o);margin-bottom:12px}
+.osc .eti{color:var(--latón)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:10px;font-weight:700;border:2px solid transparent;min-height:48px;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.b1{background:var(--vino);color:#fff}.b1:hover{background:var(--vino2)}
+.b3{background:var(--vino);color:#fff}.b3:hover{background:var(--vino2)}
+.b2{border-color:currentColor;background:transparent}
+.osc .b1{background:var(--latón);color:var(--vino)}.osc .b1:hover{background:#e6bd6e}
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(59,22,35,.96);backdrop-filter:blur(8px);color:var(--papel)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{font-family:'Newsreader',serif;font-size:25px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:10px;min-height:44px}
+.logo svg{width:28px;height:28px}
+.nav ul{display:flex;gap:4px;list-style:none}
+.nav ul a{display:block;padding:10px 12px;font-weight:500;font-size:15px;border-radius:8px;text-decoration:none;opacity:.92}
+.nav ul a:hover{background:rgba(255,255,255,.1);opacity:1}
+.nav .btn{padding:9px 20px;min-height:44px}
+@media(max-width:900px){.nav ul{display:none}}
+.hero{background:var(--vino);color:var(--papel);padding:132px 0 84px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 47px,rgba(214,168,79,.07) 47px 48px)}
+.hero .w{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(42px,6.6vw,76px)}
+.hero h1 em{color:var(--latón);font-weight:400}
+.hero .lead{font-size:clamp(18px,2vw,21px);margin:22px 0 30px;max-width:32em;color:#eadfd6}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.estado{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:15px;font-weight:600;background:rgba(255,255,255,.08);padding:9px 16px;border-radius:999px}
+.estado i{width:10px;height:10px;border-radius:50%;background:#9a8f8f;flex:none}
+.estado.abierto i{background:#58d68d;box-shadow:0 0 0 4px rgba(88,214,141,.25)}
+.libro{background:var(--blanco);color:var(--tinta);border-radius:16px;padding:24px;box-shadow:0 24px 50px rgba(0,0,0,.35);transform:rotate(1.4deg)}
+.libro h2{font-size:21px;font-family:'Schibsted Grotesk',sans-serif;font-weight:700;display:flex;justify-content:space-between;gap:8px}
+.libro h2 span{font-weight:500;font-size:13px;color:var(--suave)}
+.libro table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+.libro td{padding:8px 0;border-bottom:1px dashed var(--linea)}
+.libro td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.libro tr.t td{border-bottom:0;border-top:2px solid var(--vino);font-weight:700;padding-top:10px}
+.barras{display:flex;align-items:flex-end;gap:7px;height:70px}
+.barras i{flex:1;background:var(--vino);border-radius:4px 4px 0 0;transform-origin:bottom;animation:crece 1.2s ease-out both}
+.barras i:nth-child(even){background:var(--latón)}
+@keyframes crece{from{transform:scaleY(.1)}to{transform:none}}
+.libro small{display:block;margin-top:10px;color:var(--suave);font-size:13px}
+@media(max-width:860px){.hero .w{grid-template-columns:1fr}.libro{transform:none}}
+section{padding:92px 0}
+.cab{max-width:640px;margin-bottom:44px}
+.cab p{color:var(--suave);margin-top:14px}
+.osc{background:var(--vino);color:var(--papel)}
+.osc .cab p{color:#dccfc8}
+.hue{background:var(--hueso)}
+.valor{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:22px}
+.valor article{background:var(--blanco);border:1px solid var(--linea);border-radius:16px;padding:28px}
+.valor .n{font-family:'Newsreader',serif;font-size:44px;color:var(--latón-o);line-height:1}
+.valor h3{font-size:24px;margin:10px 0 8px}
+.valor p{color:var(--suave);font-size:16px}
+.serv{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
+.serv article{display:flex;gap:16px;background:var(--blanco);border:1px solid var(--linea);border-radius:16px;padding:22px}
+.serv svg{width:40px;height:40px;flex:none;color:var(--vino)}
+.serv h3{font-size:21px;margin-bottom:4px}
+.serv p{font-size:15.5px;color:var(--suave)}
+.herr{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:24px}
+.caja{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:28px}
+.caja h3{font-size:26px;margin-bottom:6px}
+.caja>p{color:var(--suave);font-size:15.5px;margin-bottom:18px}
+.campo{margin-bottom:16px}
+.campo label,.campo legend{display:block;font-weight:700;font-size:14.5px;margin-bottom:6px}
+fieldset{border:0}
+.campo select,.campo input[type=number],.campo input[type=text]{width:100%;border:1.5px solid #b9ab98;background:#fff;border-radius:10px;padding:10px 12px;min-height:46px}
+.campo input[type=range]{width:100%;accent-color:var(--vino);min-height:32px}
+.fila{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--suave)}
+.fila output{font-weight:700;color:var(--tinta)}
+.chk{display:flex;align-items:flex-start;gap:10px;padding:8px 0;min-height:44px;cursor:pointer;font-size:15.5px}
+.chk input{width:22px;height:22px;margin-top:2px;accent-color:var(--vino);flex:none}
+.res{background:var(--vino);color:var(--papel);border-radius:14px;padding:18px 20px;margin-top:8px}
+.res .tot{font-family:'Newsreader',serif;font-size:40px;line-height:1.1;color:var(--latón)}
+.res p{font-size:14px;color:#dccfc8;margin-top:4px}
+.res ul{list-style:none;font-size:14.5px;margin:10px 0 0;border-top:1px solid rgba(255,255,255,.2);padding-top:10px}
+.res li{display:flex;justify-content:space-between;gap:8px;padding:2px 0}
+.res li span:last-child{font-variant-numeric:tabular-nums}
+.seg{display:flex;gap:6px;margin-bottom:14px}
+.seg button{flex:1;border:1.5px solid var(--vino);background:transparent;border-radius:10px;padding:9px 6px;font-weight:600;font-size:14.5px;min-height:46px}
+.seg button[aria-pressed=true]{background:var(--vino);color:var(--papel)}
+.prog{height:10px;background:var(--hueso);border-radius:99px;overflow:hidden;margin:6px 0 12px}
+.prog i{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+.btn.full{width:100%;margin-top:10px}
+.planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:22px}
+.plan{background:var(--blanco);color:var(--tinta);border-radius:18px;padding:30px;display:flex;flex-direction:column}
+.plan.dest{outline:3px solid var(--latón)}
+.plan h3{font-size:28px}
+.plan .pr{font-family:'Newsreader',serif;font-size:40px;margin:8px 0 2px}
+.plan .pr small{font-family:'Schibsted Grotesk',sans-serif;font-size:14px;color:var(--suave)}
+.plan ul{list-style:none;margin:14px 0 20px;flex:1}
+.plan li{padding:6px 0 6px 26px;position:relative;font-size:15.5px;border-bottom:1px dashed var(--linea)}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.plan .btn{width:100%}
+.nota{font-size:14px;color:var(--suave);margin-top:18px}
+.osc .nota{color:#dccfc8}
+.cal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px}
+.cal article{background:var(--blanco);border:1px solid var(--linea);border-left:6px solid var(--latón);border-radius:12px;padding:18px 20px}
+.cal b{font-family:'Newsreader',serif;font-size:30px;display:block;line-height:1}
+.cal span{font-size:15px;color:var(--suave)}
+.nos{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.nos .eq{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.nos .eq div{border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:20px}
+.nos .eq b{font-family:'Newsreader',serif;font-size:40px;color:var(--latón);display:block;line-height:1}
+.nos p+p{margin-top:14px}
+@media(max-width:820px){.nos{grid-template-columns:1fr}}
+.ops{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:22px}
+.ops blockquote{background:var(--blanco);border:1px solid var(--linea);border-radius:16px;padding:26px}
+.ops p{font-family:'Newsreader',serif;font-size:21px;line-height:1.4}
+.ops footer{margin-top:14px;font-size:14px;color:var(--suave)}
+.ubic{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+@media(max-width:820px){.ubic{grid-template-columns:1fr}}
+.hor{width:100%;border-collapse:collapse;font-size:16px;margin-top:10px}
+.hor caption{text-align:left;font-weight:700;margin-bottom:6px}
+.hor th,.hor td{padding:9px 0;border-bottom:1px solid var(--linea);text-align:left}
+.hor td{text-align:right}
+.hor tr.hoy th,.hor tr.hoy td{font-weight:700;color:var(--vino)}
+.dir{margin-top:20px;font-size:16px}
+.mapa{background:var(--blanco);border:1px solid var(--linea);border-radius:16px;overflow:hidden}
+.mapa svg{width:100%;height:auto}
+.reu{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+@media(max-width:820px){.reu{grid-template-columns:1fr}}
+.dias,.horas{display:flex;flex-wrap:wrap;gap:8px}
+.dias button,.horas button{border:1.5px solid rgba(255,255,255,.55);background:transparent;color:var(--papel);border-radius:10px;padding:8px 14px;min-height:46px;font-weight:600;font-size:15px}
+.dias button[aria-pressed=true],.horas button[aria-pressed=true]{background:var(--latón);color:var(--vino);border-color:var(--latón)}
+.horas button:disabled{opacity:.5;text-decoration:line-through;cursor:not-allowed}
+.osc .campo select,.osc .campo input[type=text]{background:#fff;color:var(--tinta)}
+.osc .campo label,.osc .campo legend{color:var(--papel)}
+.osc .campo .nota{margin:6px 0 0}
+.pie{background:#24101a;color:#d3c6bf;padding:30px 0 90px;font-size:14.5px}
+.pie .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.pie a{color:var(--latón)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.barras i{animation:none}.btn,.prog i{transition:none}.btn:hover{transform:none}}
+@media(max-width:600px){section{padding:68px 0}.hero{padding-top:110px}.w{padding:0 20px}.nav .btn{display:none}}
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header><div class="w nav">
+  <a class="logo" href="#inicio" aria-label="Lenga Asesorías, inicio"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#d6a84f"/><path d="M20 14v32h24" fill="none" stroke="#3b1623" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>Lenga</a>
+  <nav aria-label="Principal"><ul>
+    <li><a href="#servicios">Servicios</a></li><li><a href="#herramientas">Herramientas</a></li><li><a href="#planes">Planes</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#ubicacion">Horario</a></li>
+  </ul></nav>
+  <a class="btn b1" href="#reunion" style="background:var(--latón);color:var(--vino)">Agenda una reunión</a>
+</div></header>
+<main id="contenido">
+<section class="hero" id="inicio" aria-label="Portada"><div class="w">
+  <div>
+    <p class="eti" style="color:var(--latón)">Contabilidad y tributación · Paillaco</p>
+    <h1>Tus números, <em>en orden</em> y sin letra chica.</h1>
+    <p class="lead">Llevamos la contabilidad, los impuestos mensuales y las remuneraciones de emprendedores y pymes de la Región de Los Ríos. Tú te dedicas a tu negocio; nosotros, a que todo llegue al día.</p>
+    <div class="btns"><a class="btn b1" href="#cotizador" style="background:var(--latón);color:var(--vino)">Cotiza tu plan mensual</a><a class="btn b2" href="#reunion">Agenda una reunión</a></div>
+    <p class="estado" id="estado" role="status"><i></i><span>Revisando horario…</span></p>
+  </div>
+  <aside class="libro" aria-label="Ejemplo de resumen mensual">
+    <h2>Resumen del mes <span>ejemplo</span></h2>
+    <table><caption class="sr" style="position:absolute;left:-9999px">Ejemplo de resumen mensual en pesos chilenos</caption>
+      <tr><td>Ventas netas</td><td>$4.850.000</td></tr>
+      <tr><td>IVA débito</td><td>$921.500</td></tr>
+      <tr><td>IVA crédito</td><td>− $603.200</td></tr>
+      <tr class="t"><td>IVA a pagar</td><td>$318.300</td></tr>
+    </table>
+    <div class="barras" role="img" aria-label="Gráfico de barras de ventas de seis meses, con tendencia al alza"><i style="height:48%"></i><i style="height:60%"></i><i style="height:54%"></i><i style="height:72%"></i><i style="height:66%"></i><i style="height:92%"></i></div>
+    <small>Cifras ficticias. Así te entregamos el informe cada mes.</small>
+  </aside>
+</div></section>
+
+<section aria-labelledby="t-valor"><div class="w">
+  <div class="cab rv"><p class="eti">Por qué Lenga</p><h2 id="t-valor">Orden contable que se entiende</h2><p>Hablamos claro, avisamos antes de cada vencimiento y respondemos en el día.</p></div>
+  <div class="valor">
+    <article class="rv"><div class="n">12</div><h3>Nada vence sin aviso</h3><p>Te recordamos por WhatsApp cada declaración mensual, con el monto a pagar y la fecha límite.</p></article>
+    <article class="rv"><div class="n">1:1</div><h3>Una persona a cargo</h3><p>Siempre hablas con la misma contadora o contador, que conoce tu negocio y tus números.</p></article>
+    <article class="rv"><div class="n">$</div><h3>Precios publicados</h3><p>Planes mensuales con valor fijo y un cotizador para saber el total antes de escribirnos.</p></article>
+  </div>
+</div></section>
+
+<section class="hue" id="servicios" aria-labelledby="t-serv"><div class="w">
+  <div class="cab rv"><p class="eti">Servicios</p><h2 id="t-serv">Lo que hacemos por tu negocio</h2></div>
+  <div class="serv">
+    <article class="rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="5" width="26" height="30" rx="3"/><path d="M13 13h14M13 19h14M13 25h8"/></svg><div><h3>Contabilidad mensual</h3><p>Registro de compras y ventas, conciliación bancaria y balance al día.</p></div></article>
+    <article class="rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 32 18 20l6 6 9-13"/><path d="M27 13h6v6"/></svg><div><h3>Declaración de IVA</h3><p>Preparamos y presentamos tu declaración mensual y te avisamos el monto antes de pagar.</p></div></article>
+    <article class="rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="14" r="5"/><path d="M6 33c0-6 4-10 10-10s10 4 10 10M28 14h6M28 20h6"/></svg><div><h3>Remuneraciones</h3><p>Liquidaciones de sueldo, contratos y cotizaciones de tus trabajadores.</p></div></article>
+    <article class="rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 33V12l12-6 12 6v21"/><path d="M15 33v-9h10v9"/></svg><div><h3>Inicio de actividades</h3><p>Te acompañamos a formalizar tu emprendimiento y elegir la forma jurídica adecuada.</p></div></article>
+    <article class="rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6h20v28l-5-3-5 3-5-3-5 3z"/><path d="M15 14h10M15 20h10"/></svg><div><h3>Operación Renta</h3><p>Declaración anual de impuestos para empresas y personas con boletas de honorarios.</p></div></article>
+    <article class="rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 29c0-9 6-16 13-16s13 7 13 16"/><path d="M20 13V8M20 29l6-9"/></svg><div><h3>Asesoría tributaria</h3><p>Revisamos si tu régimen y tus gastos están bien planteados. Consulta puntual o trimestral.</p></div></article>
+  </div>
+</div></section>
+
+<section id="herramientas" aria-labelledby="t-her"><div class="w">
+  <div class="cab rv"><p class="eti">Herramientas gratuitas</p><h2 id="t-her">Calcula antes de escribirnos</h2><p>Tres ayudas rápidas que puedes usar ahora mismo. Son referenciales y no reemplazan la asesoría de un contador.</p></div>
+  <div class="herr">
+    <div class="caja rv" id="cotizador">
+      <h3>Cotizador de plan mensual</h3><p>Arma tu plan y mira el valor mensual estimado.</p>
+      <div class="campo"><label for="q-tipo">Tipo de contribuyente</label>
+        <select id="q-tipo"><option value="29000">Persona natural con boletas</option><option value="45000" selected>Empresa individual</option><option value="62000">Sociedad (SpA o Ltda.)</option></select></div>
+      <div class="campo"><div class="fila"><label for="q-docs" style="margin:0">Documentos al mes</label><output id="q-docs-o" for="q-docs">60</output></div>
+        <input type="range" id="q-docs" min="10" max="300" step="10" value="60"><p class="nota" style="margin-top:2px">Facturas, boletas y notas de compra y venta.</p></div>
+      <div class="campo"><div class="fila"><label for="q-trab" style="margin:0">Trabajadores con sueldo</label><output id="q-trab-o" for="q-trab">1</output></div>
+        <input type="range" id="q-trab" min="0" max="10" step="1" value="1"></div>
+      <fieldset class="campo"><legend>Agregados</legend>
+        <label class="chk"><input type="checkbox" id="q-inf" value="18000"><span>Informe mensual de gestión (+$18.000)</span></label>
+        <label class="chk"><input type="checkbox" id="q-ase" value="25000"><span>Asesoría tributaria trimestral (+$25.000)</span></label></fieldset>
+      <div class="res" aria-live="polite"><div class="tot" id="q-tot">$0</div><p>por mes + IVA · <span id="q-iva"></span> con IVA</p><ul id="q-det"></ul></div>
+      <a class="btn b1 full" id="q-wa" href="#" target="_blank" rel="noopener">Enviar esta cotización por WhatsApp</a>
+    </div>
+    <div class="caja rv">
+      <h3>Calculadora de IVA</h3><p>Pasa de neto a bruto y al revés. IVA de 19 %.</p>
+      <div class="seg" role="group" aria-label="Modo de cálculo"><button type="button" id="m-nb" aria-pressed="true">Neto → con IVA</button><button type="button" id="m-bn" aria-pressed="false">Con IVA → neto</button></div>
+      <div class="campo"><label for="i-monto" id="i-lab">Monto neto ($)</label><input type="number" id="i-monto" inputmode="numeric" min="0" step="1" value="100000"></div>
+      <div class="res" aria-live="polite"><div class="tot" id="i-tot">$0</div><p id="i-tit"></p><ul><li><span>Neto</span><span id="i-n"></span></li><li><span>IVA (19 %)</span><span id="i-i"></span></li><li><span>Total con IVA</span><span id="i-b"></span></li></ul></div>
+      <p class="nota">Cálculo simple con redondeo al peso. Para exentos, retenciones u otros casos, consúltanos.</p>
+    </div>
+    <div class="caja rv">
+      <h3>¿Qué papeles juntar?</h3><p>Marca lo que ya tienes para tu declaración mensual.</p>
+      <div class="prog" role="progressbar" aria-label="Documentos listos" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="c-pb"><i id="c-bar"></i></div>
+      <p class="fila"><span>Documentos listos</span><output id="c-o" aria-live="polite">0 de 6</output></p>
+      <div id="c-list">
+        <label class="chk"><input type="checkbox"><span>Facturas de compra del mes</span></label>
+        <label class="chk"><input type="checkbox"><span>Facturas y boletas de venta</span></label>
+        <label class="chk"><input type="checkbox"><span>Boletas de honorarios recibidas</span></label>
+        <label class="chk"><input type="checkbox"><span>Cartola bancaria de la cuenta del negocio</span></label>
+        <label class="chk"><input type="checkbox"><span>Detalle de sueldos y asistencia</span></label>
+        <label class="chk"><input type="checkbox"><span>Comprobantes de gastos sin factura</span></label>
+      </div>
+      <a class="btn b1 full" id="c-wa" href="#" target="_blank" rel="noopener">Avisar por WhatsApp que están listos</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="hue" aria-labelledby="t-cal"><div class="w">
+  <div class="cab rv"><p class="eti">Calendario tributario</p><h2 id="t-cal">Fechas que no se pasan</h2><p>Las fechas pueden variar cada año; las confirmamos contigo en cada aviso.</p></div>
+  <div class="cal">
+    <article class="rv"><b>Día 12</b><span>Declaración mensual de IVA y pagos provisionales, en papel. En línea, plazo hasta el día 20.</span></article>
+    <article class="rv"><b>Día 13</b><span>Cotizaciones previsionales de los trabajadores del mes anterior (según entidad).</span></article>
+    <article class="rv"><b>Abril</b><span>Operación Renta: declaración anual de impuestos a la renta.</span></article>
+  </div>
+</div></section>
+
+<section class="osc" id="planes" aria-labelledby="t-pl"><div class="w">
+  <div class="cab rv"><p class="eti">Planes</p><h2 id="t-pl">Valores fijos, todo por escrito</h2><p>Valores netos mensuales, más IVA. Sin permanencia mínima.</p></div>
+  <div class="planes">
+    <div class="plan rv"><h3>Emprendedor</h3><div class="pr">$39.000<small> /mes</small></div><p style="color:var(--suave);font-size:15px">Para partir ordenado.</p><ul><li>Hasta 40 documentos al mes</li><li>Declaración mensual de IVA</li><li>Sin trabajadores</li><li>Consultas por WhatsApp</li></ul><a class="btn b3" href="#reunion">Quiero este plan</a></div>
+    <div class="plan dest rv"><h3>Pyme</h3><div class="pr">$79.000<small> /mes</small></div><p style="color:var(--suave);font-size:15px">El más elegido por comercios.</p><ul><li>Hasta 120 documentos al mes</li><li>IVA, balance y renta anual</li><li>Hasta 3 trabajadores con liquidación</li><li>Informe mensual de gestión</li></ul><a class="btn b3" href="#reunion">Quiero este plan</a></div>
+    <div class="plan rv"><h3>Crece</h3><div class="pr">$139.000<small> /mes</small></div><p style="color:var(--suave);font-size:15px">Para equipos en expansión.</p><ul><li>Hasta 300 documentos al mes</li><li>Hasta 10 trabajadores</li><li>Asesoría tributaria trimestral</li><li>Reunión mensual de seguimiento</li></ul><a class="btn b3" href="#reunion">Quiero este plan</a></div>
+  </div>
+  <p class="nota">Valores de ejemplo para esta propuesta de diseño.</p>
+</div></section>
+
+<section id="nosotros" class="osc" style="background:var(--vino2)" aria-labelledby="t-no"><div class="w nos">
+  <div class="rv"><p class="eti">Nosotros</p><h2 id="t-no">Un estudio chico, a propósito</h2>
+    <p style="margin-top:16px;color:#eadfd6">Lenga nació en Paillaco para que un almacén, un taller o una cabaña tengan el mismo orden contable que una empresa grande, pero con atención cercana.</p>
+    <p style="color:#eadfd6">Trabajamos con pocos clientes por contador para poder responder rápido, explicar cada cifra y llamarte antes de que algo venza.</p></div>
+  <div class="eq rv"><div><b>9</b>años de oficio (ejemplo)</div><div><b>45</b>negocios atendidos (ejemplo)</div><div><b>2</b>contadores y 1 asistente</div><div><b>24 h</b>máximo para responderte</div></div>
+</div></section>
+
+<section aria-labelledby="t-op"><div class="w">
+  <div class="cab rv"><p class="eti">Opiniones</p><h2 id="t-op">Lo que dicen negocios de ejemplo</h2></div>
+  <div class="ops">
+    <blockquote class="rv"><p>«Antes llegaba a fin de mes sin saber cuánto IVA iba a pagar. Ahora lo sé con días de anticipación.»</p><footer>Almacén de ejemplo, Paillaco · testimonio ficticio</footer></blockquote>
+    <blockquote class="rv"><p>«Me ayudaron a iniciar actividades y a entender qué podía descontar. Sin tecnicismos.»</p><footer>Emprendedora de ejemplo, La Unión · testimonio ficticio</footer></blockquote>
+    <blockquote class="rv"><p>«Las liquidaciones llegan listas y a tiempo. Un problema menos para el taller.»</p><footer>Taller de ejemplo, Máfil · testimonio ficticio</footer></blockquote>
+  </div>
+</div></section>
+
+<section class="hue" id="ubicacion" aria-labelledby="t-ub"><div class="w">
+  <div class="cab rv"><p class="eti">Visítanos</p><h2 id="t-ub">Horario y ubicación</h2></div>
+  <div class="ubic">
+    <div class="rv"><table class="hor" id="hor"><caption>Horario de atención</caption>
+      <tr data-d="1"><th scope="row">Lunes</th><td>9:00 – 18:00</td></tr><tr data-d="2"><th scope="row">Martes</th><td>9:00 – 18:00</td></tr><tr data-d="3"><th scope="row">Miércoles</th><td>9:00 – 18:00</td></tr><tr data-d="4"><th scope="row">Jueves</th><td>9:00 – 18:00</td></tr><tr data-d="5"><th scope="row">Viernes</th><td>9:00 – 16:00</td></tr><tr data-d="6"><th scope="row">Sábado</th><td>Cerrado</td></tr><tr data-d="0"><th scope="row">Domingo</th><td>Cerrado</td></tr></table>
+      <p class="dir"><b>Dirección (ficticia):</b> calle Ejemplo 123, oficina 4, Paillaco, Región de Los Ríos.<br><b>Teléfono (ficticio):</b> +56 9 5555 0199<br><b>Videollamada</b> disponible para clientes de toda la región.</p></div>
+    <div class="mapa rv"><svg viewBox="0 0 400 300" role="img" aria-label="Mapa esquemático de ejemplo con la oficina de Lenga en el centro de Paillaco"><rect width="400" height="300" fill="#e8e1d1"/><g stroke="#fffdf9" stroke-width="14"><path d="M0 110h400M0 210h400M120 0v300M280 0v300"/></g><path d="M0 40c90 30 140-10 250 20s110 0 150 10" fill="none" stroke="#a9c1c4" stroke-width="16"/><text x="40" y="34" font-size="12" fill="#476a70" font-family="Schibsted Grotesk,sans-serif">río</text><g transform="translate(200 160)"><circle r="22" fill="#3b1623"/><path d="M-6-9v18h12" fill="none" stroke="#d6a84f" stroke-width="4" stroke-linecap="round"/></g><text x="200" y="204" text-anchor="middle" font-size="13" font-weight="700" fill="#3b1623" font-family="Schibsted Grotesk,sans-serif">Lenga Asesorías</text></svg></div>
+  </div>
+</div></section>
+
+<section class="osc" id="reunion" aria-labelledby="t-re"><div class="w reu">
+  <div class="rv"><p class="eti">Primera reunión sin costo</p><h2 id="t-re">Cuéntanos de tu negocio</h2><p style="margin-top:14px;color:#dccfc8">Elige día y hora; te confirmamos por WhatsApp. Los horarios tachados ya están ocupados.</p>
+    <p class="nota">No se envía nada hasta que presionas el botón de WhatsApp.</p></div>
+  <form class="rv" id="reu" onsubmit="return false">
+    <fieldset class="campo"><legend>Día</legend><div class="dias" id="r-dias"></div></fieldset>
+    <fieldset class="campo"><legend>Hora</legend><div class="horas" id="r-horas"></div></fieldset>
+    <div class="campo"><label for="r-mod">Modalidad</label><select id="r-mod"><option>Presencial en Paillaco</option><option>Videollamada</option></select></div>
+    <div class="campo"><label for="r-tema">Tema principal</label><select id="r-tema"><option>Iniciar actividades</option><option>Cambiarme de contador</option><option>Ordenar mi contabilidad</option><option>Remuneraciones</option><option>Operación Renta</option></select></div>
+    <div class="campo"><label for="r-nom">Tu nombre</label><input type="text" id="r-nom" autocomplete="name" placeholder="Nombre y apellido"></div>
+    <p class="nota" id="r-res" aria-live="polite" style="margin-bottom:10px"></p>
+    <a class="btn b1 full" id="r-wa" href="#" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+  </form>
+</div></section>
+</main>
+
+<footer class="pie"><div class="w"><span>Lenga Asesorías · Contabilidad y tributación · Paillaco, Región de Los Ríos</span><span>Sitio de ejemplo · Diseño por <a href="../">Werex Studio</a>. Negocio, precios y contactos ficticios.</span></div></footer>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+var fmt=function(n){return '$'+Math.round(n).toLocaleString('es-CL')};
+var WA='https://wa.me/56955550199?text=';
+var enc=encodeURIComponent;
+/* horario en hora de Chile */
+var HOR={1:[540,1080],2:[540,1080],3:[540,1080],4:[540,1080],5:[540,960]};
+var DN=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+function ahora(){var p=new Intl.DateTimeFormat('es-CL',{timeZone:'America/Santiago',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});
+ var map={'dom':0,'lun':1,'mar':2,'mié':3,'jue':4,'vie':5,'sáb':6};var k=o.weekday.replace('.','').toLowerCase().slice(0,3);
+ return {d:map[k],m:(+o.hour%24)*60+(+o.minute)}}
+function hh(m){return Math.floor(m/60)+':'+('0'+m%60).slice(-2)}
+(function estado(){var a=ahora(),t=HOR[a.d],el=$('#estado'),tx=el.querySelector('span');
+ document.querySelectorAll('#hor tr').forEach(function(r){if(+r.dataset.d===a.d)r.className='hoy'});
+ if(t&&a.m>=t[0]&&a.m<t[1]){el.classList.add('abierto');tx.textContent='Abierto ahora · cierra a las '+hh(t[1])}
+ else{var d=a.d,add=0,n;do{if(add===0&&HOR[d]&&a.m<HOR[d][0]){n=d;break}d=(d+1)%7;add++;if(HOR[d]){n=d;break}}while(add<8);
+  tx.textContent='Cerrado ahora · abrimos '+(add<=1&&n===(a.d+1)%7?'mañana':(add===0?'hoy':'el '+DN[n]))+' a las '+hh(HOR[n][0])}})();
+/* cotizador */
+function cot(){var base=+$('#q-tipo').value,docs=+$('#q-docs').value,tr=+$('#q-trab').value,inf=$('#q-inf').checked?18000:0,ase=$('#q-ase').checked?25000:0;
+ var extra=Math.max(0,docs-40)*350,sue=tr*8500,tot=base+extra+sue+inf+ase;
+ $('#q-docs-o').textContent=docs;$('#q-trab-o').textContent=tr;$('#q-tot').textContent=fmt(tot);$('#q-iva').textContent=fmt(tot*1.19);
+ var L=[['Base · '+$('#q-tipo').selectedOptions[0].text,base]];if(extra)L.push(['Documentos sobre 40',extra]);if(sue)L.push(['Liquidaciones ('+tr+')',sue]);if(inf)L.push(['Informe mensual',inf]);if(ase)L.push(['Asesoría trimestral',ase]);
+ $('#q-det').innerHTML=L.map(function(x){return '<li><span>'+x[0]+'</span><span>'+fmt(x[1])+'</span></li>'}).join('');
+ $('#q-wa').href=WA+enc('Hola, cotizé en el sitio de Lenga: '+$('#q-tipo').selectedOptions[0].text+', '+docs+' documentos al mes, '+tr+' trabajadores. Total estimado '+fmt(tot)+' + IVA al mes. ¿Podemos conversar?')}
+['#q-tipo','#q-docs','#q-trab','#q-inf','#q-ase'].forEach(function(s){$(s).addEventListener('input',cot)});cot();
+/* IVA */
+var modo='nb';
+function iva(){var v=Math.max(0,parseFloat($('#i-monto').value)||0),n,b;
+ if(modo==='nb'){n=v;b=Math.round(v*1.19)}else{b=v;n=Math.round(v/1.19)}
+ var i=b-n;$('#i-tot').textContent=fmt(modo==='nb'?b:n);$('#i-tit').textContent=modo==='nb'?'Total con IVA':'Monto neto';$('#i-n').textContent=fmt(n);$('#i-i').textContent=fmt(i);$('#i-b').textContent=fmt(b)}
+function setModo(m){modo=m;$('#m-nb').setAttribute('aria-pressed',m==='nb');$('#m-bn').setAttribute('aria-pressed',m==='bn');$('#i-lab').textContent=m==='nb'?'Monto neto ($)':'Monto con IVA ($)';iva()}
+$('#m-nb').addEventListener('click',function(){setModo('nb')});$('#m-bn').addEventListener('click',function(){setModo('bn')});$('#i-monto').addEventListener('input',iva);iva();
+/* checklist */
+var cs=document.querySelectorAll('#c-list input');
+function chk(){var n=0,f=[];cs.forEach(function(c){if(c.checked)n++;else f.push(c.nextElementSibling.textContent)});
+ var p=Math.round(n/cs.length*100);$('#c-bar').style.width=p+'%';$('#c-pb').setAttribute('aria-valuenow',p);$('#c-o').textContent=n+' de '+cs.length;
+ $('#c-wa').href=WA+enc(n===cs.length?'Hola, ya tengo todos los documentos del mes listos para la declaración.':'Hola, para la declaración del mes me faltan: '+(f.join(', ')||'—')+'.')}
+cs.forEach(function(c){c.addEventListener('change',chk)});chk();
+/* reunión */
+var dsel=null,hsel=null,OCU=[1,4,6,9,12],MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+function dias(){var cont=$('#r-dias'),a=ahora(),base=new Date(),out=[],i=0;
+ var f=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Santiago'}).format(base).split('-');var d0=new Date(Date.UTC(+f[0],+f[1]-1,+f[2]));
+ while(out.length<5&&i<14){var d=new Date(d0.getTime()+i*864e5),w=d.getUTCDay();i++;if(!HOR[w])continue;if(i===1&&a.m>=HOR[w][1]-60)continue;out.push({w:w,d:d.getUTCDate(),m:MES[d.getUTCMonth()],k:d.getTime()})}
+ cont.innerHTML='';out.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed','false');b.textContent=DN[o.w].slice(0,3)+' '+o.d+' '+o.m;b.addEventListener('click',function(){dsel=o;cont.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});horas()});cont.appendChild(b)})}
+function horas(){var c=$('#r-horas');c.innerHTML='';hsel=null;var t=HOR[dsel.w],n=0;
+ for(var m=t[0];m<=t[1]-60;m+=60){(function(m,idx){var b=document.createElement('button');b.type='button';b.textContent=hh(m);b.setAttribute('aria-pressed','false');
+  if((OCU.indexOf((idx+dsel.d)%13)>-1)){b.disabled=true;b.setAttribute('aria-label',hh(m)+', ocupado')}
+  b.addEventListener('click',function(){hsel=hh(m);c.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});res()});c.appendChild(b)})(m,n++)}
+ res()}
+function res(){var nom=$('#r-nom').value.trim(),ok=dsel&&hsel;
+ $('#r-res').textContent=ok?'Reunión propuesta: '+DN[dsel.w]+' '+dsel.d+' de '+dsel.m+', '+hsel+' h · '+$('#r-mod').value:'Elige un día y una hora disponibles.';
+ $('#r-wa').href=ok?WA+enc('Hola, soy '+(nom||'(mi nombre)')+'. Quiero reservar una reunión el '+DN[dsel.w]+' '+dsel.d+' de '+dsel.m+' a las '+hsel+' ('+$('#r-mod').value+') para hablar de: '+$('#r-tema').value.toLowerCase()+'.'):WA+enc('Hola, quiero agendar una reunión con Lenga Asesorías.')}
+['#r-mod','#r-tema','#r-nom'].forEach(function(s){$(s).addEventListener('input',res)});dias();res();
+/* aparición */
+var rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(e){io.observe(e)})}
+else rv.forEach(function(e){e.classList.add('on')});
+})();
+</script>
+</body>
+</html>

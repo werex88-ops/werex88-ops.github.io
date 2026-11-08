@@ -1,5 +1,28 @@
 # Registro de cambios
 
+## 2026-11-08 (mejora diaria: demo de estudio contable)
+
+Esta rama parte desde la del 7 de noviembre (solicitud #34, aún abierta, que a su vez incluye la #33, la #32 y la #31), para no duplicar trabajo ni generar conflictos.
+
+### Currículum (`index.html`)
+- Accesibilidad: los separadores "·" de la línea de títulos se marcan como decorativos (`aria-hidden`), para que los lectores de pantalla no los lean.
+- No se modificó texto, secciones, datos de contacto ni identidad visual.
+
+### Revisión de demos y portafolio
+- Se revisaron las 21 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin enlaces, anclas ni imágenes locales rotas, aviso de datos ficticios en todas las demos y páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
+
+### Demo nueva
+- `contable/`: Lenga Asesorías, estudio contable y tributario ficticio en Paillaco (burdeos, latón y papel; tipografías Newsreader y Schibsted Grotesk).
+- Funciones: cotizador de plan mensual (tipo de contribuyente, documentos, trabajadores y agregados, con neto y total con IVA) y envío por WhatsApp; calculadora de IVA neto/bruto; lista de documentos con avance y aviso por WhatsApp; reserva de reunión con días y horas disponibles; estado abierto/cerrado según hora de Chile.
+- Sin fotografías: ilustraciones SVG/CSS propias, porque `images.unsplash.com` sigue respondiendo 403 desde el entorno.
+- Tarjeta en el portafolio (19 diseños) y captura `img/contable.jpg` (1200×800, 81 KB).
+
+### Sugerencias pendientes para René
+- Reemplazar las ilustraciones de las demos sin fotos (Lenga, Lleuque, taller, barbería, Mañío, Aire Sur) por fotos de Unsplash verificadas cuando haya acceso.
+- Las fechas del calendario tributario de Lenga (día 12, día 20 en línea, abril) son referenciales; un cliente real debe confirmarlas cada año.
+- Currículum: agregar teléfono o LinkedIn y logros medibles si quieres; no se inventaron datos.
+- Las capturas se generan sin las tipografías de Google Fonts (bloqueadas en el entorno); conviene regenerarlas desde un navegador con acceso total.
+
 ## 2026-11-07 (mejora diaria: demo de ferretería)
 
 Esta rama parte desde la del 6 de noviembre (solicitud #33, aún abierta, que a su vez incluye la #32 y la #31), para no duplicar trabajo ni generar conflictos.

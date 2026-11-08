@@ -149,3 +149,7 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 ## Yoga y pilates · Aire Sur
 
 - `yoga` no usa fotografías: ilustraciones SVG/CSS propias (paisaje del lago, mapa, esfera de respiración), porque `images.unsplash.com` no es accesible desde el entorno (error 403) y no se pudieron verificar fotos nuevas.
+
+## Servicios profesionales · Lenga Asesorías
+
+- `contable` no usa fotografías: ilustraciones SVG/CSS propias (libro de resumen, íconos, mapa), porque `images.unsplash.com` no es accesible desde el entorno (error 403) y no se pudieron verificar fotos nuevas.
