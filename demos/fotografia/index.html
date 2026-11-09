@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuarto Claro · Estudio fotográfico en Valdivia</title>
+<meta name="description" content="Estudio de fotografía en Valdivia: retratos, familia, emprendimientos, producto y eventos. Arma tu sesión, mira el precio y reserva una fecha. Sitio de ejemplo con datos ficticios.">
+<meta name="theme-color" content="#101114">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101114'/%3E%3Ccircle cx='32' cy='33' r='15' fill='none' stroke='%23eeeae2' stroke-width='5'/%3E%3Ccircle cx='32' cy='33' r='6' fill='%232f4bff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--tinta:#101114;--tinta2:#1d1f25;--hueso:#eeeae2;--papel:#f7f5f0;--cobalto:#2f4bff;--cob-c:#aab5ff;--suave:#5a5d66;--linea:#d8d3c7;--ok:#1d6b43;--mal:#a3281f}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--papel);color:var(--tinta);line-height:1.6;font-size:17px;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+.w{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Syne',system-ui,sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,52px)}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--cobalto);outline-offset:3px;border-radius:6px}
+.osc :focus-visible,header :focus-visible{outline-color:var(--cob-c)}
+.saltar{position:absolute;left:12px;top:-60px;background:var(--cobalto);color:#fff;padding:10px 16px;border-radius:8px;z-index:100;font-weight:700}
+.saltar:focus{top:12px}
+.eti{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalto);margin-bottom:14px}
+.osc .eti{color:var(--cob-c)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;border:2px solid transparent;min-height:48px;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.b1{background:var(--cobalto);color:#fff}.b1:hover{background:#1f38d9}
+.b2{border-color:currentColor;background:transparent}
+.osc .b1{background:var(--hueso);color:var(--tinta)}.osc .b1:hover{background:#fff}
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(16,17,20,.95);backdrop-filter:blur(8px);color:var(--hueso)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;text-decoration:none;display:flex;align-items:center;gap:10px;min-height:44px}
+.logo svg{width:28px;height:28px}
+.nav ul{display:flex;gap:2px;list-style:none}
+.nav ul a{display:block;padding:10px 12px;font-weight:500;font-size:15px;border-radius:8px;text-decoration:none}
+.nav ul a:hover{background:rgba(255,255,255,.1)}
+.nav .btn{padding:9px 20px;min-height:44px}
+@media(max-width:940px){.nav ul{display:none}}
+.hero{background:var(--tinta);color:var(--hueso);padding:128px 0 80px;position:relative;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(44px,7.4vw,92px)}
+.hero h1 em{font-style:normal;color:var(--cob-c)}
+.hero .lead{font-size:clamp(18px,2vw,21px);margin:22px 0 30px;max-width:30em;color:#d3d0c9}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.estado{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:15px;font-weight:600;background:rgba(255,255,255,.09);padding:9px 16px;border-radius:999px}
+.estado i{width:10px;height:10px;border-radius:50%;background:#9a9a9a;flex:none}
+.estado.abierto i{background:#58d68d;box-shadow:0 0 0 4px rgba(88,214,141,.25)}
+.visor{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.5);background:#222}
+.visor svg{width:100%;height:100%}
+.visor::before,.visor::after{content:"";position:absolute;z-index:2;pointer-events:none}
+.visor::before{inset:14px;border:2px solid rgba(255,255,255,.55);clip-path:polygon(0 0,18% 0,18% 2px,2px 2px,2px 18%,0 18%,0 0,100% 0,100% 18%,calc(100% - 2px) 18%,calc(100% - 2px) 2px,82% 2px,82% 0,0 100%,0 82%,2px 82%,2px calc(100% - 2px),18% calc(100% - 2px),18% 100%,100% 100%,82% 100%,82% calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) 82%,100% 82%)}
+.visor .dat{position:absolute;z-index:3;left:18px;bottom:16px;right:18px;display:flex;justify-content:space-between;font:600 13px/1 'Albert Sans',monospace;letter-spacing:.06em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+@media(max-width:860px){.hero .w{grid-template-columns:1fr}.visor{aspect-ratio:4/3}}
+section{padding:92px 0}
+.cab{max-width:660px;margin-bottom:44px}
+.cab p{color:var(--suave);margin-top:14px}
+.osc{background:var(--tinta);color:var(--hueso)}
+.osc .cab p{color:#c9c6bf}
+.hue{background:var(--hueso)}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.val{border-top:3px solid var(--tinta);padding-top:18px}
+.val b{font-family:'Syne',sans-serif;font-size:44px;line-height:1;color:var(--cobalto);display:block;margin-bottom:8px}
+.val h3{font-size:22px;margin-bottom:8px}
+.val p{color:var(--suave);font-size:16px}
+@media(max-width:760px){.vals{grid-template-columns:1fr}}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filtros button{border:2px solid var(--tinta);background:transparent;border-radius:999px;padding:8px 18px;font-weight:600;min-height:44px}
+.filtros button[aria-pressed=true]{background:var(--tinta);color:var(--hueso)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));grid-auto-rows:210px;gap:14px}
+.gal figure{position:relative;border-radius:14px;overflow:hidden;background:#222;transition:transform .35s,opacity .3s}
+.gal figure.alto{grid-row:span 2}
+.gal figure[hidden]{display:none}
+.gal svg{width:100%;height:100%;transition:transform .6s}
+.gal figure:hover svg{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 12px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:14px;font-weight:600}
+.nota{font-size:14px;color:var(--suave);margin-top:18px}
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:860px){.ab{grid-template-columns:1fr}}
+.comp{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:#000;touch-action:pan-y;user-select:none}
+.comp svg{position:absolute;inset:0;width:100%;height:100%}
+.comp .sin{filter:saturate(.35) contrast(.78) brightness(1.12) sepia(.15)}
+.comp .con{clip-path:inset(0 0 0 var(--p,50%))}
+.comp .lin{position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;background:#fff;transform:translateX(-1.5px);z-index:3;box-shadow:0 0 12px rgba(0,0,0,.5)}
+.comp .lin::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;color:var(--tinta);display:grid;place-items:center;font-size:20px;font-weight:700}
+.comp span.t{position:absolute;top:12px;z-index:4;background:rgba(16,17,20,.8);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.06em}
+.comp span.t1{left:12px}.comp span.t2{right:12px}
+.comp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:5;margin:0}
+.comp:focus-within{outline:3px solid var(--cob-c);outline-offset:3px}
+.ab ul{list-style:none;margin-top:18px}
+.ab li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid #35373e}
+.ab li::before{content:"";position:absolute;left:0;top:19px;width:14px;height:2px;background:var(--cob-c)}
+.packs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.pack{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column}
+.pack h3{font-size:24px}
+.pack .pr{font-family:'Syne',sans-serif;font-weight:800;font-size:30px;margin:10px 0 4px;color:var(--cobalto)}
+.pack small{color:var(--suave);font-size:14px}
+.pack ul{list-style:none;margin:14px 0 0;font-size:15.5px}
+.pack li{padding:5px 0 5px 20px;position:relative}
+.pack li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.arma{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;margin-top:48px;align-items:start}
+@media(max-width:860px){.arma{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:26px}
+.panel h3{font-size:24px;margin-bottom:6px}
+.panel>p{color:var(--suave);font-size:15px;margin-bottom:14px}
+fieldset{border:0;margin:18px 0 0}
+legend{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;padding:0}
+.opc{display:flex;flex-wrap:wrap;gap:8px}
+.opc label{position:relative}
+.opc input{position:absolute;opacity:0}
+.opc span{display:block;padding:10px 16px;border:2px solid var(--linea);border-radius:999px;font-weight:600;font-size:15px;min-height:44px;cursor:pointer;background:#fff}
+.opc input:checked+span{border-color:var(--cobalto);background:#e9ecff}
+.opc input:focus-visible+span{outline:3px solid var(--cobalto);outline-offset:2px}
+.step{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.step button{width:44px;height:44px;border-radius:50%;border:2px solid var(--tinta);background:#fff;font-size:22px;font-weight:700;line-height:1}
+.step output{min-width:110px;text-align:center;font-weight:700}
+.ext label{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--linea);min-height:44px;cursor:pointer}
+.ext input{width:22px;height:22px;margin-top:2px;accent-color:var(--cobalto);flex:none}
+.ext em{margin-left:auto;font-style:normal;font-weight:700;white-space:nowrap}
+.res{position:sticky;top:84px;background:var(--tinta);color:var(--hueso);border-radius:18px;padding:26px}
+.res h3{font-size:22px;margin-bottom:10px}
+.res table{width:100%;border-collapse:collapse;font-size:15px}
+.res td{padding:7px 0;border-bottom:1px solid #35373e;vertical-align:top}
+.res td:last-child{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.res .tot{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0;font-family:'Syne',sans-serif;font-size:36px;font-weight:800}
+.res .tot span{font-family:'Albert Sans',sans-serif;font-size:14px;font-weight:600;color:#c9c6bf}
+.res .btn{width:100%;background:var(--hueso);color:var(--tinta)}
+.res small{display:block;margin-top:12px;color:#c9c6bf;font-size:13px}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:p}
+.paso{counter-increment:p;border-left:2px solid #3a3d45;padding-left:18px}
+.paso::before{content:"0" counter(p);font-family:'Syne',sans-serif;font-weight:800;font-size:30px;color:var(--cob-c)}
+.paso h3{font-size:21px;margin:6px 0}
+.paso p{color:#c9c6bf;font-size:15.5px}
+@media(max-width:900px){.pasos{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pasos{grid-template-columns:1fr}}
+.eq{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.pers{display:flex;gap:16px;align-items:flex-start}
+.pers svg{width:72px;height:72px;border-radius:50%;flex:none}
+.pers h3{font-size:22px}
+.pers p{color:var(--suave);font-size:16px}
+.ops{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.op{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:24px}
+.op p{font-size:17px}
+.op footer{margin-top:14px;font-size:14px;color:var(--suave)}
+.op footer b{display:block;color:var(--tinta)}
+.rese>*,.ab>*,.arma>*,.hero .w>*{min-width:0}
+.rese{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:860px){.rese{grid-template-columns:1fr}}
+.dias{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin:14px 0 6px}
+.dias button{flex:none;min-width:76px;min-height:64px;padding:8px 10px;border:2px solid #3a3d45;border-radius:14px;background:transparent;color:var(--hueso);font-weight:600;line-height:1.25}
+.dias button b{display:block;font-size:20px}
+.dias button[aria-pressed=true]{background:var(--hueso);color:var(--tinta);border-color:var(--hueso)}
+.dias button:disabled{opacity:.45;cursor:not-allowed}
+.horas{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.horas button{padding:10px 18px;min-height:44px;border-radius:999px;border:2px solid #3a3d45;background:transparent;color:var(--hueso);font-weight:600}
+.horas button[aria-pressed=true]{background:var(--cob-c);color:var(--tinta);border-color:var(--cob-c)}
+.horas button:disabled{text-decoration:line-through;opacity:.45;cursor:not-allowed}
+.resv{font-weight:600;min-height:3em}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:560px){.info{grid-template-columns:1fr}}
+.info h3{font-size:20px;margin-bottom:8px}
+.info table{border-collapse:collapse;width:100%;font-size:16px}
+.info td{padding:5px 0;border-bottom:1px dashed var(--linea)}
+.info td:last-child{text-align:right}
+.info tr.hoy td{font-weight:700;color:var(--cobalto)}
+.mapa{width:100%;margin-top:22px;border-radius:16px;overflow:hidden;background:#dcd8cc;height:clamp(170px,28vw,320px)}
+.mapa svg{width:100%;height:100%}
+.cont{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between}
+.cont h2{max-width:14em}
+.pie{background:#08090b;color:#bdbab3;font-size:14px;padding:26px 0 90px}
+.pie .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.pie a{color:var(--cob-c)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.gal svg,.btn{transition:none}.btn:hover{transform:none}}
+@media(max-width:560px){section{padding:68px 0}.w{padding:0 18px}.gal{grid-auto-rows:180px}}
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="gc1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3f8f"/><stop offset=".55" stop-color="#e98a6a"/><stop offset="1" stop-color="#f6c98b"/></linearGradient>
+<linearGradient id="gc2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e98a6a"/><stop offset="1" stop-color="#27346f"/></linearGradient>
+<linearGradient id="gc3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0c9a0"/><stop offset="1" stop-color="#b5603f"/></linearGradient>
+<linearGradient id="gc4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cdd7d0"/><stop offset="1" stop-color="#7f9488"/></linearGradient>
+<linearGradient id="gc5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1d3a"/><stop offset="1" stop-color="#3b2f5e"/></linearGradient>
+<linearGradient id="gc6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fc2d8"/><stop offset="1" stop-color="#e8dcc6"/></linearGradient>
+</defs>
+<symbol id="s-lago" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="url(#gc1)"/><circle cx="290" cy="120" r="26" fill="#ffe3b0" opacity=".9"/><path d="M60 190 L170 70 L190 82 L215 62 L330 190Z" fill="#33407a"/><path d="M170 70 L190 82 L215 62 L232 82 L205 90 L190 100 L178 84Z" fill="#f5efe4"/><rect y="190" width="400" height="110" fill="url(#gc2)"/><path d="M0 200 Q100 190 200 200 T400 198 V206 Q300 214 200 206 T0 208Z" fill="#33407a" opacity=".55"/><path d="M120 215h160M150 232h100M175 250h50" stroke="#ffe3b0" stroke-width="3" stroke-linecap="round" opacity=".6"/></symbol>
+<symbol id="s-bosque" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><rect width="300" height="400" fill="url(#gc4)"/><g fill="#2e4a3a"><rect x="30" y="0" width="34" height="400"/><rect x="118" y="0" width="22" height="400" opacity=".85"/><rect x="190" y="0" width="44" height="400"/><rect x="262" y="0" width="16" height="400" opacity=".7"/></g><g fill="#3f6a50" opacity=".7"><rect x="82" y="0" width="12" height="400"/><rect x="160" y="0" width="10" height="400"/></g><rect y="150" width="300" height="90" fill="#eef2ec" opacity=".45"/><path d="M0 360 Q80 330 150 360 T300 350 V400 H0Z" fill="#1d3226"/></symbol>
+<symbol id="s-retrato" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><rect width="300" height="400" fill="url(#gc3)"/><path d="M200 0h50L120 400H70Z" fill="#fff" opacity=".18"/><circle cx="150" cy="150" r="58" fill="#3a2a2a"/><path d="M40 400 C50 290 100 262 150 262 S250 290 260 400Z" fill="#3a2a2a"/><path d="M150 92 a58 58 0 0 1 56 74 a70 70 0 0 0-60-36 a60 60 0 0 0-52 16 a58 58 0 0 1 56-54Z" fill="#f6dcc0" opacity=".22"/></symbol>
+<symbol id="s-producto" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><rect width="300" height="400" fill="url(#gc6)"/><ellipse cx="150" cy="330" rx="120" ry="22" fill="#000" opacity=".15"/><rect x="40" y="300" width="220" height="30" rx="6" fill="#f7f1e6"/><rect x="70" y="190" width="80" height="110" rx="12" fill="#a0522d"/><rect x="78" y="172" width="64" height="20" rx="5" fill="#2b2118"/><rect x="82" y="224" width="56" height="40" rx="4" fill="#f7f1e6"/><rect x="178" y="130" width="42" height="170" rx="10" fill="#2f4bff"/><rect x="188" y="104" width="22" height="30" rx="4" fill="#101114"/><path d="M186 150v130" stroke="#fff" stroke-width="3" opacity=".4"/></symbol>
+<symbol id="s-evento" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="url(#gc5)"/><path d="M0 40 Q100 100 200 50 T400 40" fill="none" stroke="#ffd98a" stroke-width="2"/><g fill="#ffd98a"><circle cx="40" cy="70" r="9"/><circle cx="100" cy="86" r="7"/><circle cx="160" cy="80" r="10"/><circle cx="230" cy="62" r="8"/><circle cx="300" cy="60" r="11"/><circle cx="360" cy="52" r="7"/></g><g fill="#ffd98a" opacity=".25"><circle cx="70" cy="160" r="30"/><circle cx="200" cy="140" r="38"/><circle cx="330" cy="170" r="28"/></g><path d="M150 300 V210 a50 50 0 0 1 100 0 V300" fill="none" stroke="#e8ddf6" stroke-width="8"/><rect y="270" width="400" height="30" fill="#14152a"/></symbol>
+<symbol id="s-ciudad" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#bcd3e0"/><rect y="150" width="400" height="150" fill="#5f8aa3"/><g><rect x="10" y="90" width="60" height="62" fill="#c8553d"/><rect x="74" y="70" width="50" height="82" fill="#e6c36b"/><rect x="128" y="100" width="70" height="52" fill="#3c6e8f"/><rect x="204" y="80" width="56" height="72" fill="#e8dcc6"/><rect x="264" y="96" width="66" height="56" fill="#8a4a63"/><rect x="334" y="76" width="60" height="76" fill="#d98c3a"/></g><g fill="#fff" opacity=".6"><rect x="22" y="104" width="10" height="12"/><rect x="44" y="104" width="10" height="12"/><rect x="86" y="86" width="10" height="12"/><rect x="104" y="86" width="10" height="12"/><rect x="216" y="96" width="10" height="12"/><rect x="346" y="92" width="10" height="12"/></g><path d="M60 210 h90 l-12 18 h-66Z" fill="#101114"/><path d="M60 210 h90" stroke="#f7f5f0" stroke-width="3"/><path d="M230 240 h110 l-14 20 h-82Z" fill="#a3281f"/><path d="M0 178 H400" stroke="#fff" stroke-width="2" opacity=".35"/></symbol>
+</svg>
+
+<header>
+<div class="w nav">
+<a class="logo" href="#inicio" aria-label="Cuarto Claro, inicio"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="#eeeae2" stroke-width="6"/><circle cx="32" cy="32" r="8" fill="#aab5ff"/></svg>Cuarto Claro</a>
+<nav aria-label="Principal"><ul><li><a href="#trabajos">Trabajos</a></li><li><a href="#edicion">Edición</a></li><li><a href="#sesiones">Sesiones</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#opiniones">Opiniones</a></li><li><a href="#reserva">Reserva</a></li></ul></nav>
+<a class="btn b1" href="#armador" style="background:var(--hueso);color:var(--tinta)">Arma tu sesión</a>
+</div>
+</header>
+
+<main id="contenido">
+<section class="hero" id="inicio" aria-label="Portada">
+<div class="w">
+<div>
+<p class="eti" style="color:var(--cob-c)">Estudio fotográfico · Valdivia</p>
+<h1>Fotos con <em>luz clara</em> y trato cercano.</h1>
+<p class="lead">Retratos, familias, emprendimientos, producto y eventos en Valdivia y la Región de Los Ríos. Tú eliges la sesión, nosotros cuidamos la luz, la edición y los plazos.</p>
+<div class="btns"><a class="btn b1" href="#armador" style="background:var(--hueso);color:var(--tinta)">Arma tu sesión</a><a class="btn b2" href="#trabajos">Ver trabajos</a></div>
+<p class="estado" id="estado" role="status"><i></i><span>Revisando horario…</span></p>
+</div>
+<div class="visor" role="img" aria-label="Ilustración de un lago con volcán al atardecer, dentro de un visor de cámara"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#s-lago"/></svg><div class="dat" aria-hidden="true"><span>f/2.8 · 1/250</span><span>ISO 100</span></div></div>
+</div>
+</section>
+
+<section aria-labelledby="t-val">
+<div class="w">
+<div class="cab rv"><p class="eti">Cómo trabajamos</p><h2 id="t-val">Una sesión tranquila, fotos que se usan</h2><p>Sin poses forzadas ni letra chica: sabes qué incluye cada sesión, cuánto cuesta y cuándo recibes tus fotos.</p></div>
+<div class="vals">
+<div class="val rv"><b>48 h</b><h3>Entrega ágil</h3><p>Galería privada con tus fotos editadas en 5 días hábiles; con el extra exprés, en 48 horas.</p></div>
+<div class="val rv"><b>15+</b><h3>Fotos editadas incluidas</h3><p>Cada sesión parte con 15 fotos con color y retoque cuidados, lista para web, redes e impresión.</p></div>
+<div class="val rv"><b>1:1</b><h3>Dirección amable</h3><p>Te guiamos con calma, de principio a fin. Nadie necesita saber posar para salir bien.</p></div>
+</div>
+</div>
+</section>
+
+<section class="hue" id="trabajos" aria-labelledby="t-tr">
+<div class="w">
+<div class="cab rv"><p class="eti">Trabajos</p><h2 id="t-tr">Una mirada por cada tipo de sesión</h2><p>Filtra por categoría. Las imágenes son ilustraciones de ejemplo; un sitio real mostraría tus fotografías.</p></div>
+<div class="filtros rv" role="group" aria-label="Filtrar trabajos" id="filtros">
+<button type="button" data-f="todo" aria-pressed="true">Todo</button><button type="button" data-f="paisaje" aria-pressed="false">Paisaje</button><button type="button" data-f="retrato" aria-pressed="false">Retrato</button><button type="button" data-f="producto" aria-pressed="false">Producto</button><button type="button" data-f="evento" aria-pressed="false">Eventos</button><button type="button" data-f="ciudad" aria-pressed="false">Ciudad</button>
+</div>
+<div class="gal" id="gal" aria-live="polite">
+<figure data-c="paisaje" class="alto"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de un bosque con niebla"><use href="#s-bosque"/></svg><figcaption>Bosque con niebla · Paisaje</figcaption></figure>
+<figure data-c="paisaje"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de un lago con volcán al atardecer"><use href="#s-lago"/></svg><figcaption>Atardecer en el lago · Paisaje</figcaption></figure>
+<figure data-c="producto" class="alto"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de un frasco y una botella sobre un pedestal"><use href="#s-producto"/></svg><figcaption>Frasco y botella · Producto</figcaption></figure>
+<figure data-c="evento"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de un arco con luces para un evento nocturno"><use href="#s-evento"/></svg><figcaption>Arco con luces · Eventos</figcaption></figure>
+<figure data-c="retrato" class="alto"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de la silueta de un retrato con luz de ventana"><use href="#s-retrato"/></svg><figcaption>Luz de ventana · Retrato</figcaption></figure>
+<figure data-c="ciudad"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de casas coloridas junto al río con botes"><use href="#s-ciudad"/></svg><figcaption>Costanera y botes · Ciudad</figcaption></figure>
+</div>
+<p class="nota rv">Ilustraciones de ejemplo, sin fotografías reales.</p>
+</div>
+</section>
+
+<section class="osc" id="edicion" aria-labelledby="t-ed">
+<div class="w ab">
+<div class="rv"><p class="eti">Edición</p><h2 id="t-ed">De la toma a la foto final</h2><p style="margin-top:14px;color:#c9c6bf">Desliza la barra para comparar una toma sin editar con la versión final: contraste, color y limpieza de detalles, sin cambiar lo que eres.</p>
+<ul><li>Corrección de color y exposición en cada foto</li><li>Retoque suave y natural, solo si lo pides</li><li>Entrega en alta resolución y versión liviana para redes</li></ul></div>
+<div class="rv"><div class="comp" id="comp" style="--p:50%"><svg class="sin" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#s-lago"/></svg><svg class="con" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#s-lago"/></svg><span class="t t1">SIN EDITAR</span><span class="t t2">EDITADA</span><div class="lin" aria-hidden="true"></div><input type="range" id="rg" min="0" max="100" value="50" aria-label="Comparar imagen sin editar y editada"></div></div>
+</div>
+</section>
+
+<section id="sesiones" aria-labelledby="t-se">
+<div class="w">
+<div class="cab rv"><p class="eti">Sesiones</p><h2 id="t-se">Tres formas de empezar</h2><p>Precios de referencia en pesos chilenos, IVA incluido. Más abajo puedes armar la tuya a medida.</p></div>
+<div class="packs">
+<article class="pack rv"><h3>Retrato</h3><p class="pr">$40.000</p><small>1 hora · 1 persona</small><ul><li>15 fotos editadas</li><li>Estudio o exterior en Valdivia</li><li>Galería privada 30 días</li></ul></article>
+<article class="pack rv"><h3>Familia</h3><p class="pr">$60.000</p><small>1 hora · hasta 6 personas</small><ul><li>15 fotos editadas</li><li>Foto grupal e individuales</li><li>Galería privada 30 días</li></ul></article>
+<article class="pack rv"><h3>Marca y producto</h3><p class="pr">$90.000</p><small>1 hora · tu emprendimiento</small><ul><li>15 fotos editadas</li><li>Fondo limpio y fotos de uso</li><li>Formatos para web y redes</li></ul></article>
+</div>
+
+<div class="arma" id="armador">
+<div class="panel rv">
+<h3>Arma tu sesión</h3><p>Elige y el precio se calcula al instante.</p>
+<fieldset><legend>Tipo de sesión</legend><div class="opc" id="o-tipo">
+<label><input type="radio" name="tipo" value="retrato" checked><span>Retrato · $40.000</span></label>
+<label><input type="radio" name="tipo" value="familia"><span>Familia · $60.000</span></label>
+<label><input type="radio" name="tipo" value="producto"><span>Producto · $70.000</span></label>
+<label><input type="radio" name="tipo" value="marca"><span>Marca · $90.000</span></label>
+<label><input type="radio" name="tipo" value="evento"><span>Evento · $80.000</span></label>
+</div></fieldset>
+<fieldset><legend>Horas de sesión (1 incluida)</legend><div class="step"><button type="button" id="h-m" aria-label="Quitar una hora">−</button><output id="h-v" aria-live="polite">1 hora</output><button type="button" id="h-p" aria-label="Agregar una hora">+</button><small style="color:var(--suave)">+$30.000 por hora adicional</small></div></fieldset>
+<fieldset><legend>Fotos editadas (15 incluidas)</legend><div class="step"><button type="button" id="f-m" aria-label="Quitar 10 fotos">−</button><output id="f-v" aria-live="polite">15 fotos</output><button type="button" id="f-p" aria-label="Agregar 10 fotos">+</button><small style="color:var(--suave)">+$18.000 por cada 10</small></div></fieldset>
+<fieldset class="ext"><legend>Extras</legend>
+<label><input type="checkbox" data-x="35000|5 impresiones 20×30"><span>5 impresiones 20×30 cm</span><em>$35.000</em></label>
+<label><input type="checkbox" data-x="85000|Álbum de 20 páginas"><span>Álbum de 20 páginas</span><em>$85.000</em></label>
+<label><input type="checkbox" data-x="25000|Entrega exprés 48 h"><span>Entrega exprés en 48 horas</span><em>$25.000</em></label>
+<label><input type="checkbox" data-x="20000|Traslado fuera de Valdivia"><span>Traslado fuera de Valdivia</span><em>$20.000</em></label>
+</fieldset>
+</div>
+<aside class="res rv" aria-label="Resumen de tu sesión"><h3>Tu sesión</h3><table id="tab"></table><div class="tot"><span>Total</span><b id="tot">$0</b></div><a class="btn" id="wa" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a><small>Valor referencial con IVA. Se confirma por WhatsApp junto con la fecha. Abono del 30 % para reservar.</small></aside>
+</div>
+</div>
+</section>
+
+<section class="osc" id="proceso" aria-labelledby="t-pr">
+<div class="w">
+<div class="cab rv"><p class="eti">Proceso</p><h2 id="t-pr">Cuatro pasos, sin sorpresas</h2></div>
+<div class="pasos">
+<div class="paso rv"><h3>Conversamos</h3><p>Por WhatsApp definimos qué necesitas, para qué usarás las fotos y qué estilo te acomoda.</p></div>
+<div class="paso rv"><h3>Reservamos</h3><p>Eliges fecha y hora, abonas el 30 % y recibes una guía simple de qué llevar.</p></div>
+<div class="paso rv"><h3>Fotografiamos</h3><p>Sesión en estudio o en exterior, con dirección tranquila y tiempo para repetir lo que no te guste.</p></div>
+<div class="paso rv"><h3>Entregamos</h3><p>Galería privada para elegir y descargar, con las fotos editadas y listas para usar.</p></div>
+</div>
+</div>
+</section>
+
+<section class="hue" id="nosotros" aria-labelledby="t-no">
+<div class="w">
+<div class="cab rv"><p class="eti">Nosotros</p><h2 id="t-no">Dos fotógrafos, un estudio chico</h2><p>Cuarto Claro es un estudio ficticio de Valdivia, pensado como ejemplo de cómo se vería un sitio para un fotógrafo local.</p></div>
+<div class="eq">
+<div class="pers rv"><svg viewBox="0 0 72 72" role="img" aria-label="Ilustración abstracta, sin rostro"><rect width="72" height="72" fill="#2f4bff"/><circle cx="36" cy="28" r="12" fill="#eeeae2"/><path d="M12 72c2-18 12-26 24-26s22 8 24 26Z" fill="#eeeae2"/></svg><div><h3>Antonia (personaje ficticio)</h3><p>Retrato, familia y eventos. Le gusta la luz de ventana y las sesiones sin apuro.</p></div></div>
+<div class="pers rv"><svg viewBox="0 0 72 72" role="img" aria-label="Ilustración abstracta, sin rostro"><rect width="72" height="72" fill="#101114"/><circle cx="36" cy="28" r="12" fill="#aab5ff"/><path d="M12 72c2-18 12-26 24-26s22 8 24 26Z" fill="#aab5ff"/></svg><div><h3>Joaquín (personaje ficticio)</h3><p>Producto, emprendimientos y paisaje. Se encarga de la edición y de la entrega.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="opiniones" aria-labelledby="t-op">
+<div class="w">
+<div class="cab rv"><p class="eti">Opiniones</p><h2 id="t-op">Lo que dirían los clientes</h2><p>Textos de ejemplo escritos para esta propuesta; no son opiniones reales.</p></div>
+<div class="ops">
+<blockquote class="op rv"><p>“Me daba vergüenza posar y terminé riéndome toda la sesión. Las fotos quedaron naturales.”</p><footer><b>Cliente de ejemplo</b>Retrato · Valdivia</footer></blockquote>
+<blockquote class="op rv"><p>“Las fotos de mis productos subieron las ventas de la feria. Llegaron en dos días, tal como se acordó.”</p><footer><b>Emprendedora de ejemplo</b>Producto · Los Lagos</footer></blockquote>
+<blockquote class="op rv"><p>“Tuvimos fotos de toda la familia, incluidos los más chicos, sin correr ni gritar. Muy paciente el equipo.”</p><footer><b>Familia de ejemplo</b>Familia · Paillaco</footer></blockquote>
+</div>
+</div>
+</section>
+
+<section class="osc" id="reserva" aria-labelledby="t-re">
+<div class="w rese">
+<div class="rv"><p class="eti">Reserva</p><h2 id="t-re">Elige tu día y hora</h2><p style="margin-top:14px;color:#c9c6bf">Estas son las próximas fechas del estudio. Las horas tachadas ya están ocupadas (datos de ejemplo). Te confirmamos por WhatsApp.</p></div>
+<div class="rv">
+<div class="dias" id="dias" role="group" aria-label="Días disponibles"></div>
+<div class="horas" id="horas" role="group" aria-label="Horas disponibles"></div>
+<p class="resv" id="resv" role="status">Elige un día y una hora.</p>
+<a class="btn b1" id="rwa" href="#" target="_blank" rel="noopener" hidden>Confirmar por WhatsApp</a>
+</div>
+</div>
+</section>
+
+<section id="ubicacion" aria-labelledby="t-ub">
+<div class="w">
+<div class="cab rv"><p class="eti">Ubicación y horario</p><h2 id="t-ub">Visítanos en Valdivia</h2></div>
+<div class="info rv">
+<div><h3>Horario</h3><table id="horario"><tr data-d="1"><td>Lunes</td><td>10:00 a 19:00</td></tr><tr data-d="2"><td>Martes</td><td>10:00 a 19:00</td></tr><tr data-d="3"><td>Miércoles</td><td>10:00 a 19:00</td></tr><tr data-d="4"><td>Jueves</td><td>10:00 a 19:00</td></tr><tr data-d="5"><td>Viernes</td><td>10:00 a 19:00</td></tr><tr data-d="6"><td>Sábado</td><td>11:00 a 15:00</td></tr><tr data-d="0"><td>Domingo</td><td>Solo con reserva</td></tr></table></div>
+<div><h3>Dónde estamos</h3><p>Av. Ribera Norte 123, local 4<br>Valdivia, Región de Los Ríos<br><small style="color:var(--suave)">Dirección ficticia</small></p><h3 style="margin-top:16px">Contacto</h3><p>WhatsApp +56 9 5555 0173<br>hola@cuartoclaro.example</p></div>
+</div>
+<div class="mapa rv" role="img" aria-label="Mapa esquemático: un río y una calle con el estudio marcado"><svg viewBox="0 0 800 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="800" height="280" fill="#e6e1d4"/><path d="M0 200 Q200 150 400 190 T800 160 V280 H0Z" fill="#9fc2d8"/><g stroke="#fff" stroke-width="14" fill="none"><path d="M0 120 H800"/><path d="M260 0 V170"/><path d="M560 0 V150"/></g><circle cx="410" cy="120" r="14" fill="#2f4bff"/><circle cx="410" cy="120" r="5" fill="#fff"/></svg></div>
+</div>
+</section>
+
+<section class="osc" aria-labelledby="t-co">
+<div class="w cont rv"><h2 id="t-co">Cuéntanos qué quieres fotografiar</h2><a class="btn b1" id="cwa" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+</section>
+</main>
+
+<footer class="pie"><div class="w"><span>Cuarto Claro · Estudio fotográfico · Valdivia, Región de Los Ríos</span><span>Sitio de ejemplo · Diseño por <a href="../">Werex Studio</a>. Negocio y datos ficticios.</span></div></footer>
+
+<div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var fmt=function(n){return '$'+Math.round(n).toLocaleString('es-CL')};
+var WA='https://wa.me/56955550173?text=',enc=encodeURIComponent;
+$('#cwa').href=WA+enc('Hola, vi la propuesta de Cuarto Claro y quiero consultar por una sesión.');
+/* estado según hora de Chile */
+var HOR={1:[600,1140],2:[600,1140],3:[600,1140],4:[600,1140],5:[600,1140],6:[660,900]};
+var DN=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+var wk={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+function ahora(){var o={};new Intl.DateTimeFormat('en-US',{timeZone:'America/Santiago',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).forEach(function(x){o[x.type]=x.value});return{d:wk[o.weekday],m:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)}}
+function estado(){var n=ahora(),h=HOR[n.d],e=$('#estado'),abierto=h&&n.m>=h[0]&&n.m<h[1];e.classList.toggle('abierto',!!abierto);
+var t=abierto?'Abierto ahora · cerramos a las '+String(Math.floor(h[1]/60)).padStart(2,'0')+':'+String(h[1]%60).padStart(2,'0'):'Cerrado ahora · atendemos con reserva';e.querySelector('span').textContent=t;
+$$('#horario tr').forEach(function(r){r.className=(+r.dataset.d===n.d)?'hoy':''})}
+estado();setInterval(estado,60000);
+/* galería filtrable */
+$$('#filtros button').forEach(function(b){b.addEventListener('click',function(){
+$$('#filtros button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+$$('#gal figure').forEach(function(f){f.hidden=!(b.dataset.f==='todo'||f.dataset.c===b.dataset.f)})})});
+/* comparador */
+var rg=$('#rg'),cp=$('#comp');rg.addEventListener('input',function(){cp.style.setProperty('--p',rg.value+'%')});
+/* armador */
+var BASE={retrato:['Retrato',40000],familia:['Familia',60000],producto:['Producto',70000],marca:['Marca y emprendimiento',90000],evento:['Evento',80000]};
+var hs=1,fo=15;
+function plural(n,s,p){return n+' '+(n===1?s:p)}
+function calc(){
+var t=document.querySelector('input[name=tipo]:checked').value,b=BASE[t],rows=[[b[0]+' (1 hora, 15 fotos)',b[1]]],tot=b[1],ex=[];
+if(hs>1){var v=(hs-1)*30000;rows.push([plural(hs-1,'hora adicional','horas adicionales'),v]);tot+=v}
+if(fo>15){var g=(fo-15)/10*18000;rows.push([plural(fo-15,'foto extra','fotos extra'),g]);tot+=g}
+$$('.ext input:checked').forEach(function(c){var p=c.dataset.x.split('|');rows.push([p[1],+p[0]]);tot+=+p[0];ex.push(p[1])});
+$('#tab').innerHTML=rows.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+fmt(r[1])+'</td></tr>'}).join('');
+$('#tot').textContent=fmt(tot);
+$('#h-v').textContent=plural(hs,'hora','horas');$('#f-v').textContent=plural(fo,'foto','fotos');
+var msg='Hola, quiero cotizar una sesión en Cuarto Claro:\n- Tipo: '+b[0]+'\n- Duración: '+plural(hs,'hora','horas')+'\n- Fotos editadas: '+fo+(ex.length?'\n- Extras: '+ex.join(', '):'')+'\n- Total referencial: '+fmt(tot);
+$('#wa').href=WA+enc(msg)}
+$$('input[name=tipo],.ext input').forEach(function(i){i.addEventListener('change',calc)});
+$('#h-m').onclick=function(){if(hs>1){hs--;calc()}};$('#h-p').onclick=function(){if(hs<8){hs++;calc()}};
+$('#f-m').onclick=function(){if(fo>15){fo-=10;calc()}};$('#f-p').onclick=function(){if(fo<205){fo+=10;calc()}};
+calc();
+/* reserva */
+var SL=['10:00','12:00','15:00','17:00'],sd=null,sh=null,DIAS=[];
+var MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+(function(){var n=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Santiago'}));n.setHours(0,0,0,0);var c=0;
+for(var i=1;c<10;i++){var d=new Date(n);d.setDate(n.getDate()+i);if(d.getDay()===0)continue;DIAS.push(d);c++}})();
+function ocupado(d,h){var k=d.getDate()*7+d.getMonth()*3+h*5;return k%4===0||(d.getDay()===6&&h>1)}
+function pintaDias(){var c=$('#dias');c.innerHTML='';DIAS.forEach(function(d,i){var b=document.createElement('button');b.type='button';
+b.setAttribute('aria-pressed',sd===i);b.innerHTML=DN[d.getDay()].slice(0,3)+'<b>'+d.getDate()+'</b>'+MES[d.getMonth()];
+b.setAttribute('aria-label',DN[d.getDay()]+' '+d.getDate()+' de '+MES[d.getMonth()]);
+b.onclick=function(){sd=i;sh=null;pintaDias();pintaHoras();msg()};c.appendChild(b)})}
+function pintaHoras(){var c=$('#horas');c.innerHTML='';if(sd===null)return;SL.forEach(function(h,j){var b=document.createElement('button');b.type='button';b.textContent=h;
+var oc=ocupado(DIAS[sd],j);b.disabled=oc;if(oc)b.setAttribute('aria-label',h+', ocupado');b.setAttribute('aria-pressed',sh===j);
+b.onclick=function(){sh=j;pintaHoras();msg()};c.appendChild(b)})}
+function msg(){var r=$('#resv'),a=$('#rwa');if(sd===null||sh===null){r.textContent=sd===null?'Elige un día y una hora.':'Ahora elige una hora.';a.hidden=true;return}
+var d=DIAS[sd],t=DN[d.getDay()]+' '+d.getDate()+' de '+MES[d.getMonth()]+' a las '+SL[sh];r.textContent='Tu reserva: '+t+'.';a.hidden=false;
+a.href=WA+enc('Hola, quiero reservar una sesión en Cuarto Claro para el '+t+'.')}
+pintaDias();
+/* aparición */
+var rv=$$('.rv');if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(e){io.observe(e)})}else{rv.forEach(function(e){e.classList.add('on')})}
+})();
+</script>
+</body>
+</html>

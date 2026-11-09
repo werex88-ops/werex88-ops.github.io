@@ -1,5 +1,29 @@
 # Registro de cambios
 
+## 2026-11-09 (mejora diaria: demo de estudio fotográfico)
+
+Esta rama parte desde la del 8 de noviembre (solicitud #35, aún abierta, que a su vez incluye la #34, la #33, la #32 y la #31), para no duplicar trabajo ni generar conflictos.
+
+### Currículum (`index.html`)
+- Metaetiquetas: se agrega `og:site_name` para que al compartir el enlace se muestre el nombre.
+- Robustez en móvil: `overflow-wrap: break-word` en el cuerpo, para que correos o textos largos no provoquen desplazamiento horizontal a 320 px.
+- No se modificó texto, secciones, datos de contacto ni identidad visual.
+
+### Revisión de demos y portafolio
+- Se revisaron las 22 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin enlaces, anclas ni imágenes locales rotas, aviso de datos ficticios en todas las demos y páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
+
+### Demo nueva
+- `fotografia/`: Cuarto Claro, estudio fotográfico ficticio en Valdivia (negro, cobalto y hueso; tipografías Syne y Albert Sans).
+- Funciones: armador de sesión (tipo, horas, fotos editadas y extras, con total en CLP y envío por WhatsApp); comparador deslizable de foto sin editar / editada; galería filtrable por categoría; calendario de reserva con días y horas libres; estado abierto/cerrado según hora de Chile.
+- Sin fotografías: ilustraciones SVG propias, porque `images.unsplash.com` sigue respondiendo 403 desde el entorno y no se podían verificar identificadores nuevos.
+- Tarjeta en el portafolio (20 diseños) y captura `img/fotografia.jpg` (1200×800, 73 KB).
+
+### Sugerencias pendientes para René
+- Reemplazar las ilustraciones de las demos sin fotos (Cuarto Claro, Lenga, Lleuque, taller, barbería, Mañío, Aire Sur) por fotos de Unsplash verificadas cuando haya acceso; en esta demo bastaría cambiar los `<use>` de la galería por `<img>`.
+- Los nombres de las personas del equipo de Cuarto Claro son ficticios y están rotulados así.
+- Currículum: agregar teléfono o LinkedIn y logros medibles si quieres; no se inventaron datos.
+- Las capturas se generan sin las tipografías de Google Fonts (bloqueadas en el entorno); conviene regenerarlas desde un navegador con acceso total.
+
 ## 2026-11-08 (mejora diaria: demo de estudio contable)
 
 Esta rama parte desde la del 7 de noviembre (solicitud #34, aún abierta, que a su vez incluye la #33, la #32 y la #31), para no duplicar trabajo ni generar conflictos.
