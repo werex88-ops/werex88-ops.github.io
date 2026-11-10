@@ -1,5 +1,30 @@
 # Registro de cambios
 
+## 2026-11-10 (mejora diaria: demo de heladería artesanal)
+
+Esta rama parte desde la del 9 de noviembre (solicitud #36, aún abierta, que a su vez incluye la #35, la #34, la #33, la #32 y la #31), para no duplicar trabajo ni generar conflictos.
+
+### Currículum (`index.html`)
+- Estabilidad visual: `scrollbar-gutter: stable` evita que el contenido "salte" cuando aparece o desaparece la barra de desplazamiento.
+- Móvil: color de resaltado al tocar enlaces y botones (`-webkit-tap-highlight-color`) acorde al azul del currículum, en vez del gris por defecto.
+- No se modificó texto, secciones, datos de contacto ni identidad visual.
+
+### Revisión de demos y portafolio
+- Se revisaron las 23 páginas (currículum, portafolio y 21 demos) a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin respuestas 404, sin anclas rotas, aviso de datos ficticios en todas las demos y páginas bajo 60 KB. No hubo correcciones necesarias en las demos existentes.
+
+### Demo nueva
+- `heladeria/`: Maqui, heladería artesanal ficticia en Panguipulli (ciruela, maqui, rosa y limón; tipografías Bagel Fat One y Nunito Sans).
+- Funciones: armador de helado (formato, sabores según el formato y toppings, con vista previa, total en CLP y pedido por WhatsApp); carta de 14 sabores filtrable (cremas / sorbetes sin lácteos); estado abierto/cerrado y día resaltado según hora de Chile.
+- Sin fotografías: ilustraciones SVG propias, porque `images.unsplash.com` sigue respondiendo 403 desde el entorno y no se podían verificar identificadores nuevos. No hay fotos nuevas que registrar en `CREDITOS.md`.
+- Tarjeta en el portafolio (21 diseños) y captura `img/heladeria.jpg` (1200×800, 61 KB).
+
+### Sugerencias pendientes para René
+- Reemplazar las ilustraciones de las demos sin fotos (Maqui, Cuarto Claro, Lenga, Lleuque, taller, barbería, Mañío, Aire Sur) por fotos de Unsplash verificadas cuando haya acceso; en Maqui conviene una foto de portada de helados reales.
+- Los precios y sabores de Maqui son de ejemplo; un cliente real debería ajustar el aviso de alérgenos (frutos secos, lácteos) con su propia información.
+- Las capturas se generan sin las tipografías de Google Fonts (bloqueadas en el entorno); conviene regenerarlas desde un navegador con acceso total.
+- Currículum: agregar teléfono o LinkedIn y logros medibles si quieres; no se inventaron datos.
+- Las solicitudes #31 a #36 siguen abiertas y encadenadas: conviene revisarlas y fusionarlas en orden para que esta no crezca más.
+
 ## 2026-11-09 (mejora diaria: demo de estudio fotográfico)
 
 Esta rama parte desde la del 8 de noviembre (solicitud #35, aún abierta, que a su vez incluye la #34, la #33, la #32 y la #31), para no duplicar trabajo ni generar conflictos.
