@@ -1,5 +1,30 @@
 # Registro de cambios
 
+## 2026-11-11 (mejora diaria: demo de hostal)
+
+Esta rama parte desde la del 10 de noviembre (solicitud #37, aún abierta, que a su vez incluye la #36, la #35, la #34, la #33, la #32 y la #31), para no duplicar trabajo ni generar conflictos.
+
+### Currículum (`index.html`)
+- Formularios: `accent-color` con el azul del currículum, para que los controles nativos del formulario de WhatsApp (selectores, casillas) combinen con la identidad visual.
+- No se modificó texto, secciones, datos de contacto ni identidad visual.
+
+### Revisión de demos y portafolio
+- Se revisaron las 24 páginas (currículum, portafolio y 22 demos) a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin respuestas 404, sin anclas rotas, aviso de datos ficticios en todas las demos, páginas bajo 60 KB e imágenes bajo 300 KB. No hubo correcciones necesarias en las demos existentes.
+
+### Demo nueva
+- `hostal/`: Radal, hostal familiar ficticio en Valdivia (oliva, mostaza y teja; tipografías Caprasimo y Lexend).
+- Funciones: armador de reserva (llegada, noches, personas, habitación y extras, con total en CLP, cupo por noche y solicitud por WhatsApp que se bloquea si no hay cupo); tira de cupos de 7 días; filtro de "qué hacer cerca" según cómo te muevas; preguntas frecuentes; estado de recepción abierta/cerrada y día resaltado según hora de Chile.
+- Sin fotografías: ilustraciones SVG propias, porque `images.unsplash.com` sigue respondiendo 403 desde el entorno y no se podían verificar identificadores nuevos. No hay fotos nuevas que registrar en `CREDITOS.md`.
+- Tarjeta en el portafolio (22 diseños) y captura `img/hostal.jpg` (1200×800, 69 KB).
+
+### Sugerencias pendientes para René
+- Los cupos de Radal son una simulación determinista (no hay base de datos); un cliente real necesitaría un calendario conectado o actualizado a mano. Conviene decírselo al mostrar la demo.
+- Reemplazar las ilustraciones SVG de las demos sin fotos por fotos de Unsplash verificadas cuando haya acceso; en Radal bastaría una foto de fachada o de patio en portada.
+- El nombre "Radal" es ficticio, pero es un árbol nativo y podría coincidir con algún negocio real; si lo usas con un cliente, verifica que no haya conflicto.
+- Las capturas se generan sin las tipografías de Google Fonts (bloqueadas en el entorno); conviene regenerarlas desde un navegador con acceso total.
+- Currículum: agregar teléfono o LinkedIn y logros medibles si quieres; no se inventaron datos.
+- Las solicitudes #31 a #37 siguen abiertas y encadenadas: conviene revisarlas y fusionarlas en orden para que esta no crezca más.
+
 ## 2026-11-10 (mejora diaria: demo de heladería artesanal)
 
 Esta rama parte desde la del 9 de noviembre (solicitud #36, aún abierta, que a su vez incluye la #35, la #34, la #33, la #32 y la #31), para no duplicar trabajo ni generar conflictos.
