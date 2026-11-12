@@ -1,5 +1,32 @@
 # Registro de cambios
 
+## 2026-11-12 (mejora diaria: demo de termas y spa)
+
+Esta rama parte desde la del 11 de noviembre (solicitud #38, aún abierta, que a su vez incluye las #37, #36, #35, #34, #33, #32 y #31), para no duplicar trabajo ni generar conflictos.
+
+### Currículum (`index.html`)
+- Robustez: si JavaScript está desactivado o el navegador no soporta `IntersectionObserver`, las secciones con animación de entrada ya no quedan invisibles (`<noscript>` y respaldo en el script).
+- Accesibilidad: con la preferencia del sistema "mayor contraste" (`prefers-contrast: more`), los textos grises y tenues se oscurecen.
+- No se modificó texto, secciones, datos de contacto ni identidad visual.
+
+### Revisión de demos y portafolio
+- Se revisaron las 25 páginas (currículum, portafolio y 23 demos) a 320, 390 y 1440 px: sin desplazamiento horizontal, sin errores de JavaScript, sin 404, sin anclas rotas, aviso de datos ficticios en todas y páginas bajo 60 KB.
+- Accesibilidad: cafetería, gimnasio, mascotas, plantas, sushi y velas no tenían la etiqueta `<main>`; se agregó (una por página, sin cambios visuales).
+
+### Demo nueva
+- `termas/`: Vapor Sur, termas ficticias en Futrono (noche volcánica, agua turquesa y cobre; tipografías Bodoni Moda y Mulish).
+- Funciones: filtro de pozas por temperatura; armador de visita (fecha, turno, paquete, personas y extras) con recargos de fin de semana y noche, cupo simulado por turno, martes cerrado y pedido por WhatsApp que se bloquea si no hay cupo; estado abierto/cerrado y día resaltado según hora de Chile; preguntas frecuentes.
+- Sin fotografías: ilustraciones SVG propias, porque `images.unsplash.com` sigue respondiendo 403 desde el entorno. Registrado en `CREDITOS.md`.
+- Tarjeta en el portafolio (23 diseños) y captura `img/termas.jpg` (1200×800, 53 KB).
+
+### Sugerencias pendientes para René
+- Los cupos de Vapor Sur son una simulación determinista; un cliente real necesitaría un calendario conectado. Conviene decírselo al mostrar la demo.
+- Verificar que el nombre "Vapor Sur" no coincida con un negocio real antes de usarlo con un cliente; los datos de salud de las preguntas frecuentes son genéricos y un cliente real debe validarlos.
+- Agregar fotos de Unsplash verificadas (portada y pozas) cuando haya acceso al dominio.
+- La captura se generó sin las tipografías de Google Fonts (bloqueadas) y muestra el aviso de demo; conviene regenerarla desde un navegador con acceso total.
+- Currículum: agregar teléfono o LinkedIn y logros medibles si quieres; no se inventaron datos.
+- Las solicitudes #31 a #38 siguen abiertas y encadenadas: conviene revisarlas y fusionarlas en orden.
+
 ## 2026-11-11 (mejora diaria: demo de hostal)
 
 Esta rama parte desde la del 10 de noviembre (solicitud #37, aún abierta, que a su vez incluye la #36, la #35, la #34, la #33, la #32 y la #31), para no duplicar trabajo ni generar conflictos.

@@ -180,6 +180,9 @@
     html{scroll-behavior:auto}
     .rv{opacity:1;transform:none;transition:none}
   }
+  @media (prefers-contrast:more){
+    :root{--gris:#3F4858;--suave:#4F596B}
+  }
   @media (forced-colors:active){
     a:focus-visible,button:focus-visible,.wa-form input:focus-visible,.wa-form select:focus-visible,.wa-form textarea:focus-visible{outline-color:Highlight}
   }
@@ -257,6 +260,7 @@
   @media (max-width:920px){.contacto-grid{grid-template-columns:1fr;gap:32px}}
   @media print{.contacto-grid{display:block}.contacto-txt{display:none}.contacto-botones{flex-direction:row;gap:20px}}
 </style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
@@ -557,10 +561,14 @@
 </footer>
 
 <script>
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+  }else{
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }
 </script>
 <script>
 (function(){
