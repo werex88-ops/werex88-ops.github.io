@@ -5,113 +5,170 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Werex · Portafolio de diseño web</title>
 <meta name="description" content="Propuestas de diseño web de ejemplo para negocios locales de la Región de Los Ríos: turismo, restaurantes, gimnasios, cafeterías y emprendimientos. Negocios y datos ficticios.">
-<meta name="theme-color" content="#0e0e0d">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff6b3d'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%230e0e0d'%3EW%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0f0d1a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff6b3d'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%230f0d1a'%3EW%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --fondo: #0e0e0d;
-    --panel: #171716;
-    --linea: #2a2a28;
-    --texto: #f1efe8;
-    --gris: #8f8d86;
-    --acento: #ff6b3d;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter Tight', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-  img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  a { color: inherit; text-decoration: none; }
-  .serif { font-family: 'Instrument Serif', serif; font-weight: 400; }
-  .contenedor { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--fondo:#0f0d1a;--panel:#171528;--linea:#2c2942;--texto:#f4f1ea;--gris:#a29fb5;--acento:#ff6b3d;--violeta:#8b6bff;--menta:#2dd4bf;--sol:#ffd23f}
+html{scroll-behavior:smooth}
+body{font-family:'Inter Tight',sans-serif;background:var(--fondo);color:var(--texto);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--sol);outline-offset:3px}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.contenedor{max-width:1280px;margin:0 auto;padding:0 32px}
+.salto{position:absolute;left:-999px;top:8px;background:var(--sol);color:#111;padding:8px 14px;border-radius:8px;z-index:100}
+.salto:focus{left:8px}
 
-  nav { padding: 28px 0; }
-  nav .contenedor { display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-weight: 600; font-size: 18px; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; }
-  .logo i { width: 10px; height: 10px; border-radius: 50%; background: var(--acento); }
-  .estado { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gris); }
-  .estado b { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 0 rgba(74,222,128,.6); animation: pulso 2s infinite; }
-  @keyframes pulso { 70% { box-shadow: 0 0 0 10px rgba(74,222,128,0); } 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); } }
+nav{padding:24px 0;position:relative;z-index:5}
+nav .contenedor{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-weight:700;font-size:18px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo i{width:12px;height:12px;border-radius:50%;background:conic-gradient(var(--acento),var(--sol),var(--menta),var(--violeta),var(--acento));animation:gira 6s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+.enlaces{display:flex;gap:22px;font-size:14px;color:var(--gris);align-items:center}
+.enlaces a:hover{color:var(--texto)}
+.enlaces .cv{border:1px solid var(--linea);border-radius:999px;padding:7px 16px;color:var(--texto)}
+.enlaces .cv:hover{border-color:var(--sol)}
 
-  header { padding: 90px 0 110px; }
-  .etiqueta { font-size: 13px; color: var(--gris); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 28px; }
-  h1 { font-size: clamp(52px, 8.4vw, 128px); line-height: .95; letter-spacing: -.045em; font-weight: 500; max-width: 12ch; }
-  h1 .serif { font-style: italic; letter-spacing: -.02em; color: var(--acento); }
-  .intro { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 56px; flex-wrap: wrap; }
-  .intro p { max-width: 460px; color: var(--gris); font-size: 18px; }
-  .cifras { display: flex; gap: 48px; }
-  .cifras b { display: block; font-family: 'Instrument Serif'; font-weight: 400; font-size: 52px; line-height: 1; }
-  .cifras span { font-size: 13px; color: var(--gris); }
+header.hero{position:relative;padding:70px 0 90px;overflow:hidden;isolation:isolate}
+.orbe{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;z-index:-1;animation:flota 14s ease-in-out infinite alternate}
+.o1{width:480px;height:480px;background:var(--acento);top:-120px;right:-80px}
+.o2{width:420px;height:420px;background:var(--violeta);bottom:-160px;left:-100px;animation-delay:-5s}
+.o3{width:300px;height:300px;background:var(--menta);top:40%;left:45%;opacity:.28;animation-delay:-9s}
+@keyframes flota{to{transform:translate(50px,-40px) scale(1.12)}}
+.etiqueta{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto);background:rgba(255,255,255,.07);border:1px solid var(--linea);padding:8px 16px;border-radius:999px;margin-bottom:30px}
+.etiqueta b{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pulso 2s infinite}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(74,222,128,.6)}70%,100%{box-shadow:0 0 0 10px rgba(74,222,128,0)}}
+h1{font-size:clamp(46px,8vw,120px);line-height:.95;letter-spacing:-.045em;font-weight:600;max-width:13ch}
+h1 .serif{font-style:italic;letter-spacing:-.02em;background:linear-gradient(95deg,var(--acento),var(--sol) 55%,var(--menta));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:48px;flex-wrap:wrap}
+.intro p{max-width:500px;color:#c9c6d8;font-size:18px}
+.intro p a{color:var(--texto);text-decoration:underline}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.b1,.b2{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:16px;transition:transform .25s,background .25s}
+.b1{background:var(--acento);color:#1a0d08}
+.b2{border:1px solid #5b5780;color:var(--texto)}
+.b1:hover,.b2:hover{transform:translateY(-3px)}
+.b2:hover{border-color:var(--sol)}
+.cifras{display:flex;gap:40px;flex-wrap:wrap}
+.cifras b{display:block;font-family:'Instrument Serif',serif;font-weight:400;font-size:56px;line-height:1}
+.cifras div:nth-child(1) b{color:var(--acento)}.cifras div:nth-child(2) b{color:var(--sol)}.cifras div:nth-child(3) b{color:var(--menta)}.cifras div:nth-child(4) b{color:#b9a6ff}
+.cifras span{font-size:13px;color:var(--gris)}
 
-  .seccion-cab { margin-top: 20px; display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--linea); padding-top: 22px; margin-bottom: 48px; font-size: 14px; color: var(--gris); }
+.cinta-wrap{overflow:hidden;padding:18px 0}
+.cinta{border-block:1px solid var(--linea);background:var(--sol);color:#1a1405;overflow:hidden;white-space:nowrap;transform:rotate(-1.2deg);margin:0 -20px;position:relative;z-index:2}
+.cinta div{display:inline-flex;gap:34px;padding:14px 0;animation:corre 38s linear infinite;font-weight:700;font-size:17px;letter-spacing:.02em;text-transform:uppercase}
+.cinta span::after{content:"✦";margin-left:34px}
+@keyframes corre{to{transform:translateX(-50%)}}
 
-  .proyectos { display: grid; grid-template-columns: 1fr 1fr; gap: 72px 40px; padding-bottom: 120px; }
-  .proyecto { display: block; }
-  .proyecto:nth-child(even) { margin-top: 120px; }
-  .navegador { background: var(--panel); border: 1px solid var(--linea); border-radius: 14px; overflow: hidden; transition: transform .6s cubic-bezier(.2,.7,.2,1), border-color .4s; }
-  .proyecto:hover .navegador { transform: translateY(-8px); border-color: #3d3d3a; }
-  .barra { display: flex; align-items: center; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--linea); }
-  .barra i { width: 10px; height: 10px; border-radius: 50%; background: #2f2f2d; }
-  .barra span { margin-left: 12px; font-size: 12px; color: var(--gris); background: var(--fondo); padding: 4px 12px; border-radius: 6px; flex: 1; max-width: 260px; }
-  .captura { aspect-ratio: 3 / 2; overflow: hidden; }
-  .captura img { object-position: top; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
-  .proyecto:hover .captura img { transform: scale(1.04); }
-  .info { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-top: 24px; }
-  .info h2 { font-size: 30px; font-weight: 500; letter-spacing: -.03em; line-height: 1.1; }
-  .info p { color: var(--gris); font-size: 15px; margin-top: 6px; max-width: 400px; }
-  .flecha { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--linea); display: grid; place-items: center; flex-shrink: 0; font-size: 18px; transition: background .3s, color .3s, transform .3s, border-color .3s; }
-  .proyecto:hover .flecha { background: var(--acento); border-color: var(--acento); color: var(--fondo); transform: rotate(-45deg); }
-  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
-  .meta span { font-size: 12px; border: 1px solid var(--linea); border-radius: 999px; padding: 4px 12px; color: #bdbbb3; }
-  .paleta { display: flex; margin-left: 6px; }
-  .paleta i { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--fondo); margin-left: -5px; }
+.cab{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin:100px 0 36px}
+.cab h2{font-size:clamp(36px,5vw,68px);line-height:1;letter-spacing:-.04em;font-weight:600}
+.cab h2 .serif{font-style:italic;color:var(--sol)}
+.cab p{color:var(--gris);max-width:360px;font-size:15px}
 
-  .servicios { border-top: 1px solid var(--linea); padding: 110px 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; }
-  .servicios h2 { font-size: clamp(40px, 4.8vw, 64px); line-height: 1; letter-spacing: -.04em; font-weight: 500; }
-  .servicios h2 .serif { font-style: italic; color: var(--acento); letter-spacing: -.01em; }
-  .lista-serv { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--linea); border: 1px solid var(--linea); border-radius: 18px; overflow: hidden; }
-  .serv { background: var(--fondo); padding: 32px; }
-  .soporte { border-top: 0; padding-top: 40px; }
-  .soporte-intro { color: var(--gris); font-size: 17px; margin: 24px 0 28px; max-width: 420px; }
-  .soporte-btn { display: inline-block; background: var(--acento); color: var(--fondo); font-weight: 600; padding: 14px 22px; border-radius: 999px; text-decoration: none; transition: transform .2s; }
-  .soporte-btn:hover { transform: translateY(-2px); }
-  .serv .n { font-family: 'Instrument Serif'; font-style: italic; color: var(--acento); font-size: 22px; }
-  .serv h3 { font-size: 20px; font-weight: 500; margin: 8px 0 6px; letter-spacing: -.02em; }
-  .serv p { color: var(--gris); font-size: 15px; }
+/* carrusel */
+.carrusel{position:relative;border:1px solid var(--linea);border-radius:28px;overflow:hidden;background:var(--panel)}
+.pista{display:flex;transition:transform .8s cubic-bezier(.65,0,.2,1);touch-action:pan-y}
+.slide{flex:0 0 100%;display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center;padding:48px 56px 84px;min-height:520px;background:radial-gradient(ellipse at 15% 0%,color-mix(in srgb,var(--c) 55%,transparent),transparent 60%),linear-gradient(135deg,var(--f),#0f0d1a 85%);color:#fff}
+.navegador{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18);border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);transform:perspective(1200px) rotateY(5deg) rotateX(2deg);transition:transform .6s}
+.slide:hover .navegador{transform:perspective(1200px) rotateY(0) rotateX(0) translateY(-6px)}
+.barra{display:flex;align-items:center;gap:6px;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.12)}
+.barra i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.28)}
+.barra span{margin-left:12px;font-size:12px;color:#d9d6e6;background:rgba(0,0,0,.35);padding:4px 12px;border-radius:6px;flex:1;max-width:260px;overflow:hidden;text-overflow:ellipsis}
+.captura{aspect-ratio:3/2;overflow:hidden}
+.captura img{object-position:top}
+.num{font-family:'Instrument Serif',serif;font-size:64px;line-height:1;color:var(--c)}
+.num small{font-size:22px;color:#cfcce0}
+.rub{display:block;margin-top:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e8e5f4}
+.sl-tx h3{font-size:clamp(34px,4vw,56px);letter-spacing:-.04em;line-height:1;margin-top:12px;font-weight:600}
+.sl-tx .sub{font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;color:var(--c);margin:6px 0 14px}
+.sl-tx p{color:#e2dff0;font-size:16px;max-width:420px}
+.sl-tx p.sub{max-width:none}
+.btn-sl{display:inline-flex;gap:10px;margin-top:24px;background:#fff;color:#111;padding:13px 24px;border-radius:999px;font-weight:600;transition:transform .25s,background .25s}
+.btn-sl:hover{transform:translateY(-3px);background:var(--c)}
+.ctrl{position:absolute;left:0;right:0;bottom:22px;display:flex;justify-content:space-between;align-items:center;padding:0 56px;pointer-events:none}
+.ctrl>*{pointer-events:auto}
+.puntos{display:flex;gap:10px}
+.pt{width:12px;height:12px;border-radius:999px;border:0;background:rgba(255,255,255,.35);cursor:pointer;transition:width .3s,background .3s;padding:0}
+.pt[aria-current="true"]{width:38px;background:var(--sol)}
+.flechas{display:flex;gap:10px}
+.flechas button{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(15,13,26,.55);cursor:pointer;font-size:20px;transition:background .25s,color .25s}
+.flechas button:hover{background:var(--sol);color:#111}
+.auto{position:absolute;left:0;bottom:0;height:3px;background:var(--sol);width:0}
+.auto.corre{animation:barra 6.5s linear forwards}
+@keyframes barra{to{width:100%}}
 
-  .contacto { text-align: center; padding: 120px 0 140px; border-top: 1px solid var(--linea); }
-  .contacto h2 { font-size: clamp(48px, 8vw, 116px); line-height: .95; letter-spacing: -.045em; font-weight: 500; }
-  .contacto h2 .serif { font-style: italic; color: var(--acento); letter-spacing: -.02em; }
-  .contacto p { color: var(--gris); margin: 24px auto 40px; max-width: 440px; font-size: 18px; }
-  .btn { display: inline-flex; align-items: center; gap: 12px; background: var(--texto); color: var(--fondo); padding: 18px 32px; border-radius: 999px; font-weight: 600; font-size: 16px; transition: background .3s, transform .3s; }
-  .btn:hover { background: var(--acento); transform: translateY(-2px); }
+/* filtros y tarjetas */
+.filtros{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.filtros button{background:var(--panel);border:1px solid var(--linea);border-radius:999px;padding:10px 18px;cursor:pointer;font-size:15px;font-weight:500;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.filtros button small{color:var(--gris);margin-left:4px;font-size:12px}
+.filtros button:hover{transform:translateY(-2px);border-color:#6a6590}
+.filtros button[aria-pressed="true"]{background:var(--texto);color:#17141f;border-color:var(--texto)}
+.filtros button[aria-pressed="true"] small{color:#555}
+.rejilla{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.tarjeta{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--linea);border-radius:22px;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s;transform-style:preserve-3d}
+.tarjeta::before{content:"";position:absolute;inset:0;background:radial-gradient(500px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c) 28%,transparent),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:1}
+.tarjeta:hover{border-color:var(--c);box-shadow:0 24px 50px -20px var(--c);transform:translateY(-8px) rotate(-.4deg)}
+.tarjeta:hover::before{opacity:1}
+.tarjeta .cap{position:relative;aspect-ratio:3/2;overflow:hidden;border-bottom:1px solid var(--linea)}
+.tarjeta .cap img{object-position:top;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.tarjeta:hover .cap img{transform:scale(1.07)}
+.chip{position:absolute;left:12px;top:12px;background:var(--c);color:#0b0b0b;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.tx{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;position:relative;z-index:2}
+.tx h3{font-size:24px;letter-spacing:-.03em;line-height:1.1;font-weight:600}
+.tx em{font-family:'Instrument Serif',serif;font-size:18px;color:var(--c);font-style:italic}
+.tx p{color:#bcb9cc;font-size:15px;margin-top:8px;flex:1}
+.pie{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.paleta{display:flex}
+.paleta i{width:18px;height:18px;border-radius:50%;border:2px solid var(--panel);margin-left:-5px}
+.paleta i:first-child{margin-left:0;border-color:#555}
+.ver{font-size:14px;font-weight:600}
+.ver b{display:inline-block;transition:transform .3s}
+.tarjeta:hover .ver b{transform:translateX(6px)}
+.tarjeta.fuera{display:none}
+.tarjeta.entra{animation:entra .5s both}
+@keyframes entra{from{opacity:0;transform:translateY(24px) scale(.97)}}
 
-  footer { border-top: 1px solid var(--linea); padding: 32px 0 48px; font-size: 13px; color: var(--gris); }
-  footer a { text-decoration: underline; }
-  footer .contenedor { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+/* servicios y proceso */
+.servicios{border-top:1px solid var(--linea);padding:100px 0;display:grid;grid-template-columns:1fr 1.5fr;gap:64px;margin-top:90px}
+.servicios h2{font-size:clamp(38px,4.6vw,62px);line-height:1;letter-spacing:-.04em;font-weight:600}
+.servicios h2 .serif{font-style:italic;color:var(--acento);letter-spacing:-.01em}
+.lista-serv{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:18px;overflow:hidden}
+.serv{background:var(--fondo);padding:30px;transition:background .3s}
+.serv:hover{background:var(--panel)}
+.serv .n{font-family:'Instrument Serif',serif;font-style:italic;color:var(--acento);font-size:22px}
+.serv h3{font-size:20px;font-weight:500;margin:8px 0 6px;letter-spacing:-.02em}
+.serv p{color:var(--gris);font-size:15px}
+.soporte{border-top:0;padding-top:20px;margin-top:70px}
+.soporte-intro{color:#c9c6d8;font-size:17px;margin:24px 0 28px;max-width:420px}
+.soporte-btn{display:inline-block;background:var(--acento);color:#1a0d08;font-weight:700;padding:14px 22px;border-radius:999px;transition:transform .2s}
+.soporte-btn:hover{transform:translateY(-2px)}
+.proceso{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:p;margin-bottom:20px}
+.paso{position:relative;padding:28px 24px;border-radius:20px;background:var(--panel);border:1px solid var(--linea);overflow:hidden;transition:transform .3s,border-color .3s}
+.paso:hover{transform:translateY(-6px);border-color:var(--k)}
+.paso::before{counter-increment:p;content:"0" counter(p);position:absolute;right:14px;top:-6px;font-family:'Instrument Serif',serif;font-size:96px;line-height:1;color:var(--k);opacity:.2}
+.paso h3{font-size:20px;letter-spacing:-.02em;margin-bottom:8px;color:var(--k)}
+.paso p{color:#bcb9cc;font-size:15px}
 
-  .rv { opacity: 0; transform: translateY(30px); transition: opacity .9s, transform .9s cubic-bezier(.2,.7,.2,1); }
-  .rv.visto { opacity: 1; transform: none; }
+.contacto{text-align:center;padding:100px 0 130px;border-top:1px solid var(--linea)}
+.contacto h2{font-size:clamp(44px,8vw,112px);line-height:.95;letter-spacing:-.045em;font-weight:600}
+.contacto h2 .serif{font-style:italic;color:var(--acento);letter-spacing:-.02em}
+.contacto p{color:#c9c6d8;margin:24px auto 40px;max-width:460px;font-size:18px}
+footer{border-top:1px solid var(--linea);padding:32px 0 48px;font-size:13px;color:var(--gris)}
+footer a{text-decoration:underline}
+footer .contenedor{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.visto{opacity:1;transform:none}
 
-  @media (max-width: 900px) {
-    .proyectos { grid-template-columns: 1fr; gap: 64px; }
-    .proyecto:nth-child(even) { margin-top: 0; }
-    .servicios { grid-template-columns: 1fr; gap: 40px; }
-  }
-  @media (max-width: 560px) {
-    .contenedor { padding: 0 18px; }
-    header { padding: 50px 0 80px; }
-    .estado span { display: none; }
-    .cifras { gap: 28px; }
-    .cifras b { font-size: 40px; }
-    .lista-serv { grid-template-columns: 1fr; }
-    .info h2 { font-size: 25px; }
-  }
-  @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
-
-  /* Contacto por WhatsApp */
+@media(max-width:1000px){.rejilla{grid-template-columns:1fr 1fr}.proceso{grid-template-columns:1fr 1fr}.servicios{grid-template-columns:1fr;gap:40px}.slide{grid-template-columns:1fr;gap:26px;padding:34px 32px 90px}.navegador{transform:none}.ctrl{padding:0 32px}.enlaces a:not(.cv){display:none}}
+@media(max-width:620px){.contenedor{padding:0 18px}header.hero{padding:40px 0 70px}.rejilla,.proceso,.lista-serv{grid-template-columns:1fr}.slide{padding:26px 20px 90px;min-height:0}.ctrl{padding:0 20px}.cifras{gap:26px}.cifras b{font-size:44px}.cab{margin-top:70px}.flechas button{width:42px;height:42px}.num{font-size:48px}}
+@media(prefers-reduced-motion:reduce){*,.rv{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.navegador{transform:none}.cinta{transform:none}.cinta div{white-space:normal}}
+@media print{.orbe,.cinta,.wa-flotante{display:none}}
+/* Contacto por WhatsApp */
   .wa-flotante{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#0B2E1A;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.22);transition:transform .2s}
   .wa-flotante:hover{transform:translateY(-3px)}
   .wa-flotante svg{width:24px;height:24px}
@@ -135,29 +192,111 @@
   .contacto .wa-oscuro .wa-nota{color:var(--gris);margin:10px 0 0;font-size:.85rem;max-width:none}
   /* Foco visible para teclado (doble anillo, legible sobre cualquier fondo) */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
+
 </style>
 </head>
 <body>
+<a class="salto" href="#proyectos">Saltar al contenido</a>
 <nav>
   <div class="contenedor">
     <a class="logo" href="#"><i></i>Werex Studio</a>
-    <div class="estado"><b></b><span>Soporte técnico y proyectos web</span></div>
+    <div class="enlaces"><a href="#todos">Proyectos</a><a href="#soporte">Soporte técnico</a><a href="#proceso">Cómo trabajo</a><a class="cv" href="../">Currículum</a></div>
   </div>
 </nav>
 
-<header class="contenedor">
-  <div class="etiqueta rv">Soporte técnico · Diseño web</div>
-  <h1 class="rv">Sitios web para <span class="serif">negocios locales.</span></h1>
-  <div class="intro rv">
-    <p>Hago <a href="#soporte" style="color:var(--texto);text-decoration:underline">soporte técnico</a> presencial en Valdivia y remoto, y diseño páginas para centros culturales, turismo, restaurantes, gimnasios, cafeterías y emprendimientos locales: rápidas, adaptadas a celular y pensadas para convertir visitas en clientes. Las páginas de este portafolio son propuestas de diseño de ejemplo: los negocios y sus datos son ficticios.</p>
-    <div class="cifras">
-      <div><b>23</b><span>diseños de ejemplo</span></div>
-      <div><b>100%</b><span>responsive</span></div>
+<header class="hero">
+  <i class="orbe o1"></i><i class="orbe o2"></i><i class="orbe o3"></i>
+  <div class="contenedor">
+    <div class="etiqueta rv"><b></b>Diseño web y soporte técnico · Los Ríos</div>
+    <h1 class="rv">Sitios web con <span class="serif">carácter</span> para negocios del sur.</h1>
+    <div class="intro rv">
+      <div>
+        <p>Diseño páginas para cabañas, cafeterías, talleres, gimnasios y centros culturales: rápidas, pensadas para el celular y con un botón de WhatsApp que se usa de verdad. También hago <a href="#soporte">soporte técnico</a> en Valdivia y a distancia. Todo lo que ves aquí son propuestas de ejemplo: los negocios y sus datos son ficticios.</p>
+        <div class="cta"><a class="b1" href="#contacto">Cotizar mi página →</a><a class="b2" href="#proyectos">Ver proyectos</a></div>
+      </div>
+      <div class="cifras">
+        <div><b data-n="23">23</b><span>diseños de ejemplo</span></div>
+        <div><b data-n="6">6</b><span>rubros distintos</span></div>
+        <div><b data-n="100" data-s="%">100%</b><span>adaptados a celular</span></div>
+        <div><b data-p="&lt;" data-n="24" data-s=" h">&lt;24 h</b><span>para responderte</span></div>
+      </div>
     </div>
   </div>
 </header>
 
-<main class="contenedor">
+<div class="cinta-wrap" aria-hidden="true"><div class="cinta"><div><span>Cabañas</span><span>Cafeterías</span><span>Talleres</span><span>Gimnasios</span><span>Panaderías</span><span>Veterinarias</span><span>Centros culturales</span><span>Tiendas en línea</span><span>Cabañas</span><span>Cafeterías</span><span>Talleres</span><span>Gimnasios</span><span>Panaderías</span><span>Veterinarias</span><span>Centros culturales</span><span>Tiendas en línea</span></div></div></div>
+
+<main id="proyectos" class="contenedor">
+  <div class="cab rv"><h2>Proyectos <span class="serif">destacados</span></h2><p>Seis de las propuestas que más me gustan. Usa las flechas, los puntos o el teclado.</p></div>
+  <section class="carrusel rv" aria-roledescription="carrusel" aria-label="Proyectos destacados" id="carrusel">
+    <div class="pista" id="pista" aria-live="off"><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 6" style="--c:#C9A24B;--f:#0F2427">
+<a class="nav-cap" href="cabanas/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · cabanas</span></div><div class="captura"><img src="img/cabanas.jpg" alt="" width="600" height="400"></div></div></a>
+<div class="sl-tx"><span class="num">01<small>/06</small></span><span class="rub">Turismo · Reservas</span><h3>Cabañas Alerce Dormido</h3><p class="sub">cabanas</p><p>Cabañas entre bosque y río en Valdivia, con calculadora de estadía y solicitud de reserva por WhatsApp.</p><a class="btn-sl" href="cabanas/">Entrar a la demo <b>→</b></a></div></article><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 6" style="--c:#e9a06f;--f:#0f1b1a">
+<a class="nav-cap" href="termas/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · termas y spa</span></div><div class="captura"><img src="img/termas.jpg" alt="" width="600" height="400"></div></div></a>
+<div class="sl-tx"><span class="num">02<small>/06</small></span><span class="rub">Turismo y bienestar · Reserva y cupos</span><h3>Vapor Sur</h3><p class="sub">Termas en Futrono</p><p>Pozas termales con filtro por temperatura, armador de visita con cupos por turno, total en pesos y reserva por WhatsApp.</p><a class="btn-sl" href="termas/">Entrar a la demo <b>→</b></a></div></article><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 6" style="--c:#ff7a35;--f:#0b1f33">
+<a class="nav-cap" href="kayak/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · kayak y pesca</span></div><div class="captura"><img src="img/kayak.jpg" alt="" width="600" height="400"></div></div></a>
+<div class="sl-tx"><span class="num">03<small>/06</small></span><span class="rub">Turismo aventura · Armador de reserva</span><h3>Mawün Kayak</h3><p class="sub">kayak y pesca</p><p>Salidas guiadas en kayak y pesca en Lago Ranco, con armador de reserva, total en pesos y envío por WhatsApp.</p><a class="btn-sl" href="kayak/">Entrar a la demo <b>→</b></a></div></article><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 6" style="--c:#c8442f;--f:#0c0c0b">
+<a class="nav-cap" href="sushi/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · sushi</span></div><div class="captura"><img src="img/sushi.jpg" alt="" width="600" height="400"></div></div></a>
+<div class="sl-tx"><span class="num">04<small>/06</small></span><span class="rub">Restaurante · Reservas</span><h3>Kaiyō Sushi Bar</h3><p class="sub">sushi</p><p>Sushi de autor con estética editorial oscura, carta por categorías y reservas en línea.</p><a class="btn-sl" href="sushi/">Entrar a la demo <b>→</b></a></div></article><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 6" style="--c:#ffd84a;--f:#2a0f3a">
+<a class="nav-cap" href="heladeria/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · heladería artesanal</span></div><div class="captura"><img src="img/heladeria.jpg" alt="" width="600" height="400"></div></div></a>
+<div class="sl-tx"><span class="num">05<small>/06</small></span><span class="rub">Gastronomía · Armador y pedido</span><h3>Maqui</h3><p class="sub">Heladería Artesanal</p><p>Heladería de Panguipulli con armador de copas y potes con precio al instante, carta de sabores filtrable y pedido por WhatsApp.</p><a class="btn-sl" href="heladeria/">Entrar a la demo <b>→</b></a></div></article><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 6" style="--c:#B3123A;--f:#111111">
+<a class="nav-cap" href="centro-cultural/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · centro-cultural</span></div><div class="captura"><img src="img/centro-cultural.jpg" alt="" width="600" height="400"></div></div></a>
+<div class="sl-tx"><span class="num">06<small>/06</small></span><span class="rub">Cultura · Agenda</span><h3>Ribera</h3><p class="sub">Centro Cultural</p><p>Sitio informativo de un espacio cultural: exposiciones destacadas, agenda con filtros, visita, educación y salas.</p><a class="btn-sl" href="centro-cultural/">Entrar a la demo <b>→</b></a></div></article></div>
+    <div class="ctrl"><div class="puntos" id="puntos"><button type="button" class="pt" aria-label="Ir al proyecto 1"></button><button type="button" class="pt" aria-label="Ir al proyecto 2"></button><button type="button" class="pt" aria-label="Ir al proyecto 3"></button><button type="button" class="pt" aria-label="Ir al proyecto 4"></button><button type="button" class="pt" aria-label="Ir al proyecto 5"></button><button type="button" class="pt" aria-label="Ir al proyecto 6"></button></div><div class="flechas"><button type="button" id="ant" aria-label="Proyecto anterior">←</button><button type="button" id="sig" aria-label="Proyecto siguiente">→</button></div></div>
+    <div class="auto" id="auto" aria-hidden="true"></div>
+  </section>
+
+  <div class="cab rv" id="todos"><h2>Todos los <span class="serif">diseños</span></h2><p>Filtra por rubro y abre cualquier demo: cada una tiene su propia identidad y una función útil.</p></div>
+  <div class="filtros rv" role="group" aria-label="Filtrar por rubro" id="filtros"><button type="button" aria-pressed="true" data-f="todos">Todos <small>23</small></button><button type="button" aria-pressed="false" data-f="turismo">Turismo <small>4</small></button><button type="button" aria-pressed="false" data-f="comida">Comida y bebida <small>5</small></button><button type="button" aria-pressed="false" data-f="tiendas">Tiendas y oficios <small>5</small></button><button type="button" aria-pressed="false" data-f="servicios">Servicios <small>5</small></button><button type="button" aria-pressed="false" data-f="bienestar">Bienestar y deporte <small>2</small></button><button type="button" aria-pressed="false" data-f="cultura">Cultura y temporada <small>2</small></button></div>
+  <div class="rejilla" id="rejilla"><a class="tarjeta" href="hostal/" data-g="turismo" style="--c:#e3a21a">
+<div class="cap"><img src="img/hostal.jpg" alt="Vista previa del sitio Hostal Radal, alojamiento en Valdivia" loading="lazy" width="600" height="400"><span class="chip">Turismo</span></div>
+<div class="tx"><h3>Radal</h3><em>Hostal en Valdivia</em><p>Hostal familiar con habitaciones y dormitorios compartidos, cupos por noche, total en pesos al instante y solicitud de reserva por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#26301d"></i><i style="background:#e3a21a"></i><i style="background:#b5452c"></i><i style="background:#f6efdc"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="termas/" data-g="turismo" style="--c:#e9a06f">
+<div class="cap"><img src="img/termas.jpg" alt="Vista previa del sitio Termas Vapor Sur, pozas termales en Futrono" loading="lazy" width="600" height="400"><span class="chip">Turismo y bienestar</span></div>
+<div class="tx"><h3>Vapor Sur</h3><em>Termas en Futrono</em><p>Pozas termales con filtro por temperatura, armador de visita con cupos por turno, total en pesos y reserva por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#0f1b1a"></i><i style="background:#2f8f8a"></i><i style="background:#e9a06f"></i><i style="background:#f1f5f1"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="heladeria/" data-g="comida" style="--c:#ffd84a">
+<div class="cap"><img src="img/heladeria.jpg" alt="Vista previa del sitio Maqui, heladería artesanal en Panguipulli" loading="lazy" width="600" height="400"><span class="chip">Gastronomía</span></div>
+<div class="tx"><h3>Maqui</h3><em>Heladería Artesanal</em><p>Heladería de Panguipulli con armador de copas y potes con precio al instante, carta de sabores filtrable y pedido por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#2a0f3a"></i><i style="background:#6b2fd0"></i><i style="background:#ff5c8a"></i><i style="background:#ffd84a"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="fotografia/" data-g="servicios" style="--c:#2f4bff">
+<div class="cap"><img src="img/fotografia.jpg" alt="Vista previa del sitio Cuarto Claro, estudio fotográfico en Valdivia" loading="lazy" width="600" height="400"><span class="chip">Servicios creativos</span></div>
+<div class="tx"><h3>Cuarto Claro</h3><em>Estudio Fotográfico</em><p>Estudio de Valdivia con armador de sesiones con precio al instante, comparador de edición, galería filtrable y reserva de fecha por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#101114"></i><i style="background:#2f4bff"></i><i style="background:#eeeae2"></i><i style="background:#aab5ff"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="contable/" data-g="servicios" style="--c:#d6a84f">
+<div class="cap"><img src="img/contable.jpg" alt="Vista previa del sitio Lenga Asesorías, estudio contable en Paillaco" loading="lazy" width="600" height="400"><span class="chip">Servicios profesionales</span></div>
+<div class="tx"><h3>Lenga</h3><em>Asesoría Contable</em><p>Estudio contable de Paillaco con cotizador de plan mensual, calculadora de IVA, lista de documentos y reserva de reunión por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#3b1623"></i><i style="background:#d6a84f"></i><i style="background:#f8f5ee"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="ferreteria/" data-g="tiendas" style="--c:#c63d22">
+<div class="cap"><img src="img/ferreteria.jpg" alt="Vista previa del sitio Ferretería Lleuque, materiales y herramientas en Río Bueno" loading="lazy" width="600" height="400"><span class="chip">Comercio</span></div>
+<div class="tx"><h3>Lleuque</h3><em>Ferretería</em><p>Ferretería de Río Bueno con calculadora de materiales para cercos, radieres y pintura, catálogo filtrable y pedido por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#10304a"></i><i style="background:#c63d22"></i><i style="background:#f5f0e4"></i><i style="background:#ff8a6b"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="yoga/" data-g="bienestar" style="--c:#e9b8a0">
+<div class="cap"><img src="img/yoga.jpg" alt="Vista previa del sitio Aire Sur, estudio de yoga y pilates en Futrono" loading="lazy" width="600" height="400"><span class="chip">Bienestar</span></div>
+<div class="tx"><h3>Aire Sur</h3><em>Yoga y Pilates</em><p>Estudio de Futrono con horario semanal filtrable, cupos que se actualizan, reserva por WhatsApp y una pausa guiada de respiración.</p><div class="pie"><span class="paleta"><i style="background:#22342b"></i><i style="background:#e9b8a0"></i><i style="background:#dfe6d8"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="madera/" data-g="tiendas" style="--c:#d9a066">
+<div class="cap"><img src="img/madera.jpg" alt="Vista previa del sitio Mañío, artesanía en madera nativa" loading="lazy" width="600" height="400"><span class="chip">Artesanía</span></div>
+<div class="tx"><h3>Mañío</h3><em>Artesanía en Madera</em><p>Taller de Panguipulli con armador de piezas a medida: elige madera, medidas y acabado, mira el precio y pide por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#2e1d12"></i><i style="background:#d9a066"></i><i style="background:#f4ecdf"></i><i style="background:#46602a"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="taller/" data-g="servicios" style="--c:#f5c400">
+<div class="cap"><img src="img/taller.jpg" alt="Vista previa del sitio Taller Newen, mecánica automotriz" loading="lazy" width="600" height="400"><span class="chip">Automotriz</span></div>
+<div class="tx"><h3>Newen</h3><em>Taller Mecánico</em><p>Taller de La Unión con cotizador de mantención por tipo de vehículo, agenda de horas por WhatsApp y guía de luces del tablero.</p><div class="pie"><span class="paleta"><i style="background:#16191d"></i><i style="background:#f5c400"></i><i style="background:#f3f1ea"></i><i style="background:#4a5560"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="cerveceria/" data-g="comida" style="--c:#e08a1e">
+<div class="cap"><img src="img/cerveceria.jpg" alt="Vista previa del sitio Hualle Cervecería Artesanal" loading="lazy" width="600" height="400"><span class="chip">Gastronomía</span></div>
+<div class="tx"><h3>Hualle</h3><em>Cervecería Artesanal</em><p>Cervecería de Valdivia con carta filtrable por estilo, armador de packs con descuento por volumen y pedido por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#17120d"></i><i style="background:#e08a1e"></i><i style="background:#f6ecd6"></i><i style="background:#a5b83a"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="barberia/" data-g="servicios" style="--c:#d6342b">
+<div class="cap"><img src="img/barberia.jpg" alt="Vista previa del sitio Barbería Tricahue" loading="lazy" width="600" height="400"><span class="chip">Belleza y cuidado</span></div>
+<div class="tx"><h3>Tricahue</h3><em>Barbería</em><p>Barbería de Paillaco con carta de precios, reserva por barbero, día y hora libre, total en pesos y envío por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#111d33"></i><i style="background:#d6342b"></i><i style="background:#f4efe4"></i><i style="background:#e0b45a"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="veterinaria/" data-g="servicios" style="--c:#ff8a73">
+<div class="cap"><img src="img/veterinaria.jpg" alt="Vista previa del sitio Weñi Clínica Veterinaria" loading="lazy" width="600" height="400"><span class="chip">Salud animal</span></div>
+<div class="tx"><h3>Weñi</h3><em>Clínica Veterinaria</em><p>Clínica en Río Bueno con agenda de horas por WhatsApp, guía de urgencia, planes de cuidado y estado abierto o cerrado en vivo.</p><div class="pie"><span class="paleta"><i style="background:#0d3b3a"></i><i style="background:#d9f26b"></i><i style="background:#d5eee3"></i><i style="background:#ff8a73"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="kayak/" data-g="turismo" style="--c:#ff7a35">
+<div class="cap"><img src="img/kayak.jpg" alt="Vista previa del sitio Mawün Kayak" loading="lazy" width="600" height="400"><span class="chip">Turismo aventura</span></div>
+<div class="tx"><h3>Mawün Kayak</h3><em>kayak y pesca</em><p>Salidas guiadas en kayak y pesca en Lago Ranco, con armador de reserva, total en pesos y envío por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#0b1f33"></i><i style="background:#12476b"></i><i style="background:#ff7a35"></i><i style="background:#eaf3f4"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="navidad/" data-g="cultura" style="--c:#c8102e">
+<div class="cap"><img src="img/navidad.jpg" alt="Vista previa del sitio Estrella Austral, decoración navideña" loading="lazy" width="600" height="400"><span class="chip">Temporada</span></div>
+<div class="tx"><h3>Estrella Austral</h3><em>navidad</em><p>Decoración navideña para hogares y empresas: presentación, servicios, galería con filtros, SEO local y cotización por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#8e0f1e"></i><i style="background:#c8102e"></i><i style="background:#e8bd52"></i><i style="background:#14532d"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="centro-cultural/" data-g="cultura" style="--c:#B3123A">
+<div class="cap"><img src="img/centro-cultural.jpg" alt="Vista previa del sitio Ribera, centro cultural" loading="lazy" width="600" height="400"><span class="chip">Cultura</span></div>
+<div class="tx"><h3>Ribera</h3><em>Centro Cultural</em><p>Sitio informativo de un espacio cultural: exposiciones destacadas, agenda con filtros, visita, educación y salas.</p><div class="pie"><span class="paleta"><i style="background:#111111"></i><i style="background:#B3123A"></i><i style="background:#F4F3F1"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="cabanas/" data-g="turismo" style="--c:#C9A24B">
+<div class="cap"><img src="img/cabanas.jpg" alt="Vista previa del sitio Cabañas Alerce Dormido" loading="lazy" width="600" height="400"><span class="chip">Turismo</span></div>
+<div class="tx"><h3>Cabañas Alerce Dormido</h3><em>cabanas</em><p>Cabañas entre bosque y río en Valdivia, con calculadora de estadía y solicitud de reserva por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#0F2427"></i><i style="background:#2F7470"></i><i style="background:#C9A24B"></i><i style="background:#EEF3F1"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="sushi/" data-g="comida" style="--c:#c8442f">
+<div class="cap"><img src="img/sushi.jpg" alt="Vista previa del sitio Kaiyō Sushi Bar" loading="lazy" width="600" height="400"><span class="chip">Restaurante</span></div>
+<div class="tx"><h3>Kaiyō Sushi Bar</h3><em>sushi</em><p>Sushi de autor con estética editorial oscura, carta por categorías y reservas en línea.</p><div class="pie"><span class="paleta"><i style="background:#0c0c0b"></i><i style="background:#c8442f"></i><i style="background:#c9a46a"></i><i style="background:#ede6da"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="gimnasio/" data-g="bienestar" style="--c:#d4ff3a">
+<div class="cap"><img src="img/gimnasio.jpg" alt="Vista previa del sitio Forja Gym" loading="lazy" width="600" height="400"><span class="chip">Deporte</span></div>
+<div class="tx"><h3>Forja Gym</h3><em>gimnasio</em><p>Gimnasio de alto rendimiento: planes, horario interactivo de clases y equipo de coaches.</p><div class="pie"><span class="paleta"><i style="background:#0a0a0a"></i><i style="background:#d4ff3a"></i><i style="background:#f5f5f0"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="cafeteria/" data-g="comida" style="--c:#b9773f">
+<div class="cap"><img src="img/cafeteria.jpg" alt="Vista previa del sitio Grano y Calma" loading="lazy" width="600" height="400"><span class="chip">Cafetería</span></div>
+<div class="tx"><h3>Grano &amp; Calma</h3><em>cafeteria</em><p>Cafetería de especialidad con carta fotografiada, historia del origen y horario del día.</p><div class="pie"><span class="paleta"><i style="background:#f5eee3"></i><i style="background:#b9773f"></i><i style="background:#2b1d14"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="velas/" data-g="tiendas" style="--c:#b4654a">
+<div class="cap"><img src="img/velas.jpg" alt="Vista previa del sitio Luz de Cera" loading="lazy" width="600" height="400"><span class="chip">E-commerce</span></div>
+<div class="tx"><h3>Luz de Cera</h3><em>velas</em><p>Tienda boutique de velas artesanales con filtros por aroma y carrito lateral.</p><div class="pie"><span class="paleta"><i style="background:#f8f3ec"></i><i style="background:#b4654a"></i><i style="background:#3a2a20"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="plantas/" data-g="tiendas" style="--c:#b6e36b">
+<div class="cap"><img src="img/plantas.jpg" alt="Vista previa del sitio Raíz Verde" loading="lazy" width="600" height="400"><span class="chip">E-commerce</span></div>
+<div class="tx"><h3>Raíz Verde</h3><em>plantas</em><p>Plantas a domicilio con filtros por luz, fichas de cuidado y kits de regalo.</p><div class="pie"><span class="paleta"><i style="background:#f3f1ea"></i><i style="background:#1d3a2b"></i><i style="background:#b6e36b"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="mascotas/" data-g="tiendas" style="--c:#ffc93c">
+<div class="cap"><img src="img/mascotas.jpg" alt="Vista previa del sitio Pata Feliz" loading="lazy" width="600" height="400"><span class="chip">Emprendimiento</span></div>
+<div class="tx"><h3>Pata Feliz</h3><em>mascotas</em><p>Snacks naturales para perros con armador de pedidos que envía el detalle por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#fff8ec"></i><i style="background:#ffc93c"></i><i style="background:#ff7a59"></i><i style="background:#1e1d3a"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="panaderia/" data-g="comida" style="--c:#e8b04b">
+<div class="cap"><img src="img/panaderia.jpg" alt="Vista previa del sitio Horno Pellín" loading="lazy" width="600" height="400"><span class="chip">Panadería</span></div>
+<div class="tx"><h3>Horno Pellín</h3><em>panadería</em><p>Panadería de masa madre con horneadas del día, estado abierto/cerrado y encargos por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#fbf7ef"></i><i style="background:#b4361f"></i><i style="background:#e8b04b"></i><i style="background:#1c1a18"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a></div>
+  <p id="vacio" hidden style="color:var(--gris);margin-top:20px">No hay proyectos en este rubro todavía.</p>
+
   <section class="servicios soporte" id="soporte">
     <div class="rv"><h2>Soporte técnico <span class="serif">sin vueltas</span></h2>
       <p class="soporte-intro">Informático de formación, con experiencia en soporte desde 2014. Primero diagnostico, después reparo: te explico qué tiene tu equipo y cuánto cuesta antes de hacer nada.</p>
@@ -171,133 +310,22 @@
       <div class="serv"><div class="n">05</div><h3>Windows, macOS y Linux</h3><p>Instalación y configuración de sistemas, programas, correo y Office en notebooks y equipos de escritorio.</p></div>
       <div class="serv"><div class="n">06</div><h3>Presencial o remoto</h3><p>Voy a tu casa u oficina en Valdivia, o te ayudo a distancia conectándome a tu equipo.</p></div>
     </div>
-  </section>
+  </section>  
 
-  <div class="seccion-cab rv"><span>Propuestas de ejemplo · datos ficticios</span><span>2026</span></div>
-  <div class="proyectos">
-    <a class="proyecto rv" href="hostal/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · hostal</span></div><div class="captura"><img src="img/hostal.jpg" alt="Vista previa del sitio Hostal Radal, alojamiento en Valdivia" loading="lazy"></div></div>
-      <div class="info"><div><h2>Radal · Hostal en Valdivia</h2><p>Hostal familiar con habitaciones y dormitorios compartidos, cupos por noche, total en pesos al instante y solicitud de reserva por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Turismo</span><span>Reserva y cupos</span><span class="paleta"><i style="background:#26301d;border-color:#555"></i><i style="background:#e3a21a"></i><i style="background:#b5452c"></i><i style="background:#f6efdc"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="termas/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · termas y spa</span></div><div class="captura"><img src="img/termas.jpg" alt="Vista previa del sitio Termas Vapor Sur, pozas termales en Futrono" loading="lazy"></div></div>
-      <div class="info"><div><h2>Vapor Sur · Termas en Futrono</h2><p>Pozas termales con filtro por temperatura, armador de visita con cupos por turno, total en pesos y reserva por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Turismo y bienestar</span><span>Reserva y cupos</span><span class="paleta"><i style="background:#0f1b1a;border-color:#555"></i><i style="background:#2f8f8a"></i><i style="background:#e9a06f"></i><i style="background:#f1f5f1"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="heladeria/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · heladería artesanal</span></div><div class="captura"><img src="img/heladeria.jpg" alt="Vista previa del sitio Maqui, heladería artesanal en Panguipulli" loading="lazy"></div></div>
-      <div class="info"><div><h2>Maqui · Heladería Artesanal</h2><p>Heladería de Panguipulli con armador de copas y potes con precio al instante, carta de sabores filtrable y pedido por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Gastronomía</span><span>Armador y pedido</span><span class="paleta"><i style="background:#2a0f3a;border-color:#555"></i><i style="background:#6b2fd0"></i><i style="background:#ff5c8a"></i><i style="background:#ffd84a"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="fotografia/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · estudio fotográfico</span></div><div class="captura"><img src="img/fotografia.jpg" alt="Vista previa del sitio Cuarto Claro, estudio fotográfico en Valdivia" loading="lazy"></div></div>
-      <div class="info"><div><h2>Cuarto Claro · Estudio Fotográfico</h2><p>Estudio de Valdivia con armador de sesiones con precio al instante, comparador de edición, galería filtrable y reserva de fecha por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Servicios creativos</span><span>Armador y reserva</span><span class="paleta"><i style="background:#101114;border-color:#333"></i><i style="background:#2f4bff"></i><i style="background:#eeeae2"></i><i style="background:#aab5ff"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="contable/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · servicios profesionales</span></div><div class="captura"><img src="img/contable.jpg" alt="Vista previa del sitio Lenga Asesorías, estudio contable en Paillaco" loading="lazy"></div></div>
-      <div class="info"><div><h2>Lenga · Asesoría Contable</h2><p>Estudio contable de Paillaco con cotizador de plan mensual, calculadora de IVA, lista de documentos y reserva de reunión por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Servicios profesionales</span><span>Cotizador y agenda</span><span class="paleta"><i style="background:#3b1623;border-color:#555"></i><i style="background:#d6a84f"></i><i style="background:#f8f5ee"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="ferreteria/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · ferretería</span></div><div class="captura"><img src="img/ferreteria.jpg" alt="Vista previa del sitio Ferretería Lleuque, materiales y herramientas en Río Bueno" loading="lazy"></div></div>
-      <div class="info"><div><h2>Lleuque · Ferretería</h2><p>Ferretería de Río Bueno con calculadora de materiales para cercos, radieres y pintura, catálogo filtrable y pedido por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Comercio</span><span>Calculadora y pedido</span><span class="paleta"><i style="background:#10304a;border-color:#555"></i><i style="background:#c63d22"></i><i style="background:#f5f0e4"></i><i style="background:#ff8a6b"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="yoga/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · yoga y pilates</span></div><div class="captura"><img src="img/yoga.jpg" alt="Vista previa del sitio Aire Sur, estudio de yoga y pilates en Futrono" loading="lazy"></div></div>
-      <div class="info"><div><h2>Aire Sur · Yoga y Pilates</h2><p>Estudio de Futrono con horario semanal filtrable, cupos que se actualizan, reserva por WhatsApp y una pausa guiada de respiración.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Bienestar</span><span>Horario y reservas</span><span class="paleta"><i style="background:#22342b;border-color:#555"></i><i style="background:#e9b8a0"></i><i style="background:#dfe6d8"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="madera/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · artesanía en madera</span></div><div class="captura"><img src="img/madera.jpg" alt="Vista previa del sitio Mañío, artesanía en madera nativa" loading="lazy"></div></div>
-      <div class="info"><div><h2>Mañío · Artesanía en Madera</h2><p>Taller de Panguipulli con armador de piezas a medida: elige madera, medidas y acabado, mira el precio y pide por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Artesanía</span><span>Armador a medida</span><span class="paleta"><i style="background:#2e1d12;border-color:#555"></i><i style="background:#d9a066"></i><i style="background:#f4ecdf"></i><i style="background:#46602a"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="taller/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · taller mecánico</span></div><div class="captura"><img src="img/taller.jpg" alt="Vista previa del sitio Taller Newen, mecánica automotriz" loading="lazy"></div></div>
-      <div class="info"><div><h2>Newen · Taller Mecánico</h2><p>Taller de La Unión con cotizador de mantención por tipo de vehículo, agenda de horas por WhatsApp y guía de luces del tablero.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Automotriz</span><span>Cotizador y agenda</span><span class="paleta"><i style="background:#16191d;border-color:#333"></i><i style="background:#f5c400"></i><i style="background:#f3f1ea"></i><i style="background:#4a5560"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="cerveceria/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · cervecería artesanal</span></div><div class="captura"><img src="img/cerveceria.jpg" alt="Vista previa del sitio Hualle Cervecería Artesanal" loading="lazy"></div></div>
-      <div class="info"><div><h2>Hualle · Cervecería Artesanal</h2><p>Cervecería de Valdivia con carta filtrable por estilo, armador de packs con descuento por volumen y pedido por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Gastronomía</span><span>Armador de packs</span><span class="paleta"><i style="background:#17120d;border-color:#333"></i><i style="background:#e08a1e"></i><i style="background:#f6ecd6"></i><i style="background:#a5b83a"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="barberia/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · barbería</span></div><div class="captura"><img src="img/barberia.jpg" alt="Vista previa del sitio Barbería Tricahue" loading="lazy"></div></div>
-      <div class="info"><div><h2>Tricahue · Barbería</h2><p>Barbería de Paillaco con carta de precios, reserva por barbero, día y hora libre, total en pesos y envío por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Belleza y cuidado</span><span>Reserva de hora</span><span class="paleta"><i style="background:#111d33;border-color:#333"></i><i style="background:#d6342b"></i><i style="background:#f4efe4"></i><i style="background:#e0b45a"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="veterinaria/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · clínica veterinaria</span></div><div class="captura"><img src="img/veterinaria.jpg" alt="Vista previa del sitio Weñi Clínica Veterinaria" loading="lazy"></div></div>
-      <div class="info"><div><h2>Weñi · Clínica Veterinaria</h2><p>Clínica en Río Bueno con agenda de horas por WhatsApp, guía de urgencia, planes de cuidado y estado abierto o cerrado en vivo.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Salud animal</span><span>Agenda de horas</span><span class="paleta"><i style="background:#0d3b3a;border-color:#333"></i><i style="background:#d9f26b"></i><i style="background:#d5eee3"></i><i style="background:#ff8a73"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="kayak/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · kayak y pesca</span></div><div class="captura"><img src="img/kayak.jpg" alt="Vista previa del sitio Mawün Kayak" loading="lazy"></div></div>
-      <div class="info"><div><h2>Mawün Kayak</h2><p>Salidas guiadas en kayak y pesca en Lago Ranco, con armador de reserva, total en pesos y envío por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Turismo aventura</span><span>Armador de reserva</span><span class="paleta"><i style="background:#0b1f33;border-color:#333"></i><i style="background:#12476b"></i><i style="background:#ff7a35"></i><i style="background:#eaf3f4"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="navidad/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · navidad</span></div><div class="captura"><img src="img/navidad.jpg" alt="Vista previa del sitio Estrella Austral, decoración navideña" loading="lazy"></div></div>
-      <div class="info"><div><h2>Estrella Austral</h2><p>Decoración navideña para hogares y empresas: presentación, servicios, galería con filtros, SEO local y cotización por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Temporada</span><span>SEO</span><span class="paleta"><i style="background:#8e0f1e"></i><i style="background:#c8102e"></i><i style="background:#e8bd52"></i><i style="background:#14532d"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="centro-cultural/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · centro-cultural</span></div><div class="captura"><img src="img/centro-cultural.jpg" alt="Vista previa del sitio Ribera, centro cultural" loading="lazy"></div></div>
-      <div class="info"><div><h2>Ribera · Centro Cultural</h2><p>Sitio informativo de un espacio cultural: exposiciones destacadas, agenda con filtros, visita, educación y salas.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Cultura</span><span>Agenda</span><span class="paleta"><i style="background:#111111;border-color:#333"></i><i style="background:#B3123A"></i><i style="background:#F4F3F1"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="cabanas/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · cabanas</span></div><div class="captura"><img src="img/cabanas.jpg" alt="Vista previa del sitio Cabañas Alerce Dormido" loading="lazy"></div></div>
-      <div class="info"><div><h2>Cabañas Alerce Dormido</h2><p>Cabañas entre bosque y río en Valdivia, con calculadora de estadía y solicitud de reserva por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Turismo</span><span>Reservas</span><span class="paleta"><i style="background:#0F2427;border-color:#333"></i><i style="background:#2F7470"></i><i style="background:#C9A24B"></i><i style="background:#EEF3F1"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="sushi/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · sushi</span></div><div class="captura"><img src="img/sushi.jpg" alt="Vista previa del sitio Kaiyō Sushi Bar" loading="lazy"></div></div>
-      <div class="info"><div><h2>Kaiyō Sushi Bar</h2><p>Sushi de autor con estética editorial oscura, carta por categorías y reservas en línea.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Restaurante</span><span>Reservas</span><span class="paleta"><i style="background:#0c0c0b;border-color:#333"></i><i style="background:#c8442f"></i><i style="background:#c9a46a"></i><i style="background:#ede6da"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="gimnasio/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · gimnasio</span></div><div class="captura"><img src="img/gimnasio.jpg" alt="Vista previa del sitio Forja Gym" loading="lazy"></div></div>
-      <div class="info"><div><h2>Forja Gym</h2><p>Gimnasio de alto rendimiento: planes, horario interactivo de clases y equipo de coaches.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Deporte</span><span>Horario dinámico</span><span class="paleta"><i style="background:#0a0a0a;border-color:#333"></i><i style="background:#d4ff3a"></i><i style="background:#f5f5f0"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="cafeteria/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · cafeteria</span></div><div class="captura"><img src="img/cafeteria.jpg" alt="Vista previa del sitio Grano y Calma" loading="lazy"></div></div>
-      <div class="info"><div><h2>Grano &amp; Calma</h2><p>Cafetería de especialidad con carta fotografiada, historia del origen y horario del día.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Cafetería</span><span>Carta digital</span><span class="paleta"><i style="background:#f5eee3"></i><i style="background:#b9773f"></i><i style="background:#2b1d14;border-color:#333"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="velas/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · velas</span></div><div class="captura"><img src="img/velas.jpg" alt="Vista previa del sitio Luz de Cera" loading="lazy"></div></div>
-      <div class="info"><div><h2>Luz de Cera</h2><p>Tienda boutique de velas artesanales con filtros por aroma y carrito lateral.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>E-commerce</span><span>Carrito</span><span class="paleta"><i style="background:#f8f3ec"></i><i style="background:#b4654a"></i><i style="background:#3a2a20;border-color:#333"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="plantas/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · plantas</span></div><div class="captura"><img src="img/plantas.jpg" alt="Vista previa del sitio Raíz Verde" loading="lazy"></div></div>
-      <div class="info"><div><h2>Raíz Verde</h2><p>Plantas a domicilio con filtros por luz, fichas de cuidado y kits de regalo.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>E-commerce</span><span>Filtros</span><span class="paleta"><i style="background:#f3f1ea"></i><i style="background:#1d3a2b;border-color:#333"></i><i style="background:#b6e36b"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="mascotas/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · mascotas</span></div><div class="captura"><img src="img/mascotas.jpg" alt="Vista previa del sitio Pata Feliz" loading="lazy"></div></div>
-      <div class="info"><div><h2>Pata Feliz</h2><p>Snacks naturales para perros con armador de pedidos que envía el detalle por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Emprendimiento</span><span>WhatsApp</span><span class="paleta"><i style="background:#fff8ec"></i><i style="background:#ffc93c"></i><i style="background:#ff7a59"></i><i style="background:#1e1d3a;border-color:#333"></i></span></div>
-    </a>
-    <a class="proyecto rv" href="panaderia/">
-      <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · panadería</span></div><div class="captura"><img src="img/panaderia.jpg" alt="Vista previa del sitio Horno Pellín" loading="lazy"></div></div>
-      <div class="info"><div><h2>Horno Pellín</h2><p>Panadería de masa madre con horneadas del día, estado abierto/cerrado y encargos por WhatsApp.</p></div><span class="flecha">→</span></div>
-      <div class="meta"><span>Panadería</span><span>Encargos</span><span class="paleta"><i style="background:#fbf7ef"></i><i style="background:#b4361f"></i><i style="background:#e8b04b"></i><i style="background:#1c1a18;border-color:#333"></i></span></div>
-    </a>
+  <div class="cab rv" id="proceso"><h2>Cómo <span class="serif">trabajo</span></h2><p>Sin letra chica: sabes qué se hace y qué cuesta antes de empezar.</p></div>
+  <div class="proceso">
+    <div class="paso rv" style="--k:#ff8a63"><h3>Conversamos</h3><p>Me cuentas qué vendes, a quién y qué quieres que haga la página: reservar, pedir, llamar o cotizar.</p></div>
+    <div class="paso rv" style="--k:#ffd23f"><h3>Te muestro una propuesta</h3><p>Diseño con tus colores, tu rubro y tus fotos, y te la muestro funcionando antes de seguir.</p></div>
+    <div class="paso rv" style="--k:#2dd4bf"><h3>Ajustamos</h3><p>Corregimos textos, precios y detalles hasta que suene a tu negocio y no a una plantilla.</p></div>
+    <div class="paso rv" style="--k:#b9a6ff"><h3>Publicamos y te acompaño</h3><p>La dejo en línea, te enseño a cambiar lo básico y sigo disponible por WhatsApp si algo falla.</p></div>
   </div>
 
-  <section class="servicios">
+  <section class="servicios" style="margin-top:40px">
     <div class="rv"><h2>Qué incluye <span class="serif">cada sitio web</span></h2></div>
     <div class="lista-serv rv">
       <div class="serv"><div class="n">01</div><h3>Diseño a medida</h3><p>Identidad visual, tipografías y paleta pensadas para cada marca.</p></div>
-      <div class="serv"><div class="n">02</div><h3>Adaptado a celular</h3><p>Se ve y funciona perfecto en cualquier pantalla.</p></div>
-      <div class="serv"><div class="n">03</div><h3>Rápido y liviano</h3><p>Sin plantillas pesadas: HTML, CSS y JavaScript a mano.</p></div>
+      <div class="serv"><div class="n">02</div><h3>Adaptado a celular</h3><p>Se ve y funciona bien en cualquier pantalla.</p></div>
+      <div class="serv"><div class="n">03</div><h3>Rápido y liviano</h3><p>Sin plantillas pesadas: HTML, CSS y JavaScript escritos a mano.</p></div>
       <div class="serv"><div class="n">04</div><h3>Listo para vender</h3><p>Reservas, carritos, pedidos por WhatsApp y llamados a la acción claros.</p></div>
     </div>
   </section>
@@ -326,6 +354,7 @@
       <p class="wa-nota" id="wa-nota" role="status">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
     </form>
   </section>
+
 </main>
 
 <footer>
@@ -336,8 +365,63 @@
 </footer>
 
 <script>
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .1 });
-  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+(function(){
+  var reducido=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  /* cifras animadas */
+  var cn=document.querySelectorAll('[data-n]');
+  var io2=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;io2.unobserve(e.target);
+    var el=e.target,fin=+el.dataset.n,suf=el.dataset.s||'',pre=el.dataset.p||'',t0=null;
+    if(reducido)return;
+    (function paso(t){if(!t0)t0=t;var k=Math.min((t-t0)/1400,1);el.textContent=pre+Math.round(fin*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(paso);})(performance.now());
+  });},{threshold:.6});
+  cn.forEach(function(el){io2.observe(el);});
+
+  /* carrusel */
+  var c=document.getElementById('carrusel'),pista=document.getElementById('pista'),sl=pista.children,n=sl.length,i=0,pausa=false,tm=null;
+  var pts=document.querySelectorAll('#puntos .pt'),barra=document.getElementById('auto');
+  function ir(k){
+    i=(k+n)%n;pista.style.transform='translateX(-'+(i*100)+'%)';
+    for(var j=0;j<n;j++){var a=j===i;sl[j].setAttribute('aria-hidden',a?'false':'true');if(a)sl[j].removeAttribute('inert');else sl[j].setAttribute('inert','');
+      if(a)pts[j].setAttribute('aria-current','true');else pts[j].removeAttribute('aria-current');}
+    reinicia();
+  }
+  function reinicia(){
+    clearTimeout(tm);barra.classList.remove('corre');
+    if(reducido||pausa)return;
+    void barra.offsetWidth;barra.classList.add('corre');
+    tm=setTimeout(function(){ir(i+1);},6500);
+  }
+  document.getElementById('ant').onclick=function(){ir(i-1);};
+  document.getElementById('sig').onclick=function(){ir(i+1);};
+  pts.forEach(function(p,k){p.onclick=function(){ir(k);};});
+  function para(){pausa=true;clearTimeout(tm);barra.classList.remove('corre');}
+  function sigue(){pausa=false;reinicia();}
+  c.addEventListener('mouseenter',para);c.addEventListener('mouseleave',sigue);
+  c.addEventListener('focusin',para);c.addEventListener('focusout',function(e){if(!c.contains(e.relatedTarget))sigue();});
+  c.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){ir(i-1);e.preventDefault();}else if(e.key==='ArrowRight'){ir(i+1);e.preventDefault();}});
+  var x0=null,y0=null;
+  c.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY;para();},{passive:true});
+  c.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;x0=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))ir(i+(dx<0?1:-1));else sigue();},{passive:true});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)para();else if(!c.matches(':hover'))sigue();});
+  if(reducido)pista.style.transition='none';
+  ir(0);
+
+  /* filtros */
+  var fb=document.querySelectorAll('#filtros button'),ts=document.querySelectorAll('.tarjeta');
+  fb.forEach(function(b){b.addEventListener('click',function(){
+    fb.forEach(function(o){o.setAttribute('aria-pressed',o===b?'true':'false');});
+    var f=b.dataset.f,k=0;
+    ts.forEach(function(t){var ok=f==='todos'||t.dataset.g===f;t.classList.toggle('fuera',!ok);t.classList.remove('entra');if(ok){void t.offsetWidth;t.style.animationDelay=(k++*45)+'ms';t.classList.add('entra');}});
+    document.getElementById('vacio').hidden=k>0;
+  });});
+
+  /* brillo que sigue al cursor */
+  if(!reducido&&matchMedia('(hover:hover)').matches){ts.forEach(function(t){t.addEventListener('mousemove',function(e){var r=t.getBoundingClientRect();t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px');});});}
+})();
 </script>
 <a class="wa-flotante" href="https://wa.me/56977987960?text=Hola%20Ren%C3%A9%2C%20vi%20tu%20portafolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg><span>WhatsApp</span></a>
 <script>
@@ -357,3 +441,4 @@
 </script>
 </body>
 </html>
+

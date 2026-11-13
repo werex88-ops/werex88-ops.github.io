@@ -202,3 +202,9 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - https://images.unsplash.com/photo-1757845366142-e5929f71c7bb · autor: Jakub Żerdzicki · https://unsplash.com/photos/6AWkFbmbMxU
 - https://images.unsplash.com/photo-1778225242712-26889373ea6e · autor: leannk. · https://unsplash.com/photos/Mfc3L2pRqGM
 - https://images.unsplash.com/photo-1684419318265-1aacbcc3db67 · autor: Florian Delée · https://unsplash.com/photos/6TQX-kfMPPY
+
+## Cervecería y kayak (13-11-2026, enlazadas directamente desde Unsplash)
+
+- `cerveceria` portada (cerveza tirada desde un grifo) — https://images.unsplash.com/photo-1766589220696-4c7d1654d476
+- `cerveceria` galería (vaso de cerveza) — https://images.unsplash.com/photo-1608270586620-248524c67de9
+- `kayak` galería (muelle de madera en lago de la Patagonia chilena al amanecer, foto de martin bennie) — https://images.unsplash.com/photo-1782383618703-5117c444883b
