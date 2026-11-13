@@ -188,6 +188,20 @@ footer.pie h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;text
   *,.rv{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
 }
+
+.hero{isolation:isolate}
+.hero-foto{position:absolute;inset:0;z-index:-1;background:inherit;overflow:hidden}
+.hero-foto img{width:100%;height:100%;object-fit:cover;opacity:.62}
+.hero-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,8,10,.8),rgba(6,8,10,.3))}
+@media(max-width:760px){.hero-foto::after{background:rgba(6,8,10,.68)}}
+.foto-band{padding:56px 0 24px}
+.foto-band .fb{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1120px;margin:0 auto;padding:0 22px}
+.foto-band figure{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:rgba(127,127,127,.18)}
+.foto-band .fb.n2{grid-template-columns:repeat(2,1fr)}
+.foto-band img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
+.foto-band figure:hover img{transform:scale(1.04)}
+@media(max-width:640px){.foto-band .fb,.foto-band .fb.n2{grid-template-columns:1fr;gap:12px}.foto-band figure{aspect-ratio:16/10}}
+@media(prefers-reduced-motion:reduce){.foto-band img{transition:none}}
 </style>
 </head>
 <body>
@@ -211,7 +225,7 @@ footer.pie h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;text
 </header>
 
 <main id="contenido">
-<section class="hero" id="inicio">
+<section class="hero" id="inicio"><div class="hero-foto" aria-hidden="true"><img src="https://images.unsplash.com/photo-1792735207211-a96ca7e6ea77?w=1800&q=70&auto=format&fit=crop" alt="" decoding="async" fetchpriority="high" onerror="this.parentNode.remove()"></div>
   <div class="wrap">
     <div class="rv">
       <div class="estado" id="estado" role="status"><i></i><span id="estado-txt">Calculando horario…</span></div>
@@ -372,6 +386,7 @@ footer.pie h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;text
     <details><summary>¿Qué medios de pago aceptan?</summary><p>Efectivo, débito, crédito y transferencia. En este sitio de ejemplo los valores son referenciales.</p></details>
   </div>
 </section>
+<section class="foto-band" aria-label="Galería de imágenes"><div class="fb n2"><figure><img src="https://images.unsplash.com/photo-1678356163587-6bb3afb89679?w=900&q=70&auto=format&fit=crop" alt="Cepillo, tijeras y navaja sobre una mesa" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure><figure><img src="https://images.unsplash.com/photo-1673350963924-cb4267d9b6eb?w=900&q=70&auto=format&fit=crop" alt="Frasco de aceite para barba sobre una mesa de madera" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure></div></section>
 </main>
 
 <footer class="pie">

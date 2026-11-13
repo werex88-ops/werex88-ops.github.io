@@ -144,6 +144,20 @@ footer b{font-family:'Fraunces',serif;color:var(--papel);font-size:20px}
 @keyframes viruta{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(3deg)}}
 .vir{animation:viruta 6s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
 @media(max-width:600px){section{padding:68px 0}.w{padding:0 18px}.hero{padding-top:110px}}
+
+.hero{isolation:isolate}
+.hero-foto{position:absolute;inset:0;z-index:-1;background:inherit;overflow:hidden}
+.hero-foto img{width:100%;height:100%;object-fit:cover;opacity:.62}
+.hero-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,8,10,.8),rgba(6,8,10,.3))}
+@media(max-width:760px){.hero-foto::after{background:rgba(6,8,10,.68)}}
+.foto-band{padding:56px 0 24px}
+.foto-band .fb{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1120px;margin:0 auto;padding:0 22px}
+.foto-band figure{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:rgba(127,127,127,.18)}
+.foto-band .fb.n2{grid-template-columns:repeat(2,1fr)}
+.foto-band img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
+.foto-band figure:hover img{transform:scale(1.04)}
+@media(max-width:640px){.foto-band .fb,.foto-band .fb.n2{grid-template-columns:1fr;gap:12px}.foto-band figure{aspect-ratio:16/10}}
+@media(prefers-reduced-motion:reduce){.foto-band img{transition:none}}
 </style>
 </head>
 <body>
@@ -154,7 +168,7 @@ footer b{font-family:'Fraunces',serif;color:var(--papel);font-size:20px}
   <a class="btn b1" href="#armador">Cotizar</a>
 </div></header>
 <main id="contenido">
-<section class="hero" id="inicio"><div class="w">
+<section class="hero" id="inicio"><div class="hero-foto" aria-hidden="true"><img src="https://images.unsplash.com/photo-1455297463052-94abc38ba022?w=1800&q=70&auto=format&fit=crop" alt="" decoding="async" fetchpriority="high" onerror="this.parentNode.remove()"></div><div class="w">
   <div>
     <p class="estado" id="estado" role="status"><i></i><span>Revisando horario…</span></p>
     <h1>Madera nativa, <em>hecha a mano</em> en Panguipulli</h1>
@@ -271,6 +285,7 @@ footer b{font-family:'Fraunces',serif;color:var(--papel);font-size:20px}
     <text x="206" y="276" fill="#f4ecdf" font-size="15" font-weight="700" font-family="Karla,sans-serif">Taller Mañío</text>
   </svg></div>
 </div></section>
+<section class="foto-band" aria-label="Galería de imágenes"><div class="fb n2"><figure><img src="https://images.unsplash.com/photo-1557687790-902ede7ab58c?w=900&q=70&auto=format&fit=crop" alt="Cubiertos de madera sobre una tela" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure><figure><img src="https://images.unsplash.com/photo-1493556273165-cf5bca5cc8e6?w=900&q=70&auto=format&fit=crop" alt="Pila de troncos de madera" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure></div></section>
 </main>
 <footer><div class="w"><div><b>Mañío</b><br>Artesanía en madera · Panguipulli, Región de Los Ríos</div><div>Sitio de ejemplo creado por Werex Studio.<br>Negocio, precios y contactos ficticios.</div></div></footer>
 
