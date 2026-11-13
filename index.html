@@ -16,6 +16,7 @@
 <meta name="twitter:description" content="Ingeniero en Informática ligado a la gestión cultural y la educación artística en la Región de Los Ríos. Desarrollo web y soporte técnico freelance.">
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="René Cerpa Andrade">
 <meta property="og:title" content="René Cerpa Andrade — Curriculum Vitae">
 <meta property="og:description" content="Ingeniero en Informática ligado a la gestión cultural y la educación artística en la Región de Los Ríos. Desarrollo web y soporte técnico freelance.">
 <meta property="og:url" content="https://werex88-ops.github.io/">
@@ -38,7 +39,8 @@
     --verde:#167348;
   }
   *,*::before,*::after{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:16px}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:80px;scrollbar-gutter:stable;-webkit-tap-highlight-color:rgba(44,91,211,.18);accent-color:var(--acento)}
+  body{overflow-wrap:break-word}
   h1,h2,h3{text-wrap:balance}
   p,li{text-wrap:pretty}
   .num,.cifra b,.cifras b{font-variant-numeric:tabular-nums}
@@ -49,6 +51,7 @@
   body{margin:0;background:var(--fondo);color:var(--texto);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
   a{color:var(--acento)}
   a:focus-visible,button:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:6px}
+  .wa-form input:focus-visible,.wa-form select:focus-visible,.wa-form textarea:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
   h1,h2,h3{margin:0;color:var(--tinta);line-height:1.2}
   .serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
   .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
@@ -108,7 +111,7 @@
   /* Experiencia */
   .exp{position:relative;padding:0 0 34px 28px;border-left:2px solid var(--linea)}
   .exp:last-child{padding-bottom:0}
-  .exp::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--suave)}
+  .exp::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid #7A8497}
   .exp.actual::before{background:var(--acento);border-color:var(--acento);box-shadow:0 0 0 5px var(--acento-suave)}
   .exp .fecha,.estudio .fecha{font-variant-numeric:tabular-nums}
   .exp .fecha{font-size:.85rem;font-weight:600;color:var(--gris)}
@@ -117,7 +120,7 @@
   .exp .org{color:var(--acento);font-weight:500;font-size:.95rem;margin:0 0 10px}
   .exp ul{margin:0;padding-left:18px;color:var(--gris)}
   .exp li{margin-bottom:4px}
-  .exp li::marker{color:var(--suave)}
+  .exp li::marker{color:#7A8497}
 
   /* Servicios */
   .servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -128,6 +131,9 @@
   .servicio p{margin:0;color:var(--gris);font-size:.95rem}
   .servicio a{margin-top:auto;font-weight:600;font-size:.92rem;text-decoration:none}
   .servicio a:hover{text-decoration:underline}
+  .servicio a{padding:12px 0}
+  .marca{display:inline-block;padding:10px 0}
+  .btn-chico{min-height:44px}
   .nota-free{margin:18px 0 0;color:var(--gris);font-size:.92rem}
 
   /* Competencias */
@@ -174,7 +180,15 @@
     html{scroll-behavior:auto}
     .rv{opacity:1;transform:none;transition:none}
   }
+  @media (prefers-contrast:more){
+    :root{--gris:#3F4858;--suave:#4F596B}
+  }
+  @media (forced-colors:active){
+    a:focus-visible,button:focus-visible,.wa-form input:focus-visible,.wa-form select:focus-visible,.wa-form textarea:focus-visible{outline-color:Highlight}
+  }
   @media print{
+    h2,h3{break-after:avoid}
+    p,li{orphans:3;widows:3}
     @page{size:A4;margin:14mm}
     body{font-size:9.5pt;line-height:1.38;color:#000}
     .cifras,.ficha dl div:nth-child(n+3){display:none}
@@ -226,7 +240,7 @@
   .wa-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .wa-full{grid-column:1/-1}
   .wa-form label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px}
-  .wa-form input,.wa-form select,.wa-form textarea{width:100%;padding:12px 13px;border-radius:10px;font:inherit;font-size:.97rem}
+  .wa-form input,.wa-form select,.wa-form textarea{width:100%;min-height:44px;padding:12px 13px;border-radius:10px;font:inherit;font-size:.97rem}
   .wa-form textarea{resize:vertical}
   .wa-enviar{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:16px;background:#25D366;color:#0B2E1A;border:0;border-radius:12px;padding:15px;font-family:inherit;font-size:1rem;font-weight:700;line-height:1;cursor:pointer;transition:background .2s}
   .wa-enviar:hover{background:#1EBE5A}
@@ -246,6 +260,7 @@
   @media (max-width:920px){.contacto-grid{grid-template-columns:1fr;gap:32px}}
   @media print{.contacto-grid{display:block}.contacto-txt{display:none}.contacto-botones{flex-direction:row;gap:20px}}
 </style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
@@ -273,7 +288,7 @@
       <div>
         <span class="etiqueta"><i></i>Curriculum Vitae · Valdivia, Región de Los Ríos</span>
         <h1 class="nombre">René Bastián<br>Cerpa Andrade</h1>
-        <p class="titular">Ingeniero en Informática<span>·</span>Gestión cultural y educación artística<span>·</span>Desarrollo web y soporte TI</p>
+        <p class="titular">Ingeniero en Informática<span aria-hidden="true">·</span>Gestión cultural y educación artística<span aria-hidden="true">·</span>Desarrollo web y soporte TI</p>
         <p class="resumen">Ingeniero en Informática ligado a la gestión cultural y la educación artística en la Región de Los Ríos, y con más de 8 años ofreciendo desarrollo web y soporte técnico de forma freelance.</p>
         <div class="acciones">
           <a class="btn btn-primario" href="mailto:rene.cerpa.a@gmail.com">
@@ -546,10 +561,14 @@
 </footer>
 
 <script>
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+  }else{
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }
 </script>
 <script>
 (function(){

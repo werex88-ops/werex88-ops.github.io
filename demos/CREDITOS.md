@@ -137,3 +137,23 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 ## Barbería Tricahue
 
 - `barberia` no usa fotografías (ilustraciones SVG/CSS propias).
+
+## Taller mecánico · Newen
+
+- `taller` no usa fotografías: ilustraciones SVG/CSS propias (tablero, elevador, mapa), porque `images.unsplash.com` no es accesible desde el entorno y no se pudieron verificar fotos nuevas.
+
+## Artesanía en madera · Mañío
+
+- `madera` no usa fotografías: ilustraciones SVG/CSS propias (troncos, piezas, taller, mapa), porque `images.unsplash.com` no es accesible desde el entorno y no se pudieron verificar fotos nuevas.
+
+## Yoga y pilates · Aire Sur
+
+- `yoga` no usa fotografías: ilustraciones SVG/CSS propias (paisaje del lago, mapa, esfera de respiración), porque `images.unsplash.com` no es accesible desde el entorno (error 403) y no se pudieron verificar fotos nuevas.
+
+## Servicios profesionales · Lenga Asesorías
+
+- `contable` no usa fotografías: ilustraciones SVG/CSS propias (libro de resumen, íconos, mapa), porque `images.unsplash.com` no es accesible desde el entorno (error 403) y no se pudieron verificar fotos nuevas.
+
+## Termas y spa · Vapor Sur
+
+- `termas` no usa fotografías: ilustraciones SVG/CSS propias (escena nocturna con pozas y vapor, poza de madera, mapa), porque `images.unsplash.com` no es accesible desde el entorno (error 403) y no se pudieron verificar fotos nuevas.
