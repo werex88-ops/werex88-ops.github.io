@@ -159,6 +159,20 @@ html{scroll-behavior:auto}
 .reloj .aguja,.cinta div,.estado i{animation:none}
 .btn{transition:none}
 }
+
+.hero{isolation:isolate}
+.hero-foto{position:absolute;inset:0;z-index:-1;background:inherit;overflow:hidden}
+.hero-foto img{width:100%;height:100%;object-fit:cover;opacity:.62}
+.hero-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,8,10,.8),rgba(6,8,10,.3))}
+@media(max-width:760px){.hero-foto::after{background:rgba(6,8,10,.68)}}
+.foto-band{padding:56px 0 24px}
+.foto-band .fb{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1120px;margin:0 auto;padding:0 22px}
+.foto-band figure{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:rgba(127,127,127,.18)}
+.foto-band .fb.n2{grid-template-columns:repeat(2,1fr)}
+.foto-band img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
+.foto-band figure:hover img{transform:scale(1.04)}
+@media(max-width:640px){.foto-band .fb,.foto-band .fb.n2{grid-template-columns:1fr;gap:12px}.foto-band figure{aspect-ratio:16/10}}
+@media(prefers-reduced-motion:reduce){.foto-band img{transition:none}}
 </style>
 </head>
 <body>
@@ -171,7 +185,7 @@ html{scroll-behavior:auto}
 </div>
 </header>
 <main id="contenido">
-<section class="hero osc" id="inicio" style="padding-top:70px">
+<section class="hero osc" id="inicio" style="padding-top:70px"><div class="hero-foto" aria-hidden="true"><img src="https://images.unsplash.com/photo-1723099971299-3789db53604c?w=1800&q=70&auto=format&fit=crop" alt="" decoding="async" fetchpriority="high" onerror="this.parentNode.remove()"></div>
 <div class="w">
 <div>
 <span class="estado" id="estado" role="status"><i></i><span>Calculando horario…</span></span>
@@ -334,6 +348,7 @@ html{scroll-behavior:auto}
 <p style="margin:24px auto 0;font-size:15px">WhatsApp: +56 9 XXXX XXXX (número de ejemplo)</p>
 </div>
 </section>
+<section class="foto-band" aria-label="Galería de imágenes"><div class="fb n2"><figure><img src="https://images.unsplash.com/photo-1717068341695-9d33ffb66968?w=900&q=70&auto=format&fit=crop" alt="Motor de un auto con el capó abierto" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure><figure><img src="https://images.unsplash.com/photo-1624905917904-4afb5105b5ae?w=900&q=70&auto=format&fit=crop" alt="Herramientas manuales sobre una mesa de madera" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure></div></section>
 </main>
 <footer class="pie"><div class="w"><span>© 2026 Taller Newen · La Unión · Negocio ficticio de ejemplo</span><span>Diseño: Werex Studio</span></div></footer>
 

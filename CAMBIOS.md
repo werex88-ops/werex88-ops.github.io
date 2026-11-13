@@ -1,5 +1,20 @@
 # Registro de cambios
 
+## 2026-11-13 (a pedido de René: fotos reales en las demos)
+
+Esta rama parte desde `main` (ya no hay solicitudes abiertas).
+
+- Nueva instrucción de René: no crear páginas nuevas y concentrarse en las existentes, reemplazando ilustraciones por fotos reales gratuitas.
+- Se agregaron fotos de Unsplash (licencia libre, uso comercial) a 10 demos que no tenían: termas, hostal, heladería, taller, ferretería, madera, yoga, contable, barbería y fotografía. Cada una tiene portada con foto de fondo (excepto yoga, que solo recibe la galería para no alterar su portada) y una franja de galería con 2 o 3 imágenes. Créditos en `demos/CREDITOS.md`.
+- Las fotos se enlazan directo desde `images.unsplash.com` porque el entorno automático no puede descargarlas (error 403) ni abrirlas; si una no carga, se oculta sola y la página queda con sus ilustraciones.
+- Validación: 25 páginas sin desplazamiento horizontal, errores de JavaScript ni 404 locales.
+
+### Sugerencias pendientes para René
+- Revisa en el navegador que todas las fotos carguen y se vean bien; no pude verlas desde aquí. Si alguna no te gusta, dime cuál y la cambio.
+- La portada de Vapor Sur usa una foto de aguas termales de EE. UU. y la de Radal una casa de madera de Finlandia; son ilustrativas, conviene cambiarlas por fotos del sur de Chile cuando tengas las tuyas.
+- Cuando tengas acceso a Unsplash desde un navegador, conviene descargar las fotos a cada demo para que la página no dependa de un sitio externo.
+- Quedan sin foto real: centro cultural y navidad usan imágenes propias o antiguas; el portafolio sigue pendiente de rediseño (carrusel).
+
 ## 2026-11-12 (mejora diaria: demo de termas y spa)
 
 Esta rama parte desde la del 11 de noviembre (solicitud #38, aún abierta, que a su vez incluye las #37, #36, #35, #34, #33, #32 y #31), para no duplicar trabajo ni generar conflictos.

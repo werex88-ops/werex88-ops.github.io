@@ -157,3 +157,48 @@ Todas las fotografías provienen de Unsplash y se usan bajo la Licencia Unsplash
 ## Termas y spa · Vapor Sur
 
 - `termas` no usa fotografías: ilustraciones SVG/CSS propias (escena nocturna con pozas y vapor, poza de madera, mapa), porque `images.unsplash.com` no es accesible desde el entorno (error 403) y no se pudieron verificar fotos nuevas.
+
+## Fotografías reales agregadas el 13-11-2026 (enlazadas desde Unsplash; identificadores obtenidos de la página de cada foto)
+
+Se muestran como imagen de fondo de la portada y en una franja de galería; si una imagen no carga, la página sigue funcionando con sus ilustraciones. Las fotos no se pueden descargar desde el entorno automático (error 403), por eso se enlazan directamente.
+
+### termas
+- https://images.unsplash.com/photo-1642660038117-9bca76129d57 · autor: Mariola Grobelska · https://unsplash.com/photos/PAQg3VkM0pM
+- https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2 · autor: engin akyurt · https://unsplash.com/photos/ZbzYDboN7fg
+- https://images.unsplash.com/photo-1774887679523-dee22923bee8 · autor: Adrien Olichon · https://unsplash.com/photos/V8U47CLKayU
+### hostal
+- https://images.unsplash.com/photo-1722286542992-47268b29aa6b · autor: Andrea Davis · https://unsplash.com/photos/3H7lqS4z5dA
+- https://images.unsplash.com/photo-1783628417381-f6be9614f208 · autor: Clay Banks · https://unsplash.com/photos/b0y9W2jPoSI
+- https://images.unsplash.com/photo-1603696137071-dfab9a4626f2 · autor: Secret Travel Guide · https://unsplash.com/photos/POQCPYyjllU
+### heladeria
+- https://images.unsplash.com/photo-1627373717516-0f4bb24c487d · autor: mae black · https://unsplash.com/photos/0KvbMRMw-wM
+- https://images.unsplash.com/photo-1597249536924-b226b1a1259d · autor: Kelsey Curtis · https://unsplash.com/photos/dIs-MqalSSE
+- https://images.unsplash.com/photo-1744303858617-3c8b736af835 · autor: Kristina C · https://unsplash.com/photos/FUSIZFIPExk
+### taller
+- https://images.unsplash.com/photo-1723099971299-3789db53604c · autor: KC Shum · https://unsplash.com/photos/Hv_gKPOXmwE
+- https://images.unsplash.com/photo-1717068341695-9d33ffb66968 · autor: Cemrecan Yurtman · https://unsplash.com/photos/sk6fOQYIO1o
+- https://images.unsplash.com/photo-1624905917904-4afb5105b5ae · autor: Zoe Richardson · https://unsplash.com/photos/VW6gnHHZIjg
+### ferreteria
+- https://images.unsplash.com/photo-1499744349893-0c6de53516e6 · autor: Ricky Kharawala · https://unsplash.com/photos/4dVDBMAho8c
+- https://images.unsplash.com/photo-1670940094923-6f75e4dc5c3a · autor: Astrid Schaffner · https://unsplash.com/photos/xqKYEM_INNc
+- https://images.unsplash.com/photo-1702195789139-4897ff9b0083 · autor: Anna Evans · https://unsplash.com/photos/urjasxHT9Ck
+### madera
+- https://images.unsplash.com/photo-1455297463052-94abc38ba022 · autor: Roman Kraft · https://unsplash.com/photos/HNtcFpXeq4c
+- https://images.unsplash.com/photo-1557687790-902ede7ab58c · autor: Maria Ilves · https://unsplash.com/photos/XXRyh-ybxDs
+- https://images.unsplash.com/photo-1493556273165-cf5bca5cc8e6 · autor: Mildly Useful · https://unsplash.com/photos/TeeK3XdZd54
+### yoga
+- https://images.unsplash.com/photo-1761971975962-9cc397e2ba2a · autor: eran design · https://unsplash.com/photos/oaJaBFVMUQ4
+- https://images.unsplash.com/photo-1761971975651-4fdd4abc200f · autor: eran design · https://unsplash.com/photos/A2gCxqX9bsI
+- https://images.unsplash.com/photo-1784655597870-ac76256865a9 · autor: Paul Wuthrich · https://unsplash.com/photos/MgCn9JWFmZY
+### contable
+- https://images.unsplash.com/photo-1762831063004-bbd3ea38ba3a · autor: Cht Gsml · https://unsplash.com/photos/QfQW294I8sQ
+- https://images.unsplash.com/photo-1642543492563-173752101d4c · autor: Kelly Sikkema · https://unsplash.com/photos/Lo6OIm82gTs
+- https://images.unsplash.com/photo-1544396821-4dd40b938ad3 · autor: Viktor Talashuk · https://unsplash.com/photos/05HLFQu8bFw
+### barberia
+- https://images.unsplash.com/photo-1792735207211-a96ca7e6ea77 · autor: Waves Barbershop · https://unsplash.com/photos/QmH_pfIuojQ
+- https://images.unsplash.com/photo-1678356163587-6bb3afb89679 · autor: Federico Tonini · https://unsplash.com/photos/5WttPbwX73c
+- https://images.unsplash.com/photo-1673350963924-cb4267d9b6eb · autor: Pranay J · https://unsplash.com/photos/TH54a0VhDpM
+### fotografia
+- https://images.unsplash.com/photo-1757845366142-e5929f71c7bb · autor: Jakub Żerdzicki · https://unsplash.com/photos/6AWkFbmbMxU
+- https://images.unsplash.com/photo-1778225242712-26889373ea6e · autor: leannk. · https://unsplash.com/photos/Mfc3L2pRqGM
+- https://images.unsplash.com/photo-1684419318265-1aacbcc3db67 · autor: Florian Delée · https://unsplash.com/photos/6TQX-kfMPPY
