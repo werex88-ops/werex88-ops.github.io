@@ -1,5 +1,36 @@
 # Registro de cambios
 
+## 2026-11-13 (segunda pasada: portafolio vistoso)
+
+Esta rama parte desde `main` (no había solicitudes abiertas).
+
+### Referencias de competencia
+- La búsqueda de portafolios de diseñadores chilenos devolvió sobre todo directorios (2x3.cl, Behance) y artículos de tendencias de portafolios; no abrí ninguno a fondo. Idea tomada de esa lectura: mostrar pocos proyectos destacados primero y el resto después con filtros, y un llamado a contacto repetido. No se copió texto, imágenes ni código. (Esta pasada tuvo poca investigación; conviene reforzarla mañana con 2 o 3 sitios de agencias concretos.)
+
+### Portafolio (`demos/index.html`) — rediseño completo
+- Portada con degradados animados, titular con color y cinta amarilla de rubros en movimiento.
+- Cifras animadas (23 diseños, 6 rubros, 100 % celular, menos de 24 h).
+- Carrusel de 6 proyectos destacados (Cabañas Alerce Dormido, Vapor Sur, Mawün Kayak, Kaiyō Sushi, Maqui, Ribera): botones, puntos, teclado (flechas), deslizar en móvil, autoavance que se pausa con cursor, foco o `prefers-reduced-motion`.
+- Filtros por rubro (turismo, comida, tiendas, servicios, bienestar, cultura) sobre las 23 tarjetas, con brillo que sigue al cursor y color propio por proyecto.
+- Nueva sección "Cómo trabajo" (4 pasos); se mantienen soporte técnico, "Qué incluye", formulario de WhatsApp y enlace al currículum.
+- Peso: 53 KB (límite 90 KB).
+
+### Currículum (`index.html`)
+Cuatro mejoras visibles, sin tocar texto ni secciones: (1) portada con luces de color y nombre con degradado; (2) barra de progreso de lectura; (3) línea de tiempo con punto pulsante en el cargo actual y efecto al pasar el cursor; (4) tarjetas de servicios, competencias y estudios con color y microinteracciones. Impresión A4 sin cambios (los adornos se ocultan). Todo respeta `prefers-reduced-motion`.
+
+### Demos tocadas
+- `cerveceria/`: la portada y una foto de la galería eran de una cabaña; ahora son cerveza tirada y un vaso recién servido.
+- `kayak/`: una foto de la galería cambia por un muelle en un lago de la Patagonia chilena al amanecer. Créditos en `CREDITOS.md`.
+- No alcancé a reescribir textos ni regenerar capturas de otras demos en esta pasada.
+
+### Validación
+25 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, errores de JavaScript, 404 locales ni anclas rotas. Las fotos externas no se pudieron ver desde el entorno (bloqueadas).
+
+### Sugerencias para René
+- Revisa en el navegador el carrusel y los filtros del portafolio, y que las fuentes de Google carguen bien.
+- Pendiente: textos más reales y fotos nuevas en veterinaria, panadería y las demás demos; hay otras demos con fotos que quizá no calzan con el rubro (revisar).
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles si quieres; no se inventaron datos.
+
 ## 2026-11-13 (a pedido de René: fotos reales en las demos)
 
 Esta rama parte desde `main` (ya no hay solicitudes abiertas).
