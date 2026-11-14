@@ -637,5 +637,50 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
 <script>
 (function(){var b=document.getElementById('progreso');if(!b)return;var t=false;function f(){t=false;var h=document.documentElement.scrollHeight-innerHeight;b.style.transform='scaleX('+(h>0?Math.min(scrollY/h,1):0)+')';}addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(f);}},{passive:true});f();})();
 </script>
+
+<style>
+  /* 14-nov: mejoras visuales (solo pantalla) */
+  .ficha{--fx:50%;--fy:0%}
+  .ficha::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(380px circle at var(--fx) var(--fy),rgba(255,255,255,.55),transparent 55%);opacity:0;transition:opacity .3s}
+  .ficha:hover::after{opacity:.5}
+  .sec-cab h2{position:relative;display:inline-block}
+  .sec-cab h2::after{content:"";position:absolute;left:0;bottom:-6px;height:5px;width:0;border-radius:3px;background:linear-gradient(90deg,var(--acento),#ffb347);transition:width .9s cubic-bezier(.2,.7,.2,1) .2s}
+  .sec-cab.visto h2::after{width:56%}
+  .arriba{position:fixed;left:16px;bottom:16px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--tinta);color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 26px rgba(20,33,61,.35);opacity:0;transform:translateY(80px);transition:opacity .35s,transform .35s}
+  .arriba.ver{opacity:1;transform:none}
+  .arriba svg{width:20px;height:20px}
+  .arriba:focus-visible{outline:3px solid #ffb347;outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){.sec-cab h2::after{transition:none;width:56%}.arriba{transition:none}}
+  @media print{.arriba,.ficha::after,.sec-cab h2::after{display:none!important}}
+</style>
+
+<button class="arriba" id="arriba" type="button" aria-label="Volver al inicio de la página"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script>
+(function(){
+  var red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // 1) cifras que cuentan hasta su valor
+  var cs=document.querySelectorAll('.cifras b');
+  if(!red&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;io.unobserve(e.target);
+      var el=e.target,t=el.textContent,m=t.match(/\d+/);if(!m)return;
+      var n=+m[0],pre=t.slice(0,m.index),suf=t.slice(m.index+m[0].length),t0=null;
+      (function paso(ts){t0=t0||ts;var p=Math.min((ts-t0)/1100,1),v=Math.round(n*(1-Math.pow(1-p,3)));
+        el.textContent=pre+v+suf;if(p<1)requestAnimationFrame(paso);else el.textContent=t})(performance.now());
+    })},{threshold:.6});
+    cs.forEach(function(c){io.observe(c)});
+  }
+  // 2) brillo que sigue al cursor en la ficha
+  var fi=document.querySelector('.ficha');
+  if(fi&&!red&&matchMedia('(hover:hover)').matches){fi.addEventListener('mousemove',function(e){var r=fi.getBoundingClientRect();fi.style.setProperty('--fx',(e.clientX-r.left)+'px');fi.style.setProperty('--fy',(e.clientY-r.top)+'px')})}
+  // 3) subrayado de títulos al entrar en pantalla
+  var cab=document.querySelectorAll('.sec-cab');
+  if('IntersectionObserver' in window){var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io2.unobserve(e.target)}})},{threshold:.5});cab.forEach(function(c){io2.observe(c)})}else{cab.forEach(function(c){c.classList.add('visto')})}
+  // 4) botón volver arriba
+  var b=document.getElementById('arriba');
+  addEventListener('scroll',function(){b.classList.toggle('ver',scrollY>900)},{passive:true});
+  b.addEventListener('click',function(){scrollTo({top:0,behavior:red?'auto':'smooth'});var h=document.getElementById('inicio');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}});
+})();
+</script>
 </body>
 </html>
