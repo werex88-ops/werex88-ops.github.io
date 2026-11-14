@@ -1,5 +1,36 @@
 # Registro de cambios
 
+## 2026-11-14 (mejora diaria)
+
+Esta rama parte desde `main` (no había solicitudes abiertas).
+
+### Referencias de competencia
+- Reportaje de Diario Estrategia sobre una panadería de masa madre en Valdivia (Casa Moulin): destaca el origen concreto (vender primero a vecinos), productos con nombre propio y respaldo real. Idea aplicada a Horno Pellín: preguntas concretas (anticipación, duración, despacho, opciones sin lácteos). Los directorios de veterinarias de Los Ríos (mercantil.com, AgendaPro) son solo fichas; no aportaron estructura. No se copió texto ni imágenes.
+- Poca investigación de agencias hoy; sigue pendiente revisar 2 o 3 portafolios de agencias para el portafolio.
+
+### Portafolio (`demos/index.html`)
+- Nueva sección "Preguntas antes de escribirme" (6 respuestas, sin inventar precios: el valor se informa por WhatsApp antes de empezar).
+- Botón flotante "Escríbeme →" que aparece al bajar y se oculta cuando ya estás en el formulario.
+- Peso: 57 KB (límite 90 KB).
+
+### Currículum (`index.html`)
+Cuatro mejoras visibles, sin tocar texto ni secciones: (1) cifras de la portada que cuentan hasta su valor; (2) brillo que sigue al cursor en la ficha del cargo actual; (3) subrayado de color que se dibuja bajo cada título de sección; (4) botón "volver arriba". Todo respeta `prefers-reduced-motion` y se oculta al imprimir. Peso: 44 KB.
+
+### Demos tocadas (4)
+- `panaderia/` (Horno Pellín): foto real de panes de masa madre en la portada y una franja de galería con dos fotos; sección de preguntas frecuentes.
+- `veterinaria/` (Weñi): sección "Cómo es la consulta" con foto real de revisión veterinaria y tres pasos concretos.
+- `centro-cultural/` (Ribera): preguntas frecuentes (entrada, accesibilidad, niños, fotos, estacionamiento).
+- `navidad/`: titular de portada más concreto (comunas, visita sin costo, montaje en una tarde).
+- No regeneré capturas `demos/img/*.jpg`: los cambios son secciones nuevas, no la portada.
+
+### Validación
+25 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, errores de JavaScript, 404 locales ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Las fotos de Unsplash no se pueden descargar desde el entorno (403): se enlazan directo y se ocultan si no cargan; las probé con una imagen de reemplazo.
+
+### Sugerencias para René
+- Revisa en el navegador que las 3 fotos nuevas carguen y calcen con el rubro.
+- Próximas demos a trabajar: sushi, gimnasio, cafetería, velas, plantas, mascotas, cabañas, kayak.
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles; no se inventaron datos.
+
 ## 2026-11-13 (segunda pasada: portafolio vistoso)
 
 Esta rama parte desde `main` (no había solicitudes abiertas).

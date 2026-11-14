@@ -208,3 +208,8 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `cerveceria` portada (cerveza tirada desde un grifo) — https://images.unsplash.com/photo-1766589220696-4c7d1654d476
 - `cerveceria` galería (vaso de cerveza) — https://images.unsplash.com/photo-1608270586620-248524c67de9
 - `kayak` galería (muelle de madera en lago de la Patagonia chilena al amanecer, foto de martin bennie) — https://images.unsplash.com/photo-1782383618703-5117c444883b
+
+## Añadidas el 14-11-2026 (enlazadas directo; licencia Unsplash gratuita, verificadas en la página de cada foto)
+- `panaderia` portada y galería (surtido de panes de masa madre en vitrina) — https://images.unsplash.com/photo-1774669081553-4ef841520c05
+- `panaderia` galería (panes recién horneados) — https://images.unsplash.com/photo-1551888761-382cd30b5da6
+- `veterinaria` sección "Cómo es la consulta" (gatito blanco en revisión veterinaria) — https://images.unsplash.com/photo-1725409796872-8b41e8eca929

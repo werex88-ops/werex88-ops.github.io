@@ -193,6 +193,20 @@ footer .contenedor{display:flex;justify-content:space-between;gap:20px;flex-wrap
   /* Foco visible para teclado (doble anillo, legible sobre cualquier fondo) */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
 
+
+.faq-p{border-top:1px solid var(--linea);padding:90px 0 20px;display:grid;grid-template-columns:1fr 1.5fr;gap:64px}
+.faq-p h2{font-size:clamp(38px,4.6vw,62px);line-height:1;letter-spacing:-.04em;font-weight:600}
+.faq-p h2 .serif{font-style:italic;color:var(--menta);letter-spacing:-.01em}
+.faq-p details{border-bottom:1px solid var(--linea)}
+.faq-p summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font-size:19px;font-weight:600}
+.faq-p summary::-webkit-details-marker{display:none}
+.faq-p summary::after{content:'+';color:var(--acento);font-size:28px;line-height:1;transition:transform .3s}
+.faq-p details[open] summary::after{transform:rotate(45deg)}
+.faq-p details p{color:var(--gris);padding:0 0 22px;max-width:60ch}
+.flota{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--acento);color:#140c08;font-weight:700;padding:13px 20px;border-radius:999px;box-shadow:0 12px 30px -8px var(--acento);transform:translateY(90px);opacity:0;transition:transform .4s,opacity .4s;text-decoration:none}
+.flota.ver{transform:none;opacity:1}.flota:hover{filter:brightness(1.1)}
+@media(max-width:1000px){.faq-p{grid-template-columns:1fr;gap:28px}.flota{bottom:64px}}
+@media(prefers-reduced-motion:reduce){.flota{transition:none}}
 </style>
 </head>
 <body>
@@ -330,6 +344,18 @@ footer .contenedor{display:flex;justify-content:space-between;gap:20px;flex-wrap
     </div>
   </section>
 
+  <section class="faq-p" id="preguntas">
+    <div class="rv"><h2>Preguntas <span class="serif">antes de escribirme</span></h2></div>
+    <div class="rv">
+      <details><summary>¿Cuánto cuesta una página?</summary><p>Depende de qué necesite tu negocio: no es lo mismo una página de contacto que una con reservas o pedidos. Te doy el valor por WhatsApp antes de empezar, con todo detallado y sin cobros ocultos.</p></details>
+      <details><summary>¿Cuánto se demora?</summary><p>La propuesta funcionando te la muestro en pocos días. Después ajustamos textos, fotos y precios hasta que quedes conforme, y la dejo en línea.</p></details>
+      <details><summary>¿Tengo que tener fotos y textos listos?</summary><p>No. Con lo que me cuentes de tu negocio te ayudo a redactar los textos. Si tienes fotos propias, mejor; si no, vemos cómo conseguirlas.</p></details>
+      <details><summary>¿Sirve si mis clientes me buscan desde el celular?</summary><p>Todas las páginas se diseñan primero para el celular y después para el computador. Las demos de este portafolio las puedes abrir desde tu teléfono para comprobarlo.</p></details>
+      <details><summary>¿Y si después necesito cambiar algo?</summary><p>Te enseño a cambiar lo básico, como horarios y precios. Para lo demás me escribes y lo vemos.</p></details>
+      <details><summary>¿Las demos son negocios reales?</summary><p>No, son propuestas de ejemplo con nombres y datos ficticios. Sirven para que veas cómo se vería y funcionaría la tuya.</p></details>
+    </div>
+  </section>
+
   <section class="contacto rv" id="contacto">
     <h2>¿Tu negocio es <span class="serif">el próximo?</span></h2>
     <p>Cuéntame qué necesitas y te respondo por WhatsApp en menos de 24 horas. También puedes escribirme a <a href="mailto:rene.cerpa.a@gmail.com" style="text-decoration:underline">rene.cerpa.a@gmail.com</a>.</p>
@@ -439,6 +465,8 @@ footer .contenedor{display:flex;justify-content:space-between;gap:20px;flex-wrap
 })();
   document.querySelectorAll('[data-necesito]').forEach(function(a){a.addEventListener('click',function(){var sel=document.getElementById('wa-necesito');if(sel)sel.value=a.dataset.necesito;});});
 </script>
+<a class="flota" id="flota" href="#contacto" aria-label="Ir al formulario de contacto">Escríbeme →</a>
+<script>(function(){var b=document.getElementById("flota"),c=document.getElementById("contacto");function f(){var y=window.scrollY>600,r=c.getBoundingClientRect();b.classList.toggle("ver",y&&!(r.top<innerHeight&&r.bottom>0))}addEventListener("scroll",f,{passive:true});f()})();</script>
 </body>
 </html>
 
