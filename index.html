@@ -259,6 +259,25 @@
   .wa-claro .wa-nota{color:var(--gris)}
   @media (max-width:920px){.contacto-grid{grid-template-columns:1fr;gap:32px}}
   @media print{.contacto-grid{display:block}.contacto-txt{display:none}.contacto-botones{flex-direction:row;gap:20px}}
+/* 15-11: cinta, anillos, numeración grande, inclinación de ficha */
+header.hero{position:relative;overflow:hidden}
+header.hero .wrap{position:relative;z-index:1}
+.anillos{position:absolute;inset:0;pointer-events:none;z-index:0}
+.anillos i{position:absolute;border-radius:50%;border:2px solid var(--acento);opacity:.16;animation:flota 14s ease-in-out infinite}
+.anillos i:nth-child(1){width:220px;height:220px;right:6%;top:-70px}
+.anillos i:nth-child(2){width:120px;height:120px;right:34%;bottom:30px;border-color:#E0A21B;opacity:.3;animation-delay:-5s}
+.anillos i:nth-child(3){width:60px;height:60px;left:3%;top:46%;border-color:#1E9E78;opacity:.35;animation-delay:-9s}
+@keyframes flota{50%{transform:translate(0,-22px) scale(1.06)}}
+.cinta{background:var(--tinta);color:#fff;overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+.cinta div{display:inline-flex;gap:34px;padding-right:34px;animation:cinta 38s linear infinite}
+.cinta span::after{content:"✦";margin-left:34px;color:#E0A21B}
+.cinta div:hover{animation-play-state:paused}
+@keyframes cinta{to{transform:translateX(-50%)}}
+.sec-cab .num{font-size:3.6rem;font-weight:800;line-height:1;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px var(--acento);display:block;margin-bottom:6px}
+.ficha{transform-style:preserve-3d;will-change:transform}
+@media (max-width:700px){.sec-cab .num{font-size:2.6rem}}
+@media (prefers-reduced-motion:reduce){.anillos i,.cinta div{animation:none}}
+@media print{.anillos,.cinta{display:none!important}.sec-cab .num{font-size:.8rem;-webkit-text-stroke:0;color:var(--acento);display:inline}}
 </style>
 <style>
 /* 13-11-2026: identidad más viva (solo pantalla) */
@@ -316,6 +335,7 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
 </nav>
 
 <header class="hero" id="inicio">
+  <div class="anillos" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -349,7 +369,7 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
       <div><b>+8 años</b><span>de servicios informáticos freelance</span></div>
     </div>
   </div>
-</header>
+<div class="cinta" aria-hidden="true"><div><span>Desarrollo web</span><span>Soporte TI</span><span>Gestión cultural</span><span>Educación artística</span><span>Región de Los Ríos</span><span>Valdivia</span><span>Desarrollo web</span><span>Soporte TI</span><span>Gestión cultural</span><span>Educación artística</span><span>Región de Los Ríos</span><span>Valdivia</span><span>Desarrollo web</span><span>Soporte TI</span><span>Gestión cultural</span><span>Educación artística</span><span>Región de Los Ríos</span><span>Valdivia</span><span>Desarrollo web</span><span>Soporte TI</span><span>Gestión cultural</span><span>Educación artística</span><span>Región de Los Ríos</span><span>Valdivia</span></div></div>
 
 <main id="contenido" tabindex="-1">
 <section id="perfil">
@@ -680,6 +700,12 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
   var b=document.getElementById('arriba');
   addEventListener('scroll',function(){b.classList.toggle('ver',scrollY>900)},{passive:true});
   b.addEventListener('click',function(){scrollTo({top:0,behavior:red?'auto':'smooth'});var h=document.getElementById('inicio');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}});
+  // 5) inclinación suave de la ficha con el cursor
+  var fi=document.querySelector('.ficha');
+  if(fi&&!red&&matchMedia('(hover:hover)').matches){
+    fi.addEventListener('mousemove',function(e){var r=fi.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;fi.style.transform='perspective(900px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg)'});
+    fi.addEventListener('mouseleave',function(){fi.style.transform=''});
+  }
 })();
 </script>
 </body>

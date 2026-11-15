@@ -1,5 +1,38 @@
 # Registro de cambios
 
+## 2026-11-15 (mejora diaria)
+
+Esta rama parte desde la del 14 de noviembre (solicitud #42, aún abierta), para no duplicar trabajo ni generar conflictos.
+
+### Referencias de competencia
+- LAB NAVE (labnave.com/portafolio): portafolio de agencia con filtros por industria y por capacidad, buscador por marca y contador de proyectos; cada tarjeta lleva una frase de objetivo, no una descripción larga. Idea aplicada: buscador por texto y contador "Mostrando X de 23" en el portafolio. No se copió texto ni código.
+- Búsqueda de cabañas en Futrono, Panguipulli y Pucón: solo aparecieron fichas de Airbnb, Booking y Hotels.com; no abrí ninguna. Idea tomada de esas fichas: responder en preguntas concretas cuándo conviene ir y cómo se calefaccionan las cabañas. Poca investigación hoy; pendiente revisar sitios propios de cabañas.
+
+### Portafolio (`demos/index.html`)
+- Buscador por nombre, rubro o comuna (ignora tildes), combinado con los filtros por rubro.
+- Contador "Mostrando X de 23 diseños".
+- Botón "Sorpréndeme": abre una demo al azar entre las visibles.
+- Peso: 59 KB (límite 90 KB).
+
+### Currículum (`index.html`)
+Cuatro mejoras visibles, sin tocar el contenido: (1) anillos de color que flotan en la portada; (2) cinta oscura en movimiento con las áreas de trabajo (se pausa con el cursor); (3) números de sección grandes, con contorno; (4) la ficha del cargo actual se inclina suavemente con el cursor. Todo respeta `prefers-reduced-motion` y se oculta al imprimir (la impresión A4 usa de nuevo el número pequeño). Peso: 47 KB.
+
+### Demos tocadas (4)
+- `kayak/` (Mawün): sección "Un sábado en el muelle, paso a paso" con horarios y foto real de un muelle en Llifén, Lago Ranco; 3 preguntas nuevas (agua fría, celular, forma de pago).
+- `cabanas/` (Alerce Dormido): sección "El bosque cambia cada estación" (cuándo venir, según el mes) y 2 preguntas nuevas (calefacción, desayuno de campo).
+- `velas/` (Luz de Cera): sección "Tres gestos para cuidar tu vela" y preguntas frecuentes (despacho, regalo, mascotas, reciclaje del vaso, pedidos para empresas).
+- `plantas/` (Raíz Verde): sección "¿Cuánta luz tiene tu casa?" con tres tarjetas de color y 2 preguntas nuevas (riego y trasplante).
+- No regeneré capturas `demos/img/*.jpg`: son secciones nuevas, no cambian la portada.
+
+### Validación
+25 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, errores de JavaScript ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Las fotos externas no cargan desde el entorno; el cuadro de la foto nueva de kayak queda de color azul si no carga. Todas las demos pesan menos de 60 KB.
+
+### Sugerencias para René
+- Revisa en el navegador que la foto del muelle de Llifén cargue y se vea bien (kayak).
+- Los horarios, precios (saco de leña $6.000) y condiciones nuevos (pago al llegar, pedidos desde 20 unidades) son ejemplos; ajústalos si los usas con un cliente real.
+- Próximas demos: sushi, gimnasio, cafetería, mascotas, hostal, termas, taller.
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles; no se inventaron datos.
+
 ## 2026-11-14 (mejora diaria)
 
 Esta rama parte desde `main` (no había solicitudes abiertas).

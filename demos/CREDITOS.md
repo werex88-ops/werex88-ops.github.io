@@ -213,3 +213,4 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `panaderia` portada y galería (surtido de panes de masa madre en vitrina) — https://images.unsplash.com/photo-1774669081553-4ef841520c05
 - `panaderia` galería (panes recién horneados) — https://images.unsplash.com/photo-1551888761-382cd30b5da6
 - `veterinaria` sección "Cómo es la consulta" (gatito blanco en revisión veterinaria) — https://images.unsplash.com/photo-1725409796872-8b41e8eca929
+- `kayak/index.html` (sección "Un sábado en el muelle", enlace directo) — https://images.unsplash.com/photo-1584823348241-c917a9befbfa — Camilo Pinaud (@calepinaud), tomada en Llifén, Futrono, Región de Los Ríos
