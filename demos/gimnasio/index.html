@@ -170,6 +170,26 @@
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
   /* Foco visible para teclado (doble anillo, legible sobre cualquier fondo) */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
+
+  .semana{padding:100px 0;background:var(--grafito);border-top:1px solid var(--borde)}
+  .sem-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .pasos{list-style:none;margin-top:28px;counter-reset:p}
+  .pasos li{counter-increment:p;display:grid;grid-template-columns:48px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--borde)}
+  .pasos li::before{content:counter(p);font-family:'Anton',sans-serif;font-size:34px;line-height:1;color:var(--acido)}
+  .pasos b{display:block;font-size:16px}.pasos span{color:var(--gris);font-size:14px}
+  .sem-form{background:var(--negro);border:1px solid var(--borde);padding:28px;display:grid;gap:14px}
+  .sem-form label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);display:grid;gap:6px}
+  .sem-form input,.sem-form select{background:var(--grafito);border:1px solid var(--borde);color:var(--blanco);padding:13px 12px;font:inherit;font-size:15px;border-radius:0}
+  .sem-form input:focus-visible,.sem-form select:focus-visible{outline:2px solid var(--acido)}
+  .sem-form small{color:var(--gris);font-size:12px}
+  .faq details{border-bottom:1px solid var(--borde);padding:20px 0}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:17px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--acido);font-size:24px;line-height:1}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{color:var(--gris);margin-top:10px;max-width:62ch}
+  .faq summary:focus-visible{outline:2px solid var(--acido);outline-offset:4px}
+  @media(max-width:860px){.sem-g{grid-template-columns:1fr;gap:36px}.semana{padding:70px 0}}
 </style>
 <style>html{overflow-x:clip}</style>
 </head>
@@ -193,10 +213,10 @@
 <header class="hero">
   <img src="img/hero.jpg" alt="Atleta preparando un levantamiento con barra en un gimnasio oscuro">
   <div class="contenedor">
-    <div class="chip">Abierto 24/7 · Calle Industrial 450</div>
+    <div class="chip">Abierto 24/7 · Calle Industrial 450, Valdivia</div>
     <h1 class="display"><span class="linea">Sin excusas.</span><span class="linea"><span class="hueco">Solo</span> <span class="acido">forja.</span></span></h1>
     <div class="hero-pie">
-      <p>Equipamiento de competición, coaches certificados y una comunidad que no te deja rendirte.</p>
+      <p>Fierros de verdad, clases con cupo limitado y gente que te saluda por tu nombre. Parte con una semana gratis.</p>
       <div class="acciones">
         <a class="btn" href="#planes">Primera semana gratis →</a>
         <a class="btn contorno" href="#horario">Ver clases</a>
@@ -223,11 +243,11 @@
   <div class="contenedor">
     <div class="cabecera rv">
       <div><div class="chip">Instalaciones</div><h2 class="display">Hecho para <span class="acido">sudar</span></h2></div>
-      <p>Una bodega industrial de 1.200 m² transformada en el espacio de entrenamiento más completo de la ciudad.</p>
+      <p>Una ex bodega de 1.200 m² con piso de goma, buena ventilación y calefacción para los meses de lluvia.</p>
     </div>
     <div class="instalaciones rv">
       <figure><img src="img/pesas.jpg" alt="Rack de mancuernas en sala de musculación" loading="lazy"><figcaption><b>Zona de fuerza</b><span>Mancuernas hasta 60 kg, 8 racks y plataformas olímpicas.</span></figcaption></figure>
-      <figure><img src="img/sala.jpg" alt="Sala de cardio y máquinas" loading="lazy"><figcaption><b>Cardio &amp; máquinas</b><span>Equipamiento de última generación.</span></figcaption></figure>
+      <figure><img src="img/sala.jpg" alt="Sala de cardio y máquinas" loading="lazy"><figcaption><b>Cardio &amp; máquinas</b><span>Cintas, bicicletas y remos, todos con pantalla.</span></figcaption></figure>
       <figure><img src="img/cuerdas.jpg" alt="Atleta entrenando con cuerdas de batalla" loading="lazy"><figcaption><b>Box funcional</b><span>Cuerdas, trineos y 40 m de pista.</span></figcaption></figure>
     </div>
   </div>
@@ -245,7 +265,7 @@
         <div class="valor">$19.990 <small>/ mes</small></div>
         <p class="desc">Para quienes entrenan por su cuenta.</p>
         <ul><li>Sala de musculación y cardio</li><li>Horario 6:00 – 22:00</li><li>Evaluación física inicial</li></ul>
-        <a class="btn contorno" href="#">Elegir Básico</a>
+        <a class="btn contorno" href="#semana" data-plan="Básico">Elegir Básico</a>
       </div>
       <div class="plan top">
         <span class="sello">Más elegido</span>
@@ -253,14 +273,14 @@
         <div class="valor">$29.990 <small>/ mes</small></div>
         <p class="desc">Todo el gimnasio, a cualquier hora.</p>
         <ul><li>Acceso 24/7</li><li>Todas las clases grupales</li><li>Plan de entrenamiento mensual</li><li>Lockers y duchas</li></ul>
-        <a class="btn" href="#">Elegir Full</a>
+        <a class="btn" href="#semana" data-plan="Full">Elegir Full</a>
       </div>
       <div class="plan">
         <h3>Élite</h3>
         <div class="valor">$54.990 <small>/ mes</small></div>
         <p class="desc">Acompañamiento personalizado total.</p>
         <ul><li>Todo lo del plan Full</li><li>8 sesiones con coach personal</li><li>Asesoría nutricional</li><li>Toalla y bebida isotónica</li></ul>
-        <a class="btn contorno" href="#">Elegir Élite</a>
+        <a class="btn contorno" href="#semana" data-plan="Élite">Elegir Élite</a>
       </div>
     </div>
   </div>
@@ -281,7 +301,7 @@
   <div class="contenedor">
     <div class="cabecera rv">
       <div><div class="chip">Equipo</div><h2 class="display">Nuestros <span class="acido">coaches</span></h2></div>
-      <p>Certificados, exigentes y siempre de tu lado.</p>
+      <p>Te corrigen la técnica antes de subirte el peso.</p>
     </div>
     <div class="coaches rv">
       <div class="coach"><figure><img src="img/camila.jpg" alt="Camila levantando una barra" loading="lazy"><span>Campeona 2024</span></figure><h4>Camila Rojas</h4><p>Powerlifting · Fuerza máxima</p></div>
@@ -292,12 +312,41 @@
   </div>
 </section>
 
+<section class="semana" id="semana">
+  <div class="contenedor sem-g">
+    <div class="rv">
+      <div class="chip">Primera semana</div>
+      <h2 class="display" style="margin-top:20px">Así parte <span class="acido">tu semana</span></h2>
+      <ol class="pasos">
+        <li><div><b>Nos escribes</b><span>Eliges plan y horario. Te respondemos el mismo día.</span></div></li>
+        <li><div><b>Evaluación y recorrido</b><span>Veinte minutos con un coach: peso, movilidad y qué quieres lograr.</span></div></li>
+        <li><div><b>Entrenas 7 días</b><span>Sala y clases incluidas, con tu plan de la semana en el celular.</span></div></li>
+      </ol>
+    </div>
+    <form class="sem-form rv" id="form-sem">
+      <label>Tu nombre<input id="sn" required autocomplete="given-name"></label>
+      <label>Plan que te interesa<select id="sp"><option>Básico</option><option selected>Full</option><option>Élite</option></select></label>
+      <label>Horario preferido<select id="sh"><option>Mañana (6:00 – 12:00)</option><option>Tarde (12:00 – 18:00)</option><option>Noche (18:00 – 22:00)</option></select></label>
+      <button class="btn" type="submit">Pedir mi semana gratis →</button>
+      <small>Se abre WhatsApp con el mensaje ya escrito. Es una demo: el número es ficticio.</small>
+    </form>
+  </div>
+</section>
+
+<section id="preguntas" style="padding:90px 0">
+  <div class="contenedor" style="max-width:860px">
+    <div class="chip">Dudas</div>
+    <h2 class="display" style="margin:20px 0 28px">Antes de <span class="acido">partir</span></h2>
+    <div class="faq rv"><details><summary>¿De verdad es gratis la primera semana?</summary><p>Sí. Pagas $0, no dejamos tarjeta en garantía y no hay cobro automático. Si te gusta, eliges plan; si no, te vas con una evaluación física gratis.</p></details><details><summary>Nunca he entrenado, ¿me va a ir mal?</summary><p>No. La primera sesión es con un coach que te enseña los movimientos base con poco peso. Las clases grupales se escalan: todos hacen lo mismo, cada uno con su carga.</p></details><details><summary>¿Puedo congelar el plan si me enfermo o viajo?</summary><p>Sí, hasta 60 días al año, avisando por WhatsApp. No hay multa ni permanencia mínima.</p></details><details><summary>¿Hay estacionamiento y camarines?</summary><p>Hay estacionamiento al frente para unos 20 autos, bicicletero techado, duchas con agua caliente y lockers (trae tu candado).</p></details><details><summary>¿Qué pasa en la noche, estoy solo?</summary><p>El acceso 24/7 funciona con tarjeta y cámaras. De 22:00 a 6:00 no hay coach, pero siempre hay una persona de turno en recepción hasta las 23:00 y un botón de emergencia en sala.</p></details></div>
+  </div>
+</section>
+
 <section class="cta-final">
   <img src="img/cuerdas.jpg" alt="" loading="lazy">
   <div class="contenedor rv">
     <div class="chip" style="justify-content:center">7 días gratis</div>
     <h2 class="display" style="margin-top:22px">Tu mejor versión<br><span class="acido">empieza hoy.</span></h2>
-    <p>Ven a entrenar una semana sin costo. Sin compromiso, sin letra chica.</p>
+    <p>Trae zapatillas y toalla. Te mostramos el gimnasio, te hacemos una evaluación y entrenas una semana completa sin pagar.</p>
     <a class="btn" href="#planes">Reclamar mi semana →</a>
   </div>
 </section>
@@ -313,6 +362,11 @@
 </footer>
 
 <script>
+document.querySelectorAll('[data-plan]').forEach(a=>a.addEventListener('click',()=>{const p=document.getElementById('sp');if(p)p.value=a.dataset.plan}));
+document.getElementById('form-sem').addEventListener('submit',e=>{e.preventDefault();
+  const m='Hola, soy '+sn.value+'. Quiero pedir mi primera semana gratis en el plan '+sp.value+', en horario de '+sh.value.split(' (')[0].toLowerCase()+'.';
+  window.open('https://wa.me/56900000000?text='+encodeURIComponent(m),'_blank','noopener')});
+
   const horario = {
     Lunes:     [['07:00','HIIT','Matías Lagos','alto'],['12:30','Crossfit','Matías Lagos','alto'],['19:00','Powerlifting','Camila Rojas','medio'],['20:30','Box','Diego Fuentes','medio']],
     Martes:    [['07:00','Movilidad','Valentina Soto','suave'],['12:30','Box','Diego Fuentes','medio'],['19:00','HIIT','Matías Lagos','alto'],['20:30','Crossfit','Matías Lagos','alto']],

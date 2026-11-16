@@ -328,6 +328,7 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
       <li><a href="#formacion">Formación</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
+    <span class="paleta" role="group" aria-label="Color del currículum"><button type="button" style="background:#2C5BD3" data-a="#2C5BD3" data-s="#E9EFFC" aria-label="Azul" aria-pressed="true"></button><button type="button" style="background:#0F766E" data-a="#0F766E" data-s="#E3F4F1" aria-label="Verde" aria-pressed="false"></button><button type="button" style="background:#6D28D9" data-a="#6D28D9" data-s="#EFE9FB" aria-label="Violeta" aria-pressed="false"></button><button type="button" style="background:#B4411F" data-a="#B4411F" data-s="#FBEAE4" aria-label="Terracota" aria-pressed="false"></button></span>
     <button class="btn btn-borde btn-chico" type="button" onclick="window.print()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>PDF
     </button>
@@ -581,6 +582,7 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
           <a class="correo" href="mailto:rene.cerpa.a@gmail.com">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>rene.cerpa.a@gmail.com
           </a>
+          <button class="copiar" type="button" id="copiar" aria-live="polite">Copiar correo</button>
           <a class="correo wa-link" href="https://wa.me/56977987960" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.5-11 10.5zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg>+56 9 7798 7960</a>
         </div>
       </div>
@@ -672,6 +674,15 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
   .arriba:focus-visible{outline:3px solid #ffb347;outline-offset:3px}
   @media (prefers-reduced-motion:reduce){.sec-cab h2::after{transition:none;width:56%}.arriba{transition:none}}
   @media print{.arriba,.ficha::after,.sec-cab h2::after{display:none!important}}
+  .paleta{display:inline-flex;gap:6px;align-items:center}
+  .paleta button{width:18px;height:18px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--linea);cursor:pointer;padding:0;transition:transform .2s}
+  .paleta button:hover{transform:scale(1.2)}
+  .paleta button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--tinta)}
+  .paleta button:focus-visible{outline:2px solid var(--acento);outline-offset:3px}
+  .copiar{font:inherit;font-size:.85rem;font-weight:600;border:1px solid rgba(255,255,255,.45);background:transparent;color:inherit;border-radius:999px;padding:8px 14px;cursor:pointer}
+  .copiar:hover{background:rgba(255,255,255,.14)}.copiar:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  @media(max-width:920px){.paleta{display:none}}
+  @media print{.paleta,.copiar{display:none!important}}
 </style>
 
 <button class="arriba" id="arriba" type="button" aria-label="Volver al inicio de la página"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
@@ -707,6 +718,14 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
     fi.addEventListener('mouseleave',function(){fi.style.transform=''});
   }
 })();
+
+(function(){var bs=document.querySelectorAll('.paleta button'),r=document.documentElement.style;
+function ap(b){r.setProperty('--acento',b.dataset.a);r.setProperty('--acento-suave',b.dataset.s);bs.forEach(function(x){x.setAttribute('aria-pressed',x===b)})}
+bs.forEach(function(b){b.addEventListener('click',function(){ap(b);try{localStorage.setItem('cv-color',b.dataset.a)}catch(e){}})});
+try{var g=localStorage.getItem('cv-color');bs.forEach(function(b){if(b.dataset.a===g)ap(b)})}catch(e){}
+var c=document.getElementById('copiar');if(c)c.addEventListener('click',function(){var t='rene.cerpa.a@gmail.com';
+function ok(){c.textContent='¡Copiado!';setTimeout(function(){c.textContent='Copiar correo'},2000)}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){location.href='mailto:'+t})}else{location.href='mailto:'+t}})})();
 </script>
 </body>
 </html>

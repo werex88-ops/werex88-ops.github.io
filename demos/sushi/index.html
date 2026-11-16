@@ -163,6 +163,17 @@
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
   /* Foco visible para teclado (doble anillo, legible sobre cualquier fondo) */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
+
+  .faq-sec{padding:110px 0}
+  .faq-g{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+  .faq details{border-bottom:1px solid var(--linea);padding:22px 0}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.25}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--oro);font-size:28px;line-height:1;transition:transform .3s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq summary:focus-visible{outline:2px solid var(--oro);outline-offset:4px}
+  .faq details p{color:#bdb6aa;margin-top:12px;font-size:15px;max-width:60ch}
+  @media(max-width:860px){.faq-sec{padding:80px 0}.faq-g{grid-template-columns:1fr;gap:36px}.faq summary{font-size:21px}}
 </style>
 </head>
 <body>
@@ -186,9 +197,9 @@
   <img src="img/hero.jpg" alt="Nigiris de pescado fresco sobre pizarra negra">
   <div class="kanji-vertical">海洋 · 鮨 · 職人</div>
   <div class="contenedor">
-    <div class="eyebrow">Sushi bar · Desde 2016</div>
+    <div class="eyebrow">Sushi bar · Valdivia · Desde 2016</div>
     <h1>El océano, <em>pieza</em> a pieza.</h1>
-    <p>Sushi de autor preparado frente a ti con pescado del día y arroz sazonado según la tradición de Edo.</p>
+    <p>Doce asientos en barra, un solo cocinero frente a ti y la carta que cambia según lo que llegó esa mañana a la caleta.</p>
     <div class="acciones">
       <a class="btn" href="#reserva">Reservar mesa →</a>
       <a class="btn linea" href="#menu">Ver menú</a>
@@ -205,7 +216,7 @@
     <div class="rv">
       <div class="eyebrow">Filosofía</div>
       <div class="titulo"><h2>Respetar el producto, <em>y nada más.</em></h2></div>
-      <p>No disfrazamos el pescado con salsas ni tendencias. Cada corte se elige al amanecer en el terminal pesquero, se madura los días justos y llega a la barra a la temperatura exacta.</p>
+      <p>Casi no usamos salsas: el pescado se elige temprano en la caleta, reposa los días justos y se sirve a la temperatura que corresponde. Si ese día no hay nada que nos convenza, ese corte no sale en la carta.</p>
       <div class="pilares">
         <div class="pilar"><div class="jp">旬</div><h4>Shun</h4><p>Solo lo que está en temporada.</p></div>
         <div class="pilar"><div class="jp">米</div><h4>Shari</h4><p>Arroz con vinagre rojo de Edo.</p></div>
@@ -280,11 +291,18 @@
     <figure><img src="img/chef.jpg" alt="Chef emplatando con pinzas bajo lámparas de cobre" loading="lazy"></figure>
     <div class="texto rv">
       <div class="eyebrow">板前 · Itamae</div>
-      <blockquote>Si el pescado no está perfecto, no llega a tu plato. Así de simple.</blockquote>
+      <blockquote>Si el pescado no está bueno, no sale. Así de simple.</blockquote>
       <p>Tomás Aoki se formó durante ocho años en Osaka, donde aprendió que el sushi es, sobre todo, paciencia.</p>
-      <p>Cada mañana recorre el terminal pesquero y decide la carta del día según lo que encuentra.</p>
+      <p>Cada mañana pasa por la caleta, conversa con los pescadores y recién ahí decide qué se sirve esa noche.</p>
       <div class="firma"><span class="jp">青木</span><span>Tomás Aoki · Chef fundador</span></div>
     </div>
+  </div>
+</section>
+
+<section class="faq-sec" id="preguntas">
+  <div class="contenedor faq-g">
+    <div class="rv"><div class="eyebrow">Antes de venir</div><div class="titulo"><h2>Lo que más <em>nos preguntan.</em></h2></div></div>
+    <div class="faq rv"><details><summary>¿Hay que reservar?</summary><p>Para la barra omakase sí, con 48 horas de anticipación porque son solo 12 asientos. Las mesas se pueden reservar o llegar directo, pero viernes y sábado conviene escribir con un par de días.</p></details><details><summary>No como pescado crudo, ¿tengo qué comer?</summary><p>Sí. La carta caliente tiene ramen tonkotsu, gyozas de cerdo y tempura mixta. Si avisas al reservar, el itamae arma un roll de verduras.</p></details><details><summary>Tengo alergia a la soya, al sésamo o a los mariscos</summary><p>Avísanos al reservar y lo dejamos anotado. En la barra podemos cambiar la salsa y separar la tabla, pero la cocina maneja soya, gluten, sésamo y mariscos, así que no podemos garantizar cero trazas.</p></details><details><summary>¿Tienen delivery?</summary><p>No. El arroz y el pescado pierden mucho en el camino. Sí puedes hacer un pedido por teléfono y retirarlo en el local en unos 20 minutos.</p></details><details><summary>¿Se puede ir con niños?</summary><p>Sí, en las mesas. No tenemos menú infantil, pero las gyozas y la tempura suelen gustarles. El omakase en barra es mejor desde los 12 años.</p></details><details><summary>¿Cómo se paga y cómo es la propina?</summary><p>Con tarjeta, transferencia o efectivo. Se sugiere un 10 % de propina, que aparece en la cuenta y puedes pedir que la quiten.</p></details></div>
   </div>
 </section>
 
@@ -298,7 +316,7 @@
         <div><span>Martes a jueves</span><span>13:00 – 23:00</span></div>
         <div><span>Viernes y sábado</span><span>13:00 – 00:00</span></div>
         <div><span>Domingo</span><span>13:00 – 17:00</span></div>
-        <div><span>Av. Costanera 1240</span><span>+56 2 2345 6789</span></div>
+        <div><span>Av. Costanera 1240, Valdivia</span><span>+56 63 2555 0142</span></div>
       </div>
     </div>
     <form id="form-reserva" class="rv">
@@ -321,7 +339,7 @@
   <div class="contenedor">
     <div><div class="logo">KAIYŌ<b style="color:var(--bermellon);font-weight:400">.</b></div><p>Sushi bar &amp; omakase.<br>Av. Costanera 1240, Viña del Mar.</p></div>
     <div><h5>Horario</h5><p>Mar – Sáb<br>13:00 – 23:30</p></div>
-    <div><h5>Contacto</h5><p>+56 2 2345 6789<br>hola@kaiyo.cl</p></div>
+    <div><h5>Contacto</h5><p>+56 63 2555 0142<br>hola@kaiyo.cl</p></div>
     <div><h5>Síguenos</h5><p>Instagram<br>TikTok</p></div>
   </div>
 </footer>
