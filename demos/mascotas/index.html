@@ -175,6 +175,26 @@
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
   /* Foco visible para teclado (doble anillo) */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
+
+  .cuanto{padding:70px 0 30px}
+  .cuanto-g{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .cuanto figure{aspect-ratio:4/3;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,var(--sol-claro),var(--cielo))}
+  .cuanto figure img{width:100%;height:100%;object-fit:cover}
+  .cuanto h2{font-family:'Young Serif',serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.08;margin:8px 0 12px}
+  .tam-b{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .tam-b button{font:inherit;font-weight:600;border:2px solid var(--tinta);background:#fff;color:var(--tinta);padding:10px 18px;border-radius:999px;cursor:pointer}
+  .tam-b button[aria-pressed="true"]{background:var(--tinta);color:#fff}
+  .tam-b button:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+  .tam-r{background:#fff;border:2px dashed var(--sol);border-radius:20px;padding:18px 20px;font-size:17px}
+  .tam-r small{display:block;color:var(--suave);margin-top:8px;font-size:13px}
+  .faq details{border-bottom:2px solid var(--linea);padding:18px 0}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:18px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--coral-t);font-size:26px;line-height:1}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{color:var(--suave);margin-top:10px;max-width:62ch}
+  .faq summary:focus-visible{outline:3px solid var(--coral);outline-offset:4px}
+  @media(max-width:860px){.cuanto-g{grid-template-columns:1fr;gap:26px}}
 </style>
 <style>html{overflow-x:clip}</style>
 </head>
@@ -194,7 +214,7 @@
   <div class="rv">
     <div class="sobre">🦴 Horneados en casa cada semana</div>
     <h1>Premios <span class="marcador">ricos</span> y sanos para tu perro.</h1>
-    <p>Snacks hechos con ingredientes que tú también podrías comer. Sin colorantes, sin preservantes, con mucho amor.</p>
+    <p>Horneamos en casa cada semana con avena, zanahoria, pollo y plátano. Sin colorantes, sin azúcar ni sal agregadas.</p>
     <div class="acciones">
       <a class="btn sol" href="#snacks">¡Quiero probar! →</a>
       <a class="btn" href="#pedido">Armar mi pack</a>
@@ -208,7 +228,7 @@
     <div class="mancha"></div>
     <div class="marco"><img src="img/hero.jpg" alt="Perro feliz corriendo en la playa"></div>
     <div class="burbuja b1"><span class="ico" style="background:var(--sol-claro)">🐶</span><div>¡Guau, qué rico!<small>— Toby, 3 años</small></div></div>
-    <div class="burbuja b2"><span class="ico" style="background:#d6f5df">✅</span><div>100% natural<small>Aprobado por veterinarios</small></div></div>
+    <div class="burbuja b2"><span class="ico" style="background:#d6f5df">✅</span><div>100% natural<small>Receta revisada por veterinaria</small></div></div>
   </div>
 </header>
 
@@ -221,8 +241,8 @@
   <div class="contenedor">
     <div class="cab rv">
       <div class="sobre">Nuestros snacks</div>
-      <h2>Hechos con <span class="marcador">cariño</span>, cola meneada garantizada</h2>
-      <p>Cada receta tiene menos de 5 ingredientes y está pensada junto a nuestra veterinaria.</p>
+      <h2>Cuatro recetas, <span class="marcador">cero relleno</span></h2>
+      <p>Cada receta lleva menos de cinco ingredientes y la revisó una veterinaria antes de salir a la venta.</p>
     </div>
     <div class="snacks rv" id="lista-snacks"></div>
   </div>
@@ -239,6 +259,22 @@
   </div>
 </section>
 
+<section class="cuanto" id="cuanto">
+  <div class="contenedor cuanto-g">
+    <figure class="rv"><img src="https://images.unsplash.com/photo-1727294316305-e536bacb65ff?w=1200&q=70&auto=format&fit=crop" alt="Perro caminando por un sendero de bosque en otoño" loading="lazy" onerror="this.style.display='none'"></figure>
+    <div class="rv">
+      <div class="sobre">🐕 Porciones</div>
+      <h2>¿Cuántos puede comer al día?</h2>
+      <p>Los premios no son su comida: tienen que ser una parte chica de lo que come en el día.</p>
+      <div class="tam-b" role="group" aria-label="Tamaño del perro">
+        <button type="button" aria-pressed="false" data-t="p">Pequeño · hasta 10 kg</button>
+        <button type="button" aria-pressed="true" data-t="m">Mediano · 10–25 kg</button>
+        <button type="button" aria-pressed="false" data-t="g">Grande · +25 kg</button>
+      </div>
+      <div class="tam-r" id="tam-r" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
 <section id="resenas" style="padding-top:20px">
   <div class="contenedor">
     <div class="cab rv"><div class="sobre">Reseñas</div><h2>Lo que dicen <span class="marcador">sus humanos</span></h2></div>
@@ -250,13 +286,14 @@
   </div>
 </section>
 
+<section id="preguntas" style="padding:20px 0 80px"><div class="contenedor" style="max-width:860px"><div class="sobre">Preguntas frecuentes</div><h2 style="font-family:'Young Serif',serif;font-weight:400;font-size:clamp(30px,4vw,44px);margin:8px 0 22px">Lo que nos escriben antes de pedir</h2><div class="faq rv"><details><summary>¿Desde qué edad pueden comerlos?</summary><p>Desde los 3 meses los bocaditos blandos, siempre en trozos chicos. Los huesitos crujientes, mejor desde los 6 meses.</p></details><details><summary>Mi perro es alérgico, ¿qué le sirve?</summary><p>Los huesitos de zanahoria llevan huevo y avena; los bocaditos, pollo; los pupcakes, maní. Escríbenos con lo que le hace mal y te decimos cuál evitar. No es un reemplazo de la opinión de tu veterinario.</p></details><details><summary>¿Cuánto duran?</summary><p>Entre 3 y 4 semanas en un lugar seco y fresco, en la bolsa bien cerrada. Los pupcakes se comen en 3 días o se congelan.</p></details><details><summary>¿Hacen despacho a regiones?</summary><p>Por ahora solo Santiago oriente, martes y viernes. Si estás fuera de la zona, puedes retirar en el punto de entrega sin costo.</p></details><details><summary>¿Puedo encargar pupcakes con nombre?</summary><p>Sí, con 5 días de anticipación. Escribimos el nombre de tu perro con crema de yogur natural.</p></details></div></div></section>
 <section id="pedido">
   <div class="contenedor">
     <div class="pedido rv">
       <div>
         <div class="sobre" style="color:var(--sol)">🐾 Pedidos</div>
         <h2>Arma el pack perfecto para tu perro</h2>
-        <p>Elige su tamaño y los snacks que quieras. Te armamos el mensaje para WhatsApp y coordinamos la entrega del martes o viernes.</p>
+        <p>Elige su tamaño y los snacks que quieras. Te armamos el mensaje para WhatsApp y coordinamos la entrega del martes o el viernes. Pedidos hasta el lunes a las 20:00 o el jueves a las 20:00.</p>
       </div>
       <div class="armador">
         <h4>1 · Tamaño de tu perro</h4>
@@ -285,6 +322,11 @@
 </footer>
 
 <script>
+(function(){const R={p:['Hasta 3 premios chicos al día','Parte un huesito por la mitad: un perro de 5 kg se llena rápido.'],m:['Hasta 5 premios al día','Sirven para entrenar: dale uno por cada orden que hace bien.'],g:['Hasta 8 premios al día','Si es de entrenamiento, parte los bocaditos en trozos más chicos.']};
+const out=document.getElementById('tam-r'),bs=document.querySelectorAll('.tam-b button');
+function set(k){bs.forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===k));out.innerHTML='<b>'+R[k][0]+'</b><small>'+R[k][1]+' Es una guía general; si tiene algún problema de salud, pregúntale a tu veterinario.</small>'}
+bs.forEach(b=>b.addEventListener('click',()=>set(b.dataset.t)));set('m')})();
+
   const snacks = [
     { id: 'huesitos', n: 'Huesitos de zanahoria', d: 'Crujientes, del tamaño perfecto para entrenar.', ingr: ['Avena', 'Zanahoria', 'Huevo'], p: 4990, u: '200 g', img: 'huesitos' },
     { id: 'pollo', n: 'Bocaditos de pollo', d: 'Pollo de campo y perejil para un mejor aliento.', ingr: ['Pollo', 'Arroz integral', 'Perejil'], p: 5990, u: '200 g', img: 'pollo', sello: 'Favorito' },

@@ -214,3 +214,5 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `panaderia` galería (panes recién horneados) — https://images.unsplash.com/photo-1551888761-382cd30b5da6
 - `veterinaria` sección "Cómo es la consulta" (gatito blanco en revisión veterinaria) — https://images.unsplash.com/photo-1725409796872-8b41e8eca929
 - `kayak/index.html` (sección "Un sábado en el muelle", enlace directo) — https://images.unsplash.com/photo-1584823348241-c917a9befbfa — Camilo Pinaud (@calepinaud), tomada en Llifén, Futrono, Región de Los Ríos
+- `cafeteria/` (sección Pastel del día, enlazada directo) — https://images.unsplash.com/photo-1541167760496-1628856ab772 (arte latte; Fahmi Fakhrudin)
+- `mascotas/` (sección Porciones, enlazada directo) — https://images.unsplash.com/photo-1727294316305-e536bacb65ff (perro en sendero de bosque; Connor, @oconnorstudios)

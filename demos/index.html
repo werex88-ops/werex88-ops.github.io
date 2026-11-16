@@ -33,6 +33,12 @@ nav .contenedor{display:flex;justify-content:space-between;align-items:center;ga
 .enlaces a:hover{color:var(--texto)}
 .enlaces .cv{border:1px solid var(--linea);border-radius:999px;padding:7px 16px;color:var(--texto)}
 .enlaces .cv:hover{border-color:var(--sol)}
+.tema{display:flex;gap:6px;align-items:center;margin-left:4px}
+.tema button{width:20px;height:20px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0;transition:transform .2s,border-color .2s}
+.tema button:hover{transform:scale(1.2)}
+.tema button[aria-pressed="true"]{border-color:#fff}
+@media(max-width:620px){.enlaces a:not(.cv){display:none}.tema{margin-left:0}}
+@media(max-width:400px){.tema{display:none}}
 
 header.hero{position:relative;padding:70px 0 90px;overflow:hidden;isolation:isolate}
 .orbe{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;z-index:-1;animation:flota 14s ease-in-out infinite alternate}
@@ -224,7 +230,7 @@ footer .contenedor{display:flex;justify-content:space-between;gap:20px;flex-wrap
 <nav>
   <div class="contenedor">
     <a class="logo" href="#"><i></i>Werex Studio</a>
-    <div class="enlaces"><a href="#todos">Proyectos</a><a href="#soporte">Soporte técnico</a><a href="#proceso">Cómo trabajo</a><a class="cv" href="../">Currículum</a></div>
+    <div class="enlaces"><a href="#todos">Proyectos</a><a href="#soporte">Soporte técnico</a><a href="#proceso">Cómo trabajo</a><a class="cv" href="../">Currículum</a><span class="tema" role="group" aria-label="Color del portafolio"><button type="button" style="background:#ff6b3d" data-a="#ff6b3d" data-s="#ffd23f" aria-label="Color fuego" aria-pressed="true"></button><button type="button" style="background:#2dd4bf" data-a="#2dd4bf" data-s="#a3e635" aria-label="Color bosque" aria-pressed="false"></button><button type="button" style="background:#60a5fa" data-a="#60a5fa" data-s="#c4b5fd" aria-label="Color lago" aria-pressed="false"></button><button type="button" style="background:#f472b6" data-a="#f472b6" data-s="#ffd23f" aria-label="Color frambuesa" aria-pressed="false"></button></span></div>
   </div>
 </nav>
 
@@ -261,7 +267,7 @@ footer .contenedor{display:flex;justify-content:space-between;gap:20px;flex-wrap
 <a class="nav-cap" href="kayak/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · kayak y pesca</span></div><div class="captura"><img src="img/kayak.jpg" alt="" width="600" height="400"></div></div></a>
 <div class="sl-tx"><span class="num">03<small>/06</small></span><span class="rub">Turismo aventura · Armador de reserva</span><h3>Mawün Kayak</h3><p class="sub">kayak y pesca</p><p>Salidas guiadas en kayak y pesca en Lago Ranco, con armador de reserva, total en pesos y envío por WhatsApp.</p><a class="btn-sl" href="kayak/">Entrar a la demo <b>→</b></a></div></article><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 6" style="--c:#c8442f;--f:#0c0c0b">
 <a class="nav-cap" href="sushi/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · sushi</span></div><div class="captura"><img src="img/sushi.jpg" alt="" width="600" height="400"></div></div></a>
-<div class="sl-tx"><span class="num">04<small>/06</small></span><span class="rub">Restaurante · Reservas</span><h3>Kaiyō Sushi Bar</h3><p class="sub">sushi</p><p>Sushi de autor con estética editorial oscura, carta por categorías y reservas en línea.</p><a class="btn-sl" href="sushi/">Entrar a la demo <b>→</b></a></div></article><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 6" style="--c:#ffd84a;--f:#2a0f3a">
+<div class="sl-tx"><span class="num">04<small>/06</small></span><span class="rub">Restaurante · Reservas</span><h3>Kaiyō Sushi Bar</h3><p class="sub">sushi</p><p>Sushi bar de doce asientos: carta por categorías, preguntas frecuentes sobre alergias y reservas en línea.</p><a class="btn-sl" href="sushi/">Entrar a la demo <b>→</b></a></div></article><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 6" style="--c:#ffd84a;--f:#2a0f3a">
 <a class="nav-cap" href="heladeria/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · heladería artesanal</span></div><div class="captura"><img src="img/heladeria.jpg" alt="" width="600" height="400"></div></div></a>
 <div class="sl-tx"><span class="num">05<small>/06</small></span><span class="rub">Gastronomía · Armador y pedido</span><h3>Maqui</h3><p class="sub">Heladería Artesanal</p><p>Heladería de Panguipulli con armador de copas y potes con precio al instante, carta de sabores filtrable y pedido por WhatsApp.</p><a class="btn-sl" href="heladeria/">Entrar a la demo <b>→</b></a></div></article><article class="slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 6" style="--c:#B3123A;--f:#111111">
 <a class="nav-cap" href="centro-cultural/" tabindex="-1" aria-hidden="true"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>ejemplo · centro-cultural</span></div><div class="captura"><img src="img/centro-cultural.jpg" alt="" width="600" height="400"></div></div></a>
@@ -307,9 +313,9 @@ footer .contenedor{display:flex;justify-content:space-between;gap:20px;flex-wrap
 <div class="cap"><img src="img/cabanas.jpg" alt="Vista previa del sitio Cabañas Alerce Dormido" loading="lazy" width="600" height="400"><span class="chip">Turismo</span></div>
 <div class="tx"><h3>Cabañas Alerce Dormido</h3><em>cabanas</em><p>Cabañas entre bosque y río en Valdivia, con calculadora de estadía y solicitud de reserva por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#0F2427"></i><i style="background:#2F7470"></i><i style="background:#C9A24B"></i><i style="background:#EEF3F1"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="sushi/" data-g="comida" style="--c:#c8442f">
 <div class="cap"><img src="img/sushi.jpg" alt="Vista previa del sitio Kaiyō Sushi Bar" loading="lazy" width="600" height="400"><span class="chip">Restaurante</span></div>
-<div class="tx"><h3>Kaiyō Sushi Bar</h3><em>sushi</em><p>Sushi de autor con estética editorial oscura, carta por categorías y reservas en línea.</p><div class="pie"><span class="paleta"><i style="background:#0c0c0b"></i><i style="background:#c8442f"></i><i style="background:#c9a46a"></i><i style="background:#ede6da"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="gimnasio/" data-g="bienestar" style="--c:#d4ff3a">
+<div class="tx"><h3>Kaiyō Sushi Bar</h3><em>sushi</em><p>Sushi bar de doce asientos: carta por categorías, preguntas frecuentes sobre alergias y reservas en línea.</p><div class="pie"><span class="paleta"><i style="background:#0c0c0b"></i><i style="background:#c8442f"></i><i style="background:#c9a46a"></i><i style="background:#ede6da"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="gimnasio/" data-g="bienestar" style="--c:#d4ff3a">
 <div class="cap"><img src="img/gimnasio.jpg" alt="Vista previa del sitio Forja Gym" loading="lazy" width="600" height="400"><span class="chip">Deporte</span></div>
-<div class="tx"><h3>Forja Gym</h3><em>gimnasio</em><p>Gimnasio de alto rendimiento: planes, horario interactivo de clases y equipo de coaches.</p><div class="pie"><span class="paleta"><i style="background:#0a0a0a"></i><i style="background:#d4ff3a"></i><i style="background:#f5f5f0"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="cafeteria/" data-g="comida" style="--c:#b9773f">
+<div class="tx"><h3>Forja Gym</h3><em>gimnasio</em><p>Gimnasio 24/7: planes, horario interactivo de clases y formulario para pedir la primera semana gratis por WhatsApp.</p><div class="pie"><span class="paleta"><i style="background:#0a0a0a"></i><i style="background:#d4ff3a"></i><i style="background:#f5f5f0"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="cafeteria/" data-g="comida" style="--c:#b9773f">
 <div class="cap"><img src="img/cafeteria.jpg" alt="Vista previa del sitio Grano y Calma" loading="lazy" width="600" height="400"><span class="chip">Cafetería</span></div>
 <div class="tx"><h3>Grano &amp; Calma</h3><em>cafeteria</em><p>Cafetería de especialidad con carta fotografiada, historia del origen y horario del día.</p><div class="pie"><span class="paleta"><i style="background:#f5eee3"></i><i style="background:#b9773f"></i><i style="background:#2b1d14"></i></span><span class="ver">Ver demo <b>→</b></span></div></div></a><a class="tarjeta" href="velas/" data-g="tiendas" style="--c:#b4654a">
 <div class="cap"><img src="img/velas.jpg" alt="Vista previa del sitio Luz de Cera" loading="lazy" width="600" height="400"><span class="chip">E-commerce</span></div>
@@ -489,7 +495,12 @@ footer .contenedor{display:flex;justify-content:space-between;gap:20px;flex-wrap
   document.querySelectorAll('[data-necesito]').forEach(function(a){a.addEventListener('click',function(){var sel=document.getElementById('wa-necesito');if(sel)sel.value=a.dataset.necesito;});});
 </script>
 <a class="flota" id="flota" href="#contacto" aria-label="Ir al formulario de contacto">Escríbeme →</a>
-<script>(function(){var b=document.getElementById("flota"),c=document.getElementById("contacto");function f(){var y=window.scrollY>600,r=c.getBoundingClientRect();b.classList.toggle("ver",y&&!(r.top<innerHeight&&r.bottom>0))}addEventListener("scroll",f,{passive:true});f()})();</script>
+<script>(function(){var b=document.getElementById("flota"),c=document.getElementById("contacto");function f(){var y=window.scrollY>600,r=c.getBoundingClientRect();b.classList.toggle("ver",y&&!(r.top<innerHeight&&r.bottom>0))}addEventListener("scroll",f,{passive:true});f()})();
+(function(){var bs=document.querySelectorAll('.tema button'),r=document.documentElement.style;
+function ap(b){r.setProperty('--acento',b.dataset.a);r.setProperty('--sol',b.dataset.s);bs.forEach(function(x){x.setAttribute('aria-pressed',x===b)})}
+bs.forEach(function(b){b.addEventListener('click',function(){ap(b);try{localStorage.setItem('wx-tema',b.dataset.a)}catch(e){}})});
+try{var g=localStorage.getItem('wx-tema');bs.forEach(function(b){if(b.dataset.a===g)ap(b)})}catch(e){}})();
+</script>
 </body>
 </html>
 

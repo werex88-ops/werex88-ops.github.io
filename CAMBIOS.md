@@ -1,5 +1,37 @@
 # Registro de cambios
 
+## 2026-11-16 (mejora diaria)
+
+Esta rama parte desde la del 15 de noviembre (solicitud #43, aún abierta; incluye la #42), para no duplicar trabajo ni generar conflictos.
+
+### Referencias de competencia
+- Lofwork (lofwork.cl): consultora chilena para pymes. Tono tuteado y práctico, titulares que nombran el problema ("Página web para pyme: costos y decisión") y varios botones de WhatsApp con mensaje precargado. Idea aplicada: el formulario de "primera semana gratis" del gimnasio abre WhatsApp con el mensaje ya escrito.
+- Ficha de un centro de entrenamiento de Valdivia en AgendaPro: lista 15 servicios sin precio, sin horario confiable y sin descripción del espacio. Idea aplicada: en Forja Gym los planes llevan precio, horarios y una explicación de cómo parte la primera semana, que es lo que esa ficha no entrega.
+- Restaurantes de sushi de Valdivia: solo aparecieron fichas de Uber Eats y Wanderlog; no abrí ninguna. Poca investigación de sushi y cafetería hoy; siguen pendientes sitios propios de esos rubros.
+
+### Portafolio (`demos/index.html`)
+- Selector de color del portafolio (4 paletas: fuego, bosque, lago, frambuesa) en la barra superior; recuerda la elección. Se oculta bajo 400 px de ancho.
+- Descripciones nuevas de las tarjetas de sushi y gimnasio. Peso: 60 KB (límite 90 KB).
+
+### Currículum (`index.html`)
+Dos mejoras visibles, sin tocar texto ni secciones: (1) selector de color de acento (azul, verde, violeta, terracota; todos con contraste AA sobre blanco), que recuerda la elección y no aparece al imprimir; (2) botón "Copiar correo" junto al correo en el contacto. Peso: 50 KB.
+
+### Demos tocadas (4)
+- `sushi/` (Kaiyō): ubicada en Valdivia, teléfono con código 63, textos más concretos (caleta en vez de "terminal pesquero", sin frases de folleto) y sección de preguntas (reserva, no como pescado crudo, alergias, delivery, niños, propina).
+- `gimnasio/` (Forja): textos más directos (calefacción para la lluvia, coach que corrige la técnica), sección "Así parte tu semana" con formulario que abre WhatsApp, los botones de plan ahora llevan a ese formulario y preguntas frecuentes (congelar plan, estacionamiento, horario de noche).
+- `cafeteria/` (Grano & Calma): titular y textos nuevos, sección "Pastel del día" que resalta el de hoy según el día de la semana (con foto de arte latte), preguntas frecuentes y dirección consistente (Barrio Italia).
+- `mascotas/` (Pata Feliz): titular y textos más concretos, calculadora de porciones por tamaño del perro (con foto de perro en sendero) y preguntas frecuentes (edad, alergias, duración, despacho, pupcakes con nombre).
+- No regeneré capturas `demos/img/*.jpg`: las portadas no cambiaron.
+
+### Validación
+25 páginas a 320, 390 y 1440 px: sin desplazamiento horizontal, errores de JavaScript, 404 locales ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Las fotos externas no cargan desde el entorno (403); los cuadros de las fotos nuevas quedan con degradado y se ocultan si fallan. Todas las demos pesan menos de 60 KB.
+
+### Sugerencias para René
+- Revisa en el navegador que las dos fotos nuevas (café y perro) carguen y se vean bien.
+- Los precios, horarios y condiciones nuevos (propina 10 %, bolsas de café $8.900, congelar plan 60 días) son ejemplos; ajústalos si usas la demo con un cliente real.
+- Próximas demos: hostal, termas, taller, heladería.
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles; no se inventaron datos.
+
 ## 2026-11-15 (mejora diaria)
 
 Esta rama parte desde la del 14 de noviembre (solicitud #42, aún abierta), para no duplicar trabajo ni generar conflictos.
