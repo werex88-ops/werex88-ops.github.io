@@ -110,6 +110,16 @@ section{padding:110px 0}
 .exp p{margin:4px 0 0;font-size:.92rem;color:rgba(255,255,255,.85)}
 .exp.grande{grid-row:span 2}
 
+.temporadas{background:#fff}
+.temp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.temp{border:1px solid var(--linea);border-radius:var(--radio);padding:24px 22px;position:relative;overflow:hidden;background:var(--niebla)}
+.temp::before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:var(--c)}
+.temp small{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gris)}
+.temp h3{font-size:1.6rem;margin:6px 0 8px}
+.temp p{margin:0;font-size:.95rem;color:var(--gris)}
+.temp .tip{margin-top:14px;font-weight:700;font-size:.9rem;color:var(--noche)}
+@media(max-width:1000px){.temp-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.temp-grid{grid-template-columns:1fr}}
 /* Nosotros */
 .nosotros .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .nosotros .foto{aspect-ratio:4/5;border-radius:var(--radio);background:var(--niebla) center/cover no-repeat;position:relative}
@@ -339,6 +349,21 @@ footer .logo{margin-bottom:14px}
   </div>
 </section>
 
+<section class="temporadas" id="temporadas">
+  <div class="wrap">
+    <div class="cab rv">
+      <div><span class="eyebrow">Cuándo venir</span><h2>El bosque cambia cada estación</h2></div>
+      <p>Abrimos todo el año. Esto es lo que te vas a encontrar según el mes, para que elijas con calma.</p>
+    </div>
+    <div class="temp-grid">
+      <div class="temp rv" style="--c:#8FA77F"><small>Sept. a nov.</small><h3>Primavera</h3><p>Helechos nuevos, ríos crecidos y mucha lluvia fina. El bosque huele a tierra mojada.</p><p class="tip">Ideal para tinaja y chimenea.</p></div>
+      <div class="temp rv" style="--c:#C9A24B"><small>Dic. a feb.</small><h3>Verano</h3><p>Días largos, luz hasta las diez de la noche y río tibio para meter los pies. La temporada más pedida.</p><p class="tip">Reserva con un mes de anticipación.</p></div>
+      <div class="temp rv" style="--c:#C0623A"><small>Mar. a mayo</small><h3>Otoño</h3><p>Los ñirres y lengas se ponen rojos, hay menos gente y se sale a caminar sin apuro.</p><p class="tip">Buen precio y mejores fotos.</p></div>
+      <div class="temp rv" style="--c:#2F7470"><small>Jun. a ago.</small><h3>Invierno</h3><p>Lluvia, estufa prendida y silencio. Si hace buen día, el cerro amanece nevado.</p><p class="tip">Llega con leña seca ya lista.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="nosotros" id="nosotros">
   <div class="wrap">
     <div class="foto rv" role="img" aria-label="Dormitorio con muros de madera y vista al bosque" style="background-image:url('https://images.unsplash.com/photo-1773423391716-04e278b07b1b?w=900&q=70&auto=format&fit=crop')">
@@ -421,6 +446,8 @@ footer .logo{margin-bottom:14px}
         <div><b>Atención</b><span>Todos los días, 9:00 a 21:00 h</span></div>
       </div>
       <details><summary>¿Se puede llegar en auto de ciudad?</summary><p>Sí. El camino es pavimentado hasta la entrada y los últimos 300 metros son de ripio en buen estado.</p></details>
+      <details><summary>¿Cómo funciona la calefacción?</summary><p>Cada cabaña tiene estufa a leña y un calefactor eléctrico de respaldo. Dejamos leña seca para la primera noche; si necesitas más, un saco extra cuesta $6.000.</p></details>
+      <details><summary>¿Qué incluye el desayuno de campo?</summary><p>Pan amasado, mantequilla, mermelada de la zona, huevos de gallinas del vecino, queso y café. Lo llevamos a la cabaña entre las 8:30 y las 10:00 h.</p></details>
       <details><summary>¿Aceptan mascotas?</summary><p>Aceptamos perros en la cabaña Coigüe, con aviso previo y un cargo de aseo de $10.000.</p></details>
       <details><summary>¿Hay señal de celular?</summary><p>Hay wifi en todas las cabañas y buena señal en la zona común. Dentro del bosque la señal es baja, ideal para desconectarse.</p></details>
     </div>

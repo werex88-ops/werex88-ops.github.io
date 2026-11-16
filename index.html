@@ -259,6 +259,25 @@
   .wa-claro .wa-nota{color:var(--gris)}
   @media (max-width:920px){.contacto-grid{grid-template-columns:1fr;gap:32px}}
   @media print{.contacto-grid{display:block}.contacto-txt{display:none}.contacto-botones{flex-direction:row;gap:20px}}
+/* 15-11: cinta, anillos, numeración grande, inclinación de ficha */
+header.hero{position:relative;overflow:hidden}
+header.hero .wrap{position:relative;z-index:1}
+.anillos{position:absolute;inset:0;pointer-events:none;z-index:0}
+.anillos i{position:absolute;border-radius:50%;border:2px solid var(--acento);opacity:.16;animation:flota 14s ease-in-out infinite}
+.anillos i:nth-child(1){width:220px;height:220px;right:6%;top:-70px}
+.anillos i:nth-child(2){width:120px;height:120px;right:34%;bottom:30px;border-color:#E0A21B;opacity:.3;animation-delay:-5s}
+.anillos i:nth-child(3){width:60px;height:60px;left:3%;top:46%;border-color:#1E9E78;opacity:.35;animation-delay:-9s}
+@keyframes flota{50%{transform:translate(0,-22px) scale(1.06)}}
+.cinta{background:var(--tinta);color:#fff;overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+.cinta div{display:inline-flex;gap:34px;padding-right:34px;animation:cinta 38s linear infinite}
+.cinta span::after{content:"✦";margin-left:34px;color:#E0A21B}
+.cinta div:hover{animation-play-state:paused}
+@keyframes cinta{to{transform:translateX(-50%)}}
+.sec-cab .num{font-size:3.6rem;font-weight:800;line-height:1;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px var(--acento);display:block;margin-bottom:6px}
+.ficha{transform-style:preserve-3d;will-change:transform}
+@media (max-width:700px){.sec-cab .num{font-size:2.6rem}}
+@media (prefers-reduced-motion:reduce){.anillos i,.cinta div{animation:none}}
+@media print{.anillos,.cinta{display:none!important}.sec-cab .num{font-size:.8rem;-webkit-text-stroke:0;color:var(--acento);display:inline}}
 </style>
 <style>
 /* 13-11-2026: identidad más viva (solo pantalla) */
@@ -316,6 +335,7 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
 </nav>
 
 <header class="hero" id="inicio">
+  <div class="anillos" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -349,7 +369,7 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
       <div><b>+8 años</b><span>de servicios informáticos freelance</span></div>
     </div>
   </div>
-</header>
+<div class="cinta" aria-hidden="true"><div><span>Desarrollo web</span><span>Soporte TI</span><span>Gestión cultural</span><span>Educación artística</span><span>Región de Los Ríos</span><span>Valdivia</span><span>Desarrollo web</span><span>Soporte TI</span><span>Gestión cultural</span><span>Educación artística</span><span>Región de Los Ríos</span><span>Valdivia</span><span>Desarrollo web</span><span>Soporte TI</span><span>Gestión cultural</span><span>Educación artística</span><span>Región de Los Ríos</span><span>Valdivia</span><span>Desarrollo web</span><span>Soporte TI</span><span>Gestión cultural</span><span>Educación artística</span><span>Región de Los Ríos</span><span>Valdivia</span></div></div>
 
 <main id="contenido" tabindex="-1">
 <section id="perfil">
@@ -636,6 +656,57 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
 </script>
 <script>
 (function(){var b=document.getElementById('progreso');if(!b)return;var t=false;function f(){t=false;var h=document.documentElement.scrollHeight-innerHeight;b.style.transform='scaleX('+(h>0?Math.min(scrollY/h,1):0)+')';}addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(f);}},{passive:true});f();})();
+</script>
+
+<style>
+  /* 14-nov: mejoras visuales (solo pantalla) */
+  .ficha{--fx:50%;--fy:0%}
+  .ficha::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(380px circle at var(--fx) var(--fy),rgba(255,255,255,.55),transparent 55%);opacity:0;transition:opacity .3s}
+  .ficha:hover::after{opacity:.5}
+  .sec-cab h2{position:relative;display:inline-block}
+  .sec-cab h2::after{content:"";position:absolute;left:0;bottom:-6px;height:5px;width:0;border-radius:3px;background:linear-gradient(90deg,var(--acento),#ffb347);transition:width .9s cubic-bezier(.2,.7,.2,1) .2s}
+  .sec-cab.visto h2::after{width:56%}
+  .arriba{position:fixed;left:16px;bottom:16px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--tinta);color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 26px rgba(20,33,61,.35);opacity:0;transform:translateY(80px);transition:opacity .35s,transform .35s}
+  .arriba.ver{opacity:1;transform:none}
+  .arriba svg{width:20px;height:20px}
+  .arriba:focus-visible{outline:3px solid #ffb347;outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){.sec-cab h2::after{transition:none;width:56%}.arriba{transition:none}}
+  @media print{.arriba,.ficha::after,.sec-cab h2::after{display:none!important}}
+</style>
+
+<button class="arriba" id="arriba" type="button" aria-label="Volver al inicio de la página"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script>
+(function(){
+  var red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // 1) cifras que cuentan hasta su valor
+  var cs=document.querySelectorAll('.cifras b');
+  if(!red&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;io.unobserve(e.target);
+      var el=e.target,t=el.textContent,m=t.match(/\d+/);if(!m)return;
+      var n=+m[0],pre=t.slice(0,m.index),suf=t.slice(m.index+m[0].length),t0=null;
+      (function paso(ts){t0=t0||ts;var p=Math.min((ts-t0)/1100,1),v=Math.round(n*(1-Math.pow(1-p,3)));
+        el.textContent=pre+v+suf;if(p<1)requestAnimationFrame(paso);else el.textContent=t})(performance.now());
+    })},{threshold:.6});
+    cs.forEach(function(c){io.observe(c)});
+  }
+  // 2) brillo que sigue al cursor en la ficha
+  var fi=document.querySelector('.ficha');
+  if(fi&&!red&&matchMedia('(hover:hover)').matches){fi.addEventListener('mousemove',function(e){var r=fi.getBoundingClientRect();fi.style.setProperty('--fx',(e.clientX-r.left)+'px');fi.style.setProperty('--fy',(e.clientY-r.top)+'px')})}
+  // 3) subrayado de títulos al entrar en pantalla
+  var cab=document.querySelectorAll('.sec-cab');
+  if('IntersectionObserver' in window){var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io2.unobserve(e.target)}})},{threshold:.5});cab.forEach(function(c){io2.observe(c)})}else{cab.forEach(function(c){c.classList.add('visto')})}
+  // 4) botón volver arriba
+  var b=document.getElementById('arriba');
+  addEventListener('scroll',function(){b.classList.toggle('ver',scrollY>900)},{passive:true});
+  b.addEventListener('click',function(){scrollTo({top:0,behavior:red?'auto':'smooth'});var h=document.getElementById('inicio');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}});
+  // 5) inclinación suave de la ficha con el cursor
+  var fi=document.querySelector('.ficha');
+  if(fi&&!red&&matchMedia('(hover:hover)').matches){
+    fi.addEventListener('mousemove',function(e){var r=fi.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;fi.style.transform='perspective(900px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg)'});
+    fi.addEventListener('mouseleave',function(){fi.style.transform=''});
+  }
+})();
 </script>
 </body>
 </html>

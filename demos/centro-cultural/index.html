@@ -221,6 +221,12 @@ footer a:hover{color:var(--carmin)}
   footer .wrap{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.faq{background:var(--fondo)}.faq .lista{max-width:860px;display:grid;gap:0;border-top:2px solid var(--negro)}
+.faq details{border-bottom:1px solid var(--linea)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:'+';color:var(--carmin);font-size:1.5rem;line-height:1}
+.faq details[open] summary::after{content:'–'}.faq details p{margin:0 0 18px;color:var(--gris);max-width:68ch}
 </style>
 </head>
 <body>
@@ -410,6 +416,19 @@ footer a:hover{color:var(--carmin)}
       <a class="noticia" href="#noticias"><div class="foto" role="img" aria-label="Grupo de personas observando una pintura" style="background-image:url('https://images.unsplash.com/photo-1569783721854-33a99b4c0bae?w=1000&q=70&auto=format&fit=crop')"></div><time id="n1">—</time><h3>Más de 12 mil personas visitaron “Paisajes de agua” en su primer mes</h3></a>
       <a class="noticia" href="#noticias"><div class="foto" role="img" aria-label="Niñas dibujando con plumones" style="background-image:url('https://images.unsplash.com/photo-1617117206620-b01f2919ff86?w=700&q=70&auto=format&fit=crop')"></div><time id="n2">—</time><h3>Abrimos la agenda de visitas mediadas para el primer semestre</h3></a>
       <a class="noticia" href="#noticias"><div class="foto" role="img" aria-label="Escenario con sillas e iluminación azul" style="background-image:url('https://images.unsplash.com/photo-1558970439-add78fc68990?w=700&q=70&auto=format&fit=crop')"></div><time id="n3">—</time><h3>Convocatoria abierta para la programación escénica 2027</h3></a>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="preguntas">
+  <div class="wrap">
+    <div class="cab"><div><span class="rotulo">Antes de venir</span><h2>Preguntas frecuentes</h2></div></div>
+    <div class="lista">
+      <details><summary>¿Cuánto cuesta la entrada?</summary><p>Las exposiciones son de entrada liberada. Los conciertos y funciones tienen valor general de $3.000 y son gratis para estudiantes con credencial.</p></details>
+      <details><summary>¿El edificio es accesible?</summary><p>Sí: hay rampa en la entrada por Av. Los Robles, ascensor a los pisos 1 y 2 y baños accesibles. Si necesitas apoyo, avísanos y alguien te recibe en la puerta.</p></details>
+      <details><summary>¿Puedo ir con niños?</summary><p>Claro. Los talleres de los sábados en la mañana son para niñas y niños de 6 a 12 años, con inscripción previa. Los coches caben en todas las salas.</p></details>
+      <details><summary>¿Se puede sacar fotos?</summary><p>Sí, sin flash y sin trípode. En algunas obras en préstamo hay un letrero que lo prohíbe; el equipo de sala te avisa.</p></details>
+      <details><summary>¿Hay estacionamiento?</summary><p>No tenemos propio. Hay estacionamiento público a dos cuadras y la costanera queda a cinco minutos caminando.</p></details>
     </div>
   </div>
 </section>

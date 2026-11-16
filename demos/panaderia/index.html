@@ -59,6 +59,18 @@
   .horno{position:relative;aspect-ratio:1/1;max-width:460px;margin:0 auto;width:100%}
   .horno .plato{position:absolute;inset:6% 6% 6% 6%;border-radius:50%;background:var(--harina);box-shadow:0 30px 60px rgba(0,0,0,.28)}
   .horno svg.pan{position:absolute;inset:12%;width:76%;height:76%}
+
+  .horno .fotopan{position:absolute;inset:12%;border-radius:50%;overflow:hidden;box-shadow:inset 0 0 0 6px rgba(251,247,239,.9)}
+  .banda{padding:0 0 70px}.banda .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+  .banda figure{position:relative;overflow:hidden;border-radius:22px;min-height:300px;background:var(--papel)}
+  .banda figure img{position:absolute;inset:0;transition:transform .8s}.banda figure:hover img{transform:scale(1.05)}
+  .banda figcaption{position:absolute;left:14px;bottom:14px;background:var(--harina);color:var(--carbon);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600}
+  .faq{background:var(--papel)}.faq .lista-faq{max-width:820px;margin-top:28px;display:grid;gap:10px}
+  .faq details{background:var(--harina);border:1px solid var(--linea);border-radius:16px;padding:0 20px}
+  .faq summary{cursor:pointer;font-weight:600;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}.faq summary::after{content:'+';font-size:22px;line-height:1;color:var(--ladrillo)}
+  .faq details[open] summary::after{content:'–'}.faq details p{padding:0 0 18px;color:var(--suave)}
+  @media (max-width:760px){.banda .wrap{grid-template-columns:1fr}.banda figure{min-height:220px}}
   .horno .foto{position:absolute;right:-2%;bottom:-2%;width:44%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:6px solid var(--harina);box-shadow:0 14px 30px rgba(0,0,0,.3)}
   .sello{position:absolute;left:-2%;top:2%;width:112px;height:112px;border-radius:50%;background:var(--trigo);color:var(--carbon);display:grid;place-items:center;text-align:center;font-weight:800;font-size:13px;line-height:1.15;transform:rotate(-12deg);padding:12px}
   .sello b{display:block;font-size:26px;font-family:'Newsreader',serif;font-style:italic;font-weight:400}
@@ -228,6 +240,7 @@
       <div class="horno" aria-hidden="true">
         <div class="plato"></div>
         <svg class="pan" viewBox="0 0 200 200"><ellipse cx="100" cy="150" rx="82" ry="14" fill="#000" opacity=".1"/><path d="M18 118c0-46 36-78 82-78s82 32 82 78c0 16-10 28-28 28H46c-18 0-28-12-28-28z" fill="#c8802e"/><path d="M26 112c4-38 34-62 74-62s70 24 74 62" fill="none" stroke="#e8b04b" stroke-width="10" stroke-linecap="round" opacity=".7"/><path d="M62 82l22 36M100 70l12 46M140 84l-12 34" stroke="#f6e3b8" stroke-width="9" stroke-linecap="round"/></svg>
+        <div class="fotopan rm"><img src="https://images.unsplash.com/photo-1774669081553-4ef841520c05?w=1200&q=70&auto=format&fit=crop" alt="Panes de masa madre recién horneados sobre el mostrador" loading="eager" onerror="this.closest('.rm').remove()"></div>
         <div class="foto"><img src="img/croissant.jpg" alt="" loading="eager"></div>
         <div class="sello"><span>horno<b>de ladrillo</b>desde 2017</span></div>
       </div>
@@ -256,6 +269,13 @@
         <article class="rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21c-5-3-8-7-8-12 4 0 7 2 8 5 1-3 4-5 8-5 0 5-3 9-8 12z"/></svg></div><h3>Harinas del sur</h3><p>Trigo molido en molinos de la región; centeno, avena y nueces de proveedores cercanos.</p></article>
         <article class="rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h16l-1.5 11h-13z"/><path d="M8 8a4 4 0 018 0"/></svg></div><h3>Encarga y retira</h3><p>Arma tu pedido en línea, elige día y hora, y pasa a buscarlo sin hacer fila.</p></article>
       </div>
+    </div>
+  </section>
+
+  <section class="banda" aria-label="Del horno al mostrador">
+    <div class="wrap">
+      <figure class="rm rv"><img src="https://images.unsplash.com/photo-1551888761-382cd30b5da6?w=1200&q=70&auto=format&fit=crop" alt="Hogazas y panes de campo en una vitrina de panadería" loading="lazy" onerror="this.closest('.rm').remove()"><figcaption>Panes de campo, todos los días</figcaption></figure>
+      <figure class="rm rv"><img src="https://images.unsplash.com/photo-1774669081553-4ef841520c05?w=1200&q=70&auto=format&fit=crop" alt="Panes recién horneados con la corteza dorada" loading="lazy" onerror="this.closest('.rm').remove()"><figcaption>Corteza gruesa, miga húmeda</figcaption></figure>
     </div>
   </section>
 
@@ -326,6 +346,18 @@
         <svg viewBox="0 0 400 220" role="img" aria-label="Mapa ilustrativo del centro de Paillaco"><rect width="400" height="220" fill="#efe5d0"/><path d="M0 150h400M0 80h400M110 0v220M270 0v220" stroke="#fbf7ef" stroke-width="14"/><path d="M0 40c90 20 180-20 400 10" stroke="#9fc3d1" stroke-width="12" fill="none"/><circle cx="190" cy="115" r="14" fill="#b4361f"/><circle cx="190" cy="115" r="5" fill="#fff"/><text x="210" y="119" font-family="sans-serif" font-size="14" font-weight="700" fill="#1c1a18">Horno Pellín</text></svg>
         <address>Calle Los Notros 412 (dirección ficticia)<br>Paillaco, Región de Los Ríos<br>Teléfono de ejemplo: +56 9 5550 1234</address>
         <p class="nota" style="font-size:13px;color:var(--suave)">Mapa ilustrativo, no corresponde a una ubicación real.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="h-faq">
+    <div class="wrap">
+      <p class="sobre">Preguntas frecuentes</p><h2 id="h-faq">Antes de <em>encargar</em></h2>
+      <div class="lista-faq">
+        <details><summary>¿Con cuánta anticipación debo encargar?</summary><p>Hasta las 20:00 del día anterior para el pan de la mañana. Para tortas y pedidos de más de 10 piezas, avísanos con dos días.</p></details>
+        <details><summary>¿Cuánto dura el pan de masa madre?</summary><p>Entre 4 y 5 días envuelto en un paño. Si te sobra, rebánalo y congélalo: sale directo a la tostadora.</p></details>
+        <details><summary>¿Hacen despacho?</summary><p>Solo retiro en el local. Los sábados dejamos pedidos grandes en Paillaco centro si coordinamos antes.</p></details>
+        <details><summary>¿Tienen opciones sin lácteos?</summary><p>Los panes de campo, el centeno y la ciabatta se hacen solo con harina, agua, sal y masa madre. Los croissants y el kuchen llevan mantequilla y leche.</p></details>
       </div>
     </div>
   </section>

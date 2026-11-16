@@ -148,6 +148,18 @@ label.c{display:block;font-size:14px;color:#cfe0e6;margin-bottom:6px}
 
 /* FAQ */
 .faq{background:var(--espuma)}
+.dia{background:var(--espuma)}
+.dia .cols{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;margin-top:36px}
+.dia .foto{aspect-ratio:4/5;border-radius:22px;background:var(--lago) center/cover no-repeat;position:relative;overflow:hidden}
+.dia .foto span{position:absolute;left:14px;bottom:14px;background:rgba(11,31,51,.82);color:#fff;font-size:13px;padding:6px 12px;border-radius:999px}
+.pasos{list-style:none;display:grid;gap:0;position:relative}
+.pasos li{display:grid;grid-template-columns:78px 1fr;gap:16px;padding:0 0 26px;position:relative}
+.pasos li::before{content:"";position:absolute;left:38px;top:34px;bottom:0;width:2px;background:repeating-linear-gradient(var(--coral) 0 6px,transparent 6px 12px)}
+.pasos li:last-child::before{display:none}
+.pasos b.h{font-family:'Fraunces',serif;font-size:26px;color:var(--coral-t);line-height:1.1}
+.pasos h3{font-size:19px;margin-bottom:2px}
+.pasos p{color:var(--suave);font-size:16px}
+@media(max-width:860px){.dia .cols{grid-template-columns:1fr}.dia .foto{aspect-ratio:16/10}}
 .faq details{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:0 20px;margin-top:10px}
 .faq summary{cursor:pointer;font-weight:600;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
 .faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--coral-t)}
@@ -315,6 +327,22 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
   </div>
 </section>
 
+<section class="dia" id="dia">
+  <div class="wrap">
+    <span class="sobre">Cómo es una salida</span>
+    <h2>Un sábado en el muelle, <em>paso a paso.</em></h2>
+    <div class="cols">
+      <div class="foto" role="img" aria-label="Muelle de madera sobre el agua en Llifén, Lago Ranco" style="background-image:url('https://images.unsplash.com/photo-1584823348241-c917a9befbfa?w=1400&q=70&auto=format&fit=crop')"><span>Llifén, Lago Ranco</span></div>
+      <ol class="pasos">
+        <li><b class="h">9:30</b><div><h3>Llegas al muelle</h3><p>Te esperamos con café y te probamos el chaleco. Dejas el auto en el estacionamiento de la ribera.</p></div></li>
+        <li><b class="h">10:00</b><div><h3>Charla de 15 minutos</h3><p>Cómo sentarse, cómo remar derecho y qué hacer si el kayak se da vuelta. Se practica en seco, en la orilla.</p></div></li>
+        <li><b class="h">10:30</b><div><h3>A remar</h3><p>Dos horas de recorrido con una pausa para mirar la costa. La guía va a tu lado y la embarcación de apoyo detrás.</p></div></li>
+        <li><b class="h">13:00</b><div><h3>Fogón y almuerzo</h3><p>Si lo elegiste, el almuerzo campesino te espera en la ribera. Si no, tomas tu mate y te quedas un rato más.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <section class="seg" id="seguridad">
   <div class="wrap grid">
     <div class="rv">
@@ -355,6 +383,9 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
     <details><summary>¿Qué debo llevar?</summary><p>Ropa que se pueda mojar, zapatos cerrados que puedan mojarse, protector solar, gorro y una muda seca. Nosotros ponemos el resto del equipo.</p></details>
     <details><summary>¿Desde qué edad pueden participar los niños?</summary><p>Desde los 6 años en kayak doble acompañados de un adulto. La salida familiar está pensada para ellos.</p></details>
     <details><summary>¿Qué pasa si hay viento o lluvia fuerte?</summary><p>Revisamos las condiciones antes de cada salida. Si no es seguro, reprogramamos o devolvemos el valor; la lluvia suave no suspende la salida.</p></details>
+    <details><summary>¿Está fría el agua?</summary><p>Sí: en el lago el agua se mantiene fría casi todo el año, incluso en pleno verano. Por eso exigimos chaleco siempre y recomendamos una polera de secado rápido y una chaqueta cortaviento para llevar a bordo.</p></details>
+    <details><summary>¿Puedo llevar mi celular?</summary><p>Sí, en la bolsa estanca que te prestamos. Las fotos las tomamos de todos modos si contratas el extra, así remas con las dos manos.</p></details>
+    <details><summary>¿Cómo se paga?</summary><p>La reserva se confirma por WhatsApp y el pago se hace al llegar al muelle, en efectivo o con transferencia. No pedimos adelanto.</p></details>
     <details><summary>¿La pesca incluye licencia?</summary><p>Te orientamos sobre los permisos que correspondan en cada temporada. Toda la pesca es con devolución y se usa anzuelo sin rebaba.</p></details>
   </div>
 </section>
