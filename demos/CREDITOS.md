@@ -216,3 +216,9 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `kayak/index.html` (sección "Un sábado en el muelle", enlace directo) — https://images.unsplash.com/photo-1584823348241-c917a9befbfa — Camilo Pinaud (@calepinaud), tomada en Llifén, Futrono, Región de Los Ríos
 - `cafeteria/` (sección Pastel del día, enlazada directo) — https://images.unsplash.com/photo-1541167760496-1628856ab772 (arte latte; Fahmi Fakhrudin)
 - `mascotas/` (sección Porciones, enlazada directo) — https://images.unsplash.com/photo-1727294316305-e536bacb65ff (perro en sendero de bosque; Connor, @oconnorstudios)
+
+## Añadidas el 17-11-2026 (enlazadas directo; licencia Unsplash gratuita, verificadas en la página de cada foto)
+- `hostal` sección "El desayuno" (mesa de madera con platos de desayuno) — https://images.unsplash.com/photo-1727329854755-0ff04e0c4a4a — Jakub Żerdzicki · https://unsplash.com/photos/a-wooden-table-topped-with-plates-of-food-070E6t_pZ-o
+- `termas` sección "Un turno, paso a paso" (sauna de madera con vista al bosque; foto tomada en EE. UU., usada solo como ambiente) — https://images.unsplash.com/photo-1745894118353-88e64617e064 — Clay Banks · https://unsplash.com/photos/a-wooden-sauna-overlooks-a-forest-view-xY6H6qv6HmI
+- `taller` sección "Antes de sacar la billetera" (llanta con neumático) — https://images.unsplash.com/photo-1444947295498-07f60c19a4ff — Mason Jones · https://unsplash.com/photos/gray-vehicle-rim-with-tire-9e_ssIz4jB4
+- `heladeria` sección "Temporada" (cono de helado de frutilla) — https://images.unsplash.com/photo-1497034825429-c343d7c6a68f — Ian Dooley · https://unsplash.com/photos/strawberry-ice-cream-on-cone-TLD6iCOlyb0
