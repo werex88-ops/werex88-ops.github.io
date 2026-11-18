@@ -1,5 +1,31 @@
 # Registro de cambios
 
+## 2026-11-17 (mejora diaria)
+
+Parte desde `main` (no había solicitudes abiertas desde ramas `claude/...`; la #43 y la #44 ya están fusionadas).
+
+### Referencias de competencia
+- chile.travel, "Termas de Los Ríos": estructura "Planifica tu viaje" con cómo llegar por aire y tierra y lista de qué llevar. Idea aplicada: en Vapor Sur, sección "Un turno, paso a paso" y preguntas sobre llegar sin auto y llevar comida. No se copió texto.
+- Búsquedas de hostales en Valdivia: solo aparecieron agregadores (Kayak, Atrápalo, Hotels.com); no abrí ninguno. Poca investigación hoy, sin referencias de talleres ni heladerías.
+
+### Portafolio y currículum
+Sin cambios hoy (jornada acotada). Intenté agregar un botón "volver arriba" al currículum, pero ya existía; lo revertí.
+
+### Demos tocadas (4)
+- `hostal/` (Radal): sección "El desayuno" con foto y 2 preguntas nuevas (llegada tarde, wifi).
+- `termas/` (Vapor Sur): sección "Un turno, paso a paso" con foto y 2 preguntas nuevas (sin auto, comida).
+- `taller/`: sección "Antes de sacar la billetera, te mostramos la pieza" con foto y 2 preguntas nuevas (sin hora, auto de reemplazo).
+- `heladeria/` (Maqui): sección "La fruta manda" (sabores por mes) con foto y sección de preguntas de mostrador (antes no tenía).
+- Fotos registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+25 páginas a 320, 390 y 1440 px, con las fotos externas bloqueadas: sin desplazamiento horizontal ni errores de JavaScript. Todas las demos pesan menos de 60 KB.
+
+### Sugerencias para René
+- Revisa en el navegador que las 4 fotos nuevas carguen. La del sauna fue tomada en EE. UU. y se usa solo como ambiente; si prefieres una del sur de Chile, cámbiala.
+- Los horarios y datos nuevos son ejemplos ficticios.
+- Pendiente: más rotación de demos (centro-cultural, navidad, cerveceria, veterinaria, panaderia), y rediseño del portafolio y del currículum.
+
 ## 2026-11-16 (mejora diaria)
 
 Esta rama parte desde la del 15 de noviembre (solicitud #43, aún abierta; incluye la #42), para no duplicar trabajo ni generar conflictos.
