@@ -222,3 +222,4 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `termas` sección "Un turno, paso a paso" (sauna de madera con vista al bosque; foto tomada en EE. UU., usada solo como ambiente) — https://images.unsplash.com/photo-1745894118353-88e64617e064 — Clay Banks · https://unsplash.com/photos/a-wooden-sauna-overlooks-a-forest-view-xY6H6qv6HmI
 - `taller` sección "Antes de sacar la billetera" (llanta con neumático) — https://images.unsplash.com/photo-1444947295498-07f60c19a4ff — Mason Jones · https://unsplash.com/photos/gray-vehicle-rim-with-tire-9e_ssIz4jB4
 - `heladeria` sección "Temporada" (cono de helado de frutilla) — https://images.unsplash.com/photo-1497034825429-c343d7c6a68f — Ian Dooley · https://unsplash.com/photos/strawberry-ice-cream-on-cone-TLD6iCOlyb0
+- `cerveceria` (planta, enlazada, sin copia local) — https://images.unsplash.com/photo-1758978912199-e0df57bde255

@@ -227,6 +227,17 @@ footer a:hover{color:var(--carmin)}
 .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-weight:700}
 .faq summary::-webkit-details-marker{display:none}.faq summary::after{content:'+';color:var(--carmin);font-size:1.5rem;line-height:1}
 .faq details[open] summary::after{content:'–'}.faq details p{margin:0 0 18px;color:var(--gris);max-width:68ch}
+
+/* Ruta según tu tiempo */
+.ruta .wrap{max-width:900px}
+.ruta .tiempos{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 22px}
+.ruta .tiempos button{padding:12px 22px;border:1.5px solid var(--negro);background:#fff;font:600 .95rem 'Archivo',sans-serif;cursor:pointer}
+.ruta .tiempos button[aria-pressed=true]{background:var(--negro);color:#fff}
+.ruta ol{list-style:none;border-top:1px solid var(--linea)}
+.ruta li{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--linea)}
+.ruta li b{color:var(--carmin);font-weight:700}
+.ruta li span{color:var(--gris)}
+@media(max-width:520px){.ruta li{grid-template-columns:70px 1fr}}
 </style>
 </head>
 <body>
@@ -248,7 +259,7 @@ footer a:hover{color:var(--carmin)}
       <ul>
         <li><a href="#exposiciones">Exposiciones</a></li>
         <li><a href="#agenda">Agenda</a></li>
-        <li><a href="#visita">Visita</a></li>
+        <li><a href="#visita">Visita</a></li><li><a href="#ruta">Tu recorrido</a></li>
         <li><a href="#educacion">Educación</a></li>
         <li><a href="#espacios">Espacios</a></li>
         <li><a href="#noticias">Noticias</a></li>
@@ -397,6 +408,21 @@ footer a:hover{color:var(--carmin)}
   </div>
 </section>
 
+
+<section class="ruta" id="ruta" style="padding:72px 0;background:var(--papel)">
+  <div class="wrap">
+    <span class="rotulo">Si vienes por primera vez</span>
+    <h2 style="margin-bottom:10px">¿Cuánto tiempo tienes?</h2>
+    <p style="color:var(--gris);margin-bottom:18px;max-width:60ch">Elige y te armamos un recorrido para hoy. Las exposiciones son de entrada liberada, así que puedes entrar sin pasar por caja.</p>
+    <div class="tiempos" role="group" aria-label="Tiempo disponible">
+      <button type="button" aria-pressed="true" data-t="30">30 minutos</button>
+      <button type="button" aria-pressed="false" data-t="60">1 hora</button>
+      <button type="button" aria-pressed="false" data-t="120">2 horas</button>
+    </div>
+    <ol id="ruta-lista" aria-live="polite"></ol>
+  </div>
+</section>
+
 <section id="espacios">
   <div class="wrap">
     <div class="cab"><div><span class="rotulo">Espacios</span><h2>Nuestras salas</h2></div><a class="enlace" href="mailto:espacios@ejemplo.invalid?subject=Solicitud%20de%20uso%20de%20espacios">Solicitud de uso de espacios →</a></div>
@@ -534,6 +560,23 @@ footer a:hover{color:var(--carmin)}
     if(!/^\S+@\S+\.\S+$/.test(v)){r.style.color='#FFB3C2';r.textContent='Revisa tu correo electrónico.';return;}
     r.style.color='';r.textContent='¡Listo! (demostración: no se guardó ningún dato).';e.target.reset();
   });
+})();
+</script>
+
+<script>
+(function(){
+  var R={
+    30:[['0 min','Entra por Av. Los Robles','Sin fila ni entrada: pasa directo a la sala 1.'],['5 min','Muestra «Ribera»','Fotografías del Calle-Calle. Lee solo los textos de pared, son cortos.'],['25 min','Café del hall','Si sobra tiempo, el patio queda a un paso de la salida.']],
+    60:[['0 min','Sala 1: «Ribera»','Retratos del río, 20 minutos con calma.'],['25 min','Sala 2: pintura','Obras de artistas de la región; hay bancas para sentarse.'],['45 min','Librería y patio','Libros de autores locales y un descanso antes de salir.']],
+    120:[['0 min','Mediación en sala','Pregunta en recepción por el recorrido guiado del día.'],['40 min','Salas 1 y 2','Con la guía ya en la cabeza, se ve distinto.'],['80 min','Función o taller','Revisa la agenda: hay actividades casi todas las tardes.'],['110 min','Café del hall','Cierra el paseo con algo caliente.']]
+  };
+  var bts=document.querySelectorAll('#ruta .tiempos button'),ol=document.getElementById('ruta-lista');
+  function pinta(t){
+    ol.innerHTML=R[t].map(function(r){return '<li><b>'+r[0]+'</b><div><strong>'+r[1]+'</strong><br><span>'+r[2]+'</span></div></li>'}).join('');
+    Array.prototype.forEach.call(bts,function(b){b.setAttribute('aria-pressed',b.dataset.t===String(t))});
+  }
+  Array.prototype.forEach.call(bts,function(b){b.addEventListener('click',function(){pinta(b.dataset.t)})});
+  pinta(30);
 })();
 </script>
 

@@ -1,5 +1,33 @@
 # Registro de cambios
 
+## 2026-11-18 (mejora diaria)
+
+Esta rama parte desde la del 17 de noviembre (solicitud #45, aún abierta), para no duplicar trabajo ni generar conflictos.
+
+### Referencias de competencia
+- Pasaporte Cervecero de Valdivia (nota de Meteored): pasaporte gratuito con mapa de 24 locales que se timbra en cada visita. Idea aplicada: en Hualle, un pasaporte de seis sellos (uno por cerveza) que se puede probar en la página. No se copió texto.
+- Centro cultural: la búsqueda solo devolvió PDFs de revistas mensuales y notas de prensa; no abrí ninguna. Idea propia: recorrido sugerido según el tiempo disponible, útil para quien llega por primera vez.
+- Poca investigación hoy en navidad y veterinaria (sin referencias nuevas).
+
+### Portafolio y currículum
+Sin cambios hoy: ya tienen carrusel, filtros, buscador, selector de color, barra de progreso y cinta animada. Prioricé las demos pendientes de la rotación.
+
+### Demos tocadas (4)
+- `cerveceria/` (Hualle): sección "Pasaporte Hualle" con foto de tanques de acero y seis sellos que se marcan al tocar; preguntas del mostrador (reserva, niños, tours, duración de la lata, venta a locales); nuevo enlace "Pasaporte" en el menú.
+- `centro-cultural/`: sección "¿Cuánto tiempo tienes?" que arma un recorrido de 30 minutos, 1 hora o 2 horas.
+- `navidad/`: cotizador rápido (tipo de espacio, metros, árbol opcional) con rango de precio referencial.
+- `veterinaria/`: calendario de referencia por edad (cachorro, adulto, senior).
+- Foto nueva registrada en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+25 páginas a 320, 390 y 1440 px con las fotos externas bloqueadas: sin desplazamiento horizontal, errores de JavaScript, 404 locales ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé las cuatro funciones nuevas con clics. Todas las demos pesan menos de 60 KB; portafolio 60 KB y currículum 50 KB (límite 90 KB).
+
+### Sugerencias para René
+- Revisa en el navegador que la foto de tanques de Hualle cargue. Es de Unsplash; no pude verificar dónde fue tomada.
+- Los precios del cotizador de navidad, el premio del pasaporte y el calendario de vacunas son ejemplos ficticios; ajústalos si usas la demo con un cliente real (el de vacunas debe validarlo un veterinario).
+- Próximas demos: panadería, sushi, ferretería, madera, yoga, contable.
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles; no se inventaron datos.
+
 ## 2026-11-17 (mejora diaria)
 
 Parte desde `main` (no había solicitudes abiertas desde ramas `claude/...`; la #43 y la #44 ya están fusionadas).

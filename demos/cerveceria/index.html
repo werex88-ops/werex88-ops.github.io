@@ -193,6 +193,25 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
  *{animation:none!important;transition:none!important}
  .rv{opacity:1;transform:none}
 }
+
+/* Planta y preguntas */
+.planta{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.planta .foto{min-height:380px;background-image:linear-gradient(135deg,#32241a,#17120d)}
+.planta h2{font-size:clamp(34px,5vw,64px);font-weight:900;margin:10px 0 14px}
+.planta p{color:var(--suave-o);margin-bottom:14px}
+.sellos{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:18px 0 8px}
+.sellos button{aspect-ratio:1;border-radius:50%;border:2px dashed var(--suave-o);background:transparent;color:var(--suave-o);font-size:12px;font-weight:600;line-height:1.1;transition:transform .2s,background .2s}
+.sellos button:hover{transform:rotate(-6deg) scale(1.05)}
+.sellos button[aria-pressed=true]{background:var(--cobre);border:2px solid var(--cobre);color:var(--malta);transform:rotate(-8deg)}
+#sello-nota{font-size:14px;color:var(--espuma2);min-height:24px}
+.pregs{max-width:820px}
+.pregs details{border-bottom:1px solid rgba(42,29,18,.2);padding:18px 0}
+.pregs summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.pregs summary::after{content:'+';color:var(--cobre-t);font-size:24px;line-height:1}
+.pregs details[open] summary::after{content:'−'}
+.pregs details p{margin-top:10px;color:var(--suave)}
+@media(max-width:860px){.planta{grid-template-columns:1fr}.planta .foto{min-height:260px}}
+@media(max-width:400px){.sellos{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
@@ -205,7 +224,7 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
       Hualle
     </a>
     <nav aria-label="Principal"><ul class="menu">
-      <li><a href="#cervezas">Cervezas</a></li><li><a href="#pack">Armar pack</a></li><li><a href="#nosotros">Cervecería</a></li><li><a href="#visita">Visítanos</a></li><li><a href="#contacto">Contacto</a></li>
+      <li><a href="#cervezas">Cervezas</a></li><li><a href="#pack">Armar pack</a></li><li><a href="#nosotros">Cervecería</a></li><li><a href="#planta">Pasaporte</a></li><li><a href="#visita">Visítanos</a></li><li><a href="#contacto">Contacto</a></li>
     </ul></nav>
     <span class="estado" id="estado" role="status"><i></i><span>Revisando horario…</span></span>
   </div>
@@ -340,6 +359,35 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
     </div>
   </div>
 </section>
+
+<section id="planta">
+  <div class="wrap">
+    <div class="planta">
+      <div class="foto rv" role="img" aria-label="Tanques de acero inoxidable de una cervecería en una sala oscura" style="background-image:url('https://images.unsplash.com/photo-1758978912199-e0df57bde255?w=1200&q=70&auto=format&fit=crop')"></div>
+      <div class="rv">
+        <span class="rot">Pasaporte Hualle</span>
+        <h2 class="disp">Prueba las seis y te invitamos la siguiente</h2>
+        <p>Cada vez que pidas una de nuestras cervezas en la sala, te timbramos el pasaporte. Con los seis sellos, la próxima pinta va por la casa. Aquí puedes practicar: toca cada cerveza que ya probaste.</p>
+        <div class="sellos" id="sellos"></div>
+        <p id="sello-nota" role="status" aria-live="polite">Llevas 0 de 6 sellos.</p>
+        <a class="btn borde" href="#cervezas">Ver las seis cervezas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="claro" id="preguntas">
+  <div class="wrap">
+    <div class="cab rv"><span class="rot">Preguntas del mostrador</span><h2 class="disp">Lo que nos preguntan antes de venir</h2></div>
+    <div class="pregs rv">
+      <details><summary>¿Hay que reservar?</summary><p>Para grupos de hasta 6 personas no. Si son más, escríbenos por WhatsApp con el día y la hora, y les juntamos dos mesas largas.</p></details>
+      <details><summary>¿Puedo ir con niños?</summary><p>Sí, hasta las 20:00. Tenemos jugo de manzana de la zona y papas rústicas. Después de esa hora la sala es solo para mayores de 18 años.</p></details>
+      <details><summary>¿Hacen tours de la planta?</summary><p>Los sábados a las 12:30, con reserva y cupo para 10 personas. Dura 40 minutos y termina con una tabla de degustación de cuatro vasos.</p></details>
+      <details><summary>¿Cuánto dura una lata en el refrigerador?</summary><p>Hasta seis meses, siempre que la guardes fría y lejos de la luz. Las más aromáticas, como la IPA Alerce, conviene tomarlas en las primeras ocho semanas.</p></details>
+      <details><summary>¿Venden a restaurantes y eventos?</summary><p>Sí. Despachamos barriles de 30 litros y packs por caja a locales de Valdivia y alrededores. Escríbenos con la fecha y la cantidad aproximada.</p></details>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer id="contacto">
@@ -409,6 +457,19 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
   $('#mayor').addEventListener('change',calc);
   $$('input[name=ent]').forEach(function(r){r.addEventListener('change',calc)});
   calc();
+
+
+  /* Pasaporte de sellos */
+  (function(){
+    var cont=$('#sellos'),nota=$('#sello-nota');
+    cont.innerHTML=B.map(function(b){return '<button type="button" aria-pressed="false" aria-label="Sello de '+b.n+'">'+b.n+'</button>'}).join('');
+    cont.addEventListener('click',function(e){
+      var bt=e.target.closest('button');if(!bt)return;
+      bt.setAttribute('aria-pressed',bt.getAttribute('aria-pressed')!=='true');
+      var n=$$('#sellos [aria-pressed=true]').length;
+      nota.textContent=n===6?'Pasaporte completo: la próxima pinta va por la casa.':'Llevas '+n+' de 6 sellos.';
+    });
+  })();
 
   /* Horario en vivo (hora de Chile) */
   var H={0:[13,20],3:[17,23],4:[17,23],5:[13,24],6:[13,24]};
