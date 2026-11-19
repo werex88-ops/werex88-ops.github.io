@@ -1,5 +1,32 @@
 # Registro de cambios
 
+## 2026-11-19 (mejora diaria)
+
+Parte desde `main` (no había solicitudes abiertas desde ramas `claude/...`; la #46 ya está fusionada).
+
+### Referencias de competencia
+- Meteored, "Dónde encontrar pan de masa madre en Santiago": las panaderías destacan fermentación lenta, horarios visibles y pedido anticipado. Idea aplicada: en Pan de Paillaco, un calculador de encargo para la once y más preguntas sobre pedidos. No se copió texto.
+- Búsquedas de ferretería, carpintería y sushi: solo devolvieron páginas de fotos y agregadores; no abrí sitios de negocios. Poca investigación en esos rubros hoy.
+
+### Portafolio y currículum
+Sin cambios hoy: priorizé las demos pendientes de la rotación.
+
+### Demos tocadas (4)
+- `sushi/` (Kaiyō): sección "¿Cuánto pido?" (personas × apetito → propuesta y precio referencial) con foto de tabla de sushi; 2 preguntas nuevas (duración del omakase, estacionamiento); corregí el pie de página, que decía Viña del Mar en vez de Valdivia; nuevo enlace en el menú.
+- `ferreteria/` (Lleuque): sección "El consejo del mesón" (qué tornillo para madera, hormigón, zinc o yeso-cartón) con foto; 3 preguntas nuevas (ayuda para calcular, despacho, arriendo de herramientas); enlace "Consejos" en el menú.
+- `madera/` (Mañío): sección "Qué madera elegir" (raulí, roble, lenga y pino seco: para qué sirve y qué cuidar) con foto de taller; 2 preguntas nuevas (plazo de una mesa, uso en exterior); enlace "Maderas" en el menú.
+- `panaderia/` (Pan de Paillaco): calculador "¿Cuánto pan para la once?" con deslizador (2 a 30 personas) y total referencial; 3 preguntas nuevas (tortas, pago, cantidad para 6 personas).
+- Fotos nuevas registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+27 páginas a 320, 390 y 1440 px con las fotos externas bloqueadas: sin desplazamiento horizontal, errores de JavaScript ni anclas rotas; una sola etiqueta `<main>` en cada demo. Probé las cuatro funciones nuevas con clics y vi capturas de sushi y madera con imagen de prueba. Todas las demos pesan menos de 60 KB; portafolio 60 KB y currículum 50 KB.
+
+### Sugerencias para René
+- Revisa en el navegador que las 3 fotos nuevas carguen (Unsplash; no pude verificar dónde fueron tomadas).
+- Precios, cantidades y plazos nuevos son ejemplos ficticios.
+- Pendiente: portafolio y currículum llevan dos jornadas sin cambios visibles; próxima rotación de demos: yoga, contable, gimnasio, velas, plantas, mascotas, cabañas, kayak.
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles; no se inventaron datos.
+
 ## 2026-11-18 (mejora diaria)
 
 Esta rama parte desde la del 17 de noviembre (solicitud #45, aún abierta), para no duplicar trabajo ni generar conflictos.

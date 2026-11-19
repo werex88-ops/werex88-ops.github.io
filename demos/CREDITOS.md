@@ -223,3 +223,8 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `taller` sección "Antes de sacar la billetera" (llanta con neumático) — https://images.unsplash.com/photo-1444947295498-07f60c19a4ff — Mason Jones · https://unsplash.com/photos/gray-vehicle-rim-with-tire-9e_ssIz4jB4
 - `heladeria` sección "Temporada" (cono de helado de frutilla) — https://images.unsplash.com/photo-1497034825429-c343d7c6a68f — Ian Dooley · https://unsplash.com/photos/strawberry-ice-cream-on-cone-TLD6iCOlyb0
 - `cerveceria` (planta, enlazada, sin copia local) — https://images.unsplash.com/photo-1758978912199-e0df57bde255
+
+## Añadidas el 19-11-2026 (enlazadas directo; licencia Unsplash gratuita, verificadas en la página de cada foto)
+- `sushi` sección "¿Cuánto pido?" (sushi sobre tabla de madera) — https://images.unsplash.com/photo-1563612116625-3012372fccce — Fadya Azhary · https://unsplash.com/photos/sushi-on-wooden-platter-5KS7T3Gs3CA
+- `ferreteria` sección "El consejo del mesón" (martillo junto a herramienta manual) — https://images.unsplash.com/photo-1602052793312-b99c2a9ee797 — Mitchell Luo · https://unsplash.com/photos/black-and-silver-claw-hammer-beside-red-and-black-hand-tool-G5i9LQ7sPOw
+- `madera` sección "Qué madera elegir" (herramientas de carpintería en un mesón de taller) — https://images.unsplash.com/photo-1788296817269-8df0458ab799 — HENG YIN · https://unsplash.com/photos/woodworking-tools-on-workshop-workbench-KKY0GrQPqVo

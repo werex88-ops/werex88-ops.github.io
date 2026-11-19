@@ -197,6 +197,18 @@ footer b{color:#fff}
 .foto-band figure:hover img{transform:scale(1.04)}
 @media(max-width:640px){.foto-band .fb,.foto-band .fb.n2{grid-template-columns:1fr;gap:12px}.foto-band figure{aspect-ratio:16/10}}
 @media(prefers-reduced-motion:reduce){.foto-band img{transition:none}}
+
+.fij{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.fij figure{border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:var(--az);border:3px solid var(--az)}
+.fij figure img{width:100%;height:100%;object-fit:cover;display:block}
+.fij-sel{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.fij-sel button{min-height:44px;padding:0 16px;border:2px solid var(--az);background:transparent;border-radius:6px;font-weight:700;color:var(--az)}
+.fij-sel button[aria-pressed="true"]{background:var(--az);color:var(--papel)}
+.fij-res{background:#fff;border-left:6px solid var(--rojo);border-radius:6px;padding:18px 20px;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.fij-res h3{font-size:1.35rem;margin-bottom:6px}
+.fij-res ul{margin:10px 0 0 18px}
+.fij-res li{margin:3px 0}
+@media(max-width:820px){.fij{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -214,7 +226,7 @@ footer b{color:#fff}
 <header><div class="w nav">
   <a class="logo" href="#inicio" aria-label="Ferretería Lleuque, inicio"><i aria-hidden="true"><svg width="22" height="22" viewBox="0 0 48 48"><path d="M8 12h32v10H8zM19 22h10v22H19z" fill="#10304a"/><circle cx="38" cy="17" r="4" fill="#c63d22"/></svg></i><span>Lleuque</span></a>
   <nav class="menu" id="menu" aria-label="Principal">
-    <a href="#calculadora">Calculadora</a><a href="#catalogo">Catálogo</a><a href="#nosotros">Nosotros</a><a href="#visita">Visítanos</a>
+    <a href="#calculadora">Calculadora</a><a href="#consejo">Consejos</a><a href="#catalogo">Catálogo</a><a href="#nosotros">Nosotros</a><a href="#visita">Visítanos</a>
   </nav>
   <div class="nav-der">
     <a class="pedido-link" href="#catalogo" aria-label="Ver mi pedido"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h3l2.5 11h10L21 7H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg><span class="t">Pedido</span><b id="cnt">0</b></a>
@@ -334,6 +346,13 @@ footer b{color:#fff}
   </div>
 </div></section>
 
+<section class="alt" id="consejo" aria-labelledby="t-fij"><div class="w fij">
+  <div class="rv"><p class="eti">El consejo del mesón</p><h2 id="t-fij">¿Qué tornillo va en cada material?</h2><p>La pregunta que más escuchamos al otro lado del mostrador. Toca el material y te decimos qué llevar (y qué no).</p>
+  <div class="fij-sel" role="group" aria-label="Material donde vas a fijar"><button type="button" aria-pressed="true" data-m="madera">Madera</button><button type="button" aria-pressed="false" data-m="hormigon">Hormigón o ladrillo</button><button type="button" aria-pressed="false" data-m="zinc">Zinc y planchas</button><button type="button" aria-pressed="false" data-m="yeso">Tabique de yeso-cartón</button></div>
+  <div class="fij-res" aria-live="polite" id="fij-res"></div></div>
+  <figure class="rv"><img src="https://images.unsplash.com/photo-1602052793312-b99c2a9ee797?w=1200&q=70&auto=format&fit=crop" alt="Martillo de carpintero junto a una herramienta manual sobre una superficie" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+</div></section>
+
 <section aria-labelledby="t-op"><div class="w">
   <div class="cab rv"><p class="eti">Opiniones</p><h2 id="t-op">Lo que dirían nuestros clientes</h2></div>
   <div class="ops">
@@ -348,6 +367,9 @@ footer b{color:#fff}
   <details><summary>¿Puedo devolver lo que me sobre?</summary><p>Sí, los materiales sin abrir y con boleta se pueden cambiar o devolver dentro de 15 días. Los cortes a medida no tienen devolución.</p></details>
   <details><summary>¿Cortan la madera a medida?</summary><p>Hacemos cortes rectos en el mesón sin costo cuando compras la madera con nosotros.</p></details>
   <details><summary>¿Despachan a sectores rurales?</summary><p>Sí, a sectores cercanos a Río Bueno con la tarifa del pedido. Para distancias mayores te cotizamos por WhatsApp.</p></details>
+  <details><summary>¿Me ayudan a calcular cuánto llevar?</summary><p>Sí. Usa la calculadora de esta página o llega con las medidas anotadas: te armamos la lista y te sugerimos un 10 % de holgura para cortes y pérdidas.</p></details>
+  <details><summary>¿Hay que pagar el despacho si compro poco?</summary><p>Bajo $25.000 el despacho tiene costo fijo; sobre ese monto es gratis dentro de Río Bueno. El retiro en tienda siempre es gratis.</p></details>
+  <details><summary>¿Prestan herramientas?</summary><p>No prestamos, pero arrendamos taladro percutor, esmeril y andamio por día. Pedimos carnet y un depósito que se devuelve al entregar la herramienta.</p></details>
   <details><summary>¿Los precios del catálogo son reales?</summary><p>No. Este es un sitio de ejemplo con precios y productos ficticios, creado para mostrar cómo funcionaría el catálogo de una ferretería.</p></details>
 </div></section>
 
@@ -379,6 +401,7 @@ footer b{color:#fff}
 
 <footer><div class="w"><div><b>Ferretería Lleuque</b><br>Materiales y herramientas · Río Bueno, Región de Los Ríos</div><div>Sitio de ejemplo creado por Werex Studio.<br>Negocio, precios y contactos ficticios. Ilustraciones propias.</div></div></footer>
 
+<script>(function(){var D={madera:["Madera con madera","Tornillo autoperforante para madera, cabeza plana: 4×50 mm para armar, 5×80 mm para estructura.",["Haz un guía con broca delgada cerca de los bordes para que no se abra la veta.","En exterior, elige galvanizado o inoxidable: el sur es húmedo."]],hormigon:["Hormigón o ladrillo","Tarugo plástico con tornillo, o anclaje de expansión si va a cargar peso.",["Necesitas taladro percutor y broca de widia del diámetro del tarugo.","Para estantes pesados, mejor anclaje metálico que tarugo plástico."]],zinc:["Zinc y planchas de techo","Tornillo punta broca con golilla de neopreno, para que no entre agua por el hoyo.",["Se atornilla en la cresta de la onda, no en el valle.","No aprietes hasta aplastar la golilla: debe quedar firme, no hundida."]],yeso:["Tabique de yeso-cartón","Tornillo punta fina para yeso-cartón si hay perfil metálico; tarugo de mariposa si no hay nada detrás.",["Busca el pie derecho con un imán o golpeando suave: suena más sordo donde hay estructura.","Un cuadro liviano aguanta una mariposa; un televisor, no."]]};var b=document.querySelectorAll('.fij-sel button'),r=document.getElementById('fij-res');function show(k){var d=D[k];r.innerHTML='<h3>'+d[0]+'</h3><p>'+d[1]+'</p><ul>'+d[2].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>';b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.m===k)})}b.forEach(function(x){x.addEventListener('click',function(){show(x.dataset.m)})});show('madera')})();</script>
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
 <script>
 (function(){
