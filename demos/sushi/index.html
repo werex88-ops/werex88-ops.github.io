@@ -174,6 +174,23 @@
   .faq summary:focus-visible{outline:2px solid var(--oro);outline-offset:4px}
   .faq details p{color:#bdb6aa;margin-top:12px;font-size:15px;max-width:60ch}
   @media(max-width:860px){.faq-sec{padding:80px 0}.faq-g{grid-template-columns:1fr;gap:36px}.faq summary{font-size:21px}}
+
+  .pide{background:var(--carbon);padding:110px 0}
+  .pide-g{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .pide figure{aspect-ratio:4/3;overflow:hidden;background:#1d1c19}
+  .pide p.lead{color:#bdb6aa;margin:18px 0 26px;max-width:46ch}
+  .pide fieldset{border:0;margin:0 0 20px}
+  .pide legend{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris);margin-bottom:10px}
+  .opc{display:flex;gap:8px;flex-wrap:wrap}
+  .opc input{position:absolute;opacity:0;width:1px;height:1px}
+  .opc label{border:1px solid rgba(237,230,218,.3);padding:10px 18px;font-size:13px;letter-spacing:.04em;text-transform:none;color:var(--papel);cursor:pointer;transition:background .25s,color .25s}
+  .opc input:checked+label{background:var(--papel);color:var(--tinta)}
+  .opc input:focus-visible+label{outline:2px solid #fff;outline-offset:2px}
+  .sugerencia{border-left:2px solid var(--bermellon);padding:6px 0 6px 20px;margin-top:8px}
+  .sugerencia b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;display:block;line-height:1.15}
+  .sugerencia span{color:var(--oro);font-family:'Cormorant Garamond',serif;font-size:26px}
+  .sugerencia small{display:block;color:var(--gris);font-size:13px;margin-top:6px}
+  @media(max-width:860px){.pide{padding:80px 0}.pide-g{grid-template-columns:1fr;gap:36px}}
 </style>
 </head>
 <body>
@@ -185,6 +202,7 @@
     <ul>
       <li><a href="#filosofia">Filosofía</a></li>
       <li><a href="#menu">Menú</a></li>
+      <li><a href="#pide">¿Cuánto pido?</a></li>
       <li><a href="#chef">Itamae</a></li>
       <li><a href="#reserva">Contacto</a></li>
     </ul>
@@ -299,10 +317,24 @@
   </div>
 </section>
 
+<section class="pide" id="pide">
+  <div class="contenedor pide-g">
+    <div class="rv">
+      <div class="eyebrow">Para decidir sin estrés</div>
+      <div class="titulo"><h2>¿Cuánto <em>pido?</em></h2></div>
+      <p class="lead">Es la duda de todos la primera vez. Dinos cuántos van y qué tan hambrientos, y te armamos una propuesta con la carta de hoy.</p>
+      <fieldset><legend>¿Cuántas personas?</legend><div class="opc" id="op-per"><input type="radio" name="per" id="p1" value="1"><label for="p1">1</label><input type="radio" name="per" id="p2" value="2" checked><label for="p2">2</label><input type="radio" name="per" id="p3" value="3"><label for="p3">3</label><input type="radio" name="per" id="p4" value="4"><label for="p4">4</label></div></fieldset>
+      <fieldset><legend>¿Qué tal el apetito?</legend><div class="opc"><input type="radio" name="ap" id="a1" value="0"><label for="a1">Algo liviano</label><input type="radio" name="ap" id="a2" value="1" checked><label for="a2">Normal</label><input type="radio" name="ap" id="a3" value="2"><label for="a3">Con hambre</label></div></fieldset>
+      <div class="sugerencia" aria-live="polite"><b id="s-t"></b><span id="s-p"></span><small id="s-d"></small></div>
+    </div>
+    <figure class="rv"><img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?w=1200&q=70&auto=format&fit=crop" alt="Tabla de madera con piezas de sushi variadas" loading="lazy" onerror="this.parentNode.remove()"></figure>
+  </div>
+</section>
+
 <section class="faq-sec" id="preguntas">
   <div class="contenedor faq-g">
     <div class="rv"><div class="eyebrow">Antes de venir</div><div class="titulo"><h2>Lo que más <em>nos preguntan.</em></h2></div></div>
-    <div class="faq rv"><details><summary>¿Hay que reservar?</summary><p>Para la barra omakase sí, con 48 horas de anticipación porque son solo 12 asientos. Las mesas se pueden reservar o llegar directo, pero viernes y sábado conviene escribir con un par de días.</p></details><details><summary>No como pescado crudo, ¿tengo qué comer?</summary><p>Sí. La carta caliente tiene ramen tonkotsu, gyozas de cerdo y tempura mixta. Si avisas al reservar, el itamae arma un roll de verduras.</p></details><details><summary>Tengo alergia a la soya, al sésamo o a los mariscos</summary><p>Avísanos al reservar y lo dejamos anotado. En la barra podemos cambiar la salsa y separar la tabla, pero la cocina maneja soya, gluten, sésamo y mariscos, así que no podemos garantizar cero trazas.</p></details><details><summary>¿Tienen delivery?</summary><p>No. El arroz y el pescado pierden mucho en el camino. Sí puedes hacer un pedido por teléfono y retirarlo en el local en unos 20 minutos.</p></details><details><summary>¿Se puede ir con niños?</summary><p>Sí, en las mesas. No tenemos menú infantil, pero las gyozas y la tempura suelen gustarles. El omakase en barra es mejor desde los 12 años.</p></details><details><summary>¿Cómo se paga y cómo es la propina?</summary><p>Con tarjeta, transferencia o efectivo. Se sugiere un 10 % de propina, que aparece en la cuenta y puedes pedir que la quiten.</p></details></div>
+    <div class="faq rv"><details><summary>¿Hay que reservar?</summary><p>Para la barra omakase sí, con 48 horas de anticipación porque son solo 12 asientos. Las mesas se pueden reservar o llegar directo, pero viernes y sábado conviene escribir con un par de días.</p></details><details><summary>No como pescado crudo, ¿tengo qué comer?</summary><p>Sí. La carta caliente tiene ramen tonkotsu, gyozas de cerdo y tempura mixta. Si avisas al reservar, el itamae arma un roll de verduras.</p></details><details><summary>Tengo alergia a la soya, al sésamo o a los mariscos</summary><p>Avísanos al reservar y lo dejamos anotado. En la barra podemos cambiar la salsa y separar la tabla, pero la cocina maneja soya, gluten, sésamo y mariscos, así que no podemos garantizar cero trazas.</p></details><details><summary>¿Tienen delivery?</summary><p>No. El arroz y el pescado pierden mucho en el camino. Sí puedes hacer un pedido por teléfono y retirarlo en el local en unos 20 minutos.</p></details><details><summary>¿Se puede ir con niños?</summary><p>Sí, en las mesas. No tenemos menú infantil, pero las gyozas y la tempura suelen gustarles. El omakase en barra es mejor desde los 12 años.</p></details><details><summary>¿Cómo se paga y cómo es la propina?</summary><p>Con tarjeta, transferencia o efectivo. Se sugiere un 10 % de propina, que aparece en la cuenta y puedes pedir que la quiten.</p></details><details><summary>¿Cuánto dura el omakase?</summary><p>Unas dos horas y media. Empieza puntual: si llegas 20 minutos tarde, el itamae retoma desde el tiempo en que va el resto de la barra.</p></details><details><summary>¿Hay estacionamiento?</summary><p>No tenemos propio, pero la costanera tiene estacionamiento en la calle y se llena después de las 20:00. Entre semana es fácil.</p></details></div>
   </div>
 </section>
 
@@ -337,7 +369,7 @@
 </main>
 <footer>
   <div class="contenedor">
-    <div><div class="logo">KAIYŌ<b style="color:var(--bermellon);font-weight:400">.</b></div><p>Sushi bar &amp; omakase.<br>Av. Costanera 1240, Viña del Mar.</p></div>
+    <div><div class="logo">KAIYŌ<b style="color:var(--bermellon);font-weight:400">.</b></div><p>Sushi bar &amp; omakase.<br>Av. Costanera 1240, Valdivia.</p></div>
     <div><h5>Horario</h5><p>Mar – Sáb<br>13:00 – 23:30</p></div>
     <div><h5>Contacto</h5><p>+56 63 2555 0142<br>hola@kaiyo.cl</p></div>
     <div><h5>Síguenos</h5><p>Instagram<br>TikTok</p></div>
@@ -363,6 +395,17 @@
 
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .15 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  (function(){
+    const T=[["Para picar","Sashimi del día y un roll de salmón","Doce cortes de sashimi y un Spicy tuna (8 piezas). Con eso queda bien."],["La opción clásica","Un roll de autor y tres nigiris","Elige el Kaiyō Roll y suma salmón, atún aburi y hamachi."],["Con todo","Roll de autor, nigiris, gyozas y tempura","Para quedarse largo: dos rolls, tres nigiris y algo caliente."]];
+    const base=[[12900+8200,0],[8900+3900+4500+4900,0],[8900+9500+3900+4500+5900+7500,0]];
+    const q=n=>document.querySelector('input[name='+n+']:checked').value;
+    function calc(){const n=+q('per'),a=+q('ap'),t=T[a];const total=Math.round(base[a][0]*(n===1?0.55:n===2?1:n===3?1.45:1.9)/100)*100;
+      document.getElementById('s-t').textContent=t[1];
+      document.getElementById('s-p').textContent='Referencial: $'+total.toLocaleString('es-CL');
+      document.getElementById('s-d').textContent=t[0]+' · '+t[2]+' Para '+n+(n===1?' persona':' personas')+', sin bebidas.';}
+    document.querySelectorAll('.pide input').forEach(i=>i.addEventListener('change',calc));calc();
+  })();
 </script>
 
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
