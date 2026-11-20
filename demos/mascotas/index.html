@@ -187,6 +187,16 @@
   .tam-b button:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
   .tam-r{background:#fff;border:2px dashed var(--sol);border-radius:20px;padding:18px 20px;font-size:17px}
   .tam-r small{display:block;color:var(--suave);margin-top:8px;font-size:13px}
+
+  .horno{padding:20px 0 70px}
+  .horno-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .horno-g article{background:var(--blanco);border:2px solid var(--linea);border-radius:26px;padding:26px;transition:transform .25s,border-color .25s}
+  .horno-g article:hover{transform:translateY(-4px) rotate(-.6deg);border-color:var(--sol)}
+  .horno-g .dia{display:inline-block;background:var(--sol);color:var(--tinta);font-weight:700;font-size:13px;padding:5px 12px;border-radius:999px}
+  .horno-g h3{font-family:'Young Serif',serif;font-weight:400;font-size:24px;margin:14px 0 8px}
+  .horno-g p{color:var(--suave);font-size:15px}
+  @media(max-width:800px){.horno-g{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.horno-g article{transition:none}.horno-g article:hover{transform:none}}
   .faq details{border-bottom:2px solid var(--linea);padding:18px 0}
   .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:18px}
   .faq summary::-webkit-details-marker{display:none}
@@ -204,7 +214,7 @@
 <nav>
   <div class="contenedor">
     <a class="logo" href="#"><span class="huella"><svg viewBox="0 0 24 24"><ellipse cx="6" cy="9" rx="2.2" ry="2.8"/><ellipse cx="10.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="15.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="19" cy="10" rx="2.2" ry="2.8"/><path d="M12.5 11c3 0 6.5 4.6 6.5 7.3 0 2-1.6 2.7-3.2 2.7-1.4 0-2.1-.8-3.3-.8s-1.9.8-3.3.8C7.6 21 6 20.3 6 18.3 6 15.6 9.5 11 12.5 11z"/></svg></span>Pata Feliz</a>
-    <ul><li><a href="#snacks">Snacks</a></li><li><a href="#resenas">Reseñas</a></li><li><a href="#pedido">Pedidos</a></li></ul>
+    <ul><li><a href="#snacks">Snacks</a></li><li><a href="#horno">Cómo se hacen</a></li><li><a href="#resenas">Reseñas</a></li><li><a href="#pedido">Pedidos</a></li></ul>
     <a class="btn wsp" href="#pedido" aria-label="Pedir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg><span>Pedir por WhatsApp</span></a>
   </div>
 </nav>
@@ -275,6 +285,17 @@
     </div>
   </div>
 </section>
+<section class="horno" id="horno">
+  <div class="contenedor">
+    <div class="cab rv"><div class="sobre">Cómo lo hacemos</div><h2>Se hornea <span style="color:var(--coral)">el mismo día</span></h2><p>Cocinamos en tandas chicas, dos veces por semana, para que nada pase días en una bodega.</p></div>
+    <div class="horno-g rv">
+      <article><span class="dia">Lunes y jueves</span><h3>Compramos fresco</h3><p>Zanahoria, plátano y pollo de proveedores de la zona. Nada de harinas refinadas ni azúcar.</p></article>
+      <article><span class="dia">Martes y viernes</span><h3>Horneamos a fuego bajo</h3><p>Entre 2 y 3 horas a baja temperatura, para que queden crujientes sin quemarse.</p></article>
+      <article><span class="dia">El mismo día</span><h3>Empacamos y despachamos</h3><p>Va en bolsa con cierre y la fecha de horneado escrita a mano. Pides hoy, lo recibes en la próxima ruta.</p></article>
+    </div>
+  </div>
+</section>
+
 <section id="resenas" style="padding-top:20px">
   <div class="contenedor">
     <div class="cab rv"><div class="sobre">Reseñas</div><h2>Lo que dicen <span class="marcador">sus humanos</span></h2></div>
@@ -286,7 +307,7 @@
   </div>
 </section>
 
-<section id="preguntas" style="padding:20px 0 80px"><div class="contenedor" style="max-width:860px"><div class="sobre">Preguntas frecuentes</div><h2 style="font-family:'Young Serif',serif;font-weight:400;font-size:clamp(30px,4vw,44px);margin:8px 0 22px">Lo que nos escriben antes de pedir</h2><div class="faq rv"><details><summary>¿Desde qué edad pueden comerlos?</summary><p>Desde los 3 meses los bocaditos blandos, siempre en trozos chicos. Los huesitos crujientes, mejor desde los 6 meses.</p></details><details><summary>Mi perro es alérgico, ¿qué le sirve?</summary><p>Los huesitos de zanahoria llevan huevo y avena; los bocaditos, pollo; los pupcakes, maní. Escríbenos con lo que le hace mal y te decimos cuál evitar. No es un reemplazo de la opinión de tu veterinario.</p></details><details><summary>¿Cuánto duran?</summary><p>Entre 3 y 4 semanas en un lugar seco y fresco, en la bolsa bien cerrada. Los pupcakes se comen en 3 días o se congelan.</p></details><details><summary>¿Hacen despacho a regiones?</summary><p>Por ahora solo Santiago oriente, martes y viernes. Si estás fuera de la zona, puedes retirar en el punto de entrega sin costo.</p></details><details><summary>¿Puedo encargar pupcakes con nombre?</summary><p>Sí, con 5 días de anticipación. Escribimos el nombre de tu perro con crema de yogur natural.</p></details></div></div></section>
+<section id="preguntas" style="padding:20px 0 80px"><div class="contenedor" style="max-width:860px"><div class="sobre">Preguntas frecuentes</div><h2 style="font-family:'Young Serif',serif;font-weight:400;font-size:clamp(30px,4vw,44px);margin:8px 0 22px">Lo que nos escriben antes de pedir</h2><div class="faq rv"><details><summary>¿Desde qué edad pueden comerlos?</summary><p>Desde los 3 meses los bocaditos blandos, siempre en trozos chicos. Los huesitos crujientes, mejor desde los 6 meses.</p></details><details><summary>Mi perro es alérgico, ¿qué le sirve?</summary><p>Los huesitos de zanahoria llevan huevo y avena; los bocaditos, pollo; los pupcakes, maní. Escríbenos con lo que le hace mal y te decimos cuál evitar. No es un reemplazo de la opinión de tu veterinario.</p></details><details><summary>¿Cuánto duran?</summary><p>Entre 3 y 4 semanas en un lugar seco y fresco, en la bolsa bien cerrada. Los pupcakes se comen en 3 días o se congelan.</p></details><details><summary>¿Hacen despacho a regiones?</summary><p>Por ahora solo Santiago oriente, martes y viernes. Si estás fuera de la zona, puedes retirar en el punto de entrega sin costo.</p></details><details><summary>¿Puedo encargar pupcakes con nombre?</summary><p>Sí, con 5 días de anticipación. Escribimos el nombre de tu perro con crema de yogur natural.</p></details><details><summary>¿Cuánto le doy a mi perro al día?</summary><p>Como premio, no más de un 10 % de lo que come al día. Para un perro chico son unos 3 huesitos; para uno grande, hasta 8. Si es la primera vez, parte con la mitad.</p></details><details><summary>¿Se pueden congelar?</summary><p>Sí. Congelados duran hasta tres meses; sácalos una hora antes y quedan como recién horneados. Los pupcakes, mejor consumirlos dentro de cuatro días.</p></details><details><summary>¿Los bocaditos de pollo sirven si es alérgico al pollo?</summary><p>No. Para esos casos te recomendamos los huesitos de zanahoria, que no llevan carne. Escríbenos y te contamos qué lleva cada receta.</p></details></div></div></section>
 <section id="pedido">
   <div class="contenedor">
     <div class="pedido rv">

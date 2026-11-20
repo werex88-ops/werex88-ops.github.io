@@ -82,6 +82,21 @@
   .beneficio p { font-size: 14px; color: var(--suave); }
 
   section { padding: 100px 0; }
+
+  .riego{padding:70px 0}
+  .riego-g{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .riego fieldset{border:0;margin-top:20px}
+  .riego legend{font-size:13px;font-weight:500;color:var(--suave);margin-bottom:10px}
+  .riego .op{display:flex;flex-wrap:wrap;gap:8px}
+  .riego .op button{background:var(--blanco);border:1px solid var(--linea);color:var(--bosque);padding:10px 18px;border-radius:999px;font:inherit;font-size:15px;cursor:pointer;transition:.2s}
+  .riego .op button:hover{border-color:var(--musgo)}
+  .riego .op button[aria-pressed=true]{background:var(--bosque);color:var(--fondo);border-color:var(--bosque)}
+  .riego .op button:focus-visible{outline:2px solid var(--musgo);outline-offset:3px}
+  .riego-res{background:var(--bosque);color:var(--fondo);border-radius:28px;padding:32px}
+  .riego-res .gota{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--brote)}
+  .riego-res b{display:block;font-size:clamp(30px,4vw,44px);line-height:1.05;letter-spacing:-.03em;font-weight:500;margin:10px 0 12px}
+  .riego-res p{color:#d3e0d3;font-size:16px}
+  @media(max-width:860px){.riego-g{grid-template-columns:1fr;gap:28px}.riego{padding:50px 0}}
   .cab { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 44px; flex-wrap: wrap; }
   .cab h2 { font-size: clamp(40px, 5vw, 66px); line-height: 1; letter-spacing: -.04em; font-weight: 500; }
   .cab h2 .serif { font-style: italic; color: var(--musgo); letter-spacing: -.01em; }
@@ -206,7 +221,7 @@
       <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 29V14" stroke="#1d3a2b" stroke-width="2.4" stroke-linecap="round"/><path d="M16 15C16 8 21 4 28 4c0 7-5 11-12 11Z" fill="#2f5a43"/><path d="M16 19C16 13 12 9 5 9c0 6 4 10 11 10Z" fill="#b6e36b"/></svg>
       raíz<span>verde</span>
     </a>
-    <ul><li><a href="#catalogo">Catálogo</a></li><li><a href="#como">Cómo funciona</a></li><li><a href="#kits">Regalos</a></li><li><a href="#faq">Ayuda</a></li></ul>
+    <ul><li><a href="#catalogo">Catálogo</a></li><li><a href="#como">Cómo funciona</a></li><li><a href="#riego">Riego</a></li><li><a href="#kits">Regalos</a></li><li><a href="#faq">Ayuda</a></li></ul>
     <button class="canasta"><span>Canasta</span><b id="n">0</b></button>
   </div>
 </nav>
@@ -306,6 +321,18 @@
   </div>
 </section>
 
+<section class="riego" id="riego">
+  <div class="contenedor riego-g">
+    <div class="rv">
+      <h2 class="serif" style="font-size:clamp(30px,4vw,46px)">¿Cada cuánto <span style="font-style:italic;color:var(--musgo)">la riego?</span></h2>
+      <p style="margin-top:10px;max-width:46ch;color:#4f5b4e">El error número uno es el exceso de agua. Elige tu planta y la estación y te damos una frecuencia para partir; después afínala metiendo un dedo en la tierra.</p>
+      <fieldset><legend>Tu planta</legend><div class="op" id="rp"><button type="button" aria-pressed="true" data-v="pothos">Pothos</button><button type="button" aria-pressed="false" data-v="sansevieria">Sansevieria</button><button type="button" aria-pressed="false" data-v="monstera">Monstera</button><button type="button" aria-pressed="false" data-v="calathea">Calathea</button><button type="button" aria-pressed="false" data-v="suculenta">Cactus y suculentas</button></div></fieldset>
+      <fieldset><legend>Estación</legend><div class="op" id="re"><button type="button" aria-pressed="false" data-v="v">Verano</button><button type="button" aria-pressed="true" data-v="o">Otoño</button><button type="button" aria-pressed="false" data-v="i">Invierno</button><button type="button" aria-pressed="false" data-v="p">Primavera</button></div></fieldset>
+    </div>
+    <div class="riego-res rv" aria-live="polite"><span class="gota">Para partir</span><b id="rb"></b><p id="rtx"></p></div>
+  </div>
+</section>
+
 <section id="faq" style="padding-top:20px">
   <div class="contenedor faq">
     <div class="rv"><div class="cab" style="margin:0"><h2>Preguntas <span class="serif">frecuentes</span></h2></div></div>
@@ -378,6 +405,18 @@
 
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .1 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+(function(){
+  let pl='pothos',es='o';
+  const base={pothos:[7,'Aguanta la sed mejor que el exceso. Si las hojas se ponen caídas, es señal de que ya toca.'],sansevieria:[14,'Casi no necesita agua. Si dudas, espera un día más.'],monstera:[7,'Le gusta la tierra apenas húmeda, nunca empapada. Moja también las hojas de vez en cuando.'],calathea:[5,'Prefiere agua sin cloro (déjala reposar un día) y humedad en el ambiente.'],suculenta:[14,'Riega solo cuando la tierra esté seca hasta el fondo. En invierno, casi nada.']};
+  const f={v:0.7,o:1,i:1.6,p:0.9};
+  const nom={v:'En verano',o:'En otoño',i:'En invierno',p:'En primavera'};
+  const rb=document.getElementById('rb'),rtx=document.getElementById('rtx');
+  function pintar(){const [d,t]=base[pl];let n=Math.round(d*f[es]);if(pl==='suculenta'&&es==='i')n=30;
+    rb.textContent=nom[es]+': cada '+n+' días';rtx.textContent=t;}
+  function g(id,fn){const c=document.getElementById(id);c.addEventListener('click',e=>{const x=e.target.closest('button');if(!x)return;[...c.children].forEach(y=>y.setAttribute('aria-pressed',y===x));fn(x.dataset.v);pintar()})}
+  g('rp',v=>pl=v);g('re',v=>es=v);pintar();
+})();
 </script>
 
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>

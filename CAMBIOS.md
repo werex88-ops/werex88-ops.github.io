@@ -1,5 +1,36 @@
 # Registro de cambios
 
+## 2026-11-20 (mejora diaria)
+
+Parte desde `main` (no había solicitudes abiertas desde ramas `claude/...`; la #47 ya está fusionada).
+
+### Referencias de competencia
+- Artículo de Shopify sobre portafolios de diseño web memorables: los mejores abren con un mensaje directo, muestran el trabajo a todo color, usan acentos de color sobre fondo neutro y ponen el contacto a pocos pasos; el movimiento aparece en tarjetas y al pasar el cursor, con moderación. Ya lo cumplimos en gran parte; idea aplicada: describir en cada tarjeta la función concreta de la demo.
+- Gimnasios de Valdivia: la búsqueda solo devolvió agregadores (Wellhub, AgendaPro, ClassPass); no abrí sitios de negocios. Idea propia: ayudar a decidir cuántos días entrenar antes de elegir plan.
+- Poca investigación hoy en velas, plantas y mascotas (sin referencias nuevas).
+
+### Currículum
+- Los chips de competencias aparecen en cascada al hacer scroll (desactivado con `prefers-reduced-motion` y al imprimir). Contenido y versión A4 sin cambios.
+
+### Portafolio
+- Las tarjetas de gimnasio, velas, plantas y mascotas describen ahora las funciones nuevas. Pesa 60 KB (límite 90 KB).
+
+### Demos tocadas (4)
+- `gimnasio/` (Forja): sección "¿Cuántos días te sirven?" (días por semana × objetivo → semana de ejemplo y plan sugerido); 3 preguntas nuevas; enlace "Tu rutina" en el menú.
+- `velas/` (Luz de Cera): test "¿Qué aroma te toca?" (dónde la prendes × olores que te gustan → vela recomendada con precio); 2 preguntas nuevas sobre duración y vaso ennegrecido.
+- `plantas/` (Raíz Verde): guía "¿Cada cuánto la riego?" (planta × estación → frecuencia); enlace "Riego" en el menú.
+- `mascotas/`: sección "Se hornea el mismo día" (tres pasos de producción) y 3 preguntas nuevas (porciones, congelar, alergia al pollo).
+- No agregué fotos nuevas (estas demos ya tenían las suyas), así que `demos/CREDITOS.md` no cambia. No regeneré capturas.
+
+### Validación
+25 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin desplazamiento horizontal, errores de JavaScript, 404 locales ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las tres funciones nuevas. Todas las demos bajo 60 KB; currículum 50 KB.
+
+### Sugerencias para René
+- Precios, frecuencias de riego, porciones y descuentos nuevos son ejemplos ficticios; las pautas de riego y de porciones para mascotas deberían validarlas especialistas si se usan con un cliente real.
+- Pendiente: portafolio con carrusel y filtros ya completo; falta fotos de contexto para las demos que aún usan ilustraciones (no pude verificar identificadores de Unsplash hoy).
+- Próxima rotación de demos: cabañas, kayak, yoga, contable.
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles; no se inventaron datos.
+
 ## 2026-11-19 (mejora diaria)
 
 Parte desde `main` (no había solicitudes abiertas desde ramas `claude/...`; la #46 ya está fusionada).
