@@ -25,6 +25,25 @@
   img { display: block; width: 100%; height: 100%; object-fit: cover; }
   a { color: inherit; text-decoration: none; }
   button { font: inherit; cursor: pointer; }
+
+  .test{padding:80px 0;background:var(--lino)}
+  .test-g{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .test h2{font-size:clamp(32px,4.2vw,50px);line-height:1.1;margin:10px 0 14px}
+  .test h2 .cursiva{color:var(--terracota);font-size:1.1em}
+  .test fieldset{border:0;margin-top:22px}
+  .test legend{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-bottom:10px}
+  .test .op{display:flex;gap:8px;flex-wrap:wrap}
+  .test .op button{background:var(--marfil);border:1px solid var(--arena);color:var(--tierra);padding:11px 18px;border-radius:999px;font:inherit;font-size:14px;cursor:pointer;transition:.2s}
+  .test .op button:hover{border-color:var(--tierra)}
+  .test .op button[aria-pressed=true]{background:var(--tierra);color:var(--marfil);border-color:var(--tierra)}
+  .test .op button:focus-visible{outline:2px solid var(--terracota);outline-offset:3px}
+  .test-res{background:var(--marfil);display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px;box-shadow:0 18px 40px -24px rgba(58,42,32,.4)}
+  .test-res img{width:150px;height:190px;object-fit:cover}
+  .test-res h3{font-family:'Marcellus',serif;font-weight:400;font-size:26px;line-height:1.15}
+  .test-res .n{color:var(--suave);font-size:14px;margin:6px 0}
+  .test-res .m{font-size:15px;margin-bottom:14px}
+  @media(max-width:860px){.test-g{grid-template-columns:1fr;gap:30px}.test{padding:60px 0}}
+  @media(max-width:480px){.test-res{grid-template-columns:1fr}.test-res img{width:100%;height:220px}}
   .titular { font-family: 'Marcellus', serif; font-weight: 400; letter-spacing: .01em; }
   .cursiva { font-family: 'Cormorant Garamond', serif; font-style: italic; }
   .contenedor { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
@@ -223,7 +242,7 @@
 
 <nav>
   <div class="contenedor">
-    <ul><li><a href="#tienda">Tienda</a></li><li><a href="#ingredientes">Ingredientes</a></li><li><a href="#historia">Nosotras</a></li></ul>
+    <ul><li><a href="#tienda">Tienda</a></li><li><a href="#aroma">Tu aroma</a></li><li><a href="#ingredientes">Ingredientes</a></li><li><a href="#historia">Nosotras</a></li></ul>
     <a class="logo" href="#">Luz de Cera<small>Atelier · Santiago</small></a>
     <button class="carrito-btn" id="abrir"><span class="txt">Carrito</span><span class="n" id="n">0</span></button>
   </div>
@@ -326,11 +345,24 @@
   </div>
 </section>
 
+<section class="test" id="aroma">
+  <div class="contenedor test-g">
+    <div class="rv">
+      <div class="mini" style="color:var(--terracota)">Para indecisos</div>
+      <h2 class="titular">¿Qué aroma <span class="cursiva">te toca?</span></h2>
+      <p style="color:var(--suave);max-width:44ch">Dos preguntas y te decimos con cuál partir. Si dudas, todas parten en el formato de 220 g.</p>
+      <fieldset><legend>¿Dónde la vas a prender?</legend><div class="op" id="t1"><button type="button" aria-pressed="true" data-v="dormir">En el velador</button><button type="button" aria-pressed="false" data-v="living">En el living</button><button type="button" aria-pressed="false" data-v="regalo">Es un regalo</button></div></fieldset>
+      <fieldset><legend>¿Qué olores te gustan?</legend><div class="op" id="t2"><button type="button" aria-pressed="true" data-v="suave">Suaves y limpios</button><button type="button" aria-pressed="false" data-v="dulce">Dulces y de invierno</button><button type="button" aria-pressed="false" data-v="floral">Florales</button></div></fieldset>
+    </div>
+    <div class="test-res rv" aria-live="polite" id="tr"></div>
+  </div>
+</section>
+
 <section class="vfaq" id="preguntas">
   <div class="contenedor">
     <div><div class="mini" style="color:var(--terracota)">Antes de comprar</div><h2 class="titular" style="font-size:clamp(30px,4vw,46px);margin-top:10px">Preguntas <span class="cursiva">frecuentes</span></h2></div>
     <div>
-      <details open><summary>¿Cuánto demora el despacho?</summary><p>Armamos tu pedido en 24 a 48 horas hábiles. A Santiago llega en 1 o 2 días y a regiones en 3 a 5, con número de seguimiento por correo.</p></details>
+      <details open><summary>¿Cuánto demora el despacho?</summary><p>Armamos tu pedido en 24 a 48 horas hábiles. A Santiago llega en 1 o 2 días y a regiones en 3 a 5, con número de seguimiento por correo.</p></details><details><summary>¿Cuánto dura una vela de 220 g?</summary><p>Unas 50 horas si la prendes de a tres horas seguidas. Si la dejas menos de una hora, la cera no se derrite pareja y se hace un túnel en el centro.</p></details><details><summary>¿Por qué se ennegrece el vaso?</summary><p>Casi siempre es una mecha muy larga. Córtala a 5 mm antes de cada encendida y evita las corrientes de aire.</p></details>
       <details><summary>¿Puedo regalar una vela con tarjeta?</summary><p>Sí. Al pagar escribes el mensaje y lo copiamos a mano en una tarjeta que va dentro del paquete, sin precio a la vista.</p></details>
       <details><summary>¿Son seguras con mascotas y niños?</summary><p>Usamos aceites esenciales en baja concentración, pero igual recomendamos prenderlas en una pieza ventilada y fuera del alcance de guaguas y animales. Si tu gato es muy sensible a los aromas, consúltanos antes por una opción sin fragancia.</p></details>
       <details><summary>¿Qué hago cuando se termina?</summary><p>Deja que se enfríe, saca los restos de cera con una cuchara y lava el vaso con agua caliente y jabón. Queda perfecto para guardar lápices, joyas o una planta chica.</p></details>
@@ -428,6 +460,17 @@
 
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  (function(){
+    let a='dormir',b='suave';
+    const mapa={'dormir|suave':[2,'Para dormir conviene un aroma herbal que no cansa. Préndela media hora antes de acostarte y apágala al lavarte los dientes.'],'dormir|dulce':[3,'Dulce, pero lejos de la almohada: déjala sobre una cómoda y apágala antes de dormir.'],'dormir|floral':[2,'Lavanda es la más pedida para la pieza. Es suave y no se siente empalagosa.'],'living|suave':[1,'Cítrica y luminosa, se nota en toda la sala sin ser pesada.'],'living|dulce':[3,'Canela y manzana llenan el living rápido. Con 3 horas de encendido ya se siente.'],'living|floral':[4,'Floral pero liviana; aguanta bien visitas sin competir con la comida.'],'regalo|suave':[1,'La más fácil de acertar: a casi todos les gusta lo cítrico.'],'regalo|dulce':[3,'Cálida y de temporada. Se puede enviar con tarjeta escrita a mano.'],'regalo|floral':[4,'Romántica sin ser exagerada. Va bien para cumpleaños y aniversarios.']};
+    function pintar(){
+      const [id,txt]=mapa[a+'|'+b],v=velas.find(x=>x.id===id);
+      document.getElementById('tr').innerHTML='<img src="'+v.img+'" alt="Vela '+v.nombre+'" loading="lazy" onerror="this.style.display=\'none\'"><div><div class="mini" style="color:var(--terracota)">Te recomendamos</div><h3>'+v.nombre+'</h3><p class="n">'+v.notas+'</p><p class="m">'+txt+'</p><a class="btn" href="#tienda">Ver en la tienda · $'+v.precio.toLocaleString('es-CL')+'</a></div>';
+    }
+    function g(id,f){const c=document.getElementById(id);c.addEventListener('click',e=>{const x=e.target.closest('button');if(!x)return;[...c.children].forEach(y=>y.setAttribute('aria-pressed',y===x));f(x.dataset.v);pintar()})}
+    g('t1',v=>a=v);g('t2',v=>b=v);pintar();
+  })();
 </script>
 
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>

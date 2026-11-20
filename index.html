@@ -727,5 +727,15 @@ var c=document.getElementById('copiar');if(c)c.addEventListener('click',function
 function ok(){c.textContent='¡Copiado!';setTimeout(function(){c.textContent='Copiar correo'},2000)}
 if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){location.href='mailto:'+t})}else{location.href='mailto:'+t}})})();
 </script>
+<style>
+  /* 20-nov: chips que aparecen en cascada (solo pantalla) */
+  @keyframes chipIn{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
+  .rv.in .chip[style*="--i"]{animation:chipIn .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*35ms)}
+  @media (prefers-reduced-motion:reduce){.rv.in .chip[style*="--i"]{animation:none}}
+  @media print{.chip{animation:none!important}}
+</style>
+<script>
+(function(){document.querySelectorAll('.competencia .chip, .comp .chip, .chips .chip').forEach(function(c,i,a){c.style.setProperty('--i',i%12)})})();
+</script>
 </body>
 </html>
