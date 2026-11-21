@@ -1,5 +1,35 @@
 # Registro de cambios
 
+## 2026-11-21 (mejora diaria)
+
+Parte desde `main` (no había solicitudes abiertas hacia `main`).
+
+### Referencias de competencia
+- 2x3.cl (directorio de contadores y asesorías en Valdivia y otras ciudades) y contable.app: las asesorías contables explican en lenguaje simple qué incluye cada servicio, muestran precios o rangos y avisan fechas de vencimiento. Idea aplicada en Lenga: lista interactiva de papeles para la primera reunión y preguntas sobre atrasos y cambio de contador. No se copió texto.
+- Fichas de cabañas en Lago Ranco y Futrono (interpatagonia.com, Airbnb): destacan tipo de cama, tinaja, distancia al lago y cómo llegar; los alojamientos se eligen por quién viaja. Idea aplicada en Alerce Dormido: test «¿cuál cabaña te conviene?» y recorrido de un día. No abrí sitios de negocios individuales; poca profundidad hoy.
+- Yoga y kayak: sin referencias nuevas hoy.
+
+### Currículum
+Sin cambios hoy (priorizé las demos). Sigue con barra de progreso, chips en cascada y versión A4.
+
+### Portafolio
+- Actualicé las descripciones de las tarjetas de cabañas, kayak, yoga y contable con las funciones nuevas. Pesa 60 KB (límite 90 KB). Sin cambios visuales mayores hoy.
+
+### Demos tocadas (4)
+- `cabanas/` (Alerce Dormido): test «¿Cuál cabaña te conviene?» (con quién vienes × qué buscas → recomendación con foto y botón que preselecciona la calculadora); sección «Así se pasa un sábado» con horarios y foto en banda; 3 preguntas nuevas (leña y desayuno, llegada tardía, niños); enlace en el menú.
+- `kayak/` (Mawün Kayak): «¿Qué me pongo para remar?» (época × clima → lista de ropa y nota sobre la temperatura del agua); 2 preguntas nuevas (baño y cambiador, ir solo); enlace «Qué llevar».
+- `yoga/` (Aire Sur): «¿Por dónde empiezo?» (cómo llegas × experiencia → clase sugerida y horario de ejemplo); sección de 6 preguntas frecuentes (mat, ropa, flexibilidad, cancelación, embarazo y lesiones); enlace «Empieza».
+- `contable/` (Lenga): «¿Qué papeles traigo?» (tipo de negocio → checklist marcable con barra de avance); sección de 6 preguntas frecuentes (cambio de contador, atrasos de IVA, plan, entrega de información, plazo del IVA); enlace «Papeles».
+- Fotos: 3 de cabañas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+Las 4 demos tocadas a 320, 390 y 1440 px con recursos externos bloqueados: sin desplazamiento horizontal, errores de JavaScript ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios. Corregí un desborde propio en yoga (los radios ocultos heredaban el ancho global de `input`). Probé con clics las cuatro funciones nuevas y vi capturas de yoga y contable. Todas bajo 60 KB (cabañas 46 KB, kayak 40 KB, yoga 44 KB, contable 44 KB). No volví a renderizar las otras 21 páginas, que no cambiaron.
+
+### Sugerencias para René
+- Revisa en el navegador que las 3 fotos nuevas de cabañas carguen y que se vean del sur de Chile; no pude verlas, así que no sé si hay personas ni dónde fueron tomadas.
+- Horarios, plazos de cancelación, fechas de IVA y recomendaciones de ropa son ejemplos; con un cliente real hay que validarlos. Las preguntas de embarazo/lesiones en yoga deben revisarlas la instructora.
+- Pendiente: currículum y portafolio llevan varios días sin cambios visibles grandes; próxima rotación: centro-cultural, navidad, cerveceria, veterinaria. Falta agregar teléfono o LinkedIn y logros medibles al currículum (no se inventaron datos).
+
 ## 2026-11-20 (mejora diaria)
 
 Parte desde `main` (no había solicitudes abiertas desde ramas `claude/...`; la #47 ya está fusionada).
