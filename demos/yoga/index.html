@@ -177,6 +177,28 @@ footer.pie a{text-decoration:underline}
 .foto-band figure:hover img{transform:scale(1.04)}
 @media(max-width:640px){.foto-band .fb,.foto-band .fb.n2{grid-template-columns:1fr;gap:12px}.foto-band figure{aspect-ratio:16/10}}
 @media(prefers-reduced-motion:reduce){.foto-band img{transition:none}}
+
+.empieza{background:var(--hueso)}
+.emp-g{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.emp-g fieldset{border:0;padding:0;margin:0 0 18px}
+.emp-g legend{font-weight:700;margin-bottom:8px}
+.emp-g .ops{display:flex;flex-wrap:wrap;gap:8px}
+.emp-g .ops label{cursor:pointer}
+.emp-g .ops label{position:relative;display:inline-block}.emp-g .ops input{position:absolute;left:0;top:0;width:1px;height:1px;min-height:0;padding:0;border:0;opacity:0;pointer-events:none}
+.emp-g .ops span{display:inline-block;padding:10px 16px;border:2px solid var(--salvia2);border-radius:999px;background:#fff;font-weight:600;font-size:15px}
+.emp-g .ops input:checked+span{background:var(--bosque);border-color:var(--bosque);color:#fff}
+.emp-g .ops input:focus-visible+span{outline:3px solid var(--arcilla);outline-offset:2px}
+.sug{background:#fff;border-radius:20px;padding:28px;border-left:6px solid var(--arcilla)}
+.sug h3{font-size:1.6rem;margin:4px 0 8px}
+.sug p{color:var(--suave);margin:0 0 14px}
+.sug .quedia{font-weight:700;color:var(--arcilla);margin-bottom:16px}
+.faqy details{background:#fff;border:1px solid var(--salvia2);border-radius:14px;padding:0 20px;margin-top:10px;max-width:780px}
+.faqy summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faqy summary::after{content:"+";font-size:22px;line-height:1;color:var(--arcilla)}
+.faqy details[open] summary::after{content:"−"}
+.faqy details p{padding:0 0 16px;color:var(--suave);margin:0}
+@media(max-width:820px){.emp-g{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -185,7 +207,7 @@ footer.pie a{text-decoration:underline}
  <div class="w nav">
   <a class="logo" href="#inicio" aria-label="Aire Sur, inicio"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="#e9b8a0"/><g fill="#22342b"><path d="M32 14c-9 9-9 21 0 31 9-10 9-22 0-31z"/><path d="M13 27c11 0 17 8 19 18-11 0-17-7-19-18z"/><path d="M51 27c-11 0-17 8-19 18 11 0 17-7 19-18z"/></g></svg>Aire Sur</a>
   <nav aria-label="Secciones"><ul>
-   <li><a href="#horario">Horario</a></li><li><a href="#clases">Clases</a></li><li><a href="#respira">Respira</a></li><li><a href="#planes">Planes</a></li><li><a href="#ubicacion">Ubicación</a></li>
+   <li><a href="#horario">Horario</a></li><li><a href="#clases">Clases</a></li><li><a href="#empieza">Empieza</a></li><li><a href="#respira">Respira</a></li><li><a href="#planes">Planes</a></li><li><a href="#ubicacion">Ubicación</a></li>
   </ul></nav>
   <a class="btn b1" href="#reservar">Reservar</a>
  </div>
@@ -252,6 +274,31 @@ footer.pie a{text-decoration:underline}
   </div>
  </div>
 </section>
+
+<section class="empieza" id="empieza" aria-labelledby="t-em"><div class="w">
+  <div class="cab rv"><p class="eti">¿Por dónde empiezo?</p><h2 id="t-em">Tu primera clase, sin adivinar</h2><p>Dinos cómo llegas y con qué experiencia, y te proponemos una clase para esta semana.</p></div>
+  <div class="emp-g">
+   <div>
+    <fieldset><legend>¿Cómo llegas hoy?</legend><div class="ops">
+      <label><input type="radio" name="llega" value="tensa" checked><span>Con el cuerpo tenso</span></label>
+      <label><input type="radio" name="llega" value="cansada"><span>Cansada, sin energía</span></label>
+      <label><input type="radio" name="llega" value="espalda"><span>Me duele la espalda</span></label>
+      <label><input type="radio" name="llega" value="mente"><span>La cabeza a mil</span></label>
+    </div></fieldset>
+    <fieldset><legend>¿Tienes experiencia?</legend><div class="ops">
+      <label><input type="radio" name="exp" value="no" checked><span>Nunca he hecho</span></label>
+      <label><input type="radio" name="exp" value="algo"><span>Algo, hace tiempo</span></label>
+    </div></fieldset>
+   </div>
+   <div class="sug" aria-live="polite">
+     <p class="eti" style="margin:0">Te sugerimos</p>
+     <h3 id="s-clase">Hatha suave</h3>
+     <p id="s-texto"></p>
+     <p class="quedia" id="s-cuando"></p>
+     <a class="btn b1" href="#reservar">Reservar esta clase</a>
+   </div>
+  </div>
+</div></section>
 
 <section class="osc" id="respira" aria-labelledby="t-re">
  <div class="w resp">
@@ -343,6 +390,16 @@ footer.pie a{text-decoration:underline}
   </form>
  </div>
 </section>
+<section class="faqy" id="preguntas" aria-labelledby="t-fq"><div class="w">
+  <div class="cab rv"><p class="eti">Preguntas frecuentes</p><h2 id="t-fq">Lo que nos preguntan antes de venir</h2></div>
+  <details><summary>¿Tengo que llevar mi mat?</summary><p>No. Tenemos mats, bloques y cinturones para todas. Si prefieres el tuyo, puedes traerlo; las mantas las ponemos nosotras.</p></details>
+  <details><summary>¿Qué ropa uso?</summary><p>Lo que te permita moverte: calzas o pantalón suelto y una polera que no se te suba al hacer posturas. Se practica descalza.</p></details>
+  <details><summary>¿Puedo ir si no soy flexible?</summary><p>Sí, de hecho es para eso. Nadie espera que llegues a tocarte los pies: las posturas se adaptan con bloques y se explican en dos versiones.</p></details>
+  <details><summary>¿Cuánto antes tengo que llegar?</summary><p>Diez minutos antes la primera vez, para mostrarte el estudio y dejar tus cosas en los casilleros. Después de 5 minutos de iniciada la clase cerramos la puerta para no interrumpir.</p></details>
+  <details><summary>¿Qué pasa si no puedo asistir a una clase reservada?</summary><p>Avísanos hasta 4 horas antes por WhatsApp y no se descuenta de tu pack. Pasado ese plazo, la clase se considera tomada.</p></details>
+  <details><summary>¿Puedo practicar si estoy embarazada o tengo una lesión?</summary><p>Hay clase prenatal con profesora certificada. Si tienes una lesión, cuéntanosla antes para ubicarte en la clase adecuada y, si hace falta, consulta primero con tu médico.</p></details>
+</div></section>
+
 <section class="foto-band" aria-label="Galería de imágenes"><div class="fb n3"><figure><img src="https://images.unsplash.com/photo-1761971975962-9cc397e2ba2a?w=900&q=70&auto=format&fit=crop" alt="Estudio de yoga con grandes ventanales y colchonetas" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure><figure><img src="https://images.unsplash.com/photo-1761971975651-4fdd4abc200f?w=900&q=70&auto=format&fit=crop" alt="Sala de yoga y pilates con colchonetas y pelotas" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure><figure><img src="https://images.unsplash.com/photo-1784655597870-ac76256865a9?w=900&q=70&auto=format&fit=crop" alt="Lago sereno entre pinos con neblina matinal" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure></div></section>
 </main>
 
@@ -438,6 +495,21 @@ $('form').addEventListener('submit',function(e){
 var rv=document.querySelectorAll('.rv');
 if('IntersectionObserver' in window&&!red){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12});rv.forEach(function(x){io.observe(x)})}else rv.forEach(function(x){x.classList.add('on')});
 })();
+
+(function(){
+  var D={'tensa|no':['Hatha suave','Posturas lentas y respiración larga para soltar cuello y hombros. Se explica todo y puedes ir a tu ritmo.','Ej.: martes 19:00, 60 min'],
+  'tensa|algo':['Vinyasa suave','Movimiento fluido pensado para entrar en calor y soltar la tensión acumulada en el día.','Ej.: jueves 19:15, 60 min'],
+  'cansada|no':['Yin','Posturas largas y apoyadas, casi sin esfuerzo. Sales con más energía de la que entraste.','Ej.: miércoles 20:00, 75 min'],
+  'cansada|algo':['Meditación y pausa','Treinta minutos de respiración guiada. Cabe en la hora del almuerzo o después del trabajo.','Ej.: lunes 18:30, 30 min'],
+  'espalda|no':['Pilates: espalda sana','Ejercicios para fortalecer la zona media y cuidar la columna, con ejemplos para cada nivel.','Ej.: lunes 9:00, 55 min'],
+  'espalda|algo':['Pilates intermedio','Más control y fuerza de centro; ideal para quien ya conoce los ejercicios básicos.','Ej.: viernes 9:00, 55 min'],
+  'mente|no':['Meditación y pausa','Prácticas cortas de atención al cuerpo y a la respiración. No se necesita experiencia previa.','Ej.: lunes 18:30, 30 min'],
+  'mente|algo':['Hatha suave','Combina posturas conocidas con respiración consciente para bajar el ruido mental.','Ej.: sábado 10:00, 60 min']};
+  function v(n){return document.querySelector('input[name="'+n+'"]:checked').value}
+  function p(){var d=D[v('llega')+'|'+v('exp')];document.getElementById('s-clase').textContent=d[0];document.getElementById('s-texto').textContent=d[1];document.getElementById('s-cuando').textContent=d[2]+' (horario de ejemplo)'}
+  document.querySelectorAll('.empieza input').forEach(function(i){i.addEventListener('change',p)});p();
+})();
+
 </script>
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
 </body>
