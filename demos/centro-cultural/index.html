@@ -238,6 +238,15 @@ footer a:hover{color:var(--carmin)}
 .ruta li b{color:var(--carmin);font-weight:700}
 .ruta li span{color:var(--gris)}
 @media(max-width:520px){.ruta li{grid-template-columns:70px 1fr}}
+
+.butaca{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.butaca .foto{min-height:340px;background:#222 center/cover no-repeat}
+.butaca .opc{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.butaca .opc button{font:600 .92rem/1 'Archivo',sans-serif;padding:12px 16px;border:1.5px solid var(--negro);background:transparent;color:var(--negro);cursor:pointer}
+.butaca .opc button[aria-pressed=true]{background:var(--carmin);border-color:var(--carmin);color:#fff}
+.butaca .res{border-left:4px solid var(--carmin);padding:4px 0 4px 16px;min-height:90px;color:var(--gris)}
+.butaca .res b{display:block;color:var(--negro);font-size:1.1rem;margin-bottom:4px}
+@media(max-width:800px){.butaca{grid-template-columns:1fr;gap:22px}.butaca .foto{min-height:220px}}
 </style>
 </head>
 <body>
@@ -261,6 +270,7 @@ footer a:hover{color:var(--carmin)}
         <li><a href="#agenda">Agenda</a></li>
         <li><a href="#visita">Visita</a></li><li><a href="#ruta">Tu recorrido</a></li>
         <li><a href="#educacion">Educación</a></li>
+        <li><a href="#butacas">Butacas</a></li>
         <li><a href="#espacios">Espacios</a></li>
         <li><a href="#noticias">Noticias</a></li>
       </ul>
@@ -423,6 +433,21 @@ footer a:hover{color:var(--carmin)}
   </div>
 </section>
 
+<section id="butacas">
+  <div class="wrap">
+    <div class="butaca">
+      <div class="foto" role="img" aria-label="Filas de butacas vacías en una sala de teatro" style="background-image:url('https://images.unsplash.com/photo-1545129139-1beb780cf337?w=1200&q=70&auto=format&fit=crop')"></div>
+      <div>
+        <span class="rotulo">Sala de artes escénicas</span>
+        <h2>¿Dónde me siento?</h2>
+        <p>La sala tiene 180 butacas. Dinos qué es lo más importante para ti y te sugerimos la zona.</p>
+        <div class="opc" id="bt-opc" role="group" aria-label="Qué priorizas"></div>
+        <div class="res" id="bt-res" role="status" aria-live="polite"><b>Elige una prioridad</b>Te mostramos la zona y el valor de la entrada.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="espacios">
   <div class="wrap">
     <div class="cab"><div><span class="rotulo">Espacios</span><h2>Nuestras salas</h2></div><a class="enlace" href="mailto:espacios@ejemplo.invalid?subject=Solicitud%20de%20uso%20de%20espacios">Solicitud de uso de espacios →</a></div>
@@ -454,6 +479,9 @@ footer a:hover{color:var(--carmin)}
       <details><summary>¿El edificio es accesible?</summary><p>Sí: hay rampa en la entrada por Av. Los Robles, ascensor a los pisos 1 y 2 y baños accesibles. Si necesitas apoyo, avísanos y alguien te recibe en la puerta.</p></details>
       <details><summary>¿Puedo ir con niños?</summary><p>Claro. Los talleres de los sábados en la mañana son para niñas y niños de 6 a 12 años, con inscripción previa. Los coches caben en todas las salas.</p></details>
       <details><summary>¿Se puede sacar fotos?</summary><p>Sí, sin flash y sin trípode. En algunas obras en préstamo hay un letrero que lo prohíbe; el equipo de sala te avisa.</p></details>
+      <details><summary>¿Hay cafetería dentro del centro?</summary><p>Sí, en el hall: café, té, sándwiches y kuchen. Abre una hora antes de cada función y durante las exposiciones, de martes a domingo.</p></details>
+      <details><summary>¿Puedo llegar tarde a una función?</summary><p>Hasta 10 minutos después de la hora de inicio; luego te ubicamos en la última fila para no interrumpir. En los conciertos acústicos se cierra la puerta al empezar.</p></details>
+      <details><summary>¿Hay guardarropa?</summary><p>Sí, gratuito y atendido, en el hall. Recomendamos dejar mochilas grandes y paraguas mojados; en invierno se agradece.</p></details>
       <details><summary>¿Hay estacionamiento?</summary><p>No tenemos propio. Hay estacionamiento público a dos cuadras y la costanera queda a cinco minutos caminando.</p></details>
     </div>
   </div>
@@ -577,6 +605,22 @@ footer a:hover{color:var(--carmin)}
   }
   Array.prototype.forEach.call(bts,function(b){b.addEventListener('click',function(){pinta(b.dataset.t)})});
   pinta(30);
+})();
+
+(function(){
+  var Z=[
+    {k:'Ver y escuchar mejor',t:'Filas F a J, al centro',w:'Es la zona donde mejor se mezcla el sonido y se ve todo el escenario sin girar el cuello. Entrada general: $3.000.'},
+    {k:'Salir o entrar con facilidad',t:'Pasillo lateral, filas C a H',w:'Quedas junto a la puerta y sin pasar sobre nadie. Buena opción si vas con niños. Entrada general: $3.000.'},
+    {k:'Ir en silla de ruedas',t:'Espacios reservados, fila A',w:'Entrada plana por la rampa, sin escalones, con espacio para acompañante. Escríbenos con un día de anticipación para reservarlo. Gratis.'},
+    {k:'Estar cerca de los músicos',t:'Filas A a C, al centro',w:'Ves los gestos y la respiración de quienes tocan. Para danza, en cambio, conviene sentarse más atrás. Entrada general: $3.000.'}
+  ];
+  var b=document.getElementById('bt-opc');
+  b.innerHTML=Z.map(function(z,i){return '<button type="button" aria-pressed="false" data-i="'+i+'">'+z.k+'</button>'}).join('');
+  b.addEventListener('click',function(e){
+    var t=e.target.closest('button');if(!t)return;var z=Z[+t.getAttribute('data-i')];
+    Array.prototype.forEach.call(b.children,function(x){x.setAttribute('aria-pressed',x===t?'true':'false')});
+    document.getElementById('bt-res').innerHTML='<b>'+z.t+'</b>'+z.w;
+  });
 })();
 </script>
 

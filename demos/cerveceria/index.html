@@ -212,6 +212,15 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
 .pregs details p{margin-top:10px;color:var(--suave)}
 @media(max-width:860px){.planta{grid-template-columns:1fr}.planta .foto{min-height:260px}}
 @media(max-width:400px){.sellos{grid-template-columns:repeat(3,1fr)}}
+
+.mar{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.mar .foto{min-height:360px;border-radius:14px;background:#32241a center/cover no-repeat}
+.mar .opc{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.mar .opc button{font:600 .92rem/1 inherit;font-family:inherit;padding:12px 16px;border-radius:999px;border:1.5px solid var(--linea);background:transparent;color:inherit;cursor:pointer}
+.mar .opc button[aria-pressed=true]{background:var(--cobre);border-color:var(--cobre);color:#17120d}
+.mar .res{border-left:4px solid var(--cobre);padding:6px 0 6px 16px;min-height:96px}
+.mar .res b{display:block;font-size:1.15rem;margin-bottom:4px}
+@media(max-width:800px){.mar{grid-template-columns:1fr}.mar .foto{min-height:220px}}
 </style>
 </head>
 <body>
@@ -224,7 +233,7 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
       Hualle
     </a>
     <nav aria-label="Principal"><ul class="menu">
-      <li><a href="#cervezas">Cervezas</a></li><li><a href="#pack">Armar pack</a></li><li><a href="#nosotros">Cervecería</a></li><li><a href="#planta">Pasaporte</a></li><li><a href="#visita">Visítanos</a></li><li><a href="#contacto">Contacto</a></li>
+      <li><a href="#cervezas">Cervezas</a></li><li><a href="#pack">Armar pack</a></li><li><a href="#maridaje">Maridaje</a></li><li><a href="#nosotros">Cervecería</a></li><li><a href="#planta">Pasaporte</a></li><li><a href="#visita">Visítanos</a></li><li><a href="#contacto">Contacto</a></li>
     </ul></nav>
     <span class="estado" id="estado" role="status"><i></i><span>Revisando horario…</span></span>
   </div>
@@ -360,6 +369,20 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
   </div>
 </section>
 
+<section id="maridaje">
+  <div class="wrap">
+    <div class="mar">
+      <div class="foto rv" role="img" aria-label="Estanque de acero inoxidable de una cervecería" style="background-image:url('https://images.unsplash.com/photo-1545287072-469f3761413c?w=1200&q=70&auto=format&fit=crop')"></div>
+      <div class="rv">
+        <span class="rot">Maridaje de mesón</span>
+        <h2 class="disp">¿Qué tomo con lo que voy a comer?</h2>
+        <p>Elige qué te van a servir y te decimos cuál va mejor. Es lo mismo que le respondemos a la gente en el mostrador.</p>
+        <div class="opc" id="mar-opc" role="group" aria-label="Qué vas a comer"></div>
+        <div class="res" id="mar-res" role="status" aria-live="polite"><b>Elige una comida</b>Te recomendamos una cerveza y te explicamos por qué.</div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="planta">
   <div class="wrap">
     <div class="planta">
@@ -384,6 +407,9 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
       <details><summary>¿Puedo ir con niños?</summary><p>Sí, hasta las 20:00. Tenemos jugo de manzana de la zona y papas rústicas. Después de esa hora la sala es solo para mayores de 18 años.</p></details>
       <details><summary>¿Hacen tours de la planta?</summary><p>Los sábados a las 12:30, con reserva y cupo para 10 personas. Dura 40 minutos y termina con una tabla de degustación de cuatro vasos.</p></details>
       <details><summary>¿Cuánto dura una lata en el refrigerador?</summary><p>Hasta seis meses, siempre que la guardes fría y lejos de la luz. Las más aromáticas, como la IPA Alerce, conviene tomarlas en las primeras ocho semanas.</p></details>
+      <details><summary>¿Tienen opciones sin alcohol?</summary><p>Tenemos jugo de manzana de la zona y una limonada de jengibre. Si vienes manejando, te armamos un vaso de degustación de 100 cc para que pruebes sin pasarte.</p></details>
+      <details><summary>¿Puedo llevar mi propio growler?</summary><p>Sí, lo llenamos al momento por $9.000 el litro y medio (Niebla, Lluvia o Cobre). Debe estar limpio y sin olor; si no, te prestamos uno y lo cambias la próxima vez.</p></details>
+      <details><summary>¿Se puede pagar con tarjeta?</summary><p>Sí, débito, crédito y transferencia. En el mostrador también recibimos efectivo.</p></details>
       <details><summary>¿Venden a restaurantes y eventos?</summary><p>Sí. Despachamos barriles de 30 litros y packs por caja a locales de Valdivia y alrededores. Escríbenos con la fecha y la cantidad aproximada.</p></details>
     </div>
   </div>
@@ -493,6 +519,23 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
   /* Aparición suave */
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target)}})},{threshold:.1});
   $$('.rv').forEach(function(el){io.observe(el)});
+
+  /* Maridaje */
+  var M=[
+    {k:'Papas rústicas y sándwich',b:'lluvia',w:'La Weizen es suave y cremosa: no tapa la grasa ni el pan, la limpia entre bocado y bocado.'},
+    {k:'Salmón o pescado a la plancha',b:'niebla',w:'La Kölsch es ligera y limpia; acompaña sin pelear con el sabor del pescado.'},
+    {k:'Carne asada o costillar',b:'cobre',w:'La Red Ale tiene caramelo y un final seco que combina con lo ahumado y la costra de la parrilla.'},
+    {k:'Pizza o comida picante',b:'alerce',w:'El amargor de la IPA corta el queso y refresca después del picante.'},
+    {k:'Chocolate o torta',b:'carbon',w:'La Stout trae café y cacao. Con un postre de chocolate se vuelve casi otro postre.'},
+    {k:'Quesos y frutos rojos',b:'maqui',w:'La acidez del maqui limpia el paladar y hace que el queso sepa más cremoso.'}
+  ];
+  $('#mar-opc').innerHTML=M.map(function(m,i){return '<button type="button" aria-pressed="false" data-i="'+i+'">'+m.k+'</button>'}).join('');
+  $('#mar-opc').addEventListener('click',function(e){
+    var t=e.target.closest('button');if(!t)return;
+    var m=M[+t.getAttribute('data-i')],c=B.filter(function(x){return x.id===m.b})[0];
+    $$('#mar-opc button').forEach(function(x){x.setAttribute('aria-pressed',x===t?'true':'false')});
+    $('#mar-res').innerHTML='<b>'+c.n+' · '+c.e+' · '+clp(c.p)+'</b>'+m.w;
+  });
 })();
 </script>
 

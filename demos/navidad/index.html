@@ -276,6 +276,16 @@ footer a:hover{color:var(--oro)}
 .cot .res{background:var(--rojo-oscuro);color:#fff;border-radius:14px;padding:20px}
 .cot .res b{display:block;font-size:1.9rem;color:var(--oro)}
 .cot .res small{opacity:.85}
+
+.fechas{background:var(--nieve)}
+.fechas .caja{background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:28px;max-width:760px;margin:0 auto}
+.fechas label{display:block;font-weight:700;margin:14px 0 6px}
+.fechas select,.fechas input{width:100%;padding:13px 14px;border:1.5px solid var(--linea);border-radius:12px;font:inherit;background:#fff}
+.fechas .lin{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+.fechas .lin li{display:flex;gap:14px;align-items:baseline;padding:12px 14px;border-radius:12px;background:var(--nieve)}
+.fechas .lin b{min-width:150px;color:var(--rojo-oscuro)}
+.fechas .nota{margin:16px 0 0;color:var(--gris);font-size:.95rem}
+@media(max-width:560px){.fechas .lin li{flex-direction:column;gap:2px}}
 </style>
 </head>
 <body>
@@ -298,7 +308,7 @@ footer a:hover{color:var(--oro)}
     <nav id="menu" aria-label="Principal">
       <ul>
         <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#servicios">Servicios</a></li><li><a href="#cotizador">Cotizador</a></li>
+        <li><a href="#servicios">Servicios</a></li><li><a href="#cotizador">Cotizador</a></li><li><a href="#fechas">Fechas</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#preguntas">Preguntas</a></li>
       </ul>
@@ -466,12 +476,31 @@ footer a:hover{color:var(--oro)}
       <details><summary>¿Tengo que comprar los adornos?</summary><p>No. Cada propuesta incluye el material necesario, que llevamos nosotros. Si prefieres comprar adornos para quedártelos, te asesoramos en la compra.</p></details>
       <details><summary>¿Pueden usar mis propios adornos?</summary><p>Sí. En la visita revisamos lo que tienes y lo integramos al diseño, complementando solo lo que falte. Eso puede bajar el valor del proyecto.</p></details>
       <details><summary>¿Instalan fuera de horario?</summary><p>Sí, para empresas y comercios instalamos de noche o en fin de semana, para no interrumpir la atención ni el trabajo.</p></details>
+      <details class="rv"><summary>¿Qué pasa si llueve el día de la instalación?</summary><p>Para exteriores reprogramamos al día hábil siguiente sin costo. Las luces son aptas para lluvia, pero no trabajamos en escalas mojadas.</p></details>
+      <details class="rv"><summary>¿Cuándo retiran la decoración?</summary><p>Entre el 6 y el 15 de enero, en el horario que quedes. El retiro está incluido en el valor del servicio.</p></details>
       <details><summary>¿Cómo se paga?</summary><p>Con un 50 % al confirmar la propuesta y el saldo el día de la instalación, por transferencia. Para empresas emitimos factura.</p></details>
     </div>
   </div>
 </section>
 
 <!-- 10. Contacto -->
+
+<section class="fechas" id="fechas">
+  <div class="wrap">
+    <div class="cab rv" style="text-align:center;margin-bottom:28px">
+      <p class="sobre">Calendario de instalación</p>
+      <h2>¿Para cuándo lo quieres <em>encendido</em>?</h2>
+    </div>
+    <div class="caja rv">
+      <label for="fe-tipo">Qué vamos a decorar</label>
+      <select id="fe-tipo"><option value="7">Una casa o departamento</option><option value="14" selected>Un local comercial</option><option value="21">Una empresa o edificio</option></select>
+      <label for="fe-fecha">Día en que quieres verlo listo</label>
+      <input id="fe-fecha" type="date">
+      <ul class="lin" id="fe-res" aria-live="polite"></ul>
+      <p class="nota" id="fe-nota"></p>
+    </div>
+  </div>
+</section>
 
 <section class="cot" id="cotizador">
   <div class="wrap">
@@ -636,6 +665,24 @@ footer a:hover{color:var(--oro)}
     r.textContent='$'+(Math.round(base*0.9/1000)*1000).toLocaleString('es-CL')+' a $'+(Math.round(base*1.1/1000)*1000).toLocaleString('es-CL');
   }
   [t,m,a].forEach(function(e){e.addEventListener('input',c)});c();
+})();
+
+(function(){
+  var d=document.getElementById('fe-fecha'),t=document.getElementById('fe-tipo'),r=document.getElementById('fe-res'),n=document.getElementById('fe-nota');
+  var y=new Date().getFullYear();var hoy=new Date();var anio=(hoy.getMonth()===11&&hoy.getDate()>25)?y+1:y;
+  var def=new Date(anio,11,12);
+  function iso(x){return x.getFullYear()+'-'+('0'+(x.getMonth()+1)).slice(-2)+'-'+('0'+x.getDate()).slice(-2)}
+  function fmt(x){return x.toLocaleDateString('es-CL',{weekday:'long',day:'numeric',month:'long'})}
+  function sum(x,k){var z=new Date(x);z.setDate(z.getDate()+k);return z}
+  d.value=iso(def);
+  function calc(){
+    if(!d.value)return;var p=d.value.split('-');var f=new Date(+p[0],+p[1]-1,+p[2]);var dias=+t.value;
+    var inst=sum(f,-(dias>=21?4:dias>=14?2:1));var vis=sum(inst,-10);var conf=sum(vis,-5);
+    var pasado=conf<new Date(new Date().setHours(0,0,0,0));
+    r.innerHTML='<li><b>Confirmar propuesta</b><span>'+fmt(conf)+'</span></li><li><b>Visita técnica</b><span>'+fmt(vis)+'</span></li><li><b>Instalación</b><span>'+fmt(inst)+'</span></li><li><b>Todo encendido</b><span>'+fmt(f)+'</span></li>';
+    n.textContent=pasado?'Esa fecha queda muy justa. Escríbenos por WhatsApp y vemos si nos queda un cupo.':'Son fechas de referencia: la agenda real depende de los cupos que queden esa semana.';
+  }
+  d.addEventListener('input',calc);t.addEventListener('change',calc);calc();
 })();
 </script>
 

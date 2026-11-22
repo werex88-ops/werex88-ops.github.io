@@ -233,3 +233,7 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `cabanas` sección "¿Cuál cabaña te conviene?" (cabaña de madera en la orilla de un lago entre pinos) — https://images.unsplash.com/photo-1788027025573-700ada0928bf — Akshat Sharma · https://unsplash.com/photos/wooden-cabin-on-lake-shore-LKoIimppFnc
 - `cabanas` sección "¿Cuál cabaña te conviene?" y banda "Así se pasa un sábado" (cabaña de troncos en bosque con neblina) — https://images.unsplash.com/photo-1772955543023-a6e99819e161 — Gadiel Lazcano · https://unsplash.com/photos/a-rustic-log-cabin-nestled-in-a-foggy-forest-setting-Yqtaoythv2g
 - `cabanas` sección "¿Cuál cabaña te conviene?" (cabaña de madera junto a árboles) — https://images.unsplash.com/photo-1570793005386-840846445fed — Zachary Kyra-Derksen · https://unsplash.com/photos/brown-wooden-cabin-near-trees-during-day-ajqDp29Pz7M
+
+## Añadidas el 22-11-2026 (enlazadas directo; licencia Unsplash gratuita, identificadores copiados de la página de cada foto)
+- `cerveceria` sección "Maridaje de mesón" (estanque de acero gris de una cervecería) — https://images.unsplash.com/photo-1545287072-469f3761413c — Toby Stodart · https://unsplash.com/photos/gray-storage-tank-VXj9SizkreE
+- `centro-cultural` sección "¿Dónde me siento?" (filas de butacas vacías de un teatro; recinto no identificado, solo ambiente) — https://images.unsplash.com/photo-1545129139-1beb780cf337 — Sonder Quest · https://unsplash.com/photos/empty-theater-seats-pRh9RiynHGE

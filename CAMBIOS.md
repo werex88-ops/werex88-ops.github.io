@@ -1,5 +1,35 @@
 # Registro de cambios
 
+## 2026-11-22 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #49 (`claude/mejora-2026-11-21`), porque aún no se fusiona; esta solicitud depende de ella.
+
+### Referencias de competencia
+- Meteored, "Pasaporte Cervecero de Valdivia": las cervecerías locales se presentan por ruta y sellos; ya teníamos el pasaporte en Hualle. Idea aplicada: guía de maridaje de mesón. No se copió texto.
+- Veterinarias de Valdivia (AgendaPro, directorios 2x3 y Cronoshare): destacan visitas a domicilio, precios de consulta y reserva en línea. Idea aplicada en Weñi: precio de consulta y lista de qué llevar. Solo vi agregadores, no sitios de negocios; poca profundidad hoy.
+- Centro cultural y navidad: sin referencias nuevas hoy.
+
+### Currículum
+Sin cambios hoy (priorizé las demos).
+
+### Portafolio
+- Actualicé las descripciones de las tarjetas de Hualle, Weñi, Ribera y Estrella Austral.
+
+### Demos tocadas (4)
+- `cerveceria/` (Hualle): sección "¿Qué tomo con lo que voy a comer?" (6 comidas → cerveza, estilo, precio y por qué) con foto de estanque; 3 preguntas nuevas (sin alcohol, growler, pago); enlace "Maridaje".
+- `centro-cultural/` (Ribera): sección "¿Dónde me siento?" (4 prioridades → zona de la sala y valor) con foto de butacas; 3 preguntas nuevas (cafetería, llegar tarde, guardarropa); enlace "Butacas".
+- `navidad/` (Estrella Austral): calendario "¿Para cuándo lo quieres encendido?" (tipo de trabajo × fecha → fechas para confirmar, visita, instalación); 2 preguntas nuevas (lluvia, retiro); enlace "Fechas".
+- `veterinaria/` (Weñi): lista marcable "¿Qué llevo a la consulta?" (perro, gato, conejo o ave) con avance; 2 preguntas nuevas (precio de consulta, domicilio); enlace "Qué llevar".
+- Fotos nuevas: 2, registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+Las 4 demos tocadas a 320, 390 y 1440 px con recursos externos bloqueados: sin desplazamiento horizontal, errores de JavaScript ni anclas rotas; una sola etiqueta `<main>`. Probé con clics las cuatro funciones y vi capturas. Todas bajo 60 KB (cervecería 39 KB, centro cultural 43 KB, navidad 49 KB, veterinaria 51 KB). No volví a renderizar las demás páginas.
+
+### Sugerencias para René
+- Las fotos nuevas no las pude ver; revisa que carguen y que no muestren personas ni un recinto reconocible (la de butacas es de un teatro sin identificar).
+- Precios, plazos, butacas y recomendaciones son ejemplos ficticios.
+- Pendiente: el currículum y el portafolio llevan varios días sin cambios visuales grandes; próxima rotación: barbería, fotografía, heladería, hostal. Falta teléfono o LinkedIn y logros medibles en el currículum (no se inventaron datos).
+
 ## 2026-11-21 (mejora diaria)
 
 Parte desde `main` (no había solicitudes abiertas hacia `main`).
