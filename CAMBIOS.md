@@ -1,5 +1,36 @@
 # Registro de cambios
 
+## 2026-11-23 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #50 (`claude/mejora-2026-11-22`), que a su vez incluye la #49; esta solicitud depende de ellas hasta que se fusionen.
+
+### Referencias de competencia
+- Barberías de Valdivia (Fresha, AgendaPro): solo vi agregadores de reservas; muestran servicios con duración y precio y piden elegir profesional antes de la hora. Ya lo teníamos; idea aplicada en Tricahue: decirle al cliente cada cuántas semanas conviene volver. No se copió texto.
+- Hostales de Valdivia (Kayak, Expedia, Hotels.com): fichas con precio por noche sin contexto de temporada. Idea aplicada en Radal: guía mes a mes de clima, qué hacer y anticipación para reservar. No abrí sitios propios de hostales; poca profundidad hoy.
+- Heladerías y estudios fotográficos: sin referencias nuevas hoy.
+
+### Currículum
+- Nueva "línea de tiempo" visual (2007 a hoy) al inicio de Trayectoria: ocho barras con los cargos y períodos que ya figuran en el currículum, que crecen al hacer scroll. Se oculta al imprimir (A4 intacta), respeta `prefers-reduced-motion` y es decorativa (`aria-hidden`); el contenido textual no cambió. Un cargo termina "2025" sin mes en el currículum: lo dibujé hasta marzo 2025, cuando empieza el actual.
+
+### Portafolio
+- Actualicé las descripciones de las tarjetas de Radal, Cuarto Claro, Tricahue y Maqui (incluida la diapositiva del carrusel). Sin cambios de diseño hoy.
+
+### Demos tocadas (4)
+- `barberia/` (Tricahue): sección "¿Cada cuánto volver?" (6 estilos → semanas, semana sugerida con fecha calculada y barra); 2 preguntas nuevas (que dure el degradado, foto de referencia).
+- `fotografia/` (Cuarto Claro): sección "Cuántas fotos te hacen falta" (5 usos → sesión, horas, fotos y valor referencial calculado con la misma lista de precios del armador); nueva sección de preguntas (ropa, fotos que no gustan, uso comercial, lluvia).
+- `heladeria/` (Maqui): calculadora "¿Cuántos potes para tu once o cumpleaños?" (personas × bolitas → litros, potes, sabores y total con los precios de la carta; pedido por WhatsApp); 2 preguntas nuevas.
+- `hostal/` (Radal): guía "Cómo es Valdivia mes a mes" (12 meses, abre en el mes actual: temporada, clima, qué hacer, anticipación); 2 preguntas nuevas (mes sin lluvia, equipaje).
+- No agregué fotos nuevas (no pude verificar identificadores de Unsplash hoy), así que `demos/CREDITOS.md` no cambia. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+25 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin desplazamiento horizontal, errores de JavaScript, 404 locales ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las cuatro funciones y vi capturas, y vi la línea de tiempo a 390 y 1200 px. Demos bajo 60 KB (barbería 41 KB, fotografía 48 KB, heladería 36 KB, hostal 45 KB); currículum 53 KB y portafolio 61 KB (límite 90 KB).
+
+### Sugerencias para René
+- Los plazos de recorte, cantidades de helado, clima y temporadas son referenciales y ficticios; si se usan con un cliente real hay que ajustarlos a su negocio.
+- Pendiente: el portafolio necesita un rediseño visual más notorio (hoy solo se mantiene); próxima rotación de demos: cafetería, taller, termas, ferretería y las que llevan más tiempo sin cambios.
+- Fotos de contexto: sigo sin poder verificar identificadores de Unsplash; conviene revisar a mano cuáles demos aún usan ilustraciones.
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles (no se inventaron datos); confirma el mes de término del cargo en Cecrea.
+
 ## 2026-11-22 (mejora diaria)
 
 Parte desde la rama de la solicitud abierta #49 (`claude/mejora-2026-11-21`), porque aún no se fusiona; esta solicitud depende de ella.

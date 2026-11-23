@@ -145,6 +145,22 @@ tr.hoy td{color:var(--maqui);font-weight:800}
 .nv figure{margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#6b3a7d,#e8c24a)}.nv figure img{width:100%;height:100%;object-fit:cover;display:block}
 .nv h2{margin:0 0 12px;font-size:clamp(26px,4vw,38px);line-height:1.15}.nv summary{cursor:pointer;padding:12px 0;font-weight:600}.nv details{border-bottom:1px solid rgba(127,127,127,.3)}.nv details p{margin:0 0 14px}.nv ol,.nv ul{margin:14px 0 0;padding-left:20px}.nv li{margin:8px 0}
 @media(max-width:760px){.nv .nvg{grid-template-columns:1fr}}
+.junta{background:#fff;border-block:2px solid var(--ciruela)}
+.junta .caja{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.junta label,.junta legend{display:block;font-weight:800;margin-bottom:8px}
+.junta fieldset{border:0;margin:0 0 22px;padding:0}
+.junta input[type=range]{width:100%;accent-color:var(--maqui);min-height:32px}
+.junta .gr{display:flex;gap:10px}
+.junta .gr button{flex:1;border:2px solid var(--ciruela);background:var(--crema);border-radius:999px;padding:10px 14px;font-weight:800;min-height:46px;transition:background .2s}
+.junta .gr button[aria-pressed=true]{background:var(--ciruela);color:#fff}
+.junta .sal{background:var(--ciruela);color:#fff;border-radius:24px;padding:28px}
+.junta .sal b{display:block;font-size:52px;line-height:1;color:var(--limon)}
+.junta .sal ul{list-style:none;margin:14px 0;display:grid;gap:6px}
+.junta .sal li::before{content:"● ";color:var(--rosa)}
+.junta .sal .btn{width:100%}
+.junta .nota{font-size:14px;color:var(--suave);margin-top:6px}
+@media(max-width:820px){.junta .caja{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.junta .gr button{transition:none}}
 </style>
 </head>
 <body>
@@ -219,7 +235,19 @@ tr.hoy td{color:var(--maqui);font-weight:800}
 </div></div></section>
 
 <section class="nv" id="temporada"><div class="nvg"><div class="rv"><p class="eti">Temporada</p><h2>La fruta manda: qué hay según el mes</h2><ul><li><b>Diciembre a febrero:</b> frambuesa, frutilla y murta.</li><li><b>Marzo y abril:</b> maqui y mora, los más oscuros del año.</li><li><b>Mayo a agosto:</b> chocolate amargo, canela y manjar casero.</li><li><b>Septiembre y octubre:</b> limón de pica y cremas de rosa mosqueta.</li></ul></div><figure class="rv"><img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=1200&q=70&auto=format&fit=crop" alt="Cono de helado de frutilla" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure></div></section>
-<section class="nv" id="preguntas"><div class="nvg" style="grid-template-columns:1fr"><div><h2>Preguntas de mostrador</h2><details class="rv"><summary>¿Qué hacen si se acaba un sabor?</summary><p>Se acaba. Hacemos pocos kilos por día y preferimos avisarte con un cartel antes que servirte algo congelado por semanas.</p></details><details class="rv"><summary>¿Los sorbetes tienen lácteos?</summary><p>No: son fruta, agua y azúcar, preparados en bandejas separadas de las cremas.</p></details><details class="rv"><summary>¿Hacen tortas heladas?</summary><p>Sí, por encargo con tres días de aviso. Se retiran en el local.</p></details><details class="rv"><summary>¿Cuánto dura un pote en el congelador?</summary><p>Hasta dos semanas bien sellado; el sabor de fruta pierde intensidad después.</p></details></div></div></section>
+<section class="junta" id="junta" aria-labelledby="t-ju"><div class="w">
+<div class="cab rv"><p class="eti">Para la junta</p><h2 id="t-ju">¿Cuántos potes para tu once o cumpleaños?</h2><p>Dinos cuántos van a comer y te calculamos los potes, con los precios de la carta.</p></div>
+<div class="caja">
+<div>
+<fieldset><label for="j-p">Personas: <output id="j-pv">12</output></label><input type="range" id="j-p" min="4" max="40" value="12"></fieldset>
+<fieldset><legend>Bolitas por persona</legend><div class="gr" id="j-g" role="group" aria-label="Bolitas por persona"><button type="button" aria-pressed="false" data-b="1">1 bolita</button><button type="button" aria-pressed="true" data-b="2">2 bolitas</button><button type="button" aria-pressed="false" data-b="3">3 bolitas</button></div></fieldset>
+<p class="nota">Cálculo: un litro rinde cerca de 9 bolitas. Con calor o postre de por medio, la gente repite; suma medio litro de regalo si hay niños.</p>
+</div>
+<div class="sal" aria-live="polite"><p class="eti" style="color:var(--menta)">Tu pedido</p><b id="j-t">0</b><ul id="j-l"></ul><p id="j-p2"></p><a class="btn" id="j-w" href="#" target="_blank" rel="noopener">Encargar por WhatsApp</a></div>
+</div>
+</div></section>
+
+<section class="nv" id="preguntas"><div class="nvg" style="grid-template-columns:1fr"><div><h2>Preguntas de mostrador</h2><details class="rv"><summary>¿Qué hacen si se acaba un sabor?</summary><p>Se acaba. Hacemos pocos kilos por día y preferimos avisarte con un cartel antes que servirte algo congelado por semanas.</p></details><details class="rv"><summary>¿Los sorbetes tienen lácteos?</summary><p>No: son fruta, agua y azúcar, preparados en bandejas separadas de las cremas.</p></details><details class="rv"><summary>¿Hacen tortas heladas?</summary><p>Sí, por encargo con tres días de aviso. Se retiran en el local.</p></details><details class="rv"><summary>¿Con cuánta anticipación debo encargar para una fiesta?</summary><p>Hasta cuatro potes los tenemos casi siempre a la mano; sobre eso, avísanos con dos días. En enero y febrero, mejor con una semana.</p></details><details class="rv"><summary>¿Puedo elegir sabores distintos en cada pote?</summary><p>Sí: el de litro lleva hasta tres sabores y el de medio, dos. Los sorbetes van en pote aparte para no mezclar lácteos.</p></details><details class="rv"><summary>¿Cuánto dura un pote en el congelador?</summary><p>Hasta dos semanas bien sellado; el sabor de fruta pierde intensidad después.</p></details></div></div></section>
 <section id="ubicacion" aria-labelledby="t-ub"><div class="w">
 <div class="cab rv"><p class="eti">Ubicación y horario</p><h2 id="t-ub">Visítanos en Panguipulli</h2></div>
 <div class="inf rv">
@@ -343,6 +371,27 @@ construye();pintaSab();render();
 /* aparicion */
 var rv=$$('.rv');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});rv.forEach(function(r){io.observe(r)})}else rv.forEach(function(r){r.classList.add('in')});
+})();
+
+(function(){
+  var p=document.getElementById('j-p'),g=document.getElementById('j-g'),b=2;
+  function cl(n){return '$'+n.toLocaleString('es-CL')}
+  function calc(){
+    var n=+p.value,bol=n*b,l=Math.ceil(bol/9*2)/2,u=Math.floor(l),m=l-u>0?1:0;
+    var tot=u*13900+m*7800,sab=u*3+m*2;
+    document.getElementById('j-pv').textContent=n;
+    document.getElementById('j-t').textContent=l.toString().replace('.',',')+' L';
+    var h='';
+    if(u)h+='<li>'+u+(u===1?' pote':' potes')+' de 1 litro</li>';
+    if(m)h+='<li>1 pote de ½ litro</li>';
+    h+='<li>Hasta '+sab+' sabores distintos</li>';
+    document.getElementById('j-l').innerHTML=h;
+    document.getElementById('j-p2').textContent='Total referencial: '+cl(tot)+' IVA incluido.';
+    document.getElementById('j-w').href='https://wa.me/56955550188?text='+encodeURIComponent('Hola, quiero encargar '+l.toString().replace('.',',')+' litros de helado para '+n+' personas (ejemplo).');
+  }
+  p.addEventListener('input',calc);
+  Array.prototype.forEach.call(g.children,function(x){x.onclick=function(){b=+x.getAttribute('data-b');Array.prototype.forEach.call(g.children,function(y){y.setAttribute('aria-pressed',y===x?'true':'false')});calc()}});
+  calc();
 })();
 </script>
 </body>
