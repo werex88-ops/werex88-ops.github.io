@@ -1,5 +1,128 @@
 # Registro de cambios
 
+## 2026-11-24 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #51 (`claude/mejora-2026-11-23`), que incluye las #49 y #50; esta solicitud depende de ellas hasta que se fusionen.
+
+### Referencias de competencia
+- Cafeterías de Valdivia: la búsqueda solo devolvió agregadores (Wanderlog, Foursquare, ClassPass), no sitios propios; poca profundidad hoy. Idea aplicada: pedido para retirar, que ahorra la fila.
+- Shopify, "21 portafolios de diseño web memorables" y Seahawk, tendencias de portafolios: movimiento sutil, tarjetas con respuesta al cursor y señales claras de qué es nuevo. Idea aplicada en el portafolio. No se copió texto ni código.
+- Taller, termas y ferretería: sin referencias de negocios reales hoy.
+
+### Currículum
+Sin cambios hoy: ya tiene barra de avance, línea de tiempo y navegación que marca la sección activa; priorizé las demos.
+
+### Portafolio
+- Barra de avance de color arriba de la página, inclinación 3D de las tarjetas al pasar el cursor (solo con mouse y sin `prefers-reduced-motion`) e insignia «Mejorada hoy» en las cuatro demos tocadas.
+- Descripciones actualizadas de Grano & Calma, Newen, Vapor Sur y Lleuque. Pesa 62 KB (límite 90 KB).
+
+### Demos tocadas (4)
+- `cafeteria/` (Grano & Calma): ahora está en Valdivia (antes decía Barrio Italia, que es de Santiago); quité la cifra inventada de reseñas; sección «Pide y retira» con cantidades, total, nombre y hora, y mensaje de WhatsApp armado; foto nueva; 3 preguntas nuevas.
+- `taller/` (Newen): sección «¿Qué le toca a mi auto?» (kilometraje con deslizador × bencina o diésel → revisiones que vienen, cuáles tocan ya y total referencial; pide hora por WhatsApp); enlace «Mantención» en el menú.
+- `termas/` (Vapor Sur): sección «¿Cuándo hay menos gente?» (día de la semana → barras de ocupación por turno y consejo; abre en el día de hoy); enlace «Cuándo ir».
+- `ferreteria/` (Lleuque): «La lista de mayo» para preparar la casa para el invierno (7 tareas con casillas, barra de avance, total de lo que falta y pedido por WhatsApp); enlace «Invierno».
+- Foto nueva registrada en `demos/CREDITOS.md` (cafetería). No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+25 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin errores de JavaScript, 404 locales ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Corregí un desborde horizontal a 320 px en termas. Probé con clics las cuatro funciones nuevas y vi capturas. Demos bajo 60 KB (cafetería 34 KB, taller 42 KB, termas 45 KB, ferretería 54 KB); currículum 53 KB y portafolio 62 KB.
+
+### Sugerencias para René
+- Intervalos de mantención, ocupación de las termas, precios y lista de invierno son ejemplos ficticios; con un cliente real hay que ajustarlos.
+- Revisa en el navegador que la foto nueva de la cafetería cargue (aquí estaba bloqueada; sin ella se ve un degradado café).
+- Pendiente: más fotos de contexto para demos que aún usan ilustraciones; próxima rotación: centro cultural, navidad, cabañas, kayak, yoga y las que llevan más tiempo sin cambios.
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles (no se inventaron datos).
+
+## 2026-11-23 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #50 (`claude/mejora-2026-11-22`), que a su vez incluye la #49; esta solicitud depende de ellas hasta que se fusionen.
+
+### Referencias de competencia
+- Barberías de Valdivia (Fresha, AgendaPro): solo vi agregadores de reservas; muestran servicios con duración y precio y piden elegir profesional antes de la hora. Ya lo teníamos; idea aplicada en Tricahue: decirle al cliente cada cuántas semanas conviene volver. No se copió texto.
+- Hostales de Valdivia (Kayak, Expedia, Hotels.com): fichas con precio por noche sin contexto de temporada. Idea aplicada en Radal: guía mes a mes de clima, qué hacer y anticipación para reservar. No abrí sitios propios de hostales; poca profundidad hoy.
+- Heladerías y estudios fotográficos: sin referencias nuevas hoy.
+
+### Currículum
+- Nueva "línea de tiempo" visual (2007 a hoy) al inicio de Trayectoria: ocho barras con los cargos y períodos que ya figuran en el currículum, que crecen al hacer scroll. Se oculta al imprimir (A4 intacta), respeta `prefers-reduced-motion` y es decorativa (`aria-hidden`); el contenido textual no cambió. Un cargo termina "2025" sin mes en el currículum: lo dibujé hasta marzo 2025, cuando empieza el actual.
+
+### Portafolio
+- Actualicé las descripciones de las tarjetas de Radal, Cuarto Claro, Tricahue y Maqui (incluida la diapositiva del carrusel). Sin cambios de diseño hoy.
+
+### Demos tocadas (4)
+- `barberia/` (Tricahue): sección "¿Cada cuánto volver?" (6 estilos → semanas, semana sugerida con fecha calculada y barra); 2 preguntas nuevas (que dure el degradado, foto de referencia).
+- `fotografia/` (Cuarto Claro): sección "Cuántas fotos te hacen falta" (5 usos → sesión, horas, fotos y valor referencial calculado con la misma lista de precios del armador); nueva sección de preguntas (ropa, fotos que no gustan, uso comercial, lluvia).
+- `heladeria/` (Maqui): calculadora "¿Cuántos potes para tu once o cumpleaños?" (personas × bolitas → litros, potes, sabores y total con los precios de la carta; pedido por WhatsApp); 2 preguntas nuevas.
+- `hostal/` (Radal): guía "Cómo es Valdivia mes a mes" (12 meses, abre en el mes actual: temporada, clima, qué hacer, anticipación); 2 preguntas nuevas (mes sin lluvia, equipaje).
+- No agregué fotos nuevas (no pude verificar identificadores de Unsplash hoy), así que `demos/CREDITOS.md` no cambia. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+25 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin desplazamiento horizontal, errores de JavaScript, 404 locales ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las cuatro funciones y vi capturas, y vi la línea de tiempo a 390 y 1200 px. Demos bajo 60 KB (barbería 41 KB, fotografía 48 KB, heladería 36 KB, hostal 45 KB); currículum 53 KB y portafolio 61 KB (límite 90 KB).
+
+### Sugerencias para René
+- Los plazos de recorte, cantidades de helado, clima y temporadas son referenciales y ficticios; si se usan con un cliente real hay que ajustarlos a su negocio.
+- Pendiente: el portafolio necesita un rediseño visual más notorio (hoy solo se mantiene); próxima rotación de demos: cafetería, taller, termas, ferretería y las que llevan más tiempo sin cambios.
+- Fotos de contexto: sigo sin poder verificar identificadores de Unsplash; conviene revisar a mano cuáles demos aún usan ilustraciones.
+- Currículum: sigue pendiente agregar teléfono o LinkedIn y logros medibles (no se inventaron datos); confirma el mes de término del cargo en Cecrea.
+
+## 2026-11-22 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #49 (`claude/mejora-2026-11-21`), porque aún no se fusiona; esta solicitud depende de ella.
+
+### Referencias de competencia
+- Meteored, "Pasaporte Cervecero de Valdivia": las cervecerías locales se presentan por ruta y sellos; ya teníamos el pasaporte en Hualle. Idea aplicada: guía de maridaje de mesón. No se copió texto.
+- Veterinarias de Valdivia (AgendaPro, directorios 2x3 y Cronoshare): destacan visitas a domicilio, precios de consulta y reserva en línea. Idea aplicada en Weñi: precio de consulta y lista de qué llevar. Solo vi agregadores, no sitios de negocios; poca profundidad hoy.
+- Centro cultural y navidad: sin referencias nuevas hoy.
+
+### Currículum
+Sin cambios hoy (priorizé las demos).
+
+### Portafolio
+- Actualicé las descripciones de las tarjetas de Hualle, Weñi, Ribera y Estrella Austral.
+
+### Demos tocadas (4)
+- `cerveceria/` (Hualle): sección "¿Qué tomo con lo que voy a comer?" (6 comidas → cerveza, estilo, precio y por qué) con foto de estanque; 3 preguntas nuevas (sin alcohol, growler, pago); enlace "Maridaje".
+- `centro-cultural/` (Ribera): sección "¿Dónde me siento?" (4 prioridades → zona de la sala y valor) con foto de butacas; 3 preguntas nuevas (cafetería, llegar tarde, guardarropa); enlace "Butacas".
+- `navidad/` (Estrella Austral): calendario "¿Para cuándo lo quieres encendido?" (tipo de trabajo × fecha → fechas para confirmar, visita, instalación); 2 preguntas nuevas (lluvia, retiro); enlace "Fechas".
+- `veterinaria/` (Weñi): lista marcable "¿Qué llevo a la consulta?" (perro, gato, conejo o ave) con avance; 2 preguntas nuevas (precio de consulta, domicilio); enlace "Qué llevar".
+- Fotos nuevas: 2, registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+Las 4 demos tocadas a 320, 390 y 1440 px con recursos externos bloqueados: sin desplazamiento horizontal, errores de JavaScript ni anclas rotas; una sola etiqueta `<main>`. Probé con clics las cuatro funciones y vi capturas. Todas bajo 60 KB (cervecería 39 KB, centro cultural 43 KB, navidad 49 KB, veterinaria 51 KB). No volví a renderizar las demás páginas.
+
+### Sugerencias para René
+- Las fotos nuevas no las pude ver; revisa que carguen y que no muestren personas ni un recinto reconocible (la de butacas es de un teatro sin identificar).
+- Precios, plazos, butacas y recomendaciones son ejemplos ficticios.
+- Pendiente: el currículum y el portafolio llevan varios días sin cambios visuales grandes; próxima rotación: barbería, fotografía, heladería, hostal. Falta teléfono o LinkedIn y logros medibles en el currículum (no se inventaron datos).
+
+## 2026-11-21 (mejora diaria)
+
+Parte desde `main` (no había solicitudes abiertas hacia `main`).
+
+### Referencias de competencia
+- 2x3.cl (directorio de contadores y asesorías en Valdivia y otras ciudades) y contable.app: las asesorías contables explican en lenguaje simple qué incluye cada servicio, muestran precios o rangos y avisan fechas de vencimiento. Idea aplicada en Lenga: lista interactiva de papeles para la primera reunión y preguntas sobre atrasos y cambio de contador. No se copió texto.
+- Fichas de cabañas en Lago Ranco y Futrono (interpatagonia.com, Airbnb): destacan tipo de cama, tinaja, distancia al lago y cómo llegar; los alojamientos se eligen por quién viaja. Idea aplicada en Alerce Dormido: test «¿cuál cabaña te conviene?» y recorrido de un día. No abrí sitios de negocios individuales; poca profundidad hoy.
+- Yoga y kayak: sin referencias nuevas hoy.
+
+### Currículum
+Sin cambios hoy (priorizé las demos). Sigue con barra de progreso, chips en cascada y versión A4.
+
+### Portafolio
+- Actualicé las descripciones de las tarjetas de cabañas, kayak, yoga y contable con las funciones nuevas. Pesa 60 KB (límite 90 KB). Sin cambios visuales mayores hoy.
+
+### Demos tocadas (4)
+- `cabanas/` (Alerce Dormido): test «¿Cuál cabaña te conviene?» (con quién vienes × qué buscas → recomendación con foto y botón que preselecciona la calculadora); sección «Así se pasa un sábado» con horarios y foto en banda; 3 preguntas nuevas (leña y desayuno, llegada tardía, niños); enlace en el menú.
+- `kayak/` (Mawün Kayak): «¿Qué me pongo para remar?» (época × clima → lista de ropa y nota sobre la temperatura del agua); 2 preguntas nuevas (baño y cambiador, ir solo); enlace «Qué llevar».
+- `yoga/` (Aire Sur): «¿Por dónde empiezo?» (cómo llegas × experiencia → clase sugerida y horario de ejemplo); sección de 6 preguntas frecuentes (mat, ropa, flexibilidad, cancelación, embarazo y lesiones); enlace «Empieza».
+- `contable/` (Lenga): «¿Qué papeles traigo?» (tipo de negocio → checklist marcable con barra de avance); sección de 6 preguntas frecuentes (cambio de contador, atrasos de IVA, plan, entrega de información, plazo del IVA); enlace «Papeles».
+- Fotos: 3 de cabañas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+Las 4 demos tocadas a 320, 390 y 1440 px con recursos externos bloqueados: sin desplazamiento horizontal, errores de JavaScript ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios. Corregí un desborde propio en yoga (los radios ocultos heredaban el ancho global de `input`). Probé con clics las cuatro funciones nuevas y vi capturas de yoga y contable. Todas bajo 60 KB (cabañas 46 KB, kayak 40 KB, yoga 44 KB, contable 44 KB). No volví a renderizar las otras 21 páginas, que no cambiaron.
+
+### Sugerencias para René
+- Revisa en el navegador que las 3 fotos nuevas de cabañas carguen y que se vean del sur de Chile; no pude verlas, así que no sé si hay personas ni dónde fueron tomadas.
+- Horarios, plazos de cancelación, fechas de IVA y recomendaciones de ropa son ejemplos; con un cliente real hay que validarlos. Las preguntas de embarazo/lesiones en yoga deben revisarlas la instructora.
+- Pendiente: currículum y portafolio llevan varios días sin cambios visibles grandes; próxima rotación: centro-cultural, navidad, cerveceria, veterinaria. Falta agregar teléfono o LinkedIn y logros medibles al currículum (no se inventaron datos).
+
 ## 2026-11-20 (mejora diaria)
 
 Parte desde `main` (no había solicitudes abiertas desde ramas `claude/...`; la #47 ya está fusionada).

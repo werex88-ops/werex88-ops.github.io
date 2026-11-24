@@ -194,6 +194,24 @@ legend{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:upperc
 .foto-band figure:hover img{transform:scale(1.04)}
 @media(max-width:640px){.foto-band .fb,.foto-band .fb.n2{grid-template-columns:1fr;gap:12px}.foto-band figure{aspect-ratio:16/10}}
 @media(prefers-reduced-motion:reduce){.foto-band img{transition:none}}
+.uso .caja{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.uso .ops{display:flex;flex-direction:column;gap:10px}
+.uso .ops button{text-align:left;border:2px solid var(--linea);background:#fff;border-radius:14px;padding:12px 16px;font-weight:600;min-height:48px;transition:border-color .2s,background .2s,transform .2s}
+.uso .ops button:hover{transform:translateX(4px);border-color:var(--cobalto)}
+.uso .ops button[aria-pressed=true]{background:var(--tinta);color:#fff;border-color:var(--tinta)}
+.uso .sal{background:var(--tinta);color:var(--hueso);border-radius:20px;padding:28px}
+.uso .sal h3{font-size:26px;margin:6px 0 12px;color:#fff}
+.uso .sal dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:14px 0}
+.uso .sal dt{color:var(--cob-c);font-size:14px;font-weight:700}
+.uso .sal dd{margin:0}
+.uso .sal .pre{font-size:32px;font-weight:800;color:#fff}
+.uso .sal p{color:#c9c6bf}
+.uso .sal .btn{margin-top:14px;background:var(--hueso);color:var(--tinta)}
+.faq2 details{background:#fff;border:1px solid var(--linea);border-radius:14px;margin-bottom:10px}
+.faq2 summary{padding:16px 20px;font-weight:600;cursor:pointer;min-height:48px}
+.faq2 details p{padding:0 20px 18px;color:var(--suave)}
+@media(max-width:820px){.uso .caja{grid-template-columns:1fr}section{padding:72px 0}}
+@media(prefers-reduced-motion:reduce){.uso .ops button{transition:none}}
 </style>
 </head>
 <body>
@@ -308,6 +326,16 @@ legend{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:upperc
 </div>
 </section>
 
+<section class="hue uso" id="uso" aria-labelledby="t-us">
+<div class="w">
+<div class="cab rv"><p class="eti">¿Para qué las necesitas?</p><h2 id="t-us">Cuántas fotos te hacen falta</h2><p>Elige para qué usarás las fotos y te mostramos una sesión que alcanza, con el valor referencial según la lista de abajo.</p></div>
+<div class="caja">
+<div class="ops" id="u-ops" role="group" aria-label="Uso de las fotos"></div>
+<div class="sal" aria-live="polite"><p class="eti" style="color:var(--cob-c)">Sesión sugerida</p><h3 id="u-t"></h3><dl><dt>Duración</dt><dd id="u-h"></dd><dt>Fotos editadas</dt><dd id="u-f"></dd></dl><p id="u-n"></p><p class="pre" id="u-p"></p><a class="btn" href="#armador">Ajustar en “Arma tu sesión”</a></div>
+</div>
+</div>
+</section>
+
 <section class="osc" id="proceso" aria-labelledby="t-pr">
 <div class="w">
 <div class="cab rv"><p class="eti">Proceso</p><h2 id="t-pr">Cuatro pasos, sin sorpresas</h2></div>
@@ -338,6 +366,16 @@ legend{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:upperc
 <blockquote class="op rv"><p>“Las fotos de mis productos subieron las ventas de la feria. Llegaron en dos días, tal como se acordó.”</p><footer><b>Emprendedora de ejemplo</b>Producto · Los Lagos</footer></blockquote>
 <blockquote class="op rv"><p>“Tuvimos fotos de toda la familia, incluidos los más chicos, sin correr ni gritar. Muy paciente el equipo.”</p><footer><b>Familia de ejemplo</b>Familia · Paillaco</footer></blockquote>
 </div>
+</div>
+</section>
+
+<section class="faq2" id="preguntas" aria-labelledby="t-pq">
+<div class="w" style="max-width:820px">
+<div class="cab rv"><p class="eti">Preguntas</p><h2 id="t-pq">Antes de escribirnos</h2></div>
+<details><summary>¿Qué ropa me conviene llevar?</summary><p>Colores lisos y sin logos grandes. Lleva dos cambios si puedes: uno claro y uno oscuro. Evita rayas finas, que se ven raras en pantalla.</p></details>
+<details><summary>¿Y si no me gusta ninguna foto?</summary><p>Por eso la sesión no se apura: se repite la toma hasta que te sientas cómodo. Si ya en la galería algo no te convence, lo conversamos y se retoca.</p></details>
+<details><summary>¿Puedo usar las fotos en mi negocio?</summary><p>Sí. Las fotos editadas vienen con uso comercial para tu marca, tienda y redes. Si las va a usar otra empresa en una campaña, se conversa aparte.</p></details>
+<details><summary>¿Fotografían con lluvia?</summary><p>En Valdivia llueve, así que las sesiones de exterior tienen fecha alternativa sin costo. Las de estudio no dependen del clima.</p></details>
 </div>
 </section>
 
@@ -432,6 +470,30 @@ a.href=WA+enc('Hola, quiero reservar una sesión en Cuarto Claro para el '+t+'.'
 pintaDias();
 /* aparición */
 var rv=$$('.rv');if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(e){io.observe(e)})}else{rv.forEach(function(e){e.classList.add('on')})}
+})();
+
+(function(){
+  var U=[
+    {u:'Perfil profesional (LinkedIn, currículum)',t:'Retrato',h:1,f:15,b:40000,hx:0,n:'Con 15 fotos eliges dos o tres buenas y te quedan variantes con distinta expresión y fondo.'},
+    {u:'Tienda online o catálogo',t:'Producto',h:2,f:35,b:70000,n:'Cuenta de 4 a 6 fotos por producto: de frente, detalle, escala y en uso. 35 fotos cubren unos 6 productos.'},
+    {u:'Redes de mi emprendimiento',t:'Marca',h:2,f:25,b:90000,n:'Sirven para un mes de publicaciones: espacio de trabajo, producto, procesos y retrato de quien está detrás.'},
+    {u:'Álbum o regalo familiar',t:'Familia',h:1,f:25,b:60000,n:'Una hora alcanza para varias combinaciones de familia y retratos individuales, sin cansar a los más chicos.'},
+    {u:'Cumpleaños o evento chico',t:'Evento',h:3,f:55,b:80000,n:'Tres horas cubren llegada, momentos centrales y cierre. Con 55 fotos queda un buen relato del día.'}
+  ];
+  var ops=document.getElementById('u-ops');
+  function cl(n){return '$'+n.toLocaleString('es-CL')}
+  function pon(i){
+    var e=U[i],b=ops.children;
+    for(var j=0;j<b.length;j++)b[j].setAttribute('aria-pressed',j===i?'true':'false');
+    var tot=e.b+(e.h-1)*30000+Math.ceil((e.f-15)/10)*18000;
+    document.getElementById('u-t').textContent='Sesión de '+e.t.toLowerCase();
+    document.getElementById('u-h').textContent=e.h+(e.h===1?' hora':' horas');
+    document.getElementById('u-f').textContent=e.f+' fotos';
+    document.getElementById('u-n').textContent=e.n;
+    document.getElementById('u-p').textContent=cl(tot)+' referencial';
+  }
+  U.forEach(function(e,i){var b=document.createElement('button');b.type='button';b.textContent=e.u;b.setAttribute('aria-pressed','false');b.onclick=function(){pon(i)};ops.appendChild(b)});
+  pon(0);
 })();
 </script>
 </body>

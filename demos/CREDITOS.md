@@ -228,3 +228,15 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `sushi` sección "¿Cuánto pido?" (sushi sobre tabla de madera) — https://images.unsplash.com/photo-1563612116625-3012372fccce — Fadya Azhary · https://unsplash.com/photos/sushi-on-wooden-platter-5KS7T3Gs3CA
 - `ferreteria` sección "El consejo del mesón" (martillo junto a herramienta manual) — https://images.unsplash.com/photo-1602052793312-b99c2a9ee797 — Mitchell Luo · https://unsplash.com/photos/black-and-silver-claw-hammer-beside-red-and-black-hand-tool-G5i9LQ7sPOw
 - `madera` sección "Qué madera elegir" (herramientas de carpintería en un mesón de taller) — https://images.unsplash.com/photo-1788296817269-8df0458ab799 — HENG YIN · https://unsplash.com/photos/woodworking-tools-on-workshop-workbench-KKY0GrQPqVo
+
+## Añadidas el 21-11-2026 (enlazadas directo; licencia Unsplash gratuita; identificadas desde la página de resultados de Unsplash, sin verificar el lugar donde fueron tomadas)
+- `cabanas` sección "¿Cuál cabaña te conviene?" (cabaña de madera en la orilla de un lago entre pinos) — https://images.unsplash.com/photo-1788027025573-700ada0928bf — Akshat Sharma · https://unsplash.com/photos/wooden-cabin-on-lake-shore-LKoIimppFnc
+- `cabanas` sección "¿Cuál cabaña te conviene?" y banda "Así se pasa un sábado" (cabaña de troncos en bosque con neblina) — https://images.unsplash.com/photo-1772955543023-a6e99819e161 — Gadiel Lazcano · https://unsplash.com/photos/a-rustic-log-cabin-nestled-in-a-foggy-forest-setting-Yqtaoythv2g
+- `cabanas` sección "¿Cuál cabaña te conviene?" (cabaña de madera junto a árboles) — https://images.unsplash.com/photo-1570793005386-840846445fed — Zachary Kyra-Derksen · https://unsplash.com/photos/brown-wooden-cabin-near-trees-during-day-ajqDp29Pz7M
+
+## Añadidas el 22-11-2026 (enlazadas directo; licencia Unsplash gratuita, identificadores copiados de la página de cada foto)
+- `cerveceria` sección "Maridaje de mesón" (estanque de acero gris de una cervecería) — https://images.unsplash.com/photo-1545287072-469f3761413c — Toby Stodart · https://unsplash.com/photos/gray-storage-tank-VXj9SizkreE
+- `centro-cultural` sección "¿Dónde me siento?" (filas de butacas vacías de un teatro; recinto no identificado, solo ambiente) — https://images.unsplash.com/photo-1545129139-1beb780cf337 — Sonder Quest · https://unsplash.com/photos/empty-theater-seats-pRh9RiynHGE
+
+## Añadidas el 24-11-2026 (enlazada directo; licencia Unsplash gratuita, identificador copiado de la página de la foto)
+- `cafeteria` sección "Pide y retira" (taza de café humeante sobre mesa de madera, luz de ventana) — https://images.unsplash.com/photo-1771736385651-c071580a9d78 — Charmil Gandhi · https://unsplash.com/photos/steaming-cup-of-coffee-on-a-wooden-table-MK60jE_6zXU

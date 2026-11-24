@@ -260,6 +260,16 @@ footer p{font-size:15px}
 .vac li{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.15)}
 .vac li b{font-weight:700}
 @media(max-width:520px){.vac li{grid-template-columns:96px 1fr}}
+
+.traer .caja{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:28px;max-width:760px}
+.traer .opc{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.traer .opc button{font:700 .95rem/1 inherit;font-family:inherit;padding:12px 18px;border-radius:999px;border:1.5px solid var(--pino);background:transparent;color:var(--pino);cursor:pointer}
+.traer .opc button[aria-pressed=true]{background:var(--pino);color:#fff}
+.traer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.traer li label{display:flex;gap:12px;align-items:center;padding:12px 14px;background:var(--menta);border-radius:12px;cursor:pointer}
+.traer li input{width:20px;height:20px;accent-color:var(--pino);flex:none}
+.traer li input:checked+span{text-decoration:line-through;opacity:.6}
+.traer .prog{margin-top:14px;font-weight:700;color:var(--pino)}
 </style>
 </head>
 <body>
@@ -275,6 +285,7 @@ footer p{font-size:15px}
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#agenda">Pedir hora</a></li>
       <li><a href="#triage">¿Es urgente?</a></li>
+      <li><a href="#traer">Qué llevar</a></li>
       <li><a href="#equipo">Equipo</a></li>
       <li><a href="#planes">Planes</a></li>
       <li><a href="#ubicacion">Horario</a></li>
@@ -485,6 +496,20 @@ footer p{font-size:15px}
   </div>
 </section>
 
+<section class="traer" id="traer">
+  <div class="wrap">
+    <div class="cab rv" style="margin-bottom:24px">
+      <p class="sobre">Antes de salir de casa</p>
+      <h2>¿Qué llevo a <em>la consulta</em>?</h2>
+    </div>
+    <div class="caja rv">
+      <div class="opc" id="tr-opc" role="group" aria-label="Tipo de mascota"></div>
+      <ul id="tr-lista"></ul>
+      <p class="prog" id="tr-prog" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
 <section class="faq" id="preguntas">
   <div class="wrap">
     <div class="cab rv" style="margin-bottom:30px">
@@ -494,7 +519,9 @@ footer p{font-size:15px}
     <details class="rv"><summary>¿Atienden sin hora previa?</summary><p>Sí, cuando hay espacio, pero con hora te atendemos antes y sin esperar. En urgencias llama primero: así preparamos todo antes de que llegues.</p></details>
     <details class="rv"><summary>¿Cómo pago?</summary><p>Aceptamos efectivo, transferencia y tarjetas. Los planes de cuidado se pagan con cuota mensual.</p></details>
     <details class="rv"><summary>¿Atienden gatos y animales exóticos?</summary><p>Sí, atendemos gatos en un box separado y tranquilo. Para conejos, aves y otros animales, escríbenos antes para confirmar que podemos ayudarte.</p></details>
-    <details class="rv"><summary>¿Qué llevo a la primera consulta?</summary><p>El carné de vacunas si lo tienes, cualquier examen anterior y el nombre del alimento que come. Los gatos deben llegar en transportadora.</p></details>
+    <details class="rv"><summary>¿Cuánto cuesta una consulta?</summary><p>La consulta general es de $18.000 y dura unos 30 minutos. Si hace falta un examen o una vacuna, te avisamos el valor antes de hacerlo.</p></details>
+      <details class="rv"><summary>¿Hacen visitas a domicilio?</summary><p>Solo para eutanasia y para animales que no pueden viajar, previa coordinación. Tienen un recargo por el traslado; te lo informamos al agendar.</p></details>
+      <details class="rv"><summary>¿Qué llevo a la primera consulta?</summary><p>El carné de vacunas si lo tienes, cualquier examen anterior y el nombre del alimento que come. Los gatos deben llegar en transportadora.</p></details>
   </div>
 </section>
 </main>
@@ -635,6 +662,23 @@ footer p{font-size:15px}
   }
   Array.prototype.forEach.call(b,function(x){x.addEventListener('click',function(){p(x.dataset.e)})});
   p('cachorro');
+})();
+
+(function(){
+  var L={
+    'Perro':['Carné de vacunas o fotos de los certificados','Correa corta o arnés bien puesto','Nombre del alimento y cuántas veces al día come','Muestra de deposiciones si hay diarrea (en bolsa cerrada)','Lista de lo que ha tomado o le diste en los últimos días','Algún premio, para que asocie la clínica a algo rico'],
+    'Gato':['Transportadora con una toalla que huela a casa','Carné de vacunas','Nombre del alimento y de la arena que usa','Muestra de orina si es por problemas al orinar (consúltanos cómo juntarla)','Foto o video de lo que te preocupa si no pasa en la consulta','Una toalla extra por si se estresa'],
+    'Conejo o ave':['Jaula o transportadora pequeña, cubierta con un paño','Fotos de la jaula y de cómo está armada','Nombre del alimento y de las verduras que come','Fecha desde que notaste el cambio','Avísanos antes por WhatsApp: no todos los días hay veterinario de exóticos']
+  };
+  var o=document.getElementById('tr-opc'),u=document.getElementById('tr-lista'),p=document.getElementById('tr-prog');
+  function prog(){var c=u.querySelectorAll('input'),k=u.querySelectorAll('input:checked').length;p.textContent=k===c.length?'Listo, tienes todo.':'Llevas '+k+' de '+c.length+'.'}
+  function pinta(k){
+    Array.prototype.forEach.call(o.children,function(b){b.setAttribute('aria-pressed',b.textContent===k?'true':'false')});
+    u.innerHTML=L[k].map(function(t,i){return '<li><label><input type="checkbox"><span>'+t+'</span></label></li>'}).join('');prog();
+  }
+  o.innerHTML=Object.keys(L).map(function(k){return '<button type="button" aria-pressed="false">'+k+'</button>'}).join('');
+  o.addEventListener('click',function(e){var b=e.target.closest('button');if(b)pinta(b.textContent)});
+  u.addEventListener('change',prog);pinta('Perro');
 })();
 </script>
 

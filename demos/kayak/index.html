@@ -207,6 +207,18 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
 }
+
+.ropa{background:#fff}
+.ropa .cols2{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start;margin-top:28px}
+.ropa .ctl{display:grid;gap:18px}
+.ropa .ctl label{display:block;font-weight:700;margin-bottom:6px}
+.ropa .ctl select{width:100%;padding:14px;border:1.5px solid var(--linea);border-radius:12px;font:600 16px 'Inter',system-ui,sans-serif;background:var(--espuma);color:var(--noche)}
+.ropa .lista-ropa{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ropa .lista-ropa li{display:flex;gap:12px;align-items:flex-start;background:var(--arena);border-radius:12px;padding:12px 16px}
+.ropa .lista-ropa li::before{content:"✓";color:var(--musgo);font-weight:800}
+.ropa .agua{margin-top:14px;font-weight:700;color:var(--coral-t)}
+@media(max-width:860px){.ropa .cols2{grid-template-columns:1fr;gap:28px}}
+
 </style>
 </head>
 <body>
@@ -219,6 +231,7 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
       <li><a href="#salidas">Salidas</a></li>
       <li><a href="#armar">Arma tu salida</a></li>
       <li><a href="#lago">El lago</a></li>
+      <li><a href="#ropa">Qué llevar</a></li>
       <li><a href="#seguridad">Seguridad</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -343,6 +356,24 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
   </div>
 </section>
 
+<section class="ropa" id="ropa">
+  <div class="wrap">
+    <span class="sobre">Antes de venir</span>
+    <h2>¿Qué me pongo para <em>remar?</em></h2>
+    <p style="max-width:56ch;color:var(--suave)">En el lago el clima cambia en una hora. Elige la época y cómo viene el día, y te armamos la lista.</p>
+    <div class="cols2">
+      <div class="ctl">
+        <div><label for="r-epoca">¿Cuándo vienes?</label>
+          <select id="r-epoca"><option value="verano">Diciembre a marzo</option><option value="media">Abril, mayo, octubre y noviembre</option><option value="frio">Junio a septiembre</option></select></div>
+        <div><label for="r-dia">¿Cómo está el día?</label>
+          <select id="r-dia"><option value="sol">Sol y poco viento</option><option value="nube">Nublado</option><option value="lluvia">Lluvia fina</option></select></div>
+        <p class="agua" id="r-agua"></p>
+      </div>
+      <ul class="lista-ropa" id="r-lista" aria-live="polite"></ul>
+    </div>
+  </div>
+</section>
+
 <section class="seg" id="seguridad">
   <div class="wrap grid">
     <div class="rv">
@@ -385,6 +416,8 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
     <details><summary>¿Qué pasa si hay viento o lluvia fuerte?</summary><p>Revisamos las condiciones antes de cada salida. Si no es seguro, reprogramamos o devolvemos el valor; la lluvia suave no suspende la salida.</p></details>
     <details><summary>¿Está fría el agua?</summary><p>Sí: en el lago el agua se mantiene fría casi todo el año, incluso en pleno verano. Por eso exigimos chaleco siempre y recomendamos una polera de secado rápido y una chaqueta cortaviento para llevar a bordo.</p></details>
     <details><summary>¿Puedo llevar mi celular?</summary><p>Sí, en la bolsa estanca que te prestamos. Las fotos las tomamos de todos modos si contratas el extra, así remas con las dos manos.</p></details>
+    <details><summary>¿Hay baño y camarines en el muelle?</summary><p>Hay baño y un cambiador techado. Duchas no: si quieres cambiarte con calma, llega con ropa seca y deja una bolsa para lo mojado.</p></details>
+    <details><summary>¿Puedo ir solo o solo en pareja?</summary><p>Sí. Las salidas son en grupos de máximo 8 personas; si vienes solo, te sumamos a un grupo o te ponemos en kayak doble con la guía.</p></details>
     <details><summary>¿Cómo se paga?</summary><p>La reserva se confirma por WhatsApp y el pago se hace al llegar al muelle, en efectivo o con transferencia. No pedimos adelanto.</p></details>
     <details><summary>¿La pesca incluye licencia?</summary><p>Te orientamos sobre los permisos que correspondan en cada temporada. Toda la pesca es con devolución y se usa anzuelo sin rebaba.</p></details>
   </div>
@@ -519,6 +552,20 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
   var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.1});
   document.querySelectorAll('.rv').forEach(function(x){io.observe(x)});
 })();
+
+(function(){
+  var base={verano:['Polera de secado rápido o de lycra','Short o calza que se pueda mojar','Sandalias con correa o zapatillas viejas'],media:['Polera térmica de manga larga','Calza larga o pantalón de secado rápido','Zapatillas cerradas que puedan mojarse'],frio:['Primera capa térmica (nada de algodón)','Pantalón de secado rápido o neopreno corto','Calcetines de neopreno o zapatillas cerradas']};
+  var dia={sol:['Gorro, lentes con cordón y protector solar factor 50','Botella de agua'],nube:['Cortaviento liviano para la pausa','Lentes con cordón: el reflejo del lago igual encandila'],lluvia:['Chaqueta impermeable (te prestamos una si no tienes)','Muda seca completa en una bolsa cerrada']};
+  var agua={verano:'El agua del lago está entre 14 y 17 °C: refresca, no es de piscina.',media:'El agua baja a 10–12 °C. Por eso el chaleco es obligatorio todo el año.',frio:'Con agua a 8–10 °C hacemos salidas más cortas y solo con equipo térmico.'};
+  var e=document.getElementById('r-epoca'),d=document.getElementById('r-dia');
+  function pinta(){
+    var l=document.getElementById('r-lista');l.innerHTML='';
+    base[e.value].concat(dia[d.value],['Muda seca y toalla en el auto','Nosotros ponemos: chaleco, remo, bolsa estanca y casco si hace falta']).forEach(function(t){var li=document.createElement('li');li.textContent=t;l.appendChild(li)});
+    document.getElementById('r-agua').textContent=agua[e.value];
+  }
+  e.addEventListener('change',pinta);d.addEventListener('change',pinta);pinta();
+})();
+
 </script>
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
 </body>

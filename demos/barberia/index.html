@@ -202,6 +202,21 @@ footer.pie h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;text
 .foto-band figure:hover img{transform:scale(1.04)}
 @media(max-width:640px){.foto-band .fb,.foto-band .fb.n2{grid-template-columns:1fr;gap:12px}.foto-band figure{aspect-ratio:16/10}}
 @media(prefers-reduced-motion:reduce){.foto-band img{transition:none}}
+.vuelve{background:var(--papel);border-block:1px solid var(--linea)}
+.vuelve .caja{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
+.vuelve .ops{display:flex;flex-wrap:wrap;gap:10px}
+.vuelve .ops button{border:2px solid var(--linea);background:#fff;border-radius:4px;padding:10px 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.06em;text-transform:uppercase;min-height:46px;transition:background .2s,color .2s,transform .2s}
+.vuelve .ops button:hover{transform:translateY(-2px)}
+.vuelve .ops button[aria-pressed=true]{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.vuelve .sal{background:var(--tinta);color:var(--hueso);border-radius:8px;padding:28px;position:relative;overflow:hidden}
+.vuelve .sal b.num{display:block;font-family:'Alfa Slab One',serif;font-weight:400;font-size:64px;line-height:1;color:var(--oro)}
+.vuelve .sal p{color:#d0d7e5;margin-top:10px}
+.vuelve .sal .fe{margin-top:16px;padding-top:16px;border-top:1px solid rgba(244,239,228,.2);font-weight:600;color:var(--hueso)}
+.vuelve .sal .btn{margin-top:18px}
+.vuelve .barra{height:8px;border-radius:4px;background:rgba(244,239,228,.18);margin-top:18px;overflow:hidden}
+.vuelve .barra i{display:block;height:100%;width:0;background:var(--oro);transition:width .5s}
+@media(max-width:820px){.vuelve .caja{grid-template-columns:1fr}.vuelve{padding:72px 0}}
+@media(prefers-reduced-motion:reduce){.vuelve .barra i,.vuelve .ops button{transition:none}}
 </style>
 </head>
 <body>
@@ -329,6 +344,25 @@ footer.pie h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;text
   </div>
 </section>
 
+<section class="vuelve" id="vuelve" aria-labelledby="t-vu">
+  <div class="wrap">
+    <div class="cab rv"><p class="sobre">Mantención</p><h2 id="t-vu">¿Cada cuánto <br>volver?</h2><p>Un degradado se desarma antes que una barba larga. Elige tu estilo y te decimos cada cuántas semanas conviene la hora.</p></div>
+    <div class="caja">
+      <div>
+        <div class="ops" id="v-ops" role="group" aria-label="Tu estilo"></div>
+        <p class="nota">Son plazos de referencia: el pelo de cada uno crece distinto. Si lo sientes largo antes, escríbenos y vemos un retoque corto.</p>
+      </div>
+      <div class="sal" aria-live="polite">
+        <p class="sobre" style="margin-bottom:6px">Tu próxima hora</p>
+        <b class="num" id="v-n">3</b><span id="v-u" style="font-weight:600">semanas</span>
+        <div class="barra" aria-hidden="true"><i id="v-b"></i></div>
+        <p id="v-t"></p>
+        <p class="fe" id="v-f"></p>
+        <a class="btn" href="#reserva">Reservar esa semana</a>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="opiniones" id="opiniones">
   <div class="wrap">
     <div class="cab rv">
@@ -384,6 +418,8 @@ footer.pie h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;text
     <details><summary>¿Cuánto dura un corte?</summary><p>Entre 30 y 45 minutos según el servicio. Corte con barba suma unos 25 minutos más.</p></details>
     <details><summary>¿Cortan a niños?</summary><p>Sí, desde los 3 años. Fran atiende a los más chicos con calma y sin apuro.</p></details>
     <details><summary>¿Qué medios de pago aceptan?</summary><p>Efectivo, débito, crédito y transferencia. En este sitio de ejemplo los valores son referenciales.</p></details>
+    <details><summary>¿Qué hago para que el degradado dure más?</summary><p>Evita rascarte con uñas la zona rapada y no te pases la máquina en casa: se pierde el difuminado. Un retoque corto de patillas y nuca a las dos semanas lo estira hasta la tercera.</p></details>
+    <details><summary>¿Puedo llevar una foto de referencia?</summary><p>Claro, de hecho ayuda mucho. Muéstranos la foto y dinos el largo que quieres arriba; el barbero te dice si tu tipo de pelo lo permite.</p></details>
   </div>
 </section>
 <section class="foto-band" aria-label="Galería de imágenes"><div class="fb n2"><figure><img src="https://images.unsplash.com/photo-1678356163587-6bb3afb89679?w=900&q=70&auto=format&fit=crop" alt="Cepillo, tijeras y navaja sobre una mesa" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure><figure><img src="https://images.unsplash.com/photo-1673350963924-cb4267d9b6eb?w=900&q=70&auto=format&fit=crop" alt="Frasco de aceite para barba sobre una mesa de madera" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure></div></section>
@@ -481,6 +517,31 @@ footer.pie h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;text
   var rv=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visto');io.unobserve(en.target)}})},{threshold:.12});rv.forEach(function(el){io.observe(el)})}
   else rv.forEach(function(el){el.classList.add('visto')});
+})();
+
+(function(){
+  var E=[
+    {n:'Degradado (fade)',w:3,t:'El borde rapado es lo primero que se nota: a las tres semanas ya se ve la línea nueva. Con un retoque de nuca a las dos, llegas fresco a la tercera.'},
+    {n:'Corte clásico',w:5,t:'Tijera y peinado aguantan más porque el largo es parejo. A las cinco semanas se pierde la forma de las orejas y la nuca.'},
+    {n:'Barba perfilada',w:2,t:'Las líneas de mejillas y cuello se pierden rápido. Cada dos semanas se mantiene el diseño sin tener que rehacerlo.'},
+    {n:'Barba larga',w:4,t:'Aquí se corta poco pero se cuida el contorno. Cada cuatro semanas basta, más aceite en casa a diario.'},
+    {n:'Pelo largo (puntas)',w:8,t:'Para mantener el largo solo se despuntan los extremos. Dos meses es un buen ritmo si no hay puntas abiertas.'},
+    {n:'Cobertura de canas',w:4,t:'La raíz se empieza a notar sobre el mes. Si el tono es natural, puedes estirarlo una semana más.'}
+  ];
+  var ops=document.getElementById('v-ops'),M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  function lunes(w){var d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+w*7);var k=(d.getDay()+6)%7;d.setDate(d.getDate()-k);return d}
+  function pon(i){
+    var e=E[i],b=ops.children;
+    for(var j=0;j<b.length;j++)b[j].setAttribute('aria-pressed',j===i?'true':'false');
+    document.getElementById('v-n').textContent=e.w;
+    document.getElementById('v-u').textContent=e.w===1?'semana':'semanas';
+    document.getElementById('v-t').textContent=e.t;
+    var d=lunes(e.w);
+    document.getElementById('v-f').textContent='Semana del '+d.getDate()+' de '+M[d.getMonth()]+' para tu próximo '+e.n.toLowerCase()+'.';
+    document.getElementById('v-b').style.width=Math.min(100,e.w/8*100)+'%';
+  }
+  E.forEach(function(e,i){var b=document.createElement('button');b.type='button';b.textContent=e.n;b.setAttribute('aria-pressed','false');b.onclick=function(){pon(i)};ops.appendChild(b)});
+  pon(0);
 })();
 </script>
 

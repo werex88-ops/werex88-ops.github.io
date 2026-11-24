@@ -388,6 +388,15 @@ h1.nombre{background:linear-gradient(100deg,var(--tinta) 40%,var(--acento) 78%,v
   <div class="wrap sec">
     <div class="sec-cab"><span class="num">02</span><h2>Trayectoria profesional</h2><p>Experiencia en el sector público cultural, la educación superior, la capacitación y el soporte informático.</p></div>
     <div>
+      <div class="mapa rv" aria-hidden="true"><p class="mapa-t">Un vistazo: 2007 a hoy</p><div class="mapa-g"><div class="lane"><span class="lbl" style="left:1.67%">Supervisor Administrativo <small>2007–2014</small></span><i class="barra a" style="left:1.67%;width:33.89%;--d:0.00s"></i></div>
+<div class="lane"><span class="lbl" style="left:35.56%">Soporte informático <small>2014–2015</small></span><i class="barra b" style="left:35.56%;width:6.28%;--d:0.08s"></i></div>
+<div class="lane"><span class="lbl" style="left:41.84%">Proyecto REA (MINEDUC) <small>2015–2017</small></span><i class="barra a" style="left:41.84%;width:10.88%;--d:0.16s"></i></div>
+<div class="lane"><span class="lbl" style="left:46.03%">Relator SENCE <small>2016–2019</small></span><i class="barra b" style="left:46.03%;width:15.48%;--d:0.24s"></i></div>
+<div class="lane"><span class="lbl" style="right:0.00%;text-align:right">Freelance: web y soporte TI <small>2017–hoy</small></span><i class="barra c" style="left:54.39%;width:45.61%;--d:0.32s"></i></div>
+<div class="lane"><span class="lbl" style="right:34.72%;text-align:right">Apoyo programa artístico <small>2019</small></span><i class="barra a" style="left:61.51%;width:3.77%;--d:0.40s"></i></div>
+<div class="lane"><span class="lbl" style="right:8.78%;text-align:right">Encargado OIRS Cecrea <small>2020–2025</small></span><i class="barra b" style="left:69.46%;width:21.76%;--d:0.48s"></i></div>
+<div class="lane"><span class="lbl" style="right:0.00%;text-align:right">SEREMI de las Culturas <small>2025–hoy</small></span><i class="barra c" style="left:91.21%;width:8.79%;--d:0.56s"></i></div>
+<div class="ejes"><em style="left:0.00%">2007</em><em style="left:15.06%">2010</em><em style="left:40.17%">2015</em><em style="left:65.27%">2020</em><em style="left:90.38%">2025</em></div></div></div>
       <article class="exp actual rv">
         <span class="fecha">Marzo 2025 — a la fecha <b>Actual</b></span>
         <h3>Profesional del Departamento de Formación en Arte y Cultura</h3>
@@ -733,6 +742,23 @@ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.write
   .rv.in .chip[style*="--i"]{animation:chipIn .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*35ms)}
   @media (prefers-reduced-motion:reduce){.rv.in .chip[style*="--i"]{animation:none}}
   @media print{.chip{animation:none!important}}
+
+.mapa{margin:0 0 34px;padding:18px 18px 8px;background:var(--papel);border:1px solid var(--linea);border-radius:14px}
+.mapa-t{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);font-weight:700;margin-bottom:12px}
+.mapa-g{position:relative}
+.lane{position:relative;height:36px;margin-bottom:4px;background:repeating-linear-gradient(90deg,transparent 0 calc(15.06% - 1px),var(--linea) calc(15.06% - 1px) 15.06%)}
+.barra{position:absolute;bottom:2px;height:10px;border-radius:6px;transform-origin:left;background:var(--acento)}
+.lbl{position:absolute;top:0;font-size:.76rem;font-weight:600;color:var(--tinta);white-space:nowrap;line-height:1.2}
+.lbl small{color:var(--gris);font-weight:500}
+.barra.b{background:var(--tinta)}.barra.c{background:var(--coral)}
+.ejes{position:relative;height:22px;margin-top:4px}
+.ejes em{position:absolute;transform:translateX(-50%);font-style:normal;font-size:.75rem;color:var(--gris)}
+.ejes em:first-child{transform:none}
+.mapa.in .barra{animation:crece .8s cubic-bezier(.2,.7,.2,1) var(--d) both}
+@keyframes crece{from{transform:scaleX(0)}to{transform:none}}
+@media(max-width:640px){.lbl{font-size:.68rem}.lbl small{display:none}}
+@media(prefers-reduced-motion:reduce){.mapa.in .barra{animation:none}}
+@media print{.mapa{display:none!important}}
 </style>
 <script>
 (function(){document.querySelectorAll('.competencia .chip, .comp .chip, .chips .chip').forEach(function(c,i,a){c.style.setProperty('--i',i%12)})})();

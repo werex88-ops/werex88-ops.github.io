@@ -198,6 +198,36 @@ footer a:hover{color:#fff}
 footer .logo{margin-bottom:14px}
 .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;font-size:.82rem}
 
+/* Elige tu cabaña */
+.elige{background:var(--niebla)}
+.elige .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.elige h2{font-size:clamp(2.2rem,4.2vw,3.2rem);margin-bottom:16px}
+.elige p{color:var(--gris)}
+.pregs{display:grid;gap:18px;margin-top:22px}
+.pregs fieldset{border:0;padding:0;margin:0}
+.pregs legend{font-weight:700;margin-bottom:8px;padding:0}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{cursor:pointer}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:inline-block;padding:10px 16px;border:1.5px solid var(--linea);border-radius:999px;background:#fff;font-weight:600;font-size:.95rem;transition:all .2s}
+.opts input:checked+span{background:var(--noche);color:#fff;border-color:var(--noche)}
+.opts input:focus-visible+span{outline:3px solid var(--laton);outline-offset:2px}
+.res-cab{background:var(--noche);color:#fff;border-radius:22px;overflow:hidden}
+.res-cab .foto2{aspect-ratio:16/9;background:var(--lago) center/cover no-repeat}
+.res-cab .cuerpo2{padding:26px 28px 30px}
+.res-cab small{color:var(--laton);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem}
+.res-cab h3{font-size:2rem;margin:6px 0 10px}
+.res-cab p{color:rgba(255,255,255,.82);margin:0 0 18px}
+.dia{background:#fff}
+.dia ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:d}
+.dia li{border-top:3px solid var(--laton);padding-top:14px}
+.dia li b{display:block;font-family:'DM Serif Display',serif;font-weight:400;font-size:1.5rem;color:var(--noche)}
+.dia li small{color:var(--rio);font-weight:700;letter-spacing:.1em}
+.dia li p{margin:6px 0 0;color:var(--gris);font-size:.95rem}
+.dia .banda{margin-top:36px;aspect-ratio:21/7;border-radius:var(--radio);background:var(--lago) center/cover no-repeat}
+@media(max-width:1000px){.elige .wrap{grid-template-columns:1fr;gap:36px}.dia ol{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.dia ol{grid-template-columns:1fr}.dia .banda{aspect-ratio:16/9}}
+
 .rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.visto{opacity:1;transform:none}
 
@@ -249,6 +279,7 @@ footer .logo{margin-bottom:14px}
     <nav id="menu" aria-label="Principal">
       <ul>
         <li><a href="#cabanas">Cabañas</a></li>
+        <li><a href="#elige">Elige tu cabaña</a></li>
         <li><a href="#experiencias">Experiencias</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#ubicacion">Cómo llegar</a></li>
@@ -330,6 +361,58 @@ footer .logo{margin-bottom:14px}
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+
+<section class="elige" id="elige">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Para decidir sin vueltas</span>
+      <h2>¿Cuál cabaña te conviene?</h2>
+      <p>Contesta dos preguntas y te decimos con cuál nos quedaríamos nosotros.</p>
+      <div class="pregs">
+        <fieldset><legend>¿Con quién vienen?</legend>
+          <div class="opts" id="q-quien">
+            <label><input type="radio" name="quien" value="pareja" checked><span>Voy en pareja</span></label>
+            <label><input type="radio" name="quien" value="familia"><span>Familia con niños</span></label>
+            <label><input type="radio" name="quien" value="grupo"><span>Grupo de amigos</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>¿Qué buscas?</legend>
+          <div class="opts" id="q-que">
+            <label><input type="radio" name="que" value="calma" checked><span>Silencio y tinaja</span></label>
+            <label><input type="radio" name="que" value="aire"><span>Salir a caminar y remar</span></label>
+            <label><input type="radio" name="que" value="mesa"><span>Cocinar y juntarnos</span></label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="res-cab rv" aria-live="polite">
+      <div class="foto2" id="r-foto" role="img" aria-label="Cabaña de madera junto al lago entre pinos" style="background-image:url('https://images.unsplash.com/photo-1788027025573-700ada0928bf?w=1100&q=70&auto=format&fit=crop')"></div>
+      <div class="cuerpo2">
+        <small id="r-tag">Nuestra recomendación</small>
+        <h3 id="r-nombre">Cabaña Ulmo</h3>
+        <p id="r-texto"></p>
+        <a class="btn btn-laton" id="r-link" href="#reservar" data-cabana="ulmo">Calcular esta estadía →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dia" id="dia">
+  <div class="wrap">
+    <div class="cab rv">
+      <div><span class="eyebrow">Un día cualquiera</span><h2>Así se pasa un sábado aquí</h2></div>
+      <p>Sin horarios ni apuro. Esto es lo que suele hacer la gente que se queda dos noches.</p>
+    </div>
+    <ol class="rv">
+      <li><small>8:30 H</small><b>Desayuno en la terraza</b><p>Llegamos con pan amasado calentito y café. El río se escucha desde la mesa.</p></li>
+      <li><small>11:00 H</small><b>Kayak por el río</b><p>Salimos a 150 metros de la cabaña. Una hora y media, con chaleco y remo incluidos.</p></li>
+      <li><small>16:00 H</small><b>Sendero y tarde de lectura</b><p>Tres rutas señalizadas; la más corta se camina en 40 minutos con zapatillas normales.</p></li>
+      <li><small>21:00 H</small><b>Tinaja y fogón</b><p>Prendemos la tinaja a las 19:00 para que esté lista. Leña seca y parrilla de sobra.</p></li>
+    </ol>
+    <div class="banda rv" role="img" aria-label="Cabaña de madera entre árboles envuelta en neblina" style="background-image:url('https://images.unsplash.com/photo-1772955543023-a6e99819e161?w=1800&q=70&auto=format&fit=crop')"></div>
   </div>
 </section>
 
@@ -449,6 +532,9 @@ footer .logo{margin-bottom:14px}
       <details><summary>¿Cómo funciona la calefacción?</summary><p>Cada cabaña tiene estufa a leña y un calefactor eléctrico de respaldo. Dejamos leña seca para la primera noche; si necesitas más, un saco extra cuesta $6.000.</p></details>
       <details><summary>¿Qué incluye el desayuno de campo?</summary><p>Pan amasado, mantequilla, mermelada de la zona, huevos de gallinas del vecino, queso y café. Lo llevamos a la cabaña entre las 8:30 y las 10:00 h.</p></details>
       <details><summary>¿Aceptan mascotas?</summary><p>Aceptamos perros en la cabaña Coigüe, con aviso previo y un cargo de aseo de $10.000.</p></details>
+      <details><summary>¿Cuánto se demora en llegar la leña y el desayuno?</summary><p>La leña ya está en la cabaña cuando llegas. El desayuno lo pides la noche anterior hasta las 21:00 h y te lo dejamos en la puerta entre 8:30 y 10:00 h.</p></details>
+      <details><summary>¿Puedo llegar después de las 15:00 h?</summary><p>Sí, hasta las 22:00 h. Si vas a llegar más tarde, avísanos por WhatsApp para dejarte la tinaja caliente y las llaves en la cabaña.</p></details>
+      <details><summary>¿Sirve para niños pequeños?</summary><p>Sí. La Coigüe tiene cuna y silla de comer sin costo. La tinaja y el río siempre con un adulto: el sector del muelle no tiene baranda.</p></details>
       <details><summary>¿Hay señal de celular?</summary><p>Hay wifi en todas las cabañas y buena señal en la zona común. Dentro del bosque la señal es baja, ideal para desconectarse.</p></details>
     </div>
     <div class="mapa rv" role="img" aria-label="Mapa ilustrativo del camino desde Valdivia hasta las cabañas">
@@ -551,6 +637,31 @@ footer .logo{margin-bottom:14px}
     $('c-huespedes').value=$('b-huespedes').value;$('c-cabana').value=$('b-cabana').value;
     calcular();$('reservar').scrollIntoView({behavior:'smooth'});
   });
+})();
+
+(function(){
+  var DATA={
+    'pareja|calma':['ulmo','Cabaña Ulmo','Dos personas, ventanal al bosque y tinaja privada en la terraza. Es la más tranquila del predio: nadie más pasa por ahí.'],
+    'pareja|aire':['ulmo','Cabaña Ulmo','Queda a la entrada del sendero y a 150 metros del río. Salen a caminar o a remar y vuelven a la tinaja.'],
+    'pareja|mesa':['coigue','Cabaña Coigüe','Si les gusta cocinar, el quincho techado de la Coigüe se agradece. Tiene espacio de sobra para dos y para quien se sume.'],
+    'familia|calma':['coigue','Cabaña Coigüe','Dos dormitorios para que los niños duerman aparte, chimenea en el living y acceso directo al sendero sin cruzar caminos.'],
+    'familia|aire':['coigue','Cabaña Coigüe','Sale directo al sendero, y el kayak guiado se puede hacer en dos tandas para que los grandes remen por turnos.'],
+    'familia|mesa':['alerce','Cabaña Alerce','Cocina grande, mesa para ocho y fogón afuera. Si vienen abuelos o primos, es la que mejor aguanta.'],
+    'grupo|calma':['alerce','Cabaña Alerce','Tres dormitorios y doble altura: cada uno tiene su rincón. La vista al valle es la mejor del predio.'],
+    'grupo|aire':['alerce','Cabaña Alerce','Seis personas, tres rutas de sendero y kayaks para todos. Pidan la salida guiada de las 11:00 h.'],
+    'grupo|mesa':['alerce','Cabaña Alerce','Mesa para ocho, fogón y parrilla. Se les va a hacer corta la noche.']
+  };
+  var FOTO={ulmo:'https://images.unsplash.com/photo-1788027025573-700ada0928bf',coigue:'https://images.unsplash.com/photo-1570793005386-840846445fed',alerce:'https://images.unsplash.com/photo-1772955543023-a6e99819e161'};
+  function val(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:''}
+  function pinta(){
+    var d=DATA[val('quien')+'|'+val('que')];if(!d)return;
+    document.getElementById('r-nombre').textContent=d[1];
+    document.getElementById('r-texto').textContent=d[2];
+    var l=document.getElementById('r-link');l.setAttribute('data-cabana',d[0]);
+    document.getElementById('r-foto').style.backgroundImage="url('"+FOTO[d[0]]+"?w=1100&q=70&auto=format&fit=crop')";
+  }
+  document.querySelectorAll('.elige input').forEach(function(i){i.addEventListener('change',pinta)});
+  pinta();
 })();
 </script>
 
