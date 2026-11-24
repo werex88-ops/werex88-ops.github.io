@@ -237,3 +237,6 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 ## Añadidas el 22-11-2026 (enlazadas directo; licencia Unsplash gratuita, identificadores copiados de la página de cada foto)
 - `cerveceria` sección "Maridaje de mesón" (estanque de acero gris de una cervecería) — https://images.unsplash.com/photo-1545287072-469f3761413c — Toby Stodart · https://unsplash.com/photos/gray-storage-tank-VXj9SizkreE
 - `centro-cultural` sección "¿Dónde me siento?" (filas de butacas vacías de un teatro; recinto no identificado, solo ambiente) — https://images.unsplash.com/photo-1545129139-1beb780cf337 — Sonder Quest · https://unsplash.com/photos/empty-theater-seats-pRh9RiynHGE
+
+## Añadidas el 24-11-2026 (enlazada directo; licencia Unsplash gratuita, identificador copiado de la página de la foto)
+- `cafeteria` sección "Pide y retira" (taza de café humeante sobre mesa de madera, luz de ventana) — https://images.unsplash.com/photo-1771736385651-c071580a9d78 — Charmil Gandhi · https://unsplash.com/photos/steaming-cup-of-coffee-on-a-wooden-table-MK60jE_6zXU

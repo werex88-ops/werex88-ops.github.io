@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grano &amp; Calma · Café de especialidad</title>
-<meta name="description" content="Cafetería de especialidad en Barrio Italia. Café tostado en casa y pastelería del día.">
+<meta name="description" content="Cafetería de especialidad en Valdivia. Café tostado en casa, pastelería del día y pedido para retirar por WhatsApp.">
 <meta name="theme-color" content="#f5eee3">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b9773f'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23ffffff'%3EG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -170,6 +170,34 @@
   .faq details p{color:var(--suave);margin-top:10px;max-width:62ch}
   .faq summary:focus-visible{outline:2px solid var(--caramelo);outline-offset:4px}
   @media(max-width:860px){.pastel-g{grid-template-columns:1fr;gap:28px}.pastel{padding:60px 0 20px}}
+  .pedido{padding:90px 0}
+  .ped-g{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+  .ped-lista{list-style:none;display:grid;gap:0}
+  .ped-lista li{display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--linea)}
+  .ped-lista b{font-family:'Fraunces',serif;font-weight:500;font-size:19px;display:block;line-height:1.2}
+  .ped-lista small{color:var(--suave);font-size:13px}
+  .ped-lista .pr{color:var(--caramelo);font-family:'Fraunces',serif}
+  .cant{display:inline-flex;align-items:center;gap:4px;background:var(--papel);border:1px solid var(--linea);border-radius:999px;padding:3px}
+  .cant button{width:34px;height:34px;border-radius:50%;border:0;background:transparent;font-size:20px;cursor:pointer;color:var(--espresso)}
+  .cant button:hover{background:var(--espresso);color:var(--crema)}
+  .cant output{min-width:22px;text-align:center;font-weight:700}
+  .ped-res{position:sticky;top:20px;background:var(--espresso);color:var(--crema);border-radius:24px;padding:32px;overflow:hidden}
+  .ped-res h3{font-family:'Fraunces',serif;font-weight:300;font-size:30px;margin-bottom:14px}
+  .ped-res ul{list-style:none;min-height:48px;font-size:15px;color:#dccdb9}
+  .ped-res li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed rgba(245,238,227,.2)}
+  .ped-tot{display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 6px;font-family:'Fraunces',serif;font-size:34px;color:#e6b886}
+  .ped-res label{display:block;font-size:13px;margin:14px 0 6px;color:#dccdb9}
+  .ped-res input,.ped-res select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(245,238,227,.3);background:rgba(255,255,255,.08);color:var(--crema);font:inherit}
+  .ped-res select option{color:#111}
+  .ped-res .btn{background:#b9773f;color:#1a0f08;width:100%;justify-content:center;margin-top:18px;font-weight:700}
+  .ped-res .btn:hover{background:#d49a62}
+  .ped-nota{font-size:12px;color:#c9b8a4;margin-top:12px}
+  .vapor{position:absolute;right:28px;top:20px;display:flex;gap:6px;opacity:.5}
+  .vapor i{width:3px;height:30px;border-radius:3px;background:linear-gradient(#e6b886,transparent);animation:sube 3s ease-in-out infinite}
+  .vapor i:nth-child(2){animation-delay:.6s;height:40px}.vapor i:nth-child(3){animation-delay:1.2s}
+  @keyframes sube{0%{transform:translateY(8px);opacity:0}50%{opacity:1}100%{transform:translateY(-10px);opacity:0}}
+  @media(max-width:860px){.ped-g{grid-template-columns:1fr}.ped-res{position:static}}
+
 </style>
 </head>
 <body>
@@ -180,7 +208,7 @@
 <nav>
   <div class="contenedor">
     <a class="logo" href="#">Grano <i>&amp;</i> Calma</a>
-    <ul><li><a href="#carta">Carta</a></li><li><a href="#origen">Origen</a></li><li><a href="#visitanos">Visítanos</a></li></ul>
+    <ul><li><a href="#carta">Carta</a></li><li><a href="#origen">Origen</a></li><li><a href="#pedido">Pide y retira</a></li><li><a href="#visitanos">Visítanos</a></li></ul>
     <a class="btn" href="#visitanos">Cómo llegar</a>
   </div>
 </nav>
@@ -188,15 +216,15 @@
 <main id="contenido">
 <header class="contenedor hero">
   <div class="rv">
-    <div class="sobre">Café de especialidad · Barrio Italia</div>
+    <div class="sobre">Café de especialidad · Valdivia</div>
     <h1 style="margin-top:20px">Café recién tostado, <em>mesa libre</em> y sin apuro.</h1>
-    <p>Tostamos cada semana en el local, horneamos todas las mañanas y hay enchufe en cada mesa para que trabajes o conversas tranquilo.</p>
+    <p>Tostamos cada semana en el local, horneamos temprano y hay enchufe en cada mesa. Si llueve, que es lo más probable, te guardamos la mesa del ventanal.</p>
     <div class="acciones">
       <a class="btn" href="#carta">Ver la carta →</a>
       <a class="btn claro" href="#origen">Nuestro café</a>
     </div>
     <div class="hero-meta">
-      <div><b>4,9</b><span>★ en 820 reseñas</span></div>
+      <div><b>8:00</b><span>abrimos con el pan tibio</span></div>
       <div><b>7 días</b><span>máximo desde el tueste</span></div>
     </div>
   </div>
@@ -281,13 +309,37 @@
     </div>
   </div>
 </section>
+<section class="pedido" id="pedido" aria-labelledby="t-ped">
+  <div class="contenedor">
+    <div class="rv" style="margin-bottom:40px"><figure style="height:260px;border-radius:24px;overflow:hidden;margin-bottom:36px;background:linear-gradient(135deg,#d9b88f,#925e32)"><img src="https://images.unsplash.com/photo-1771736385651-c071580a9d78?w=1600&q=70&auto=format&fit=crop" alt="Taza de café humeante sobre una mesa de madera junto a la ventana" loading="lazy" onerror="this.style.display='none'"></figure><div class="sobre">Pide y retira</div><h2 id="t-ped">Llega y <em>tu café ya está.</em></h2><p style="color:var(--suave);max-width:520px;margin-top:14px">Arma tu pedido, avísanos por WhatsApp y lo dejamos listo en el mesón en unos 10 minutos. Pagas al retirar, con tarjeta o efectivo.</p></div>
+    <div class="ped-g">
+      <ul class="ped-lista rv" id="ped-lista">
+<li data-n="Flat white" data-p="3400"><div><b>Flat white</b><small>Doble ristretto, leche sedosa</small></div><span class="pr">$3.400</span><span class="cant"><button type="button" aria-label="Quitar un flat white">−</button><output>0</output><button type="button" aria-label="Agregar un flat white">+</button></span></li>
+<li data-n="Latte de miel y canela" data-p="3800"><div><b>Latte de miel y canela</b><small>El que más piden cuando llueve</small></div><span class="pr">$3.800</span><span class="cant"><button type="button" aria-label="Quitar un latte de miel">−</button><output>0</output><button type="button" aria-label="Agregar un latte de miel">+</button></span></li>
+<li data-n="Cold brew" data-p="3500"><div><b>Cold brew</b><small>18 horas en frío</small></div><span class="pr">$3.500</span><span class="cant"><button type="button" aria-label="Quitar un cold brew">−</button><output>0</output><button type="button" aria-label="Agregar un cold brew">+</button></span></li>
+<li data-n="Croissant de mantequilla" data-p="2500"><div><b>Croissant de mantequilla</b><small>Sale del horno a las 8:00</small></div><span class="pr">$2.500</span><span class="cant"><button type="button" aria-label="Quitar un croissant">−</button><output>0</output><button type="button" aria-label="Agregar un croissant">+</button></span></li>
+<li data-n="Kuchen de la casa" data-p="3200"><div><b>Kuchen de la casa</b><small>El del día; pregunta el sabor</small></div><span class="pr">$3.200</span><span class="cant"><button type="button" aria-label="Quitar un kuchen">−</button><output>0</output><button type="button" aria-label="Agregar un kuchen">+</button></span></li>
+<li data-n="Tostada de palta" data-p="5900"><div><b>Tostada de palta</b><small>Masa madre y huevo a baja temperatura</small></div><span class="pr">$5.900</span><span class="cant"><button type="button" aria-label="Quitar una tostada">−</button><output>0</output><button type="button" aria-label="Agregar una tostada">+</button></span></li>
+      </ul>
+      <aside class="ped-res rv" aria-label="Resumen del pedido"><span class="vapor" aria-hidden="true"><i></i><i></i><i></i></span>
+        <h3>Tu pedido</h3>
+        <ul id="ped-res" aria-live="polite"><li><span>Aún no agregas nada</span></li></ul>
+        <div class="ped-tot"><span>Total</span><span id="ped-tot">$0</span></div>
+        <label for="ped-nom">Nombre para el vaso</label><input id="ped-nom" autocomplete="given-name" placeholder="Ej.: Camila">
+        <label for="ped-hora">¿Cuándo pasas?</label><select id="ped-hora"><option>En 15 minutos</option><option>En 30 minutos</option><option>En 1 hora</option></select>
+        <a class="btn" id="ped-wa" href="#pedido" role="button" aria-disabled="true">Enviar por WhatsApp</a>
+        <p class="ped-nota" id="ped-nota">Agrega al menos un producto. Precios de ejemplo; leche vegetal sin costo.</p>
+      </aside>
+    </div>
+  </div>
+</section>
 <section id="visitanos" style="padding-top:20px">
   <div class="contenedor visita">
     <figure class="rv"><img src="img/local.jpg" alt="Interior de la cafetería con mesas y plantas" loading="lazy"></figure>
     <div class="rv">
       <div class="sobre">Visítanos</div>
       <h2>Pasa, <em>siéntate</em> un rato.</h2>
-      <p class="direccion">Pasaje Los Aromos 88, Barrio Italia</p>
+      <p class="direccion">Yungay 456, Valdivia</p>
       <div class="horario" id="horario">
         <div data-d="1,2,3,4,5"><span>Lunes a viernes</span><span>8:00 – 20:00</span></div>
         <div data-d="6"><span>Sábado</span><span>9:00 – 20:00</span></div>
@@ -299,11 +351,11 @@
   </div>
 </section>
 
-<section id="preguntas" style="padding:70px 0 90px"><div class="contenedor" style="max-width:860px"><div class="sobre">Preguntas frecuentes</div><h2 style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(30px,4vw,44px);margin:10px 0 24px">Antes de pasar</h2><div class="faq rv"><details><summary>¿Puedo trabajar con computador?</summary><p>Sí. Hay wifi y enchufe en todas las mesas. Los fines de semana, de 12:00 a 16:00, pedimos que quien trabaje deje libres las mesas grandes.</p></details><details><summary>¿Aceptan perros?</summary><p>Sí, en la terraza y con correa. Tenemos un bol con agua.</p></details><details><summary>¿Venden café en grano?</summary><p>Sí, bolsas de 250 g ($8.900) y de 1 kg ($29.000), molido a tu método si quieres. Revisa la fecha de tueste en la etiqueta.</p></details><details><summary>¿Tienen opciones sin gluten o veganas?</summary><p>Leche de avena, almendra o coco sin costo extra. Sin gluten tenemos las galletas de almendra y el brownie; veganos, la tostada de palta sin huevo y el matcha con avena. Avisa si eres celíaco: la cocina es compartida.</p></details><details><summary>¿Reciben pedidos de tortas o catering?</summary><p>Tortas y kuchenes con 3 días de anticipación, y bandejas de café y galletas para oficinas desde 10 personas. Escribe a hola@granoycalma.cl.</p></details></div></div></section>
+<section id="preguntas" style="padding:70px 0 90px"><div class="contenedor" style="max-width:860px"><div class="sobre">Preguntas frecuentes</div><h2 style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(30px,4vw,44px);margin:10px 0 24px">Antes de pasar</h2><div class="faq rv"><details><summary>¿Puedo trabajar con computador?</summary><p>Sí. Hay wifi y enchufe en todas las mesas. Los fines de semana, de 12:00 a 16:00, pedimos que quien trabaje deje libres las mesas grandes.</p></details><details><summary>¿Aceptan perros?</summary><p>Sí, en la terraza y con correa. Tenemos un bol con agua.</p></details><details><summary>¿Venden café en grano?</summary><p>Sí, bolsas de 250 g ($8.900) y de 1 kg ($29.000), molido a tu método si quieres. Revisa la fecha de tueste en la etiqueta.</p></details><details><summary>¿Tienen opciones sin gluten o veganas?</summary><p>Leche de avena, almendra o coco sin costo extra. Sin gluten tenemos las galletas de almendra y el brownie; veganos, la tostada de palta sin huevo y el matcha con avena. Avisa si eres celíaco: la cocina es compartida.</p></details><details><summary>¿Reciben pedidos de tortas o catering?</summary><p>Tortas y kuchenes con 3 días de anticipación, y bandejas de café y galletas para oficinas desde 10 personas. Escribe a hola@granoycalma.cl.</p></details><details><summary>¿Cuánto demora un pedido para retirar?</summary><p>Unos 10 minutos desde que nos escribes por WhatsApp; en la hora de almuerzo, hasta 15. Te avisamos si hay más espera.</p></details><details><summary>¿Hacen despacho?</summary><p>No, solo retiro en el local. Para oficinas del centro de Valdivia armamos bandejas desde 10 personas con un día de anticipación.</p></details><details><summary>¿Qué pasa si se acaba el pastel del día?</summary><p>Se acaba. Hacemos una tanda por la mañana; si quieres asegurar un trozo, anótalo en tu pedido y te lo guardamos hasta las 17:00.</p></details></div></div></section>
 </main>
 <footer>
   <div class="contenedor">
-    <div><div class="logo">Grano <i>&amp;</i> Calma</div><p>Café de especialidad tostado en casa.<br>Pasaje Los Aromos 88, Barrio Italia.</p></div>
+    <div><div class="logo">Grano <i>&amp;</i> Calma</div><p>Café de especialidad tostado en casa.<br>Yungay 456, Valdivia.</p></div>
     <div><h5>Contacto</h5><p>hola@granoycalma.cl<br>+56 9 4321 8765</p></div>
     <div><h5>Síguenos</h5><p>Instagram<br>Spotify · nuestra playlist</p></div>
   </div>
@@ -324,6 +376,28 @@
   document.querySelectorAll('#horario div').forEach(d => {
     if (d.dataset.d.split(',').includes(dia)) { d.classList.add('hoy'); d.firstElementChild.textContent += ' · hoy'; }
   });
+
+
+  (function(){
+    const li=[...document.querySelectorAll('#ped-lista li')],res=document.getElementById('ped-res'),tot=document.getElementById('ped-tot'),wa=document.getElementById('ped-wa'),nota=document.getElementById('ped-nota');
+    const fmt=n=>'$'+n.toLocaleString('es-CL');
+    function pinta(){
+      let t=0,txt=[],html='';
+      li.forEach(l=>{const q=+l.querySelector('output').textContent;if(q){const sub=q*+l.dataset.p;t+=sub;txt.push(q+' x '+l.dataset.n);html+='<li><span>'+q+' × '+l.dataset.n+'</span><span>'+fmt(sub)+'</span></li>';}});
+      res.innerHTML=html||'<li><span>Aún no agregas nada</span></li>';tot.textContent=fmt(t);
+      const ok=t>0;wa.setAttribute('aria-disabled',ok?'false':'true');wa.style.opacity=ok?1:.55;
+      nota.textContent=ok?'Se abre WhatsApp con tu pedido listo para enviar.':'Agrega al menos un producto. Precios de ejemplo; leche vegetal sin costo.';
+      const nom=document.getElementById('ped-nom').value.trim()||'sin nombre';
+      const msg='Hola, quiero retirar un pedido ('+nom+', '+document.getElementById('ped-hora').value.toLowerCase()+'):\n'+txt.join('\n')+'\nTotal: '+fmt(t);
+      wa.href=ok?'https://wa.me/56943218765?text='+encodeURIComponent(msg):'#pedido';
+      if(ok){wa.target='_blank';wa.rel='noopener';}else{wa.removeAttribute('target');}
+    }
+    li.forEach(l=>{const o=l.querySelector('output'),[m,p]=l.querySelectorAll('button');
+      m.onclick=()=>{o.textContent=Math.max(0,+o.textContent-1);pinta();};
+      p.onclick=()=>{o.textContent=Math.min(12,+o.textContent+1);pinta();};});
+    wa.addEventListener('click',e=>{if(wa.getAttribute('aria-disabled')==='true')e.preventDefault();});
+    document.getElementById('ped-nom').oninput=pinta;document.getElementById('ped-hora').onchange=pinta;pinta();
+  })();
 
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));

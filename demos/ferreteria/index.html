@@ -209,6 +209,26 @@ footer b{color:#fff}
 .fij-res ul{margin:10px 0 0 18px}
 .fij-res li{margin:3px 0}
 @media(max-width:820px){.fij{grid-template-columns:1fr}}
+
+.inv{background:var(--az);color:var(--papel)}
+.inv .cab h2{color:#fff}
+.inv-g{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;margin-top:30px;align-items:start}
+.inv-l{list-style:none;display:grid;gap:10px}
+.inv-l label{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:10px;cursor:pointer;transition:background .2s,transform .2s}
+.inv-l label:hover{background:rgba(255,255,255,.13);transform:translateX(4px)}
+.inv-l input{width:22px;height:22px;accent-color:#ff8a6b}
+.inv-l b{display:block;font-size:1.02rem}
+.inv-l small{color:#c7d3dc;font-size:.88rem}
+.inv-l .pr{font-weight:800;color:#ffd7cb;white-space:nowrap}
+.inv-l input:checked~div b{text-decoration:line-through;opacity:.7}
+.inv-res{background:var(--crema);color:var(--tinta);border-radius:14px;padding:26px;position:sticky;top:90px}
+.inv-res h3{font-size:1.3rem;margin-bottom:10px}
+.inv-barra{height:12px;border-radius:8px;background:#e6dfcc;overflow:hidden;margin:10px 0 14px}
+.inv-barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--verde),#6bbf8a);transition:width .5s}
+.inv-tot{font-size:2rem;font-weight:800;color:var(--rojo);line-height:1.1}
+.inv-res .btn{margin-top:16px;width:100%;background:var(--rojo);color:#fff}
+@media(max-width:820px){.inv-g{grid-template-columns:1fr}.inv-res{position:static}}
+@media(prefers-reduced-motion:reduce){.inv-l label,.inv-barra i{transition:none}}
 </style>
 </head>
 <body>
@@ -226,7 +246,7 @@ footer b{color:#fff}
 <header><div class="w nav">
   <a class="logo" href="#inicio" aria-label="Ferretería Lleuque, inicio"><i aria-hidden="true"><svg width="22" height="22" viewBox="0 0 48 48"><path d="M8 12h32v10H8zM19 22h10v22H19z" fill="#10304a"/><circle cx="38" cy="17" r="4" fill="#c63d22"/></svg></i><span>Lleuque</span></a>
   <nav class="menu" id="menu" aria-label="Principal">
-    <a href="#calculadora">Calculadora</a><a href="#consejo">Consejos</a><a href="#catalogo">Catálogo</a><a href="#nosotros">Nosotros</a><a href="#visita">Visítanos</a>
+    <a href="#calculadora">Calculadora</a><a href="#invierno">Invierno</a><a href="#consejo">Consejos</a><a href="#catalogo">Catálogo</a><a href="#nosotros">Nosotros</a><a href="#visita">Visítanos</a>
   </nav>
   <div class="nav-der">
     <a class="pedido-link" href="#catalogo" aria-label="Ver mi pedido"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h3l2.5 11h10L21 7H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg><span class="t">Pedido</span><b id="cnt">0</b></a>
@@ -346,6 +366,19 @@ footer b{color:#fff}
   </div>
 </div></section>
 
+<section class="inv" id="invierno" aria-labelledby="t-inv"><div class="w">
+<div class="cab rv"><p class="eti" style="color:#ffd7cb">Antes de que llueva</p><h2 id="t-inv">La lista de mayo: prepara la casa para el invierno</h2><p style="color:#c7d3dc">En el sur, el invierno no avisa. Marca lo que ya hiciste y te armamos el pedido con lo que falta. Precios de ejemplo.</p></div>
+<div class="inv-g"><ul class="inv-l rv" id="inv-l">
+<li><label><input type="checkbox" data-p="3500" data-n="Limpiar canaletas y bajadas"><div><b>Limpiar canaletas y bajadas</b><small>Hojas y barro tapan el agua antes de mayo · Escalera, guantes y pala de mano</small></div><span class="pr">$3.500</span></label></li>
+<li><label><input type="checkbox" data-p="6900" data-n="Sellar ventanas y puertas"><div><b>Sellar ventanas y puertas</b><small>Silicona o sello espuma en las rendijas por donde entra el viento · Pistola de silicona y cartucho</small></div><span class="pr">$6.900</span></label></li>
+<li><label><input type="checkbox" data-p="12900" data-n="Revisar goteras en el techo"><div><b>Revisar goteras en el techo</b><small>Parches de membrana o sellante para planchas de zinc · Sellante asfáltico y malla</small></div><span class="pr">$12.900</span></label></li>
+<li><label><input type="checkbox" data-p="18900" data-n="Cortar y apilar leña seca"><div><b>Cortar y apilar leña seca</b><small>Mejor un año de secado; si no, usa el medidor de humedad · Medidor de humedad de leña</small></div><span class="pr">$18.900</span></label></li>
+<li><label><input type="checkbox" data-p="14500" data-n="Limpiar la salida de la estufa"><div><b>Limpiar la salida de la estufa</b><small>Un tubo con hollín es riesgo de incendio · Escobillón para ducto</small></div><span class="pr">$14.500</span></label></li>
+<li><label><input type="checkbox" data-p="8900" data-n="Aislar la tubería exterior"><div><b>Aislar la tubería exterior</b><small>Las heladas de julio revientan llaves y cañerías expuestas · Espuma aislante para cañerías</small></div><span class="pr">$8.900</span></label></li>
+<li><label><input type="checkbox" data-p="9900" data-n="Ordenar el patio con luz"><div><b>Ordenar el patio con luz</b><small>Un foco de exterior con sensor para el barro y la oscuridad de las seis · Foco LED con sensor</small></div><span class="pr">$9.900</span></label></li>
+</ul>
+<aside class="inv-res rv" aria-live="polite"><h3>Lo que te falta</h3><div class="inv-barra" aria-hidden="true"><i id="inv-b"></i></div><p id="inv-n" style="font-size:.95rem;color:var(--acero)"></p><div class="inv-tot" id="inv-t">$0</div><small style="color:var(--acero)">en materiales, aproximado</small><a class="btn b1" id="inv-wa" href="#invierno">Pedir lo que falta por WhatsApp</a></aside></div></div></section>
+
 <section class="alt" id="consejo" aria-labelledby="t-fij"><div class="w fij">
   <div class="rv"><p class="eti">El consejo del mesón</p><h2 id="t-fij">¿Qué tornillo va en cada material?</h2><p>La pregunta que más escuchamos al otro lado del mostrador. Toca el material y te decimos qué llevar (y qué no).</p>
   <div class="fij-sel" role="group" aria-label="Material donde vas a fijar"><button type="button" aria-pressed="true" data-m="madera">Madera</button><button type="button" aria-pressed="false" data-m="hormigon">Hormigón o ladrillo</button><button type="button" aria-pressed="false" data-m="zinc">Zinc y planchas</button><button type="button" aria-pressed="false" data-m="yeso">Tabique de yeso-cartón</button></div>
@@ -402,6 +435,22 @@ footer b{color:#fff}
 <footer><div class="w"><div><b>Ferretería Lleuque</b><br>Materiales y herramientas · Río Bueno, Región de Los Ríos</div><div>Sitio de ejemplo creado por Werex Studio.<br>Negocio, precios y contactos ficticios. Ilustraciones propias.</div></div></footer>
 
 <script>(function(){var D={madera:["Madera con madera","Tornillo autoperforante para madera, cabeza plana: 4×50 mm para armar, 5×80 mm para estructura.",["Haz un guía con broca delgada cerca de los bordes para que no se abra la veta.","En exterior, elige galvanizado o inoxidable: el sur es húmedo."]],hormigon:["Hormigón o ladrillo","Tarugo plástico con tornillo, o anclaje de expansión si va a cargar peso.",["Necesitas taladro percutor y broca de widia del diámetro del tarugo.","Para estantes pesados, mejor anclaje metálico que tarugo plástico."]],zinc:["Zinc y planchas de techo","Tornillo punta broca con golilla de neopreno, para que no entre agua por el hoyo.",["Se atornilla en la cresta de la onda, no en el valle.","No aprietes hasta aplastar la golilla: debe quedar firme, no hundida."]],yeso:["Tabique de yeso-cartón","Tornillo punta fina para yeso-cartón si hay perfil metálico; tarugo de mariposa si no hay nada detrás.",["Busca el pie derecho con un imán o golpeando suave: suena más sordo donde hay estructura.","Un cuadro liviano aguanta una mariposa; un televisor, no."]]};var b=document.querySelectorAll('.fij-sel button'),r=document.getElementById('fij-res');function show(k){var d=D[k];r.innerHTML='<h3>'+d[0]+'</h3><p>'+d[1]+'</p><ul>'+d[2].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>';b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.m===k)})}b.forEach(function(x){x.addEventListener('click',function(){show(x.dataset.m)})});show('madera')})();</script>
+<script>
+(function(){
+var cs=[].slice.call(document.querySelectorAll('#inv-l input')),b=document.getElementById('inv-b'),n=document.getElementById('inv-n'),t=document.getElementById('inv-t'),wa=document.getElementById('inv-wa');
+function f(x){return '$'+x.toLocaleString('es-CL');}
+function pinta(){
+ var hechos=cs.filter(function(c){return c.checked;}).length,falta=cs.filter(function(c){return !c.checked;}),tot=0;
+ falta.forEach(function(c){tot+=+c.dataset.p;});
+ b.style.width=(hechos/cs.length*100)+'%';
+ n.textContent=hechos===cs.length?'Casa lista para el invierno. ¡Buen trabajo!':hechos+' de '+cs.length+' tareas listas';
+ t.textContent=f(tot);
+ wa.href=falta.length?'https://wa.me/?text='+encodeURIComponent('Hola, quiero dejar listo el pedido para preparar la casa para el invierno: '+falta.map(function(c){return c.dataset.n;}).join(', ')+'. Total aproximado '+f(tot)+'.'):'#invierno';
+ if(falta.length){wa.target='_blank';wa.rel='noopener';wa.style.opacity=1;}else{wa.removeAttribute('target');wa.style.opacity=.5;}
+}
+cs.forEach(function(c){c.addEventListener('change',pinta);});pinta();
+})();
+</script>
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
 <script>
 (function(){
