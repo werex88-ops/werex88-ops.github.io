@@ -208,6 +208,18 @@
   .rut-res .pl{margin-top:14px;font-weight:600}
   @media(max-width:860px){.rut-g{grid-template-columns:1fr;gap:32px}.rutina{padding:60px 0}}
   @media(max-width:860px){.sem-g{grid-template-columns:1fr;gap:36px}.semana{padding:70px 0}}
+
+  .visita{padding:90px 0 20px}
+  .vis-g{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .vis-foto{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#1c1c1c,#2b3300);overflow:hidden}
+  .vis-foto img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.35) contrast(1.05)}
+  .vis-foto span{position:absolute;left:0;bottom:0;background:var(--acido);color:var(--negro);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px}
+  .pasos{list-style:none;counter-reset:p;margin-top:28px;display:grid;gap:14px;padding:0}
+  .pasos li{counter-increment:p;display:grid;grid-template-columns:52px 1fr;gap:16px;padding:18px 0;border-top:1px solid #333}
+  .pasos li::before{content:counter(p,decimal-leading-zero);font-family:'Anton',sans-serif;font-size:30px;line-height:1;color:var(--acido)}
+  .pasos b{display:block;font-size:18px;margin-bottom:4px}
+  .pasos small{color:var(--gris);font-size:15px;line-height:1.5}
+  @media(max-width:820px){.vis-g{grid-template-columns:1fr;gap:28px}.vis-foto{aspect-ratio:4/3}}
 </style>
 <style>html{overflow-x:clip}</style>
 </head>
@@ -223,6 +235,7 @@
       <li><a href="#horario">Clases</a></li>
       <li><a href="#coaches">Coaches</a></li>
       <li><a href="#rutina">Tu rutina</a></li>
+      <li><a href="#visita">Primera visita</a></li>
     </ul>
     <a class="btn" href="#planes">Únete hoy</a>
   </div>
@@ -362,6 +375,22 @@
       <button class="btn" type="submit">Pedir mi semana gratis →</button>
       <small>Se abre WhatsApp con el mensaje ya escrito. Es una demo: el número es ficticio.</small>
     </form>
+  </div>
+</section>
+
+<section class="visita" id="visita">
+  <div class="contenedor vis-g">
+    <div class="vis-foto rv"><img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?w=1200&q=70&auto=format&fit=crop" alt="Barra olímpica sobre un rack, con luz de sol entrando por la ventana" loading="lazy" onerror="this.style.display='none'"><span>Sin apuro, sin juicio</span></div>
+    <div class="rv">
+      <div class="chip">Tu primera visita</div>
+      <h2 class="display" style="margin-top:20px">Qué pasa cuando <span class="acido">llegas</span></h2>
+      <ol class="pasos">
+        <li><div><b>Te recibimos en el mesón</b><small>Un coach te anota, te muestra los camarines y te presta un candado. Trae zapatillas y una toalla; lo demás lo tenemos.</small></div></li>
+        <li><div><b>Evaluación de 20 minutos</b><small>Medimos fuerza, movilidad y una prueba de resistencia suave. Cuéntale si tienes alguna molestia en la espalda o las rodillas.</small></div></li>
+        <li><div><b>Armamos tu primera semana</b><small>Dos o tres sesiones según tus horarios, con los ejercicios anotados en tu teléfono para que no dependas de la memoria.</small></div></li>
+        <li><div><b>Entrenas con el coach al lado</b><small>Las primeras sesiones son con poco peso y harta técnica. Si algo duele, se cambia el ejercicio, no se aguanta.</small></div></li>
+      </ol>
+    </div>
   </div>
 </section>
 
