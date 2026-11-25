@@ -1,5 +1,34 @@
 # Registro de cambios
 
+## 2026-11-25 (mejora diaria)
+
+Parte desde `main` (no había solicitudes abiertas; la #52 ya está fusionada).
+
+### Referencias de competencia
+- Gimnasios de Valdivia (Wellhub, ClassPass, AgendaPro): solo fichas de agregadores; destacan la clase de prueba y el horario visible. Idea aplicada en Forja: contar qué pasa en la primera visita, que es la duda de quien nunca ha entrenado.
+- Sushi de Valdivia (Uber Eats, Wanderlog) y carpinterías de Los Ríos (2x3, Yapo, notas de La Tercera y DF sobre el auge de la carpintería): no abrí sitios propios de negocios; el aporte fue la idea de explicar el oficio y el cuidado de las piezas, no solo venderlas. No se copió texto ni imágenes.
+
+### Currículum
+Sin cambios hoy: priorizo las demos más antiguas de la rotación.
+
+### Portafolio
+- Insignia «Mejorada hoy» ahora en Kaiyō, Mañío, Forja y Horno Pellín (se quitó de las cuatro de ayer) y descripciones actualizadas. Pesa 62 KB (límite 90 KB).
+
+### Demos tocadas (4)
+- `sushi/` (Kaiyō): sección «Cómo se come» (nigiri con la mano, soya solo por el pescado, wasabi, jengibre) con foto de un chef armando sushi; enlace en el menú.
+- `madera/` (Mañío): sección «¿Cada cuánto hay que aceitar tu pieza?» (pieza × ubicación → frecuencia, producto y calendario de 12 meses); enlace «Cuidados».
+- `panaderia/` (Horno Pellín): tercera foto en la franja (manos amasando) y sección «¿Cómo guardo mi pan para mañana?» (campo, marraqueta, kuchen, empanadas); enlace «Guardar».
+- `gimnasio/` (Forja): sección «Qué pasa cuando llegas» (4 pasos de la primera visita) con foto de barra en un rack; enlace «Primera visita».
+- Fotos nuevas registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+27 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin errores de JavaScript, desplazamiento horizontal ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las funciones de madera y panadería (encontré y corregí un choque de selectores en madera). Demos bajo 60 KB (sushi 32 KB, madera 43 KB, panadería 45 KB, gimnasio 35 KB).
+
+### Sugerencias para René
+- Las descargas de Unsplash siguen bloqueadas aquí: las 3 fotos nuevas van enlazadas y se ocultan si fallan. Revisa en el navegador que carguen.
+- Frecuencias de aceitado, duración del pan y pasos de la visita son orientativos y ficticios; con un cliente real hay que ajustarlos.
+- Próxima rotación: yoga, contable, velas, plantas, mascotas, cabañas y kayak. Currículum: sigue pendiente teléfono o LinkedIn y logros medibles (no se inventaron datos).
+
 ## 2026-11-24 (mejora diaria)
 
 Parte desde la rama de la solicitud abierta #51 (`claude/mejora-2026-11-23`), que incluye las #49 y #50; esta solicitud depende de ellas hasta que se fusionen.
