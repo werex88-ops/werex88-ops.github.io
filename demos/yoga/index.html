@@ -199,6 +199,29 @@ footer.pie a{text-decoration:underline}
 .faqy details p{padding:0 0 16px;color:var(--suave);margin:0}
 @media(max-width:820px){.emp-g{grid-template-columns:1fr}}
 
+
+.sem{background:var(--crema)}
+.sem-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:start}
+.sem fieldset{border:0;margin:0 0 22px;min-width:0}
+.sem legend{font-weight:700;margin-bottom:10px}
+.sem .op{display:flex;flex-wrap:wrap;gap:10px}
+.sem .op label{position:relative}
+.sem .op input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer}
+.sem .op span{display:inline-flex;align-items:center;min-height:46px;padding:10px 18px;border:2px solid var(--salvia2);border-radius:999px;background:#fff;font-weight:600;transition:background .2s,border-color .2s,transform .2s}
+.sem .op input:checked+span{background:var(--bosque);border-color:var(--bosque);color:#fff}
+.sem .op input:focus-visible+span{outline:3px solid var(--arcilla);outline-offset:2px}
+.sem .op label:hover span{transform:translateY(-2px)}
+.sem-res{background:#fff;border:1px solid var(--linea);border-radius:24px;padding:28px;box-shadow:0 18px 40px rgba(34,52,43,.08)}
+.sem-res h3{font-family:'Gloock',serif;font-weight:400;font-size:26px;margin-bottom:6px}
+.sem-res ol{list-style:none;margin:18px 0}
+.sem-res li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--linea)}
+.sem-res li b{font-size:15px;text-transform:capitalize;color:var(--arcilla)}
+.sem-res li span{display:block;color:var(--suave);font-size:14px}
+.sem-res .tot{font-size:14px;color:var(--suave);margin-bottom:16px}
+.sem-res li{animation:semIn .4s both}
+@keyframes semIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:820px){.sem-g{grid-template-columns:minmax(0,1fr);gap:28px}}
+@media(prefers-reduced-motion:reduce){.sem-res li{animation:none}.sem .op label:hover span{transform:none}}
 </style>
 </head>
 <body>
@@ -207,7 +230,7 @@ footer.pie a{text-decoration:underline}
  <div class="w nav">
   <a class="logo" href="#inicio" aria-label="Aire Sur, inicio"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="#e9b8a0"/><g fill="#22342b"><path d="M32 14c-9 9-9 21 0 31 9-10 9-22 0-31z"/><path d="M13 27c11 0 17 8 19 18-11 0-17-7-19-18z"/><path d="M51 27c-11 0-17 8-19 18 11 0 17-7 19-18z"/></g></svg>Aire Sur</a>
   <nav aria-label="Secciones"><ul>
-   <li><a href="#horario">Horario</a></li><li><a href="#clases">Clases</a></li><li><a href="#empieza">Empieza</a></li><li><a href="#respira">Respira</a></li><li><a href="#planes">Planes</a></li><li><a href="#ubicacion">Ubicación</a></li>
+   <li><a href="#horario">Horario</a></li><li><a href="#clases">Clases</a></li><li><a href="#empieza">Empieza</a></li><li><a href="#semana">Tu semana</a></li><li><a href="#respira">Respira</a></li><li><a href="#planes">Planes</a></li><li><a href="#ubicacion">Ubicación</a></li>
   </ul></nav>
   <a class="btn b1" href="#reservar">Reservar</a>
  </div>
@@ -297,6 +320,28 @@ footer.pie a{text-decoration:underline}
      <p class="quedia" id="s-cuando"></p>
      <a class="btn b1" href="#reservar">Reservar esta clase</a>
    </div>
+  </div>
+</div></section>
+
+<section class="sem" id="semana" aria-labelledby="t-sem"><div class="w">
+  <div class="cab rv"><p class="eti">Tu semana</p><h2 id="t-sem">Arma tu semana de práctica</h2><p>Dinos qué buscas y cuántas veces puedes venir. Armamos una semana con clases reales del horario, repartidas para que descanses entre una y otra.</p></div>
+  <div class="sem-g">
+   <div>
+    <fieldset><legend>¿Qué quieres lograr?</legend><div class="op" id="sm-obj">
+     <label><input type="radio" name="sm-o" value="dormir" checked><span>Dormir mejor</span></label>
+     <label><input type="radio" name="sm-o" value="espalda"><span>Cuidar la espalda</span></label>
+     <label><input type="radio" name="sm-o" value="fuerza"><span>Ganar fuerza</span></label>
+     <label><input type="radio" name="sm-o" value="calma"><span>Bajar el ritmo</span></label></div></fieldset>
+    <fieldset><legend>¿Cuántas veces por semana?</legend><div class="op" id="sm-vez">
+     <label><input type="radio" name="sm-v" value="1"><span>1 vez</span></label>
+     <label><input type="radio" name="sm-v" value="2" checked><span>2 veces</span></label>
+     <label><input type="radio" name="sm-v" value="3"><span>3 veces</span></label></div></fieldset>
+    <fieldset><legend>¿A qué hora te acomoda?</legend><div class="op" id="sm-mom">
+     <label><input type="radio" name="sm-m" value="manana"><span>Mañana</span></label>
+     <label><input type="radio" name="sm-m" value="tarde" checked><span>Tarde-noche</span></label>
+     <label><input type="radio" name="sm-m" value="any"><span>Me da lo mismo</span></label></div></fieldset>
+   </div>
+   <div class="sem-res" aria-live="polite"><h3 id="sm-t"></h3><p id="sm-d" style="color:var(--suave)"></p><ol id="sm-l"></ol><p class="tot" id="sm-tot"></p><a class="btn b1" id="sm-wa" href="#reservar" target="_blank" rel="noopener">Pedir estos cupos por WhatsApp</a></div>
   </div>
 </div></section>
 
@@ -416,6 +461,7 @@ var C=[
 [4,'08:00','Pilates mat','pilates','Todos',60,'Tomás',10,5],[4,'12:30','Yoga exprés','yoga','Todos',30,'Pía',10,3],[4,'18:30','Yin y meditación','meditacion','Todos',75,'Pía',12,6],
 [5,'09:30','Vinyasa fluido','yoga','Intermedio',75,'Pía',10,9],[5,'11:00','Pilates mat','pilates','Todos',60,'Tomás',10,4],[5,'12:15','Estiramiento restaurativo','yoga','Todos',45,'Pía',12,3]
 ].map(function(c,i){return{id:i,d:c[0],h:c[1],n:c[2],t:c[3],niv:c[4],dur:c[5],prof:c[6],cap:c[7],res:c[8]}});
+window.AS_C=C;
 var TIPO={yoga:['Yoga',''],pilates:['Pilates','p'],meditacion:['Meditación','m']};
 function ahoraCL(){
  try{var p=new Intl.DateTimeFormat('es-CL',{timeZone:'America/Santiago',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()),o={};
@@ -511,6 +557,47 @@ if('IntersectionObserver' in window&&!red){var io=new IntersectionObserver(funct
 })();
 
 </script>
+<script>
+(function(){
+var C=window.AS_C;if(!C)return;
+var $=function(i){return document.getElementById(i)};
+var N=['lunes','martes','miércoles','jueves','viernes','sábado','domingo'];
+var META={
+ dormir:{t:'Para dormir mejor',d:'Clases lentas, con respiración larga, para la tarde-noche o el fin de semana.',n:['Yin yoga','Yin y meditación','Meditación guiada','Estiramiento restaurativo']},
+ espalda:{t:'Para cuidar la espalda',d:'Trabajo suave de columna y abdomen profundo, con ritmo calmado.',n:['Pilates espalda sana','Hatha suave','Pilates inicial','Estiramiento restaurativo']},
+ fuerza:{t:'Para ganar fuerza',d:'Clases con más trabajo muscular; parte por lo inicial si vienes de la pausa.',n:['Pilates mat','Vinyasa','Vinyasa fluido','Pilates inicial']},
+ calma:{t:'Para bajar el ritmo',d:'Respiración, movimiento lento y media hora de pausa si andas con poco tiempo.',n:['Hatha','Hatha suave','Meditación guiada','Yoga exprés']}
+};
+var OBJ={'1':[2],'2':[0,3],'3':[0,2,4]};
+function mins(h){var a=h.split(':');return+a[0]*60+ +a[1]}
+function pen(c,m){var x=mins(c.h);if(m==='manana')return x<780?0:1000;if(m==='tarde')return x>=1080?0:1000;return 0}
+function val(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:''}
+function pinta(){
+ var o=META[val('sm-o')],k=+val('sm-v'),m=val('sm-m'),usados={},sel=[];
+ var pool=C.filter(function(c){return o.n.indexOf(c.n)>-1});
+ OBJ[k].forEach(function(t){
+  var mejor=null,bs=1e9;
+  pool.forEach(function(c){if(usados[c.d])return;var sc=pen(c,m)+Math.abs(c.d-t)*10+(c.res>=c.cap?500:0);if(sc<bs){bs=sc;mejor=c}});
+  if(mejor){usados[mejor.d]=1;sel.push(mejor)}
+ });
+ sel.sort(function(a,b){return a.d-b.d});
+ $('sm-t').textContent=o.t;$('sm-d').textContent=o.d;
+ var ol=$('sm-l');ol.innerHTML='';var tot=0,txt=[];
+ sel.forEach(function(c,i){
+  tot+=c.dur;var li=document.createElement('li');li.style.animationDelay=(i*80)+'ms';
+  var b=document.createElement('b');b.textContent=N[c.d]+' '+c.h;
+  var d=document.createElement('div');d.textContent=c.n;
+  var sp=document.createElement('span');sp.textContent=c.dur+' min · con '+c.prof+' · nivel '+c.niv.toLowerCase();d.appendChild(sp);
+  li.appendChild(b);li.appendChild(d);ol.appendChild(li);txt.push(N[c.d]+' '+c.h+' '+c.n);
+ });
+ $('sm-tot').textContent=sel.length?'En total son '+tot+' minutos a la semana. Los cupos se confirman por WhatsApp.':'No encontramos clases con esa combinación. Prueba con otra hora.';
+ $('sm-wa').href='https://wa.me/?text='+encodeURIComponent('Hola, quiero partir con estas clases en Aire Sur: '+txt.join('; ')+'. ¿Hay cupo?');
+}
+document.querySelectorAll('.sem input').forEach(function(i){i.addEventListener('change',pinta)});
+pinta();
+})();
+</script>
+
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
 </body>
 </html>

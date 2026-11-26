@@ -193,6 +193,26 @@ fieldset{border:0}
 .faqc details p{padding:0 0 16px;color:var(--suave);margin:0}
 @media(max-width:820px){.tr-g{grid-template-columns:1fr}}
 
+
+.pri{background:var(--papel)}
+.pri-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;align-items:start}
+.pri-l{list-style:none}
+.pri-l li{margin-bottom:10px}
+.pri-l label{display:flex;gap:14px;align-items:flex-start;background:var(--blanco);border:1px solid var(--linea);border-radius:12px;padding:14px 16px;cursor:pointer;transition:border-color .2s,transform .2s}
+.pri-l label:hover{border-color:var(--latón);transform:translateX(3px)}
+.pri-l input{width:22px;height:22px;margin-top:2px;accent-color:var(--vino);flex:none}
+.pri-l b{display:block}.pri-l span{color:var(--suave);font-size:15px}
+.pri-l input:checked+div b{text-decoration:line-through;text-decoration-color:var(--latón);color:var(--suave)}
+.pri-r{background:var(--vino);color:#fff;border-radius:18px;padding:28px;position:sticky;top:96px}
+.pri-r h3{font-size:22px;margin-bottom:8px}
+.pri-bar{height:10px;border-radius:99px;background:rgba(255,255,255,.18);overflow:hidden;margin:14px 0}
+.pri-bar i{display:block;height:100%;width:0;background:var(--latón);border-radius:99px;transition:width .5s}
+.pri-r p{color:#eadfe3}
+.pri-pasos{list-style:none;margin:18px 0;counter-reset:p}
+.pri-pasos li{counter-increment:p;display:grid;grid-template-columns:30px 1fr;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.15);font-size:15px;color:#eadfe3}
+.pri-pasos li::before{content:counter(p);width:26px;height:26px;border-radius:50%;background:var(--latón);color:var(--vino);font-weight:700;display:grid;place-items:center;font-size:13px}
+@media(max-width:860px){.pri-g{grid-template-columns:minmax(0,1fr)}.pri-r{position:static}}
+@media(prefers-reduced-motion:reduce){.pri-bar i,.pri-l label{transition:none}.pri-l label:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -200,7 +220,7 @@ fieldset{border:0}
 <header><div class="w nav">
   <a class="logo" href="#inicio" aria-label="Lenga Asesorías, inicio"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#d6a84f"/><path d="M20 14v32h24" fill="none" stroke="#3b1623" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>Lenga</a>
   <nav aria-label="Principal"><ul>
-    <li><a href="#servicios">Servicios</a></li><li><a href="#herramientas">Herramientas</a></li><li><a href="#traer">Papeles</a></li><li><a href="#planes">Planes</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#ubicacion">Horario</a></li>
+    <li><a href="#servicios">Servicios</a></li><li><a href="#herramientas">Herramientas</a></li><li><a href="#traer">Papeles</a></li><li><a href="#primera">Reunión</a></li><li><a href="#planes">Planes</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#ubicacion">Horario</a></li>
   </ul></nav>
   <a class="btn b1" href="#reunion" style="background:var(--latón);color:var(--vino)">Agenda una reunión</a>
 </div></header>
@@ -305,6 +325,27 @@ fieldset{border:0}
     <p class="tr-cuenta" id="t-cuenta" aria-live="polite"></p><div class="tr-bar"><i id="t-bar"></i></div>
    </div>
    <ul class="tr-ck" id="t-lista"></ul>
+  </div>
+</div></section>
+
+<section class="pri" id="primera" aria-labelledby="t-pri"><div class="w">
+  <div class="cab rv"><p class="eti">Primera reunión</p><h2 id="t-pri">Llega con esto y salimos con tu mes ordenado</h2><p>Marca lo que ya tienes. Lo que falte lo pedimos juntos en la reunión; no hace falta tenerlo todo para venir.</p></div>
+  <div class="pri-g">
+   <ul class="pri-l" id="pri-l">
+    <li><label><input type="checkbox" value="mi cédula de identidad"><div><b>Cédula de identidad</b><span>Vigente, del dueño o representante legal.</span></div></label></li>
+    <li><label><input type="checkbox" value="la clave tributaria del SII"><div><b>Clave tributaria del SII</b><span>Si no la recuerdas, la recuperamos contigo en la oficina.</span></div></label></li>
+    <li><label><input type="checkbox" value="las facturas y boletas de compra de los últimos meses"><div><b>Facturas y boletas de compra</b><span>Aunque estén en una caja de zapatos, nosotros las ordenamos.</span></div></label></li>
+    <li><label><input type="checkbox" value="el listado de ventas o el talonario"><div><b>Ventas del período</b><span>Talonario, planilla o lo que uses para anotar.</span></div></label></li>
+    <li><label><input type="checkbox" value="la cartola del banco del negocio"><div><b>Cartola del banco</b><span>Del último mes, para cuadrar ingresos y gastos.</span></div></label></li>
+    <li><label><input type="checkbox" value="los contratos y liquidaciones de los trabajadores"><div><b>Contratos de trabajadores</b><span>Solo si tienes personal con sueldo.</span></div></label></li>
+   </ul>
+   <aside class="pri-r" aria-live="polite">
+    <h3 id="pri-t">Aún no marcas nada</h3>
+    <div class="pri-bar" aria-hidden="true"><i id="pri-b"></i></div>
+    <p id="pri-d">Con lo que tengas basta para la primera reunión.</p>
+    <ol class="pri-pasos"><li>Reunión de 40 minutos: revisamos tu situación en el SII.</li><li>En 3 días hábiles te enviamos el orden de tus documentos y qué falta.</li><li>Antes del día 12 tienes tu primer resumen del mes.</li></ol>
+    <a class="btn b1" id="pri-wa" href="#reunion" style="background:var(--latón);color:var(--vino)">Agendar y avisar por WhatsApp</a>
+   </aside>
   </div>
 </div></section>
 
@@ -445,5 +486,21 @@ else rv.forEach(function(e){e.classList.add('on')});
 })();
 
 </script>
+<script>
+(function(){
+var L=document.getElementById('pri-l');if(!L)return;
+var ch=[].slice.call(L.querySelectorAll('input'));
+function pinta(){
+ var m=ch.filter(function(c){return c.checked}),f=ch.filter(function(c){return!c.checked});
+ document.getElementById('pri-b').style.width=Math.round(m.length/ch.length*100)+'%';
+ document.getElementById('pri-t').textContent=m.length===0?'Aún no marcas nada':(m.length===ch.length?'Listo, vienes con todo':'Llevas '+m.length+' de '+ch.length);
+ document.getElementById('pri-d').textContent=f.length?'Nos falta pedirte '+f.length+(f.length===1?' cosa':' cosas')+'. Lo vemos en la reunión.':'Con esto salimos de la primera reunión con todo encaminado.';
+ var t='Hola, quiero agendar una primera reunión en Lenga Asesorías.'+(m.length?' Ya tengo '+m.map(function(c){return c.value}).join(', ')+'.':'')+(f.length?' Me falta '+f.map(function(c){return c.value}).join(', ')+'.':'');
+ document.getElementById('pri-wa').href='https://wa.me/56955550199?text='+encodeURIComponent(t);
+}
+ch.forEach(function(c){c.addEventListener('change',pinta)});pinta();
+})();
+</script>
+
 </body>
 </html>
