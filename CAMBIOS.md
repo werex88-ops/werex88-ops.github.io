@@ -1,5 +1,35 @@
 # Registro de cambios
 
+## 2026-11-26 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #53 (`claude/mejora-2026-11-25`); esta solicitud depende de ella hasta que se fusione.
+
+### Referencias de competencia
+- Yoga en Valdivia (2x3, AgendaPro, ClassPass): solo agregadores; muestran clases sueltas y piden elegir una por una. Idea aplicada en Aire Sur: proponer una semana completa según el objetivo.
+- Contabilidad para pymes en Chile (contable.app, Lofwork, 2x3): ofrecen "todo incluido" sin decir qué pasa el primer mes. Idea aplicada en Lenga: mostrar qué llevar y qué ocurre después de la primera reunión. No se copió texto.
+- Velas de soya (Falabella, Easy, Paris) y plantas de interior (Sodimac, Lider): fichas de producto sin ayuda de uso. Ideas aplicadas: duración de la vela en noches y diagnóstico de plantas por síntoma.
+
+### Currículum
+Sin cambios hoy: ya tiene barra de avance, línea de tiempo y navegación activa; prioricé las demos.
+
+### Portafolio
+- Insignia «Mejorada hoy» ahora en Aire Sur, Lenga, Luz de Cera y Raíz Verde (se quitó de las cuatro de ayer) y descripciones actualizadas.
+
+### Demos tocadas (4)
+- `yoga/` (Aire Sur): sección «Arma tu semana de práctica» (objetivo × veces por semana × horario → clases reales del horario repartidas en la semana, minutos totales y mensaje por WhatsApp); enlace «Tu semana».
+- `contable/` (Lenga): sección «Llega con esto» con lista de 6 papeles para la primera reunión, barra de avance, qué pasa después y aviso por WhatsApp que dice lo que ya tienes y lo que falta; enlace «Reunión».
+- `velas/` (Luz de Cera): calculadora «¿Cuántas noches te dura una vela?» (horas por noche → noches, fecha estimada y barra de llamas) con foto nueva; enlace «Duración».
+- `plantas/` (Raíz Verde): sección «Mi planta se ve mal» con 5 síntomas, causa probable, tres pasos y mensaje por WhatsApp para enviar una foto; foto nueva; enlace «SOS».
+- Fotos nuevas (velas y plantas) registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+27 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin errores de JavaScript, desplazamiento horizontal ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las cuatro funciones y vi capturas (con la foto reemplazada por una de prueba).
+
+### Sugerencias para René
+- Las fotos nuevas van enlazadas (descarga bloqueada aquí) y se ocultan si fallan; revisa en el navegador que carguen.
+- Los plazos de la primera reunión, las rutinas de cuidado de plantas y la duración de las velas son ejemplos ficticios; con un cliente real hay que ajustarlos.
+- Próxima rotación: mascotas, cabañas, kayak, centro cultural, navidad y las de más tiempo sin tocar. Currículum: sigue pendiente teléfono o LinkedIn y logros medibles (no se inventaron datos).
+
 ## 2026-11-25 (mejora diaria)
 
 Parte desde `main` (no había solicitudes abiertas; la #52 ya está fusionada).

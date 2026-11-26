@@ -245,3 +245,5 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `gimnasio` sección "Qué pasa cuando llegas" (barra olímpica en un rack, luz de sol) — https://images.unsplash.com/photo-1558611848-73f7eb4001a1 — Jelmer Assink · https://unsplash.com/photos/barbell-on-rack-gzeTjGu3b_k
 - `panaderia` franja de galería (manos amasando sobre mesa de madera) — https://images.unsplash.com/photo-1649675602217-416a4fafcecb — DDP · https://unsplash.com/photos/a-person-kneading-dough-on-top-of-a-wooden-table-5CRzqqWzEKQ
 - `sushi` sección "Cómo se come" (chef preparando sushi) — https://images.unsplash.com/photo-1455279032140-49a4bf46f343 — Epicurrence · https://unsplash.com/photos/person-making-sushi-ITxG2yay1ak
+- `velas/duracion` (enlazada, sin copia local) — https://images.unsplash.com/photo-1560932992-a93e9ca8a0c9 (vela votiva sobre una mesa, foto de Nico)
+- `plantas/sos` (enlazada, sin copia local) — https://images.unsplash.com/photo-1680268608638-f8e1fc25e2cb (plantas en un alféizar junto a una vela, foto de Alan Alves)
