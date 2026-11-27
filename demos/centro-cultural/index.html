@@ -247,6 +247,23 @@ footer a:hover{color:var(--carmin)}
 .butaca .res{border-left:4px solid var(--carmin);padding:4px 0 4px 16px;min-height:90px;color:var(--gris)}
 .butaca .res b{display:block;color:var(--negro);font-size:1.1rem;margin-bottom:4px}
 @media(max-width:800px){.butaca{grid-template-columns:1fr;gap:22px}.butaca .foto{min-height:220px}}
+
+/* Arriendo */
+.arriendo{background:var(--negro);color:#fff}
+.arriendo .rotulo{color:#FF8FA9}
+.arriendo .cols{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:stretch;margin-top:10px}
+.arriendo .foto{min-height:360px;background:#3a0a18 center/cover no-repeat}
+.arriendo label{display:block;font-weight:600;margin:0 0 8px;font-size:.95rem}
+.arriendo select,.arriendo input[type=number]{width:100%;padding:13px;border:1.5px solid #fff;background:#fff;color:var(--negro);font:600 1rem 'Archivo',sans-serif;border-radius:0}
+.arriendo .fila{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.arriendo .extras{display:flex;flex-wrap:wrap;gap:10px 22px;margin:18px 0}
+.arriendo .extras label{display:flex;gap:8px;align-items:center;font-weight:500;margin:0}
+.arriendo .total{border-top:1px solid #444;margin-top:8px;padding-top:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.arriendo .total b{display:block;font-size:clamp(2rem,5vw,2.8rem);line-height:1}
+.arriendo .total span{color:#cfcfcf;font-size:.9rem}
+.arriendo .btn{background:#fff;color:var(--negro);border-color:#fff}
+.arriendo .nota{color:#cfcfcf;font-size:.88rem;margin-top:14px}
+@media(max-width:860px){.arriendo .cols{grid-template-columns:1fr;gap:28px}.arriendo .foto{min-height:220px}}
 </style>
 </head>
 <body>
@@ -450,12 +467,36 @@ footer a:hover{color:var(--carmin)}
 
 <section id="espacios">
   <div class="wrap">
-    <div class="cab"><div><span class="rotulo">Espacios</span><h2>Nuestras salas</h2></div><a class="enlace" href="mailto:espacios@ejemplo.invalid?subject=Solicitud%20de%20uso%20de%20espacios">Solicitud de uso de espacios →</a></div>
+    <div class="cab"><div><span class="rotulo">Espacios</span><h2>Nuestras salas</h2></div><a class="enlace" href="#arriendo">Cotiza el uso de una sala →</a></div>
     <div class="espacios">
       <div class="espacio"><div class="foto" role="img" aria-label="Pasillo de galería con pinturas" style="background-image:url('https://images.unsplash.com/photo-1572947650440-e8a97ef053b2?w=600&q=70&auto=format&fit=crop')"></div><h3>Galería principal</h3><p>420 m² · exposiciones de mediano y gran formato.</p></div>
       <div class="espacio"><div class="foto" role="img" aria-label="Sala de teatro con butacas" style="background-image:url('https://images.unsplash.com/photo-1615414047026-802692414b79?w=600&q=70&auto=format&fit=crop')"></div><h3>Sala de artes escénicas</h3><p>180 butacas · teatro, danza y música.</p></div>
       <div class="espacio"><div class="foto" role="img" aria-label="Sala blanca con sillas" style="background-image:url('https://images.unsplash.com/photo-1624066968542-742ce732188a?w=600&q=70&auto=format&fit=crop')"></div><h3>Sala multiuso</h3><p>60 personas · charlas, talleres y reuniones.</p></div>
       <div class="espacio"><div class="foto" role="img" aria-label="Personas en un hall de edificio blanco" style="background-image:url('https://images.unsplash.com/photo-1714621186557-c862830f157f?w=600&q=70&auto=format&fit=crop')"></div><h3>Hall y patio</h3><p>Ferias, lanzamientos y actividades al aire libre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="arriendo" id="arriendo">
+  <div class="wrap">
+    <div class="cab"><div><span class="rotulo">Usa nuestras salas</span><h2>Cotiza tu actividad</h2></div><p style="margin:0;color:#cfcfcf;max-width:44ch">Lanzamientos, obras, talleres o reuniones. Calcula un valor referencial y nos escribes con los datos listos.</p></div>
+    <div class="cols">
+      <div class="foto" role="img" aria-label="Cortina roja de un escenario de teatro" style="background-image:url('https://images.unsplash.com/photo-1578337834535-357ad7dccdfd?w=1200&q=70&auto=format&fit=crop')"></div>
+      <div>
+        <label for="ar-sala">Sala</label>
+        <select id="ar-sala"><option value="0">Galería principal · hasta 250 personas</option><option value="1" selected>Sala de artes escénicas · 180 butacas</option><option value="2">Sala multiuso · hasta 60 personas</option><option value="3">Hall y patio · hasta 150 personas</option></select>
+        <div class="fila">
+          <div><label for="ar-horas">Horas de uso</label><input type="number" id="ar-horas" min="2" max="12" value="4"></div>
+          <div><label for="ar-tipo">¿Cobras entrada?</label><select id="ar-tipo"><option value="0">No, actividad gratuita</option><option value="1">Sí, con entrada</option></select></div>
+        </div>
+        <div class="extras" role="group" aria-label="Servicios adicionales">
+          <label><input type="checkbox" id="ar-tec"> Técnico de luces y sonido</label>
+          <label><input type="checkbox" id="ar-mont"> Montaje un día antes</label>
+          <label><input type="checkbox" id="ar-cafe"> Coffee break</label>
+        </div>
+        <div class="total"><div><span>Valor referencial</span><b id="ar-tot">$0</b><span id="ar-det"></span></div><a class="btn" id="ar-ws" href="#arriendo" target="_blank" rel="noopener">Enviar solicitud por WhatsApp</a></div>
+        <p class="nota">Valores de ejemplo, con IVA incluido. Las actividades gratuitas y con fines comunitarios tienen tarifa preferente. Una persona del equipo confirma disponibilidad y valor final.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -621,6 +662,27 @@ footer a:hover{color:var(--carmin)}
     Array.prototype.forEach.call(b.children,function(x){x.setAttribute('aria-pressed',x===t?'true':'false')});
     document.getElementById('bt-res').innerHTML='<b>'+z.t+'</b>'+z.w;
   });
+})();
+
+(function(){
+  var S=[['Galería principal',38000],['Sala de artes escénicas',52000],['Sala multiuso',18000],['Hall y patio',30000]];
+  var el=function(i){return document.getElementById(i)};
+  var cl=function(n){return '$'+Math.round(n).toLocaleString('es-CL')};
+  function calc(){
+    var s=S[+el('ar-sala').value],h=Math.min(12,Math.max(2,+el('ar-horas').value||2)),t=s[1]*h,x=[];
+    var gratis=el('ar-tipo').value==='0';
+    if(gratis){t*=.6;x.push('tarifa preferente 40 %')}
+    if(el('ar-tec').checked){t+=45000;x.push('técnico')}
+    if(el('ar-mont').checked){t+=s[1]*3;x.push('montaje')}
+    if(el('ar-cafe').checked){t+=60000;x.push('coffee break')}
+    el('ar-tot').textContent=cl(t);
+    el('ar-det').textContent=s[0]+' · '+h+' h'+(x.length?' · '+x.join(', '):'');
+    var msg='Hola, quiero cotizar un espacio en Ribera:%0A• '+encodeURIComponent(el('ar-det').textContent)+'%0A• Valor referencial: '+encodeURIComponent(cl(t));
+    el('ar-ws').href='https://wa.me/?text='+msg;
+  }
+  ['ar-sala','ar-tipo'].forEach(function(i){el(i).addEventListener('change',calc)});
+  ['ar-horas','ar-tec','ar-mont','ar-cafe'].forEach(function(i){el(i).addEventListener('input',calc)});
+  calc();
 })();
 </script>
 

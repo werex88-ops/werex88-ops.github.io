@@ -219,6 +219,21 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
 .ropa .agua{margin-top:14px;font-weight:700;color:var(--coral-t)}
 @media(max-width:860px){.ropa .cols2{grid-template-columns:1fr;gap:28px}}
 
+
+/* Viento */
+.viento{background:var(--noche);color:#fff}
+.viento .cols2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:28px}
+.viento .sobre{color:var(--coral)}.viento h2 em{color:var(--coral)}
+.viento .foto{aspect-ratio:4/3;background-color:#12476b}
+.viento label{display:block;font-weight:700;margin:18px 0 8px}
+.viento select{width:100%;padding:14px;border:0;border-radius:12px;font:600 16px 'Outfit',system-ui,sans-serif;background:var(--espuma);color:var(--noche)}
+.viento input[type=range]{width:100%;accent-color:var(--coral);height:34px}
+.viento .kmh{font-family:'Fraunces',serif;font-size:44px;line-height:1}
+.semaforo{display:flex;gap:14px;align-items:flex-start;margin-top:22px;padding:18px 20px;border-radius:16px;background:rgba(255,255,255,.08);border-left:8px solid #6fdc8c;transition:border-color .3s}
+.semaforo.medio{border-color:#ffd166}.semaforo.alto{border-color:#ff8f6a}
+.semaforo b{display:block;font-size:19px;margin-bottom:4px}
+.semaforo p{color:#dbe8ee;font-size:15.5px}
+@media(max-width:860px){.viento .cols2{grid-template-columns:1fr;gap:28px}.viento .foto{aspect-ratio:16/10}}
 </style>
 </head>
 <body>
@@ -232,6 +247,7 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
       <li><a href="#armar">Arma tu salida</a></li>
       <li><a href="#lago">El lago</a></li>
       <li><a href="#ropa">Qué llevar</a></li>
+      <li><a href="#viento">Viento</a></li>
       <li><a href="#seguridad">Seguridad</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -374,6 +390,24 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
   </div>
 </section>
 
+<section class="viento" id="viento">
+  <div class="wrap">
+    <span class="sobre">Antes de salir</span>
+    <h2>¿Salimos con este <em>viento?</em></h2>
+    <p style="max-width:58ch;color:#cfe0e6;margin-top:14px">Es la pregunta que más nos hacen por WhatsApp. Mueve el viento que ves en el pronóstico y te decimos qué hacemos con cada salida.</p>
+    <div class="cols2">
+      <div class="foto rv" role="img" aria-label="Canoa sobre un lago de aguas calmas" style="background-image:url('https://images.unsplash.com/photo-1786626900700-87b5d049eef0?w=1200&q=70&auto=format&fit=crop')"></div>
+      <div>
+        <label for="v-nivel">¿Qué salida tienes reservada?</label>
+        <select id="v-nivel"><option value="0">Familiar o fácil (bahía y muelle)</option><option value="1">Intermedia (cruce corto)</option><option value="2">Exigente (cruce largo)</option></select>
+        <label for="v-km">Viento pronosticado: <span class="kmh" id="v-txt">10 km/h</span></label>
+        <input type="range" id="v-km" min="0" max="40" step="1" value="10" aria-describedby="v-res">
+        <div class="semaforo" id="v-res" aria-live="polite"><div><b id="v-t"></b><p id="v-d"></p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="seg" id="seguridad">
   <div class="wrap grid">
     <div class="rv">
@@ -415,6 +449,7 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
     <details><summary>¿Desde qué edad pueden participar los niños?</summary><p>Desde los 6 años en kayak doble acompañados de un adulto. La salida familiar está pensada para ellos.</p></details>
     <details><summary>¿Qué pasa si hay viento o lluvia fuerte?</summary><p>Revisamos las condiciones antes de cada salida. Si no es seguro, reprogramamos o devolvemos el valor; la lluvia suave no suspende la salida.</p></details>
     <details><summary>¿Está fría el agua?</summary><p>Sí: en el lago el agua se mantiene fría casi todo el año, incluso en pleno verano. Por eso exigimos chaleco siempre y recomendamos una polera de secado rápido y una chaqueta cortaviento para llevar a bordo.</p></details>
+    <details><summary>¿Cuánto viento es demasiado?</summary><p>Para la salida familiar, sobre 28 km/h no salimos; en las exigentes, sobre 17. Lo vemos en el muelle una hora antes y te avisamos si hay cambios.</p></details>
     <details><summary>¿Puedo llevar mi celular?</summary><p>Sí, en la bolsa estanca que te prestamos. Las fotos las tomamos de todos modos si contratas el extra, así remas con las dos manos.</p></details>
     <details><summary>¿Hay baño y camarines en el muelle?</summary><p>Hay baño y un cambiador techado. Duchas no: si quieres cambiarte con calma, llega con ropa seca y deja una bolsa para lo mojado.</p></details>
     <details><summary>¿Puedo ir solo o solo en pareja?</summary><p>Sí. Las salidas son en grupos de máximo 8 personas; si vienes solo, te sumamos a un grupo o te ponemos en kayak doble con la guía.</p></details>
@@ -566,6 +601,20 @@ footer.pie .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
   e.addEventListener('change',pinta);d.addEventListener('change',pinta);pinta();
 })();
 
+(function(){
+  var lim=[[18,28],[14,22],[10,17]];
+  var k=document.getElementById('v-km'),n=document.getElementById('v-nivel');
+  function pinta(){
+    var v=+k.value,l=lim[+n.value],c='',t,d;
+    document.getElementById('v-txt').textContent=v+' km/h';
+    if(v<=l[0]){t='Salimos normal';d='Con este viento el lago se mantiene ordenado. Remamos con calma y paramos a sacar fotos.'}
+    else if(v<=l[1]){c='medio';t='Salimos, pero más cortos';d='Hay ondas y viento de frente al volver. Nos quedamos en la bahía y acortamos el recorrido. Te avisamos por WhatsApp.'}
+    else{c='alto';t='Reprogramamos';d='No es seguro para esta salida. Te ofrecemos otra fecha sin costo o te devolvemos el valor, como tú prefieras.'}
+    var r=document.getElementById('v-res');r.className='semaforo '+c;
+    document.getElementById('v-t').textContent=t;document.getElementById('v-d').textContent=d;
+  }
+  k.addEventListener('input',pinta);n.addEventListener('change',pinta);pinta();
+})();
 </script>
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
 </body>

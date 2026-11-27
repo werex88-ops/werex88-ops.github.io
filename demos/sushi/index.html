@@ -191,6 +191,17 @@
   .sugerencia span{color:var(--oro);font-family:'Cormorant Garamond',serif;font-size:26px}
   .sugerencia small{display:block;color:var(--gris);font-size:13px;margin-top:6px}
   @media(max-width:860px){.pide{padding:80px 0}.pide-g{grid-template-columns:1fr;gap:36px}}
+
+  .come{padding:110px 0 30px}
+  .come-g{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+  .come figure{aspect-ratio:4/3;background:linear-gradient(150deg,#1b1a17,#2a1d17);overflow:hidden;margin:0}
+  .come figure img{width:100%;height:100%;object-fit:cover;display:block}
+  .come ol{list-style:none;counter-reset:c;padding:0;margin-top:28px}
+  .come li{counter-increment:c;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--linea)}
+  .come li::before{content:counter(c);font-family:'Shippori Mincho','Cormorant Garamond',serif;font-size:28px;color:var(--bermellon);line-height:1}
+  .come b{display:block;font-weight:500;margin-bottom:3px;color:var(--papel)}
+  .come small{color:var(--gris);font-size:15px;line-height:1.55}
+  @media(max-width:860px){.come{padding:80px 0 20px}.come-g{grid-template-columns:1fr;gap:30px}}
 </style>
 </head>
 <body>
@@ -203,6 +214,7 @@
       <li><a href="#filosofia">Filosofía</a></li>
       <li><a href="#menu">Menú</a></li>
       <li><a href="#pide">¿Cuánto pido?</a></li>
+      <li><a href="#como-se-come">Cómo se come</a></li>
       <li><a href="#chef">Itamae</a></li>
       <li><a href="#reserva">Contacto</a></li>
     </ul>
@@ -328,6 +340,22 @@
       <div class="sugerencia" aria-live="polite"><b id="s-t"></b><span id="s-p"></span><small id="s-d"></small></div>
     </div>
     <figure class="rv"><img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?w=1200&q=70&auto=format&fit=crop" alt="Tabla de madera con piezas de sushi variadas" loading="lazy" onerror="this.parentNode.remove()"></figure>
+  </div>
+</section>
+
+<section class="come" id="como-se-come">
+  <div class="contenedor come-g">
+    <figure class="rv"><img src="https://images.unsplash.com/photo-1455279032140-49a4bf46f343?w=1400&q=70&auto=format&fit=crop" alt="Chef armando sushi con arroz y alga nori" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    <div class="rv">
+      <div class="eyebrow">Si es tu primera vez</div>
+      <div class="titulo"><h2>Cómo se <em>come.</em></h2></div>
+      <ol>
+        <li><div><b>Con las manos, si quieres</b><small>El nigiri se puede tomar con los dedos. Los palitos son para el sashimi y para los rolls grandes.</small></div></li>
+        <li><div><b>La soya, solo por el pescado</b><small>Moja la parte del pescado, no el arroz, que se empapa y se desarma. Con poca soya se nota más el sabor.</small></div></li>
+        <li><div><b>El wasabi ya viene puesto</b><small>El chef lo pone entre el arroz y el pescado. Si quieres más, pídelo aparte; no hace falta revolverlo con la soya.</small></div></li>
+        <li><div><b>El jengibre es para limpiar el paladar</b><small>Un poco entre una pieza y otra, nunca encima del sushi.</small></div></li>
+      </ol>
+    </div>
   </div>
 </section>
 

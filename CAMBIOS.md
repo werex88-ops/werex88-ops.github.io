@@ -1,5 +1,94 @@
 # Registro de cambios
 
+## 2026-11-27 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #54 (`claude/mejora-2026-11-26`), que a su vez parte de la #53; esta solicitud depende de ellas hasta que se fusionen.
+
+### Referencias de competencia
+- Diseño web para pymes en Chile (2x3.cl, GoDaddy, Wix Partners, Clutch): solo vi listados y fichas de servicios, sin portafolios con carácter; destacan «sitio autogestionable» y precio claro. Refuerza mantener visible el contacto y los servicios en el portafolio.
+- Cabañas en Pucón, Futrono y Lago Ranco (Airbnb, Booking, Interpatagonia): fichas con fotos y precio, nada sobre cómo llegar ni a qué hora. Idea aplicada en Alerce Dormido: planificador de salida según el origen y la hora de llegada. No se copió texto.
+- Kayak, mascotas y centros culturales: sin sitios propios útiles hoy; las ideas salen de las preguntas que esos negocios reciben (viento, qué puede comer el perro, arriendo de salas).
+
+### Currículum
+Sin cambios hoy; priorizé las demos y el portafolio.
+
+### Portafolio
+- Insignia «Mejorada hoy» ahora en Alerce Dormido, Mawün Kayak, Ribera y Pata Feliz (se quitó de las de ayer) y descripciones actualizadas en tarjetas y carrusel. Pesa 63 KB (límite 90 KB).
+
+### Demos tocadas (4)
+- `kayak/` (Mawün Kayak): sección «¿Salimos con este viento?» (nivel de la salida × viento en km/h → semáforo: salimos, acortamos o reprogramamos) con foto nueva; pregunta nueva en preguntas frecuentes; enlace «Viento» en el menú.
+- `mascotas/` (Pata Feliz): sección «¿Puede comer lo que sobró en la mesa?» (11 alimentos: sí, con cuidado o nunca, con la razón) con foto nueva; enlace «¿Puede comer?».
+- `cabanas/` (Alerce Dormido): sección «¿A qué hora tengo que salir?» (origen × hora de llegada → hora de salida, aviso de check-in o llegada tardía y consejos de compras); enlace «Tu llegada».
+- `centro-cultural/` (Ribera): sección «Cotiza tu actividad» (sala × horas × entrada gratuita o no × extras → valor referencial y solicitud por WhatsApp) con foto nueva; el enlace de Espacios ahora lleva al cotizador.
+- Fotos nuevas registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+27 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin errores de JavaScript, desplazamiento horizontal ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las cuatro funciones y vi capturas de kayak y centro cultural (fotos bloqueadas, se ve el color de respaldo). Demos bajo 60 KB (kayak 44 KB, mascotas 35 KB, cabañas 51 KB, centro cultural 48 KB).
+
+### Sugerencias para René
+- Revisa en el navegador que las 3 fotos nuevas carguen; van enlazadas y se ven con color de respaldo si fallan. La foto de mascotas es de peluches en una repisa: si no te gusta, se cambia.
+- Tarifas del cotizador de Ribera, capacidades, tiempos de viaje y límites de viento son ejemplos ficticios; con un cliente real hay que ajustarlos.
+- No toqué el currículum ni agregué foto a cabañas hoy. Próxima rotación: navidad, termas, hostal, ferretería, taller y las de más tiempo sin tocar. Currículum: sigue pendiente teléfono o LinkedIn y logros medibles (no se inventaron datos).
+
+## 2026-11-26 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #53 (`claude/mejora-2026-11-25`); esta solicitud depende de ella hasta que se fusione.
+
+### Referencias de competencia
+- Yoga en Valdivia (2x3, AgendaPro, ClassPass): solo agregadores; muestran clases sueltas y piden elegir una por una. Idea aplicada en Aire Sur: proponer una semana completa según el objetivo.
+- Contabilidad para pymes en Chile (contable.app, Lofwork, 2x3): ofrecen "todo incluido" sin decir qué pasa el primer mes. Idea aplicada en Lenga: mostrar qué llevar y qué ocurre después de la primera reunión. No se copió texto.
+- Velas de soya (Falabella, Easy, Paris) y plantas de interior (Sodimac, Lider): fichas de producto sin ayuda de uso. Ideas aplicadas: duración de la vela en noches y diagnóstico de plantas por síntoma.
+
+### Currículum
+Sin cambios hoy: ya tiene barra de avance, línea de tiempo y navegación activa; prioricé las demos.
+
+### Portafolio
+- Insignia «Mejorada hoy» ahora en Aire Sur, Lenga, Luz de Cera y Raíz Verde (se quitó de las cuatro de ayer) y descripciones actualizadas.
+
+### Demos tocadas (4)
+- `yoga/` (Aire Sur): sección «Arma tu semana de práctica» (objetivo × veces por semana × horario → clases reales del horario repartidas en la semana, minutos totales y mensaje por WhatsApp); enlace «Tu semana».
+- `contable/` (Lenga): sección «Llega con esto» con lista de 6 papeles para la primera reunión, barra de avance, qué pasa después y aviso por WhatsApp que dice lo que ya tienes y lo que falta; enlace «Reunión».
+- `velas/` (Luz de Cera): calculadora «¿Cuántas noches te dura una vela?» (horas por noche → noches, fecha estimada y barra de llamas) con foto nueva; enlace «Duración».
+- `plantas/` (Raíz Verde): sección «Mi planta se ve mal» con 5 síntomas, causa probable, tres pasos y mensaje por WhatsApp para enviar una foto; foto nueva; enlace «SOS».
+- Fotos nuevas (velas y plantas) registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+27 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin errores de JavaScript, desplazamiento horizontal ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las cuatro funciones y vi capturas (con la foto reemplazada por una de prueba).
+
+### Sugerencias para René
+- Las fotos nuevas van enlazadas (descarga bloqueada aquí) y se ocultan si fallan; revisa en el navegador que carguen.
+- Los plazos de la primera reunión, las rutinas de cuidado de plantas y la duración de las velas son ejemplos ficticios; con un cliente real hay que ajustarlos.
+- Próxima rotación: mascotas, cabañas, kayak, centro cultural, navidad y las de más tiempo sin tocar. Currículum: sigue pendiente teléfono o LinkedIn y logros medibles (no se inventaron datos).
+
+## 2026-11-25 (mejora diaria)
+
+Parte desde `main` (no había solicitudes abiertas; la #52 ya está fusionada).
+
+### Referencias de competencia
+- Gimnasios de Valdivia (Wellhub, ClassPass, AgendaPro): solo fichas de agregadores; destacan la clase de prueba y el horario visible. Idea aplicada en Forja: contar qué pasa en la primera visita, que es la duda de quien nunca ha entrenado.
+- Sushi de Valdivia (Uber Eats, Wanderlog) y carpinterías de Los Ríos (2x3, Yapo, notas de La Tercera y DF sobre el auge de la carpintería): no abrí sitios propios de negocios; el aporte fue la idea de explicar el oficio y el cuidado de las piezas, no solo venderlas. No se copió texto ni imágenes.
+
+### Currículum
+Sin cambios hoy: priorizo las demos más antiguas de la rotación.
+
+### Portafolio
+- Insignia «Mejorada hoy» ahora en Kaiyō, Mañío, Forja y Horno Pellín (se quitó de las cuatro de ayer) y descripciones actualizadas. Pesa 62 KB (límite 90 KB).
+
+### Demos tocadas (4)
+- `sushi/` (Kaiyō): sección «Cómo se come» (nigiri con la mano, soya solo por el pescado, wasabi, jengibre) con foto de un chef armando sushi; enlace en el menú.
+- `madera/` (Mañío): sección «¿Cada cuánto hay que aceitar tu pieza?» (pieza × ubicación → frecuencia, producto y calendario de 12 meses); enlace «Cuidados».
+- `panaderia/` (Horno Pellín): tercera foto en la franja (manos amasando) y sección «¿Cómo guardo mi pan para mañana?» (campo, marraqueta, kuchen, empanadas); enlace «Guardar».
+- `gimnasio/` (Forja): sección «Qué pasa cuando llegas» (4 pasos de la primera visita) con foto de barra en un rack; enlace «Primera visita».
+- Fotos nuevas registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+27 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin errores de JavaScript, desplazamiento horizontal ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las funciones de madera y panadería (encontré y corregí un choque de selectores en madera). Demos bajo 60 KB (sushi 32 KB, madera 43 KB, panadería 45 KB, gimnasio 35 KB).
+
+### Sugerencias para René
+- Las descargas de Unsplash siguen bloqueadas aquí: las 3 fotos nuevas van enlazadas y se ocultan si fallan. Revisa en el navegador que carguen.
+- Frecuencias de aceitado, duración del pan y pasos de la visita son orientativos y ficticios; con un cliente real hay que ajustarlos.
+- Próxima rotación: yoga, contable, velas, plantas, mascotas, cabañas y kayak. Currículum: sigue pendiente teléfono o LinkedIn y logros medibles (no se inventaron datos).
+
 ## 2026-11-24 (mejora diaria)
 
 Parte desde la rama de la solicitud abierta #51 (`claude/mejora-2026-11-23`), que incluye las #49 y #50; esta solicitud depende de ellas hasta que se fusionen.
