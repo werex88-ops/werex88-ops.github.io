@@ -205,6 +205,21 @@
   .faq details p{color:var(--suave);margin-top:10px;max-width:62ch}
   .faq summary:focus-visible{outline:3px solid var(--coral);outline-offset:4px}
   @media(max-width:860px){.cuanto-g{grid-template-columns:1fr;gap:26px}}
+
+  .puede{padding:60px 0 40px}
+  .puede-g{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+  .puede h2{font-family:'Young Serif',serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.08;margin:8px 0 12px}
+  .puede .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+  .puede .chips button{background:#fff;border:2px solid var(--linea);border-radius:999px;padding:9px 16px;font-weight:600;font-size:15px;color:var(--tinta);transition:transform .2s,border-color .2s}
+  .puede .chips button:hover{transform:translateY(-2px);border-color:var(--sol)}
+  .puede .chips button[aria-pressed=true]{background:var(--tinta);color:var(--crema);border-color:var(--tinta)}
+  .veredicto{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:22px;padding:20px 22px;border-left:10px solid #3f9d5c;box-shadow:0 3px 0 var(--linea)}
+  .veredicto.cuidado{border-color:var(--sol)}.veredicto.no{border-color:#d9482b}
+  .veredicto strong{display:block;font-family:'Young Serif',serif;font-weight:400;font-size:22px}
+  .veredicto p{color:var(--suave);font-size:16px;margin-top:2px}
+  .puede figure{aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,var(--sol-claro),var(--cielo))}
+  .puede small{display:block;margin-top:14px;color:var(--suave);font-size:14px}
+  @media(max-width:860px){.puede-g{grid-template-columns:1fr;gap:26px}.puede figure{aspect-ratio:16/10;order:-1}}
 </style>
 <style>html{overflow-x:clip}</style>
 </head>
@@ -214,7 +229,7 @@
 <nav>
   <div class="contenedor">
     <a class="logo" href="#"><span class="huella"><svg viewBox="0 0 24 24"><ellipse cx="6" cy="9" rx="2.2" ry="2.8"/><ellipse cx="10.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="15.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="19" cy="10" rx="2.2" ry="2.8"/><path d="M12.5 11c3 0 6.5 4.6 6.5 7.3 0 2-1.6 2.7-3.2 2.7-1.4 0-2.1-.8-3.3-.8s-1.9.8-3.3.8C7.6 21 6 20.3 6 18.3 6 15.6 9.5 11 12.5 11z"/></svg></span>Pata Feliz</a>
-    <ul><li><a href="#snacks">Snacks</a></li><li><a href="#horno">Cómo se hacen</a></li><li><a href="#resenas">Reseñas</a></li><li><a href="#pedido">Pedidos</a></li></ul>
+    <ul><li><a href="#snacks">Snacks</a></li><li><a href="#puede">¿Puede comer?</a></li><li><a href="#horno">Cómo se hacen</a></li><li><a href="#resenas">Reseñas</a></li><li><a href="#pedido">Pedidos</a></li></ul>
     <a class="btn wsp" href="#pedido" aria-label="Pedir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg><span>Pedir por WhatsApp</span></a>
   </div>
 </nav>
@@ -283,6 +298,19 @@
       </div>
       <div class="tam-r" id="tam-r" aria-live="polite"></div>
     </div>
+  </div>
+</section>
+<section class="puede" id="puede">
+  <div class="contenedor puede-g">
+    <div class="rv">
+      <div class="sobre">🍎 Pregunta de plaza</div>
+      <h2>¿Puede comer lo que sobró en la mesa?</h2>
+      <p>Toca un alimento y te decimos si es seguro como premio. Es una guía general; no reemplaza a tu veterinario.</p>
+      <div class="chips" role="group" aria-label="Alimentos" id="pu-chips"></div>
+      <div class="veredicto" id="pu-v" aria-live="polite"><div><strong id="pu-t">Elige un alimento</strong><p id="pu-d">Te explicamos en una línea por qué sí o por qué no.</p></div></div>
+      <small>Si tu perro se comió algo de la lista roja, llama a tu veterinario de inmediato, aunque se vea bien.</small>
+    </div>
+    <figure class="rv"><img src="https://images.unsplash.com/photo-1751110750385-03a586815aec?w=900&q=70&auto=format&fit=crop" alt="Juguetes de peluche para mascotas sobre una repisa" loading="lazy" onerror="this.style.display='none'"></figure>
   </div>
 </section>
 <section class="horno" id="horno">
@@ -391,6 +419,28 @@ bs.forEach(b=>b.addEventListener('click',()=>set(b.dataset.t)));set('m')})();
 
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+(function(){
+  var A=[['Zanahoria','si','Crujiente y baja en calorías. Cruda o cocida, en trozos que no pueda tragar enteros.'],
+  ['Pollo cocido','si','Sin sal, sin cebolla y sin huesos. Desmenuzado sirve para premios de entrenamiento.'],
+  ['Plátano','cuidado','Sirve de premio, pero en rodajas chicas: tiene mucho azúcar natural.'],
+  ['Manzana','cuidado','Sin pepas ni cabito. Las pepas tienen trazas de cianuro y el centro puede atorarse.'],
+  ['Queso','cuidado','Muchos perros digieren mal la lactosa. Un trocito de queso fresco, de vez en cuando.'],
+  ['Maní natural','cuidado','Sin sal ni azúcar y, sobre todo, sin xilitol (revisa la etiqueta). Pocos y sin cáscara.'],
+  ['Chocolate','no','Tóxico: la teobromina daña el corazón y el sistema nervioso. Mientras más oscuro, peor.'],
+  ['Uvas y pasas','no','Pueden dañar los riñones, incluso en poca cantidad.'],
+  ['Cebolla y ajo','no','Dañan los glóbulos rojos. Cocidos o en polvo también cuentan.'],
+  ['Chicle sin azúcar','no','El xilitol baja el azúcar en la sangre y daña el hígado. Es una emergencia.'],
+  ['Huesos cocidos','no','Se astillan y pueden perforar la boca o el intestino.']];
+  var T={si:'Sí, puede',cuidado:'Con cuidado',no:'No, nunca'};
+  var c=document.getElementById('pu-chips'),v=document.getElementById('pu-v');
+  A.forEach(function(a,i){var b=document.createElement('button');b.type='button';b.textContent=a[0];b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',function(){
+      c.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
+      v.className='veredicto '+(a[1]==='si'?'':a[1]);
+      document.getElementById('pu-t').textContent=a[0]+': '+T[a[1]];document.getElementById('pu-d').textContent=a[2];});
+    c.appendChild(b)});
+})();
 </script>
 
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>

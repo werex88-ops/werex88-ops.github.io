@@ -247,3 +247,9 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `sushi` sección "Cómo se come" (chef preparando sushi) — https://images.unsplash.com/photo-1455279032140-49a4bf46f343 — Epicurrence · https://unsplash.com/photos/person-making-sushi-ITxG2yay1ak
 - `velas/duracion` (enlazada, sin copia local) — https://images.unsplash.com/photo-1560932992-a93e9ca8a0c9 (vela votiva sobre una mesa, foto de Nico)
 - `plantas/sos` (enlazada, sin copia local) — https://images.unsplash.com/photo-1680268608638-f8e1fc25e2cb (plantas en un alféizar junto a una vela, foto de Alan Alves)
+
+## Añadidas el 27-11-2026 (enlazadas directo; licencia Unsplash gratuita, identificadores copiados de la página de cada foto; lugar de toma no indicado)
+- `kayak` sección "¿Salimos con este viento?" (canoa sobre un lago de aguas calmas) — https://images.unsplash.com/photo-1786626900700-87b5d049eef0 — Daniel Gomez · https://unsplash.com/photos/canoe-on-calm-mountain-lake-EB8QZStPYMU
+- `mascotas` sección "¿Puede comer lo que sobró en la mesa?" (juguetes de peluche sobre una repisa) — https://images.unsplash.com/photo-1751110750385-03a586815aec — Zoshua Colah · https://unsplash.com/photos/three-plush-dog-toys-are-huddled-together--Y3LX2505hg
+- `centro-cultural` sección "Cotiza tu actividad" (cortina roja de escenario) — https://images.unsplash.com/photo-1578337834535-357ad7dccdfd — team voyas · https://unsplash.com/photos/red-pleated-stage-curtain-bvHWrljtz8U
+- Reservada, no usada hoy: https://images.unsplash.com/photo-1695918431205-b70d3d43b332 (persona en canoa en un lago calmo; Adam Davis)

@@ -1,5 +1,35 @@
 # Registro de cambios
 
+## 2026-11-27 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #54 (`claude/mejora-2026-11-26`), que a su vez parte de la #53; esta solicitud depende de ellas hasta que se fusionen.
+
+### Referencias de competencia
+- Diseño web para pymes en Chile (2x3.cl, GoDaddy, Wix Partners, Clutch): solo vi listados y fichas de servicios, sin portafolios con carácter; destacan «sitio autogestionable» y precio claro. Refuerza mantener visible el contacto y los servicios en el portafolio.
+- Cabañas en Pucón, Futrono y Lago Ranco (Airbnb, Booking, Interpatagonia): fichas con fotos y precio, nada sobre cómo llegar ni a qué hora. Idea aplicada en Alerce Dormido: planificador de salida según el origen y la hora de llegada. No se copió texto.
+- Kayak, mascotas y centros culturales: sin sitios propios útiles hoy; las ideas salen de las preguntas que esos negocios reciben (viento, qué puede comer el perro, arriendo de salas).
+
+### Currículum
+Sin cambios hoy; priorizé las demos y el portafolio.
+
+### Portafolio
+- Insignia «Mejorada hoy» ahora en Alerce Dormido, Mawün Kayak, Ribera y Pata Feliz (se quitó de las de ayer) y descripciones actualizadas en tarjetas y carrusel. Pesa 63 KB (límite 90 KB).
+
+### Demos tocadas (4)
+- `kayak/` (Mawün Kayak): sección «¿Salimos con este viento?» (nivel de la salida × viento en km/h → semáforo: salimos, acortamos o reprogramamos) con foto nueva; pregunta nueva en preguntas frecuentes; enlace «Viento» en el menú.
+- `mascotas/` (Pata Feliz): sección «¿Puede comer lo que sobró en la mesa?» (11 alimentos: sí, con cuidado o nunca, con la razón) con foto nueva; enlace «¿Puede comer?».
+- `cabanas/` (Alerce Dormido): sección «¿A qué hora tengo que salir?» (origen × hora de llegada → hora de salida, aviso de check-in o llegada tardía y consejos de compras); enlace «Tu llegada».
+- `centro-cultural/` (Ribera): sección «Cotiza tu actividad» (sala × horas × entrada gratuita o no × extras → valor referencial y solicitud por WhatsApp) con foto nueva; el enlace de Espacios ahora lleva al cotizador.
+- Fotos nuevas registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+27 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin errores de JavaScript, desplazamiento horizontal ni anclas rotas; una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las cuatro funciones y vi capturas de kayak y centro cultural (fotos bloqueadas, se ve el color de respaldo). Demos bajo 60 KB (kayak 44 KB, mascotas 35 KB, cabañas 51 KB, centro cultural 48 KB).
+
+### Sugerencias para René
+- Revisa en el navegador que las 3 fotos nuevas carguen; van enlazadas y se ven con color de respaldo si fallan. La foto de mascotas es de peluches en una repisa: si no te gusta, se cambia.
+- Tarifas del cotizador de Ribera, capacidades, tiempos de viaje y límites de viento son ejemplos ficticios; con un cliente real hay que ajustarlos.
+- No toqué el currículum ni agregué foto a cabañas hoy. Próxima rotación: navidad, termas, hostal, ferretería, taller y las de más tiempo sin tocar. Currículum: sigue pendiente teléfono o LinkedIn y logros medibles (no se inventaron datos).
+
 ## 2026-11-26 (mejora diaria)
 
 Parte desde la rama de la solicitud abierta #53 (`claude/mejora-2026-11-25`); esta solicitud depende de ella hasta que se fusione.
