@@ -266,6 +266,21 @@ footer .logo{margin-bottom:14px}
   html{scroll-behavior:auto}
   *,.rv{transition:none!important;animation:none!important;opacity:1;transform:none}
 }
+
+/* Llegada */
+.llegada{background:var(--niebla);padding:88px 0}
+.llegada .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:30px}
+.llegada label{display:block;font-weight:700;margin:0 0 8px}
+.llegada select,.llegada input[type=time]{width:100%;padding:14px;border:1.5px solid var(--linea);border-radius:12px;font:600 1rem 'Manrope',sans-serif;background:#fff;color:var(--tinta)}
+.llegada .campo+.campo{margin-top:18px}
+.llegada .res{background:var(--noche);color:#fff;border-radius:var(--radio);padding:28px}
+.llegada .res .hora{font-family:'DM Serif Display',serif;font-size:clamp(2.6rem,6vw,3.8rem);line-height:1;color:var(--laton)}
+.llegada .res p{color:#d4e3e1;margin:8px 0 0}
+.llegada .res ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.llegada .res li{padding-left:28px;position:relative;font-size:.98rem}
+.llegada .res li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:2px;background:var(--laton)}
+.llegada .aviso-t{display:inline-block;margin-top:16px;padding:6px 14px;border-radius:999px;background:var(--laton);color:var(--noche);font-weight:700;font-size:.85rem}
+@media(max-width:860px){.llegada .cols{grid-template-columns:1fr;gap:26px}}
 </style>
 </head>
 <body>
@@ -282,6 +297,7 @@ footer .logo{margin-bottom:14px}
         <li><a href="#elige">Elige tu cabaña</a></li>
         <li><a href="#experiencias">Experiencias</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#llegada">Tu llegada</a></li>
         <li><a href="#ubicacion">Cómo llegar</a></li>
         <li><a href="#reservar">Reservar</a></li>
       </ul>
@@ -517,6 +533,30 @@ footer .logo{margin-bottom:14px}
   </div>
 </section>
 
+<section class="llegada" id="llegada">
+  <div class="wrap">
+    <span class="eyebrow">Planifica tu llegada</span>
+    <h2 style="font-size:clamp(2.2rem,4.2vw,3.2rem)">¿A qué hora tengo que salir?</h2>
+    <p style="max-width:58ch;color:var(--gris);margin-top:14px">Dinos de dónde vienes y a qué hora quieres estar frente a la cabaña. Te calculamos la salida y qué conviene comprar antes de subir al camino.</p>
+    <div class="cols">
+      <div>
+        <div class="campo"><label for="ll-origen">¿Desde dónde vienes?</label>
+          <select id="ll-origen"><option value="25">Valdivia centro (unos 25 min)</option><option value="35">Aeródromo Pichoy (unos 35 min)</option><option value="130">Osorno (unas 2 h)</option><option value="170">Temuco (unas 2 h 50 min)</option></select></div>
+        <div class="campo"><label for="ll-hora">¿A qué hora quieres llegar?</label>
+          <input type="time" id="ll-hora" value="16:00" step="900"></div>
+        <p style="font-size:.9rem;color:var(--gris);margin-top:16px">Tiempos aproximados en auto, con buen clima. Los últimos 300 metros son de ripio.</p>
+      </div>
+      <div class="res" aria-live="polite">
+        <span style="font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--musgo)">Sal a las</span>
+        <div class="hora" id="ll-sal">13:35</div>
+        <p id="ll-txt"></p>
+        <ul id="ll-lista"></ul>
+        <span class="aviso-t" id="ll-tag" hidden></span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="ubicacion" id="ubicacion">
   <div class="wrap">
     <div class="rv">
@@ -662,6 +702,27 @@ footer .logo{margin-bottom:14px}
   }
   document.querySelectorAll('.elige input').forEach(function(i){i.addEventListener('change',pinta)});
   pinta();
+})();
+
+(function(){
+  var o=document.getElementById('ll-origen'),h=document.getElementById('ll-hora');
+  function f(m){m=((m%1440)+1440)%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')}
+  function pinta(){
+    var p=(h.value||'16:00').split(':'),llega=+p[0]*60+ +p[1],dur=+o.value+10;
+    document.getElementById('ll-sal').textContent=f(llega-dur);
+    var l=[],tag=document.getElementById('ll-tag'),t='';
+    tag.hidden=true;
+    if(llega<900){tag.hidden=false;tag.textContent='Antes del check-in (15:00)';t='Puedes dejar el auto y las maletas; la cabaña se entrega desde las 15:00.'}
+    else if(llega<=1320){t='Llegas dentro del horario de check-in. Te esperamos con la estufa encendida.'}
+    else{tag.hidden=false;tag.textContent='Llegada tardía: avísanos';t='Después de las 22:00 h necesitamos que nos avises por WhatsApp para dejarte las llaves y la tinaja lista.'}
+    document.getElementById('ll-txt').textContent=t;
+    l.push('Compra el pan, las verduras y lo que quieras cocinar en Valdivia: en el camino no hay supermercados.');
+    if(+o.value>=130)l.push('Para venir desde lejos, para a cargar combustible y a estirar las piernas antes de Valdivia; el último tramo es de camino rural.');
+    if(llega>=1140)l.push('Si llegas de noche, usa luces bajas: hay animales sueltos en el camino de ripio.');
+    l.push('La leña seca para la primera noche ya está en la cabaña. Si necesitas más, un saco extra cuesta $6.000.');
+    document.getElementById('ll-lista').innerHTML=l.map(function(x){return '<li>'+x+'</li>'}).join('');
+  }
+  o.addEventListener('change',pinta);h.addEventListener('input',pinta);pinta();
 })();
 </script>
 

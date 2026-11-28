@@ -210,6 +210,21 @@
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; opacity: 1; transform: none; } }
   /* Foco visible para teclado (doble anillo, legible sobre cualquier fondo) */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #111; border-radius: 4px; }
+
+.sos{padding:96px 0;background:var(--blanco)}
+.sos-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.sos-f{border-radius:28px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(140deg,#cfdcc6,#2f5a43);margin-top:28px}
+.sos-f img{transition:transform 1.2s}.sos-f:hover img{transform:scale(1.04)}
+.sos-s{display:grid;gap:10px;margin-top:26px}
+.sos-s button{text-align:left;padding:14px 18px;border-radius:16px;border:1px solid var(--linea);background:var(--fondo);font-weight:500;min-height:48px;transition:background .2s,border-color .2s,transform .2s}
+.sos-s button:hover{transform:translateX(4px);border-color:var(--musgo)}
+.sos-s button[aria-pressed=true]{background:var(--bosque);color:var(--fondo);border-color:var(--bosque)}
+.sos-r{background:var(--menta);border-radius:24px;padding:32px;position:sticky;top:100px}
+.sos-r small{font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:var(--musgo)}
+.sos-r h3{font-size:26px;margin:6px 0 10px;line-height:1.2}
+.sos-r ul{margin:14px 0 22px 20px}.sos-r li{margin-bottom:8px}
+@media(max-width:860px){.sos-g{grid-template-columns:minmax(0,1fr);gap:28px}.sos-r{position:static}}
+@media(prefers-reduced-motion:reduce){.sos-f img,.sos-s button{transition:none}.sos-s button:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -221,7 +236,7 @@
       <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 29V14" stroke="#1d3a2b" stroke-width="2.4" stroke-linecap="round"/><path d="M16 15C16 8 21 4 28 4c0 7-5 11-12 11Z" fill="#2f5a43"/><path d="M16 19C16 13 12 9 5 9c0 6 4 10 11 10Z" fill="#b6e36b"/></svg>
       raíz<span>verde</span>
     </a>
-    <ul><li><a href="#catalogo">Catálogo</a></li><li><a href="#como">Cómo funciona</a></li><li><a href="#riego">Riego</a></li><li><a href="#kits">Regalos</a></li><li><a href="#faq">Ayuda</a></li></ul>
+    <ul><li><a href="#catalogo">Catálogo</a></li><li><a href="#como">Cómo funciona</a></li><li><a href="#riego">Riego</a></li><li><a href="#sos">SOS</a></li><li><a href="#kits">Regalos</a></li><li><a href="#faq">Ayuda</a></li></ul>
     <button class="canasta"><span>Canasta</span><b id="n">0</b></button>
   </div>
 </nav>
@@ -318,6 +333,24 @@
       <div class="card rv" style="--c:#d9a441"><small>Luz filtrada</small><h3>Cerca de una ventana con cortina</h3><p>Entra luz todo el día, pero sin rayos directos. Es el lugar de la monstera y la calathea, que aman la humedad: riego semanal.</p><p class="quien">La opción más fácil de acertar.</p></div>
       <div class="card rv" style="--c:#c9674a"><small>Sol directo</small><h3>Ventana al norte o balcón</h3><p>Recibe al menos cuatro horas de sol. Aquí van los cactus y las suculentas, con riego cada diez a quince días, y solo cuando la tierra esté seca.</p><p class="quien">Para quien se olvida de regar.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="sos" id="sos">
+  <div class="contenedor sos-g">
+    <div>
+      <h2 class="serif" style="font-size:clamp(30px,4vw,46px)">Mi planta se ve mal. <span style="font-style:italic;color:var(--musgo)">¿Qué le pasa?</span></h2>
+      <p style="margin-top:10px;max-width:46ch;color:#4f5b4e">Casi siempre es riego, luz o maceta. Toca lo que ves y te decimos por dónde partir.</p>
+      <div class="sos-s" id="sos-s" role="group" aria-label="Síntomas">
+        <button type="button" aria-pressed="true" data-k="0">Hojas amarillas y blandas</button>
+        <button type="button" aria-pressed="false" data-k="1">Puntas café y secas</button>
+        <button type="button" aria-pressed="false" data-k="2">Hojas caídas, como cansadas</button>
+        <button type="button" aria-pressed="false" data-k="3">Tallos largos y pálidos</button>
+        <button type="button" aria-pressed="false" data-k="4">Manchas o motitas blancas</button>
+      </div>
+      <div class="sos-f"><img src="https://images.unsplash.com/photo-1680268608638-f8e1fc25e2cb?w=1200&q=70&auto=format&fit=crop" alt="Plantas en macetas sobre el alféizar de una ventana, junto a una vela" loading="lazy" onerror="this.style.display='none'"></div>
+    </div>
+    <div class="sos-r" aria-live="polite"><small id="sos-c"></small><h3 id="sos-t"></h3><p id="sos-p"></p><ul id="sos-u"></ul><a class="btn" id="sos-wa" href="#" target="_blank" rel="noopener">Mándanos una foto por WhatsApp <span class="flecha">→</span></a></div>
   </div>
 </section>
 
@@ -418,6 +451,27 @@
   g('rp',v=>pl=v);g('re',v=>es=v);pintar();
 })();
 </script>
+<script>
+(function(){
+var g=document.getElementById('sos-s');if(!g)return;
+var D=[
+['Lo más probable: exceso de agua','Hojas amarillas y blandas','Las raíces no alcanzan a respirar. Es el problema más común en plantas de interior.',['Mete un dedo en la tierra: si sale húmeda, espera antes de regar.','Revisa que la maceta tenga hoyos y que no quede agua en el plato.','Si la tierra huele a pantano, trasplanta a sustrato nuevo y suelto.']],
+['Lo más probable: aire seco o agua con sal','Puntas café y secas','Pasa en calefacción o cerca de la estufa, y también cuando se riega siempre con agua muy dura.',['Aleja la planta de estufas y corrientes de aire.','Agrupa varias plantas para subir la humedad alrededor.','Riega con agua que haya reposado un día y corta las puntas secas con tijera limpia.']],
+['Lo más probable: sed, o raíces apretadas','Hojas caídas','Si la tierra está seca, es sed. Si está húmeda y igual cae, mira las raíces.',['Si está seca, riega hasta que salga agua por abajo y deja escurrir.','Si asoman raíces por los hoyos, pásala a una maceta 2 cm más ancha.','Dale un par de días antes de cambiarla de lugar otra vez.']],
+['Lo más probable: falta de luz','Tallos largos y pálidos','La planta se estira buscando luz, y las hojas nuevas salen chicas.',['Acércala a la ventana, siempre sin sol directo al mediodía.','Gírala un cuarto de vuelta cada semana para que crezca parejo.','Poda las puntas largas: así echa brotes más abajo.']],
+['Lo más probable: una plaga pequeña','Manchas o motitas blancas','Pueden ser cochinillas o arañita roja. Se ven mejor por debajo de la hoja.',['Sepárala de las demás plantas de inmediato.','Límpiala con un paño húmedo y jabón potásico diluido.','Repite cada tres días durante dos semanas y revisa las plantas vecinas.']]
+];
+function pinta(k){
+ var d=D[k];document.getElementById('sos-c').textContent=d[1];document.getElementById('sos-t').textContent=d[0];document.getElementById('sos-p').textContent=d[2];
+ var u=document.getElementById('sos-u');u.innerHTML='';d[3].forEach(function(t){var l=document.createElement('li');l.textContent=t;u.appendChild(l)});
+ document.getElementById('sos-wa').href='https://wa.me/56955550199?text='+encodeURIComponent('Hola, mi planta tiene '+d[1].toLowerCase()+'. Te mando una foto para que me ayudes.');
+}
+g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+ [].forEach.call(g.children,function(x){x.setAttribute('aria-pressed',x===b)});pinta(+b.dataset.k)});
+pinta(0);
+})();
+</script>
+
 
 <div class="aviso-demo" role="note" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100% - 96px);background:rgba(17,17,17,.88);color:#fff;font:500 12px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;padding:8px 12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.25)">Propuesta de diseño de ejemplo; datos ficticios · <a href="../" style="color:#ffd27a;text-decoration:underline">← Portafolio</a></div>
 </body>
