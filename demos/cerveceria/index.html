@@ -144,6 +144,25 @@ section{padding:100px 0}
 .opinion em{display:inline-block;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--espuma);color:var(--cobre-t);padding:3px 10px;border-radius:999px;margin-bottom:6px;align-self:flex-start}
 
 /* Visita */
+
+/* Tabla de degustación */
+.tabla .tbg>*{min-width:0}.tabla .tbg{display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center}
+.tabla .tbf{border-radius:10px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,#32241a,#e08a1e)}
+.tabla .tbf img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.tabla .tbf:hover img{transform:scale(1.04)}
+.tabla fieldset{border:0;padding:0;margin:0 0 18px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tabla legend{font-weight:600;margin-bottom:10px;padding:0}
+.tabla label.op{display:flex;align-items:center;gap:10px;border:1.5px solid var(--linea);border-radius:8px;padding:12px;cursor:pointer;transition:border-color .2s,background .2s}
+.tabla label.op:hover{border-color:var(--cobre)}
+.tabla label.op input{accent-color:var(--cobre);width:18px;height:18px}
+.tabla label.op i{width:14px;height:14px;border-radius:50%;flex:none;box-shadow:0 0 0 2px var(--espuma2)}
+.tabla label.op small{display:block;color:var(--suave-o);font-size:.8rem}
+.tabla .orden{background:var(--malta2);border:1px solid var(--linea);border-radius:10px;padding:18px 20px}
+.tabla .orden ol{margin:8px 0 0;padding-left:22px}
+.tabla .orden li{margin:4px 0}
+.tabla .orden p{margin:10px 0 0;color:var(--suave-o);font-size:.92rem}
+@media(max-width:860px){.tabla .tbg{grid-template-columns:1fr}.tabla .tbf{aspect-ratio:16/10}.tabla fieldset{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.tabla .tbf img{transition:none}}
 .visita{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .horario{list-style:none;border-top:1px solid var(--linea);margin:20px 0}
 .horario li{display:flex;justify-content:space-between;padding:12px 4px;border-bottom:1px solid var(--linea);font-size:16px}
@@ -233,7 +252,7 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
       Hualle
     </a>
     <nav aria-label="Principal"><ul class="menu">
-      <li><a href="#cervezas">Cervezas</a></li><li><a href="#pack">Armar pack</a></li><li><a href="#maridaje">Maridaje</a></li><li><a href="#nosotros">Cervecería</a></li><li><a href="#planta">Pasaporte</a></li><li><a href="#visita">Visítanos</a></li><li><a href="#contacto">Contacto</a></li>
+      <li><a href="#cervezas">Cervezas</a></li><li><a href="#pack">Armar pack</a></li><li><a href="#tabla">Degustación</a></li><li><a href="#maridaje">Maridaje</a></li><li><a href="#nosotros">Cervecería</a></li><li><a href="#planta">Pasaporte</a></li><li><a href="#visita">Visítanos</a></li><li><a href="#contacto">Contacto</a></li>
     </ul></nav>
     <span class="estado" id="estado" role="status"><i></i><span>Revisando horario…</span></span>
   </div>
@@ -369,6 +388,21 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
   </div>
 </section>
 
+<section class="tabla" id="tabla">
+  <div class="wrap">
+    <div class="tbg">
+      <div class="tbf rv"><img src="https://images.unsplash.com/photo-1661352491495-6e2937b8d1ee?w=1200&q=70&auto=format&fit=crop" alt="Dos vasos de cerveza servidos sobre una mesa" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+      <div class="rv">
+        <span class="rot">Tabla de degustación</span>
+        <h2 class="disp" style="font-size:clamp(2.2rem,5vw,3.6rem);margin:6px 0 14px">Elige cuatro vasos</h2>
+        <p style="color:var(--suave-o);margin:0 0 20px">Cuatro vasos de 150 ml por $6.900, los que tú quieras. Te los llevamos en el orden en que conviene tomarlos, de la más suave a la más amarga, para que el paladar no se canse.</p>
+        <fieldset id="tb-op"><legend>Marca cuatro de las seis (<span id="tb-n">0</span>/4)</legend></fieldset>
+        <div class="orden" role="status" aria-live="polite"><b>Tu tabla</b><ol id="tb-or"><li>Marca tus cuatro cervezas</li></ol><p id="tb-p"></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="maridaje">
   <div class="wrap">
     <div class="mar">
@@ -441,6 +475,17 @@ footer .legal{grid-column:1/-1;font-size:13px;border-top:1px solid var(--linea);
   var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
   var clp=function(v){return '$'+Math.round(v).toLocaleString('es-CL')};
   function vaso(c,h){return '<svg viewBox="0 0 80 120" aria-hidden="true"><path d="M14 22h52l-5 84a8 8 0 0 1-8 8H27a8 8 0 0 1-8-8z" fill="'+c+'" stroke="#f6ecd6" stroke-opacity=".55" stroke-width="2"/><path d="M12 22a12 12 0 0 1 22-7 12 12 0 0 1 22-1 11 11 0 0 1 12 8z" fill="#f6ecd6"/><circle cx="32" cy="70" r="2" fill="#fff" fill-opacity=".45"/><circle cx="46" cy="88" r="3" fill="#fff" fill-opacity=".4"/><circle cx="40" cy="52" r="1.6" fill="#fff" fill-opacity=".5"/></svg>'}
+
+  /* Tabla de degustación */
+  (function(){var f=$('#tb-op'),ch=[];
+    f.insertAdjacentHTML('beforeend',B.map(function(b){return '<label class="op"><input type="checkbox" value="'+b.id+'"><i style="background:'+b.c+'"></i><span>'+b.n+'<small>'+b.e+' · '+b.abv.toString().replace('.',',')+' %</small></span></label>'}).join(''));
+    function u(){var x=$$('input:checked',f);
+      $$('input:not(:checked)',f).forEach(function(i){i.disabled=x.length>=4});
+      $('#tb-n').textContent=x.length;
+      var sel=x.map(function(i){return B.filter(function(b){return b.id===i.value})[0]}).sort(function(a,b){return a.ibu-b.ibu});
+      $('#tb-or').innerHTML=sel.length?sel.map(function(b){return '<li><b>'+b.n+'</b> · '+b.e+', amargor '+b.ibu+' IBU</li>'}).join(''):'<li>Marca tus cuatro cervezas</li>';
+      $('#tb-p').textContent=sel.length===4?'Lista: te la llevamos a la mesa en este orden. Valor de la tabla: $6.900.':'Te faltan '+(4-sel.length)+' para completar la tabla.';}
+    f.addEventListener('change',u);u();})();
 
   /* Cervezas */
   $('#lista').innerHTML=B.map(function(b){

@@ -253,3 +253,8 @@ Se muestran como imagen de fondo de la portada y en una franja de galería; si u
 - `mascotas` sección "¿Puede comer lo que sobró en la mesa?" (juguetes de peluche sobre una repisa) — https://images.unsplash.com/photo-1751110750385-03a586815aec — Zoshua Colah · https://unsplash.com/photos/three-plush-dog-toys-are-huddled-together--Y3LX2505hg
 - `centro-cultural` sección "Cotiza tu actividad" (cortina roja de escenario) — https://images.unsplash.com/photo-1578337834535-357ad7dccdfd — team voyas · https://unsplash.com/photos/red-pleated-stage-curtain-bvHWrljtz8U
 - Reservada, no usada hoy: https://images.unsplash.com/photo-1695918431205-b70d3d43b332 (persona en canoa en un lago calmo; Adam Davis)
+
+### Fotos agregadas el 28-11-2026
+- `navidad` sección "¿Cuántas luces necesita tu árbol?" (corona con lazo rojo en puerta de madera) — https://images.unsplash.com/photo-1701010600582-017eb8d1a635 — Jez Timms · https://unsplash.com/photos/a-wreath-on-a-wooden-door-with-a-red-bow-CnVuF1RZbgo
+- `cerveceria` sección "Tabla de degustación" (dos vasos de cerveza sobre una mesa) — https://images.unsplash.com/photo-1661352491495-6e2937b8d1ee — Blake Wisz · https://unsplash.com/photos/two-glasses-of-beer-on-a-table-mZrdWe0En1E
+- `hostal` sección "Cómo llegar" (dormitorio con camarotes y ventilador) — https://images.unsplash.com/photo-1679921843803-fa92ceffc3a5 — Mustafa akın · https://unsplash.com/photos/a-room-with-bunk-beds-and-a-ceiling-fan-onU2XsxqlgA

@@ -261,6 +261,17 @@ footer p{font-size:15px}
 .vac li b{font-weight:700}
 @media(max-width:520px){.vac li{grid-template-columns:96px 1fr}}
 
+
+/* Ración diaria */
+.rac .caja{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:28px;max-width:760px;display:grid;gap:18px}
+.rac .fila{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.rac label{display:block;font-weight:700;margin-bottom:6px}
+.rac select,.rac input[type=range]{width:100%;font:inherit}
+.rac select{padding:12px;border-radius:12px;border:1.5px solid var(--pino);background:#fff}
+.rac .res{background:var(--pino);color:#fff;border-radius:16px;padding:20px}
+.rac .res b{display:block;font-size:2rem;color:var(--lima);line-height:1.1}
+.rac .res small{opacity:.9;display:block;margin-top:6px}
+@media(max-width:600px){.rac .fila{grid-template-columns:1fr}}
 .traer .caja{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:28px;max-width:760px}
 .traer .opc{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
 .traer .opc button{font:700 .95rem/1 inherit;font-family:inherit;padding:12px 18px;border-radius:999px;border:1.5px solid var(--pino);background:transparent;color:var(--pino);cursor:pointer}
@@ -288,7 +299,7 @@ footer p{font-size:15px}
       <li><a href="#traer">Qué llevar</a></li>
       <li><a href="#equipo">Equipo</a></li>
       <li><a href="#planes">Planes</a></li>
-      <li><a href="#ubicacion">Horario</a></li>
+      <li><a href="#racion">Ración</a></li><li><a href="#ubicacion">Horario</a></li>
     </ul>
     <a class="btn" href="#agenda" aria-label="Pedir hora"><span>Pedir hora</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3zm-1 8v10h12V10zm2 2h3v3H8z"/></svg></a>
   </div>
@@ -496,6 +507,24 @@ footer p{font-size:15px}
   </div>
 </section>
 
+<section class="rac" id="racion">
+  <div class="wrap">
+    <div class="cab rv" style="margin-bottom:24px">
+      <p class="sobre">Alimentación</p>
+      <h2>¿Cuánto le <em>doy de comer</em>?</h2>
+      <p>Una guía para partir. El saco siempre manda, y en la consulta ajustamos la cantidad mirando cómo está de peso.</p>
+    </div>
+    <div class="caja rv">
+      <div class="fila">
+        <div><label for="rc-e">Mascota</label><select id="rc-e"><option value="p2">Perro adulto</option><option value="p1">Cachorro de perro</option><option value="g">Gato adulto</option><option value="gc">Gatito</option></select></div>
+        <div><label for="rc-k">Peso: <output id="rc-kv">10</output> kg</label><input type="range" id="rc-k" min="1" max="45" step="0.5" value="10"></div>
+      </div>
+      <div class="res" role="status" aria-live="polite"><small>Alimento seco, por día</small><b id="rc-g">—</b><small id="rc-n"></small></div>
+      <a class="btn" href="#agenda">Revisar su peso en consulta →</a>
+    </div>
+  </div>
+</section>
+
 <section class="traer" id="traer">
   <div class="wrap">
     <div class="cab rv" style="margin-bottom:24px">
@@ -679,6 +708,16 @@ footer p{font-size:15px}
   o.innerHTML=Object.keys(L).map(function(k){return '<button type="button" aria-pressed="false">'+k+'</button>'}).join('');
   o.addEventListener('click',function(e){var b=e.target.closest('button');if(b)pinta(b.textContent)});
   u.addEventListener('change',prog);pinta('Perro');
+})();
+(function(){
+  var e=document.getElementById('rc-e'),k=document.getElementById('rc-k');if(!e)return;
+  var F={p2:[.02,'Repartido en dos comidas. Si es muy activo o está castrado, el ajuste cambia.'],p1:[.04,'En tres comidas hasta los 4 meses y en dos después. Crece rápido: pésalo cada 15 días.'],g:[.03,'En dos o tres comidas pequeñas, con agua fresca siempre a mano.'],gc:[.06,'En cuatro comidas al día hasta los 4 meses, con alimento para gatitos.']};
+  function c(){var f=F[e.value],kg=+k.value;
+    document.getElementById('rc-kv').textContent=String(kg).replace('.',',');
+    var g=Math.round(kg*1000*f[0]/5)*5;
+    document.getElementById('rc-g').textContent='cerca de '+g+' g';
+    document.getElementById('rc-n').textContent=f[1]+' Es una estimación general: puede variar mucho según la marca del alimento.';}
+  e.addEventListener('change',c);k.addEventListener('input',c);c();
 })();
 </script>
 

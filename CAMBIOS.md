@@ -1,5 +1,35 @@
 # Registro de cambios
 
+## 2026-11-28 (mejora diaria)
+
+Parte desde la rama de la solicitud abierta #55 (`claude/mejora-2026-11-27`), que a su vez parte de la #54 y la #53; esta solicitud depende de ellas hasta que se fusionen.
+
+### Referencias de competencia
+- Cervecerías de Valdivia (Pasaporte Cervecero de Meteored, notas de El Ciudadano, Civitatis): solo vi notas y fichas de tours; lo que más se repite es la degustación en vasos pequeños. Idea aplicada en Hualle: armar tu propia tabla con orden de menos a más amargo.
+- Decoración navideña (guías de ferias navideñas de CNN Chile y 24horas): son listados de ferias en Santiago, sin negocios de decoración del sur. La idea sale de la pregunta que más reciben estos negocios: cuántas luces comprar.
+- Veterinarias y hostales: la búsqueda no devolvió sitios propios útiles hoy. No se copió texto, imágenes ni código.
+
+### Currículum
+Sin cambios hoy; priorizé las demos.
+
+### Portafolio
+- Insignia «Mejorada hoy» ahora en Estrella Austral, Hualle, Weñi y Radal (se quitó de las de ayer) y descripciones actualizadas. Pesa 63 KB (límite 90 KB).
+
+### Demos tocadas (4)
+- `navidad/` (Estrella Austral): sección «¿Cuántas luces necesita tu árbol?» (altura × estilo → metros de luces, adornos y alargadores) con foto nueva de una corona en puerta de madera.
+- `cerveceria/` (Hualle): sección «Elige cuatro vasos» (marcas 4 de las 6 cervezas, máximo 4, y te las ordena de suave a amarga según IBU) con foto nueva; enlace «Degustación» en el menú.
+- `veterinaria/` (Weñi): sección «¿Cuánto le doy de comer?» (mascota × peso → gramos de alimento seco al día con consejo de reparto); enlace «Ración». No hay foto nueva: las que encontré hoy eran de pago (Unsplash+).
+- `hostal/` (Radal): sección «Cómo llegar» (bus, avión, auto o bici → camino, tiempo y costo aproximado) con foto nueva de un dormitorio con camarotes; enlace en el menú.
+- Fotos registradas en `demos/CREDITOS.md`. No regeneré capturas `demos/img/*.jpg`.
+
+### Validación
+27 páginas a 320, 390 y 1440 px con recursos externos bloqueados: sin errores de JavaScript, 404 locales, anclas rotas ni desplazamiento horizontal (corregí un desborde propio en cervecería); una sola etiqueta `<main>` y aviso de datos ficticios en cada demo. Probé con clics las cuatro funciones y vi capturas (fotos reemplazadas por una imagen de prueba). Demos bajo 60 KB (navidad 52, cervecería 43, veterinaria 54, hostal 48); portafolio 63 KB.
+
+### Sugerencias para René
+- Revisa en el navegador que las 3 fotos nuevas carguen; si fallan se ocultan. Las identificadores salieron de las páginas de Unsplash, pero no vi las imágenes mismas: confirma que la del dormitorio (camarotes con ventilador) te sirva para Radal.
+- Cantidades de luces, raciones de alimento, tiempos y tarifas de traslado son ejemplos ficticios; con un cliente real hay que ajustarlos (la ración de la veterinaria debe validarla un profesional).
+- Currículum: sigue pendiente teléfono o LinkedIn y logros medibles (no se inventaron datos). Veterinaria sigue sin foto de contexto nueva. Próxima rotación: barbería, fotografía, heladería, termas, taller y ferretería.
+
 ## 2026-11-27 (mejora diaria)
 
 Parte desde la rama de la solicitud abierta #54 (`claude/mejora-2026-11-26`), que a su vez parte de la #53; esta solicitud depende de ellas hasta que se fusionen.
